@@ -93,6 +93,7 @@ function showTrain() {
     let notchTable = notchDiv.getElementsByTagName("table");
     let trainDiv = document.getElementById("train");
     let trainTable = trainDiv.getElementsByTagName("table");
+    let count = 0;
     for (let i = 0; i < notchTable.length; i++) {
         let table = notchTable[i];
         table.style.display = "none";
@@ -106,9 +107,10 @@ function showTrain() {
         if (checkboxList[i].type == "checkbox") {
             let checkbox = checkboxList[i];
             if (checkbox.checked) {
-                notchTable[i].style.display = "";
-                trainTable[i].style.display = "";
+                notchTable[count].style.display = "";
+                trainTable[count].style.display = "";
             }
+            count++;
         }
     }
 }
