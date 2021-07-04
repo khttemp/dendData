@@ -233,7 +233,7 @@ window.onload = function() {
         //チェックボックス
         let label = document.createElement("label");
         checkDiv.appendChild(label);
-        let checkbox = `<input type="checkbox" onchange='showTrain()' checked>` + trainData["name"] + `を表示`;
+        let checkbox = `<input type="checkbox" onchange='showTrain()' checked>` + trainData["name"] + `を表示<br>`;
         label.innerHTML = checkbox;
     }
 
