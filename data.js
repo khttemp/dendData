@@ -151,7 +151,9 @@ function init(value) {
     let mdlCnt = rows[0];
     let data = [];
     for (i = 0; i < mdlCnt; i++) {
-        let name = rows[count];
+        let names = rows[count].split("\t");
+        let name = names[0];
+        let sound = names[1];
         count++;
         let notchs = rows[count].split("\t");
         count++;
@@ -176,6 +178,7 @@ function init(value) {
         count++;
         data.push({
             "name":name,
+            "sound":sound,
             "notch":notchs,
             "notchLittle":notchLittles,
             "notchBig":notchBigs,
@@ -201,9 +204,13 @@ function init(value) {
         let nameTd = document.createElement("td");
         nameTr.appendChild(nameTd);
         let trainData = data[i];
-        nameTd.setAttribute("colspan", trainData["notch"].length+1);
+        nameTd.setAttribute("colspan", trainData["notch"].length);
         nameTd.innerHTML = "<h3>" + trainData["name"] + "</h3>";
         nameTd.style.textAlign = "center";
+        let soundTd = document.createElement("td");
+        nameTr.appendChild(soundTd);
+        soundTd.innerHTML = trainData["sound"];
+        soundTd.style.textAlign = "center";
 
         let notchNameTr = document.createElement("tr");
         notchTable.appendChild(notchNameTr);
