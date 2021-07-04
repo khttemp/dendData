@@ -28,6 +28,12 @@ window.onload = function() {
         count++;
         let notchBigs = rows[count].split("\t");
         count++;
+        let tlks = rows[count].split("\t");
+        count++;
+        let tlkLittles = rows[count].split("\t");
+        count++;
+        let tlkBigs = rows[count].split("\t");
+        count++;
 
         let attNames = rows[count].split("\t");
         count++
@@ -40,6 +46,9 @@ window.onload = function() {
             "notch":notchs,
             "notchLittle":notchLittles,
             "notchBig":notchBigs,
+            "tlk":tlks,
+            "tlkLittle":tlkLittles,
+            "tlkBig":tlkBigs,
             "attName":attNames,
             "attLittle":attLittles,
             "attBig":attBigs
