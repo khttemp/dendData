@@ -116,6 +116,7 @@ function showTrain() {
 function allCheck(value) {
     let checkDiv = document.getElementById("check");
     let checkboxList = checkDiv.getElementsByTagName("input");
+    let allCheck = document.getElementById("allCheck");
     //チェックを外す
     if (value == 0) {
         for (let i = 0; i < checkboxList.length; i++) {
@@ -124,7 +125,8 @@ function allCheck(value) {
                 checkbox.checked = false;
             }
         }
-        setAttribute("onclick", "allCheck(1)");
+        allCheck.setAttribute("onclick", "allCheck(1)");
+        allCheck.value = "車両表示のチェックを全部選択"
     }
     //チェックする
     else if (value == 1) {
@@ -134,7 +136,8 @@ function allCheck(value) {
                 checkbox.checked = true;
             }
         }
-        setAttribute("onclick", "allCheck(0)");
+        allCheck.setAttribute("onclick", "allCheck(0)");
+        allCheck.value = "車両表示のチェックを全部解除"
     }
 }
 
