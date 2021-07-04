@@ -142,16 +142,6 @@ window.onload = function() {
         trainNameTd.innerHTML = "<h3>" + trainData["name"] + "</h3>";
         trainNameTd.style.textAlign = "center";
 
-        let attNameTr = document.createElement("tr");
-        trainTable.appendChild(attNameTr);
-        for (let j = 0; j < trainData["att"].length + 1; j++) {
-            let td = document.createElement("td");
-            attNameTr.appendChild(td);
-            if (j != 0) {
-                td.innerHTML = trainData["attName"][j-1];
-            }
-        }
-
         createAttTd(trainTable, ["数値", "バイナリテキスト", "16進数"], trainData);
         trainDiv.innerHTML += "<br>";
     }
