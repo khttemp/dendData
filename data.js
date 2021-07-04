@@ -144,8 +144,8 @@ function allCheck(value) {
     showTrain();
 }
 
-window.onload = function() {
-    readTextFile("./LSdata.txt");
+function init(value) {
+    readTextFile(value);
     let rows = allText.split("\r\n");
     let count = 1;
     let mdlCnt = rows[0];
@@ -245,4 +245,14 @@ window.onload = function() {
 
     let allCheckButton = document.getElementById("allCheck");
     allCheckButton.setAttribute("onclick", "allCheck(0)");
+}
+
+function dataChange(value) {
+    let select = value;
+    document.getElementById("body").innerHTML = "";
+    init(select.value);
+}
+
+window.onload = function() {
+    init("./LSdata.txt");
 }
