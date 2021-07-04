@@ -113,6 +113,31 @@ function showTrain() {
     }
 }
 
+function allCheck(value) {
+    let checkDiv = document.getElementById("check");
+    let checkboxList = checkDiv.getElementsByTagName("input");
+    //チェックを外す
+    if (value == 0) {
+        for (let i = 0; i < checkboxList.length; i++) {
+            if (checkboxList[i].type == "checkbox") {
+                let checkbox = checkboxList[i];
+                checkbox.checked = false;
+            }
+        }
+        setAttribute("onclick", "allCheck(1)");
+    }
+    //チェックする
+    else if (value == 1) {
+        for (let i = 0; i < checkboxList.length; i++) {
+            if (checkboxList[i].type == "checkbox") {
+                let checkbox = checkboxList[i];
+                checkbox.checked = true;
+            }
+        }
+        setAttribute("onclick", "allCheck(0)");
+    }
+}
+
 window.onload = function() {
     readTextFile("./LSdata.txt");
     let rows = allText.split("\r\n");
@@ -211,4 +236,7 @@ window.onload = function() {
         let checkbox = `<input type="checkbox" onchange='showTrain()' checked>` + trainData["name"] + `を表示`;
         label.innerHTML = checkbox;
     }
+
+    let allCheckButton = document.getElementById("allCheck");
+    allCheckButton.setAttribute("onclick", "allCheck(0)");
 }
