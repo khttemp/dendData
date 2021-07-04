@@ -81,8 +81,8 @@ window.onload = function() {
         let nameTd = document.createElement("td");
         nameTr.appendChild(nameTd);
         let trainData = data[i];
-        nameTd.setAttribute("colspan", trainData["notch"].length);
-        nameTd.innerHTML = "<h1>" + trainData["name"] + "</h1>";
+        nameTd.setAttribute("colspan", trainData["notch"].length+1);
+        nameTd.innerHTML = "<h3>" + trainData["name"] + "</h3>";
 
         let notchNameTr = document.createElement("tr");
         notchTable.appendChild(notchNameTr);
