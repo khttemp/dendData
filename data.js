@@ -141,6 +141,7 @@ function allCheck(value) {
         allCheck.setAttribute("onclick", "allCheck(0)");
         allCheck.value = "車両表示のチェックを全部解除"
     }
+    showTrain();
 }
 
 window.onload = function() {
