@@ -72,6 +72,7 @@ window.onload = function() {
         });
     }
     let notchDiv = document.getElementById("notch");
+    let trainDiv = document.getElementById("train");
     for (let i = 0; i < data.length; i++) {
         let notchTable = document.createElement("table");
         notchTable.setAttribute("border", "1");
@@ -98,5 +99,32 @@ window.onload = function() {
         createTd(notchTable, "バイナリテキスト", trainData["notchLittle"]);
         createTd(notchTable, "16進数", trainData["notchBig"]);
         notchDiv.innerHTML += "<br>";
+
+        let trainTable = document.createElement("table");
+        trainTable.setAttribute("border", "1");
+        trainDiv.appendChild(trainTable);
+
+        let trainNameTr = document.createElement("tr");
+        trainTable.appendChild(trainNameTr);
+        let trainNameTd = document.createElement("td");
+        trainNameTr.appendChild(trainNameTd);
+        trainNameTd.setAttribute("colspan", trainData["att"].length+1);
+        trainNameTd.innerHTML = "<h3>" + trainData["name"] + "</h3>";
+        trainNameTd.style.textAlign = "center";
+
+        let attNameTr = document.createElement("tr");
+        trainTable.appendChild(attNameTr);
+        for (let j = 0; j < trainData["att"].length + 1; j++) {
+            let td = document.createElement("td");
+            attNameTr.appendChild(td);
+            if (j != 0) {
+                td.innerHTML = trainData["attName"][j-1];
+            }
+        }
+
+        createTd(trainTable, "数値", trainData["att"]);
+        createTd(trainTable, "バイナリテキスト", trainData["attLittle"]);
+        createTd(trainTable, "16進数", trainData["attBig"]);
+        trainDiv.innerHTML += "<br>";
     }
 }
