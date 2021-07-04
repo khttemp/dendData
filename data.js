@@ -36,7 +36,7 @@ function createAttTd(table, titleArray, data) {
                 let td = document.createElement("td");
                 tr.appendChild(td);
                 if (j != 0) {
-                    td.innerHTML = tileArray[j-1];
+                    td.innerHTML = titleArray[j-1];
                 }
             }
         } else {
