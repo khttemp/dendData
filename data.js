@@ -71,17 +71,17 @@ function showBinary(value) {
     let checkbox = value;
     if (checkbox.checked) {
         for (let i = 0; i < binary.length; i++) {
-            binary[i].style.display = "";
-        }
-        for (let i = 0; i < trainName.length; i++) {
-            trainName[i].setAttribute("colspan", 4);
-        }
-    } else {
-        for (let i = 0; i < binary.length; i++) {
             binary[i].style.display = "none";
         }
         for (let i = 0; i < trainName.length; i++) {
             trainName[i].setAttribute("colspan", 2);
+        }
+    } else {
+        for (let i = 0; i < binary.length; i++) {
+            binary[i].style.display = "";
+        }
+        for (let i = 0; i < trainName.length; i++) {
+            trainName[i].setAttribute("colspan", 4);
         }
     }
 }
