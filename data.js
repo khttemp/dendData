@@ -87,7 +87,7 @@ function showBinary(value) {
 }
 
 function showTrain() {
-    let checkDiv = document.getElementById("check");
+    let checkDiv = document.getElementById("trainCheck");
     let checkboxList = checkDiv.getElementsByTagName("input");
     let notchDiv = document.getElementById("notch");
     let notchTable = notchDiv.getElementsByTagName("table");
@@ -116,7 +116,7 @@ function showTrain() {
 }
 
 function allCheck(value) {
-    let checkDiv = document.getElementById("check");
+    let checkDiv = document.getElementById("trainCheck");
     let checkboxList = checkDiv.getElementsByTagName("input");
     let allCheck = document.getElementById("allCheck");
     //チェックを外す
@@ -190,7 +190,7 @@ function init(value) {
     }
     let notchDiv = document.getElementById("notch");
     let trainDiv = document.getElementById("train");
-    let checkDiv = document.getElementById("check");
+    let checkDiv = document.getElementById("trainCheck");
     for (let i = 0; i < data.length; i++) {
         //ノッチ
         let notchTable = document.createElement("table");
@@ -251,6 +251,7 @@ function dataChange(value) {
     let select = value;
     document.getElementById("notch").innerHTML = "";
     document.getElementById("train").innerHTML = "";
+    document.getElementById("trainCheck").innerHTML = "";
     init(select.value);
 }
 
