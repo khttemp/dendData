@@ -97,6 +97,6 @@ window.onload = function() {
         createTd(notchTable, "数値", trainData["notch"]);
         createTd(notchTable, "バイナリテキスト", trainData["notchLittle"]);
         createTd(notchTable, "16進数", trainData["notchBig"]);
-        notchTable.innerHTML += "<br>";
+        notchDiv.innerHTML += "<br>";
     }
 }
