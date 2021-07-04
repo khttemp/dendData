@@ -27,6 +27,36 @@ function createTd(table, title, data) {
     }
 }
 
+function createAttTd(table, titleArray, data) {
+    for (let i = 0; i < data["att"].length+1; i++) {
+        let tr = document.createElement("tr");
+        table.appendChild(tr);
+        if (i == 0) {
+            for (let j = 0; j < titleArray.length + 1; j++) {
+                let td = document.createElement("td");
+                tr.appendChild(td);
+                if (j != 0) {
+                    td.innerHTML = tileArray[j-1];
+                }
+            }
+        } else {
+            for (let j = 0; j < 4; j++) {
+                let td = document.createElement("td");
+                tr.appendChild(td);
+                if (j == 0) {
+                    td.innerHTML = data["attName"][i-1];
+                } else if (j == 1) {
+                    td.innerHTML = data["att"][i-1];
+                } else if (j == 2) {
+                    td.innerHTML = data["attLittle"][i-1];
+                } else if (j == 3) {
+                    td.innerHTML = data["attBig"][i-1];
+                }
+            }
+        }
+    }
+}
+
 window.onload = function() {
     readTextFile("./LSdata.txt");
     let rows = allText.split("\r\n");
@@ -108,7 +138,7 @@ window.onload = function() {
         trainTable.appendChild(trainNameTr);
         let trainNameTd = document.createElement("td");
         trainNameTr.appendChild(trainNameTd);
-        trainNameTd.setAttribute("colspan", trainData["att"].length+1);
+        trainNameTd.setAttribute("colspan", 4);
         trainNameTd.innerHTML = "<h3>" + trainData["name"] + "</h3>";
         trainNameTd.style.textAlign = "center";
 
@@ -122,9 +152,7 @@ window.onload = function() {
             }
         }
 
-        createTd(trainTable, "数値", trainData["att"]);
-        createTd(trainTable, "バイナリテキスト", trainData["attLittle"]);
-        createTd(trainTable, "16進数", trainData["attBig"]);
+        createAttTd(trainTable, ["数値", "バイナリテキスト", "16進数"], trainData);
         trainDiv.innerHTML += "<br>";
     }
 }
