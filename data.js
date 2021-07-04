@@ -15,7 +15,7 @@ function readTextFile(file){
 
 function createTd(table, title, data) {
     let tr = document.createElement("tr");
-    table.appendChild(notchTr);
+    table.appendChild(tr);
     for (let i = 0; i < data.length + 1; i++) {
         let td = document.createElement("td");
         tr.appendChild(td);
@@ -74,7 +74,7 @@ window.onload = function() {
     let notchDiv = document.getElementById("notch");
     for (let i = 0; i < data.length; i++) {
         let notchTable = document.createElement("table");
-        notchTable.style.border = "1";
+        notchTable.setAttribute("border", "1");
         notchDiv.appendChild(notchTable);
         let nameTr = document.createElement("tr");
         notchTable.appendChild(nameTr);
