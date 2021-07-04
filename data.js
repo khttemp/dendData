@@ -15,8 +15,7 @@ function readTextFile(file){
 
 window.onload = function() {
     readTextFile("./data.txt");
-    let rows = allText.split("\n");
-    console.log(rows[0]);
+    let rows = allText.split("\r\n");
     let count = 1;
     let mdlCnt = rows[0];
     let data = [];
@@ -37,13 +36,13 @@ window.onload = function() {
         let attBigs = rows[count];
         data.push({
             "name":name,
-            "notch":notch,
+            "notch":notchs,
             "notchLittle":notchLittles,
             "notchBig":notchBigs,
             "attName":attNames,
             "attLittle":attLittles,
             "attBig":attBigs
         });
-        console.log(data);
     }
+    console.log(data);
 }
