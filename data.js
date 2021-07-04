@@ -249,7 +249,8 @@ function init(value) {
 
 function dataChange(value) {
     let select = value;
-    document.getElementById("body").innerHTML = "";
+    document.getElementById("notch").innerHTML = "";
+    document.getElementById("train").innerHTML = "";
     init(select.value);
 }
 
