@@ -22,18 +22,19 @@ window.onload = function() {
     for (i = 0; i < mdlCnt; i++) {
         let name = rows[count];
         count++;
-        let notchs = rows[count];
+        let notchs = rows[count].split("\t");
         count++;
-        let notchLittles = rows[count];
+        let notchLittles = rows[count].split("\t");
         count++;
-        let notchBigs = rows[count];
+        let notchBigs = rows[count].split("\t");
         count++;
 
-        let attNames = rows[count];
+        let attNames = rows[count].split("\t");
         count++
-        let attLittles = rows[count];
+        let attLittles = rows[count].split("\t");
         count++;
-        let attBigs = rows[count];
+        let attBigs = rows[count].split("\t");
+        count++;
         data.push({
             "name":name,
             "notch":notchs,
