@@ -37,6 +37,8 @@ window.onload = function() {
 
         let attNames = rows[count].split("\t");
         count++
+        let atts = rows[count].split("\t");
+        count++;
         let attLittles = rows[count].split("\t");
         count++;
         let attBigs = rows[count].split("\t");
@@ -50,6 +52,7 @@ window.onload = function() {
             "tlkLittle":tlkLittles,
             "tlkBig":tlkBigs,
             "attName":attNames,
+            "att":atts,
             "attLittle":attLittles,
             "attBig":attBigs
         });
