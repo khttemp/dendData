@@ -13,8 +13,22 @@ function readTextFile(file){
     rawFile.send(null);
 }
 
+function createTd(table, title, data) {
+    let tr = document.createElement("tr");
+    table.appendChild(notchTr);
+    for (let i = 0; i < data.length + 1; i++) {
+        let td = document.createElement("td");
+        tr.appendChild(td);
+        if (i == 0) {
+            td.innerHTML = title
+        } else {
+            td.innerHTML = data[i-1];
+        }
+    }
+}
+
 window.onload = function() {
-    readTextFile("./data.txt");
+    readTextFile("./LSdata.txt");
     let rows = allText.split("\r\n");
     let count = 1;
     let mdlCnt = rows[0];
@@ -57,5 +71,30 @@ window.onload = function() {
             "attBig":attBigs
         });
     }
-    console.log(data);
+    let notchDiv = document.getElementById("notch");
+    for (let i = 0; i < data.length; i++) {
+        let notchTable = document.createElement("table");
+        notchTable.style.border = "1";
+        notchDiv.appendChild(notchTable);
+        let nameTr = document.createElement("tr");
+        notchTable.appendChild(nameTr);
+        let nameTd = document.createElement("td");
+        nameTr.appendChild(nameTd);
+        let trainData = data[i];
+        nameTd.setAttribute("colspan", trainData["notch"].length);
+        nameTd.innerHTML = "<h1>" + trainData["name"] + "</h1>";
+
+        let notchNameTr = document.createElement("tr");
+        notchTable.appendChild(notchNameTr);
+        for (let j = 0; j < trainData["notch"].length + 1; j++) {
+            let td = document.createElement("td");
+            notchNameTr.appendChild(td);
+            if (j != 0) {
+                td.innerHTML = j + "ノッチ";
+            }
+        }
+        createTd(notchTable, "数値", trainData["notch"]);
+        createTd(notchTable, "バイナリテキスト", trainData["notchLittle"]);
+        createTd(notchTable, "16進数", trainData["notchBig"]);
+    }
 }
