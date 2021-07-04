@@ -46,7 +46,7 @@ function createAttTd(table, titleArray, data) {
                 if (j == 0) {
                     td.innerHTML = data["attName"][i-1];
                 } else if (j == 1) {
-                    td.innerHTML = data["att"][i-1].toFixed(4);
+                    td.innerHTML = Number(data["att"][i-1]).toFixed(4);
                 } else if (j == 2) {
                     td.innerHTML = data["attLittle"][i-1];
                 } else if (j == 3) {
