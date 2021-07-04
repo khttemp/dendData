@@ -83,6 +83,7 @@ window.onload = function() {
         let trainData = data[i];
         nameTd.setAttribute("colspan", trainData["notch"].length+1);
         nameTd.innerHTML = "<h3>" + trainData["name"] + "</h3>";
+        nameTd.style.textAlign = "center";
 
         let notchNameTr = document.createElement("tr");
         notchTable.appendChild(notchNameTr);
@@ -96,5 +97,6 @@ window.onload = function() {
         createTd(notchTable, "数値", trainData["notch"]);
         createTd(notchTable, "バイナリテキスト", trainData["notchLittle"]);
         createTd(notchTable, "16進数", trainData["notchBig"]);
+        notchTable.innerHTML += "<br>";
     }
 }
