@@ -9,11 +9,12 @@
             <select onchange="dataChange(this)">
                 <option value="./LSdata.txt" selected>Lightning Stageのデータ</option>
                 <option value="./BSdata.txt">Burning Stageのデータ</option>
+                <option value="./CSdata.txt">Climax Stageのデータ</option>
             </select>
         </div>
         <div>
             <label>
-                <input type="checkbox" onchange="showBinary(this)">バイナリ数値を隠す
+                <input type="checkbox" id="binaryChkbox" onchange="showBinary(this)">バイナリ数値を隠す
             </label>
         </div>
         <div id="check">

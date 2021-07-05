@@ -19,7 +19,7 @@ function createTd(table, title, data) {
     for (let i = 0; i < data.length + 1; i++) {
         let td = document.createElement("td");
         tr.appendChild(td);
-        if (title != "数値") {
+        if (title == "バイナリテキスト" || title == "16進数") {
             tr.className = "binary";
         }
         if (i == 0) {
@@ -144,7 +144,7 @@ function allCheck(value) {
     showTrain();
 }
 
-function init(value) {
+function init(value, flag) {
     readTextFile(value);
     let rows = allText.split("\r\n");
     let count = 1;
@@ -168,6 +168,22 @@ function init(value) {
         let tlkBigs = rows[count].split("\t");
         count++;
 
+        let soundNum;
+        let add;
+        let addLittles;
+        let addBigs;
+
+        if (flag) {
+            soundNum = rows[count].split("\t");
+            count++;
+            add = rows[count].split("\t");
+            count++;
+            addLittles = rows[count].split("\t");
+            count++;
+            addBigs = rows[count].split("\t");
+            count++;
+        }
+
         let attNames = rows[count].split("\t");
         count++
         let atts = rows[count].split("\t");
@@ -176,20 +192,41 @@ function init(value) {
         count++;
         let attBigs = rows[count].split("\t");
         count++;
-        data.push({
-            "name":name,
-            "sound":sound,
-            "notch":notchs,
-            "notchLittle":notchLittles,
-            "notchBig":notchBigs,
-            "tlk":tlks,
-            "tlkLittle":tlkLittles,
-            "tlkBig":tlkBigs,
-            "attName":attNames,
-            "att":atts,
-            "attLittle":attLittles,
-            "attBig":attBigs
-        });
+        if (flag) {
+            data.push({
+                "name":name,
+                "sound":sound,
+                "notch":notchs,
+                "notchLittle":notchLittles,
+                "notchBig":notchBigs,
+                "tlk":tlks,
+                "tlkLittle":tlkLittles,
+                "tlkBig":tlkBigs,
+                "soundNum":soundNum,
+                "add":add,
+                "addLittle":addLittles,
+                "addBig":addBigs,
+                "attName":attNames,
+                "att":atts,
+                "attLittle":attLittles,
+                "attBig":attBigs
+            });
+        } else {
+            data.push({
+                "name":name,
+                "sound":sound,
+                "notch":notchs,
+                "notchLittle":notchLittles,
+                "notchBig":notchBigs,
+                "tlk":tlks,
+                "tlkLittle":tlkLittles,
+                "tlkBig":tlkBigs,
+                "attName":attNames,
+                "att":atts,
+                "attLittle":attLittles,
+                "attBig":attBigs
+            });
+        }
     }
     let notchDiv = document.getElementById("notch");
     let trainDiv = document.getElementById("train");
@@ -224,6 +261,12 @@ function init(value) {
         createTd(notchTable, "数値", trainData["notch"]);
         createTd(notchTable, "バイナリテキスト", trainData["notchLittle"]);
         createTd(notchTable, "16進数", trainData["notchBig"]);
+        if (flag) {
+            createTd(notchTable, "モーター音の番号", trainData["soundNum"]);
+            createTd(notchTable, "加速力の倍率", trainData["add"]);
+            createTd(notchTable, "バイナリテキスト", trainData["addLittle"]);
+            createTd(notchTable, "16進数", trainData["addBig"]);
+        }
         notchDiv.innerHTML += "<br>";
 
         //車両
@@ -259,9 +302,14 @@ function dataChange(value) {
     document.getElementById("notch").innerHTML = "";
     document.getElementById("train").innerHTML = "";
     document.getElementById("trainCheck").innerHTML = "";
-    init(select.value);
+    let flag = true;
+    if (select.value == "./LSdata.txt" || select.value == "./BSdata.txt") {
+        flag = false;
+    }
+    init(select.value, flag);
+    document.getElementById("binaryChkbox").checked = true;
 }
 
 window.onload = function() {
-    init("./LSdata.txt");
+    init("./LSdata.txt", false);
 }
