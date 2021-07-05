@@ -307,7 +307,7 @@ function dataChange(value) {
         flag = false;
     }
     init(select.value, flag);
-    document.getElementById("binaryChkbox").checked = true;
+    document.getElementById("binaryChkbox").checked = false;
 }
 
 window.onload = function() {
