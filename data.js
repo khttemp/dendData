@@ -265,6 +265,9 @@ function init(value, flag) {
         createTd(notchTable, "数値", trainData["notch"]);
         createTd(notchTable, "バイナリテキスト", trainData["notchLittle"]);
         createTd(notchTable, "16進数", trainData["notchBig"]);
+        createTd(notchTable, "tlk", trainData["tlk"]);
+        createTd(notchTable, "バイナリテキスト", trainData["tlkLittle"]);
+        createTd(notchTable, "16進数", trainData["tlk"]);
         if (flag) {
             createTd(notchTable, "モーター音の番号", trainData["soundNum"]);
             createTd(notchTable, "加速力の倍率", trainData["add"]);
