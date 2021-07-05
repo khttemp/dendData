@@ -25,7 +25,7 @@ function createTd(table, title, data) {
         if (i == 0) {
             td.innerHTML = title
         } else {
-            if (title == "数値") {
+            if (title == "tlk") {
                 td.innerHTML = Number(data[i-1]).toFixed(1);
             } else if (title == "加速力の倍率") {
                 td.innerHTML = Number(data[i-1]).toFixed(3);
