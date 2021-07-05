@@ -25,7 +25,11 @@ function createTd(table, title, data) {
         if (i == 0) {
             td.innerHTML = title
         } else {
-            td.innerHTML = data[i-1];
+            if (title == "加速力の倍率") {
+                td.innerHTML = data[i-1].toFixed(3);
+            } else {
+                td.innerHTML = data[i-1];
+            }
         }
     }
 }
