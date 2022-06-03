@@ -1,0 +1,60 @@
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>電Ⅾコミックスクリプト</title>
+    </head>
+    <style>
+        .comicList {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+        .comicTitle {
+            min-width: 90px;
+        }
+        .comicList.comic-num {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        .scriptList {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+    </style>
+    <body ng-controller="myCtrl">
+        <div>
+            <table id="railNo" border="1">
+                <tr>
+                    <th colspan="{{comicList.num.length+1}}">RAIL002.BIN</th>
+                </tr>
+                <tr>
+                    <th class="comicTitle">COMIC</th>
+                    <td ng-repeat="num in comicList.num track by $index" ng-click="updateScript(num)" class="comicList comic-num">{{num | numberFixedLen:3}}</td>
+                </tr>
+                <tr>
+                    <th class="comicTitle">タイプ</th>
+                    <td ng-repeat="type in comicList.type track by $index" class="comicList">{{type}}</td>
+                </tr>
+                <tr>
+                    <th class="comicTitle">レール番号</th>
+                    <td ng-repeat="railNo in comicList.railNo track by $index" class="comicList">{{railNo}}</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div>
+            <table id="script" border="1">
+                <tr ng-repeat="cmdList in selectScript track by $index">
+                    <td ng-repeat="cmd in cmdList track by $index" class="scriptList">{{cmd}}</td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: fixed; right: 10px; top: 10px;">
+            <select id="select" onchange="dataChange(this)"></select>
+        </div>
+    </body>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/script.js"></script>
+</html>

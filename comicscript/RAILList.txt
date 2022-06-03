@@ -1,0 +1,7 @@
+./dend/LS/RAIL002_comic.txt
+./dend/LS/RAIL003_comic.txt
+./dend/LS/RAIL004_comic.txt
+./dend/LS/RAIL005_comic.txt
+./dend/LS/RAIL006_comic.txt
+./dend/LS/RAIL007_comic.txt
+./dend/LS/RAIL008_comic.txt
