@@ -27,7 +27,7 @@
         <div>
             <table id="railNo" border="1">
                 <tr>
-                    <th colspan="{{comicList.num.length+1}}">RAIL002.BIN</th>
+                    <th colspan="{{comicList.num.length+1}}">{{selectFile}}</th>
                 </tr>
                 <tr>
                     <th class="comicTitle">COMIC</th>
@@ -52,7 +52,9 @@
             </table>
         </div>
         <div style="position: fixed; right: 10px; top: 10px;">
-            <select id="select" onchange="dataChange(this)"></select>
+            <select id="select" ng-model="obj" ng-options="rail.name for rail in railList track by rail.path" ng-change="updateFile(obj.path)">
+                <option value="" disabled>レールファイルを選択</option>
+            </select>
         </div>
     </body>
     <script src="./js/angular.min.js"></script>

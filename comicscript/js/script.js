@@ -1,18 +1,52 @@
 angular.module('myApp', ['myModule'])
     .controller('myCtrl', ['$scope', function($scope) {
+        $scope.railList = [];
+        $scope.selectFile = "RAIL002";
+
         $scope.comicList = {
             "num":[],
             "type":[],
             "railNo":[]
         };
-
         $scope.scriptList = {};
         $scope.selectScript = [];
 
         $scope.updateScript = function(num) {
             $scope.selectScript = $scope.scriptList[num];
-            console.log($scope.selectScript);
         }
+
+        $scope.updateFile = function(path) {
+            $scope.comicList = {
+                "num":[],
+                "type":[],
+                "railNo":[]
+            };
+            $scope.scriptList = {};
+            $scope.selectScript = [];
+            readTextFile(path);
+        }
+
+        function readFileList(file){
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function (){
+                if (rawFile.readyState === 4){
+                    if (rawFile.status === 200 || rawFile.status == 0){
+                        var allText = rawFile.responseText;
+                        let rows = allText.split("\r\n");
+                        for (let i = 0; i < rows.length; i++){
+                            let arr = rows[i].split("/");
+                            let temp = arr[arr.length - 1];
+                            let name = temp.split("_")[0];
+                            let info = {"name":name, "path":rows[i]};
+                            $scope.railList.push(info);
+                        }
+                    }
+                }
+            };
+            rawFile.send(null);
+        }
+        readFileList("./RAILList.txt");
 
         function readTextFile(file){
             var rawFile = new XMLHttpRequest();
@@ -21,19 +55,21 @@ angular.module('myApp', ['myModule'])
                 if (rawFile.readyState === 4){
                     if (rawFile.status === 200 || rawFile.status == 0){
                         var allText = rawFile.responseText;
+                        let arr = file.split("/");
+                        let temp = arr[arr.length - 1];
+                        $scope.selectFile = temp.split("_")[0];
                         TableInput(allText);
                     }
                 }
             };
             rawFile.send(null);
         }
-        readTextFile("./dend/LS/RAIL002_comic.txt");
         
         function TableInput(allText){
             let rows = allText.split("\r\n");
             let comicNum = 0;
             let cmdList = [];
-            for (let i = 0; i < rows.length - 1; i++){
+            for (let i = 0; i < rows.length; i++){
                 // \tで分ける
                 let cols = rows[i].split("\t");
                 // comic scriptのタイトル行
@@ -69,6 +105,8 @@ angular.module('myApp', ['myModule'])
                 }
             }
         }
+        readTextFile("./dend/LS/RAIL002_comic.txt");
+        $scope.obj = $scope.railList[0];
     }]);
 
 angular.module('myModule', [])
