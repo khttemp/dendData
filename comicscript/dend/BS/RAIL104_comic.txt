@@ -1,0 +1,1005 @@
+comicTitle	1400	0	-1
+imgList	P143_00.bmp	P143_01.bmp	P143_02.bmp	P143_03.bmp	P143_04.bmp	P144_00.bmp	P144_01.bmp	P144_02.bmp	P145_00.tga	P145_01.bmp	P146_00.tga	P146_01.tga	P146_02.bmp	P147_00.bmp	P147_01.bmp	P147_02.bmp	P147_03.bmp	P148_00.bmp	P149_00.bmp	P149_01.bmp	P149_02.bmp	P149_03.bmp	P149_04.bmp	P149_05.bmp	FRAME_1280x720.tga
+seList	P145_00.ogg	P145_01.ogg	P145_02.ogg	P145_03.ogg	P146_00.ogg	P146_01.ogg	P146_02.ogg	P146_03.ogg	P146_04.ogg	P146_05.ogg	P146_06.ogg	P147_00.ogg	P147_01.ogg	P147_02.ogg	P149_00.ogg	P149_01.ogg	P149_02.ogg	P149_03.ogg	P149_04.ogg	P149_05MIX.ogg	P149_06.ogg	P149_07.ogg
+bgmList	Silent_Wind.ogg
+GOTO_SCRIPT	1995.0
+IS_NO_DRAMA	100.0	200.0
+FROM	100.0
+ComicEnd	
+FROM	200.0
+GOING	1.0	1.0
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	1.0
+SkipEventFlg	1.0
+PlayComicBGM	0.0	-1.0	0.0
+VolComicBGM	0.0	100.0	60.0
+Fill_BG	1.0
+CamComtroll	0.0
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	2.0
+CAM_TARGET_PER	1.0	7.0	0.0
+TRAIN_SPEED	2.0	0.0	0.0	0.0
+TO_RAIL	2.0	429.0	0.0
+RAIL_POS_TO_BUFF	432.0	3.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	-5.0	5.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	7.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+WaitFrame	30.0
+TRAIN_SPEED	2.0	150.0	1.0	180.0
+RAIL_POS_TO_BUFF	432.0	3.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	-8.0	5.0	0.0	120.0	7.0
+VolComicBGM	0.0	70.0	30.0
+WaitFrame	30.0
+SetComic	2.0	8.0
+ComicPos	2.0	-505.0	-191.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	60.0	0.0
+PlayComicSE	0.0	0.0	0.0	0.0	1.0
+WaitFrame	90.0
+ComicSceneStop	0.0
+SLEEP_TRAIN	2.0	1.0
+TRAIN_SPEED	2.0	0.0	0.0	0.0
+TO_RAIL	2.0	44.0	0.0
+CamComtroll	0.0
+SetComic	1.0	24.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+BtnWait	
+EyeMove	264.0	718.0	60.0	7.0
+SetComic	3.0	9.0
+ComicPos	3.0	264.0	718.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	1.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-308.0	640.0	60.0	7.0
+SetComic	4.0	12.0
+ComicPos	4.0	-308.0	640.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+PlayComicSE	2.0	0.0	0.0	1.0	0.0
+PlayComicSE	3.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1300.0	0.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	672.0	411.0	0.0	0.0
+SetComic	0.0	13.0
+ComicPos	0.0	672.0	411.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	4.0	0.0	0.0	1.0	0.0
+PlayComicSE	5.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	672.0	1140.0	60.0	7.0
+CamComtroll	0.0
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	1.0
+CAM_TARGET_PER	0.5	7.0	0.0
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	0.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+TO_RAIL	0.0	426.0	100.0
+TO_RAIL	1.0	426.0	0.0
+TRAIN_SPEED	0.0	30.0	1.0	0.0
+TRAIN_SPEED	1.0	30.0	1.0	0.0
+RAIL_POS_TO_BUFF	432.0	3.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	-5.0	5.0	0.0	0.0	0.0
+Scene_to_Comic	1.0	1280.0	720.0
+ComicPos	1.0	672.0	1140.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic_Blur	1.0	0.0
+SetComic_Blur_Speed	1.0	2.5	0.0	0.0
+WaitFrame	90.0
+SetComic	2.0	10.0
+ComicPos	2.0	1195.0	983.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+PlayComicSE	6.0	0.0	0.0	1.0	0.0
+SetComic	3.0	11.0
+ComicPos	3.0	155.0	991.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	7.0	0.0	0.0	1.0	0.0
+ComicSceneStop	1.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+SetComic	4.0	24.0
+ComicPos	4.0	672.0	1140.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+BtnWait	
+EyeMove	-189.0	1225.0	60.0	7.0
+SetComic	5.0	15.0
+ComicPos	5.0	-189.0	1225.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+PlayComicSE	8.0	0.0	0.0	1.0	0.0
+PlayComicSE	9.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	171.0	1802.0	60.0	7.0
+SetComic	6.0	16.0
+ComicPos	6.0	171.0	1802.0	0.0	0.0
+ComicAlpha	6.0	0.0	255.0	30.0	0.0
+PlayComicSE	10.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1400.0	800.0	30.0	2.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	0.0	0.0	0.0	0.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+TO_RAIL	0.0	428.0	100.0
+TO_RAIL	1.0	428.0	0.0
+TRAIN_SPEED	0.0	30.0	1.0	0.0
+TRAIN_SPEED	1.0	30.0	1.0	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	1.0
+CAM_TARGET_PER	0.5	7.0	0.0
+RAIL_POS_TO_BUFF	432.0	1.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	-5.0	5.0	0.0	0.0	0.0
+PlayComicSE	11.0	0.0	0.0	1.0	0.0
+TRAIN_SPEED	0.0	148.0	1.0	480.0
+TRAIN_SPEED	1.0	150.0	1.0	480.0
+PlayComicSE	12.0	0.0	0.0	1.0	0.0
+PlayComicSE	13.0	0.0	0.0	1.0	0.0
+WAIT_RAIL_ONLY	0.0	432.0	600.0
+SetComic_Blur_Speed	0.0	0.0	10.0	0.0
+TRAIN_SPEED	0.0	5.0	0.0	15.0
+TRAIN_SPEED	1.0	5.0	0.0	15.0
+SetComic	1.0	17.0
+ComicPos	1.0	740.0	207.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	1.0	1.0
+ComicPos	1.0	0.0	207.0	60.0	2.0
+WaitFrame	90.0
+ComicPos	1.0	-740.0	207.0	60.0	1.0
+WaitFrame	30.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+SetComic_Blur_Speed	0.0	2.5	10.0	0.0
+TRAIN_SPEED	0.0	148.0	0.0	30.0
+TRAIN_SPEED	1.0	150.0	0.0	30.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	0.0	-20.0	30.0	2.0
+SET_CAM_TARGET_OFFSET	1.0	0.0	0.0	-20.0	30.0	2.0
+BUFF_TO_SC_CAM_POS	0.0	-7.0	12.0	80.0	2.0	30.0
+WaitFrame	30.0
+ComicSceneStop	0.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+SetComic	2.0	24.0
+ComicPos	2.0	672.0	1140.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+BtnWait	
+EyeMove	-1400.0	0.0	30.0	2.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	682.0	412.0	0.0	0.0
+SetComic	0.0	18.0
+ComicPos	0.0	682.0	412.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	14.0	0.0	0.0	1.0	0.0
+PlayComicSE	15.0	0.0	0.0	1.0	0.0
+PlayComicSE	16.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	986.0	843.0	30.0	2.0
+SetComic	1.0	19.0
+ComicPos	1.0	986.0	843.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	17.0	0.0	0.0	1.0	0.0
+PlayComicSE	18.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	487.0	843.0	30.0	2.0
+SetComic	2.0	20.0
+ComicPos	2.0	487.0	843.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+PlayComicSE	19.0	0.0	0.0	0.0	1.0
+START_TIME_LINE	
+WAIT_TIME_LINE	372.0
+SetComic	3.0	21.0
+ComicPos	3.0	248.0	822.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	0.0	0.0
+BtnWait	
+VolComicBGM	0.0	0.0	60.0
+STAGE_BGM	
+EyeMove	937.0	1357.0	60.0	2.0
+SetComic	5.0	22.0
+ComicPos	5.0	937.0	1357.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+PlayComicSE	20.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	432.0	1417.0	30.0	2.0
+SetComic	4.0	23.0
+ComicPos	4.0	432.0	1417.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+PlayComicSE	21.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1300.0	800.0	60.0	2.0
+WaitMoveEye	1.0
+SkipEventPoint	
+StopComicBGM	0.0	30.0
+STAGE_BGM	
+HideALLComic	
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	0.0
+SLEEP_TRAIN	2.0	1.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+TO_RAIL	0.0	440.0	100.0
+TO_RAIL	1.0	446.0	0.0
+TRAIN_SPEED	0.0	140.0	0.0	0.0
+TRAIN_SPEED	1.0	140.0	0.0	0.0
+SET_CPU_MODE	1.0	1.0	400.0	450.0	160.0	140.0	110.0	0.0	0.0
+SET_CPU_FLG	1.0	0.0
+CamComtroll	0.0
+BG_Alpha	0.0	60.0	0.0	0.0
+BG_Wait	
+Fill_BG	0.0
+RACE_START	
+DIS_TRAIN_SPEED	0.0
+DIS_TRAIN_SPEED	1.0
+ComicEnd	
+comicTitle	1402	0	492
+imgList
+seList
+bgmList
+CHK_LENGTH	410.0	0.0	60.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	1264.0	-1.0
+FTV_NEXT_PROC	1265.0	1264.0
+FTV_End	1265.0
+FTV_NEXT_PROC	1266.0	-1.0
+FTV_End	1266.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+END_CHK_LENGTH	0.0
+ComicEnd	
+comicTitle	1403	0	537
+imgList
+seList
+bgmList
+CHK_LENGTH	400.0	0.0	60.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	1270.0	-1.0
+FTV_End	1270.0
+WaitFrame	60.0
+FTV_NEXT_PROC	1271.0	-1.0
+FTV_NEXT_PROC	1272.0	1271.0
+FTV_End	1272.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+END_CHK_LENGTH	0.0
+ComicEnd	
+comicTitle	1404	1	652
+imgList
+seList
+bgmList
+WAIT_RAIL_ONLY	1.0	655.0	6000.0
+Stage_BGM_Vol	70.0	30.0	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+SET_CAMPOINT_2P2C	0.0	20.0	0.0	8.0	0.0	1.0	20.0	0.0	8.0	0.0	0.0
+CAM_TARGET_PER	1.0	7.0	0.0
+CAM_POINT_PER	1.0	7.0	0.0
+CHANGE_SPEED	0.15	30.0	-1.0
+SET_CAM_OFFSET	0.0	-5.0	12.0	0.0	7.0	120.0
+TRAIN_UD	1.0	1.0
+R_Drift	1.0
+FTV_NEXT_PROC	1273.0	-1.0
+R_Drift	1.0
+WaitFrame	5.0
+FTV_NEXT_PROC	1274.0	1273.0
+FTV_End	1274.0
+WaitFrame	5.0
+L_Drift	1.0
+FTV_NEXT_PROC	1267.0	-1.0
+FTV_End	1267.0
+SET_CPU_MODE	1.0	1.0	700.0	800.0	180.0	150.0	110.0	0.0	0.0
+HideMsgWnd	
+CHANGE_SPEED	1.0	60.0	-1.0
+CHK_LENGTH	450.0	0.0	30.0
+ADD_POINT	0.0	10.0
+END_CHK_LENGTH	0.0
+GOTO_SCRIPT	1401.0
+ComicSceneStop	0.0
+CamComtroll	0.0
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+WaitFrame	31.0
+ComicEnd	
+comicTitle	1401	0	196
+imgList	P157_MSG0.bmp	P157_MSG1.bmp	P157_MSG2.bmp	P157_MSG3.bmp	P160_00.bmp	P160_01.bmp	P161_00.bmp	P161_01.bmp	P161_02.bmp	P162_00.bmp	P162_01.bmp	P162_02.bmp	P163_00.bmp	P163_00b.bmp	P163_01.bmp	P163_02.bmp	P163_03.bmp	P164_00.bmp	P164_01.bmp	P164_02.bmp	P164_03.bmp	P164_04.bmp	P164_05.bmp	P165_00.bmp	P165_01.bmp	P165_02.bmp	P165_03.bmp	P166_00.bmp	P166_01.bmp	P166_02.bmp	P166_03.bmp	P166_04.bmp	P166_05.bmp	P167_00.bmp	P167_01.bmp	P167_02.bmp	P167_03.bmp	P168_00.bmp	P168_01.bmp	P168_03.bmp	P168_04.bmp	P168_05.bmp	P169_00.bmp	P169_01.bmp	P169_02.bmp	P169_03.bmp	P170_00.bmp	P170_01.bmp	P170_02.bmp	P170_03.bmp	P171_00.bmp	P171_01.bmp	P171_02.bmp	P171_03.bmp	P171_04.bmp	P172_00.bmp	P172_01.bmp	P172_02.bmp	P173_00.bmp	P173_01.bmp	P173_03.bmp	P173_04.bmp	P173_05.bmp	FRAME_1280x720.tga	P161_10.bmp	P161_11.bmp	P161_12.bmp	P162_10.bmp	P162_11.bmp	P163_10.bmp	P163_11.bmp	P164_10.bmp	P165_10.bmp	P165_11.bmp
+seList	VO1404.ogg	VO1405.ogg	P162_10.ogg	P162_02.ogg	P162_11.ogg	P163_00.ogg	P163_01.ogg	P163_02.ogg	P164_00.ogg	P163_10.ogg	P164_00.ogg	P164_10.ogg	P165_10.ogg	P165_11.ogg	P165_12.ogg	P165_13.ogg	P165_01.ogg	P165_02.ogg	P165_06.ogg	P166_00.ogg	P166_MIX.ogg	P166_MIX2.ogg	P166_KIKAN.ogg	P166_MIX3.ogg	P167_00.ogg	P167_01.ogg	P167_02.ogg	P167_03.ogg	P168_DOOR.ogg	P168_10.ogg	P168_MIX.ogg	P168_02.ogg	P168_03.ogg	P168_04.ogg	P169MIX.ogg	P169_04.ogg	P169_05.ogg	P169_06.ogg	P169_07.ogg	P169_08.ogg	P170_00.ogg	P170_02.ogg	P170MIX.ogg	BOMB.ogg	BREAKE_OUT02.ogg	SIPA.ogg	BOMB.ogg
+bgmList	AcidRain.ogg	Silent_Wind.ogg	1_24_BGM.ogg
+WAIT_RAIL_ONLY	0.0	660.0	6000.0
+Stage_BGM_Vol	70.0	30.0	0.0
+EyeMove	640.0	360.0	0.0	7.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	640.0	360.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+SET_CAMPOINT_2P2C	0.0	20.0	0.0	8.0	0.0	1.0	20.0	0.0	8.0	0.0	0.0
+CAM_TARGET_PER	1.0	7.0	0.0
+CAM_POINT_PER	0.0	7.0	0.0
+CHANGE_SPEED	0.25	30.0	-1.0
+SET_CAM_OFFSET	0.0	0.0	12.0	0.0	7.0	60.0
+WaitFrame	30.0
+SetComic	1.0	0.0
+ComicPos	1.0	1194.0	152.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	15.0	0.0
+WaitFrame	30.0
+SetComic	2.0	1.0
+ComicPos	2.0	1078.0	362.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	15.0	0.0
+WaitFrame	30.0
+SetComic	3.0	2.0
+ComicPos	3.0	249.0	183.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	15.0	0.0
+WaitFrame	30.0
+CHK_POINT	0.0	10.0
+GOTO	100.0
+END_CHK_POINT	0.0
+GOTO	200.0
+FROM	100.0
+STORY_CLEAR	4.0
+STORY_OPEN	5.0
+SAVE_GAME	
+SkipEventFlg	1.0
+Fill_BG	1.0
+SetComic	4.0	3.0
+ComicPos	4.0	100.0	439.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	15.0	0.0
+WaitFrame	30.0
+ComicSceneStop	0.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+CHANGE_SPEED	1.0	0.0	-1.0
+SetComic	5.0	63.0
+ComicPos	5.0	640.0	360.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	60.0	0.0
+BtnWait	
+EyeMove	-800.0	-500.0	30.0	2.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	0.0	0.0	0.0	0.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+TO_RAIL	0.0	1220.0	100.0
+TO_RAIL	1.0	1060.0	0.0
+TRAIN_SPEED	0.0	150.0	0.0	0.0
+SET_CAMPOINT_2P2C	0.0	5.0	-20.0	20.0	0.0	1.0	5.0	-7.0	8.0	0.0	0.0
+CAM_TARGET_PER	0.0	7.0	0.0
+CAM_POINT_PER	0.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	0.0	-20.0	0.0	0.0
+WaitFrame	60.0
+CHK_TRAIN_TYPE	0.0	0.0	100.0	200.0
+FROM	100.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	0.0	7.0	1.0	1.0	1.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	0.0	8.0	1.0	1.0	1.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	0.0	9.0	1.0	1.0	1.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	1.0	3.0	1.0	1.0	1.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	2.0	3.0	1.0	1.0	1.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	3.0	3.0	1.0	1.0	1.0
+FROM	200.0
+CHANGE_SPEED	0.25	30.0	-1.0
+PlayComicSE	43.0	0.0	0.0	0.0	1.0
+PlayComicSE	46.0	0.0	0.0	0.0	1.0
+TRACK_BOMB	0.0
+WaitFrame	5.0
+PlayComicSE	44.0	0.0	0.0	0.0	1.0
+CHK_TRAIN_TYPE	0.0	0.0	100.0	200.0
+FROM	100.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	0.0	7.0	0.0	0.0	0.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	0.0	8.0	0.0	0.0	0.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	0.0	9.0	0.0	0.0	0.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	1.0	3.0	0.0	0.0	0.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	2.0	3.0	0.0	0.0	0.0
+CNG_TRAIN_NO_MAT_COL	0.0	1.0	3.0	3.0	0.0	0.0	0.0
+FROM	200.0
+WaitFrame	45.0
+CHANGE_SPEED	1.0	0.0	-1.0
+TRAIN_SPEED	0.0	0.0	600.0	1.0
+Stage_BGM_Vol	0.0	600.0	0.0
+SET_CAM_POINT_LENGTH	0.0	-20.0	7.0	0.0
+SET_CAM_OFFSET	0.0	10.0	1.0	0.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	-2.0	-8.0	0.0	0.0
+WaitFrame	180.0
+SET_CAM_POINT_LENGTH	0.0	-60.0	7.0	120.0
+SET_CAM_OFFSET	0.0	15.0	5.0	0.0	7.0	120.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	0.0	-30.0	7.0	120.0
+WaitFrame	300.0
+SET_CAM_OFFSET	0.0	15.0	15.0	0.0	7.0	120.0
+WaitFrame	120.0
+ComicSceneStop	0.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	1.0	1.0
+STOP_3D	1.0
+SetComic	1.0	63.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	324.0	693.0	90.0	7.0
+SetComic	2.0	4.0
+ComicPos	2.0	324.0	693.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	-181.0	693.0	90.0	7.0
+SetComic	3.0	5.0
+ComicPos	3.0	-181.0	639.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	-1600.0	0.0	90.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	956.0	445.0	0.0	0.0
+SetComic	0.0	64.0
+ComicPos	0.0	956.0	445.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	456.0	445.0	30.0	7.0
+SetComic	1.0	65.0
+ComicPos	1.0	456.0	375.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	924.0	915.0	30.0	7.0
+SetComic	2.0	66.0
+ComicPos	2.0	924.0	915.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	562.0	915.0	30.0	7.0
+SetComic	3.0	6.0
+ComicPos	3.0	562.0	909.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	323.0	915.0	30.0	7.0
+SetComic	4.0	7.0
+ComicPos	4.0	323.0	908.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	680.0	1389.0	60.0	7.0
+SetComic	5.0	8.0
+ComicPos	5.0	680.0	1389.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+PlayComicSE	0.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-800.0	0.0	90.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	685.0	416.0	0.0	0.0
+SetComic	0.0	9.0
+ComicPos	0.0	685.0	416.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	1.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	892.0	942.0	60.0	2.0
+SetComic	1.0	67.0
+ComicPos	1.0	892.0	908.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	404.0	942.0	60.0	2.0
+SetComic	2.0	68.0
+ComicPos	2.0	404.0	942.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	984.0	1433.0	60.0	2.0
+SetComic	3.0	10.0
+ComicPos	3.0	984.0	1483.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	2.0	0.0	0.0	1.0	0.0
+BtnWait	
+PlayComicBGM	0.0	-1.0	0.0
+VolComicBGM	0.0	70.0	60.0
+EyeMove	498.0	1483.0	60.0	2.0
+SetComic	4.0	11.0
+ComicPos	4.0	498.0	1503.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+PlayComicSE	3.0	0.0	0.0	1.0	0.0
+PlayComicSE	4.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1000.0	300.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	875.0	480.0	0.0	0.0
+SetComic	0.0	12.0
+ComicPos	0.0	875.0	480.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	5.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	385.0	480.0	30.0	2.0
+SetComic	1.0	14.0
+ComicPos	1.0	385.0	480.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	6.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	858.0	1100.0	90.0	7.0
+SetComic	2.0	69.0
+ComicPos	2.0	858.0	1222.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	90.0	0.0
+BtnWait	
+EyeMove	1027.0	1600.0	30.0	2.0
+SetZoom	1.2	30.0	2.0
+BtnWait	
+EyeMove	354.0	950.0	30.0	7.0
+SetZoom	1.0	30.0	7.0
+SetComic	3.0	70.0
+ComicPos	3.0	354.0	1275.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	7.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	354.0	1350.0	30.0	7.0
+PlayComicSE	9.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1000.0	300.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	699.0	374.0	0.0	0.0
+SetComic	0.0	71.0
+ComicPos	0.0	699.0	374.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	699.0	1200.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	989.0	878.0	0.0	0.0
+SetComic	1.0	17.0
+ComicPos	1.0	989.0	878.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	667.0	878.0	30.0	7.0
+SetComic	0.0	18.0
+ComicPos	0.0	667.0	876.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	357.0	910.0	30.0	7.0
+SetComic	2.0	19.0
+ComicPos	2.0	357.0	910.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	988.0	1389.0	30.0	7.0
+SetComic	3.0	20.0
+ComicPos	3.0	988.0	1389.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	720.0	1389.0	30.0	7.0
+PlayComicSE	44.0	0.0	0.0	0.0	1.0
+SetComic	4.0	21.0
+ComicPos	4.0	720.0	1410.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	400.0	1389.0	30.0	7.0
+SetComic	5.0	22.0
+ComicPos	5.0	400.0	1389.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+PlayComicSE	10.0	0.0	0.0	1.0	0.0
+PlayComicSE	11.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1600.0	300.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	994.0	492.0	0.0	0.0
+SetComic	0.0	23.0
+ComicPos	0.0	994.0	492.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	12.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	652.0	492.0	30.0	7.0
+SetComic	1.0	24.0
+ComicPos	1.0	652.0	498.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	309.0	492.0	30.0	7.0
+SetComic	2.0	72.0
+ComicPos	2.0	309.0	485.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	845.0	1028.0	30.0	7.0
+SetComic	3.0	73.0
+ComicPos	3.0	845.0	1028.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	13.0	0.0	0.0	1.0	0.0
+PlayComicSE	17.0	0.0	0.0	1.0	0.0
+WaitFrame	30.0
+PlayComicSE	16.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	354.0	1071.0	30.0	7.0
+SetComic	4.0	25.0
+ComicPos	4.0	354.0	1071.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+PlayComicSE	14.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	679.0	1513.0	30.0	7.0
+SetComic	5.0	26.0
+ComicPos	5.0	679.0	1513.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+PlayComicSE	15.0	0.0	0.0	1.0	0.0
+PlayComicSE	18.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1600.0	300.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	1101.0	430.0	0.0	0.0
+SetComic	0.0	27.0
+ComicPos	0.0	1101.0	430.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	19.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	821.0	430.0	60.0	7.0
+SetComic	1.0	28.0
+ComicPos	1.0	821.0	430.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	468.0	430.0	60.0	7.0
+SetComic	2.0	29.0
+ComicPos	2.0	468.0	442.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+PlayComicSE	20.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	684.0	897.0	30.0	2.0
+SetComic	3.0	30.0
+ComicPos	3.0	684.0	897.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	3.0	1.0
+PlayComicSE	21.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	1035.0	1454.0	15.0	2.0
+SetComic	4.0	31.0
+ComicPos	4.0	1035.0	1454.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	15.0	0.0
+SHEAK_COMIC	4.0	1.0
+PlayComicSE	22.0	0.0	0.0	0.0	1.0
+WaitFrame	30.0
+EyeMove	498.0	1445.0	30.0	2.0
+SetComic	5.0	32.0
+ComicPos	5.0	498.0	1445.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	5.0	1.0
+PlayComicSE	23.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1600.0	300.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	671.0	340.0	0.0	7.0
+SetComic	0.0	33.0
+ComicPos	0.0	671.0	340.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	24.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	688.0	891.0	60.0	7.0
+SetComic	1.0	34.0
+ComicPos	1.0	688.0	891.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	25.0	0.0	0.0	1.0	0.0
+PlayComicSE	26.0	0.0	0.0	1.0	0.0
+BtnWait	
+VolComicBGM	0.0	0.0	60.0
+EyeMove	688.0	1600.0	60.0	7.0
+WaitMoveEye	1.0
+HideALLComic	
+StopComicBGM	0.0	0.0
+EyeMove	955.0	1453.0	0.0	0.0
+SetComic	1.0	35.0
+ComicPos	1.0	955.0	1453.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicBGM	1.0	-1.0	0.0
+VolComicBGM	1.0	70.0	60.0
+BtnWait	
+EyeMove	459.0	1453.0	30.0	2.0
+SetComic	0.0	36.0
+ComicPos	0.0	459.0	1490.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	27.0	0.0	0.0	1.0	0.0
+HideALLComic	
+EyeMove	960.0	338.0	0.0	0.0
+SetComic	0.0	37.0
+ComicPos	0.0	960.0	338.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	0.0	1.0
+PlayComicSE	28.0	0.0	0.0	1.0	0.0
+EyeMove	354.0	398.0	30.0	2.0
+SetComic	1.0	38.0
+ComicPos	1.0	354.0	398.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	29.0	0.0	0.0	0.0	1.0
+WaitFrame	60.0
+EyeMove	680.0	936.0	30.0	2.0
+SetComic	2.0	39.0
+ComicPos	2.0	680.0	936.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+BtnWait	
+EyeMove	1008.0	1485.0	30.0	2.0
+SetComic	3.0	40.0
+ComicPos	3.0	1008.0	1485.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	30.0	0.0	0.0	1.0	0.0
+PlayComicSE	31.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	498.0	1620.0	30.0	2.0
+SetComic	4.0	41.0
+ComicPos	4.0	498.0	1620.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+PlayComicSE	32.0	0.0	0.0	1.0	0.0
+PlayComicSE	33.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1200.0	800.0	30.0	2.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	651.0	502.0	0.0	0.0
+SetComic	0.0	42.0
+ComicPos	0.0	651.0	502.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	34.0	0.0	0.0	1.0	0.0
+SHEAK_COMIC	0.0	1.0
+PlayComicSE	35.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	1056.0	1110.0	30.0	7.0
+SetComic	1.0	43.0
+ComicPos	1.0	1056.0	1110.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	36.0	0.0	0.0	1.0	0.0
+PlayComicSE	37.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	566.0	1110.0	30.0	7.0
+SetComic	2.0	44.0
+ComicPos	2.0	566.0	1110.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+PlayComicSE	38.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	680.0	1505.0	30.0	7.0
+SetComic	3.0	45.0
+ComicPos	3.0	680.0	1559.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	39.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	-1600.0	800.0	30.0	2.0
+WaitMoveEye	1.0
+HideALLComic	
+EyeMove	684.0	405.0	0.0	0.0
+SetComic	1.0	46.0
+ComicPos	1.0	684.0	405.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	40.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	684.0	882.0	60.0	7.0
+SetComic	0.0	47.0
+ComicPos	0.0	680.0	882.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	41.0	0.0	0.0	1.0	0.0
+VolComicBGM	1.0	0.0	90.0
+BtnWait	
+PlayComicBGM	2.0	-1.0	0.0
+VolComicBGM	2.0	70.0	15.0
+EyeMove	684.0	1411.0	30.0	7.0
+SetComic	2.0	48.0
+ComicPos	2.0	663.0	1411.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+PlayComicSE	42.0	0.0	0.0	1.0	0.0
+BtnWait	
+FROM	200.0
+SkipEventPoint	
+StopComicBGM	0.0	60.0
+StopComicBGM	1.0	60.0
+StopComicBGM	2.0	60.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	
+comicTitle	1995	0	-1
+imgList	H2000_SIDE_SANNOMIYA.bmp	tx_k8000_sannomiya.bmp	TX_H7001_SANNOMIYA.bmp	K2100_For_Sannomiya.bmp	H2000_SANNOMIYA.tga	K800_SANNOMIYA.tga	H2000_SIDE_KAISO.bmp	Crealr.tga	KAISO.tga	H2000_SIDE_KAISO.bmp	K8000_KAISO.bmp	K800_KAISO.tga	K2100_For_KAISO.bmp	black.bmp	223_Kaiso.bmp	223_LED_1.bmp	223_LED_2.bmp	223_LED_3.bmp	223_LED_4.bmp	223_LED_5.bmp	223_LED_6.bmp	223_LED_7.bmp	223_LED_8.bmp
+seList
+bgmList
+CHK_TRAIN_TYPE	0.0	0.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	9.0	0.0	0.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	1.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	2.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	3.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	4.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	5.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	6.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	7.0	0.0	0.0
+TX_2_TRAIN	7.0	0.0	0.0	0.0	13.0
+TX_2_TRAIN	7.0	0.0	7.0	0.0	13.0
+TX_2_TRAIN	8.0	0.0	0.0	0.0	12.0
+TX_2_TRAIN	8.0	0.0	7.0	0.0	12.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	1.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	10.0	0.0	0.0	0.0	1.0
+TX_2_TRAIN	10.0	0.0	1.0	0.0	1.0
+TX_2_TRAIN	10.0	0.0	2.0	0.0	1.0
+TX_2_TRAIN	10.0	0.0	3.0	0.0	1.0
+TX_2_TRAIN	10.0	0.0	4.0	0.0	1.0
+TX_2_TRAIN	10.0	0.0	5.0	0.0	1.0
+TX_2_TRAIN	10.0	0.0	6.0	0.0	1.0
+TX_2_TRAIN	10.0	0.0	7.0	0.0	1.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	2.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	9.0	0.0	0.0	0.0	2.0
+TX_2_TRAIN	9.0	0.0	1.0	0.0	2.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	4.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	9.0	0.0	0.0	0.0	1.0
+TX_2_TRAIN	9.0	0.0	1.0	0.0	1.0
+TX_2_TRAIN	9.0	0.0	2.0	0.0	1.0
+TX_2_TRAIN	9.0	0.0	3.0	0.0	1.0
+TX_2_TRAIN	9.0	0.0	4.0	0.0	1.0
+TX_2_TRAIN	9.0	0.0	5.0	0.0	1.0
+TX_2_TRAIN	9.0	0.0	6.0	0.0	1.0
+TX_2_TRAIN	9.0	0.0	7.0	0.0	1.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	5.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	12.0	0.0	0.0	0.0	10.0
+TX_2_TRAIN	12.0	0.0	7.0	0.0	10.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	6.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	12.0	0.0	0.0	0.0	10.0
+TX_2_TRAIN	12.0	0.0	7.0	0.0	10.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	7.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	9.0	0.0	0.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	1.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	2.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	3.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	4.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	5.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	6.0	0.0	0.0
+TX_2_TRAIN	9.0	0.0	7.0	0.0	0.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	8.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	11.0	0.0	0.0	0.0	11.0
+TX_2_TRAIN	11.0	0.0	1.0	0.0	6.0
+TX_2_TRAIN	11.0	0.0	2.0	0.0	6.0
+TX_2_TRAIN	11.0	0.0	3.0	0.0	11.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	9.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	13.0	0.0	0.0	2.0	18.0
+TX_2_TRAIN	13.0	0.0	0.0	2.0	19.0
+TX_2_TRAIN	13.0	0.0	1.0	2.0	16.0
+TX_2_TRAIN	13.0	0.0	2.0	2.0	16.0
+TX_2_TRAIN	13.0	0.0	3.0	2.0	16.0
+TX_2_TRAIN	13.0	0.0	4.0	2.0	16.0
+TX_2_TRAIN	13.0	0.0	5.0	2.0	16.0
+TX_2_TRAIN	13.0	0.0	6.0	2.0	16.0
+TX_2_TRAIN	13.0	0.0	7.0	2.0	18.0
+TX_2_TRAIN	13.0	0.0	7.0	2.0	19.0
+TX_2_TRAIN	15.0	0.0	0.0	2.0	21.0
+TX_2_TRAIN	16.0	0.0	1.0	2.0	18.0
+TX_2_TRAIN	17.0	0.0	2.0	2.0	18.0
+TX_2_TRAIN	18.0	0.0	3.0	2.0	18.0
+TX_2_TRAIN	19.0	0.0	4.0	2.0	18.0
+TX_2_TRAIN	20.0	0.0	5.0	2.0	18.0
+TX_2_TRAIN	21.0	0.0	6.0	2.0	18.0
+TX_2_TRAIN	22.0	0.0	7.0	2.0	21.0
+TX_2_TRAIN	14.0	0.0	0.0	2.0	22.0
+TX_2_TRAIN	14.0	0.0	7.0	2.0	22.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	0.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	0.0	1.0	0.0	0.0	0.0
+TX_2_TRAIN	0.0	1.0	1.0	0.0	0.0
+TX_2_TRAIN	0.0	1.0	2.0	0.0	0.0
+TX_2_TRAIN	0.0	1.0	3.0	0.0	0.0
+TX_2_TRAIN	0.0	1.0	4.0	0.0	0.0
+TX_2_TRAIN	0.0	1.0	5.0	0.0	0.0
+TX_2_TRAIN	0.0	1.0	6.0	0.0	0.0
+TX_2_TRAIN	0.0	1.0	7.0	0.0	0.0
+TX_2_TRAIN	4.0	1.0	0.0	0.0	13.0
+TX_2_TRAIN	4.0	1.0	7.0	0.0	13.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	1.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	1.0	1.0	0.0	0.0	1.0
+TX_2_TRAIN	1.0	1.0	1.0	0.0	1.0
+TX_2_TRAIN	1.0	1.0	2.0	0.0	1.0
+TX_2_TRAIN	1.0	1.0	3.0	0.0	1.0
+TX_2_TRAIN	1.0	1.0	4.0	0.0	1.0
+TX_2_TRAIN	1.0	1.0	5.0	0.0	1.0
+TX_2_TRAIN	1.0	1.0	6.0	0.0	1.0
+TX_2_TRAIN	1.0	1.0	7.0	0.0	1.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	2.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	2.0	1.0	0.0	0.0	2.0
+TX_2_TRAIN	2.0	1.0	1.0	0.0	2.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	4.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	2.0	1.0	0.0	0.0	1.0
+TX_2_TRAIN	2.0	1.0	1.0	0.0	1.0
+TX_2_TRAIN	2.0	1.0	2.0	0.0	1.0
+TX_2_TRAIN	2.0	1.0	3.0	0.0	1.0
+TX_2_TRAIN	2.0	1.0	4.0	0.0	1.0
+TX_2_TRAIN	2.0	1.0	5.0	0.0	1.0
+TX_2_TRAIN	2.0	1.0	6.0	0.0	1.0
+TX_2_TRAIN	2.0	1.0	7.0	0.0	1.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	5.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	3.0	1.0	0.0	0.0	10.0
+TX_2_TRAIN	3.0	1.0	7.0	0.0	10.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	6.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	3.0	1.0	0.0	0.0	10.0
+TX_2_TRAIN	3.0	1.0	7.0	0.0	10.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	7.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	2.0	1.0	0.0	0.0	0.0
+TX_2_TRAIN	2.0	1.0	1.0	0.0	0.0
+TX_2_TRAIN	2.0	1.0	2.0	0.0	0.0
+TX_2_TRAIN	2.0	1.0	3.0	0.0	0.0
+TX_2_TRAIN	2.0	1.0	4.0	0.0	0.0
+TX_2_TRAIN	2.0	1.0	5.0	0.0	0.0
+TX_2_TRAIN	2.0	1.0	6.0	0.0	0.0
+TX_2_TRAIN	2.0	1.0	7.0	0.0	0.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	8.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	5.0	1.0	0.0	0.0	11.0
+TX_2_TRAIN	5.0	1.0	1.0	0.0	6.0
+TX_2_TRAIN	5.0	1.0	2.0	0.0	6.0
+TX_2_TRAIN	5.0	1.0	3.0	0.0	11.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	9.0	100.0	200.0
+FROM	100.0
+TX_2_TRAIN	13.0	1.0	0.0	2.0	18.0
+TX_2_TRAIN	13.0	1.0	0.0	2.0	19.0
+TX_2_TRAIN	13.0	1.0	1.0	2.0	16.0
+TX_2_TRAIN	13.0	1.0	2.0	2.0	16.0
+TX_2_TRAIN	13.0	1.0	3.0	2.0	16.0
+TX_2_TRAIN	13.0	1.0	4.0	2.0	16.0
+TX_2_TRAIN	13.0	1.0	5.0	2.0	16.0
+TX_2_TRAIN	13.0	1.0	6.0	2.0	16.0
+TX_2_TRAIN	13.0	1.0	7.0	2.0	18.0
+TX_2_TRAIN	13.0	1.0	7.0	2.0	19.0
+TX_2_TRAIN	15.0	1.0	0.0	2.0	21.0
+TX_2_TRAIN	16.0	1.0	1.0	2.0	18.0
+TX_2_TRAIN	17.0	1.0	2.0	2.0	18.0
+TX_2_TRAIN	18.0	1.0	3.0	2.0	18.0
+TX_2_TRAIN	19.0	1.0	4.0	2.0	18.0
+TX_2_TRAIN	20.0	1.0	5.0	2.0	18.0
+TX_2_TRAIN	21.0	1.0	6.0	2.0	18.0
+TX_2_TRAIN	22.0	1.0	7.0	2.0	21.0
+TX_2_TRAIN	14.0	1.0	0.0	2.0	22.0
+TX_2_TRAIN	14.0	1.0	7.0	2.0	22.0
+FROM	200.0
+ComicEnd	
+comicTitle	1990	4	-1
+imgList
+seList
+bgmList
+Stage_BGM_Vol	50.0	30.0	0.0
+SkipEventFlg	0.0
+ShowGoal	
+CHANGE_SPEED	0.01	30.0	-1.0
+BtnWait	
+CHANGE_SPEED	1.0	30.0	-1.0
+WaitFrame	60.0
+Stage_BGM_Vol	0.0	60.0	0.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	

@@ -66,7 +66,8 @@ angular.module('myApp', ['myModule'])
         }
         
         function TableInput(allText){
-            let rows = allText.split("\r\n");
+            allText = allText.replace("\r", "")
+            let rows = allText.split("\n");
             let comicNum = 0;
             let cmdList = [];
             for (let i = 0; i < rows.length; i++){

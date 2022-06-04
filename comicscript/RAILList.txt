@@ -5,3 +5,9 @@
 ./dend/LS/RAIL006_comic.txt
 ./dend/LS/RAIL007_comic.txt
 ./dend/LS/RAIL008_comic.txt
+./dend/BS/RAIL100_comic.txt
+./dend/BS/RAIL101_comic.txt
+./dend/BS/RAIL102_comic.txt
+./dend/BS/RAIL103_comic.txt
+./dend/BS/RAIL104_comic.txt
+./dend/BS/RAIL105_comic.txt
