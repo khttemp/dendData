@@ -1,0 +1,1349 @@
+comicTitle	2100	0	-1
+imgList	3_P115_0.png	3_P115_1.png	3_P116_0.png	3_P116_1.png	3_P117_0.png	3_P117_1.png	3_P117_2.png	3_P117_3.png	3_P118_0.png	3_P118_1.png	3_P118_2.png	3_P118_3.png	3_P118_4.png	3_P119.png	3_P120_00.png	3_P120_01.png	3_P120_02.png	3_P120_03.png	3_P120_04.png	3_P120_05.png	3_P121_00.png	3_P121_01.png	3_P121_02.png	3_P121_03.png	FRAME_1280_720_CS2.png	3_P123_00.png	3_P123_01.png	3_P125_00.png	3_P125_01.png	3_P126.png
+seList	3_P115_k1.ogg	P115_r1.ogg	3_P116_k1.ogg	P116_2r.ogg	3_P116_k2.ogg	3_P117_k1.ogg	3_P117_1r.ogg	3_P117_k2.ogg	3_P117_2r.ogg	3_P117_3r.ogg	3_P118_r1.ogg	3_P118_k1.ogg	3_P118_r2.ogg	3_P118_k2.ogg	3_P120_k1.ogg	3_P120_a1.ogg	3_P120_k2.ogg	3_P120_k3.ogg	3_P120_k4.ogg	3_P121_k1b.ogg	3_P121_k2.ogg	3_P121_k3.ogg	3_P121_4k.ogg	3_P125_a1.ogg	3_P125_k1.ogg	3_P126_1k.ogg	3_P126_k2.ogg	3_P126_k3.ogg	3_P117_4r.ogg	P116_1r.ogg	PP.ogg	Breake_Release.ogg
+bgmList	Silent_Wind.ogg	t2000_1.ogg	t2000_3.ogg	AcidRain.ogg
+IS_NO_DRAMA	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	2900.0
+IS_BTL_MODE	1000.0	2000.0
+FROM	1000.0
+TO_RAIL	1.0	76.0	100.0
+FROM	2000.0
+TO_RAIL	0.0	76.0	0.0
+ComicEnd	
+FROM	200.0
+STOP_3D	1.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	1.0	1.0
+SLEEP_TRAIN	2.0	1.0
+GOING	1.0	1.0
+ALL_FIT	0.0	1.0
+ALL_FIT	1.0	1.0
+ALL_FIT	2.0	1.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+TRAIN_SPEED	2.0	0.0	0.0	0.0
+PlayComicBGM	0.0	-1.0	0.0
+Fill_BG	1.0
+SkipEventFlg	1.0
+VolComicBGM	0.0	70.0	90.0
+SetComic	0.0	0.0
+EyeMove	640.0	360.0	0.0	7.0
+EyeMove	640.0	510.0	60.0	7.0
+ComicPos	0.0	640.0	655.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+WaitFrame	30.0
+PlayComicBGM	1.0	1.0	100.0
+BtnWait	
+EyeMove	640.0	1010.0	60.0	7.0
+PlayComicSE	0.0	0.0	0.0	1.0	0.0
+BtnWait	
+StopComicBGM	1.0	10.0
+SetComic	1.0	1.0
+ComicPos	1.0	640.0	1731.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+EyeMove	640.0	1731.0	60.0	7.0
+SetZoom	0.87	60.0	7.0
+PlayComicBGM	2.0	1.0	100.0
+WaitFrame	60.0
+VolComicBGM	2.0	70.0	30.0
+WaitFrame	30.0
+PlayComicSE	1.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+WaitFrame	60.0
+HideALLComic	
+SetZoom	1.0	0.0	0.0
+EyeMove	640.0	363.0	0.0	0.0
+EyeMove	640.0	457.0	60.0	7.0
+SetComic	0.0	2.0
+ComicPos	0.0	640.0	648.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+PlayComicSE	2.0	0.0	0.0	1.0	0.0
+PlayComicSE	29.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	1470.0	120.0	7.0
+SetComic	1.0	3.0
+ComicPos	1.0	574.0	1555.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+WaitFrame	60.0
+PlayComicSE	3.0	0.0	0.0	1.0	0.0
+PlayComicSE	4.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic	
+EyeMove	640.0	305.0	0.0	0.0
+SetComic	0.0	4.0
+ComicPos	0.0	640.0	305.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	5.0	0.0	0.0	1.0	0.0
+PlayComicSE	6.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	720.0	864.0	60.0	7.0
+SetComic	1.0	5.0
+ComicPos	1.0	959.0	864.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	7.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	864.0	60.0	7.0
+SetComic	2.0	6.0
+ComicPos	2.0	322.0	864.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+PlayComicSE	8.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	1492.0	60.0	7.0
+SetComic	3.0	7.0
+ComicPos	3.0	640.0	1492.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+PlayComicSE	9.0	0.0	0.0	1.0	0.0
+PlayComicSE	28.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+ComicAlpha	2.0	255.0	0.0	60.0	0.0
+ComicAlpha	3.0	255.0	0.0	60.0	0.0
+WaitFrame	60.0
+HideALLComic	
+EyeMove	887.0	274.0	0.0	0.0
+SetComic	0.0	8.0
+ComicPos	0.0	887.0	274.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	10.0	0.0	0.0	1.0	0.0
+PlayComicSE	11.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	274.0	60.0	7.0
+SetComic	1.0	9.0
+ComicPos	1.0	275.0	275.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+PlayComicSE	12.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	666.0	120.0	7.0
+SetComic	2.0	10.0
+ComicPos	2.0	640.0	770.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+PlayComicSE	13.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	90.0	0.0
+ComicAlpha	1.0	255.0	0.0	90.0	0.0
+ComicAlpha	2.0	255.0	0.0	90.0	0.0
+StopComicBGM	0.0	90.0
+StopComicBGM	1.0	90.0
+StopComicBGM	2.0	90.0
+WaitFrame	90.0
+HideALLComic	
+SetZoom	0.75	0.0	0.0
+PlayComicBGM	3.0	-1.0	100.0
+EyeMove	720.0	1482.0	0.0	0.0
+SetComic	0.0	11.0
+ComicPos	0.0	934.0	1477.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+BtnWait	
+EyeMove	640.0	1482.0	60.0	7.0
+SetComic	1.0	12.0
+ComicPos	1.0	312.0	1477.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic	
+SetZoom	1.0	0.0	0.0
+EyeMove	0.0	240.0	0.0	0.0
+EyeMove	0.0	-100.0	120.0	7.0
+SetComic	0.0	13.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+VolComicBGM	3.0	70.0	30.0
+WaitFrame	30.0
+HideALLComic	
+EyeMove	1061.0	310.0	0.0	0.0
+SetComic	0.0	14.0
+ComicPos	0.0	1061.0	310.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+BtnWait	
+EyeMove	640.0	310.0	60.0	7.0
+SetComic	1.0	15.0
+ComicPos	1.0	426.0	289.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+PlayComicSE	14.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	660.0	850.0	60.0	7.0
+SetComic	2.0	16.0
+ComicPos	2.0	917.0	850.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	60.0	0.0
+PlayComicSE	15.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	600.0	850.0	60.0	7.0
+SetComic	3.0	17.0
+ComicPos	3.0	282.0	850.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	60.0	0.0
+PlayComicSE	16.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	770.0	1524.0	60.0	7.0
+SetZoom	0.92	60.0	7.0
+SetComic	4.0	18.0
+ComicPos	4.0	855.0	1524.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	60.0	0.0
+PlayComicSE	17.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	620.0	1524.0	60.0	7.0
+SetComic	5.0	19.0
+ComicPos	5.0	214.0	1524.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	60.0	0.0
+PlayComicSE	18.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+ComicAlpha	3.0	255.0	0.0	30.0	0.0
+ComicAlpha	4.0	255.0	0.0	30.0	0.0
+ComicAlpha	5.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic	
+SetZoom	1.0	0.0	0.0
+EyeMove	998.0	269.0	0.0	0.0
+SetComic	0.0	20.0
+ComicPos	0.0	998.0	269.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+PlayComicSE	19.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	267.0	60.0	7.0
+SetComic	1.0	21.0
+ComicPos	1.0	359.0	267.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+PlayComicSE	20.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	852.0	90.0	7.0
+SetComic	2.0	22.0
+ComicPos	2.0	640.0	852.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	60.0	0.0
+PlayComicSE	21.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	1523.0	90.0	7.0
+SetComic	3.0	23.0
+ComicPos	3.0	640.0	1523.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	60.0	0.0
+PlayComicSE	22.0	0.0	0.0	1.0	0.0
+BtnWait	
+VolComicBGM	3.0	100.0	90.0
+ComicAlpha	0.0	255.0	0.0	90.0	0.0
+ComicAlpha	1.0	255.0	0.0	90.0	0.0
+ComicAlpha	2.0	255.0	0.0	90.0	0.0
+ComicAlpha	3.0	255.0	0.0	90.0	0.0
+WaitFrame	90.0
+SkipEventPoint	
+StopComicBGM	0.0	15.0
+StopComicBGM	1.0	15.0
+StopComicBGM	2.0	15.0
+PlayComicBGM	3.0	-1.0	100.0
+ALL_FIT	1.0	1.0
+ALL_FIT	2.0	1.0
+HideALLComic	
+STOP_3D	0.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	1.0	0.0
+SLEEP_TRAIN	2.0	0.0
+TO_RAIL	0.0	586.0	10.0
+TO_RAIL	1.0	10.0	100.0
+TO_RAIL	2.0	9.0	7.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+SetComic_Blur	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+SET_CAMPOINT_2P2C	1.0	10.0	-20.0	15.0	0.0	2.0	10.0	-15.0	5.0	0.0	0.0
+SET_CAM_POINT_LENGTH	0.0	15.0	0.0	0.0
+SET_CAM_POINT_LENGTH	1.0	-15.0	0.0	0.0
+SET_CAM_OFFSET	0.0	-20.0	13.0	0.0	7.0	0.0
+SET_CAM_OFFSET	1.0	-10.0	5.0	0.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	0.0	0.0	7.0	0.0
+CAM_POINT_PER	0.0	0.0	0.0
+CAM_TARGET_PER	0.0	0.0	0.0
+TRAIN_SPEED	1.0	130.0	5.0	2.0
+TRAIN_SPEED	2.0	130.0	5.0	2.0
+WaitFrame	120.0
+CAM_POINT_PER	1.0	7.0	180.0
+WaitFrame	3.0
+SkipEventFlg	1.0
+WaitFrame	297.0
+SET_CAM_POINT_LENGTH	0.0	20.0	0.0	0.0
+SET_CAM_POINT_LENGTH	1.0	30.0	0.0	0.0
+SET_CAM_OFFSET	0.0	-8.0	5.0	0.0	7.0	0.0
+SET_CAM_OFFSET	0.0	-7.0	3.0	0.0	7.0	0.0
+CAM_POINT_PER	0.0	0.0	0.0
+CAM_TARGET_PER	0.5	0.0	0.0
+WaitFrame	240.0
+ComicSceneStop	0.0
+SLEEP_TRAIN	1.0	1.0
+SLEEP_TRAIN	2.0	1.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+TRAIN_SPEED	2.0	0.0	0.0	0.0
+SetComic	1.0	24.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic	
+Scene_to_Comic	0.0	1280.0	720.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	0.0	0.0	0.0
+SLEEP_TRAIN	0.0	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	1.0
+RAIL_POS_TO_BUFF	45.0	0.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	6.5	7.0	-5.0	0.0	0.0
+RAIL_POS_TO_BUFF	46.0	0.0	1.0
+BUFF_TO_TARGET_POS	1.0	6.5	5.0	0.0	0.0	7.0
+BUFF_TO_SC_CAM_POS	0.0	6.5	9.0	-5.0	120.0	7.0
+WaitFrame	120.0
+SetComic	1.0	24.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+ComicSceneStop	0.0
+STOP_3D	0.0
+BtnWait	
+SetComic	3.0	25.0
+ComicPos	3.0	468.0	675.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+EyeMove	230.0	714.0	30.0	2.0
+BtnWait	
+SetComic	4.0	26.0
+ComicPos	4.0	115.0	747.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+EyeMove	140.0	714.0	60.0	2.0
+BtnWait	
+STOP_3D	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+EyeMove	81.0	714.0	60.0	2.0
+Scene_to_Comic	2.0	1280.0	720.0
+ComicPos	2.0	-550.0	742.0	0.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SetComic	5.0	24.0
+ComicPos	5.0	-712.0	732.0	0.0	2.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+SET_CAMPOINT_2P2C	0.0	-328.0	0.0	3.0	0.0	1.0	10.0	-15.0	5.0	0.0	0.0
+CHK_TRAIN_TYPE	0.0	5.0	100.0	200.0
+FROM	100.0
+SET_CAM_POINT_LENGTH	0.0	-340.0	0.0	0.0
+GOTO	300.0
+FROM	200.0
+SET_CAM_POINT_LENGTH	0.0	-328.0	0.0	0.0
+FROM	300.0
+SET_CAM_OFFSET	0.0	0.0	5.0	0.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	0.0	0.0	7.0	0.0
+CAM_POINT_PER	0.0	0.0	0.0
+CAM_TARGET_PER	0.0	0.0	0.0
+WaitFrame	60.0
+ComicSceneStop	2.0
+CamComtroll	0.0
+BtnWait	
+SkipEventPoint	
+StopComicBGM	0.0	60.0
+StopComicBGM	1.0	60.0
+StopComicBGM	2.0	60.0
+HideALLComic	
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	0.0
+SLEEP_TRAIN	2.0	0.0
+TO_RAIL	1.0	47.0	104.0
+TO_RAIL	2.0	47.0	3.0
+TRAIN_SPEED	1.0	130.0	5.0	2.0
+TRAIN_SPEED	2.0	130.0	5.0	2.0
+SkipEventFlg	1.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+SetComic_Blur	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+SET_CAMPOINT_2P2C	0.0	10.0	-20.0	7.0	0.0	1.0	10.0	-15.0	5.0	0.0	0.0
+SET_CAM_POINT_LENGTH	0.0	8.0	0.0	0.0
+SET_CAM_OFFSET	0.0	0.0	7.0	0.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	0.0	13.0	0.0	3.0	7.0	0.0
+SET_CAM_OFFSET	0.0	-10.0	6.0	0.0	7.0	120.0
+WAIT_RAIL_ONLY	1.0	48.0	6000.0
+SetComic_Blur_Speed	0.0	0.0	60.0	0.0
+StopComicBGM	0.0	60.0
+StopComicBGM	1.0	60.0
+StopComicBGM	2.0	60.0
+StopComicBGM	3.0	60.0
+WAIT_RAIL_ONLY	1.0	49.0	6000.0
+PLAY_STAGE_BGM	0.0
+CHK_TRAIN_TYPE	0.0	1.0	100.0	200.0
+FROM	100.0
+SET_CAM_TARGET_OFFSET	0.0	13.0	-2.0	0.0	7.0	30.0
+WaitFrame	30.0
+TRAIN_ANIME_CHANGE	0.0	0.0	0.0	3.0
+TRAIN_ANIME_CHANGE	0.0	7.0	0.0	3.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	5.0	100.0	200.0
+FROM	100.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	3.0	-5.0	2.0	60.0
+ENGINE_START	0.0
+SET_CAM_OFFSET	0.0	-5.0	5.0	5.0	7.0	120.0
+TRAIN_ANIME_CHANGE	0.0	0.0	8.0	13.0
+TRAIN_ANIME_CHANGE	0.0	7.0	8.0	13.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	10.0	100.0	200.0
+FROM	100.0
+SET_CAM_TARGET_OFFSET	0.0	11.0	1.0	0.0	7.0	30.0
+WaitFrame	30.0
+TRAIN_ANIME_CHANGE	0.0	0.0	8.0	0.0
+TRAIN_ANIME_CHANGE	0.0	3.0	8.0	0.0
+FROM	200.0
+WAIT_RAIL_ONLY	1.0	56.0	6000.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+TRAIN_SPEED	2.0	0.0	0.0	0.0
+SLEEP_TRAIN	1.0	1.0
+SLEEP_TRAIN	2.0	1.0
+BtnWait	
+CamComtroll	0.0
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	1.0
+RAIL_POS_TO_BUFF	47.0	109.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	11.0	5.0	0.0	0.0	0.0
+CAM_TARGET_PER	0.0	0.0	0.0
+TRAIN_SPEED	0.0	90.0	240.0	1.0
+WaitFrame	300.0
+SetComic	1.0	24.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+CamComtroll	0.0
+ComicSceneStop	0.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+BtnWait	
+SkipEventPoint	
+StopComicBGM	0.0	60.0
+StopComicBGM	1.0	60.0
+StopComicBGM	2.0	60.0
+StopComicBGM	3.0	60.0
+PLAY_STAGE_BGM	0.0
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	1.0
+SLEEP_TRAIN	2.0	0.0
+TO_RAIL	0.0	58.0	0.0
+TO_RAIL	2.0	61.0	3.0
+TRAIN_SPEED	0.0	130.0	0.0	0.0
+TRAIN_SPEED	2.0	130.0	0.0	0.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+SetComic_Blur	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+SET_CAMPOINT_2P2C	0.0	10.0	-20.0	7.0	2.0	1.0	10.0	-15.0	5.0	0.0	0.0
+SET_CAM_POINT_LENGTH	0.0	-30.0	0.0	0.0
+SET_CAM_OFFSET	0.0	13.0	7.0	0.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	0.0	0.0	0.0	5.0	7.0	0.0
+SET_CAM_OFFSET	0.0	20.0	6.0	0.0	7.0	120.0
+WaitFrame	30.0
+PlayComicSE	31.0	0.0	0.0	0.0	1.0
+SkipEventFlg	1.0
+WaitFrame	270.0
+ComicSceneStop	0.0
+SetComic	1.0	24.0
+ComicPos	1.0	0.0	0.0	0.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	2.0	0.0	0.0	0.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	2.0	1.0
+BtnWait	
+Stage_BGM_Vol	70.0	30.0	0.0
+EyeMove	152.0	783.0	30.0	2.0
+SetComic	2.0	27.0
+ComicPos	2.0	341.0	785.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	2.0	1.0
+SetZoom	0.89	30.0	2.0
+PlayComicSE	23.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	8.0	725.0	30.0	2.0
+SetComic	3.0	28.0
+ComicPos	3.0	-305.0	786.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+SetZoom	1.0	30.0	2.0
+SHEAK_COMIC	3.0	1.0
+PlayComicSE	24.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+ComicAlpha	3.0	255.0	0.0	30.0	0.0
+SetZoom	1.0	0.0	0.0
+WaitFrame	30.0
+HideALLComic	
+SLEEP_TRAIN	1.0	0.0
+TO_RAIL	1.0	62.0	100.0
+TRAIN_SPEED	1.0	130.0	0.0	0.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+SetComic_Blur	0.0	1.0
+SetComic_Blur_Speed	0.0	2.0	0.0	0.0
+SET_CAMPOINT_2P2C	1.0	10.0	-20.0	7.0	2.0	1.0	10.0	-15.0	5.0	0.0	0.0
+SET_CAM_POINT_LENGTH	0.0	6.0	0.0	0.0
+SET_CAM_OFFSET	0.0	-10.0	9.0	0.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	0.0	-1.5	4.0	0.0	7.0	0.0
+SET_CAM_OFFSET	0.0	-9.0	7.0	0.0	7.0	120.0
+WaitFrame	60.0
+CHK_TRAIN_TYPE	1.0	2.0	100.0	200.0
+FROM	100.0
+TRAIN_ANIME_CHANGE	1.0	0.0	0.0	3.0
+TRAIN_ANIME_CHANGE	1.0	1.0	0.0	3.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	5.0	100.0	200.0
+FROM	100.0
+TRAIN_ANIME_CHANGE	1.0	0.0	8.0	13.0
+TRAIN_ANIME_CHANGE	1.0	7.0	8.0	13.0
+FROM	200.0
+PlayComicSE	25.0	0.0	0.0	1.0	0.0
+ComicSceneStop	0.0
+SetComic	1.0	24.0
+ComicPos	1.0	0.0	0.0	0.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+SLEEP_TRAIN	1.0	1.0
+BtnWait	
+EyeMove	389.0	667.0	30.0	2.0
+SetComic	2.0	29.0
+ComicPos	2.0	0.0	999.0	0.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	2.0	1.0
+SetZoom	1.25	30.0	2.0
+PlayComicSE	30.0	0.0	0.0	0.0	1.0
+BtnWait	
+EyeMove	-104.0	667.0	30.0	2.0
+PlayComicSE	26.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	0.0	1236.0	30.0	2.0
+SetZoom	1.14	30.0	2.0
+PlayComicSE	27.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+ComicAlpha	2.0	255.0	0.0	60.0	0.0
+WaitFrame	60.0
+SkipEventPoint	
+HideALLComic	
+SetZoom	1.0	0.0	0.0
+ALL_FIT	0.0	0.0
+ALL_FIT	1.0	0.0
+ALL_FIT	2.0	0.0
+StopComicBGM	0.0	15.0
+StopComicBGM	1.0	15.0
+StopComicBGM	2.0	15.0
+StopComicBGM	3.0	15.0
+PLAY_STAGE_BGM	0.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	1.0	1.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+SLEEP_TRAIN	2.0	0.0
+TO_RAIL	2.0	83.0	100.0
+TRAIN_SPEED	2.0	30.0	0.0	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+Stage_BGM_Vol	100.0	30.0	0.0
+SET_CAMPOINT_1P2T	2.0	0.0
+RAIL_POS_TO_BUFF	83.0	4.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	0.0	3.0	0.0	0.0	0.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+WaitFrame	1.0
+TRAIN_SPEED	2.0	0.0	60.0	0.0
+WaitFrame	60.0
+ComicSceneStop	0.0
+CamComtroll	0.0
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	0.0
+TO_RAIL	0.0	75.0	0.0
+TO_RAIL	1.0	75.0	102.0
+TRAIN_SPEED	0.0	120.0	0.0	0.0
+TRAIN_SPEED	1.0	120.0	0.0	0.0
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+WaitFrame	60.0
+BG_Alpha	0.0	60.0	0.0	0.0
+WaitFrame	60.0
+Fill_BG	0.0
+WAIT_RAIL_ONLY	0.0	84.0	600.0
+NO_OUTRUN	1.0	1.0
+SET_CPU_FLG	1.0	1.0
+SET_CPU_MODE	1.0	1.0	120.0	150.0	168.0	120.0	110.0	0.0	0.0
+DIS_TRAIN_SPEED	0.0
+DIS_TRAIN_SPEED	1.0
+RACE_START	
+ComicEnd	
+comicTitle	2103	0	116
+imgList
+seList
+bgmList
+CHK_LENGTH	150.0	100.0	1.0
+CHK_TRAIN_SPEED_U	100.0	0.0	130.0	1.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+CHK_HIT_CNT	0.0	0.0	100.0	200.0
+FROM	100.0
+FTV_NEXT_PROC	2122.0	-1.0
+WaitFrame	30.0
+FTV_End	2122.0
+HideMsgWnd	
+WaitFrame	60.0
+FTV_NEXT_PROC	2121.0	-1.0
+WaitFrame	30.0
+FTV_End	2121.0
+FTV_NEXT_PROC	2123.0	-1.0
+WaitFrame	30.0
+FTV_End	2123.0
+FROM	200.0
+FTV_NEXT_PROC	2124.0	-1.0
+WaitFrame	30.0
+FTV_End	2124.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+END_CHK_TRAIN_SPEED_U	100.0
+END_CHK_LENGTH	100.0
+ComicEnd	
+comicTitle	2105	0	217
+imgList
+seList
+bgmList
+CHK_LENGTH	800.0	100.0	1.0
+CHK_TRAIN_SPEED_U	100.0	0.0	130.0	1.0
+SET_CPU_MODE	1.0	1.0	120.0	180.0	170.0	120.0	110.0	0.0	0.0
+ADD_CPU_LEN_OUTRUN	0.0	1.0	25.0
+ADD_CPU_SPEED_D_AND_NOTCH	0.0	1.0	-5.0
+TOP_SPEED_HOSYO	1.0	159.0
+CHK_OUTRUN_CNT	0.0	0.0	100.0	200.0
+FROM	100.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	2192.0	-1.0
+WaitFrame	30.0
+FTV_End	2192.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+ComicEnd	
+FROM	200.0
+CHK_LENGTH	400.0	100.0	1.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	2196.0	-1.0
+WaitFrame	30.0
+FTV_End	2196.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+ComicEnd	
+END_CHK_TRAIN_SPEED_U	100.0
+END_CHK_LENGTH	100.0
+CHK_LENGTH	1200.0	100.0	1.0
+ComicEnd	
+END_CHK_LENGTH	100.0
+CHK_POSTION	1.0	50.0	1.0
+STOP_STAGE_BGM	0.0	120.0
+FTV_NEXT_PROC	2194.0	-1.0
+WaitFrame	30.0
+FTV_End	2194.0
+HideMsgWnd	
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+END_CHK_POSTION	50.0
+ComicEnd	
+comicTitle	2104	0	355
+imgList
+seList
+bgmList
+CHK_LENGTH	200.0	100.0	1.0
+CHK_TRAIN_SPEED_U	100.0	0.0	150.0	1.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+CHK_POSTION	1.0	50.0	1.0
+FTV_NEXT_PROC	2125.0	-1.0
+WaitFrame	30.0
+FTV_End	2125.0
+WaitFrame	60.0
+END_CHK_POSTION	50.0
+FTV_NEXT_PROC	2126.0	-1.0
+WaitFrame	30.0
+FTV_End	2126.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+WaitFrame	120.0
+END_CHK_TRAIN_SPEED_U	100.0
+END_CHK_LENGTH	100.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	2127.0	-1.0
+WaitFrame	30.0
+FTV_End	2127.0
+FTV_NEXT_PROC	2128.0	-1.0
+WaitFrame	30.0
+FTV_End	2128.0
+FTV_NEXT_PROC	2129.0	-1.0
+WaitFrame	30.0
+FTV_End	2129.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+ComicEnd	
+comicTitle	2106	0	470
+imgList
+seList
+bgmList
+CHK_POSTION	0.0	100.0	1.0
+CHK_LENGTH	300.0	100.0	1.0
+FROM	100.0
+SET_CPU_MODE	1.0	1.0	120.0	180.0	180.0	135.0	110.0	0.0	0.0
+ADD_CPU_LEN_OUTRUN	0.0	1.0	25.0
+ADD_CPU_SPEED_D_AND_NOTCH	0.0	1.0	-5.0
+TOP_SPEED_HOSYO	1.0	159.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	2197.0	-1.0
+WaitFrame	30.0
+FTV_End	2197.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+ComicEnd	
+FROM	200.0
+SET_CPU_MODE	1.0	1.0	120.0	180.0	180.0	135.0	110.0	0.0	0.0
+ADD_CPU_LEN_OUTRUN	0.0	1.0	25.0
+ADD_CPU_SPEED_D_AND_NOTCH	0.0	1.0	-5.0
+TOP_SPEED_HOSYO	1.0	159.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	2193.0	-1.0
+WaitFrame	30.0
+FTV_End	2193.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+ComicEnd	
+END_CHK_POSTION	100.0
+CHK_LENGTH	800.0	100.0	1.0
+CHK_TRAIN_SPEED_U	100.0	0.0	130.0	1.0
+SET_CPU_MODE	1.0	1.0	120.0	180.0	180.0	135.0	110.0	0.0	0.0
+ADD_CPU_LEN_OUTRUN	0.0	1.0	25.0
+ADD_CPU_SPEED_D_AND_NOTCH	0.0	1.0	-5.0
+TOP_SPEED_HOSYO	1.0	159.0
+CHK_OUTRUN_CNT	0.0	0.0	100.0	200.0
+FROM	100.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	2197.0	-1.0
+WaitFrame	30.0
+FTV_End	2197.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+ComicEnd	
+FROM	200.0
+CHK_LENGTH	200.0	100.0	1.0
+Stage_BGM_Vol	70.0	30.0	0.0
+WaitFrame	30.0
+FTV_NEXT_PROC	2191.0	-1.0
+WaitFrame	30.0
+FTV_End	2191.0
+HideMsgWnd	
+Stage_BGM_Vol	100.0	30.0	0.0
+ComicEnd	
+END_CHK_TRAIN_SPEED_U	100.0
+END_CHK_LENGTH	100.0
+CHK_LENGTH	1200.0	100.0	1.0
+ComicEnd	
+END_CHK_LENGTH	100.0
+CHK_POSTION	1.0	50.0	1.0
+STOP_STAGE_BGM	0.0	120.0
+FTV_NEXT_PROC	2195.0	-1.0
+WaitFrame	30.0
+FTV_End	2195.0
+HideMsgWnd	
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+END_CHK_POSTION	50.0
+ComicEnd	
+comicTitle	2101	2	531
+imgList	3_P135_00.png	3_P135_01.png	3_P136.png	3_P137_00.png	3_P138_139_00.png	3_P139.png	3_P140_00.png	3_P140_01.png	3_P141_00.png	3_P141_01.png	3_P141_02.png	3_P141_03.png	3_P142_00.png	3_P142_01.png	3_P142_02.png	3_P142_03.png	P143_00.png	3_P144_P145.png	3_P146.png	FRAME_1280_720_CS.png
+seList	3_P135_k1.ogg	3_P135_k2.ogg	P136_tuka.ogg	3_P138_1s.ogg	3_P138_20K.ogg	3_P139Mixb.ogg	3_P140_1_All.ogg	3_P140_2_All.ogg	3_P141_r1.ogg	3_P141_k1.ogg	3_P142_idol.ogg	3_P142_k2.ogg	3_P142_k3.ogg	3_P142_r1.ogg	3_P142_k4.ogg	3_P143_k1.ogg	3_P143_Idol.ogg	3_P144_Skid.ogg	3_P145_Stock.ogg	P146_0_0.ogg	P146_0_1.ogg
+bgmList	LS_r90.ogg	3_P141_k1.ogg
+CHK_LENGTH	1200.0	100.0	1.0
+GOTO	100.0
+END_CHK_LENGTH	100.0
+ComicEnd	
+FROM	100.0
+NO_OUTRUN	0.0	1.0
+NO_OUTRUN	1.0	1.0
+ADD_POINT	0.0	10010.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+SetComic_Blur	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+SET_CAMPOINT_2P2C	0.0	30.0	5.0	12.0	0.0	1.0	30.0	5.0	12.0	0.0	0.0
+SET_CAM_OFFSET	1.0	0.0	13.0	0.0	7.0	0.0
+CAM_POINT_PER	1.0	0.0	0.0
+CAM_TARGET_PER	1.0	0.0	0.0
+WaitFrame	180.0
+Fill_BG	1.0
+BG_Alpha	255.0	0.0	0.0	0.0
+ComicSceneStop	0.0
+CamComtroll	0.0
+SetComic	1.0	19.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+Stage_BGM_Vol	70.0	60.0	-1.0
+WaitFrame	30.0
+EyeMove	-564.0	6.0	30.0	2.0
+SetComic	2.0	0.0
+ComicPos	2.0	-941.0	106.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	2.0	1.0
+PlayComicSE	0.0	0.0	0.0	0.0	1.0
+BtnWait	
+STORY_CLEAR	12.0
+STORY_OPEN	13.0
+CHAR_OPEN	2.0
+CHAR_OPEN	3.0
+SAVE_GAME	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	10.0
+TRAIN_SPEED	0.0	0.0	0.0	0.0
+TRAIN_SPEED	1.0	0.0	0.0	0.0
+WaitFrame	10.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	1.0	1.0
+WaitFrame	10.0
+STOP_3D	1.0
+SkipEventFlg	1.0
+SetZoom	1.12	0.0	0.0
+SetComic	0.0	1.0
+EyeMove	11.0	170.0	0.0	7.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+SHEAK_COMIC	0.0	1.0
+EyeMove	11.0	-221.0	60.0	2.0
+PlayComicSE	1.0	0.0	0.0	1.0	0.0
+BtnWait	
+SetComic	1.0	2.0
+ComicPos	1.0	0.0	-180.0	0.0	0.0
+ComicPos	1.0	0.0	37.0	120.0	7.0
+ComicAlpha	1.0	0.0	255.0	120.0	0.0
+SHEAK_COMIC	1.0	1.0
+PlayComicSE	2.0	0.0	0.0	0.0	1.0
+WaitFrame	120.0
+SetComic	2.0	3.0
+ComicPos	2.0	23.0	-170.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	60.0	0.0
+SHEAK_COMIC	2.0	1.0
+WaitFrame	120.0
+Stage_BGM_Vol	0.0	90.0	-1.0
+ComicAlpha	0.0	255.0	0.0	0.0	0.0
+ComicAlpha	1.0	255.0	0.0	0.0	0.0
+ComicAlpha	2.0	255.0	0.0	90.0	0.0
+SetZoom	1.4	90.0	0.0
+WaitFrame	150.0
+HideALLComic	
+SetZoom	0.87	0.0	0.0
+PlayComicSE	3.0	0.0	0.0	1.0	0.0
+SetComic	0.0	4.0
+EyeMove	327.0	-180.0	0.0	0.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+START_TIME_LINE	
+PlayComicSE	4.0	0.0	0.0	0.0	1.0
+WAIT_TIME_LINE	2.4
+Stage_BGM_Vol	60.0	60.0	-1.0
+SetZoom	0.65	30.0	2.0
+SHEAK_COMIC	0.0	1.0
+EyeMove	25.0	-63.0	30.0	2.0
+BtnWait	
+SetComic	1.0	5.0
+EyeMove	-115.0	-63.0	60.0	2.0
+ComicPos	1.0	-873.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+SHEAK_COMIC	1.0	1.0
+PlayComicSE	5.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic	
+SetZoom	0.78	0.0	0.0
+SetComic	0.0	6.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+PlayComicSE	6.0	0.0	0.0	1.0	0.0
+BtnWait	
+SetComic	1.0	7.0
+EyeMove	0.0	941.0	60.0	2.0
+ComicPos	1.0	0.0	938.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+SHEAK_COMIC	1.0	1.0
+PlayComicSE	7.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	120.0	0.0
+ComicAlpha	1.0	255.0	0.0	120.0	0.0
+WaitFrame	120.0
+SetZoom	1.0	0.0	0.0
+HideALLComic	
+WaitFrame	60.0
+SetComic	0.0	8.0
+EyeMove	640.0	222.0	0.0	0.0
+ComicPos	0.0	528.0	222.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+WaitFrame	60.0
+PlayComicSE	8.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	804.0	90.0	7.0
+SetComic	1.0	9.0
+ComicPos	1.0	640.0	804.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	60.0	0.0
+PlayComicBGM	1.0	-1.0	100.0
+BtnWait	
+EyeMove	640.0	1496.0	60.0	7.0
+SetComic	2.0	10.0
+ComicPos	2.0	905.0	1496.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	60.0	0.0
+BtnWait	
+EyeMove	620.0	1496.0	60.0	7.0
+SetComic	3.0	11.0
+ComicPos	3.0	265.0	1496.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	60.0	0.0
+Stage_BGM_Vol	0.0	60.0	-1.0
+BtnWait	
+StopComicBGM	1.0	60.0
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+ComicAlpha	2.0	255.0	0.0	60.0	0.0
+ComicAlpha	3.0	255.0	0.0	60.0	0.0
+WaitFrame	30.0
+START_TIME_LINE	
+PlayComicSE	10.0	0.0	0.0	0.0	1.0
+WaitFrame	30.0
+EyeMove	640.0	361.0	0.0	0.0
+SetComic	1.0	12.0
+ComicPos	1.0	640.0	361.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+WAIT_TIME_LINE	1.0
+SHEAK_COMIC	1.0	1.0
+BtnWait	
+EyeMove	640.0	875.0	60.0	7.0
+SetComic	2.0	13.0
+ComicPos	2.0	635.0	865.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	60.0	0.0
+PlayComicSE	11.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	720.0	1374.0	60.0	7.0
+SetComic	3.0	14.0
+ComicPos	3.0	982.0	1435.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	60.0	0.0
+PlayComicSE	12.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	640.0	1374.0	60.0	7.0
+SetComic	4.0	15.0
+ComicPos	4.0	457.0	1374.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	60.0	0.0
+PlayComicSE	13.0	0.0	0.0	1.0	0.0
+PlayComicSE	14.0	0.0	0.0	1.0	0.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+ComicAlpha	2.0	255.0	0.0	60.0	0.0
+ComicAlpha	3.0	255.0	0.0	60.0	0.0
+ComicAlpha	4.0	255.0	0.0	60.0	0.0
+Stage_BGM_Vol	0.0	60.0	-1.0
+WaitFrame	60.0
+HideALLComic	
+SetZoom	1.2	0.0	0.0
+EyeMove	0.0	-580.0	0.0	0.0
+SetComic	0.0	16.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+PlayComicBGM	0.0	-1.0	100.0
+PlayComicSE	15.0	0.0	0.0	1.0	0.0
+BtnWait	
+EyeMove	0.0	0.0	60.0	2.0
+PlayComicSE	16.0	0.0	0.0	0.0	1.0
+SHEAK_COMIC	0.0	1.0
+SetZoom	0.86	60.0	2.0
+BtnWait	
+EyeMove	0.0	482.0	60.0	2.0
+SetZoom	1.17	60.0	2.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	15.0	0.0
+WaitFrame	15.0
+HideALLComic	
+SetZoom	0.95	0.0	0.0
+EyeMove	0.0	-131.0	0.0	0.0
+SetComic	0.0	17.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	17.0	0.0	0.0	0.0	1.0
+SHEAK_COMIC	0.0	1.0
+BtnWait	
+EyeMove	0.0	192.0	30.0	2.0
+PlayComicSE	18.0	0.0	0.0	0.0	1.0
+SetZoom	1.18	30.0	2.0
+BtnWait	
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+WaitFrame	90.0
+StopComicBGM	0.0	5.0
+HideALLComic	
+SetZoom	1.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+SetComic	0.0	18.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
+PlayComicSE	19.0	0.0	0.0	1.0	0.0
+PlayComicSE	20.0	0.0	0.0	1.0	0.0
+BtnWait	
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	
+SkipEventPoint	
+STOP_COMIC_SE_ALL	60.0
+StopComicBGM	0.0	60.0
+StopComicBGM	1.0	60.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	
+comicTitle	2997	0	-1
+imgList
+seList	Tarbin.ogg	Tarbin2.ogg
+bgmList
+CHK_TRAIN_TYPE	0.0	5.0	100.0	200.0
+FROM	200.0
+GAS_TARBIN	0.0
+ComicEnd	
+FROM	100.0
+NO_OUTRUN	0.0	1.0
+NO_OUTRUN	1.0	1.0
+N_ADD_OBJ	0.0	0.0	2.0	0.0
+N_MOVE	0.0	0.0	20000.0	0.0	0.0	0.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	255.0	255.0	0.0	0.0
+WaitFrame	1.0
+ComicSceneStop	0.0
+ENGINE_START	0.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	1.0	1.0
+CamComtroll	1.0
+SET_CAMPOINT_K	-2.0	20001.0	-3.0	0.0	20000.0	1.0	0.0	0.0
+SET_SC_KOTEI_CAM_POS	-3.0	20001.5	-1.0	7.0	360.0
+Scene_to_Comic	1.0	1280.0	720.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+EyeMove	1.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic_Blur	1.0	0.0
+SetComic_Blur_Speed	1.0	0.0	0.0	0.0
+WaitFrame	60.0
+ComicAlpha	0.0	0.0	0.0	0.0	0.0
+PlayComicSE	0.0	0.0	0.0	0.0	1.0
+START_TIME_LINE	
+WAIT_TIME_LINE	2.0
+SetComic_Blur_Speed	1.0	2.5	300.0	1.0
+WAIT_TIME_LINE	5.0
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	0.0
+ComicSceneStop	1.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	255.0	255.0	0.0	0.0
+SET_CAMPOINT_2P2C	1.0	0.0	0.0	5.0	0.0	0.0	-150.0	0.0	12.0	0.0	1.0
+CAM_TARGET_PER	1.0	7.0	0.0
+CAM_POINT_PER	1.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	1.0	0.0	5.0	0.0	0.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+WaitFrame	90.0
+GAS_TARBIN	0.0
+CHANGE_CHILDOBJ_ANIME	0.0	2.0	0.0	2.0	1.0
+CHANGE_CHILDOBJ_ANIME	0.0	3.0	0.0	2.0	1.0
+CHANGE_CHILDOBJ_ANIME	0.0	4.0	0.0	2.0	1.0
+CHANGE_CHILDOBJ_ANIME	0.0	5.0	0.0	2.0	1.0
+PlayComicSE	1.0	0.0	0.0	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	15.0	2.0
+SET_CAM_OFFSET	0.0	0.0	15.0	0.0	2.0	30.0
+SET_CAM_POINT_LENGTH	0.0	-200.0	2.0	30.0
+IS_NO_DRAMA	200.0	100.0
+FROM	100.0
+FTV_NEXT_PROC	2355.0	-1.0
+WaitFrame	60.0
+FTV_End	2355.0
+GOTO	300.0
+FROM	200.0
+FTV_NEXT_PROC	2019.0	-1.0
+WaitFrame	60.0
+FTV_End	2019.0
+FROM	300.0
+ComicSceneStop	0.0
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+CamComtroll	0.0
+WaitFrame	90.0
+NO_OUTRUN	0.0	0.0
+IS_NO_DRAMA	100.0	200.0
+FROM	100.0
+NO_OUTRUN	1.0	0.0
+FROM	200.0
+ComicEnd	
+comicTitle	2998	0	-1
+imgList
+seList	Tarbin.ogg	Tarbin2.ogg
+bgmList
+CHK_TRAIN_TYPE	1.0	5.0	100.0	200.0
+FROM	200.0
+GAS_TARBIN	1.0
+ComicEnd	
+FROM	100.0
+NO_OUTRUN	0.0	1.0
+NO_OUTRUN	1.0	1.0
+N_ADD_OBJ	0.0	0.0	2.0	0.0
+N_MOVE	0.0	0.0	30000.0	0.0	0.0	0.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	255.0	255.0	0.0	0.0
+WaitFrame	1.0
+ComicSceneStop	0.0
+ENGINE_START	1.0
+SLEEP_TRAIN	0.0	1.0
+SLEEP_TRAIN	1.0	1.0
+CamComtroll	1.0
+SET_CAMPOINT_K	2.0	30001.0	-3.0	0.0	30000.0	1.0	0.0	0.0
+SET_SC_KOTEI_CAM_POS	3.0	30001.5	-1.0	7.0	360.0
+Scene_to_Comic	1.0	1280.0	720.0
+ComicPos	1.0	0.0	0.0	0.0	0.0
+EyeMove	1.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic_Blur	1.0	0.0
+SetComic_Blur_Speed	1.0	0.0	0.0	0.0
+WaitFrame	60.0
+ComicAlpha	0.0	0.0	0.0	0.0	0.0
+PlayComicSE	0.0	0.0	0.0	0.0	1.0
+START_TIME_LINE	
+WAIT_TIME_LINE	2.0
+SetComic_Blur_Speed	1.0	2.5	300.0	1.0
+WAIT_TIME_LINE	5.0
+SLEEP_TRAIN	0.0	0.0
+SLEEP_TRAIN	1.0	0.0
+ComicSceneStop	1.0
+CamComtroll	1.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+EyeMove	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	255.0	255.0	0.0	0.0
+SET_CAMPOINT_2P2C	0.0	0.0	0.0	5.0	0.0	1.0	-150.0	0.0	12.0	0.0	1.0
+CAM_TARGET_PER	1.0	7.0	0.0
+CAM_POINT_PER	1.0	7.0	0.0
+SET_CAM_TARGET_OFFSET	1.0	0.0	5.0	0.0	0.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+WaitFrame	90.0
+GAS_TARBIN	1.0
+CHANGE_CHILDOBJ_ANIME	1.0	2.0	0.0	2.0	1.0
+CHANGE_CHILDOBJ_ANIME	1.0	3.0	0.0	2.0	1.0
+CHANGE_CHILDOBJ_ANIME	1.0	4.0	0.0	2.0	1.0
+CHANGE_CHILDOBJ_ANIME	1.0	5.0	0.0	2.0	1.0
+PlayComicSE	1.0	0.0	0.0	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	15.0	2.0
+SET_CAM_OFFSET	1.0	0.0	15.0	0.0	2.0	30.0
+SET_CAM_POINT_LENGTH	1.0	-200.0	2.0	30.0
+FTV_NEXT_PROC	2019.0	-1.0
+WaitFrame	60.0
+FTV_End	2019.0
+ComicSceneStop	0.0
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+CamComtroll	0.0
+WaitFrame	90.0
+NO_OUTRUN	0.0	0.0
+NO_OUTRUN	1.0	0.0
+ComicEnd	
+comicTitle	2900	0	-1
+imgList	D3_Count.png
+seList	Count.ogg	5_b.ogg	4_b.ogg	3_b.ogg	2_b.ogg	1_b.ogg	GO_b.ogg
+bgmList
+WaitFrame	30.0
+ENGINE_START	0.0
+ENGINE_START	1.0
+WaitFrame	30.0
+PlayComicSE	0.0	0.0	0.0	0.0	0.0
+WaitFrame	150.0
+PlayComicSE	1.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	0.0	-30.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+COMIC_SCALE	1.0	1.5	1.5	0.0	0.0
+COMIC_SCALE	1.0	1.0	1.0	30.0	0.0
+WaitFrame	80.0
+ComicAlpha	1.0	255.0	0.0	10.0	0.0
+WaitFrame	10.0
+PlayComicSE	2.0	0.0	0.0	0.0	0.0
+SetComic	1.0	1.0
+ComicPos	1.0	0.0	-30.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+COMIC_SCALE	1.0	1.5	1.5	0.0	0.0
+COMIC_SCALE	1.0	1.0	1.0	30.0	0.0
+WaitFrame	50.0
+ComicAlpha	1.0	255.0	0.0	10.0	0.0
+WaitFrame	10.0
+PlayComicSE	3.0	0.0	0.0	0.0	0.0
+SetComic	1.0	2.0
+ComicPos	1.0	0.0	-30.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+COMIC_SCALE	1.0	1.5	1.5	0.0	0.0
+COMIC_SCALE	1.0	1.0	1.0	30.0	0.0
+WaitFrame	50.0
+ComicAlpha	1.0	255.0	0.0	10.0	0.0
+WaitFrame	10.0
+PlayComicSE	4.0	0.0	0.0	0.0	0.0
+SetComic	1.0	3.0
+ComicPos	1.0	0.0	-30.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+COMIC_SCALE	1.0	1.5	1.5	0.0	0.0
+COMIC_SCALE	1.0	1.0	1.0	30.0	0.0
+WaitFrame	50.0
+ComicAlpha	1.0	255.0	0.0	10.0	0.0
+WaitFrame	10.0
+PlayComicSE	5.0	0.0	0.0	0.0	0.0
+SetComic	1.0	4.0
+ComicPos	1.0	0.0	-30.0	0.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+COMIC_SCALE	1.0	1.5	1.5	0.0	0.0
+COMIC_SCALE	1.0	1.0	1.0	30.0	0.0
+WaitFrame	50.0
+ComicAlpha	1.0	255.0	0.0	10.0	0.0
+WaitFrame	10.0
+PlayComicSE	6.0	0.0	0.0	0.0	0.0
+SetComic	1.0	5.0
+ComicPos	1.0	0.0	-30.0	0.0	0.0
+ComicAlpha	1.0	255.0	0.0	60.0	0.0
+COMIC_SCALE	1.0	1.5	1.5	60.0	0.0
+RACE_START	
+WaitFrame	90.0
+PLAY_STAGE_BGM	0.0
+ComicEnd	
+comicTitle	2102	3	-1
+imgList
+seList
+bgmList
+CHK_POINT	0.0	10000.0
+ComicEnd	
+END_CHK_POINT	0.0
+WaitFrame	4.0
+CHK_WIN_TRAIN	0.0	0.0
+STORY_CLEAR	13.0
+STORY_OPEN	14.0
+SAVE_GAME	
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	1.0
+RAIL_POS_TO_BUFF	548.0	2.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	-8.0	7.0	0.0	0.0	0.0
+CAM_TARGET_PER	0.0	0.0	0.0
+END_CHK_WINTRAIN	0.0
+CHK_WIN_TRAIN	1.0	0.0
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	1.0
+RAIL_POS_TO_BUFF	548.0	102.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	8.0	7.0	0.0	0.0	0.0
+CAM_TARGET_PER	1.0	0.0	0.0
+END_CHK_WINTRAIN	0.0
+ShowGoal	
+CHANGE_SPEED	0.1	15.0	-1.0
+WaitFrame	10.0
+CHANGE_SPEED	1.0	30.0	-1.0
+WaitFrame	180.0
+Stage_BGM_Vol	0.0	60.0	0.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	
+comicTitle	2990	4	-1
+imgList
+seList
+bgmList
+WaitFrame	4.0
+IS_BTL_MODE	100.0	200.0
+FROM	100.0
+CHK_WIN_TRAIN	0.0	0.0
+CamComtroll	1.0
+SET_CAMPOINT_2P2C	0.0	40.0	6.5	7.0	0.0	1.0	40.0	-6.5	7.0	0.0	0.0
+CAM_POINT_PER	0.0	0.0	0.0
+CAM_TARGET_PER	0.0	0.0	0.0
+SET_CAM_OFFSET	0.0	-6.5	5.0	0.0	7.0	60.0
+SET_CAM_POINT_LENGTH	0.0	30.0	7.0	60.0
+END_CHK_WINTRAIN	0.0
+CHK_WIN_TRAIN	1.0	0.0
+CamComtroll	1.0
+SET_CAMPOINT_2P2C	0.0	40.0	6.5	7.0	0.0	1.0	40.0	-6.5	7.0	0.0	0.0
+CAM_POINT_PER	1.0	0.0	0.0
+CAM_TARGET_PER	1.0	0.0	0.0
+SET_CAM_OFFSET	1.0	6.5	5.0	0.0	7.0	60.0
+SET_CAM_POINT_LENGTH	0.0	30.0	7.0	60.0
+END_CHK_WINTRAIN	0.0
+ShowGoal	
+CHANGE_SPEED	0.1	15.0	-1.0
+WaitFrame	10.0
+CHANGE_SPEED	1.0	30.0	-1.0
+WaitFrame	180.0
+Stage_BGM_Vol	0.0	60.0	-1.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	
+FROM	200.0
+IS_FREE_MODE	100.0	200.0
+FROM	100.0
+CamComtroll	1.0
+SET_CAMPOINT_2P2C	0.0	40.0	6.5	7.0	0.0	1.0	40.0	-6.5	7.0	0.0	0.0
+CAM_POINT_PER	0.0	0.0	0.0
+CAM_TARGET_PER	0.0	0.0	0.0
+SET_CAM_OFFSET	0.0	-6.5	5.0	0.0	7.0	60.0
+SET_CAM_POINT_LENGTH	0.0	30.0	7.0	60.0
+ShowGoal	
+CHANGE_SPEED	0.01	15.0	-1.0
+BtnWait	
+CHANGE_SPEED	1.0	30.0	-1.0
+WaitFrame	180.0
+Stage_BGM_Vol	0.0	60.0	-1.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	
+FROM	200.0
+Stage_BGM_Vol	50.0	30.0	-1.0
+ShowGoal	
+CHANGE_SPEED	0.01	30.0	-1.0
+BtnWait	
+CHANGE_SPEED	1.0	30.0	-1.0
+WaitFrame	60.0
+Stage_BGM_Vol	0.0	60.0	-1.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd	

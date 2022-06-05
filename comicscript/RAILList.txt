@@ -11,3 +11,13 @@
 ./dend/BS/RAIL103_comic.txt
 ./dend/BS/RAIL104_comic.txt
 ./dend/BS/RAIL105_comic.txt
+./dend/CS/RAIL200_comic.txt
+./dend/CS/RAIL201_comic.txt
+./dend/CS/RAIL202_comic.txt
+./dend/CS/RAIL203_comic.txt
+./dend/CS/RAIL204_comic.txt
+./dend/RS/RAIL300_comic.txt
+./dend/RS/RAIL301_comic.txt
+./dend/RS/RAIL302_comic.txt
+./dend/RS/RAIL303_comic.txt
+./dend/RS/RAIL304_comic.txt
