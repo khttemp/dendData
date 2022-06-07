@@ -22,9 +22,13 @@
             padding-right: 12px;
             text-align: center;
         }
+        .rail-container {
+            width: 1000px;
+            overflow: auto;
+        }
     </style>
     <body ng-controller="myCtrl">
-        <div>
+        <div class="rail-container">
             <table id="railNo" border="1">
                 <tr>
                     <th colspan="{{comicList.num.length+1}}">{{selectFile}}</th>

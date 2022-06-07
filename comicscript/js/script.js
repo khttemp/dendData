@@ -2,7 +2,13 @@ angular.module('myApp', ['myModule'])
     .controller('myCtrl', ['$scope', function($scope) {
         $scope.railList = [];
         $scope.selectFile = "RAIL002";
+        $scope.trainIndexList = {
+            "LS":[
+                ""
+            ],
+        }
 
+        $scope.series = "LS";
         $scope.comicList = {
             "num":[],
             "type":[],
@@ -10,6 +16,11 @@ angular.module('myApp', ['myModule'])
         };
         $scope.scriptList = {};
         $scope.selectScript = [];
+        $scope.headerInfoList = {
+            "imgList":[],
+            "seList":[],
+            "bgmList":[]
+        }
 
         $scope.updateScript = function(num) {
             $scope.selectScript = $scope.scriptList[num];
@@ -23,6 +34,11 @@ angular.module('myApp', ['myModule'])
             };
             $scope.scriptList = {};
             $scope.selectScript = [];
+            $scope.headerInfoList = {
+                "imgList":[],
+                "seList":[],
+                "bgmList":[]
+            }
             readTextFile(path);
         }
 
@@ -36,6 +52,8 @@ angular.module('myApp', ['myModule'])
                         let rows = allText.split("\r\n");
                         for (let i = 0; i < rows.length; i++){
                             let arr = rows[i].split("/");
+                            $scope.series = arr[1];
+                            $scope.trainIndexList = $scope.trainList[arr[1]];
                             let temp = arr[arr.length - 1];
                             let name = temp.split("_")[0];
                             let info = {"name":name, "path":rows[i]};
@@ -83,15 +101,21 @@ angular.module('myApp', ['myModule'])
                 }
                 // imgListの場合
                 else if (cols[0] == "imgList") {
-                    
+                    for (let j = 1; j < cols.length; j++) {
+                        $scope.headerInfoList["imgList"].push(cols[j]);
+                    }
                 }
                 // seListの場合
                 else if (cols[0] == "seList") {
-                    
+                    for (let j = 1; j < cols.length; j++) {
+                        $scope.headerInfoList["seList"].push(cols[j]);
+                    }
                 }
                 // bgmListの場合
                 else if (cols[0] == "bgmList") {
-                    
+                    for (let j = 1; j < cols.length; j++) {
+                        $scope.headerInfoList["bgmList"].push(cols[j]);
+                    }
                 }
                 // その他はコミックスクリプト
                 else {
@@ -99,7 +123,10 @@ angular.module('myApp', ['myModule'])
                         if (cols[j] == ""){
                             continue;
                         }
-                        cmdList.push(cols[j]);
+                        cmdList.push({
+                            "info":cols[j],
+                            "property":setProperty(cols[0], j)
+                        });
                     }
                     $scope.scriptList[comicNum].push(cmdList);
                     cmdList = [];
@@ -108,6 +135,16 @@ angular.module('myApp', ['myModule'])
         }
         readTextFile("./dend/LS/RAIL002_comic.txt");
         $scope.obj = $scope.railList[0];
+
+        function setProperty(cmd, index){
+            if (cmd == "CHK_TRAIN_TYPE" && index == 1) {
+
+            } else if (cmd == "PlayComicBGM" && index == 0) {
+                return cmd;
+            } else if (cmd == "") {
+
+            }
+        }
     }]);
 
 angular.module('myModule', [])
@@ -125,17 +162,3 @@ angular.module('myModule', [])
             return num;
         };
     });
-
-
-
-let tableRailNo = document.getElementById("railNo");
-let tableRailFlag = false;
-let trNum;
-let trType;
-let trRailNo;
-
-
-
-function update(){
-
-}
