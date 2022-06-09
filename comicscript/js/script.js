@@ -4,10 +4,126 @@ angular.module('myApp', ['myModule'])
         $scope.selectFile = "RAIL002";
         $scope.trainIndexList = {
             "LS":[
-                ""
+                "H2000",
+                "H8200",
+                "H2300",
+                "JR223",
+                "21000R",
+                "K800",
+                "H7000",
+                "DEKI",
+                "TAKUMI",
+                "K80",
+                "S300"
             ],
-        }
+            "BS":[
+                "H2000",
+                "K8000",
+                "H8200",
+                "UV21000",
+                "H8008",
+                "K2199",
+                "K21XX",
+                "H7001",
+                "K800",
+                "JR223"
+            ],
+            "CS":[
+                "H2000",
+                "H2800",
+                "H8200",
+                "HS9000",
+                "KQ21XX",
+                "JR2000",
+                "Rapit",
+                "Old_H2000",
+                "Old_H8200",
+                "Arban21000R",
+                "K800",
+                "H7001",
+                "K8000",
+                "H8000",
+                "KQ2199",
+                "JR223",
+                "H2300",
+                "AE86",
+                "Deki3",
+                "K80",
+                "S300",
+                "Yokohama",
+                "S500"
+            ],
+            "RS":[
+                "H2000",
+                "Pano",
+                "H8200",
+                "Mu2000",
+                "T50000",
+                "T200",
+                "DRC",
+                "X200",
+                "H4050",
+                "H7011",
+                "E233",
+                "H2800",
+                "HS9000",
+                "KQ21XX",
+                "JR2000",
+                "Rapit",
+                "Arban21000R",
+                "K800",
+                "H7001",
+                "K8000",
+                "H8000",
+                "KQ2199",
+                "JR223",
+                "H2300",
+                "AE86",
+                "Deki3",
+                "K80",
+                "Yuri",
+                "S300"
+            ],
+            "SS":[
+                "H2000",
+                "X200",
+                "H4050",
+                "H7011",
+                "E233",
+                "H8200",
+                "TQ5050",
+                "TQ5000",
+                "TQ9001",
+                "TQ300",
+                "TQ8500",
+                "Pano",
+                "Mu2000",
+                "T50000",
+                "T200",
+                "DRC",
+                "H2800",
+                "H9000",
+                "KQ21XX",
+                "JR2000",
+                "Rapit",
+                "K8000",
+                "Arban21000R",
+                "H8008",
+                "KQ2199",
+                "H2300",
+                "JR223",
+                "K800",
+                "H7001",
+                "K80",
+                "Yuri",
+                "AE86",
+                "Deki",
+                "MIZ1000",
+                "KB1300",
+            ]
+        };
 
+        $scope.trainList = [];
         $scope.series = "LS";
         $scope.comicList = {
             "num":[],
@@ -52,8 +168,6 @@ angular.module('myApp', ['myModule'])
                         let rows = allText.split("\r\n");
                         for (let i = 0; i < rows.length; i++){
                             let arr = rows[i].split("/");
-                            $scope.series = arr[1];
-                            $scope.trainIndexList = $scope.trainList[arr[1]];
                             let temp = arr[arr.length - 1];
                             let name = temp.split("_")[0];
                             let info = {"name":name, "path":rows[i]};
@@ -74,6 +188,8 @@ angular.module('myApp', ['myModule'])
                     if (rawFile.status === 200 || rawFile.status == 0){
                         var allText = rawFile.responseText;
                         let arr = file.split("/");
+                        $scope.series = arr[2];
+                        $scope.trainList = $scope.trainIndexList[arr[2]];
                         let temp = arr[arr.length - 1];
                         $scope.selectFile = temp.split("_")[0];
                         TableInput(allText);
@@ -125,7 +241,7 @@ angular.module('myApp', ['myModule'])
                         }
                         cmdList.push({
                             "info":cols[j],
-                            "property":setProperty(cols[0], j)
+                            "property":setProperty(cols, cols[0], j)
                         });
                     }
                     $scope.scriptList[comicNum].push(cmdList);
@@ -136,14 +252,13 @@ angular.module('myApp', ['myModule'])
         readTextFile("./dend/LS/RAIL002_comic.txt");
         $scope.obj = $scope.railList[0];
 
-        function setProperty(cmd, index){
-            if (cmd == "CHK_TRAIN_TYPE" && index == 1) {
-
-            } else if (cmd == "PlayComicBGM" && index == 0) {
-                return cmd;
-            } else if (cmd == "") {
-
+        function setProperty(cmdList, cmd, index){
+            if (cmd == "CHK_TRAIN_TYPE" && index == 2) {
+                return $scope.trainList[Number(cmdList[index])];
+            } else if (cmd == "PlayComicBGM" && index == 1) {
+                return $scope.headerInfoList["bgmList"][Number(cmdList[index])];
             }
+            return "";
         }
     }]);
 

@@ -2,6 +2,14 @@
     <head>
         <meta charset="utf-8">
         <title>電Ⅾコミックスクリプト</title>
+        <link rel="stylesheet" href="./js/jquery-ui.min.css">
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script>
+            $( function() {
+                $( document ).tooltip();
+            } );
+        </script>
     </head>
     <style>
         .comicList {
@@ -25,6 +33,11 @@
         .rail-container {
             width: 1000px;
             overflow: auto;
+        }
+        .cmd-property {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
         }
     </style>
     <body ng-controller="myCtrl">
@@ -51,7 +64,14 @@
         <div>
             <table id="script" border="1">
                 <tr ng-repeat="cmdList in selectScript track by $index">
-                    <td ng-repeat="cmd in cmdList track by $index" class="scriptList">{{cmd}}</td>
+                    <td ng-repeat="cmd in cmdList track by $index" class="scriptList">
+                        <div ng-if="cmd.property != ''" title="{{cmd.property}}" class="cmd-property">
+                            {{cmd.info}}
+                        </div>
+                        <div ng-if="cmd.property == ''">
+                            {{cmd.info}}
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>
