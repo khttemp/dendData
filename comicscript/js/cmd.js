@@ -226,47 +226,47 @@ const CMD = {
     },
     "Fill_BG":{
         "num":56,
-        "description":""
+        "description":"引数１" + newLine + "1なら画面をBGで埋める" + newLine + "0なら元に戻す"
     },
     "ComicEnd":{
         "num":57,
-        "description":""
+        "description":"スクリプトを終了する"
     },
     "CamComtroll":{
         "num":58,
-        "description":""
+        "description":"引数１" + newLine + "1なら、スクリプトのCam設定できるようにする。" + newLine + "0ならスクリプトのCam設定終了する"
     },
     "ComicSceneStop":{
         "num":59,
-        "description":""
+        "description":"引数１：コマの番号" + newLine + "指定したのコマの中の動きを止める"
     },
     "BtnWait":{
         "num":60,
-        "description":""
+        "description":"ボタンを押すまでスクリプトの中で待機する"
     },
     "EyeMove":{
         "num":61,
-        "description":""
+        "description":"引数１：x座標" + newLine + "引数２：y座標" + newLine + "引数３：アニメ時間（フレーム）" + newLine + "引数４：アニメ効果の種類"
     },
     "SetZoom":{
         "num":62,
-        "description":""
+        "description":"引数１：zoom倍率" + newLine + "引数２：アニメ時間（フレーム）" + newLine + "引数３：アニメ効果の種類"
     },
     "BG_Alpha":{
         "num":63,
-        "description":""
+        "description":"引数１：BGのAlpha設定" + newLine + "引数２：アニメ時間（フレーム）" + newLine + "引数３：アニメ効果の種類" + newLine + "引数４：【不明】（SSでは使わない。）"
     },
     "BG_Wait":{
         "num":64,
-        "description":""
+        "description":"BGのAlpha設定が終わるまで待つ"
     },
     "StartCount":{
         "num":65,
-        "description":""
+        "description":"【LSのみ】" + newLine + "5秒カウントを数える。"
     },
     "WaitMoveEye":{
         "num":66,
-        "description":""
+        "description":"【LS、BS、CSのみ】" + newLine + "引数１" + newLine + "1ならEyeMoveが終わるまで待つ" + newLine + "0ならボタンで進めるようにする"
     },
     "WaitFrame":{
         "num":67,
