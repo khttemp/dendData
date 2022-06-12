@@ -5,9 +5,14 @@
         <link rel="stylesheet" href="./js/jquery-ui.min.css">
         <script src="./js/jquery.js"></script>
         <script src="./js/jquery-ui.min.js"></script>
+        <script src="./js/angular.min.js"></script>
         <script>
             $( function() {
-                $( document ).tooltip();
+                $( document ).tooltip({
+                    content:function(){
+                        return this.getAttribute("title");
+                    }
+                });
             } );
         </script>
     </head>
@@ -39,6 +44,12 @@
             color: blue;
             text-decoration: underline;
         }
+        .active {
+            background-color: yellow;
+        }
+        div.ui-tooltip {
+            max-width: 400px;
+        }
     </style>
     <body ng-controller="myCtrl">
         <div class="rail-container">
@@ -48,7 +59,7 @@
                 </tr>
                 <tr>
                     <th class="comicTitle">COMIC</th>
-                    <td ng-repeat="num in comicList.num track by $index" ng-click="updateScript(num)" class="comicList comic-num">{{num | numberFixedLen:3}}</td>
+                    <td ng-repeat="num in comicList.num track by $index" ng-click="updateScript(num, $event)" class="comicList comic-num">{{num | numberFixedLen:3}}</td>
                 </tr>
                 <tr>
                     <th class="comicTitle">タイプ</th>
@@ -81,6 +92,6 @@
             </select>
         </div>
     </body>
-    <script src="./js/angular.min.js"></script>
+    <script src="./js/cmd.js"></script>
     <script src="./js/script.js"></script>
 </html>

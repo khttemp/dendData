@@ -138,8 +138,10 @@ angular.module('myApp', ['myModule'])
             "bgmList":[]
         }
 
-        $scope.updateScript = function(num) {
+        $scope.updateScript = function(num, $event) {
             $scope.selectScript = $scope.scriptList[num];
+            $(".comic-num").css("background-color", "");
+            $event.currentTarget.style.backgroundColor = "yellow";
         }
 
         $scope.updateFile = function(path) {
@@ -156,6 +158,7 @@ angular.module('myApp', ['myModule'])
                 "bgmList":[]
             }
             readTextFile(path);
+            $(".comic-num").css("background-color", "");
         }
 
         function readFileList(file){
@@ -252,11 +255,21 @@ angular.module('myApp', ['myModule'])
         readTextFile("./dend/LS/RAIL002_comic.txt");
         $scope.obj = $scope.railList[0];
 
-        function setProperty(cmdList, cmd, index){
-            if (cmd == "CHK_TRAIN_TYPE" && index == 2) {
-                return $scope.trainList[Number(cmdList[index])];
-            } else if (cmd == "PlayComicBGM" && index == 1) {
-                return $scope.headerInfoList["bgmList"][Number(cmdList[index])];
+        function setProperty(cmdList, cmd, idx){
+            if (idx == 0) {
+                if (CMD[cmd].description != "") {
+                    return CMD[cmd].description;
+                }
+            }
+            let index = Number(cmdList[idx]);
+            if (cmd == "CHK_TRAIN_TYPE" && idx == 2) {
+                return $scope.trainList[index];
+            } else if (cmd == "PlayComicBGM" && idx == 1) {
+                return $scope.headerInfoList["bgmList"][index];
+            } else if (cmd == "SetComic" && idx == 2) {
+                return $scope.headerInfoList["imgList"][index];
+            } else if (cmd == "PlayComicSE" && idx == 1) {
+                return $scope.headerInfoList["seList"][index];
             }
             return "";
         }
