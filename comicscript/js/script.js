@@ -300,8 +300,14 @@ angular.module('myApp', ['myModule'])
             } else if (cmd == "PLAY_SCRIPT_BGM" && idx == 2) {
                 return $scope.headerInfoList[Number(cmdList[1])]["bgmList"][index];
             } else if (cmd == "FTV_Play" && idx == 1) {
+                if ($scope.series == "SS") {
+                    index += 50000;
+                }
                 return $scope.fvtList[Number(index)];
             } else if (cmd == "FTV_NEXT_PROC" && idx == 1) {
+                if ($scope.series == "SS") {
+                    index += 50000;
+                }
                 return $scope.fvtList[Number(index)];
             } else if (cmd == "FTV_PLAY_AND_PREV" && idx == 1) {
                 return $scope.fvtList[Number(index)];
