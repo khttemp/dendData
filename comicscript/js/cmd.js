@@ -1114,11 +1114,11 @@ const CMD = {
     },
     "START_WIPER":{
         "num":278,
-        "description":""
+        "description":"【BS、CS】ワイパーを動かす" + newLine + "引数１：１（True）、0（False）"
     },
     "CREATE_TRAIN_ORG":{
         "num":279,
-        "description":""
+        "description":"【BSのみ】車両モデルを作成する" + newLine + "引数１：作成インデックス" + newLine + "引数２：車両インデックス" + newLine + "引数３：詳細不明"
     },
     "ORG_SET_RAIL":{
         "num":280,
@@ -1130,11 +1130,11 @@ const CMD = {
     },
     "SET_CAMPOINT_K":{
         "num":282,
-        "description":""
+        "description":"【BSから】詳細不明。SSからは引数を使わない"
     },
     "ORG_SET_POS":{
         "num":283,
-        "description":""
+        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + "作成したモデルの位置を設定する" + newLine + "引数１：作成インデックス" + newLine + "引数２～：詳細不明"
     },
     "ORG_SET_FOG":{
         "num":284,
@@ -1142,31 +1142,31 @@ const CMD = {
     },
     "ORG_RELEASE":{
         "num":285,
-        "description":""
+        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + "作成したモデルを解放する" + newLine + "引数１：作成インデックス"
     },
     "PLAY_FTV_END":{
         "num":286,
-        "description":""
+        "description":"【BS、CS】現在再生中のFVTを全部止める"
     },
     "CNG_TRAIN_MAT_COL":{
         "num":287,
-        "description":""
+        "description":"【BSのみ】指定車両のカラーを変える" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２～："
     },
     "CNG_ORG_MAT_COL":{
         "num":288,
-        "description":""
+        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + "作成したモデルのカラーを変える" + newLine + "引数１：作成インデックス" + "引数２～："
     },
     "IS_CAUTION":{
         "num":289,
-        "description":""
+        "description":"【BSから】詳細不明"
     },
     "ENDWAIT_COMIC":{
         "num":290,
-        "description":""
+        "description":"GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine + "引数１：スクリプト番号"
     },
     "SET_COMIC_BG_COLOR":{
         "num":291,
-        "description":""
+        "description":"【RSから】BGの色を変える" + newLine + "引数１：カラーR" + newLine + "引数２：カラーG" + newLine + "引数３：カラーB"
     },
     "TX_2_TRAIN":{
         "num":292,
@@ -1182,7 +1182,7 @@ const CMD = {
     },
     "RETURN":{
         "num":295,
-        "description":""
+        "description":"このコマンドから一番近い上のFROMまで飛ぶ" + newLine + "引数１：FROMの数字"
     },
     "ReLoadSE":{
         "num":296,
@@ -1194,11 +1194,11 @@ const CMD = {
     },
     "STOP_3D":{
         "num":298,
-        "description":""
+        "description":"3Dシーンの動きを止める" + newLine + "引数１：１（True）、0（False）"
     },
     "STOP_STAGE_BGM":{
         "num":299,
-        "description":""
+        "description":"ステージのBGMを止める" + newLine + "SSからはインデックスが-1の場合" + newLine + "再生中の全てのステージBGMを止める" + newLine + "引数１：ステージBGMのインデックス" + newLine + "引数２：fade時間（フレーム）"
     },
     "TRAIN_UD":{
         "num":300,
