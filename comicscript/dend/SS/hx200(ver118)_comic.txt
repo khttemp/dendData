@@ -16,23 +16,23 @@ ALL_FIT	1.0	1.0
 COL_SET	0.0	0.0
 COL_SET	1.0	0.0
 CREATE_AURA	1.0
-CREATE_COMIC_PC	
+CREATE_COMIC_PC
 Fill_BG	1.0
 SkipEventFlg	1.0
 SCREEN_FADE	0.0	0.0	0.0	0.0	60.0
 GOTO_SCRIPT	3502.0
 ENDWAIT_COMIC	3502.0
-SkipEventPoint	
+SkipEventPoint
 SkipEventFlg	1.0
 GOTO_SCRIPT	3503.0
 ENDWAIT_COMIC	3503.0
-SkipEventPoint	
+SkipEventPoint
 ENDWAIT_COMIC	3502.0
 ENDWAIT_COMIC	3503.0
 WaitFrame	1.0
 FTV_End	-1.0
 SET_LIGHT	1.0	2.0	0.0
-HideMsgWnd	
+HideMsgWnd
 CHANGE_SPEED	1.0	0.0	-1.0
 GOTO_SCRIPT	3506.0
 GOTO_SCRIPT	3507.0
@@ -52,7 +52,7 @@ TO_RAIL	1.0	281.0	100.0	0.0
 TRAIN_SPEED	0.0	140.0	0.0	0.0
 TRAIN_SPEED	1.0	139.0	0.0	0.0
 STOP_3D	0.0
-RACE_START	
+RACE_START
 ENGINE_START	0.0
 ENGINE_START	1.0
 CNG_FOR	0.0	1.0
@@ -90,7 +90,7 @@ WaitFrame	180.0
 GOTO_SCRIPT	3537.0
 NO_OUTRUN	0.0	0.0
 NO_OUTRUN	1.0	1.0
-ComicEnd	
+ComicEnd
 comicTitle	2900	0	-1
 imgList	5.png	4.png	3.png	2.png	1.png	go.png
 seList	Count.ogg	5_b.ogg	4_b.ogg	3_b.ogg	2_b.ogg	1_b.ogg	GO_b.ogg
@@ -152,11 +152,10 @@ SetComic	1.0	5.0
 ComicPos	1.0	0.0	-30.0	0.0	0.0
 ComicAlpha	1.0	255.0	0.0	60.0	0.0
 COMIC_SCALE	1.0	1.5	1.5	60.0	0.0
-RACE_START	
+RACE_START
 WaitFrame	90.0
-NO_OUTRUN	0.0	1.0
 PLAY_STAGE_BGM	0.0
-ComicEnd	
+ComicEnd
 comicTitle	2991	0	-1
 imgList	finish.png
 seList	win_se	lose_se
@@ -186,7 +185,7 @@ WaitFrame	110.0
 ComicAlpha	1.0	128.0	0.0	30.0	0.0
 COMIC_SCALE	1.0	3.0	3.0	30.0	0.0
 WaitFrame	30.0
-ComicEnd	
+ComicEnd
 comicTitle	3502	0	-1
 imgList	d31_25_0	d31_25_1	d31_25_2	d31_25_3	d31_25_4
 seList	d31_25_0	d31_25_1	D31_25_t1	d31_25_3	d31_25_4
@@ -201,31 +200,31 @@ ComicAlpha	0.0	0.0	255.0	120.0	0.0
 VOL_SCRIPT_BGM	3500.0	0.0	50.0	60.0
 WaitFrame	60.0
 PlayComicSE	0.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	536.0	0.0	60.0	2.0
 SetComic	1.0	1.0
 ComicPos	1.0	-914.0	-36.0	0.0	0.0
 ComicAlpha	1.0	0.0	255.0	60.0	0.0
 PlayComicSE	1.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	373.0	934.0	90.0	7.0
 SetComic	2.0	2.0
 ComicPos	2.0	-153.0	-988.0	0.0	0.0
 ComicAlpha	2.0	0.0	255.0	60.0	0.0
 PlayComicSE	2.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	536.0	934.0	60.0	2.0
 SetComic	3.0	3.0
 ComicPos	3.0	-1110.0	-962.0	0.0	0.0
 ComicAlpha	3.0	0.0	255.0	60.0	0.0
 PlayComicSE	3.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	536.0	1821.0	90.0	7.0
 SetComic	4.0	4.0
 ComicPos	4.0	-534.0	-1862.0	0.0	0.0
 ComicAlpha	4.0	0.0	255.0	60.0	0.0
 PlayComicSE	4.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 ComicAlpha	0.0	255.0	0.0	60.0	0.0
 ComicAlpha	1.0	255.0	0.0	60.0	0.0
 ComicAlpha	2.0	255.0	0.0	60.0	0.0
@@ -233,12 +232,12 @@ ComicAlpha	3.0	255.0	0.0	60.0	0.0
 ComicAlpha	4.0	255.0	0.0	60.0	0.0
 STOP_SCRIPT_BGM	3500.0	0.0	60.0
 WaitFrame	60.0
-SkipEventPoint	
+SkipEventPoint
 STOP_COMIC_SE_ALL	30.0
 StopComicBGM	0.0	30.0
 STOP_SCRIPT_BGM	3500.0	0.0	30.0
-HideALLComic	
-ComicEnd	
+HideALLComic
+ComicEnd
 comicTitle	3503	0	-1
 imgList	sakigake	am4	dbook	light	lightover
 seList	Baten00	coa
@@ -292,7 +291,7 @@ WaitFrame	30.0
 FTV_NEXT_PROC	3785.0	-1.0
 WaitFrame	60.0
 FTV_End	3785.0
-HideMsgWnd	
+HideMsgWnd
 ComicAlpha	0.0	255.0	0.0	60.0	0.0
 Stage_BGM_Vol	0.0	60.0	-1.0
 WaitFrame	60.0
@@ -305,7 +304,7 @@ SetComic	1.0	0.0
 ComicPos	1.0	-397.0	-423.0	0.0	0.0
 ComicAlpha	1.0	0.0	255.0	90.0	0.0
 EyeMove	0.0	50.0	60.0	2.0
-START_TIME_LINE	
+START_TIME_LINE
 BTN_GOTO	100.0
 WAIT_TIME_LINE	390.0
 EyeMove	0.0	740.0	60.0	2.0
@@ -364,12 +363,12 @@ SET_CAM_POINT_LENGTH	0.0	18.0	7.0	900.0
 FTV_NEXT_PROC	3786.0	-1.0
 WaitFrame	60.0
 FTV_End	3786.0
-HideMsgWnd	
+HideMsgWnd
 WaitFrame	60.0
 FTV_NEXT_PROC	3787.0	-1.0
 WaitFrame	120.0
 FTV_End	3787.0
-HideMsgWnd	
+HideMsgWnd
 SET_CAM_OFFSET	0.0	15.0	5.0	0.0	7.0	900.0
 SET_CAM_TARGET_OFFSET	0.0	0.0	1.0	0.0	7.0	900.0
 WaitFrame	60.0
@@ -377,17 +376,17 @@ FTV_NEXT_PROC	3788.0	-1.0
 WaitFrame	60.0
 FTV_End	3788.0
 SET_CAM_POINT_LENGTH	0.0	-10.0	7.0	600.0
-HideMsgWnd	
+HideMsgWnd
 WaitFrame	60.0
 FTV_NEXT_PROC	3789.0	-1.0
 WaitFrame	60.0
 FTV_NEXT_PROC	3790.0	3789.0
 WaitFrame	60.0
 FTV_End	3790.0
-HideMsgWnd	
+HideMsgWnd
 WaitFrame	60.0
-SkipEventPoint	
-HideMsgWnd	
+SkipEventPoint
+HideMsgWnd
 ComicAlpha	1.0	0.0	0.0	0.0	0.0
 ComicPos	2.0	-2530.0	-485.0	0.0	7.0
 ComicPos	3.0	-2530.0	-485.0	0.0	7.0
@@ -427,7 +426,7 @@ Stage_BGM_Vol	100.0	0.0	-1.0
 PLAY_STAGE_BGM	0.0
 FTV_End	3792.0
 ENGINE_START	1.0
-HideMsgWnd	
+HideMsgWnd
 CamComtroll	0.0
 CamComtroll	1.0
 SET_CAMPOINT_2P2C	0.0	10.0	6.5	5.0	-3.0	1.0	20.0	0.0	2.0	0.0	0.0
@@ -478,7 +477,7 @@ FTV_NEXT_PROC	3793.0	-1.0
 WaitFrame	30.0
 FTV_End	3793.0
 WaitFrame	30.0
-HideMsgWnd	
+HideMsgWnd
 CHANGE_SPEED	1.0	0.0	-1.0
 CamComtroll	0.0
 CamComtroll	1.0
@@ -487,7 +486,7 @@ WaitFrame	120.0
 FTV_NEXT_PROC	3794.0	-1.0
 WaitFrame	60.0
 FTV_End	3794.0
-HideMsgWnd	
+HideMsgWnd
 Stage_BGM_Vol	100.0	30.0	-1.0
 WaitFrame	60.0
 CamComtroll	0.0
@@ -525,34 +524,34 @@ WaitFrame	60.0
 FTV_NEXT_PROC	3796.0	3795.0
 WaitFrame	30.0
 FTV_End	3796.0
-HideMsgWnd	
+HideMsgWnd
 WaitFrame	30.0
 FTV_NEXT_PROC	3797.0	-1.0
 WaitFrame	30.0
 FTV_End	3797.0
-HideMsgWnd	
+HideMsgWnd
 WaitFrame	30.0
 FTV_NEXT_PROC	3798.0	-1.0
 Stage_BGM_Vol	100.0	30.0	-1.0
 CHANGE_SPEED	1.0	60.0	-1.0
 WaitFrame	30.0
 FTV_End	3798.0
-HideMsgWnd	
+HideMsgWnd
 ComicAlpha	0.0	255.0	0.0	30.0	0.0
 WaitFrame	30.0
 CamComtroll	0.0
-SkipEventPoint	
+SkipEventPoint
 STOP_COMIC_SE_ALL	30.0
 STOP_SCRIPT_BGM	3500.0	1.0	30.0
 STOP_SCRIPT_BGM	3500.0	2.0	30.0
-HideALLComic	
+HideALLComic
 CamComtroll	0.0
 SET_SE_VOL	100.0	30.0	0.0
 HUMIKIRI_VOL	100.0	0.5	0.0
 End_Comic	3505.0
 DIS_TRAIN_SPEED	0.0
 DIS_TRAIN_SPEED	1.0
-ComicEnd	
+ComicEnd
 comicTitle	3505	0	-1
 imgList
 seList
@@ -560,8 +559,8 @@ bgmList
 FTV_NEXT_PROC	3791.0	-1.0
 WaitFrame	30.0
 FTV_End	3791.0
-HideMsgWnd	
-ComicEnd	
+HideMsgWnd
+ComicEnd
 comicTitle	3507	0	-1
 imgList
 seList
@@ -580,7 +579,7 @@ WaitFrame	180.0
 ADD_POINT	0.0	1.0
 WaitFrame	180.0
 ADD_POINT	0.0	1.0
-ComicEnd	
+ComicEnd
 comicTitle	3509	0	321
 imgList
 seList
@@ -605,7 +604,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3533	0	335
 imgList
 seList	Baten00.ogg	D32_KEI02.ogg
@@ -640,7 +639,7 @@ FTV_NEXT_PROC	3800.0	3799.0
 GOTO_SCRIPT	3510.0
 WaitFrame	30.0
 FTV_End	3800.0
-HideMsgWnd	
+HideMsgWnd
 WaitFrame	30.0
 AURA_ALPHA	1.0	0.0	1.0
 GOTO_SCRIPT	3508.0
@@ -651,7 +650,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3508	0	-1
 imgList	HUJI00	HUJI01	HUJI02
 seList
@@ -662,7 +661,7 @@ BG_Alpha	255.0	15.0	0.0	-1.0
 Stage_BGM_Vol	0.0	60.0	-1.0
 CHANGE_SPEED	0.3	20.0	-1.0
 DRAW_UI	0.0	15.0
-BG_Wait	
+BG_Wait
 SLEEP_TRAIN	0.0	1.0
 SLEEP_TRAIN	1.0	1.0
 TRAIN_STOP	1.0
@@ -708,41 +707,41 @@ CHANGE_SPEED	1.0	60.0	-1.0
 Stage_BGM_Vol	100.0	60.0	-1.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3510	0	-1
 imgList
 seList	D32_KEI03.ogg	D32_KEI05.ogg	D32_KEI06.ogg	D32_KEI07c.ogg	D32_KEI08.ogg	D32_KEI09.ogg
 bgmList	D32_Live.ogg
 ADD_POINT	0.0	1.0
 PlayComicSE	0.0	0.0	0.0	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	180.0
 ADD_POINT	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	120.0
 ADD_POINT	0.0	1.0
 PlayComicSE	1.0	0.0	0.0	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	330.0
 ADD_POINT	0.0	1.0
 PlayComicSE	2.0	0.0	0.0	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	150.0
 ADD_POINT	0.0	1.0
 PlayComicSE	3.0	0.0	0.0	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	180.0
 ADD_POINT	0.0	1.0
 PlayComicSE	4.0	0.0	0.0	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	300.0
 ADD_POINT	0.0	1.0
 PlayComicSE	5.0	0.0	0.0	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	450.0
 ADD_POINT	0.0	1.0
 PlayComicBGM	0.0	1.0	100.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	378.0
 ADD_POINT	0.0	1.0
 WAIT_TIME_LINE	1020.0
@@ -760,7 +759,7 @@ WAIT_TIME_LINE	2640.0
 ADD_POINT	0.0	1.0
 WaitFrame	120.0
 ADD_POINT	0.0	1.0
-ComicEnd	
+ComicEnd
 comicTitle	3511	0	354
 imgList
 seList	Baten00.ogg
@@ -793,7 +792,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3513	0	387
 imgList
 seList	Baten00.ogg
@@ -836,7 +835,7 @@ BUFF_TO_SC_CAM_POS	0.0	6.5	3.0	-100.0	180.0	7.0
 FTV_NEXT_PROC	3802.0	3801.0
 WaitFrame	30.0
 FTV_End	3802.0
-HideMsgWnd	
+HideMsgWnd
 VOL_SCRIPT_BGM	3510.0	0.0	100.0	30.0
 Stage_BGM_Vol	100.0	60.0	-1.0
 WAIT_RAIL_ONLY	0.0	400.0	180.0
@@ -847,7 +846,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3540	0	415
 imgList
 seList	Baten00.ogg
@@ -878,7 +877,7 @@ FTV_Wait	3803.0
 WaitFrame	30.0
 VOL_SCRIPT_BGM	3510.0	0.0	100.0	60.0
 FTV_End	3803.0
-HideMsgWnd	
+HideMsgWnd
 WAIT_RAIL_ONLY	0.0	420.0	120.0
 END_WAIT_RAIL	0.0
 CamComtroll	0.0
@@ -887,7 +886,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3514	0	442
 imgList
 seList	Baten00.ogg
@@ -919,7 +918,7 @@ WaitFrame	30.0
 FTV_NEXT_PROC	3805.0	3804.0
 WaitFrame	30.0
 FTV_End	3805.0
-HideMsgWnd	
+HideMsgWnd
 CHANGE_SPEED	1.0	30.0	-1.0
 CamComtroll	0.0
 ComicSceneStop	0.0
@@ -928,7 +927,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3515	0	460
 imgList
 seList
@@ -954,7 +953,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3516	0	467
 imgList
 seList
@@ -966,11 +965,11 @@ FTV_NEXT_PROC	3808.0	3807.0
 WaitFrame	30.0
 FTV_End	3808.0
 WaitFrame	30.0
-HideMsgWnd	
+HideMsgWnd
 FTV_NEXT_PROC	3809.0	-1.0
 WaitFrame	30.0
 FTV_End	3809.0
-HideMsgWnd	
+HideMsgWnd
 ADD_POINT	0.0	1.0
 WaitFrame	30.0
 FTV_NEXT_PROC	3810.0	-1.0
@@ -980,11 +979,11 @@ FTV_End	3810.0
 FTV_NEXT_PROC	3811.0	-1.0
 WaitFrame	30.0
 FTV_End	3811.0
-HideMsgWnd	
+HideMsgWnd
 Stage_BGM_Vol	100.0	30.0	-1.0
 WaitFrame	60.0
 GOTO_SCRIPT	3517.0
-ComicEnd	
+ComicEnd
 comicTitle	3517	0	-1
 imgList
 seList	Baten00.ogg
@@ -1015,7 +1014,7 @@ WaitFrame	30.0
 FTV_End	3813.0
 WaitFrame	30.0
 CHANGE_SPEED	1.0	30.0	-1.0
-HideMsgWnd	
+HideMsgWnd
 Stage_BGM_Vol	100.0	60.0	-1.0
 CamComtroll	0.0
 ComicSceneStop	0.0
@@ -1023,7 +1022,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3519	0	-1
 imgList
 seList
@@ -1040,7 +1039,7 @@ WaitFrame	120.0
 ADD_POINT	0.0	1.0
 WaitFrame	120.0
 GOTO_SCRIPT	3520.0
-ComicEnd	
+ComicEnd
 comicTitle	3520	0	-1
 imgList
 seList	D32_KEI14.ogg
@@ -1048,22 +1047,22 @@ bgmList
 ADD_POINT	0.0	1.0
 WaitFrame	5.0
 PlayComicSE	0.0	0.0	0.0	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	300.0
 GOTO_SCRIPT	3521.0
-ComicEnd	
+ComicEnd
 comicTitle	3521	0	-1
 imgList
 seList
 bgmList
 ADD_POINT	0.0	1.0
-START_TIME_LINE	
+START_TIME_LINE
 WAIT_TIME_LINE	270.0
 ADD_POINT	0.0	1.0
 WAIT_TIME_LINE	540.0
 ADD_POINT	0.0	1.0
 WAIT_TIME_LINE	840.0
-ComicEnd	
+ComicEnd
 comicTitle	3522	0	-1
 imgList
 seList	D32_KEI16
@@ -1083,7 +1082,7 @@ WaitFrame	180.0
 ADD_POINT	0.0	1.0
 WaitFrame	180.0
 ADD_POINT	0.0	1.0
-ComicEnd	
+ComicEnd
 comicTitle	3523	0	539
 imgList
 seList
@@ -1110,7 +1109,7 @@ ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	120.0
 NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3524	0	568
 imgList
 seList	Baten00.ogg
@@ -1155,15 +1154,15 @@ WaitFrame	30.0
 FTV_End	3814.0
 WaitFrame	60.0
 Stage_BGM_Vol	100.0	60.0	-1.0
-HideMsgWnd	
+HideMsgWnd
 CamComtroll	0.0
 ComicSceneStop	0.0
 ComicAlpha	0.0	255.0	0.0	30.0	0.0
 CHANGE_SPEED	1.0	60.0	-1.0
-ComicEnd	
+ComicEnd
 END_CHK_LENGTH	0.0
 GOTO_SCRIPT	3522.0
-ComicEnd	
+ComicEnd
 comicTitle	3541	2	578
 imgList	face3519	face3520
 seList	Baten00.ogg	bun_w
@@ -1215,7 +1214,7 @@ SET_CPU_MODE	1.0	10.0	800.0	900.0	230.0	180.0	110.0	0.0	0.0
 ComicAlpha	1.0	255.0	0.0	30.0	0.0
 ComicAlpha	2.0	255.0	0.0	30.0	0.0
 Stage_BGM_Vol	100.0	60.0	-1.0
-HideMsgWnd	
+HideMsgWnd
 CamComtroll	0.0
 ComicSceneStop	0.0
 ComicAlpha	0.0	255.0	0.0	30.0	0.0
@@ -1225,7 +1224,7 @@ NO_OUTRUN	0.0	0.0
 WaitFrame	180.0
 PLAY223HONE	1.0
 END_CHK_LENGTH	0.0
-ComicEnd	
+ComicEnd
 comicTitle	3525	0	-1
 imgList
 seList	Baten00.ogg
@@ -1264,17 +1263,17 @@ SET_CAM_TARGET_OFFSET	1.0	0.0	-3.0	-4.0	7.0	15.0
 GOTO_SCRIPT	3522.0
 FTV_End	3819.0
 Stage_BGM_Vol	100.0	60.0	-1.0
-HideMsgWnd	
+HideMsgWnd
 CamComtroll	0.0
 ComicSceneStop	0.0
 ComicAlpha	0.0	255.0	0.0	30.0	0.0
 CHANGE_SPEED	1.0	60.0	-1.0
-ComicEnd	
+ComicEnd
 FROM	200.0
 END_CHK_LENGTH	0.0
 SET_CPU_MODE	1.0	10.0	300.0	320.0	210.0	180.0	110.0	0.0	0.0
 GOTO_SCRIPT	3522.0
-ComicEnd	
+ComicEnd
 comicTitle	3534	0	-1
 imgList
 seList	Baten00.ogg
@@ -1290,7 +1289,7 @@ WaitFrame	60.0
 RETURN	100.0
 END_CHK_LENGTH	0.0
 GOTO_SCRIPT	3528.0
-ComicEnd	
+ComicEnd
 comicTitle	3528	0	-1
 imgList
 seList
@@ -1313,13 +1312,13 @@ CAM_TARGET_PER	1.0	7.0	0.0
 FTV_NEXT_PROC	3820.0	3817.0
 WaitFrame	7.0
 FTV_End	3820.0
-HideMsgWnd	
+HideMsgWnd
 Fill_BG	1.0
 BG_Alpha	255.0	0.0	0.0	0.0
 ComicAlpha	0.0	255.0	0.0	30.0	0.0
 WaitFrame	120.0
 GOTO_SCRIPT	3536.0
-ComicEnd	
+ComicEnd
 comicTitle	3536	4	-1
 imgList
 seList
@@ -1331,7 +1330,7 @@ CHAR_OPEN	3.0
 CHK_POINT	1.0	100.0
 CHAR_OPEN	1.0
 END_CHK_POINT	1.0
-SAVE_GAME	
+SAVE_GAME
 CHANGE_SPEED	1.0	0.0	-1.0
 STOP_3D	1.0
 SLEEP_TRAIN	0.0	1.0
@@ -1349,7 +1348,7 @@ GOTO_SCRIPT	3531.0
 ENDWAIT_COMIC	3531.0
 GOTO_SCRIPT	3532.0
 ENDWAIT_COMIC	3532.0
-SkipEventPoint	
+SkipEventPoint
 CNG_FADE_SPRITE	33.0
 ENDWAIT_COMIC	3529.0
 ENDWAIT_COMIC	3530.0
@@ -1360,7 +1359,7 @@ WaitFrame	1.0
 STOP_STAGE_BGM	-1.0	120.0
 CHANGE_SCENE	0.0
 WaitFrame	120.0
-ComicEnd	
+ComicEnd
 comicTitle	3529	0	-1
 imgList	D32_30_0	D32_30_1	d32_30_2	D32_31_0	D32_31_1	D32_31_2	D32_31_3
 seList	Tel_Bel1	D32_31_t0.ogg	D32_33_Umeda.ogg
@@ -1381,12 +1380,12 @@ SetZoom	1.0	0.0	2.0
 SetComic	0.0	0.0
 ComicPos	0.0	0.0	0.0	0.0	0.0
 ComicAlpha	0.0	0.0	255.0	120.0	0.0
-BtnWait	
+BtnWait
 SetComic	1.0	1.0
 ComicPos	1.0	-632.0	0.0	0.0	0.0
 ComicAlpha	1.0	0.0	255.0	60.0	0.0
 EyeMove	140.0	0.0	120.0	7.0
-BtnWait	
+BtnWait
 EyeMove	575.0	0.0	60.0	7.0
 SetComic	2.0	2.0
 ComicPos	2.0	-1007.0	36.0	0.0	0.0
@@ -1394,33 +1393,33 @@ STOP_STAGE_BGM	-1.0	180.0
 ComicAlpha	2.0	0.0	255.0	60.0	0.0
 ADD_POINT	0.0	1.0
 PlayComicBGM	0.0	-1.0	100.0
-BtnWait	
+BtnWait
 EyeMove	230.0	878.0	60.0	7.0
 SetComic	3.0	3.0
 ComicPos	3.0	87.0	-879.0	0.0	0.0
 ComicAlpha	3.0	0.0	255.0	60.0	0.0
-BtnWait	
+BtnWait
 EyeMove	566.0	878.0	60.0	7.0
 SetComic	4.0	4.0
 ComicPos	4.0	-834.0	-876.0	0.0	0.0
 ComicAlpha	4.0	0.0	255.0	60.0	0.0
 StopComicBGM	0.0	0.0
 PlayComicSE	0.0	0.0	0.0	0.0	1.0
-BtnWait	
+BtnWait
 EyeMove	230.0	1836.0	60.0	7.0
 SetComic	5.0	5.0
 ComicPos	5.0	211.0	-1840.0	0.0	0.0
 ComicAlpha	5.0	0.0	255.0	60.0	0.0
 PlayComicSE	2.0	0.0	0.0	0.0	1.0
 ADD_POINT	0.0	1.0
-BtnWait	
+BtnWait
 EyeMove	566.0	1836.0	60.0	2.0
 SetComic	6.0	6.0
 ComicPos	6.0	-726.0	-1838.0	0.0	0.0
 ComicAlpha	6.0	0.0	255.0	60.0	0.0
 ADD_POINT	0.0	1.0
 PlayComicSE	1.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 ComicAlpha	0.0	255.0	0.0	60.0	1.0
 ComicAlpha	1.0	255.0	0.0	60.0	1.0
 ComicAlpha	2.0	255.0	0.0	60.0	1.0
@@ -1429,12 +1428,12 @@ ComicAlpha	4.0	255.0	0.0	60.0	1.0
 ComicAlpha	5.0	255.0	0.0	60.0	1.0
 ComicAlpha	6.0	255.0	0.0	60.0	1.0
 WaitFrame	60.0
-SkipEventPoint	
+SkipEventPoint
 STOP_COMIC_SE_ALL	30.0
 STOP_STAGE_BGM	-1.0	30.0
 StopComicBGM	0.0	30.0
-HideALLComic	
-ComicEnd	
+HideALLComic
+ComicEnd
 comicTitle	3530	0	-1
 imgList	d32_32_0	d32_32_1
 seList	D32_KEI17	D32_32_T0.ogg	d32_kei18	D32_32_t1.ogg
@@ -1447,7 +1446,7 @@ ComicAlpha	0.0	0.0	255.0	60.0	0.0
 PlayComicSE	0.0	0.0	0.0	0.0	1.0
 ADD_POINT	0.0	1.0
 PlayComicSE	1.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	600.0	0.0	180.0	7.0
 SetComic	1.0	1.0
 ComicPos	1.0	-606.0	-326.0	0.0	0.0
@@ -1457,14 +1456,14 @@ WaitFrame	180.0
 PlayComicSE	3.0	0.0	0.0	0.0	1.0
 SetZoom	0.7	180.0	7.0
 EyeMove	507.0	280.0	180.0	7.0
-BtnWait	
+BtnWait
 ComicAlpha	0.0	255.0	0.0	120.0	0.0
 ComicAlpha	1.0	255.0	0.0	120.0	0.0
 WaitFrame	120.0
-SkipEventPoint	
+SkipEventPoint
 STOP_COMIC_SE_ALL	30.0
-HideALLComic	
-ComicEnd	
+HideALLComic
+ComicEnd
 comicTitle	3531	0	-1
 imgList	d32_33_0	d32_33_1	d32_33_2
 seList	door_open	D32_33_k0.ogg	D32_33_k1.ogg	D32_33_Umeda.ogg	D32_33_H0.ogg
@@ -1476,7 +1475,7 @@ SetZoom	1.0	0.0	2.0
 SetComic	0.0	0.0
 ComicPos	0.0	0.0	0.0	0.0	0.0
 ComicAlpha	0.0	0.0	255.0	60.0	0.0
-BtnWait	
+BtnWait
 VOL_SCRIPT_BGM	3536.0	0.0	50.0	30.0
 EyeMove	384.0	0.0	60.0	2.0
 SetComic	1.0	1.0
@@ -1484,22 +1483,22 @@ ComicPos	1.0	-959.0	-87.0	0.0	0.0
 ComicAlpha	1.0	0.0	255.0	60.0	0.0
 PlayComicSE	0.0	0.0	0.0	0.0	1.0
 PlayComicSE	1.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	384.0	1038.0	120.0	7.0
 SetComic	2.0	2.0
 ComicPos	2.0	-380.0	-1054.0	0.0	0.0
 ComicAlpha	2.0	0.0	255.0	60.0	0.0
 PlayComicSE	2.0	0.0	0.0	1.0	0.0
 PlayComicSE	4.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 ComicAlpha	0.0	255.0	0.0	90.0	1.0
 ComicAlpha	1.0	255.0	0.0	90.0	1.0
 ComicAlpha	2.0	255.0	0.0	90.0	1.0
 WaitFrame	90.0
-SkipEventPoint	
+SkipEventPoint
 STOP_COMIC_SE_ALL	30.0
-HideALLComic	
-ComicEnd	
+HideALLComic
+ComicEnd
 comicTitle	3532	0	-1
 imgList	d32_34_0	d32_34_1	d32_34_2	d32_34_3	d32_34_4
 seList	d32_33_b0	d32_33_b1	d32_34_b0	d32_34_b1	d32_34_b2
@@ -1511,13 +1510,13 @@ SetComic	0.0	0.0
 ComicPos	0.0	0.0	0.0	0.0	0.0
 ComicAlpha	0.0	0.0	255.0	60.0	0.0
 PlayComicSE	0.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	518.0	0.0	60.0	7.0
 SetComic	1.0	1.0
 ComicPos	1.0	-957.0	-82.0	0.0	0.0
 ComicAlpha	1.0	0.0	255.0	60.0	0.0
 PlayComicSE	1.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 ComicAlpha	0.0	255.0	0.0	60.0	1.0
 ComicAlpha	1.0	255.0	0.0	60.0	1.0
 WaitFrame	60.0
@@ -1526,27 +1525,27 @@ SetComic	2.0	2.0
 ComicPos	2.0	145.0	-1352.0	0.0	0.0
 ComicAlpha	2.0	0.0	255.0	60.0	0.0
 PlayComicSE	2.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	517.0	1240.0	60.0	7.0
 SetComic	3.0	3.0
 ComicPos	3.0	-820.0	-1234.0	0.0	0.0
 ComicAlpha	3.0	0.0	255.0	60.0	0.0
 PlayComicSE	3.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	517.0	2328.0	120.0	7.0
 SetComic	4.0	4.0
 ComicPos	4.0	-458.0	-2329.0	0.0	0.0
 ComicAlpha	4.0	0.0	255.0	60.0	0.0
 PlayComicSE	4.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 ComicAlpha	2.0	255.0	0.0	90.0	1.0
 ComicAlpha	3.0	255.0	0.0	90.0	1.0
 ComicAlpha	4.0	255.0	0.0	90.0	1.0
 WaitFrame	90.0
-SkipEventPoint	
+SkipEventPoint
 STOP_COMIC_SE_ALL	30.0
-HideALLComic	
-ComicEnd	
+HideALLComic
+ComicEnd
 comicTitle	3518	0	-1
 imgList
 seList
@@ -1564,12 +1563,12 @@ ADD_POINT	0.0	1.0
 WAIT_RAIL_ONLY	0.0	475.0	120.0
 END_WAIT_RAIL	0.0
 ADD_POINT	0.0	1.0
-ComicEnd	
+ComicEnd
 comicTitle	2990	3	798
 imgList
 seList	show_rec
 bgmList
-RACE_END	
+RACE_END
 WaitFrame	4.0
 IS_FREE_MODE	100.0	200.0
 FROM	100.0
@@ -1594,8 +1593,8 @@ STOP_3D	1.0
 SLEEP_TRAIN	0.0	1.0
 PlayComicSE	0.0	0.0	0.0	0.0	1.0
 SET_SE_VOL	0.0	60.0	0.0
-ShowRecord	
-INQ_WAIT	
+ShowRecord
+INQ_WAIT
 SLEEP_TRAIN	0.0	0.0
 STOP_3D	0.0
 CHANGE_SPEED	0.1	0.0	-1.0
@@ -1603,7 +1602,7 @@ CHANGE_SPEED	1.0	60.0	-1.0
 STOP_STAGE_BGM	-1.0	60.0
 CHANGE_SCENE	0.0
 WaitFrame	120.0
-ComicEnd	
+ComicEnd
 FROM	200.0
 CHK_WIN_TRAIN	0.0	0.0
 CamComtroll	1.0
@@ -1624,20 +1623,20 @@ END_CHK_WINTRAIN	0.0
 GOTO_SCRIPT	2991.0
 CHANGE_SPEED	0.1	15.0	-1.0
 WaitFrame	120.0
-H2300_GOAL	
+H2300_GOAL
 CHANGE_SPEED	1.0	30.0	-1.0
 WaitFrame	60.0
 CHK_WIN_TRAIN	0.0	0.0
 Stage_BGM_Vol	20.0	60.0	-1.0
 SET_SE_VOL	0.0	60.0	0.0
-STORY_WIN	
+STORY_WIN
 WaitFrame	120.0
-ComicEnd	
+ComicEnd
 END_CHK_WINTRAIN	0.0
 Stage_BGM_Vol	0.0	60.0	-1.0
 CHANGE_SCENE	0.0
 WaitFrame	120.0
-ComicEnd	
+ComicEnd
 comicTitle	3599	5	-1
 imgList
 seList
@@ -1671,7 +1670,7 @@ SET_CAM_POINT_LENGTH	0.0	-15.0	0.0	0.0
 SET_CAM_POINT_LENGTH	0.0	14.0	7.0	240.0
 SkipEventFlg	1.0
 WaitFrame	210.0
-SkipEventPoint	
+SkipEventPoint
 RAIN_PARTICLE	1.0
 GOTO_SCRIPT	2900.0
 WaitFrame	180.0
@@ -1679,8 +1678,8 @@ ComicSceneStop	0.0
 CamComtroll	0.0
 ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	60.0
-HideALLComic	
-ComicEnd	
+HideALLComic
+ComicEnd
 comicTitle	3537	0	-1
 imgList
 seList
@@ -1695,7 +1694,7 @@ WaitFrame	60.0
 RETURN	100.0
 END_CHK_LENGTH	0.0
 GOTO_SCRIPT	3538.0
-ComicEnd	
+ComicEnd
 comicTitle	3538	0	-1
 imgList
 seList
@@ -1718,7 +1717,7 @@ CAM_TARGET_PER	1.0	7.0	0.0
 FTV_NEXT_PROC	3820.0	3817.0
 WaitFrame	7.0
 FTV_End	3820.0
-HideMsgWnd	
+HideMsgWnd
 Fill_BG	1.0
 BG_Alpha	255.0	0.0	0.0	0.0
 ComicAlpha	0.0	255.0	0.0	60.0	0.0
@@ -1733,7 +1732,7 @@ STOP_3D	1.0
 CHANGE_SPEED	1.0	0.0	-1.0
 CHANGE_SCENE	0.0
 WaitFrame	120.0
-ComicEnd	
+ComicEnd
 comicTitle	3506	0	-1
 imgList	D32_K00	D32_K01	D32_K02	D32_K03	D32_K04	D32_K05	D32_K06	D32_K07	D32_K08	D32_K09	D32_K10	D32_K11	D32_K12	D32_K13	D32_K14	D32_K15	D32_K16	D32_K17	D32_K18	D32_K19	D32_K20	D32_K21	D32_K22	D32_K23	D32_K24	D32_K25	D32_K26	D32_K27	D32_K28	D32_K29	D32_K30	D32_K31	D32_K32	D32_K33	D32_K34	D32_K35	D32_K36	D32_K37	D32_K38	D32_K39	D32_K40	D32_K41	D32_K42	D32_K43	D32_K44	D32_K45	D32_K46	D32_K47	D32_K48	D32_K49	light	lightover
 seList
@@ -2350,5 +2349,97 @@ NO_TIMESCALE_KOMA	0.0	1.0
 WaitFrame	120.0
 ComicAlpha	0.0	255.0	0.0	60.0	0.0
 WaitFrame	90.0
-HideALLComic	
-ComicEnd	
+HideALLComic
+ComicEnd
+comicTitle	3539	0	-1
+imgList	light	lightover
+seList
+bgmList
+EyeMove	0.0	0.0	0.0	2.0
+SetZoom	1.0	0.0	2.0
+SetComic	0.0	0.0
+ComicPos	0.0	-775.0	110.0	0.0	0.0
+SET_LIGHT_OVER	0.0	1.0	0.0
+ComicAlpha	0.0	255.0	255.0	0.0	0.0
+COMIC_SCALE	0.0	4.0	4.0	0.0	0.0
+SetComic	1.0	1.0
+ComicPos	1.0	-775.0	110.0	0.0	0.0
+SET_LIGHT_OVER	1.0	1.0	1.0
+ComicAlpha	1.0	255.0	255.0	0.0	0.0
+COMIC_SCALE	1.0	5.0	5.0	0.0	0.0
+WaitFrame	6000.0
+ComicEnd
+comicTitle	3526	0	-1
+imgList
+seList	Baten00.ogg
+bgmList
+CHK_POINT	1.0	40.0
+WAIT_MOTION	11.0	600.0	0.0
+ADD_POINT	1.0	10.0
+SET_CPU_MODE	1.0	11.0	3.0	5.0	190.0	163.0	110.0	0.0	0.0
+PlayComicSE	0.0	0.0	0.0	0.0	1.0
+Scene_to_Comic	0.0	1920.0	1080.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	3.0	0.0
+SetComic_Blur	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+CHANGE_SPEED	0.25	30.0	-1.0
+SET_CAMPOINT_2P2C	0.0	23.0	7.0	10.0	0.0	1.0	25.0	-7.0	10.0	0.0	0.0
+SET_CAM_OFFSET	0.0	12.0	13.0	0.0	7.0	30.0
+CAM_TARGET_PER	0.0	0.0	0.0
+WaitFrame	30.0
+Stage_BGM_Vol	50.0	15.0	-1.0
+CAM_TARGET_PER	1.0	2.0	15.0
+CAM_POINT_PER	1.0	2.0	15.0
+WaitFrame	15.0
+FTV_NEXT_PROC	3818.0	-1.0
+WaitFrame	15.0
+BRIND_ATK	1.0	1.0	0.0
+WaitFrame	15.0
+FTV_End	3818.0
+WaitFrame	15.0
+FTV_Play	3814.0
+CamComtroll	0.0
+ComicSceneStop	0.0
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+CHANGE_SPEED	1.0	30.0	-1.0
+NO_OUTRUN	0.0	0.0
+FTV_Wait	3814.0
+WaitFrame	30.0
+FTV_End	3814.0
+HideMsgWnd
+Stage_BGM_Vol	100.0	30.0	-1.0
+ComicEnd
+END_WAIT_MOTION	0.0
+END_CHK_POINT	1.0
+SET_CPU_MODE	1.0	7.0	300.0	320.0	180.0	175.0	110.0	0.0	0.0
+GOTO_SCRIPT	3534.0
+ComicEnd
+comicTitle	3512	0	-1
+imgList
+seList
+bgmList
+CHK_LENGTH	300.0	0.0	1.0
+NO_OUTRUN	0.0	1.0
+Scene_to_Comic	0.0	1920.0	1080.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	3.0	0.0
+SetComic_Blur	0.0	1.0
+SetComic_Blur_Speed	0.0	2.5	0.0	0.0
+CamComtroll	0.0
+CamComtroll	1.0
+SET_CAMPOINT_1P2T	0.0	1.0
+RAIL_POS_TO_BUFF	387.0	0.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	6.0	6.0	0.0	0.0	0.0
+BUFF_TO_SC_CAM_POS	0.0	-6.0	6.0	25.0	120.0	7.0
+WAIT_RAIL_ONLY	0.0	381.0	120.0
+END_WAIT_RAIL	0.0
+CamComtroll	0.0
+ComicSceneStop	0.0
+ComicAlpha	0.0	255.0	0.0	30.0	0.0
+WaitFrame	120.0
+NO_OUTRUN	0.0	0.0
+END_CHK_LENGTH	0.0
+ComicEnd
