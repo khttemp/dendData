@@ -285,7 +285,7 @@ angular.module('myApp', ['myModule'])
         function setProperty(comicNum, cmdList, cmd, idx){
             if (idx == 0) {
                 if (CMD[cmd].description != "") {
-                    return CMD[cmd].description;
+                    return CMD[cmd].description.replaceAll(' ', '');
                 }
             }
             let index = Number(cmdList[idx]);

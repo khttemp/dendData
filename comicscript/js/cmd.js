@@ -2,11 +2,12 @@ const newLine = "<br>";
 const CMD = {
     "Tx":{
         "num":0,
-        "description":""
+        "description":"【モデルバイナリ】画像をロードする"
     },
     "TxSize":{
         "num":1,
-        "description":""
+        "description":"【モデルバイナリ】画像のサイズを変換する" + newLine + 
+                    ""
     },
     "Alpha":{
         "num":2,
@@ -134,7 +135,9 @@ const CMD = {
     },
     "CHANGE_SCENE":{
         "num":33,
-        "description":"シーンを変える（メニューや漫画などの）" + newLine + "基本引数は0。" + newLine + "LSのH7001のみ引数「100」を使う"
+        "description":"シーンを変える（メニューや漫画などの）" + newLine + 
+                    "デフォルトで引数はなし" + newLine + 
+                    "LSのH7001のみ引数「100」を使う"
     },
     "LPos":{
         "num":34,
