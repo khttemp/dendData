@@ -6,20 +6,32 @@ const CMD = {
     },
     "TxSize":{
         "num":1,
-        "description":"【モデルバイナリ】画像のサイズを変換する" + newLine + 
-                    ""
+        "description":"【モデルバイナリ】画像のサイズを変える" + newLine + 
+                    "引数１：from横の倍率" + newLine +
+                    "引数２：from縦の倍率" + newLine + 
+                    "引数３：to横の倍率" + newLine +
+                    "引数４：to縦の倍率" + newLine + 
+                    "引数５：引数１、２から" + newLine + 
+                    "　引数３、４まで変化する時間（フレーム）"
     },
     "Alpha":{
         "num":2,
-        "description":""
+        "description":"【モデルバイナリ】画像のAlphaを変える" + newLine +
+                    "引数１：from_Alphaの値" + newLine +
+                    "引数２：to_Alphaの値" + newLine + 
+                    "引数３：引数１から" + newLine + 
+                    "　引数２まで変化する時間（フレーム）"
     },
     "End":{
         "num":3,
-        "description":""
+        "description":"【モデルバイナリ】コマンドを終了する"
     },
     "Pos":{
         "num":4,
-        "description":""
+        "description":"【モデルバイナリ】画面中央を基準に画像を移動させる" + newLine +
+                    "引数１：移動させるx座標" + newLine +
+                    "引数２：移動させるy座標" + newLine + 
+                    "引数３：詳細不明"
     },
     "ColorALL":{
         "num":5,
@@ -201,27 +213,46 @@ const CMD = {
     },
     "CamMoveWait":{
         "num":49,
-        "description":"【LSのみ】【推定】カメラの動きが終わるまで待つが" + newLine + "ボタンで早送りできるようにする" + newLine + "引数１：１（True）、0（False）"
+        "description":"【LSのみ】【推定】カメラの動きが終わるまで待つが" + newLine + 
+                    "ボタンで早送りできるようにする" + newLine + 
+                    "引数１：１（True）、0（False）"
     },
     "SetComic":{
         "num":50,
-        "description":"コミックをセットする。" + newLine + "引数１：コマの番号" + newLine + "引数２：スクリプト内のイメージ番号"
+        "description":"コミックをセットする。" + newLine + 
+                    "引数１：コマの番号" + newLine +
+                    "引数２：スクリプト内のイメージ番号"
     },
     "ComicPos":{
         "num":51,
-        "description":"コミックの位置を設定する" + newLine + "引数１：コマの番号" + newLine + "引数２：x座標" + newLine + "引数３：y座標" + newLine + "引数４：アニメ時間（フレーム）" + newLine + "引数５：アニメ効果の種類"
+        "description":"コミックの位置を設定する" + newLine + 
+                    "引数１：コマの番号" + newLine + 
+                    "引数２：x座標" + newLine + 
+                    "引数３：y座標" + newLine +
+                    "引数４：アニメ時間（フレーム）" + newLine +
+                    "引数５：アニメ効果の種類"
     },
     "ComicAlpha":{
         "num":52,
-        "description":"コミックのAlphaを設定する" + newLine + "引数１：コマの番号" + newLine + "引数２：from Alpha"  + newLine + "引数３：to Alpha" + newLine + "引数４：アニメ時間（フレーム）" + newLine + "引数５：アニメ効果の種類"
+        "description":"コミックのAlphaを設定する" + newLine +
+                    "引数１：コマの番号" + newLine +
+                    "引数２：from Alpha"  + newLine +
+                    "引数３：to Alpha" + newLine +
+                    "引数４：アニメ時間（フレーム）" + newLine +
+                    "引数５：アニメ効果の種類"
     },
     "ComicWait":{
         "num":53,
-        "description":"コミックを待つ" + newLine + "引数１：コマの番号" + newLine + "引数２：【不明】（SSでは使わない。）"
+        "description":"コミックを待つ" + newLine + 
+                    "引数１：コマの番号" + newLine +
+                    "引数２：【不明】（SSでは使わない。）"
     },
     "Scene_to_Comic":{
         "num":54,
-        "description":"3Dシーンをコミック化する" + newLine + "引数１：コマの番号" + newLine + "引数２：width" + newLine + "引数３：height"
+        "description":"3Dシーンをコミック化する" + newLine +
+                    "引数１：コマの番号" + newLine +
+                    "引数２：width" + newLine +
+                    "引数３：height"
     },
     "SKY_DOME":{
         "num":55,
@@ -229,7 +260,8 @@ const CMD = {
     },
     "Fill_BG":{
         "num":56,
-        "description":"画面をBGで埋める" + newLine + "引数１：１（True）、0（False）"
+        "description":"画面をBGで埋める" + newLine + 
+                    "引数１：１（True）、0（False）"
     },
     "ComicEnd":{
         "num":57,
@@ -237,11 +269,13 @@ const CMD = {
     },
     "CamComtroll":{
         "num":58,
-        "description":"スクリプトのCam設定できるようにする。" + newLine + "引数１：１（True）、0（False）"
+        "description":"スクリプトのCam設定できるようにする。" + newLine + 
+                    "引数１：１（True）、0（False）"
     },
     "ComicSceneStop":{
         "num":59,
-        "description":"指定したのコマの中の動きを止める" + newLine + "引数１：コマの番号"
+        "description":"指定したのコマの中の動きを止める" + newLine + 
+                    "引数１：コマの番号"
     },
     "BtnWait":{
         "num":60,
@@ -249,15 +283,26 @@ const CMD = {
     },
     "EyeMove":{
         "num":61,
-        "description":"視点を動かす。" + newLine + "引数１：x座標" + newLine + "引数２：y座標" + newLine + "引数３：アニメ時間（フレーム）" + newLine + "引数４：アニメ効果の種類"
+        "description":"視点を動かす。" + newLine + 
+                    "引数１：x座標" + newLine +
+                    "引数２：y座標" + newLine +
+                    "引数３：アニメ時間（フレーム）" + newLine +
+                    "引数４：アニメ効果の種類"
     },
     "SetZoom":{
         "num":62,
-        "description":"Zoomを設定する。" + newLine + "引数１：zoom倍率" + newLine + "引数２：アニメ時間（フレーム）" + newLine + "引数３：アニメ効果の種類"
+        "description":"Zoomを設定する。" + newLine +
+                    "引数１：zoom倍率" + newLine +
+                    "引数２：アニメ時間（フレーム）" + newLine +
+                    "引数３：アニメ効果の種類"
     },
     "BG_Alpha":{
         "num":63,
-        "description":"BGのAlphaを設定する" + newLine + "引数１：BGのAlpha設定" + newLine + "引数２：アニメ時間（フレーム）" + newLine + "引数３：アニメ効果の種類" + newLine + "引数４：【不明】（SSでは使わない。）"
+        "description":"BGのAlphaを設定する" + newLine +
+                    "引数１：BGのAlpha設定" + newLine +
+                    "引数２：アニメ時間（フレーム）" + newLine + 
+                    "引数３：アニメ効果の種類" + newLine + 
+                    "引数４：【不明】（SSでは使わない。）"
     },
     "BG_Wait":{
         "num":64,
@@ -269,19 +314,23 @@ const CMD = {
     },
     "WaitMoveEye":{
         "num":66,
-        "description":"【LS、BS、CSのみ】EyeMoveが終わるまで待つ" + newLine + "引数１：１（True）、0（False：ボタンで待たずに進める）"
+        "description":"【LS、BS、CSのみ】EyeMoveが終わるまで待つ" + newLine + 
+                    "引数１：１（True）、0（False：ボタンで待たずに進める）"
     },
     "WaitFrame":{
         "num":67,
-        "description":"指定のフレームだけ待つ" + newLine + "引数１：フレーム"
+        "description":"指定のフレームだけ待つ" + newLine + 
+                    "引数１：フレーム"
     },
     "FTV_Play":{
         "num":68,
-        "description":"FVTを再生する" + newLine + "引数１：FVT番号"
+        "description":"FVTを再生する" + newLine + 
+                    "引数１：FVT番号"
     },
     "FTV_Wait":{
         "num":69,
-        "description":"FVTが終わるまで待つ" + newLine + "引数１：FVT番号"
+        "description":"FVTが終わるまで待つ" + newLine + 
+                    "引数１：FVT番号"
     },
     "HideMsgWnd":{
         "num":70,
@@ -289,7 +338,8 @@ const CMD = {
     },
     "FTV_End":{
         "num":71,
-        "description":"FVTを終了する" + newLine + "引数１：FVT番号"
+        "description":"FVTを終了する" + newLine + 
+                    "引数１：FVT番号"
     },
     "SkipEventPoint":{
         "num":72,
@@ -297,27 +347,43 @@ const CMD = {
     },
     "SkipEventFlg":{
         "num":73,
-        "description":"スキップできるようにする" + newLine + "引数１：１（True）、0（False）"
+        "description":"スキップできるようにする" + newLine + 
+                    "引数１：１（True）、0（False）"
     },
     "PlayComicSE":{
         "num":74,
-        "description":"SEを再生する" + newLine + "引数１：スクリプト内のSE番号" + newLine + "引数２：【不明】（SSでは使わない。）" + newLine + "引数３：【不明】（SSでは使わない。）" + newLine + "引数４：再生が終わるまで待つ[１（True）、0（False）]" + newLine + "引数５：0設定時、ボタンを押すとスキップする"
+        "description":"SEを再生する" + newLine + 
+                    "引数１：スクリプト内のSE番号" + newLine +
+                    "引数２：【不明】（SSでは使わない。）" + newLine +
+                    "引数３：【不明】（SSでは使わない。）" + newLine +
+                    "引数４：再生が終わるまで待つ[１（True）、0（False）]" + newLine +
+                    "引数５：0設定時、ボタンを押すとスキップする"
     },
     "StopComicSE":{
         "num":75,
-        "description":"SEの再生を停止する" + newLine + "引数１：スクリプト内のSE番号" + newLine + "引数２：【不明】（SSでは使わない。）"
+        "description":"SEの再生を停止する" + newLine + 
+                    "引数１：スクリプト内のSE番号" + newLine + 
+                    "引数２：【不明】（SSでは使わない。）"
     },
     "PlayComicBGM":{
         "num":76,
-        "description":"BGMを再生する" + newLine + "引数１：スクリプト内のBGM番号" + newLine + "引数２：ループする[-1（True）、1（False）]" + newLine + "引数３：BGMのVolume"
+        "description":"BGMを再生する" + newLine + 
+                    "引数１：スクリプト内のBGM番号" + newLine + 
+                    "引数２：ループする[-1（True）、1（False）]" + newLine + 
+                    "引数３：BGMのVolume"
     },
     "StopComicBGM":{
         "num":77,
-        "description":"BGMを再生を停止する" + newLine + "引数１：スクリプト内のBGM番号" + newLine + "引数２：fadeの時間（フレーム）"
+        "description":"BGMを再生を停止する" + newLine + 
+                    "引数１：スクリプト内のBGM番号" + newLine + 
+                    "引数２：fadeの時間（フレーム）"
     },
     "VolComicBGM":{
         "num":78,
-        "description":"BGMのVolumeを変える" + newLine + "引数１：スクリプト内のBGM番号" + newLine + "引数２：Volume" + newLine + "引数３：変化する時間（フレーム）"
+        "description":"BGMのVolumeを変える" + newLine + 
+                    "引数１：スクリプト内のBGM番号" + newLine + 
+                    "引数２：Volume" + newLine + 
+                    "引数３：変化する時間（フレーム）"
     },
     "HideALLComic":{
         "num":79,
@@ -325,7 +391,9 @@ const CMD = {
     },
     "Stage_BGM_Vol":{
         "num":80,
-        "description":"現在のBGMのVolumeを変える" + newLine + "引数１：Volume" + newLine + "引数２：変化する時間（フレーム）"
+        "description":"現在のBGMのVolumeを変える" + newLine + 
+                    "引数１：Volume" + newLine + 
+                    "引数２：変化する時間（フレーム）"
     },
     "SET_CPU_FLG":{
         "num":81,
@@ -333,35 +401,73 @@ const CMD = {
     },
     "SET_CPU_MODE":{
         "num":82,
-        "description":"CPUのモードを設定する" + newLine + "引数１：CPU（SSでは使わない）" + newLine + "引数２：走るモード" + newLine + "引数３：minLen" + newLine + "引数４：maxLen" + newLine + "引数５：maxSpeed" + newLine + "引数６：minSpeed" + newLine + "引数７：ブレーキ時間" + newLine + "引数８：【不明】（SSでは使わない）" + newLine + "引数９：【不明】（SSでは使わない）"
+        "description":"CPUのモードを設定する" + newLine + 
+                    "引数１：CPU（SSでは使わない）" + newLine + 
+                    "引数２：走るモード" + newLine + 
+                    "引数３：minLen" + newLine + 
+                    "引数４：maxLen" + newLine + 
+                    "引数５：maxSpeed" + newLine + 
+                    "引数６：minSpeed" + newLine + 
+                    "引数７：【RSまで】デフォルト速度。【SSから】ブレーキ時間" + newLine + 
+                    "引数８：【不明】（SSでは使わない）" + newLine + 
+                    "引数９：【不明】（SSでは使わない）"
     },
     "CHK_LENGTH":{
         "num":83,
-        "description":"CPUとの距離を測定し" + newLine + "指定時間内に指定距離より少ない場合、次のコマンド行へ行く" + newLine + "指定距離より以上なら、指定ラベルのEND_CHK_LENGTHまで飛ぶ" + newLine + "引数１：指定距離" + newLine + "引数２：指定ラベル" + newLine + "引数３：指定時間"
+        "description":"CPUとの距離を測定し" + newLine + 
+                    "指定時間内に指定距離より少ない場合、次のコマンド行へ行く" + newLine + 
+                    "指定距離より以上なら、指定ラベルのEND_CHK_LENGTHまで飛ぶ" + newLine + 
+                    "引数１：指定距離" + newLine + 
+                    "引数２：指定ラベル" + newLine + 
+                    "引数３：指定時間"
     },
     "END_CHK_LENGTH":{
         "num":84,
-        "description":"CHK_LENGTHで指定ラベルまで飛ぶ場合、この行で止める" + newLine + "引数１：指定ラベル"
+        "description":"CHK_LENGTHで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
+                    "引数１：指定ラベル"
     },
     "CHK_POSTION":{
         "num":85,
-        "description":"指定時間内に引数１の条件を満たす場合、次のコマンドへ行く" + newLine + "そうではない場合、指定ラベルまで飛ぶ" + newLine + "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine + "引数２：指定ラベル" + newLine + "引数３：指定時間"
+        "description":"指定時間内に引数１の条件を満たす場合、次のコマンドへ行く" + newLine + 
+                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
+                    "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine + 
+                    "引数２：指定ラベル" + newLine + 
+                    "引数３：指定時間"
     },
     "END_CHK_POSTION":{
         "num":86,
-        "description":"CHK_POSTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine + "引数１：指定ラベル"
+        "description":"CHK_POSTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
+                    "引数１：指定ラベル"
     },
     "WAIT_MOTION":{
         "num":87,
-        "description":"【RSまで】指定の動きをした場合、次のコマンドへ行く" + newLine + "そうではない場合、指定ラベルまで飛ぶ" + newLine + "引数１【推定】" + newLine + "　0（複線ドリフト）" + newLine + "　1（左側からドリフト）" + newLine + "　2（右側からドリフト）" + newLine + "　3（振り子）" + newLine + "　4（ドリフト、後輪含む）" + newLine + "　5（後輪ドリフト戻し）" + newLine + "　7（左側から片輪ドリフト）" + newLine + "　8（右側から片輪ドリフト）" + newLine + "　9（後輪ドリフト）" + newLine + "　10（片輪ドリフト戻し）" + newLine + "引数２：指定時間" + newLine + "引数３：指定ラベル"
+        "description":"【RSまで】指定の動きをした場合、次のコマンドへ行く" + newLine + 
+                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
+                    "引数１【推定】" + newLine + 
+                    "　0（複線ドリフト）" + newLine + 
+                    "　1（左側からドリフト）" + newLine + 
+                    "　2（右側からドリフト）" + newLine + 
+                    "　3（振り子）" + newLine + 
+                    "　4（ドリフト、後輪含む）" + newLine + 
+                    "　5（後輪ドリフト戻し）" + newLine + 
+                    "　7（左側から片輪ドリフト）" + newLine + 
+                    "　8（右側から片輪ドリフト）" + newLine + 
+                    "　9（後輪ドリフト）" + newLine + 
+                    "　10（片輪ドリフト戻し）" + newLine + 
+                    "引数２：指定時間" + newLine + 
+                    "引数３：指定ラベル"
     },
     "END_WAIT_MOTION":{
         "num":88,
-        "description":"WAIT_MOTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine + "引数１：指定ラベル"
+        "description":"WAIT_MOTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
+                    "引数１：指定ラベル"
     },
     "CHANGE_SPEED":{
         "num":89,
-        "description":"ゲームの速度を変える" + newLine + "引数１：速度倍率" + newLine + "引数２：変化する時間（フレーム）" + newLine + "引数３：リアルタイムで通常に戻す時間"
+        "description":"ゲームの速度を変える" + newLine + 
+                    "引数１：速度倍率" + newLine + 
+                    "引数２：変化する時間（フレーム）" + newLine + 
+                    "引数３：リアルタイムで通常に戻す時間"
     },
     "CHANGE_CAM_TYPE":{
         "num":90,
@@ -397,11 +503,17 @@ const CMD = {
     },
     "MoveX":{
         "num":98,
-        "description":""
+        "description":"【モデルバイナリ】画像のx座標を移動させる" + newLine +
+                    "引数１：移動させるx座標" + newLine +
+                    "引数２：変化する時間（フレーム）" + newLine + 
+                    "引数３：詳細不明"
     },
     "MoveY":{
         "num":99,
-        "description":""
+        "description":"【モデルバイナリ】画像のx座標を移動させる" + newLine +
+                    "引数１：移動させるy座標" + newLine +
+                    "引数２：変化する時間（フレーム）" + newLine + 
+                    "引数３：詳細不明"
     },
     "MoveZ":{
         "num":100,
@@ -425,11 +537,16 @@ const CMD = {
     },
     "CHK_WIN_TRAIN":{
         "num":105,
-        "description":"指定車両が勝利したかチェックする" + newLine + "勝った場合、次のコマンドへ行く" + newLine + "負けた場合、指定のラベルまで飛ぶ" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：指定のラベル"
+        "description":"指定車両が勝利したかチェックする" + newLine + 
+                    "勝った場合、次のコマンドへ行く" + newLine + 
+                    "負けた場合、指定のラベルまで飛ぶ" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：指定のラベル"
     },
     "END_CHK_WINTRAIN":{
         "num":106,
-        "description":"CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める" + newLine + "引数１：指定ラベル"
+        "description":"CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
+                    "引数１：指定ラベル"
     },
     "N_ADD_OBJ":{
         "num":107,
@@ -449,7 +566,8 @@ const CMD = {
     },
     "WAIT_TIME_LINE":{
         "num":111,
-        "description":"START_TIME_LINEが始まってから、指定時間まで待つ" + newLine + "引数１：指定時間"
+        "description":"START_TIME_LINEが始まってから、指定時間まで待つ" + newLine + 
+                    "引数１：指定時間"
     },
     "N_DEL_OBJ":{
         "num":112,
@@ -457,7 +575,12 @@ const CMD = {
     },
     "SCREEN_FADE":{
         "num":113,
-        "description":"指定の色でFade効果を出す" + newLine + "引数１：0（FadeIn）、1（FadeOut）" + newLine + "引数２：カラーR" + newLine + "引数３：カラーG" + newLine + "引数４：カラーB" + newLine + "引数５：変化する時間（フレーム）"
+        "description":"指定の色でFade効果を出す" + newLine + 
+                    "引数１：0（FadeIn）、1（FadeOut）" + newLine + 
+                    "引数２：カラーR" + newLine + 
+                    "引数３：カラーG" + newLine + 
+                    "引数４：カラーB" + newLine + 
+                    "引数５：変化する時間（フレーム）"
     },
     "N_CHANGE_ANIME":{
         "num":114,
@@ -465,7 +588,11 @@ const CMD = {
     },
     "TRAIN_SPEED":{
         "num":115,
-        "description":"指定車両のスピードを設定する" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：スピード" + newLine + "引数３：変化する時間（フレーム）" + newLine + "引数４：変化方法"
+        "description":"指定車両のスピードを設定する" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：スピード" + newLine + 
+                    "引数３：変化する時間（フレーム）" + newLine + 
+                    "引数４：変化方法"
     },
     "TRAIN_FLG":{
         "num":116,
@@ -493,11 +620,13 @@ const CMD = {
     },
     "R_Drift":{
         "num":122,
-        "description":"指定車両を右ドリフトさせる" + newLine + "引数１：0（1P）、1（2P）"
+        "description":"指定車両を右ドリフトさせる" + newLine + 
+                    "引数１：0（1P）、1（2P）"
     },
     "L_Drift":{
         "num":123,
-        "description":"指定車両を左ドリフトさせる" + newLine + "引数１：0（1P）、1（2P）"
+        "description":"指定車両を左ドリフトさせる" + newLine + 
+                    "引数１：0（1P）、1（2P）"
     },
     "IS_TRAIN_HIT":{
         "num":124,
@@ -505,11 +634,17 @@ const CMD = {
     },
     "TO_RAIL":{
         "num":125,
-        "description":"指定車両を指定レールに置く" + newLine + "引数１：0（1P）、1（2P）"　 + newLine + "引数２：レール番号" + newLine + "引数３：ボーン番号" + newLine + "引数４：【SSのみ】ボーンから細かい位置調整" 
+        "description":"指定車両を指定レールに置く" + newLine + 
+                    "引数１：0（1P）、1（2P）"　 + newLine + 
+                    "引数２：レール番号" + newLine + 
+                    "引数３：ボーン番号" + newLine + 
+                    "引数４：【SSのみ】ボーンから細かい位置調整" 
     },
     "SLEEP_TRAIN":{
         "num":126,
-        "description":"指定車両を消す" + newLine + "引数１：0（1P）、1（2P）"　 + newLine + "引数２：１（True）、0（False）"
+        "description":"指定車両を消す" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：１（True）、0（False）"
     },
     "RandWAngle":{
         "num":127,
@@ -565,19 +700,35 @@ const CMD = {
     },
     "CHK_TRAIN_SPEED_U":{
         "num":140,
-        "description":"指定車両のスピードが、指定時間内に" + newLine + "指定スピードより大きい場合" + newLine + "次のコマンドへ行く" + newLine + "そうではない場合、指定ラベルまで飛ぶ" + newLine + "引数１：指定ラベル" + newLine + "引数２：0（1P）、1（2P）" + newLine + "引数３：指定スピード" + newLine + "引数４：指定時間"
+        "description":"指定車両のスピードが、指定時間内に" + newLine + 
+                    "指定スピードより大きい場合" + newLine +
+                    "次のコマンドへ行く" + newLine + 
+                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
+                    "引数１：指定ラベル" + newLine + 
+                    "引数２：0（1P）、1（2P）" + newLine + 
+                    "引数３：指定スピード" + newLine + 
+                    "引数４：指定時間"
     }, 
     "CHK_TRAIN_SPEED_D":{
         "num":141,
-        "description":"指定車両のスピードが、指定時間内に" + newLine + "指定スピードより小さい場合" + newLine + "次のコマンドへ行く" + newLine + "そうではない場合、指定ラベルまで飛ぶ" + newLine + "引数１：指定ラベル" + newLine + "引数２：0（1P）、1（2P）" + newLine + "引数３：指定スピード" + newLine + "引数４：指定時間"
+        "description":"指定車両のスピードが、指定時間内に" + newLine + 
+                    "指定スピードより小さい場合" + newLine + 
+                    "次のコマンドへ行く" + newLine + 
+                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
+                    "引数１：指定ラベル" + newLine + 
+                    "引数２：0（1P）、1（2P）" + newLine + 
+                    "引数３：指定スピード" + newLine + 
+                    "引数４：指定時間"
     },
     "END_CHK_TRAIN_SPEED_U":{
         "num":142,
-        "description":"CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める" + newLine + "引数１：指定ラベル"
+        "description":"CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
+                    "引数１：指定ラベル"
     },
     "END_CHK_TRAIN_SPEED_D":{
         "num":143,
-        "description":"CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める" + newLine + "引数１：指定ラベル"
+        "description":"CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
+                    "引数１：指定ラベル"
     },
     "ChkStory_and_Tx":{
         "num":144,
@@ -621,11 +772,16 @@ const CMD = {
     },
     "SetComic_Blur_Speed":{
         "num":154,
-        "description":"？" + newLine + "引数１：？" + newLine + "引数２：変化するフレーム" + newLine + "引数３：変化効果"
+        "description":"？" + newLine + 
+                    "引数１：？" + newLine + 
+                    "引数２：変化するフレーム" + newLine + 
+                    "引数３：変化効果"
     },
     "TRACK_BOMB":{
         "num":155,
-        "description":"指定車両の台車が爆発する" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：【SSから】１（True）、0（False）"
+        "description":"指定車両の台車が爆発する" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：【SSから】１（True）、0（False）"
     },
     "Hide_Sky_Doom":{
         "num":156,
@@ -633,43 +789,67 @@ const CMD = {
     },
     "ADD_POINT":{
         "num":157,
-        "description":"バトルポイントを加算する" + newLine + "引数１：配列のインデックス" + newLine + "引数２：ポイント"
+        "description":"バトルポイントを加算する" + newLine + 
+                    "引数１：配列のインデックス" + newLine + 
+                    "引数２：ポイント"
     },
     "CHK_POINT":{
         "num":158,
-        "description":"バトルポイントをチェックする" + newLine + "指定ポイントより以上なら次のコマンドへ行く" + newLine + "そうではない場合、次のポイントチェックコマンド行まで飛ぶ" + newLine + "引数１：配列のインデックス" + newLine + "引数２：ポイント"
+        "description":"バトルポイントをチェックする" + newLine + 
+                    "指定ポイントより以上なら次のコマンドへ行く" + newLine + 
+                    "そうではない場合、次のポイントチェックコマンド行まで飛ぶ" + newLine + 
+                    "引数１：配列のインデックス" + newLine + 
+                    "引数２：ポイント"
     },
     "ELSE_CHK_POINT":{
         "num":159,
-        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + "指定のポイントより少なく、最近チェックした" + newLine + "インデックスと同じ場合、ここで止める" + newLine + "引数１：配列のインデックス"
+        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + 
+                    "指定のポイントより少なく、最近チェックした" + newLine + 
+                    "インデックスと同じ場合、ここで止める" + newLine + 
+                    "引数１：配列のインデックス"
     },
     "ELSE_IF_CHK_POINT":{
         "num":160,
-        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + "指定のポイントより少なく、最近チェックした" + newLine + "インデックスと同じ場合 " + newLine + "ここで止めてポイントをチェックする" + newLine + "引数１：配列のインデックス" + newLine + "引数２：ポイント"
+        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + 
+                    "指定のポイントより少なく、最近チェックした" + newLine + 
+                    "インデックスと同じ場合 " + newLine + 
+                    "ここで止めてポイントをチェックする" + newLine + 
+                    "引数１：配列のインデックス" + newLine + 
+                    "引数２：ポイント"
     },
     "END_CHK_POINT":{
         "num":161,
-        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + "指定のポイントより少なく、最近チェックした" + newLine + "インデックスと同じ場合、ここで止める" + newLine + "引数１：配列のインデックス"
+        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + 
+                    "指定のポイントより少なく、最近チェックした" + newLine + 
+                    "インデックスと同じ場合、ここで止める" + newLine + 
+                    "引数１：配列のインデックス"
     },
     "GOTO_SCRIPT":{
         "num":162,
-        "description":"指定のスクリプトを並列処理で実行し" + newLine + "次のコマンドへ行く" + newLine + "引数１：スクリプト番号"
+        "description":"指定のスクリプトを並列処理で実行し" + newLine + 
+                    "次のコマンドへ行く" + newLine + 
+                    "引数１：スクリプト番号"
     },
     "SHEAK_COMIC":{
         "num":163,
-        "description":"指定のコマを揺らす" + newLine + "引数１：コマの番号" + newLine + "引数２：１（True）、0（False）"
+        "description":"指定のコマを揺らす" + newLine + 
+                    "引数１：コマの番号" + newLine + 
+                    "引数２：１（True）、0（False）"
     },
     "STORY_OPEN":{
         "num":164,
-        "description":"ストーリーを開放する" + newLine + "引数１：ストーリーインデックス"
+        "description":"ストーリーを開放する" + newLine + 
+                    "引数１：ストーリーインデックス"
     },
     "STORY_CLEAR":{
         "num":165,
-        "description":"ストーリーをクリア処理する" + newLine + "引数１：ストーリーインデックス"
+        "description":"ストーリーをクリア処理する" + newLine + 
+                    "引数１：ストーリーインデックス"
     },
     "CHAR_OPEN":{
         "num":166,
-        "description":"車両を開放する" + newLine + "引数１：車両インデックス"
+        "description":"車両を開放する" + newLine + 
+                    "引数１：車両インデックス"
     },
     "SAVE_GAME":{
         "num":167,
@@ -681,7 +861,11 @@ const CMD = {
     },
     "RandPlayComicSE":{
         "num":169,
-        "description":"【LSのみ】スクリプト内のSEのリストから" + newLine + "ランダムに選んで再生する" + newLine + "引数１：startインデックス" + newLine + "引数２：endインデックス" + newLine + "引数３：詳細不明"
+        "description":"【LSのみ】スクリプト内のSEのリストから" + newLine + 
+                    "ランダムに選んで再生する" + newLine + 
+                    "引数１：startインデックス" + newLine + 
+                    "引数２：endインデックス" + newLine + 
+                    "引数３：詳細不明"
     },
     "TITLE_MODE":{
         "num":170,
@@ -741,11 +925,15 @@ const CMD = {
     },
     "DIS_TRAIN_SPEED":{
         "num":184,
-        "description":"スクリプトでスピード設定処理を止める" + newLine + "引数１：0（1P）、1（2P）"
+        "description":"スクリプトでスピード設定処理を止める" + newLine + 
+                    "引数１：0（1P）、1（2P）"
     },
     "CHK_RACE_TIME":{
         "num":185,
-        "description":"【LSのみ】RACE_STARTから経過した時間をチェックする" + newLine + "チェックした時間が指定時間より少ない場合" + newLine + "次のコマンドへ行く、そうではない場合、END_CHK_RACE_TIMEまで飛ぶ" + newLine + "引数１：指定時間"
+        "description":"【LSのみ】RACE_STARTから経過した時間をチェックする" + newLine + 
+                    "チェックした時間が指定時間より少ない場合" + newLine + 
+                    "次のコマンドへ行く、そうではない場合、END_CHK_RACE_TIMEまで飛ぶ" + newLine + 
+                    "引数１：指定時間"
     },
     "END_CHK_RACE_TIME":{
         "num":186,
@@ -753,23 +941,37 @@ const CMD = {
     },
     "End_Comic":{
         "num":187,
-        "description":"スクリプトを終了する" + newLine + "引数１：スクリプト番号"
+        "description":"スクリプトを終了する" + newLine + 
+                    "引数１：スクリプト番号"
     },
     "WAIT_RAIL":{
         "num":188,
-        "description":"指定時間内に、指定したレールを通過するまで待つ" + newLine + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：レール番号" + newLine + "引数３：ボーン番号" + newLine + "引数４：指定時間（フレーム）"
+        "description":"指定時間内に、指定したレールを通過するまで待つ" + newLine + 
+                    "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：レール番号" + newLine + 
+                    "引数３：ボーン番号" + newLine + 
+                    "引数４：指定時間（フレーム）"
     },
     "END_WAIT_RAIL":{
         "num":189,
-        "description":"WAIT_RAILで飛ぶ場合、この行で止める" + newLine + "引数は使わない" + newLine + "引数１：0（1P）、1（2P）"
+        "description":"WAIT_RAILで飛ぶ場合、この行で止める" + newLine + 
+                    "引数１：0（1P）、1（2P）"
     },
     "COMIC_SCALE":{
         "num":190,
-        "description":"指定したコマのスケールを設定する" + newLine + "引数１：コマの番号" + newLine + "引数２：x倍率" + newLine + "引数３：y倍率" + newLine + "引数４：変化するフレーム" + newLine + "引数５：変化効果"
+        "description":"指定したコマのスケールを設定する" + newLine + 
+                    "引数１：コマの番号" + newLine + 
+                    "引数２：x倍率" + newLine + 
+                    "引数３：y倍率" + newLine + 
+                    "引数４：変化するフレーム" + newLine + 
+                    "引数５：変化効果"
     },
     "USO_COUNT":{
         "num":191,
-        "description":"【BSのみ】H7001 vs KQ21XXの" + newLine + "バトルのみ使われたコマンド。" + newLine + "１からカウントを数える"
+        "description":"【BSのみ】H7001　VS　KQ21XXの" + newLine + 
+                    "バトルのみ使われたコマンド。" + newLine + 
+                    "１からカウントを数える"
     },
     "WaitRandPlaySE":{
         "num":192,
@@ -777,31 +979,53 @@ const CMD = {
     },
     "FROM":{
         "num":193,
-        "description":"あるコマンドがFROMに飛ばし引数が一致した場合、この行で止める" + newLine + "引数１：数字"
+        "description":"あるコマンドがFROMに飛ばし引数が一致した場合、この行で止める" + newLine + 
+                    "引数１：数字"
     },
     "GOTO":{
         "num":194,
-        "description":"引数と一致する一番最初のFROMまで飛ばす" + newLine + "引数１：FROMの数字"
+        "description":"引数と一致する一番最初のFROMまで飛ばす" + newLine + 
+                    "引数１：FROMの数字"
     },
     "CHK_TRAIN_TYPE":{
         "num":195,
-        "description":"指定車両が車両インデックスと同じ場合、" + newLine + "引数３のFROMに飛ばす" + newLine + "そうではない場合、引数４のFROMに飛ばす" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：車両インデックス" + newLine + "引数３：FROMの数字" + newLine + "引数４：FROMのの数字"
+        "description":"指定車両が車両インデックスと同じ場合、" + newLine + 
+                    "引数３のFROMに飛ばす" + newLine + 
+                    "そうではない場合、引数４のFROMに飛ばす" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：車両インデックス" + newLine + 
+                    "引数３：FROMの数字" + newLine + 
+                    "引数４：FROMの数字"
     },
     "RAND_IF_AVG":{
         "num":196,
-        "description":"【LSのみ】引数の数字分、0から始まるランダムな整数を作り" + newLine + "FROMの数字として飛ばす" + newLine + "引数１：数字"
+        "description":"【LSのみ】引数の数字分、0から始まるランダムな整数を作り" + newLine + 
+                    "FROMの数字として飛ばす" + newLine + 
+                    "引数１：数字"
     },
     "CHK_NOTCH":{
         "num":197,
-        "description":"【LS、CSのみ】指定車両が指定時間分ノッチを維持した場合" + newLine + "引数３のFROMに飛ばす" + newLine + "そうではない場合、引数４のFROMに飛ばす" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：指定時間（フレーム）" + newLine + "引数３：FROMの数字" + newLine + "引数４：FROMのの数字"
+        "description":"【LS、CSのみ】指定車両が指定時間分ノッチを維持した場合" + newLine + 
+                    "引数３のFROMに飛ばす" + newLine + 
+                    "そうではない場合、引数４のFROMに飛ばす" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：指定時間（フレーム）" + newLine + 
+                    "引数３：FROMの数字" + newLine + 
+                    "引数４：FROMの数字"
     },
     "WAIT_RAIL_ONLY":{
         "num":198,
-        "description":"指定時間内に、指定したレールを通過するまで待つ" + newLine + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：レール番号" + newLine + "引数３：指定時間（フレーム）"
+        "description":"指定時間内に、指定したレールを通過するまで待つ" + newLine + 
+                    "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：レール番号" + newLine + 
+                    "引数３：指定時間（フレーム）"
     },
     "ONE_TRACK_DRIFT":{
         "num":199,
-        "description":"【LSのみ】指定車両を単線ドリフトさせる" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：-1(左）、0（戻し）、1（右）"
+        "description":"【LSのみ】指定車両を単線ドリフトさせる" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：-1(左）、0（戻し）、1（右）"
     },
     "LAST_STATION":{
         "num":200,
@@ -809,7 +1033,9 @@ const CMD = {
     },
     "OSSAN":{
         "num":201,
-        "description":"【LSのみ】指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine + "引数１：0（1P）、1（2P）" + newLine + "１（True）、0（False）"
+        "description":"【LSのみ】指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "１（True）、0（False）"
     },
     "SET_TAIL_SCALE":{
         "num":202,
@@ -997,7 +1223,10 @@ const CMD = {
     },
     "RAIL_POS_TO_BUFF":{
         "num":248,
-        "description":"指定したレールにBUFFを設置する" + newLine + "引数１：レール番号" + newLine + "引数２：ボーン番号" + newLine + "引数３：BUFFのインデックス"
+        "description":"指定したレールにBUFFを設置する" + newLine + 
+                    "引数１：レール番号" + newLine + 
+                    "引数２：ボーン番号" + newLine + 
+                    "引数３：BUFFのインデックス"
     },
     "BUFF_TO_CAM_POS":{
         "num":249,
@@ -1005,7 +1234,13 @@ const CMD = {
     },
     "BUFF_TO_TARGET_POS":{
         "num":250,
-        "description":"BUFFにあるカメラのターゲットを設定する" + newLine + "引数１：BUFFのインデックス" + newLine + "引数２：x座標" + newLine + "引数３：y座標" + newLine + "引数４：z座標" + newLine + "引数５：変化する時間（フレーム）" + newLine + "引数６：カメラ効果"
+        "description":"BUFFにあるカメラのターゲットを設定する" + newLine + 
+                    "引数１：BUFFのインデックス" + newLine + 
+                    "引数２：x座標" + newLine + 
+                    "引数３：y座標" + newLine + 
+                    "引数４：z座標" + newLine + 
+                    "引数５：変化する時間（フレーム）" + newLine + 
+                    "引数６：カメラ効果"
     },
     "FTV_BASE_PROC":{
         "num":251,
@@ -1013,7 +1248,10 @@ const CMD = {
     },
     "FTV_NEXT_PROC":{
         "num":252,
-        "description":"同じ画像を使うFVTの場合" + newLine + "引数２に続いて引数１のFVTを出す" + newLine + "引数１：FVT番号" + newLine + "引数２：FVT番号（prev）"
+        "description":"同じ画像を使うFVTの場合" + newLine + 
+                    "引数２に続いて引数１のFVTを出す" + newLine + 
+                    "引数１：FVT番号" + newLine + 
+                    "引数２：FVT番号（prev）"
     },
     "MDL_INDEX_TO_VIEW":{
         "num":253,
@@ -1081,7 +1319,8 @@ const CMD = {
     },
     "PLAY_STAGE_BGM":{
         "num":269,
-        "description":"【BSから】ステージBGMリストの引数のものを再生する" + newLine + "引数１：ステージBGMのインデックス"
+        "description":"【BSから】ステージBGMリストの引数のものを再生する" + newLine + 
+                    "引数１：ステージBGMのインデックス"
     },
     "CHANGE_TRAIN_FOG":{
         "num":270,
@@ -1093,7 +1332,17 @@ const CMD = {
     },
     "SET_CAMPOINT_2P2C":{
         "num":272,
-        "description":"【BSから】引数１～５のカメラの状態を引数６～１０の状態に変える" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２：距離" + newLine + "引数３：x座標" + newLine + "引数４：y座標" + newLine + "引数５：z座標" + newLine + "引数６：0（1P）、1（2P）" + newLine + "引数７：距離" + newLine + "引数８：x座標" + newLine + "引数９：y座標" + newLine + "引数１０：z座標"
+        "description":"【BSから】引数１～５のカメラの状態を引数６～１０の状態に変える" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２：距離" + newLine + 
+                    "引数３：x座標" + newLine + 
+                    "引数４：y座標" + newLine + 
+                    "引数５：z座標" + newLine + 
+                    "引数６：0（1P）、1（2P）" + newLine + 
+                    "引数７：距離" + newLine + 
+                    "引数８：x座標" + newLine + 
+                    "引数９：y座標" + newLine + 
+                    "引数１０：z座標"
     },
     "SET_CAMPOINT_1P2C":{
         "num":273,
@@ -1101,27 +1350,47 @@ const CMD = {
     },
     "CAM_POINT_PER":{
         "num":274,
-        "description":"【BSから】カメラのPERを設定する" + newLine + "引数１：PER" + newLine + "引数２：変化方法" + newLine + "引数３：変化する時間（フレーム）" 
+        "description":"【BSから】カメラのPERを設定する" + newLine + 
+                    "引数１：PER" + newLine + 
+                    "引数２：変化方法" + newLine + 
+                    "引数３：変化する時間（フレーム）" 
     },
     "CAM_TARGET_PER":{
         "num":275,
-        "description":"【BSから】カメラのターゲットのPERを設定する" + newLine + "引数１：PER" + newLine + "引数２：変化方法" + newLine + "引数３：変化する時間（フレーム）" 
+        "description":"【BSから】カメラのターゲットのPERを設定する" + newLine + 
+                    "引数１：PER" + newLine + 
+                    "引数２：変化方法" + newLine + 
+                    "引数３：変化する時間（フレーム）" 
     },
     "SET_CAM_POINT_LENGTH":{
         "num":276,
-        "description":"【BSから】カメラの距離を設定する" + newLine + "引数１：カメラ番号" + newLine + "引数２：距離" + newLine + "引数３：変化方法" + newLine + "引数４：変化する時間（フレーム）"
+        "description":"【BSから】カメラの距離を設定する" + newLine + 
+                    "引数１：カメラ番号" + newLine + 
+                    "引数２：距離" + newLine + 
+                    "引数３：変化方法" + newLine + 
+                    "引数４：変化する時間（フレーム）"
     },
     "SET_CAM_OFFSET":{
         "num":277,
-        "description":"【BSから】カメラのoffsetを設定する" + newLine + "引数１：カメラ番号" + newLine + "引数２：x座標" + newLine + "引数３：y座標" + newLine + "引数４：z座標" + newLine + "引数５：変化方法" + newLine + "引数６：変化する時間（フレーム）"
+        "description":"【BSから】カメラのoffsetを設定する" + newLine + 
+                    "引数１：カメラ番号" + newLine + 
+                    "引数２：x座標" + newLine + 
+                    "引数３：y座標" + newLine + 
+                    "引数４：z座標" + newLine + 
+                    "引数５：変化方法" + newLine + 
+                    "引数６：変化する時間（フレーム）"
     },
     "START_WIPER":{
         "num":278,
-        "description":"【BS、CS】ワイパーを動かす" + newLine + "引数１：１（True）、0（False）"
+        "description":"【BS、CS】ワイパーを動かす" + newLine + 
+                    "引数１：１（True）、0（False）"
     },
     "CREATE_TRAIN_ORG":{
         "num":279,
-        "description":"【BSのみ】車両モデルを作成する" + newLine + "引数１：作成インデックス" + newLine + "引数２：車両インデックス" + newLine + "引数３：詳細不明"
+        "description":"【BSのみ】車両モデルを作成する" + newLine + 
+                    "引数１：作成インデックス" + newLine + 
+                    "引数２：車両インデックス" + newLine + 
+                    "引数３：詳細不明"
     },
     "ORG_SET_RAIL":{
         "num":280,
@@ -1137,7 +1406,10 @@ const CMD = {
     },
     "ORG_SET_POS":{
         "num":283,
-        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + "作成したモデルの位置を設定する" + newLine + "引数１：作成インデックス" + newLine + "引数２～：詳細不明"
+        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + 
+                    "作成したモデルの位置を設定する" + newLine + 
+                    "引数１：作成インデックス" + newLine + 
+                    "引数２～：詳細不明"
     },
     "ORG_SET_FOG":{
         "num":284,
@@ -1145,7 +1417,9 @@ const CMD = {
     },
     "ORG_RELEASE":{
         "num":285,
-        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + "作成したモデルを解放する" + newLine + "引数１：作成インデックス"
+        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + 
+                    "作成したモデルを解放する" + newLine + 
+                    "引数１：作成インデックス"
     },
     "PLAY_FTV_END":{
         "num":286,
@@ -1153,11 +1427,16 @@ const CMD = {
     },
     "CNG_TRAIN_MAT_COL":{
         "num":287,
-        "description":"【BSのみ】指定車両のカラーを変える" + newLine + "引数１：0（1P）、1（2P）" + newLine + "引数２～："
+        "description":"【BSのみ】指定車両のカラーを変える" + newLine + 
+                    "引数１：0（1P）、1（2P）" + newLine + 
+                    "引数２～："
     },
     "CNG_ORG_MAT_COL":{
         "num":288,
-        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + "作成したモデルのカラーを変える" + newLine + "引数１：作成インデックス" + "引数２～："
+        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + 
+                    "作成したモデルのカラーを変える" + newLine + 
+                    "引数１：作成インデックス" + newLine + 
+                    "引数２～："
     },
     "IS_CAUTION":{
         "num":289,
@@ -1165,11 +1444,15 @@ const CMD = {
     },
     "ENDWAIT_COMIC":{
         "num":290,
-        "description":"GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine + "引数１：スクリプト番号"
+        "description":"GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine + 
+                    "引数１：スクリプト番号"
     },
     "SET_COMIC_BG_COLOR":{
         "num":291,
-        "description":"【RSから】BGの色を変える" + newLine + "引数１：カラーR" + newLine + "引数２：カラーG" + newLine + "引数３：カラーB"
+        "description":"【RSから】BGの色を変える" + newLine + 
+                    "引数１：カラーR" + newLine + 
+                    "引数２：カラーG" + newLine + 
+                    "引数３：カラーB"
     },
     "TX_2_TRAIN":{
         "num":292,
@@ -1185,7 +1468,8 @@ const CMD = {
     },
     "RETURN":{
         "num":295,
-        "description":"このコマンドから一番近い上のFROMまで飛ぶ" + newLine + "引数１：FROMの数字"
+        "description":"このコマンドから一番近い上のFROMまで飛ぶ" + newLine + 
+                    "引数１：FROMの数字"
     },
     "ReLoadSE":{
         "num":296,
@@ -1197,11 +1481,16 @@ const CMD = {
     },
     "STOP_3D":{
         "num":298,
-        "description":"3Dシーンの動きを止める" + newLine + "引数１：１（True）、0（False）"
+        "description":"3Dシーンの動きを止める" + newLine + 
+                    "引数１：１（True）、0（False）"
     },
     "STOP_STAGE_BGM":{
         "num":299,
-        "description":"ステージのBGMを止める" + newLine + "SSからはインデックスが-1の場合" + newLine + "再生中の全てのステージBGMを止める" + newLine + "引数１：ステージBGMのインデックス" + newLine + "引数２：fade時間（フレーム）"
+        "description":"ステージのBGMを止める" + newLine + 
+                    "SSからはインデックスが-1の場合" + newLine + 
+                    "再生中の全てのステージBGMを止める" + newLine + 
+                    "引数１：ステージBGMのインデックス" + newLine + 
+                    "引数２：fade時間（フレーム）"
     },
     "TRAIN_UD":{
         "num":300,
