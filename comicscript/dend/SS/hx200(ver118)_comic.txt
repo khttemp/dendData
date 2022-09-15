@@ -387,6 +387,7 @@ HideMsgWnd
 WaitFrame	60.0
 SkipEventPoint
 HideMsgWnd
+EyeMove	0.0	0.0	0.0	0.0
 ComicAlpha	1.0	0.0	0.0	0.0	0.0
 ComicPos	2.0	-2530.0	-485.0	0.0	7.0
 ComicPos	3.0	-2530.0	-485.0	0.0	7.0
@@ -501,16 +502,29 @@ SET_CAM_OFFSET	1.0	6.0	9.5	0.0	2.0	50.0
 SET_CAM_TARGET_OFFSET	1.0	0.0	1.0	-2.0	2.0	50.0
 PlayComicSE	0.0	0.0	0.0	0.0	1.0
 CHANGE_SPEED	0.1	30.0	-1.0
+CHK_TRAIN_TYPE	1.0	32.0	2300.0	2301.0
+FROM	2300.0
+Stage_BGM_Vol	50.0	30.0	-1.0
+WaitFrame	30.0
+FTV_Play	5040.0
+PLAYORGSE	0.0	0.0	0.0
+FROM	2301.0
 PLAY223HONE	1.0
 WaitFrame	180.0
-ComicAlpha	0.0	255.0	0.0	9.0	0.0
-WaitFrame	60.0
-CHANGE_SPEED	0.3	0.0	-1.0
-ComicAlpha	0.0	0.0	255.0	30.0	0.0
+ComicAlpha	0.0	255.0	0.0	6.0	0.0
+WaitFrame	61.0
+CHK_TRAIN_TYPE	1.0	32.0	2400.0	2401.0
+FROM	2400.0
+FTV_Wait	5040.0
+FTV_End	5040.0
+HideMsgWnd
+FROM	2401.0
 TO_RAIL	0.0	265.0	0.0	0.0
 TO_RAIL	1.0	263.0	104.0	0.0
 TRAIN_SPEED	0.0	120.0	0.0	0.0
 TRAIN_SPEED	1.0	135.0	0.0	0.0
+CHANGE_SPEED	0.3	0.0	-1.0
+ComicAlpha	0.0	0.0	255.0	30.0	0.0
 CamComtroll	0.0
 CamComtroll	1.0
 SET_CAMPOINT_2P2C	0.0	25.0	0.0	7.0	0.0	1.0	0.0	0.0	0.0	0.0	0.0
@@ -678,7 +692,9 @@ SetComic	0.0	0.0
 ComicPos	0.0	0.0	18.0	0.0	0.0
 ComicAlpha	0.0	0.0	255.0	60.0	0.0
 ComicPos	0.0	0.0	128.0	540.0	0.0
-WaitFrame	420.0
+WaitFrame	30.0
+SkipEventFlg	0.0
+WaitFrame	390.0
 ComicAlpha	0.0	255.0	0.0	90.0	0.0
 WaitFrame	90.0
 SetComic	1.0	1.0
@@ -694,8 +710,13 @@ ComicAlpha	2.0	0.0	255.0	60.0	0.0
 WaitFrame	120.0
 ComicAlpha	1.0	255.0	0.0	90.0	0.0
 ComicAlpha	2.0	255.0	0.0	90.0	0.0
-StopComicBGM	0.0	120.0
+StopComicBGM	0.0	90.0
 WaitFrame	90.0
+SkipEventPoint
+ComicAlpha	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	1.0	0.0	0.0	0.0	0.0
+ComicAlpha	2.0	0.0	0.0	0.0	0.0
+StopComicBGM	0.0	0.0
 SLEEP_TRAIN	0.0	0.0
 SLEEP_TRAIN	1.0	0.0
 BG_Alpha	0.0	60.0	0.0	-1.0
