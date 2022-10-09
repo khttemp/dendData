@@ -178,6 +178,7 @@ function init(value, flag) {
         let add;
         let addLittles;
         let addBigs;
+        let hurikos;
 
         if (flag) {
             soundNum = rows[count].split("\t");
@@ -198,6 +199,12 @@ function init(value, flag) {
         count++;
         let attBigs = rows[count].split("\t");
         count++;
+
+        if (flag) {
+            hurikos = rows[count].split("\t");
+            count++;
+        }
+
         if (flag) {
             data.push({
                 "name":name,
@@ -215,7 +222,8 @@ function init(value, flag) {
                 "attName":attNames,
                 "att":atts,
                 "attLittle":attLittles,
-                "attBig":attBigs
+                "attBig":attBigs,
+                "huriko":hurikos
             });
         } else {
             data.push({
