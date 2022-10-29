@@ -1,2599 +1,17963 @@
 const newLine = "<br>";
 const CMD = {
-    "Tx":{
-        "num":0,
-        "description":"【モデルバイナリ】画像をロードする"
-    },
-    "TxSize":{
-        "num":1,
-        "description":"【モデルバイナリ】画像のサイズを変える" + newLine + 
-                    "引数１：from横の倍率" + newLine +
-                    "引数２：from縦の倍率" + newLine + 
-                    "引数３：to横の倍率" + newLine +
-                    "引数４：to縦の倍率" + newLine + 
-                    "引数５：引数１、２から" + newLine + 
-                    "　引数３、４まで変化する時間（フレーム）"
-    },
-    "Alpha":{
-        "num":2,
-        "description":"【モデルバイナリ】画像のAlphaを変える" + newLine +
-                    "引数１：from_Alphaの値" + newLine +
-                    "引数２：to_Alphaの値" + newLine + 
-                    "引数３：引数１から" + newLine + 
-                    "　引数２まで変化する時間（フレーム）"
-    },
-    "End":{
-        "num":3,
-        "description":"【モデルバイナリ】コマンドを終了する"
-    },
-    "Pos":{
-        "num":4,
-        "description":"【モデルバイナリ】画面中央を基準に画像を移動させる" + newLine +
-                    "引数１：移動させるx座標" + newLine +
-                    "引数２：移動させるy座標" + newLine + 
-                    "引数３：詳細不明"
-    },
-    "ColorALL":{
-        "num":5,
-        "description":""
-    },
-    "Move":{
-        "num":6,
-        "description":""
-    },
-    "STAGE_BGM":{
-        "num":7,
-        "description":"【LS、BSのみ】ステージBGMの1番目を再生する"
-    },
-    "SetFlat3D":{
-        "num":8,
-        "description":""
-    },
-    "ChangeFlat3D":{
-        "num":9,
-        "description":""
-    },
-    "SetCamDir":{
-        "num":10,
-        "description":""
-    },
-    "DisCamDir":{
-        "num":11,
-        "description":""
-    },
-    "Set3DObj":{
-        "num":12,
-        "description":""
-    },
-    "SetWAngleX":{
-        "num":13,
-        "description":""
-    },
-    "SetWAngleY":{
-        "num":14,
-        "description":""
-    },
-    "SetWAngleZ":{
-        "num":15,
-        "description":""
-    },
-    "SetLAngleX":{
-        "num":16,
-        "description":""
-    },
-    "SetLAngleY":{
-        "num":17,
-        "description":""
-    },
-    "SetLAngleZ":{
-        "num":18,
-        "description":""
-    },
-    "SetBoneWAngleX":{
-        "num":19,
-        "description":""
-    },
-    "SetBoneWAngleY":{
-        "num":20,
-        "description":""
-    },
-    "SetBoneWAngleZ":{
-        "num":21,
-        "description":""
-    },
-    "SetBoneLAngleX":{
-        "num":22,
-        "description":""
-    },
-    "SetBoneLAngleY":{
-        "num":23,
-        "description":""
-    },
-    "SetBoneLAngleZ":{
-        "num":24,
-        "description":""
-    },
-    "ShowMesh":{
-        "num":25,
-        "description":""
-    },
-    "HideMesh":{
-        "num":26,
-        "description":""
-    },
-    "PlayAnime":{
-        "num":27,
-        "description":""
-    },
-    "Length_End":{
-        "num":28,
-        "description":""
-    },
-    "SetScall":{
-        "num":29,
-        "description":""
-    },
-    "RACE_START":{
-        "num":30,
-        "description":"バトルを始める"
-    },
-    "RACE_END":{
-        "num":31,
-        "description":"バトルが終わる"
-    },
-    "FADE_STAGE_BGM":{
-        "num":32,
-        "description":""
-    },
-    "CHANGE_SCENE":{
-        "num":33,
-        "description":"シーンを変える（メニューや漫画などの）" + newLine + 
-                    "デフォルトで引数はなし" + newLine + 
-                    "LSのH7001のみ引数「100」を使う"
-    },
-    "LPos":{
-        "num":34,
-        "description":""
-    },
-    "LMove":{
-        "num":35,
-        "description":""
-    },
-    "LLoopX":{
-        "num":36,
-        "description":""
-    },
-    "LLoopY":{
-        "num":37,
-        "description":""
-    },
-    "LLoopZ":{
-        "num":38,
-        "description":""
-    },
-    "Angle":{
-        "num":39,
-        "description":""
-    },
-    "AngleLoop":{
-        "num":40,
-        "description":""
-    },
-    "Move2":{
-        "num":41,
-        "description":""
-    },
-    "PosX":{
-        "num":42,
-        "description":""
-    },
-    "PosY":{
-        "num":43,
-        "description":""
-    },
-    "PosZ":{
-        "num":44,
-        "description":""
-    },
-    "PlaySE":{
-        "num":45,
-        "description":""
-    },
-    "SET_MT_NONE":{
-        "num":46,
-        "description":""
-    },
-    "SetCamPos":{
-        "num":47,
-        "description":"【LSのみ】詳細不明"
-    },
-    "SetCamTarget":{
-        "num":48,
-        "description":"【LSのみ】詳細不明"
-    },
-    "CamMoveWait":{
-        "num":49,
-        "description":"【LSのみ】【推定】カメラの動きが終わるまで待つが" + newLine + 
-                    "ボタンで早送りできるようにする" + newLine + 
-                    "引数１：１（True）、0（False）"
-    },
-    "SetComic":{
-        "num":50,
-        "description":"コミックをセットする。" + newLine + 
-                    "引数１：コマの番号" + newLine +
-                    "引数２：スクリプト内のイメージ番号"
-    },
-    "ComicPos":{
-        "num":51,
-        "description":"コミックの位置を設定する" + newLine + 
-                    "引数１：コマの番号" + newLine + 
-                    "引数２：x座標" + newLine + 
-                    "引数３：y座標" + newLine +
-                    "引数４：アニメ時間（フレーム）" + newLine +
-                    "引数５：アニメ効果の種類"
-    },
-    "ComicAlpha":{
-        "num":52,
-        "description":"コミックのAlphaを設定する" + newLine +
-                    "引数１：コマの番号" + newLine +
-                    "引数２：from Alpha"  + newLine +
-                    "引数３：to Alpha" + newLine +
-                    "引数４：アニメ時間（フレーム）" + newLine +
-                    "引数５：アニメ効果の種類"
-    },
-    "ComicWait":{
-        "num":53,
-        "description":"コミックを待つ" + newLine + 
-                    "引数１：コマの番号" + newLine +
-                    "引数２：【不明】（SSでは使わない。）"
-    },
-    "Scene_to_Comic":{
-        "num":54,
-        "description":"3Dシーンをコミック化する" + newLine +
-                    "引数１：コマの番号" + newLine +
-                    "引数２：width" + newLine +
-                    "引数３：height"
-    },
-    "SKY_DOME":{
-        "num":55,
-        "description":""
-    },
-    "Fill_BG":{
-        "num":56,
-        "description":"画面をBGで埋める" + newLine + 
-                    "引数１：１（True）、0（False）"
-    },
-    "ComicEnd":{
-        "num":57,
-        "description":"スクリプトを終了する"
-    },
-    "CamComtroll":{
-        "num":58,
-        "description":"スクリプトのCam設定できるようにする。" + newLine + 
-                    "引数１：１（True）、0（False）"
-    },
-    "ComicSceneStop":{
-        "num":59,
-        "description":"指定したのコマの中の動きを止める" + newLine + 
-                    "引数１：コマの番号"
-    },
-    "BtnWait":{
-        "num":60,
-        "description":"ボタンを押すまでスクリプトの中で待機する"
-    },
-    "EyeMove":{
-        "num":61,
-        "description":"視点を動かす。" + newLine + 
-                    "引数１：x座標" + newLine +
-                    "引数２：y座標" + newLine +
-                    "引数３：アニメ時間（フレーム）" + newLine +
-                    "引数４：アニメ効果の種類"
-    },
-    "SetZoom":{
-        "num":62,
-        "description":"Zoomを設定する。" + newLine +
-                    "引数１：zoom倍率" + newLine +
-                    "引数２：アニメ時間（フレーム）" + newLine +
-                    "引数３：アニメ効果の種類"
-    },
-    "BG_Alpha":{
-        "num":63,
-        "description":"BGのAlphaを設定する" + newLine +
-                    "引数１：BGのAlpha設定" + newLine +
-                    "引数２：アニメ時間（フレーム）" + newLine + 
-                    "引数３：アニメ効果の種類" + newLine + 
-                    "引数４：【不明】（SSでは使わない。）"
-    },
-    "BG_Wait":{
-        "num":64,
-        "description":"BGの設定が終わるまで待つ"
-    },
-    "StartCount":{
-        "num":65,
-        "description":"【LSのみ】5秒カウントを数える"
-    },
-    "WaitMoveEye":{
-        "num":66,
-        "description":"【LS、BS、CSのみ】EyeMoveが終わるまで待つ" + newLine + 
-                    "引数１：１（True）、0（False：ボタンで待たずに進める）"
-    },
-    "WaitFrame":{
-        "num":67,
-        "description":"指定のフレームだけ待つ" + newLine + 
-                    "引数１：フレーム"
-    },
-    "FTV_Play":{
-        "num":68,
-        "description":"FVTを再生する" + newLine + 
-                    "引数１：FVT番号"
-    },
-    "FTV_Wait":{
-        "num":69,
-        "description":"FVTが終わるまで待つ" + newLine + 
-                    "引数１：FVT番号"
-    },
-    "HideMsgWnd":{
-        "num":70,
-        "description":"FVTのメッセージボックスを隠す"
-    },
-    "FTV_End":{
-        "num":71,
-        "description":"FVTを終了する" + newLine + 
-                    "引数１：FVT番号"
-    },
-    "SkipEventPoint":{
-        "num":72,
-        "description":"スキップをした場合、スキップをこの行で止める"
-    },
-    "SkipEventFlg":{
-        "num":73,
-        "description":"スキップできるようにする" + newLine + 
-                    "引数１：１（True）、0（False）"
-    },
-    "PlayComicSE":{
-        "num":74,
-        "description":"SEを再生する" + newLine + 
-                    "引数１：スクリプト内のSE番号" + newLine +
-                    "引数２：【不明】（SSでは使わない。）" + newLine +
-                    "引数３：【不明】（SSでは使わない。）" + newLine +
-                    "引数４：再生が終わるまで待つ[１（True）、0（False）]" + newLine +
-                    "引数５：0設定時、ボタンを押すとスキップする"
-    },
-    "StopComicSE":{
-        "num":75,
-        "description":"SEの再生を停止する" + newLine + 
-                    "引数１：スクリプト内のSE番号" + newLine + 
-                    "引数２：【不明】（SSでは使わない。）"
-    },
-    "PlayComicBGM":{
-        "num":76,
-        "description":"BGMを再生する" + newLine + 
-                    "引数１：スクリプト内のBGM番号" + newLine + 
-                    "引数２：ループする[-1（True）、1（False）]" + newLine + 
-                    "引数３：BGMのVolume"
-    },
-    "StopComicBGM":{
-        "num":77,
-        "description":"BGMを再生を停止する" + newLine + 
-                    "引数１：スクリプト内のBGM番号" + newLine + 
-                    "引数２：fadeの時間（フレーム）"
-    },
-    "VolComicBGM":{
-        "num":78,
-        "description":"BGMのVolumeを変える" + newLine + 
-                    "引数１：スクリプト内のBGM番号" + newLine + 
-                    "引数２：Volume" + newLine + 
-                    "引数３：変化する時間（フレーム）"
-    },
-    "HideALLComic":{
-        "num":79,
-        "description":"すべてのコミックを隠す"
-    },
-    "Stage_BGM_Vol":{
-        "num":80,
-        "description":"現在のBGMのVolumeを変える" + newLine + 
-                    "引数１：Volume" + newLine + 
-                    "引数２：変化する時間（フレーム）"
-    },
-    "SET_CPU_FLG":{
-        "num":81,
-        "description":"【RSまで】CPUのフラグを設定。詳細不明（SSでは使わない）"
-    },
-    "SET_CPU_MODE":{
-        "num":82,
-        "description":"CPUのモードを設定する" + newLine + 
-                    "引数１：CPU（SSでは使わない）" + newLine + 
-                    "引数２：走るモード" + newLine + 
-                    "引数３：minLen" + newLine + 
-                    "引数４：maxLen" + newLine + 
-                    "引数５：maxSpeed" + newLine + 
-                    "引数６：minSpeed" + newLine + 
-                    "引数７：【RSまで】デフォルト速度。【SSから】ブレーキ時間" + newLine + 
-                    "引数８：【不明】（SSでは使わない）" + newLine + 
-                    "引数９：【不明】（SSでは使わない）"
-    },
-    "CHK_LENGTH":{
-        "num":83,
-        "description":"CPUとの距離を測定し" + newLine + 
-                    "指定時間内に指定距離より少ない場合、次のコマンド行へ行く" + newLine + 
-                    "指定距離より以上なら、指定ラベルのEND_CHK_LENGTHまで飛ぶ" + newLine + 
-                    "引数１：指定距離" + newLine + 
-                    "引数２：指定ラベル" + newLine + 
-                    "引数３：指定時間"
-    },
-    "END_CHK_LENGTH":{
-        "num":84,
-        "description":"CHK_LENGTHで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
-                    "引数１：指定ラベル"
-    },
-    "CHK_POSTION":{
-        "num":85,
-        "description":"指定時間内に引数１の条件を満たす場合、次のコマンドへ行く" + newLine + 
-                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
-                    "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine + 
-                    "引数２：指定ラベル" + newLine + 
-                    "引数３：指定時間"
-    },
-    "END_CHK_POSTION":{
-        "num":86,
-        "description":"CHK_POSTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
-                    "引数１：指定ラベル"
-    },
-    "WAIT_MOTION":{
-        "num":87,
-        "description":"【RSまで】指定の動きをした場合、次のコマンドへ行く" + newLine + 
-                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
-                    "引数１【推定】" + newLine + 
-                    "　0（複線ドリフト）" + newLine + 
-                    "　1（左側からドリフト）" + newLine + 
-                    "　2（右側からドリフト）" + newLine + 
-                    "　3（振り子）" + newLine + 
-                    "　4（ドリフト、後輪含む）" + newLine + 
-                    "　5（後輪ドリフト戻し）" + newLine + 
-                    "　7（左側から片輪ドリフト）" + newLine + 
-                    "　8（右側から片輪ドリフト）" + newLine + 
-                    "　9（後輪ドリフト）" + newLine + 
-                    "　10（片輪ドリフト戻し）" + newLine + 
-                    "引数２：指定時間" + newLine + 
-                    "引数３：指定ラベル"
-    },
-    "END_WAIT_MOTION":{
-        "num":88,
-        "description":"WAIT_MOTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
-                    "引数１：指定ラベル"
-    },
-    "CHANGE_SPEED":{
-        "num":89,
-        "description":"ゲームの速度を変える" + newLine + 
-                    "引数１：速度倍率" + newLine + 
-                    "引数２：変化する時間（フレーム）" + newLine + 
-                    "引数３：リアルタイムで通常に戻す時間"
-    },
-    "CHANGE_CAM_TYPE":{
-        "num":90,
-        "description":""
-    },
-    "Set2P":{
-        "num":91,
-        "description":""
-    },
-    "CharChk_and_Tx":{
-        "num":92,
-        "description":""
-    },
-    "ChangeR":{
-        "num":93,
-        "description":""
-    },
-    "ChangeG":{
-        "num":94,
-        "description":""
-    },
-    "ChangeB":{
-        "num":95,
-        "description":""
-    },
-    "ChangeColor":{
-        "num":96,
-        "description":""
-    },
-    "SetGray":{
-        "num":97,
-        "description":""
-    },
-    "MoveX":{
-        "num":98,
-        "description":"【モデルバイナリ】画像のx座標を移動させる" + newLine +
-                    "引数１：移動させるx座標" + newLine +
-                    "引数２：変化する時間（フレーム）" + newLine + 
-                    "引数３：詳細不明"
-    },
-    "MoveY":{
-        "num":99,
-        "description":"【モデルバイナリ】画像のx座標を移動させる" + newLine +
-                    "引数１：移動させるy座標" + newLine +
-                    "引数２：変化する時間（フレーム）" + newLine + 
-                    "引数３：詳細不明"
-    },
-    "MoveZ":{
-        "num":100,
-        "description":""
-    },
-    "SetUV_X":{
-        "num":101,
-        "description":""
-    },
-    "RePlay":{
-        "num":102,
-        "description":"【LSのみ】詳細不明"
-    },
-    "IsStart":{
-        "num":103,
-        "description":""
-    },
-    "ShowGoal":{
-        "num":104,
-        "description":"【RSまで】ゴールの文字（FINISH）を見せる"
-    },
-    "CHK_WIN_TRAIN":{
-        "num":105,
-        "description":"指定車両が勝利したかチェックする" + newLine + 
-                    "勝った場合、次のコマンドへ行く" + newLine + 
-                    "負けた場合、指定のラベルまで飛ぶ" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：指定のラベル"
-    },
-    "END_CHK_WINTRAIN":{
-        "num":106,
-        "description":"CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
-                    "引数１：指定ラベル"
-    },
-    "N_ADD_OBJ":{
-        "num":107,
-        "description":""
-    },
-    "N_POS":{
-        "num":108,
-        "description":""
-    },
-    "START_TIME_LINE":{
-        "num":109,
-        "description":"リアルタイム測定を始める"
-    },
-    "N_MOVE":{
-        "num":110,
-        "description":""
-    },
-    "WAIT_TIME_LINE":{
-        "num":111,
-        "description":"START_TIME_LINEが始まってから、指定時間まで待つ" + newLine + 
-                    "引数１：指定時間"
-    },
-    "N_DEL_OBJ":{
-        "num":112,
-        "description":""
-    },
-    "SCREEN_FADE":{
-        "num":113,
-        "description":"指定の色でFade効果を出す" + newLine + 
-                    "引数１：0（FadeIn）、1（FadeOut）" + newLine + 
-                    "引数２：カラーR" + newLine + 
-                    "引数３：カラーG" + newLine + 
-                    "引数４：カラーB" + newLine + 
-                    "引数５：変化する時間（フレーム）"
-    },
-    "N_CHANGE_ANIME":{
-        "num":114,
-        "description":""
-    },
-    "TRAIN_SPEED":{
-        "num":115,
-        "description":"指定車両のスピードを設定する" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：スピード" + newLine + 
-                    "引数３：変化する時間（フレーム）" + newLine + 
-                    "引数４：変化方法"
-    },
-    "TRAIN_FLG":{
-        "num":116,
-        "description":""
-    },
-    "SCENE_LIGHT":{
-        "num":117,
-        "description":""
-    },
-    "CHANGE_CAM_LENGTH":{
-        "num":118,
-        "description":""
-    },
-    "CHANGE_CAM_DIRX":{
-        "num":119,
-        "description":""
-    },
-    "CHANGE_CAM_DIRY":{
-        "num":120,
-        "description":""
-    },
-    "CHANGE_CAM_DIRZ":{
-        "num":121,
-        "description":""
-    },
-    "R_Drift":{
-        "num":122,
-        "description":"指定車両を右ドリフトさせる" + newLine + 
-                    "引数１：0（1P）、1（2P）"
-    },
-    "L_Drift":{
-        "num":123,
-        "description":"指定車両を左ドリフトさせる" + newLine + 
-                    "引数１：0（1P）、1（2P）"
-    },
-    "IS_TRAIN_HIT":{
-        "num":124,
-        "description":""
-    },
-    "TO_RAIL":{
-        "num":125,
-        "description":"指定車両を指定レールに置く" + newLine + 
-                    "引数１：0（1P）、1（2P）"　 + newLine + 
-                    "引数２：レール番号" + newLine + 
-                    "引数３：ボーン番号" + newLine + 
-                    "引数４：【SSのみ】ボーンから細かい位置調整" 
-    },
-    "SLEEP_TRAIN":{
-        "num":126,
-        "description":"指定車両を消す" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：１（True）、0（False）"
-    },
-    "RandWAngle":{
-        "num":127,
-        "description":""
-    },
-    "RandMove":{
-        "num":128,
-        "description":""
-    },
-    "ADD_OBJ":{
-        "num":129,
-        "description":""
-    },
-    "START_COMIC":{
-        "num":130,
-        "description":""
-    },
-    "SetRand3DObj":{
-        "num":131,
-        "description":""
-    },
-    "Offset3DObj":{
-        "num":132,
-        "description":""
-    },
-    "RandPos":{
-        "num":133,
-        "description":""
-    },
-    "RandPlaySE":{
-        "num":134,
-        "description":""
-    },
-    "RandAngleX":{
-        "num":135,
-        "description":""
-    },
-    "RandAngleY":{
-        "num":136,
-        "description":""
-    },
-    "RandAngleZ":{
-        "num":137,
-        "description":""
-    },
-    "CHK_TRAIN_STATE":{
-        "num":138,
-        "description":""
-    },
-    "END_CHK_TRAIN_STATE":{
-        "num":139,
-        "description":""
-    },
-    "CHK_TRAIN_SPEED_U":{
-        "num":140,
-        "description":"指定車両のスピードが、指定時間内に" + newLine + 
-                    "指定スピードより大きい場合" + newLine +
-                    "次のコマンドへ行く" + newLine + 
-                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
-                    "引数１：指定ラベル" + newLine + 
-                    "引数２：0（1P）、1（2P）" + newLine + 
-                    "引数３：指定スピード" + newLine + 
-                    "引数４：指定時間"
-    }, 
-    "CHK_TRAIN_SPEED_D":{
-        "num":141,
-        "description":"指定車両のスピードが、指定時間内に" + newLine + 
-                    "指定スピードより小さい場合" + newLine + 
-                    "次のコマンドへ行く" + newLine + 
-                    "そうではない場合、指定ラベルまで飛ぶ" + newLine + 
-                    "引数１：指定ラベル" + newLine + 
-                    "引数２：0（1P）、1（2P）" + newLine + 
-                    "引数３：指定スピード" + newLine + 
-                    "引数４：指定時間"
-    },
-    "END_CHK_TRAIN_SPEED_U":{
-        "num":142,
-        "description":"CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
-                    "引数１：指定ラベル"
-    },
-    "END_CHK_TRAIN_SPEED_D":{
-        "num":143,
-        "description":"CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める" + newLine + 
-                    "引数１：指定ラベル"
-    },
-    "ChkStory_and_Tx":{
-        "num":144,
-        "description":""
-    },
-    "ClearStory_and_Tx":{
-        "num":145,
-        "description":""
-    },
-    "N_L_ANGLE_X":{
-        "num":146,
-        "description":""
-    },
-    "N_L_ANGLE_Y":{
-        "num":147,
-        "description":""
-    },
-    "N_L_ANGLE_Z":{
-        "num":148,
-        "description":""
-    },
-    "Comic_Glay":{
-        "num":149,
-        "description":""
-    },
-    "N_MoveMesh_X":{
-        "num":150,
-        "description":""
-    },
-    "N_MoveMesh_Y":{
-        "num":151,
-        "description":""
-    },
-    "N_MoveMesh_Z":{
-        "num":152,
-        "description":""
-    },
-    "SetComic_Blur":{
-        "num":153,
-        "description":"？"
-    },
-    "SetComic_Blur_Speed":{
-        "num":154,
-        "description":"？" + newLine + 
-                    "引数１：？" + newLine + 
-                    "引数２：変化するフレーム" + newLine + 
-                    "引数３：変化効果"
-    },
-    "TRACK_BOMB":{
-        "num":155,
-        "description":"指定車両の台車が爆発する" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：【SSから】１（True）、0（False）"
-    },
-    "Hide_Sky_Doom":{
-        "num":156,
-        "description":""
-    },
-    "ADD_POINT":{
-        "num":157,
-        "description":"バトルポイントを加算する" + newLine + 
-                    "引数１：配列のインデックス" + newLine + 
-                    "引数２：ポイント"
-    },
-    "CHK_POINT":{
-        "num":158,
-        "description":"バトルポイントをチェックする" + newLine + 
-                    "指定ポイントより以上なら次のコマンドへ行く" + newLine + 
-                    "そうではない場合、次のポイントチェックコマンド行まで飛ぶ" + newLine + 
-                    "引数１：配列のインデックス" + newLine + 
-                    "引数２：ポイント"
-    },
-    "ELSE_CHK_POINT":{
-        "num":159,
-        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + 
-                    "指定のポイントより少なく、最近チェックした" + newLine + 
-                    "インデックスと同じ場合、ここで止める" + newLine + 
-                    "引数１：配列のインデックス"
-    },
-    "ELSE_IF_CHK_POINT":{
-        "num":160,
-        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + 
-                    "指定のポイントより少なく、最近チェックした" + newLine + 
-                    "インデックスと同じ場合 " + newLine + 
-                    "ここで止めてポイントをチェックする" + newLine + 
-                    "引数１：配列のインデックス" + newLine + 
-                    "引数２：ポイント"
-    },
-    "END_CHK_POINT":{
-        "num":161,
-        "description":"CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine + 
-                    "指定のポイントより少なく、最近チェックした" + newLine + 
-                    "インデックスと同じ場合、ここで止める" + newLine + 
-                    "引数１：配列のインデックス"
-    },
-    "GOTO_SCRIPT":{
-        "num":162,
-        "description":"指定のスクリプトを並列処理で実行し" + newLine + 
-                    "次のコマンドへ行く" + newLine + 
-                    "引数１：スクリプト番号"
-    },
-    "SHEAK_COMIC":{
-        "num":163,
-        "description":"指定のコマを揺らす" + newLine + 
-                    "引数１：コマの番号" + newLine + 
-                    "引数２：１（True）、0（False）"
-    },
-    "STORY_OPEN":{
-        "num":164,
-        "description":"ストーリーを開放する" + newLine + 
-                    "引数１：ストーリーインデックス"
-    },
-    "STORY_CLEAR":{
-        "num":165,
-        "description":"ストーリーをクリア処理する" + newLine + 
-                    "引数１：ストーリーインデックス"
-    },
-    "CHAR_OPEN":{
-        "num":166,
-        "description":"車両を開放する" + newLine + 
-                    "引数１：車両インデックス"
-    },
-    "SAVE_GAME":{
-        "num":167,
-        "description":"ゲーム情報をセーブする"
-    },
-    "KEISUKE_COUNT":{
-        "num":168,
-        "description":"【LS、BSのみ】啓介がカウントする"
-    },
-    "RandPlayComicSE":{
-        "num":169,
-        "description":"【LSのみ】スクリプト内のSEのリストから" + newLine + 
-                    "ランダムに選んで再生する" + newLine + 
-                    "引数１：startインデックス" + newLine + 
-                    "引数２：endインデックス" + newLine + 
-                    "引数３：詳細不明"
-    },
-    "TITLE_MODE":{
-        "num":170,
-        "description":""
-    },
-    "GOING":{
-        "num":171,
-        "description":""
-    },
-    "RAND_IF":{
-        "num":172,
-        "description":""
-    },
-    "ELSE_RAND_IF":{
-        "num":173,
-        "description":""
-    },
-    "END_RAND_IF":{
-        "num":174,
-        "description":""
-    },
-    "CHK_SP_BREAK":{
-        "num":175,
-        "description":""
-    },
-    "END_CHK_SP_BREAK":{
-        "num":176,
-        "description":""
-    },
-    "CHK_DRIFT":{
-        "num":177,
-        "description":""
-    },
-    "END_CHK_DRIFT":{
-        "num":178,
-        "description":""
-    },
-    "ENDING_MODE":{
-        "num":179,
-        "description":""
-    },
-    "ChkCause_and_Tx":{
-        "num":180,
-        "description":""
-    },
-    "SET_DRAW_TYPE":{
-        "num":181,
-        "description":""
-    },
-    "To_TxSize":{
-        "num":182,
-        "description":""
-    },
-    "OPEN_CAUSE":{
-        "num":183,
-        "description":""
-    },
-    "DIS_TRAIN_SPEED":{
-        "num":184,
-        "description":"スクリプトでスピード設定処理を止める" + newLine + 
-                    "引数１：0（1P）、1（2P）"
-    },
-    "CHK_RACE_TIME":{
-        "num":185,
-        "description":"【LSのみ】RACE_STARTから経過した時間をチェックする" + newLine + 
-                    "チェックした時間が指定時間より少ない場合" + newLine + 
-                    "次のコマンドへ行く、そうではない場合、END_CHK_RACE_TIMEまで飛ぶ" + newLine + 
-                    "引数１：指定時間"
-    },
-    "END_CHK_RACE_TIME":{
-        "num":186,
-        "description":"【LSのみ】CHK_RACE_TIMEで飛ぶ場合、この行で止める"
-    },
-    "End_Comic":{
-        "num":187,
-        "description":"スクリプトを終了する" + newLine + 
-                    "引数１：スクリプト番号"
-    },
-    "WAIT_RAIL":{
-        "num":188,
-        "description":"指定時間内に、指定したレールを通過するまで待つ" + newLine + 
-                    "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：レール番号" + newLine + 
-                    "引数３：ボーン番号" + newLine + 
-                    "引数４：指定時間（フレーム）"
-    },
-    "END_WAIT_RAIL":{
-        "num":189,
-        "description":"WAIT_RAILで飛ぶ場合、この行で止める" + newLine + 
-                    "引数１：0（1P）、1（2P）"
-    },
-    "COMIC_SCALE":{
-        "num":190,
-        "description":"指定したコマのスケールを設定する" + newLine + 
-                    "引数１：コマの番号" + newLine + 
-                    "引数２：x倍率" + newLine + 
-                    "引数３：y倍率" + newLine + 
-                    "引数４：変化するフレーム" + newLine + 
-                    "引数５：変化効果"
-    },
-    "USO_COUNT":{
-        "num":191,
-        "description":"【BSのみ】H7001　VS　KQ21XXの" + newLine + 
-                    "バトルのみ使われたコマンド。" + newLine + 
-                    "１からカウントを数える"
-    },
-    "WaitRandPlaySE":{
-        "num":192,
-        "description":"RandPlayComicSEから再生されたSEを待つ"
-    },
-    "FROM":{
-        "num":193,
-        "description":"あるコマンドがFROMに飛ばし引数が一致した場合、この行で止める" + newLine + 
-                    "引数１：数字"
-    },
-    "GOTO":{
-        "num":194,
-        "description":"引数と一致する一番最初のFROMまで飛ばす" + newLine + 
-                    "引数１：FROMの数字"
-    },
-    "CHK_TRAIN_TYPE":{
-        "num":195,
-        "description":"指定車両が車両インデックスと同じ場合、" + newLine + 
-                    "引数３のFROMに飛ばす" + newLine + 
-                    "そうではない場合、引数４のFROMに飛ばす" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：車両インデックス" + newLine + 
-                    "引数３：FROMの数字" + newLine + 
-                    "引数４：FROMの数字"
-    },
-    "RAND_IF_AVG":{
-        "num":196,
-        "description":"【LSのみ】引数の数字分、0から始まるランダムな整数を作り" + newLine + 
-                    "FROMの数字として飛ばす" + newLine + 
-                    "引数１：数字"
-    },
-    "CHK_NOTCH":{
-        "num":197,
-        "description":"【LS、CSのみ】指定車両が指定時間分ノッチを維持した場合" + newLine + 
-                    "引数３のFROMに飛ばす" + newLine + 
-                    "そうではない場合、引数４のFROMに飛ばす" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：指定時間（フレーム）" + newLine + 
-                    "引数３：FROMの数字" + newLine + 
-                    "引数４：FROMの数字"
-    },
-    "WAIT_RAIL_ONLY":{
-        "num":198,
-        "description":"指定時間内に、指定したレールを通過するまで待つ" + newLine + 
-                    "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：レール番号" + newLine + 
-                    "引数３：指定時間（フレーム）"
-    },
-    "ONE_TRACK_DRIFT":{
-        "num":199,
-        "description":"【LSのみ】指定車両を単線ドリフトさせる" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：-1(左）、0（戻し）、1（右）"
-    },
-    "LAST_STATION":{
-        "num":200,
-        "description":"【LSのみ】詳細不明"
-    },
-    "OSSAN":{
-        "num":201,
-        "description":"【LSのみ】指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "１（True）、0（False）"
-    },
-    "SET_TAIL_SCALE":{
-        "num":202,
-        "description":""
-    },
-    "OPEN_HUTA":{
-        "num":203,
-        "description":""
-    },
-    "SET_GN":{
-        "num":204,
-        "description":""
-    },
-    "MDL_GETINDEX":{
-        "num":205,
-        "description":""
-    },
-    "INDEX_BONE_ROT_X":{
-        "num":206,
-        "description":""
-    },
-    "INDEX_BONE_ROT_Y":{
-        "num":207,
-        "description":""
-    },
-    "INDEX_BONE_ROT_Z":{
-        "num":208,
-        "description":""
-    },
-    "INDEX_BONE_L_ROT_X":{
-        "num":209,
-        "description":""
-    },
-    "INDEX_BONE_L_ROT_Y":{
-        "num":210,
-        "description":""
-    },
-    "INDEX_BONE_L_ROT_Z":{
-        "num":211,
-        "description":""
-    },
-    "CREATE_INDEX":{
-        "num":212,
-        "description":""
-    },
-    "IB_LI_CREATE_ROT_X":{
-        "num":213,
-        "description":""
-    },
-    "IB_LI_CREATE_ROT_Y":{
-        "num":214,
-        "description":""
-    },
-    "IB_LI_CREATE_ROT_Z":{
-        "num":215,
-        "description":""
-    },
-    "IB_LI_SET_ROT_X":{
-        "num":216,
-        "description":""
-    },
-    "IB_LI_SET_ROT_Y":{
-        "num":217,
-        "description":""
-    },
-    "IB_LI_SET_ROT_Z":{
-        "num":218,
-        "description":""
-    },
-    "IB_LI_SET_LOOP_X":{
-        "num":219,
-        "description":""
-    },
-    "IB_LI_SET_LOOP_Y":{
-        "num":220,
-        "description":""
-    },
-    "IB_LI_SET_LOOP_Z":{
-        "num":221,
-        "description":""
-    },
-    "ADD_MY_OBJ":{
-        "num":222,
-        "description":""
-    },
-    "INDEX_BONE_L_POS_X":{
-        "num":223,
-        "description":""
-    },
-    "INDEX_BONE_L_POS_Y":{
-        "num":224,
-        "description":""
-    },
-    "INDEX_BONE_L_POS_Z":{
-        "num":225,
-        "description":""
-    },
-    "IB_LI_CREATE_L_POS_X":{
-        "num":226,
-        "description":""
-    },
-    "IB_LI_CREATE_L_POS_Y":{
-        "num":227,
-        "description":""
-    },
-    "IB_LI_CREATE_L_POS_Z":{
-        "num":228,
-        "description":""
-    },
-    "IB_LI_SET_L_POS_X":{
-        "num":229,
-        "description":""
-    },
-    "IB_LI_SET_L_POS_Y":{
-        "num":230,
-        "description":""
-    },
-    "IB_LI_SET_L_POS_Z":{
-        "num":231,
-        "description":""
-    },
-    "FROM_ADDMT":{
-        "num":232,
-        "description":""
-    },
-    "MOVE_UV_X":{
-        "num":233,
-        "description":""
-    },
-    "MOVE_UV_Y":{
-        "num":234,
-        "description":""
-    },
-    "CREATE_UV_MOVE_X":{
-        "num":235,
-        "description":""
-    },
-    "IB_LI_SET_LOOP_LPOSX":{
-        "num":236,
-        "description":""
-    },
-    "IB_LI_SET_LOOP_LPOSY":{
-        "num":237,
-        "description":""
-    },
-    "IB_LI_SET_LOOP_LPOSZ":{
-        "num":238,
-        "description":""
-    },
-    "RELEASE_ALL_IB_LIST":{
-        "num":239,
-        "description":""
-    },
-    "ADD_MY_OBJ_INDEX":{
-        "num":240,
-        "description":""
-    },
-    "TO_TAGET_POS":{
-        "num":241,
-        "description":""
-    },
-    "ATK_HIT":{
-        "num":242,
-        "description":""
-    },
-    "ATK_END":{
-        "num":243,
-        "description":""
-    },
-    "SET_RELEASE_PARAM":{
-        "num":244,
-        "description":""
-    },
-    "CREATE_LENSFLEAR":{
-        "num":245,
-        "description":""
-    },
-    "SET_LENSFLEAR_PARAM":{
-        "num":246,
-        "description":""
-    },
-    "SET_LENSFLEAR_MT":{
-        "num":247,
-        "description":""
-    },
-    "RAIL_POS_TO_BUFF":{
-        "num":248,
-        "description":"指定したレールにBUFFを設置する" + newLine + 
-                    "引数１：レール番号" + newLine + 
-                    "引数２：ボーン番号" + newLine + 
-                    "引数３：BUFFのインデックス"
-    },
-    "BUFF_TO_CAM_POS":{
-        "num":249,
-        "description":"【BS、CS、RSまで】詳細不明"
-    },
-    "BUFF_TO_TARGET_POS":{
-        "num":250,
-        "description":"BUFFにあるカメラのターゲットを設定する" + newLine + 
-                    "引数１：BUFFのインデックス" + newLine + 
-                    "引数２：x座標" + newLine + 
-                    "引数３：y座標" + newLine + 
-                    "引数４：z座標" + newLine + 
-                    "引数５：変化する時間（フレーム）" + newLine + 
-                    "引数６：カメラ効果"
-    },
-    "FTV_BASE_PROC":{
-        "num":251,
-        "description":""
-    },
-    "FTV_NEXT_PROC":{
-        "num":252,
-        "description":"同じ画像を使うFVTの場合" + newLine + 
-                    "引数２に続いて引数１のFVTを出す" + newLine + 
-                    "引数１：FVT番号" + newLine + 
-                    "引数２：FVT番号（prev）"
-    },
-    "MDL_INDEX_TO_VIEW":{
-        "num":253,
-        "description":""
-    },
-    "SET_FOG_LENGTH":{
-        "num":254,
-        "description":""
-    },
-    "SET_UV_MOVE_X":{
-        "num":255,
-        "description":""
-    },
-    "SET_UV_LOOP_X":{
-        "num":256,
-        "description":""
-    },
-    "CREATE_MESH_INDEX":{
-        "num":257,
-        "description":""
-    },
-    "SET_MESH_INDEX":{
-        "num":258,
-        "description":""
-    },
-    "INDEX_BONE_L_ADD_ROT_X":{
-        "num":259,
-        "description":""
-    },
-    "INDEX_BONE_L_ADD_ROT_Y":{
-        "num":260,
-        "description":""
-    },
-    "INDEX_BONE_L_ADD_ROT_Z":{
-        "num":261,
-        "description":""
-    },
-    "CHANGE_SCALL":{
-        "num":262,
-        "description":""
-    },
-    "CHK_CLEAR_STORY":{
-        "num":263,
-        "description":""
-    },
-    "CHK_OPEN_STORY":{
-        "num":264,
-        "description":""
-    },
-    "SET_LENSFLEAR_ALL_FLG":{
-        "num":265,
-        "description":""
-    },
-    "CHK_USE_CHAR":{
-        "num":266,
-        "description":""
-    },
-    "SET_OBJ_FOG_NO":{
-        "num":267,
-        "description":""
-    },
-    "SET_OBJ_RENDER_ID":{
-        "num":268,
-        "description":""
-    },
-    "PLAY_STAGE_BGM":{
-        "num":269,
-        "description":"【BSから】ステージBGMリストの引数のものを再生する" + newLine + 
-                    "引数１：ステージBGMのインデックス"
-    },
-    "CHANGE_TRAIN_FOG":{
-        "num":270,
-        "description":""
-    },
-    "FIRST_OBJ_SET_ANIME":{
-        "num":271,
-        "description":""
-    },
-    "SET_CAMPOINT_2P2C":{
-        "num":272,
-        "description":"【BSから】引数１～５のカメラの状態を引数６～１０の状態に変える" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２：距離" + newLine + 
-                    "引数３：x座標" + newLine + 
-                    "引数４：y座標" + newLine + 
-                    "引数５：z座標" + newLine + 
-                    "引数６：0（1P）、1（2P）" + newLine + 
-                    "引数７：距離" + newLine + 
-                    "引数８：x座標" + newLine + 
-                    "引数９：y座標" + newLine + 
-                    "引数１０：z座標"
-    },
-    "SET_CAMPOINT_1P2C":{
-        "num":273,
-        "description":""
-    },
-    "CAM_POINT_PER":{
-        "num":274,
-        "description":"【BSから】カメラのPERを設定する" + newLine + 
-                    "引数１：PER" + newLine + 
-                    "引数２：変化方法" + newLine + 
-                    "引数３：変化する時間（フレーム）" 
-    },
-    "CAM_TARGET_PER":{
-        "num":275,
-        "description":"【BSから】カメラのターゲットのPERを設定する" + newLine + 
-                    "引数１：PER" + newLine + 
-                    "引数２：変化方法" + newLine + 
-                    "引数３：変化する時間（フレーム）" 
-    },
-    "SET_CAM_POINT_LENGTH":{
-        "num":276,
-        "description":"【BSから】カメラの距離を設定する" + newLine + 
-                    "引数１：カメラ番号" + newLine + 
-                    "引数２：距離" + newLine + 
-                    "引数３：変化方法" + newLine + 
-                    "引数４：変化する時間（フレーム）"
-    },
-    "SET_CAM_OFFSET":{
-        "num":277,
-        "description":"【BSから】カメラのoffsetを設定する" + newLine + 
-                    "引数１：カメラ番号" + newLine + 
-                    "引数２：x座標" + newLine + 
-                    "引数３：y座標" + newLine + 
-                    "引数４：z座標" + newLine + 
-                    "引数５：変化方法" + newLine + 
-                    "引数６：変化する時間（フレーム）"
-    },
-    "START_WIPER":{
-        "num":278,
-        "description":"【BS、CS】ワイパーを動かす" + newLine + 
-                    "引数１：１（True）、0（False）"
-    },
-    "CREATE_TRAIN_ORG":{
-        "num":279,
-        "description":"【BSのみ】車両モデルを作成する" + newLine + 
-                    "引数１：作成インデックス" + newLine + 
-                    "引数２：車両インデックス" + newLine + 
-                    "引数３：詳細不明"
-    },
-    "ORG_SET_RAIL":{
-        "num":280,
-        "description":""
-    },
-    "ORG_ADD":{
-        "num":281,
-        "description":""
-    },
-    "SET_CAMPOINT_K":{
-        "num":282,
-        "description":"【BSから】詳細不明。SSからは引数を使わない"
-    },
-    "ORG_SET_POS":{
-        "num":283,
-        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + 
-                    "作成したモデルの位置を設定する" + newLine + 
-                    "引数１：作成インデックス" + newLine + 
-                    "引数２～：詳細不明"
-    },
-    "ORG_SET_FOG":{
-        "num":284,
-        "description":""
-    },
-    "ORG_RELEASE":{
-        "num":285,
-        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + 
-                    "作成したモデルを解放する" + newLine + 
-                    "引数１：作成インデックス"
-    },
-    "PLAY_FTV_END":{
-        "num":286,
-        "description":"【BS、CS】現在再生中のFVTを全部止める"
-    },
-    "CNG_TRAIN_MAT_COL":{
-        "num":287,
-        "description":"【BSのみ】指定車両のカラーを変える" + newLine + 
-                    "引数１：0（1P）、1（2P）" + newLine + 
-                    "引数２～："
-    },
-    "CNG_ORG_MAT_COL":{
-        "num":288,
-        "description":"【BSのみ】CREATE_TRAIN_ORGから" + newLine + 
-                    "作成したモデルのカラーを変える" + newLine + 
-                    "引数１：作成インデックス" + newLine + 
-                    "引数２～："
-    },
-    "IS_CAUTION":{
-        "num":289,
-        "description":"【BSから】詳細不明"
-    },
-    "ENDWAIT_COMIC":{
-        "num":290,
-        "description":"GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine + 
-                    "引数１：スクリプト番号"
-    },
-    "SET_COMIC_BG_COLOR":{
-        "num":291,
-        "description":"【RSから】BGの色を変える" + newLine + 
-                    "引数１：カラーR" + newLine + 
-                    "引数２：カラーG" + newLine + 
-                    "引数３：カラーB"
-    },
-    "TX_2_TRAIN":{
-        "num":292,
-        "description":""
-    },
-    "CHANGE_MT_COL_TRAIN":{
-        "num":293,
-        "description":""
-    },
-    "CNG_MT_COL":{
-        "num":294,
-        "description":""
-    },
-    "RETURN":{
-        "num":295,
-        "description":"このコマンドから一番近い上のFROMまで飛ぶ" + newLine + 
-                    "引数１：FROMの数字"
-    },
-    "ReLoadSE":{
-        "num":296,
-        "description":""
-    },
-    "BASE_POINT_CAM":{
-        "num":297,
-        "description":""
-    },
-    "STOP_3D":{
-        "num":298,
-        "description":"3Dシーンの動きを止める" + newLine + 
-                    "引数１：１（True）、0（False）"
-    },
-    "STOP_STAGE_BGM":{
-        "num":299,
-        "description":"ステージのBGMを止める" + newLine + 
-                    "SSからはインデックスが-1の場合" + newLine + 
-                    "再生中の全てのステージBGMを止める" + newLine + 
-                    "引数１：ステージBGMのインデックス" + newLine + 
-                    "引数２：fade時間（フレーム）"
-    },
-    "TRAIN_UD":{
-        "num":300,
-        "description":""
-    },
-    "SET_CAM_TARGET_OFFSET":{
-        "num":301,
-        "description":""
-    },
-    "SET_CAM_POINT_1T_ROT":{
-        "num":302,
-        "description":""
-    },
-    "SET_CAM_T_LENGHT":{
-        "num":303,
-        "description":""
-    },
-    "SET_CAM_T_ROT_X":{
-        "num":304,
-        "description":""
-    },
-    "SET_CAM_T_ROT_Y":{
-        "num":305,
-        "description":""
-    },
-    "SET_CAM_T_OFFSET":{
-        "num":306,
-        "description":""
-    },
-    "NO_OUTRUN":{
-        "num":307,
-        "description":""
-    },
-    "SET_WHEEL_FIRE":{
-        "num":308,
-        "description":""
-    },
-    "RELOAD_OP_TRAIN":{
-        "num":309,
-        "description":""
-    },
-    "BackR_Drift":{
-        "num":310,
-        "description":""
-    },
-    "BackL_Drift":{
-        "num":311,
-        "description":""
-    },
-    "CHK_MOTION":{
-        "num":312,
-        "description":""
-    },
-    "ORG_SET_STYLE_POS":{
-        "num":313,
-        "description":""
-    },
-    "RECREATE_TRAIN":{
-        "num":314,
-        "description":""
-    },
-    "SET_CAMPOINT_1P2T":{
-        "num":315,
-        "description":""
-    },
-    "BUFF_TO_SC_CAM_POS":{
-        "num":316,
-        "description":""
-    },
-    "SC_ORG_MODE_CHANGE":{
-        "num":317,
-        "description":""
-    },
-    "SC_ORG_INIT_POS":{
-        "num":318,
-        "description":""
-    },
-    "SC_ORG_SET_POS":{
-        "num":319,
-        "description":""
-    },
-    "SC_ORG_SET_ROT":{
-        "num":320,
-        "description":""
-    },
-    "SC_ORG_SET_X_ROT":{
-        "num":321,
-        "description":""
-    },
-    "SC_ORG_SET_Y_ROT":{
-        "num":322,
-        "description":""
-    },
-    "SC_ORG_SET_Z_ROT":{
-        "num":323,
-        "description":""
-    },
-    "SET_SC_KOTEI_CAM_POS":{
-        "num":324,
-        "description":""
-    },
-    "SET_SC_KOTEI_CAM_T_POS":{
-        "num":325,
-        "description":""
-    },
-    "START_SC_WIPER":{
-        "num":326,
-        "description":""
-    },
-    "SUPER_DRIFT":{
-        "num":327,
-        "description":""
-    },
-    "CNG_TRAIN_NO_MAT_COL":{
-        "num":328,
-        "description":""
-    },
-    "ERR_CMD":{
-        "num":329,
-        "description":""
-    },
-    "K_HN":{
-        "num":330,
-        "description":""
-    },
-    "TO_TRACK_RAIL":{
-        "num":331,
-        "description":""
-    },
-    "IS_NO_DRAMA":{
-        "num":332,
-        "description":""
-    },
-    "CNG_TRAIN_NO_MAT_RGBA":{
-        "num":333,
-        "description":""
-    },
-    "SHOW_RECORD":{
-        "num":334,
-        "description":""
-    },
-    "WAIT_RECORD_END":{
-        "num":335,
-        "description":""
-    },
-    "IB_LI_SET_UPDATE_FLG":{
-        "num":336,
-        "description":""
-    },
-    "PTCL_SCALL":{
-        "num":337,
-        "description":""
-    },
-    "PTCL_COLOR":{
-        "num":338,
-        "description":""
-    },
-    "PTCL_ALPHA":{
-        "num":339,
-        "description":""
-    },
-    "PTCL_DRAWTYPE":{
-        "num":340,
-        "description":""
-    },
-    "PTCL_ANGLE":{
-        "num":341,
-        "description":""
-    },
-    "PTCL_RAND_ANGLE":{
-        "num":342,
-        "description":""
-    },
-    "PTCL_RAND_COLOR":{
-        "num":343,
-        "description":""
-    },
-    "PTCL_RAND_ALPHA":{
-        "num":344,
-        "description":""
-    },
-    "PTCL_RAND_SCALL":{
-        "num":345,
-        "description":""
-    },
-    "IB_ADD_PTCL":{
-        "num":346,
-        "description":""
-    },
-    "PTCL_RAND_TONE_COLOR":{
-        "num":347,
-        "description":""
-    },
-    "IS_ALPHA_END":{
-        "num":348,
-        "description":""
-    },
-    "PTCL_L_POS":{
-        "num":349,
-        "description":""
-    },
-    "PTCL_RAND_L_POS":{
-        "num":350,
-        "description":""
-    },
-    "CREATE_MAT_COLOR_R_INTERLIST":{
-        "num":351,
-        "description":""
-    },
-    "CREATE_MAT_EMISSIVE_R_INTERLIST":{
-        "num":352,
-        "description":""
-    },
-    "SET_MAT_COLOR_R":{
-        "num":353,
-        "description":""
-    },
-    "SET_MAT_COLOR_G":{
-        "num":354,
-        "description":""
-    },
-    "SET_MAT_COLOR_B":{
-        "num":355,
-        "description":""
-    },
-    "SET_MAT_COLOR_LOOP":{
-        "num":356,
-        "description":""
-    },
-    "SET_MAT_EMISSIVE_R":{
-        "num":357,
-        "description":""
-    },
-    "SET_MAT_EMISSIVE_G":{
-        "num":358,
-        "description":""
-    },
-    "SET_MAT_EMISSIVE_B":{
-        "num":359,
-        "description":""
-    },
-    "SET_MAT_EMISSIVE_LOOP":{
-        "num":360,
-        "description":""
-    },
-    "CREATE_MAT_COLOR_G_INTERLIST":{
-        "num":361,
-        "description":""
-    },
-    "CREATE_MAT_EMISSIVE_G_INTERLIST":{
-        "num":362,
-        "description":""
-    },
-    "CREATE_MAT_COLOR_B_INTERLIST":{
-        "num":363,
-        "description":""
-    },
-    "CREATE_MAT_EMISSIVE_B_INTERLIST":{
-        "num":364,
-        "description":""
-    },
-    "CREATE_UV_MOVE_Y":{
-        "num":365,
-        "description":""
-    },
-    "SET_UV_MOVE_Y":{
-        "num":366,
-        "description":""
-    },
-    "SET_UV_LOOP_Y":{
-        "num":367,
-        "description":""
-    },
-    "INDEX_RAND_ROT_X":{
-        "num":368,
-        "description":""
-    },
-    "INDEX_RAND_ROT_Y":{
-        "num":369,
-        "description":""
-    },
-    "INDEX_RAND_ROT_Z":{
-        "num":370,
-        "description":""
-    },
-    "INDEX_RAND_POS_X":{
-        "num":371,
-        "description":""
-    },
-    "INDEX_RAND_POS_Y":{
-        "num":372,
-        "description":""
-    },
-    "INDEX_RAND_POS_Z":{
-        "num":373,
-        "description":""
-    },
-    "RAND_SHOW_MESH":{
-        "num":374,
-        "description":""
-    },
-    "INDEX_RAND_SCALL":{
-        "num":375,
-        "description":""
-    },
-    "ADD_CHILD_OBJ":{
-        "num":376,
-        "description":""
-    },
-    "ADD_OBJ_INDEX":{
-        "num":377,
-        "description":""
-    },
-    "GAS_TARBIN":{
-        "num":378,
-        "description":""
-    },
-    "ENGINE_START":{
-        "num":379,
-        "description":""
-    },
-    "CHANGE_CHILDOBJ_ANIME":{
-        "num":380,
-        "description":""
-    },
-    "IB_SET_W_MT":{
-        "num":381,
-        "description":""
-    },
-    "CHK_OBJ_PARAM":{
-        "num":382,
-        "description":""
-    },
-    "SET_OBJ_PARAM":{
-        "num":383,
-        "description":""
-    },
-    "INDEX_DIR_CAM":{
-        "num":384,
-        "description":""
-    },
-    "CNG_MT_LIGHT":{
-        "num":385,
-        "description":""
-    },
-    "ADD_OBJ_INDEX2":{
-        "num":386,
-        "description":""
-    },
-    "CNG_MT_ALPHA":{
-        "num":387,
-        "description":""
-    },
-    "CREATE_MAT_ALPHA_INTERLIST":{
-        "num":388,
-        "description":""
-    },
-    "SET_MAT_ALPHA":{
-        "num":389,
-        "description":""
-    },
-    "RESTART_MESH_LIST":{
-        "num":390,
-        "description":""
-    },
-    "RAIL_ANIME_CHANGE":{
-        "num":391,
-        "description":""
-    },
-    "STOP_COMIC_SE_ALL":{
-        "num":392,
-        "description":""
-    },
-    "HURIKO":{
-        "num":393,
-        "description":""
-    },
-    "FTV_PLAY_AND_PREV":{
-        "num":394,
-        "description":""
-    },
-    "FTV_END_INHERIT":{
-        "num":395,
-        "description":""
-    },
-    "STATION_NAME_PRIORITY":{
-        "num":396,
-        "description":""
-    },
-    "ALL_FIT":{
-        "num":397,
-        "description":""
-    },
-    "SWAP_TX":{
-        "num":398,
-        "description":""
-    },
-    "CNG_TX":{
-        "num":399,
-        "description":""
-    },
-    "CHK_CAUSE":{
-        "num":400,
-        "description":""
-    },
-    "CNG_ANIME":{
-        "num":401,
-        "description":""
-    },
-    "CHK_OUHUKU":{
-        "num":402,
-        "description":""
-    },
-    "SET_TRAIN_PTCL_AREA":{
-        "num":403,
-        "description":""
-    },
-    "WAIT_DOSAN_LENGTH":{
-        "num":404,
-        "description":""
-    },
-    "END_DOSAN_LENGTH":{
-        "num":405,
-        "description":""
-    },
-    "DOSANSEN":{
-        "num":406,
-        "description":""
-    },
-    "MESH_INDEX_SE_UV_ANIME_FLG":{
-        "num":407,
-        "description":""
-    },
-    "WEATHER":{
-        "num":408,
-        "description":""
-    },
-    "TRAIN_DIR":{
-        "num":409,
-        "description":""
-    },
-    "IS_USE_CHAR":{
-        "num":410,
-        "description":""
-    },
-    "QUICK_SAVE_EVENT":{
-        "num":411,
-        "description":""
-    },
-    "NONE_GOAL":{
-        "num":412,
-        "description":""
-    },
-    "ENGINE_STOP":{
-        "num":413,
-        "description":""
-    },
-    "IS_BTL_MODE":{
-        "num":414,
-        "description":""
-    },
-    "IS_FREE_MODE":{
-        "num":415,
-        "description":""
-    },
-    "FIRST_OBJ_SET_ANIME_SCENE":{
-        "num":416,
-        "description":""
-    },
-    "G_HIDE_MESH":{
-        "num":417,
-        "description":""
-    },
-    "G_SHOW_MESH":{
-        "num":418,
-        "description":""
-    },
-    "STOP_WIPER":{
-        "num":419,
-        "description":""
-    },
-    "TRAIN_ANIME_CHANGE":{
-        "num":420,
-        "description":""
-    },
-    "MESH_INDEX_UV_RESTRT":{
-        "num":421,
-        "description":""
-    },
-    "SET_COMIC_COLOR":{
-        "num":422,
-        "description":""
-    },
-    "CHK_OUTRUN_CNT":{
-        "num":423,
-        "description":""
-    },
-    "CHK_D_AND_NOTCH":{
-        "num":424,
-        "description":""
-    },
-    "ADD_CPU_LEN_OUTRUN":{
-        "num":425,
-        "description":""
-    },
-    "ADD_CPU_SPEED_D_AND_NOTCH":{
-        "num":426,
-        "description":""
-    },
-    "CHK_HIT_CNT":{
-        "num":427,
-        "description":""
-    },
-    "TOP_SPEED_HOSYO":{
-        "num":428,
-        "description":""
-    },
-    "SET_ROOT_BLOCK":{
-        "num":429,
-        "description":""
-    },
-    "RIFT":{
-        "num":430,
-        "description":""
-    },
-    "COLLISION":{
-        "num":431,
-        "description":""
-    },
-    "DIR_VIEW_CHANGE":{
-        "num":432,
-        "description":""
-    },
-    "CHK_RAIL_NO":{
-        "num":433,
-        "description":""
-    },
-    "TRACK_CHANGE":{
-        "num":434,
-        "description":""
-    },
-    "CHK_LENGTH_DIR":{
-        "num":435,
-        "description":""
-    },
-    "CHK_POS_DIR":{
-        "num":436,
-        "description":""
-    },
-    "TRUE_CLASH":{
-        "num":437,
-        "description":""
-    },
-    "KATARIN_RUN":{
-        "num":438,
-        "description":""
-    },
-    "DRAW_UI":{
-        "num":439,
-        "description":""
-    },
-    "STOP_SCRIPT_BGM":{
-        "num":440,
-        "description":""
-    },
-    "SET_STATION_NO":{
-        "num":441,
-        "description":""
-    },
-    "SET_CPU_BREAKE":{
-        "num":442,
-        "description":""
-    },
-    "AMB_ANIME":{
-        "num":443,
-        "description":""
-    },
-    "ONE_DRIFT_FALSE":{
-        "num":444,
-        "description":""
-    },
-    "L_One_Drift":{
-        "num":445,
-        "description":""
-    },
-    "R_One_Drift":{
-        "num":446,
-        "description":""
-    },
-    "Ret_One_Drift":{
-        "num":447,
-        "description":""
-    },
-    "FRONT_JUMP":{
-        "num":448,
-        "description":""
-    },
-    "REAR_JUMP":{
-        "num":449,
-        "description":""
-    },
-    "FRONT_MOVE_X":{
-        "num":450,
-        "description":""
-    },
-    "TRACK_MOVE":{
-        "num":451,
-        "description":""
-    },
-    "TRAIN_JUMP":{
-        "num":452,
-        "description":""
-    },
-    "SET_LIGHT":{
-        "num":453,
-        "description":""
-    },
-    "SET_COL_KASENCHU":{
-        "num":454,
-        "description":""
-    },
-    "SET_KAISO":{
-        "num":455,
-        "description":""
-    },
-    "SET_FOR":{
-        "num":456,
-        "description":""
-    },
-    "CHK_TRAIN_COL":{
-        "num":457,
-        "description":""
-    },
-    "VOL_SCRIPT_BGM":{
-        "num":458,
-        "description":""
-    },
-    "IF_NOTCH":{
-        "num":459,
-        "description":""
-    },
-    "SET_BRIND_SW":{
-        "num":460,
-        "description":""
-    },
-    "SET_MIKOSHI":{
-        "num":461,
-        "description":""
-    },
-    "ADD_FIRE":{
-        "num":462,
-        "description":""
-    },
-    "BREAKE_OR_HIT":{
-        "num":463,
-        "description":""
-    },
-    "OUTRUN":{
-        "num":464,
-        "description":""
-    },
-    "SOFT_ATK":{
-        "num":465,
-        "description":""
-    },
-    "RAIL_STOP":{
-        "num":466,
-        "description":""
-    },
-    "CHANGE_OUHUKU_LINE":{
-        "num":467,
-        "description":""
-    },
-    "BRIND_ATK":{
-        "num":468,
-        "description":""
-    },
-    "OPEN_POS_DLG":{
-        "num":469,
-        "description":""
-    },
-    "PLAY_STAGEBGM_BLOCK":{
-        "num":470,
-        "description":""
-    },
-    "SET_BTL_POINT":{
-        "num":471,
-        "description":""
-    },
-    "CAM_TRAIN":{
-        "num":472,
-        "description":""
-    },
-    "PLAY_SCRIPT_BGM":{
-        "num":473,
-        "description":""
-    },
-    "CNG_FOR":{
-        "num":474,
-        "description":""
-    },
-    "SET_RAILBLOCK_CHECKER":{
-        "num":475,
-        "description":""
-    },
-    "RAIN_SE":{
-        "num":476,
-        "description":""
-    },
-    "TRAIN_STOP":{
-        "num":477,
-        "description":""
-    },
-    "KOTEICAM_BLEND":{
-        "num":478,
-        "description":""
-    },
-    "SCRIPT_RAIN":{
-        "num":479,
-        "description":""
-    },
-    "LINE_CHANGE":{
-        "num":480,
-        "description":""
-    },
-    "WAIT_RAIL_MORE_ONLY":{
-        "num":481,
-        "description":""
-    },
-    "SET_SE_VOL":{
-        "num":482,
-        "description":""
-    },
-    "CAM_TARGET_TRACK":{
-        "num":483,
-        "description":""
-    },
-    "DECAL_D37":{
-        "num":484,
-        "description":""
-    },
-    "DECAL_D39":{
-        "num":485,
-        "description":""
-    },
-    "DECAL_SMOKE":{
-        "num":486,
-        "description":""
-    },
-    "RAIL_PRIORITY":{
-        "num":487,
-        "description":""
-    },
-    "GET_KEY":{
-        "num":488,
-        "description":""
-    },
-    "SHOW_LIGHT":{
-        "num":489,
-        "description":""
-    },
-    "SHOW_IN_LIGHT":{
-        "num":490,
-        "description":""
-    },
-    "FOG_POW":{
-        "num":491,
-        "description":""
-    },
-    "STORY_WIN":{
-        "num":492,
-        "description":""
-    },
-    "RAIN_PARTICLE":{
-        "num":493,
-        "description":""
-    },
-    "D39_FIRE":{
-        "num":494,
-        "description":""
-    },
-    "SET_CPU_SPEED":{
-        "num":495,
-        "description":""
-    },
-    "BODY_AUDIO_PLAY":{
-        "num":496,
-        "description":""
-    },
-    "BODY_AUDIO_STOP":{
-        "num":497,
-        "description":""
-    },
-    "CNG_FADE_SPRITE":{
-        "num":498,
-        "description":""
-    },
-    "RAIL_DRIFT_CHK":{
-        "num":499,
-        "description":""
-    },
-    "INQ_WAIT":{
-        "num":500,
-        "description":""
-    },
-    "CNG_SCCAM_TRAIN":{
-        "num":501,
-        "description":""
-    },
-    "STOP_TRAIN_SE":{
-        "num":502,
-        "description":""
-    },
-    "PLAY_SCRIPT_BGM_TIME":{
-        "num":503,
-        "description":""
-    },
-    "CNG_BODY_COLOR":{
-        "num":504,
-        "description":""
-    },
-    "LOAD_TRAIN":{
-        "num":505,
-        "description":""
-    },
-    "SHOW_BLOCK":{
-        "num":506,
-        "description":""
-    },
-    "UPDATE_LIGHT_FRARE":{
-        "num":507,
-        "description":""
-    },
-    "WAIT_RAIL_MORE_GOTO":{
-        "num":508,
-        "description":""
-    },
-    "CREATE_AURA":{
-        "num":509,
-        "description":""
-    },
-    "AURA_ALPHA":{
-        "num":510,
-        "description":""
-    },
-    "SET_LV_JUMP":{
-        "num":511,
-        "description":""
-    },
-    "CREATE_EFFECT_CAM":{
-        "num":512,
-        "description":""
-    },
-    "TO_EFFECT_CAM":{
-        "num":513,
-        "description":""
-    },
-    "EFFECT_CAM_POW":{
-        "num":514,
-        "description":""
-    },
-    "EFFECT_CAM_COLOR":{
-        "num":515,
-        "description":""
-    },
-    "EFFECT_CAM_ALPHA":{
-        "num":516,
-        "description":""
-    },
-    "HIDE_LIGHT":{
-        "num":517,
-        "description":""
-    },
-    "USE_EFFECT_CAM":{
-        "num":518,
-        "description":""
-    },
-    "USE_EFFECT_CAM_RGB":{
-        "num":519,
-        "description":""
-    },
-    "EFFECT_CAM_RGB":{
-        "num":520,
-        "description":""
-    },
-    "COPY_TRAIN_POS":{
-        "num":521,
-        "description":""
-    },
-    "COL_SET":{
-        "num":522,
-        "description":""
-    },
-    "CNG_CPU_TRAIN":{
-        "num":523,
-        "description":""
-    },
-    "BTN_GOTO":{
-        "num":524,
-        "description":""
-    },
-    "NO_TIMESCALE_KOMA":{
-        "num":525,
-        "description":""
-    },
-    "EFFCAM_NOIZE":{
-        "num":526,
-        "description":""
-    },
-    "EFFCAM_GRI":{
-        "num":527,
-        "description":""
-    },
-    "EFFCAM_BLOCKNOISE":{
-        "num":528,
-        "description":""
-    },
-    "CREATE_TQ5000_FLAGMENT":{
-        "num":529,
-        "description":""
-    },
-    "USE_TQ5000_FLAGMENT":{
-        "num":530,
-        "description":""
-    },
-    "TQ5000_FLAGPOS":{
-        "num":531,
-        "description":""
-    },
-    "HUMIKIRI_VOL":{
-        "num":532,
-        "description":""
-    },
-    "TO_EFFECT_CAM_BODY":{
-        "num":533,
-        "description":""
-    },
-    "TO_NORM_CAM":{
-        "num":534,
-        "description":""
-    },
-    "TO_920":{
-        "num":535,
-        "description":""
-    },
-    "NO_TIMESCALE_FVT":{
-        "num":536,
-        "description":""
-    },
-    "CNG_TARGET_BODY":{
-        "num":537,
-        "description":""
-    },
-    "SC_ADD_POINT":{
-        "num":538,
-        "description":""
-    },
-    "CHK_SC_POINT":{
-        "num":539,
-        "description":""
-    },
-    "KAISO_TO_DUEL":{
-        "num":540,
-        "description":""
-    },
-    "SHOW_ST":{
-        "num":541,
-        "description":""
-    },
-    "ORG_UPDATE":{
-        "num":542,
-        "description":""
-    },
-    "SET_RAILBLOCK_POS":{
-        "num":543,
-        "description":""
-    },
-    "SET_LIGHT_OVER":{
-        "num":544,
-        "description":""
-    },
-    "CREATE_STAFFROLL":{
-        "num":545,
-        "description":""
-    },
-    "STAFFROLL_START":{
-        "num":546,
-        "description":""
-    },
-    "WAIT_STAFFROLL":{
-        "num":547,
-        "description":""
-    },
-    "SC_OUTRUN":{
-        "num":548,
-        "description":""
-    },
-    "CREATE_TAKMIS":{
-        "num":549,
-        "description":""
-    },
-    "SET_TAKMIS_POS":{
-        "num":550,
-        "description":""
-    },
-    "SET_TAKMIS_ALPHA":{
-        "num":551,
-        "description":""
-    },
-    "FRONT_DOOR":{
-        "num":552,
-        "description":""
-    },
-    "SET_KOMA_DEPTH":{
-        "num":553,
-        "description":""
-    },
-    "D37_FIRE":{
-        "num":554,
-        "description":""
-    },
-    "AMB_HIT_WAIT":{
-        "num":555,
-        "description":""
-    },
-    "ShowRecord":{
-        "num":556,
-        "description":""
-    },
-    "FIT_PER":{
-        "num":557,
-        "description":""
-    },
-    "CREATE_COMIC_PC":{
-        "num":558,
-        "description":""
-    },
-    "SET_COMIC_PC":{
-        "num":559,
-        "description":""
-    },
-    "PAUSE_STAGE_BGM":{
-        "num":560,
-        "description":""
-    },
-    "SET_KAKAPO":{
-        "num":561,
-        "description":""
-    },
-    "KOMA_KAKAPO":{
-        "num":562,
-        "description":""
-    },
-    "START_TARBINE":{
-        "num":563,
-        "description":""
-    },
-    "END_TARBINE":{
-        "num":564,
-        "description":""
-    },
-    "TARBINE_FTV_START":{
-        "num":565,
-        "description":""
-    },
-    "TARBINE_FTV_END":{
-        "num":566,
-        "description":""
-    },
-    "STORY_ENGINE":{
-        "num":567,
-        "description":""
-    },
-    "RAND_GOTO":{
-        "num":568,
-        "description":""
-    },
-    "KQ_SOUND":{
-        "num":569,
-        "description":""
-    },
-    "STORY_GOTO":{
-        "num":570,
-        "description":""
-    },
-    "PLAY223HONE":{
-        "num":571,
-        "description":""
-    },
-    "RB26":{
-        "num":572,
-        "description":""
-    },
-    "PLAYORGSE":{
-        "num":573,
-        "description":""
-    },
-    "H2300_GOAL":{
-        "num":574,
-        "description":""
-    },
-    "SCRIPT_CMD_MAX":{
-        "num":575,
-        "description":""
-    },
-};
+    "Tx": {
+        "num": 0,
+        "description": "画像をロードする",
+        "LS_bin": [
+            "BTL_04.BIN",
+            "CHARSEL.BIN",
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "SELECTSCENE.BIN",
+            "TITLE_LOGO.BIN",
+            "TITLE_MENU.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "TxSize": {
+        "num": 1,
+        "description": "画像のサイズを変える" + newLine
+                    + "引数１：from横の倍率" + newLine
+                    + "引数２：from縦の倍率" + newLine
+                    + "引数３：to横の倍率" + newLine
+                    + "引数４：to縦の倍率" + newLine
+                    + "引数５：引数１、２から引数３、４まで変化する時間（フレーム）",
+        "LS_bin": [
+            "BTL_04.BIN",
+            "CAUSESEL.BIN",
+            "CHARSEL.BIN",
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "STORYSEL.BIN",
+            "TITLE_LOGO.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "Alpha": {
+        "num": 2,
+        "description": "画像のAlphaを変える" + newLine
+                    + "引数１：from_Alphaの値" + newLine
+                    + "引数２：to_Alphaの値" + newLine
+                    + "引数３：引数１から引数２まで変化する時間（フレーム）",
+        "LS_bin": [
+            "BTL_04.BIN",
+            "CAUSESEL.BIN",
+            "CHARSEL.BIN",
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN",
+            "STORYSEL.BIN",
+            "TITLE_LOGO.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN",
+            "HK_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "End": {
+        "num": 3,
+        "description": "コマンドを終了する",
+        "LS_bin": [
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN",
+            "HK_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "COUNT.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "Pos": {
+        "num": 4,
+        "description": "画面中央を基準に画像を移動させる" + newLine
+                    + "引数１：移動させるx座標" + newLine
+                    + "引数２：移動させるy座標" + newLine
+                    + "引数３：詳細不明",
+        "LS_bin": [
+            "BTL_04.BIN",
+            "CHARSEL.BIN",
+            "CHARSEL3D.BIN",
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "SELECTSCENE.BIN",
+            "TITLE_LOGO.BIN",
+            "TITLE_MENU.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "ColorALL": {
+        "num": 5,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN",
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "TITLE_LOGO.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "Move": {
+        "num": 6,
+        "description": "",
+        "LS_bin": [
+            "TITLE_LOGO.BIN"
+        ]
+    },
+    "STAGE_BGM": {
+        "num": 7,
+        "description": "ステージBGMの1番目を再生する",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC400.BIN",
+            "COMIC700.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN"
+        ],
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1301.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN",
+            "COMIC1500.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "SetFlat3D": {
+        "num": 8,
+        "description": ""
+    },
+    "ChangeFlat3D": {
+        "num": 9,
+        "description": ""
+    },
+    "SetCamDir": {
+        "num": 10,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "HK_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
+    },
+    "DisCamDir": {
+        "num": 11,
+        "description": ""
+    },
+    "Set3DObj": {
+        "num": 12,
+        "description": "",
+        "LS_bin": [
+            "BTL_01.BIN",
+            "BTL_03.BIN",
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "LIGHT_4.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
+    },
+    "SetWAngleX": {
+        "num": 13,
+        "description": ""
+    },
+    "SetWAngleY": {
+        "num": 14,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL3D.BIN"
+        ]
+    },
+    "SetWAngleZ": {
+        "num": 15,
+        "description": "",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "CHARSEL3D.BIN"
+        ]
+    },
+    "SetLAngleX": {
+        "num": 16,
+        "description": ""
+    },
+    "SetLAngleY": {
+        "num": 17,
+        "description": ""
+    },
+    "SetLAngleZ": {
+        "num": 18,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL3D.BIN"
+        ]
+    },
+    "SetBoneWAngleX": {
+        "num": 19,
+        "description": ""
+    },
+    "SetBoneWAngleY": {
+        "num": 20,
+        "description": ""
+    },
+    "SetBoneWAngleZ": {
+        "num": 21,
+        "description": ""
+    },
+    "SetBoneLAngleX": {
+        "num": 22,
+        "description": ""
+    },
+    "SetBoneLAngleY": {
+        "num": 23,
+        "description": ""
+    },
+    "SetBoneLAngleZ": {
+        "num": 24,
+        "description": ""
+    },
+    "ShowMesh": {
+        "num": 25,
+        "description": "",
+        "LS_bin": [
+            "BTL_01.BIN",
+            "BTL_03.BIN",
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2800_00.BIN",
+            "H8200_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H8200_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SYADANKI_MEI.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "HideMesh": {
+        "num": 26,
+        "description": "",
+        "LS_bin": [
+            "BTL_01.BIN",
+            "BTL_03.BIN",
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIGNAL_AMB_2BLUE.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SYADANKI_MEI.BIN",
+            "TOBU.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "PlayAnime": {
+        "num": 27,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "Length_End": {
+        "num": 28,
+        "description": "",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "SetScall": {
+        "num": 29,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "RACE_START": {
+        "num": 30,
+        "description": "バトルを始める",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC700.BIN"
+        ],
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1300.BIN",
+            "COMIC1400.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2300.BIN",
+            "COMIC2400.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_comic": [
+            "COMIC2900.BIN",
+            "COMIC3220.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "RACE_END": {
+        "num": 31,
+        "description": "バトルが終わる",
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "FADE_STAGE_BGM": {
+        "num": 32,
+        "description": "",
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "CHANGE_SCENE": {
+        "num": 33,
+        "description": "シーンを変える（メニューや漫画などの）" + newLine
+                    + "デフォルトで引数はなし" + newLine
+                    + "LSのH7001のみ引数「100」を使う",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC500.BIN",
+            "COMIC605.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC902.BIN",
+            "COMIC901.BIN",
+            "COMIC903.BIN",
+            "COMIC900.BIN"
+        ],
+        "LS_bin": [
+            "BTL_04.BIN",
+            "COUNT.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1990.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1208.BIN",
+            "COMIC1321.BIN",
+            "COMIC1401.BIN",
+            "COMIC1511.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2001.BIN",
+            "COMIC2007.BIN",
+            "COMIC2990.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2213.BIN",
+            "COMIC2201.BIN",
+            "COMIC2221.BIN",
+            "COMIC2333.BIN",
+            "COMIC2335.BIN",
+            "COMIC2337.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2401.BIN",
+            "COMIC2440.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3064.BIN",
+            "COMIC3070.BIN",
+            "COMIC2990.BIN",
+            "COMIC3137.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3301.BIN",
+            "COMIC3307.BIN",
+            "COMIC3472.BIN",
+            "COMIC3499.BIN",
+            "COMIC3477.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "LPos": {
+        "num": 34,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN",
+            "SELECTSCENE.BIN",
+            "TITLE_MENU.BIN"
+        ],
+        "BS_bin": [
+            "OP_OBJ.BIN"
+        ]
+    },
+    "LMove": {
+        "num": 35,
+        "description": ""
+    },
+    "LLoopX": {
+        "num": 36,
+        "description": "",
+        "LS_bin": [
+            "SELECTSCENE.BIN",
+            "TITLE_MENU.BIN"
+        ]
+    },
+    "LLoopY": {
+        "num": 37,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN"
+        ]
+    },
+    "LLoopZ": {
+        "num": 38,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN"
+        ]
+    },
+    "Angle": {
+        "num": 39,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
+    },
+    "AngleLoop": {
+        "num": 40,
+        "description": "",
+        "LS_bin": [
+            "TITLE_MENU.BIN"
+        ]
+    },
+    "Move2": {
+        "num": 41,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
+    },
+    "PosX": {
+        "num": 42,
+        "description": ""
+    },
+    "PosY": {
+        "num": 43,
+        "description": "",
+        "LS_bin": [
+            "TITLE_MENU.BIN"
+        ]
+    },
+    "PosZ": {
+        "num": 44,
+        "description": ""
+    },
+    "PlaySE": {
+        "num": 45,
+        "description": "",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COL_BOX.BIN",
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "SET_MT_NONE": {
+        "num": 46,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "SetCamPos": {
+        "num": 47,
+        "description": "",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC300.BIN",
+            "COMIC311.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC702.BIN",
+            "COMIC709.BIN",
+            "COMIC719.BIN",
+            "COMIC717.BIN",
+            "OP.BIN"
+        ]
+    },
+    "SetCamTarget": {
+        "num": 48,
+        "description": "",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC208.BIN",
+            "COMIC100.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "OP.BIN"
+        ]
+    },
+    "CamMoveWait": {
+        "num": 49,
+        "description": "【推定】カメラの動きが終わるまで待つが" + newLine
+                    + "ボタンで早送りできるようにする" + newLine
+                    + "引数１：１（True）、0（False）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC100.BIN",
+            "COMIC300.BIN",
+            "COMIC600.BIN"
+        ]
+    },
+    "SetComic": {
+        "num": 50,
+        "description": "コミックをセットする。" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：スクリプト内のイメージ番号",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC316.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1110.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN",
+            "COMIC1998.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2002.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2316.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2424.BIN",
+            "COMIC2416.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3060.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3070.BIN",
+            "COMIC2900.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3113.BIN",
+            "COMIC3121.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3219.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3310.BIN",
+            "COMIC3327.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3439.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3901.BIN",
+            "COMIC3902.BIN",
+            "COMIC3903.BIN",
+            "COMIC3904.BIN",
+            "COMIC3905.BIN",
+            "COMIC3906.BIN",
+            "COMIC3907.BIN",
+            "COMIC3908.BIN",
+            "COMIC3909.BIN",
+            "COMIC3910.BIN",
+            "COMIC3911.BIN",
+            "COMIC3912.BIN",
+            "COMIC3913.BIN",
+            "COMIC3914.BIN",
+            "COMIC3915.BIN",
+            "COMIC3916.BIN",
+            "COMIC3917.BIN",
+            "COMIC3918.BIN",
+            "COMIC3919.BIN",
+            "COMIC3920.BIN",
+            "COMIC3921.BIN",
+            "COMIC3922.BIN",
+            "COMIC3923.BIN",
+            "COMIC3924.BIN",
+            "COMIC3925.BIN",
+            "COMIC3999.BIN",
+            "COMIC3996.BIN",
+            "COMIC3934.BIN",
+            "COMIC3935.BIN"
+        ]
+    },
+    "ComicPos": {
+        "num": 51,
+        "description": "コミックの位置を設定する" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：x座標" + newLine
+                    + "引数３：y座標" + newLine
+                    + "引数４：アニメ時間（フレーム）" + newLine
+                    + "引数５：アニメ効果の種類",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC316.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN",
+            "COMIC1998.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2009.BIN",
+            "COMIC2001.BIN",
+            "COMIC2002.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2316.BIN",
+            "COMIC2330.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2424.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2401.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3070.BIN",
+            "COMIC2900.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3100.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3131.BIN",
+            "COMIC3113.BIN",
+            "COMIC3121.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3219.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3327.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3439.BIN",
+            "COMIC3431.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3900.BIN",
+            "COMIC3901.BIN",
+            "COMIC3902.BIN",
+            "COMIC3903.BIN",
+            "COMIC3904.BIN",
+            "COMIC3905.BIN",
+            "COMIC3906.BIN",
+            "COMIC3907.BIN",
+            "COMIC3908.BIN",
+            "COMIC3909.BIN",
+            "COMIC3910.BIN",
+            "COMIC3911.BIN",
+            "COMIC3912.BIN",
+            "COMIC3913.BIN",
+            "COMIC3914.BIN",
+            "COMIC3915.BIN",
+            "COMIC3916.BIN",
+            "COMIC3917.BIN",
+            "COMIC3918.BIN",
+            "COMIC3919.BIN",
+            "COMIC3920.BIN",
+            "COMIC3921.BIN",
+            "COMIC3922.BIN",
+            "COMIC3923.BIN",
+            "COMIC3924.BIN",
+            "COMIC3925.BIN",
+            "COMIC3999.BIN",
+            "COMIC3996.BIN",
+            "COMIC3934.BIN",
+            "COMIC3935.BIN"
+        ]
+    },
+    "ComicAlpha": {
+        "num": 52,
+        "description": "コミックのAlphaを設定する" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：from Alpha" + newLine
+                    + "引数３：to Alpha" + newLine
+                    + "引数４：アニメ時間（フレーム）" + newLine
+                    + "引数５：アニメ効果の種類",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC316.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN",
+            "COMIC1998.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2009.BIN",
+            "COMIC2001.BIN",
+            "COMIC2002.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2316.BIN",
+            "COMIC2330.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2424.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2401.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3070.BIN",
+            "COMIC2900.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3100.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3131.BIN",
+            "COMIC3113.BIN",
+            "COMIC3121.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3219.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3327.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3439.BIN",
+            "COMIC3431.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3900.BIN",
+            "COMIC3901.BIN",
+            "COMIC3902.BIN",
+            "COMIC3903.BIN",
+            "COMIC3904.BIN",
+            "COMIC3905.BIN",
+            "COMIC3906.BIN",
+            "COMIC3907.BIN",
+            "COMIC3908.BIN",
+            "COMIC3909.BIN",
+            "COMIC3910.BIN",
+            "COMIC3911.BIN",
+            "COMIC3912.BIN",
+            "COMIC3913.BIN",
+            "COMIC3914.BIN",
+            "COMIC3915.BIN",
+            "COMIC3916.BIN",
+            "COMIC3917.BIN",
+            "COMIC3918.BIN",
+            "COMIC3919.BIN",
+            "COMIC3920.BIN",
+            "COMIC3921.BIN",
+            "COMIC3922.BIN",
+            "COMIC3923.BIN",
+            "COMIC3924.BIN",
+            "COMIC3925.BIN",
+            "COMIC3999.BIN",
+            "COMIC3996.BIN",
+            "COMIC3934.BIN",
+            "COMIC3935.BIN"
+        ]
+    },
+    "ComicWait": {
+        "num": 53,
+        "description": "コミックを待つ" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：【不明】（SSでは使わない。）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN"
+        ]
+    },
+    "Scene_to_Comic": {
+        "num": 54,
+        "description": "3Dシーンをコミック化する" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：width" + newLine
+                    + "引数３：height",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3070.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3100.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3131.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SKY_DOME": {
+        "num": 55,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "Fill_BG": {
+        "num": 56,
+        "description": "画面をBGで埋める" + newLine
+                    + "引数１：１（True）、0（False）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3066.BIN",
+            "COMIC3010.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3001.BIN",
+            "COMIC3064.BIN",
+            "COMIC3100.BIN",
+            "COMIC3101.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3200.BIN",
+            "COMIC3279.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3301.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3400.BIN",
+            "COMIC3464.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "ComicEnd": {
+        "num": 57,
+        "description": "スクリプトを終了する",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC003.BIN",
+            "COMIC011.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC204.BIN",
+            "COMIC201.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC111.BIN",
+            "COMIC113.BIN",
+            "COMIC112.BIN",
+            "COMIC115.BIN",
+            "COMIC118.BIN",
+            "COMIC116.BIN",
+            "COMIC117.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC123.BIN",
+            "COMIC114.BIN",
+            "COMIC300.BIN",
+            "COMIC301.BIN",
+            "COMIC308.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC305.BIN",
+            "COMIC306.BIN",
+            "COMIC307.BIN",
+            "COMIC310.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC402.BIN",
+            "COMIC403.BIN",
+            "COMIC404.BIN",
+            "COMIC405.BIN",
+            "COMIC401.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC500.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC706.BIN",
+            "COMIC713.BIN",
+            "COMIC714.BIN",
+            "COMIC705.BIN",
+            "COMIC721.BIN",
+            "COMIC722.BIN",
+            "COMIC902.BIN",
+            "COMIC901.BIN",
+            "COMIC903.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1001.BIN",
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1008.BIN",
+            "COMIC1020.BIN",
+            "COMIC1991.BIN",
+            "COMIC1990.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1105.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1119.BIN",
+            "COMIC1992.BIN",
+            "COMIC1200.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1993.BIN",
+            "COMIC1208.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1313.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1321.BIN",
+            "COMIC1320.BIN",
+            "COMIC1994.BIN",
+            "COMIC1400.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1995.BIN",
+            "COMIC1500.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN",
+            "COMIC1996.BIN",
+            "COMIC1999.BIN",
+            "COMIC1998.BIN",
+            "COMIC1997.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2003.BIN",
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2001.BIN",
+            "COMIC2002.BIN",
+            "COMIC2005.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2011.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2202.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2203.BIN",
+            "COMIC2226.BIN",
+            "COMIC2205.BIN",
+            "COMIC2206.BIN",
+            "COMIC2207.BIN",
+            "COMIC2228.BIN",
+            "COMIC2204.BIN",
+            "COMIC2222.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2214.BIN",
+            "COMIC2231.BIN",
+            "COMIC2215.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2216.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2212.BIN",
+            "COMIC2213.BIN",
+            "COMIC2201.BIN",
+            "COMIC2220.BIN",
+            "COMIC2223.BIN",
+            "COMIC2221.BIN",
+            "COMIC2235.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2991.BIN",
+            "COMIC2303.BIN",
+            "COMIC2304.BIN",
+            "COMIC2305.BIN",
+            "COMIC2306.BIN",
+            "COMIC2308.BIN",
+            "COMIC2326.BIN",
+            "COMIC2327.BIN",
+            "COMIC2328.BIN",
+            "COMIC2329.BIN",
+            "COMIC2310.BIN",
+            "COMIC2315.BIN",
+            "COMIC2316.BIN",
+            "COMIC2321.BIN",
+            "COMIC2330.BIN",
+            "COMIC2331.BIN",
+            "COMIC2332.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2336.BIN",
+            "COMIC2337.BIN",
+            "COMIC2338.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2405.BIN",
+            "COMIC2406.BIN",
+            "COMIC2407.BIN",
+            "COMIC2418.BIN",
+            "COMIC2409.BIN",
+            "COMIC2410.BIN",
+            "COMIC2420.BIN",
+            "COMIC2411.BIN",
+            "COMIC2421.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2425.BIN",
+            "COMIC2422.BIN",
+            "COMIC2423.BIN",
+            "COMIC2424.BIN",
+            "COMIC2435.BIN",
+            "COMIC2416.BIN",
+            "COMIC2426.BIN",
+            "COMIC2413.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2419.BIN",
+            "COMIC2401.BIN",
+            "COMIC2402.BIN",
+            "COMIC2404.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2438.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN",
+            "COMIC2429.BIN",
+            "COMIC2430.BIN",
+            "COMIC2431.BIN",
+            "COMIC2432.BIN",
+            "COMIC2443.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3019.BIN",
+            "COMIC3069.BIN",
+            "COMIC3022.BIN",
+            "COMIC3024.BIN",
+            "COMIC3029.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3036.BIN",
+            "COMIC3035.BIN",
+            "COMIC3038.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3043.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3046.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3053.BIN",
+            "COMIC3057.BIN",
+            "COMIC3066.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3014.BIN",
+            "COMIC3016.BIN",
+            "COMIC3020.BIN",
+            "COMIC3027.BIN",
+            "COMIC3028.BIN",
+            "COMIC3030.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3047.BIN",
+            "COMIC3050.BIN",
+            "COMIC3051.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3059.BIN",
+            "COMIC3060.BIN",
+            "COMIC3061.BIN",
+            "COMIC3001.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3070.BIN",
+            "COMIC3065.BIN",
+            "COMIC3067.BIN",
+            "COMIC3068.BIN",
+            "COMIC3071.BIN",
+            "COMIC2900.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3111.BIN",
+            "COMIC3129.BIN",
+            "COMIC3118.BIN",
+            "COMIC3130.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3115.BIN",
+            "COMIC3132.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3126.BIN",
+            "COMIC3125.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3131.BIN",
+            "COMIC3113.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3134.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3101.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3200.BIN",
+            "COMIC3216.BIN",
+            "COMIC3222.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3218.BIN",
+            "COMIC3224.BIN",
+            "COMIC3221.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3225.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3228.BIN",
+            "COMIC3266.BIN",
+            "COMIC3229.BIN",
+            "COMIC3226.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3234.BIN",
+            "COMIC3274.BIN",
+            "COMIC3239.BIN",
+            "COMIC3236.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3241.BIN",
+            "COMIC3276.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3250.BIN",
+            "COMIC3242.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3245.BIN",
+            "COMIC3251.BIN",
+            "COMIC3256.BIN",
+            "COMIC3240.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3249.BIN",
+            "COMIC3258.BIN",
+            "COMIC3259.BIN",
+            "COMIC3260.BIN",
+            "COMIC3280.BIN",
+            "COMIC3237.BIN",
+            "COMIC3246.BIN",
+            "COMIC3286.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3215.BIN",
+            "COMIC3219.BIN",
+            "COMIC3227.BIN",
+            "COMIC3220.BIN",
+            "COMIC3235.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3201.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3288.BIN",
+            "COMIC3300.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3319.BIN",
+            "COMIC3335.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3317.BIN",
+            "COMIC3324.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3412.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3414.BIN",
+            "COMIC3467.BIN",
+            "COMIC3416.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3453.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3451.BIN",
+            "COMIC3452.BIN",
+            "COMIC3458.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3462.BIN",
+            "COMIC3435.BIN",
+            "COMIC3473.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3432.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3424.BIN",
+            "COMIC3434.BIN",
+            "COMIC3436.BIN",
+            "COMIC3437.BIN",
+            "COMIC3439.BIN",
+            "COMIC3446.BIN",
+            "COMIC3444.BIN",
+            "COMIC3413.BIN",
+            "COMIC3419.BIN",
+            "COMIC3420.BIN",
+            "COMIC3423.BIN",
+            "COMIC3430.BIN",
+            "COMIC3431.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3461.BIN",
+            "COMIC3463.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN",
+            "COMIC3481.BIN",
+            "COMIC3900.BIN",
+            "COMIC3901.BIN",
+            "COMIC3902.BIN",
+            "COMIC3903.BIN",
+            "COMIC3904.BIN",
+            "COMIC3905.BIN",
+            "COMIC3906.BIN",
+            "COMIC3907.BIN",
+            "COMIC3908.BIN",
+            "COMIC3909.BIN",
+            "COMIC3910.BIN",
+            "COMIC3911.BIN",
+            "COMIC3912.BIN",
+            "COMIC3913.BIN",
+            "COMIC3914.BIN",
+            "COMIC3915.BIN",
+            "COMIC3916.BIN",
+            "COMIC3917.BIN",
+            "COMIC3918.BIN",
+            "COMIC3919.BIN",
+            "COMIC3920.BIN",
+            "COMIC3921.BIN",
+            "COMIC3922.BIN",
+            "COMIC3923.BIN",
+            "COMIC3924.BIN",
+            "COMIC3925.BIN",
+            "COMIC3926.BIN",
+            "COMIC3927.BIN",
+            "COMIC3928.BIN",
+            "COMIC3929.BIN",
+            "COMIC3999.BIN",
+            "COMIC3996.BIN",
+            "COMIC3995.BIN",
+            "COMIC3930.BIN",
+            "COMIC3931.BIN",
+            "COMIC3932.BIN",
+            "COMIC3933.BIN",
+            "COMIC3934.BIN",
+            "COMIC3935.BIN"
+        ]
+    },
+    "CamComtroll": {
+        "num": 58,
+        "description": "スクリプトのCam設定できるようにする。" + newLine
+                    + "引数１：１（True）、0（False）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC300.BIN",
+            "COMIC301.BIN",
+            "COMIC311.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC413.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC900.BIN",
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1312.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2009.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2221.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2337.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2441.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3070.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3131.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "ComicSceneStop": {
+        "num": 59,
+        "description": "指定したのコマの中の動きを止める" + newLine
+                    + "引数１：コマの番号",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC600.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1312.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2441.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3100.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3131.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3900.BIN"
+        ]
+    },
+    "BtnWait": {
+        "num": 60,
+        "description": "ボタンを押すまでスクリプトの中で待機する",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC500.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1990.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2333.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3060.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC2990.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3461.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3900.BIN"
+        ]
+    },
+    "EyeMove": {
+        "num": 61,
+        "description": "視点を動かす。" + newLine
+                    + "引数１：x座標" + newLine
+                    + "引数２：y座標" + newLine
+                    + "引数３：アニメ時間（フレーム）" + newLine
+                    + "引数４：アニメ効果の種類",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC316.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1106.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN",
+            "COMIC1998.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2009.BIN",
+            "COMIC2001.BIN",
+            "COMIC2002.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2316.BIN",
+            "COMIC2330.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2424.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2401.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3060.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3327.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3461.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3996.BIN"
+        ]
+    },
+    "SetZoom": {
+        "num": 62,
+        "description": "Zoomを設定する。" + newLine
+                    + "引数１：zoom倍率" + newLine
+                    + "引数２：アニメ時間（フレーム）" + newLine
+                    + "引数３：アニメ効果の種類",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC209.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1020.BIN",
+            "COMIC1120.BIN",
+            "COMIC1321.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2400.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3327.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3461.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN"
+        ]
+    },
+    "BG_Alpha": {
+        "num": 63,
+        "description": "BGのAlphaを設定する" + newLine
+                    + "引数１：BGのAlpha設定" + newLine
+                    + "引数２：アニメ時間（フレーム）" + newLine
+                    + "引数３：アニメ効果の種類" + newLine
+                    + "引数４：【不明】（SSでは使わない。）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC100.BIN",
+            "COMIC122.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2400.BIN",
+            "COMIC2401.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3066.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3301.BIN",
+            "COMIC3400.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3499.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "BG_Wait": {
+        "num": 64,
+        "description": "BGの設定が終わるまで待つ",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC100.BIN",
+            "COMIC300.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1200.BIN",
+            "COMIC1300.BIN",
+            "COMIC1400.BIN",
+            "COMIC1500.BIN"
+        ]
+    },
+    "StartCount": {
+        "num": 65,
+        "description": "5秒カウントを数える",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC100.BIN",
+            "COMIC300.BIN",
+            "COMIC600.BIN"
+        ]
+    },
+    "WaitMoveEye": {
+        "num": 66,
+        "description": "EyeMoveが終わるまで待つ" + newLine
+                    + "引数１：１（True）、0（False：ボタンで待たずに進める）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2200.BIN",
+            "COMIC2300.BIN",
+            "COMIC2333.BIN",
+            "COMIC2334.BIN",
+            "COMIC2400.BIN"
+        ]
+    },
+    "WaitFrame": {
+        "num": 67,
+        "description": "指定のフレームだけ待つ" + newLine
+                    + "引数１：フレーム",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC003.BIN",
+            "COMIC011.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC204.BIN",
+            "COMIC201.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC123.BIN",
+            "COMIC114.BIN",
+            "COMIC300.BIN",
+            "COMIC301.BIN",
+            "COMIC308.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC305.BIN",
+            "COMIC310.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC402.BIN",
+            "COMIC403.BIN",
+            "COMIC404.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC500.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC706.BIN",
+            "COMIC713.BIN",
+            "COMIC705.BIN",
+            "COMIC721.BIN",
+            "COMIC722.BIN",
+            "COMIC902.BIN",
+            "COMIC901.BIN",
+            "COMIC903.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1001.BIN",
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1990.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1105.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1119.BIN",
+            "COMIC1200.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1208.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1321.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN",
+            "COMIC1998.BIN",
+            "COMIC1997.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2003.BIN",
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2001.BIN",
+            "COMIC2002.BIN",
+            "COMIC2005.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2202.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2203.BIN",
+            "COMIC2226.BIN",
+            "COMIC2205.BIN",
+            "COMIC2206.BIN",
+            "COMIC2207.BIN",
+            "COMIC2228.BIN",
+            "COMIC2204.BIN",
+            "COMIC2222.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2214.BIN",
+            "COMIC2231.BIN",
+            "COMIC2215.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2212.BIN",
+            "COMIC2213.BIN",
+            "COMIC2201.BIN",
+            "COMIC2220.BIN",
+            "COMIC2223.BIN",
+            "COMIC2221.BIN",
+            "COMIC2235.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2305.BIN",
+            "COMIC2306.BIN",
+            "COMIC2310.BIN",
+            "COMIC2315.BIN",
+            "COMIC2316.BIN",
+            "COMIC2321.BIN",
+            "COMIC2330.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2337.BIN",
+            "COMIC2338.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2405.BIN",
+            "COMIC2406.BIN",
+            "COMIC2407.BIN",
+            "COMIC2409.BIN",
+            "COMIC2410.BIN",
+            "COMIC2420.BIN",
+            "COMIC2411.BIN",
+            "COMIC2421.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2422.BIN",
+            "COMIC2423.BIN",
+            "COMIC2424.BIN",
+            "COMIC2435.BIN",
+            "COMIC2416.BIN",
+            "COMIC2413.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2419.BIN",
+            "COMIC2401.BIN",
+            "COMIC2404.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN",
+            "COMIC2443.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3019.BIN",
+            "COMIC3069.BIN",
+            "COMIC3022.BIN",
+            "COMIC3024.BIN",
+            "COMIC3029.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3038.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3043.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3066.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3020.BIN",
+            "COMIC3027.BIN",
+            "COMIC3028.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3047.BIN",
+            "COMIC3051.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3059.BIN",
+            "COMIC3060.BIN",
+            "COMIC3061.BIN",
+            "COMIC3001.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3070.BIN",
+            "COMIC3071.BIN",
+            "COMIC2900.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3111.BIN",
+            "COMIC3129.BIN",
+            "COMIC3118.BIN",
+            "COMIC3130.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3115.BIN",
+            "COMIC3132.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3126.BIN",
+            "COMIC3125.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3131.BIN",
+            "COMIC3113.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3134.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3200.BIN",
+            "COMIC3216.BIN",
+            "COMIC3222.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3218.BIN",
+            "COMIC3224.BIN",
+            "COMIC3221.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3225.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3228.BIN",
+            "COMIC3266.BIN",
+            "COMIC3229.BIN",
+            "COMIC3226.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3234.BIN",
+            "COMIC3274.BIN",
+            "COMIC3239.BIN",
+            "COMIC3236.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3241.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3250.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3245.BIN",
+            "COMIC3251.BIN",
+            "COMIC3256.BIN",
+            "COMIC3240.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3249.BIN",
+            "COMIC3258.BIN",
+            "COMIC3259.BIN",
+            "COMIC3260.BIN",
+            "COMIC3280.BIN",
+            "COMIC3237.BIN",
+            "COMIC3246.BIN",
+            "COMIC3286.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3215.BIN",
+            "COMIC3219.BIN",
+            "COMIC3227.BIN",
+            "COMIC3235.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3288.BIN",
+            "COMIC3300.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3317.BIN",
+            "COMIC3324.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3412.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3414.BIN",
+            "COMIC3467.BIN",
+            "COMIC3416.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3453.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3451.BIN",
+            "COMIC3452.BIN",
+            "COMIC3458.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3432.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3424.BIN",
+            "COMIC3434.BIN",
+            "COMIC3436.BIN",
+            "COMIC3437.BIN",
+            "COMIC3439.BIN",
+            "COMIC3446.BIN",
+            "COMIC3444.BIN",
+            "COMIC3413.BIN",
+            "COMIC3419.BIN",
+            "COMIC3420.BIN",
+            "COMIC3423.BIN",
+            "COMIC3430.BIN",
+            "COMIC3431.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3461.BIN",
+            "COMIC3463.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN",
+            "COMIC3481.BIN",
+            "COMIC3900.BIN",
+            "COMIC3901.BIN",
+            "COMIC3902.BIN",
+            "COMIC3903.BIN",
+            "COMIC3904.BIN",
+            "COMIC3905.BIN",
+            "COMIC3906.BIN",
+            "COMIC3907.BIN",
+            "COMIC3908.BIN",
+            "COMIC3909.BIN",
+            "COMIC3910.BIN",
+            "COMIC3911.BIN",
+            "COMIC3912.BIN",
+            "COMIC3913.BIN",
+            "COMIC3914.BIN",
+            "COMIC3915.BIN",
+            "COMIC3916.BIN",
+            "COMIC3917.BIN",
+            "COMIC3918.BIN",
+            "COMIC3919.BIN",
+            "COMIC3920.BIN",
+            "COMIC3921.BIN",
+            "COMIC3922.BIN",
+            "COMIC3923.BIN",
+            "COMIC3924.BIN",
+            "COMIC3925.BIN",
+            "COMIC3999.BIN",
+            "COMIC3996.BIN",
+            "COMIC3995.BIN",
+            "COMIC3934.BIN",
+            "COMIC3935.BIN"
+        ]
+    },
+    "FTV_Play": {
+        "num": 68,
+        "description": "FVTを再生する" + newLine
+                    + "引数１：FVT番号",
+        "LS_comic": [
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC003.BIN",
+            "COMIC011.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC200.BIN",
+            "COMIC204.BIN",
+            "COMIC201.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC101.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC300.BIN",
+            "COMIC301.BIN",
+            "COMIC308.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC305.BIN",
+            "COMIC306.BIN",
+            "COMIC307.BIN",
+            "COMIC310.BIN",
+            "COMIC400.BIN",
+            "COMIC402.BIN",
+            "COMIC403.BIN",
+            "COMIC404.BIN",
+            "COMIC405.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC713.BIN",
+            "COMIC705.BIN",
+            "COMIC721.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1106.BIN",
+            "COMIC1303.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2309.BIN",
+            "COMIC2422.BIN",
+            "COMIC2424.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3013.BIN",
+            "COMIC3020.BIN",
+            "COMIC3039.BIN",
+            "COMIC3119.BIN",
+            "COMIC3279.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN"
+        ]
+    },
+    "FTV_Wait": {
+        "num": 69,
+        "description": "FVTが終わるまで待つ" + newLine
+                    + "引数１：FVT番号",
+        "LS_comic": [
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC003.BIN",
+            "COMIC011.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC200.BIN",
+            "COMIC204.BIN",
+            "COMIC201.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC101.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC300.BIN",
+            "COMIC301.BIN",
+            "COMIC308.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC305.BIN",
+            "COMIC306.BIN",
+            "COMIC307.BIN",
+            "COMIC310.BIN",
+            "COMIC400.BIN",
+            "COMIC402.BIN",
+            "COMIC403.BIN",
+            "COMIC404.BIN",
+            "COMIC405.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC713.BIN",
+            "COMIC705.BIN",
+            "COMIC721.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1106.BIN",
+            "COMIC1303.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2309.BIN",
+            "COMIC2422.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3013.BIN",
+            "COMIC3119.BIN",
+            "COMIC3323.BIN",
+            "COMIC3471.BIN"
+        ]
+    },
+    "HideMsgWnd": {
+        "num": 70,
+        "description": "FVTのメッセージボックスを隠す",
+        "LS_comic": [
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC003.BIN",
+            "COMIC011.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC200.BIN",
+            "COMIC204.BIN",
+            "COMIC201.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC101.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC300.BIN",
+            "COMIC301.BIN",
+            "COMIC308.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC305.BIN",
+            "COMIC306.BIN",
+            "COMIC307.BIN",
+            "COMIC310.BIN",
+            "COMIC400.BIN",
+            "COMIC402.BIN",
+            "COMIC403.BIN",
+            "COMIC404.BIN",
+            "COMIC405.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC713.BIN",
+            "COMIC705.BIN",
+            "COMIC721.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1001.BIN",
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1105.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2200.BIN",
+            "COMIC2202.BIN",
+            "COMIC2203.BIN",
+            "COMIC2205.BIN",
+            "COMIC2206.BIN",
+            "COMIC2207.BIN",
+            "COMIC2204.BIN",
+            "COMIC2222.BIN",
+            "COMIC2208.BIN",
+            "COMIC2214.BIN",
+            "COMIC2215.BIN",
+            "COMIC2216.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2220.BIN",
+            "COMIC2301.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2302.BIN",
+            "COMIC2305.BIN",
+            "COMIC2310.BIN",
+            "COMIC2321.BIN",
+            "COMIC2330.BIN",
+            "COMIC2405.BIN",
+            "COMIC2406.BIN",
+            "COMIC2407.BIN",
+            "COMIC2409.BIN",
+            "COMIC2420.BIN",
+            "COMIC2421.BIN",
+            "COMIC2422.BIN",
+            "COMIC2423.BIN",
+            "COMIC2424.BIN",
+            "COMIC2435.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2402.BIN",
+            "COMIC2404.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3019.BIN",
+            "COMIC3022.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3038.BIN",
+            "COMIC3043.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3013.BIN",
+            "COMIC3027.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3047.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3111.BIN",
+            "COMIC3118.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3115.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3124.BIN",
+            "COMIC3126.BIN",
+            "COMIC3125.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3113.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3134.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3216.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3218.BIN",
+            "COMIC3221.BIN",
+            "COMIC3225.BIN",
+            "COMIC3228.BIN",
+            "COMIC3229.BIN",
+            "COMIC3226.BIN",
+            "COMIC3234.BIN",
+            "COMIC3239.BIN",
+            "COMIC3236.BIN",
+            "COMIC3241.BIN",
+            "COMIC3238.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3245.BIN",
+            "COMIC3251.BIN",
+            "COMIC3256.BIN",
+            "COMIC3240.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3249.BIN",
+            "COMIC3258.BIN",
+            "COMIC3260.BIN",
+            "COMIC3280.BIN",
+            "COMIC3237.BIN",
+            "COMIC3214.BIN",
+            "COMIC3215.BIN",
+            "COMIC3219.BIN",
+            "COMIC3227.BIN",
+            "COMIC3235.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3317.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3338.BIN",
+            "COMIC3412.BIN",
+            "COMIC3414.BIN",
+            "COMIC3416.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3432.BIN",
+            "COMIC3433.BIN",
+            "COMIC3424.BIN",
+            "COMIC3434.BIN",
+            "COMIC3436.BIN",
+            "COMIC3437.BIN",
+            "COMIC3446.BIN",
+            "COMIC3444.BIN",
+            "COMIC3413.BIN",
+            "COMIC3419.BIN",
+            "COMIC3420.BIN",
+            "COMIC3423.BIN",
+            "COMIC3430.BIN",
+            "COMIC3431.BIN"
+        ]
+    },
+    "FTV_End": {
+        "num": 71,
+        "description": "FVTを終了する" + newLine
+                    + "引数１：FVT番号",
+        "LS_comic": [
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC003.BIN",
+            "COMIC011.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC200.BIN",
+            "COMIC204.BIN",
+            "COMIC201.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC101.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC300.BIN",
+            "COMIC301.BIN",
+            "COMIC308.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC305.BIN",
+            "COMIC306.BIN",
+            "COMIC307.BIN",
+            "COMIC310.BIN",
+            "COMIC400.BIN",
+            "COMIC402.BIN",
+            "COMIC403.BIN",
+            "COMIC404.BIN",
+            "COMIC405.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC713.BIN",
+            "COMIC705.BIN",
+            "COMIC721.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1001.BIN",
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1105.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1200.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2200.BIN",
+            "COMIC2202.BIN",
+            "COMIC2203.BIN",
+            "COMIC2205.BIN",
+            "COMIC2206.BIN",
+            "COMIC2207.BIN",
+            "COMIC2204.BIN",
+            "COMIC2222.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2214.BIN",
+            "COMIC2215.BIN",
+            "COMIC2216.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2220.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2305.BIN",
+            "COMIC2310.BIN",
+            "COMIC2321.BIN",
+            "COMIC2330.BIN",
+            "COMIC2405.BIN",
+            "COMIC2406.BIN",
+            "COMIC2407.BIN",
+            "COMIC2409.BIN",
+            "COMIC2420.BIN",
+            "COMIC2421.BIN",
+            "COMIC2422.BIN",
+            "COMIC2423.BIN",
+            "COMIC2424.BIN",
+            "COMIC2435.BIN",
+            "COMIC2413.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2419.BIN",
+            "COMIC2402.BIN",
+            "COMIC2404.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3019.BIN",
+            "COMIC3022.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3038.BIN",
+            "COMIC3043.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3013.BIN",
+            "COMIC3020.BIN",
+            "COMIC3027.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3047.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3061.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3111.BIN",
+            "COMIC3118.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3115.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3124.BIN",
+            "COMIC3126.BIN",
+            "COMIC3125.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3113.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3134.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3216.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3218.BIN",
+            "COMIC3221.BIN",
+            "COMIC3225.BIN",
+            "COMIC3228.BIN",
+            "COMIC3229.BIN",
+            "COMIC3226.BIN",
+            "COMIC3234.BIN",
+            "COMIC3239.BIN",
+            "COMIC3236.BIN",
+            "COMIC3241.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3245.BIN",
+            "COMIC3251.BIN",
+            "COMIC3256.BIN",
+            "COMIC3240.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3249.BIN",
+            "COMIC3258.BIN",
+            "COMIC3259.BIN",
+            "COMIC3260.BIN",
+            "COMIC3280.BIN",
+            "COMIC3237.BIN",
+            "COMIC3214.BIN",
+            "COMIC3215.BIN",
+            "COMIC3219.BIN",
+            "COMIC3227.BIN",
+            "COMIC3235.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3317.BIN",
+            "COMIC3324.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3338.BIN",
+            "COMIC3412.BIN",
+            "COMIC3414.BIN",
+            "COMIC3416.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3432.BIN",
+            "COMIC3433.BIN",
+            "COMIC3424.BIN",
+            "COMIC3434.BIN",
+            "COMIC3436.BIN",
+            "COMIC3437.BIN",
+            "COMIC3446.BIN",
+            "COMIC3444.BIN",
+            "COMIC3413.BIN",
+            "COMIC3419.BIN",
+            "COMIC3420.BIN",
+            "COMIC3423.BIN",
+            "COMIC3430.BIN",
+            "COMIC3431.BIN"
+        ]
+    },
+    "SkipEventPoint": {
+        "num": 72,
+        "description": "スキップをした場合、スキップをこの行で止める",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN",
+            "COMIC1997.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2400.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3100.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3101.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3200.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3400.BIN",
+            "COMIC3461.BIN",
+            "COMIC3401.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN",
+            "COMIC3995.BIN"
+        ]
+    },
+    "SkipEventFlg": {
+        "num": 73,
+        "description": "スキップできるようにする" + newLine
+                    + "引数１：１（True）、0（False）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC413.BIN",
+            "COMIC500.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC715.BIN",
+            "COMIC900.BIN",
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1020.BIN",
+            "COMIC1990.BIN",
+            "COMIC1100.BIN",
+            "COMIC1121.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1208.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2400.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3100.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3101.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3200.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3400.BIN",
+            "COMIC3461.BIN",
+            "COMIC3401.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "PlayComicSE": {
+        "num": 74,
+        "description": "SEを再生する" + newLine
+                    + "引数１：スクリプト内のSE番号" + newLine
+                    + "引数２：【不明】（SSでは使わない。）" + newLine
+                    + "引数３：【不明】（SSでは使わない。）" + newLine
+                    + "引数４：再生が終わるまで待つ[１（True）、0（False）]" + newLine
+                    + "引数５：0設定時、ボタンを押すとスキップする",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC108.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC413.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC703.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1110.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1312.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1998.BIN",
+            "COMIC1997.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2401.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3019.BIN",
+            "COMIC3022.BIN",
+            "COMIC3024.BIN",
+            "COMIC3023.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3049.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3020.BIN",
+            "COMIC3028.BIN",
+            "COMIC3039.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3059.BIN",
+            "COMIC3060.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC2900.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3124.BIN",
+            "COMIC3128.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3113.BIN",
+            "COMIC3121.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3225.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3219.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3319.BIN",
+            "COMIC3327.BIN",
+            "COMIC3331.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3400.BIN",
+            "COMIC3429.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3439.BIN",
+            "COMIC3431.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3996.BIN",
+            "COMIC3995.BIN"
+        ]
+    },
+    "StopComicSE": {
+        "num": 75,
+        "description": "SEの再生を停止する" + newLine
+                    + "引数１：スクリプト内のSE番号" + newLine
+                    + "引数２：【不明】（SSでは使わない。）",
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1300.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2300.BIN",
+            "COMIC2334.BIN"
+        ]
+    },
+    "PlayComicBGM": {
+        "num": 76,
+        "description": "BGMを再生する" + newLine
+                    + "引数１：スクリプト内のBGM番号" + newLine
+                    + "引数２：ループする[-1（True）、1（False）]" + newLine
+                    + "引数３：BGMのVolume",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC715.BIN",
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1020.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2307.BIN",
+            "COMIC2311.BIN",
+            "COMIC2333.BIN",
+            "COMIC2306.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3010.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3100.BIN",
+            "COMIC3102.BIN",
+            "COMIC3105.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3200.BIN",
+            "COMIC3207.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3400.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "StopComicBGM": {
+        "num": 77,
+        "description": "BGMを再生を停止する" + newLine
+                    + "引数１：スクリプト内のBGM番号" + newLine
+                    + "引数２：fadeの時間（フレーム）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC600.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1020.BIN",
+            "COMIC1120.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2307.BIN",
+            "COMIC2311.BIN",
+            "COMIC2333.BIN",
+            "COMIC2306.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3010.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3100.BIN",
+            "COMIC3102.BIN",
+            "COMIC3105.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3200.BIN",
+            "COMIC3207.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3400.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "VolComicBGM": {
+        "num": 78,
+        "description": "BGMのVolumeを変える" + newLine
+                    + "引数１：スクリプト内のBGM番号" + newLine
+                    + "引数２：Volume" + newLine
+                    + "引数３：変化する時間（フレーム）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1020.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2307.BIN",
+            "COMIC2306.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3010.BIN",
+            "COMIC3063.BIN",
+            "COMIC3102.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3247.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3402.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "HideALLComic": {
+        "num": 79,
+        "description": "すべてのコミックを隠す",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC120.BIN",
+            "COMIC123.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1500.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2316.BIN",
+            "COMIC2334.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2424.BIN",
+            "COMIC2414.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3060.BIN",
+            "COMIC3062.BIN",
+            "COMIC3063.BIN",
+            "COMIC3064.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3247.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3439.BIN",
+            "COMIC3461.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN",
+            "COMIC3901.BIN",
+            "COMIC3902.BIN",
+            "COMIC3903.BIN",
+            "COMIC3904.BIN",
+            "COMIC3905.BIN",
+            "COMIC3906.BIN",
+            "COMIC3907.BIN",
+            "COMIC3908.BIN",
+            "COMIC3909.BIN",
+            "COMIC3910.BIN",
+            "COMIC3911.BIN",
+            "COMIC3912.BIN",
+            "COMIC3913.BIN",
+            "COMIC3914.BIN",
+            "COMIC3915.BIN",
+            "COMIC3916.BIN",
+            "COMIC3917.BIN",
+            "COMIC3918.BIN",
+            "COMIC3919.BIN",
+            "COMIC3920.BIN",
+            "COMIC3921.BIN",
+            "COMIC3922.BIN",
+            "COMIC3923.BIN",
+            "COMIC3924.BIN",
+            "COMIC3925.BIN",
+            "COMIC3999.BIN",
+            "COMIC3934.BIN",
+            "COMIC3935.BIN"
+        ]
+    },
+    "Stage_BGM_Vol": {
+        "num": 80,
+        "description": "現在のBGMのVolumeを変える" + newLine
+                    + "引数１：Volume" + newLine
+                    + "引数２：変化する時間（フレーム）",
+        "LS_comic": [
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC003.BIN",
+            "COMIC011.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC012.BIN",
+            "COMIC200.BIN",
+            "COMIC204.BIN",
+            "COMIC201.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC101.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC123.BIN",
+            "COMIC114.BIN",
+            "COMIC301.BIN",
+            "COMIC308.BIN",
+            "COMIC302.BIN",
+            "COMIC304.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC305.BIN",
+            "COMIC306.BIN",
+            "COMIC307.BIN",
+            "COMIC310.BIN",
+            "COMIC318.BIN",
+            "COMIC402.BIN",
+            "COMIC403.BIN",
+            "COMIC404.BIN",
+            "COMIC405.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC601.BIN",
+            "COMIC605.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC706.BIN",
+            "COMIC713.BIN",
+            "COMIC705.BIN",
+            "COMIC721.BIN",
+            "COMIC902.BIN",
+            "COMIC901.BIN",
+            "COMIC903.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1001.BIN",
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1990.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1105.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1208.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1321.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2202.BIN",
+            "COMIC2203.BIN",
+            "COMIC2205.BIN",
+            "COMIC2206.BIN",
+            "COMIC2207.BIN",
+            "COMIC2204.BIN",
+            "COMIC2222.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2214.BIN",
+            "COMIC2215.BIN",
+            "COMIC2216.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2201.BIN",
+            "COMIC2220.BIN",
+            "COMIC2221.BIN",
+            "COMIC2235.BIN",
+            "COMIC2301.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2305.BIN",
+            "COMIC2310.BIN",
+            "COMIC2321.BIN",
+            "COMIC2330.BIN",
+            "COMIC2337.BIN",
+            "COMIC2338.BIN",
+            "COMIC2405.BIN",
+            "COMIC2406.BIN",
+            "COMIC2407.BIN",
+            "COMIC2409.BIN",
+            "COMIC2420.BIN",
+            "COMIC2421.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2422.BIN",
+            "COMIC2423.BIN",
+            "COMIC2424.BIN",
+            "COMIC2435.BIN",
+            "COMIC2416.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2401.BIN",
+            "COMIC2402.BIN",
+            "COMIC2404.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN",
+            "COMIC2443.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3019.BIN",
+            "COMIC3022.BIN",
+            "COMIC3024.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3038.BIN",
+            "COMIC3043.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3013.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3071.BIN",
+            "COMIC2990.BIN",
+            "COMIC3111.BIN",
+            "COMIC3118.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3124.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3113.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3134.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3216.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3218.BIN",
+            "COMIC3221.BIN",
+            "COMIC3225.BIN",
+            "COMIC3228.BIN",
+            "COMIC3229.BIN",
+            "COMIC3226.BIN",
+            "COMIC3234.BIN",
+            "COMIC3239.BIN",
+            "COMIC3236.BIN",
+            "COMIC3241.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3245.BIN",
+            "COMIC3251.BIN",
+            "COMIC3256.BIN",
+            "COMIC3240.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3249.BIN",
+            "COMIC3237.BIN",
+            "COMIC3215.BIN",
+            "COMIC3219.BIN",
+            "COMIC3227.BIN",
+            "COMIC3235.BIN",
+            "COMIC3248.BIN",
+            "COMIC3288.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3317.BIN",
+            "COMIC3324.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3301.BIN",
+            "COMIC3304.BIN",
+            "COMIC3338.BIN",
+            "COMIC3412.BIN",
+            "COMIC3414.BIN",
+            "COMIC3416.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3462.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3440.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3424.BIN",
+            "COMIC3434.BIN",
+            "COMIC3436.BIN",
+            "COMIC3437.BIN",
+            "COMIC3439.BIN",
+            "COMIC3446.BIN",
+            "COMIC3444.BIN",
+            "COMIC3413.BIN",
+            "COMIC3420.BIN",
+            "COMIC3423.BIN",
+            "COMIC3431.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3481.BIN"
+        ]
+    },
+    "SET_CPU_FLG": {
+        "num": 81,
+        "description": "CPUのフラグを設定。詳細不明（SSでは使わない）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC207.BIN",
+            "COMIC100.BIN",
+            "COMIC300.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1119.BIN",
+            "COMIC1200.BIN",
+            "COMIC1301.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN",
+            "COMIC1500.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2003.BIN",
+            "COMIC2100.BIN",
+            "COMIC2211.BIN",
+            "COMIC2400.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3300.BIN",
+            "COMIC3400.BIN"
+        ]
+    },
+    "SET_CPU_MODE": {
+        "num": 82,
+        "description": "CPUのモードを設定する" + newLine
+                    + "引数１：CPU（SSでは使わない）" + newLine
+                    + "引数２：走るモード" + newLine
+                    + "引数３：minLen" + newLine
+                    + "引数４：maxLen" + newLine
+                    + "引数５：maxSpeed" + newLine
+                    + "引数６：minSpeed" + newLine
+                    + "引数７：【RSまで】デフォルト速度。【SSから】ブレーキ時間" + newLine
+                    + "引数８：【不明】（SSでは使わない）" + newLine
+                    + "引数９：【不明】（SSでは使わない）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC108.BIN",
+            "COMIC110.BIN",
+            "COMIC300.BIN",
+            "COMIC302.BIN",
+            "COMIC314.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC400.BIN",
+            "COMIC405.BIN",
+            "COMIC401.BIN",
+            "COMIC406.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC412.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1110.BIN",
+            "COMIC1119.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1301.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1500.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2003.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2100.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN",
+            "COMIC2211.BIN",
+            "COMIC2206.BIN",
+            "COMIC2222.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2223.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2325.BIN",
+            "COMIC2302.BIN",
+            "COMIC2306.BIN",
+            "COMIC2330.BIN",
+            "COMIC2400.BIN",
+            "COMIC2436.BIN",
+            "COMIC2438.BIN",
+            "COMIC2439.BIN",
+            "COMIC2441.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3015.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3051.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3100.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3200.BIN",
+            "COMIC3226.BIN",
+            "COMIC3236.BIN",
+            "COMIC3241.BIN",
+            "COMIC3276.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3227.BIN",
+            "COMIC3300.BIN",
+            "COMIC3310.BIN",
+            "COMIC3319.BIN",
+            "COMIC3331.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3400.BIN",
+            "COMIC3453.BIN",
+            "COMIC3422.BIN",
+            "COMIC3452.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3462.BIN",
+            "COMIC3435.BIN",
+            "COMIC3473.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3464.BIN",
+            "COMIC3454.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3460.BIN",
+            "COMIC3461.BIN",
+            "COMIC3463.BIN"
+        ]
+    },
+    "CHK_LENGTH": {
+        "num": 83,
+        "description": "CPUとの距離を測定し" + newLine
+                    + "指定時間内に指定距離より少ない場合、次のコマンド行へ行く" + newLine
+                    + "指定距離より以上なら、指定ラベルのEND_CHK_LENGTHまで飛ぶ" + newLine
+                    + "引数１：指定距離" + newLine
+                    + "引数２：指定ラベル" + newLine
+                    + "引数３：指定時間",
+        "LS_comic": [
+            "COMIC003.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC112.BIN",
+            "COMIC118.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC310.BIN",
+            "COMIC403.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC705.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1204.BIN",
+            "COMIC1207.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2005.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2101.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2212.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2305.BIN",
+            "COMIC2306.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3019.BIN",
+            "COMIC3069.BIN",
+            "COMIC3022.BIN",
+            "COMIC3024.BIN",
+            "COMIC3029.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3036.BIN",
+            "COMIC3035.BIN",
+            "COMIC3038.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3043.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3046.BIN",
+            "COMIC3049.BIN",
+            "COMIC3053.BIN",
+            "COMIC3028.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3051.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3118.BIN",
+            "COMIC3114.BIN",
+            "COMIC3132.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3125.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3131.BIN",
+            "COMIC3121.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3234.BIN",
+            "COMIC3236.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3241.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3250.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3286.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3319.BIN",
+            "COMIC3335.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3317.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3336.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3414.BIN",
+            "COMIC3467.BIN",
+            "COMIC3416.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3458.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3462.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3424.BIN",
+            "COMIC3472.BIN"
+        ]
+    },
+    "END_CHK_LENGTH": {
+        "num": 84,
+        "description": "CHK_LENGTHで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
+        "LS_comic": [
+            "COMIC003.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC102.BIN",
+            "COMIC103.BIN",
+            "COMIC104.BIN",
+            "COMIC105.BIN",
+            "COMIC108.BIN",
+            "COMIC109.BIN",
+            "COMIC110.BIN",
+            "COMIC112.BIN",
+            "COMIC118.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC312.BIN",
+            "COMIC303.BIN",
+            "COMIC313.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC317.BIN",
+            "COMIC319.BIN",
+            "COMIC310.BIN",
+            "COMIC403.BIN",
+            "COMIC407.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC705.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1204.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2005.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2101.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2212.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2305.BIN",
+            "COMIC2306.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3019.BIN",
+            "COMIC3069.BIN",
+            "COMIC3022.BIN",
+            "COMIC3024.BIN",
+            "COMIC3029.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3036.BIN",
+            "COMIC3035.BIN",
+            "COMIC3038.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3043.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3046.BIN",
+            "COMIC3049.BIN",
+            "COMIC3053.BIN",
+            "COMIC3028.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3051.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3118.BIN",
+            "COMIC3114.BIN",
+            "COMIC3132.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3125.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3131.BIN",
+            "COMIC3121.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3234.BIN",
+            "COMIC3236.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3241.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3250.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3286.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3319.BIN",
+            "COMIC3335.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3317.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3336.BIN",
+            "COMIC3338.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3414.BIN",
+            "COMIC3467.BIN",
+            "COMIC3416.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3458.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3462.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3424.BIN",
+            "COMIC3472.BIN"
+        ]
+    },
+    "CHK_POSTION": {
+        "num": 85,
+        "description": "指定時間内に引数１の条件を満たす場合、次のコマンドへ行く" + newLine
+                    + "そうではない場合、指定ラベルまで飛ぶ" + newLine
+                    + "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine
+                    + "引数２：指定ラベル" + newLine
+                    + "引数３：指定時間",
+        "LS_comic": [
+            "COMIC402.BIN",
+            "COMIC405.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC705.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1312.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2005.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2212.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2305.BIN",
+            "COMIC2306.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3052.BIN",
+            "COMIC3118.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3115.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3124.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3241.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3322.BIN",
+            "COMIC3412.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3453.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3435.BIN",
+            "COMIC3449.BIN",
+            "COMIC3464.BIN",
+            "COMIC3439.BIN",
+            "COMIC3423.BIN"
+        ]
+    },
+    "END_CHK_POSTION": {
+        "num": 86,
+        "description": "CHK_POSTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
+        "LS_comic": [
+            "COMIC402.BIN",
+            "COMIC405.BIN",
+            "COMIC406.BIN",
+            "COMIC407.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC705.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1312.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2005.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2212.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2305.BIN",
+            "COMIC2306.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3052.BIN",
+            "COMIC3118.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3115.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3124.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3241.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3322.BIN",
+            "COMIC3412.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3453.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3435.BIN",
+            "COMIC3449.BIN",
+            "COMIC3464.BIN",
+            "COMIC3439.BIN",
+            "COMIC3423.BIN"
+        ]
+    },
+    "WAIT_MOTION": {
+        "num": 87,
+        "description": "指定の動きをした場合、次のコマンドへ行く" + newLine
+                    + "そうではない場合、指定ラベルまで飛ぶ" + newLine
+                    + "引数１【推定】" + newLine
+                    + "　0（複線ドリフト）" + newLine
+                    + "　1（左側からドリフト）" + newLine
+                    + "　2（右側からドリフト）" + newLine
+                    + "　3（振り子）" + newLine
+                    + "　4（ドリフト、後輪含む）" + newLine
+                    + "　5（後輪ドリフト戻し）" + newLine
+                    + "　7（左側から片輪ドリフト）" + newLine
+                    + "　8（右側から片輪ドリフト）" + newLine
+                    + "　9（後輪ドリフト）" + newLine
+                    + "　10（片輪ドリフト戻し）" + newLine
+                    + "引数２：指定時間" + newLine
+                    + "引数３：指定ラベル",
+        "LS_comic": [
+            "COMIC010.BIN",
+            "COMIC205.BIN",
+            "COMIC103.BIN",
+            "COMIC311.BIN",
+            "COMIC404.BIN",
+            "COMIC411.BIN",
+            "COMIC702.BIN",
+            "COMIC709.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1007.BIN",
+            "COMIC1206.BIN",
+            "COMIC1312.BIN",
+            "COMIC1503.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2230.BIN",
+            "COMIC2307.BIN",
+            "COMIC2312.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3323.BIN",
+            "COMIC3326.BIN",
+            "COMIC3331.BIN",
+            "COMIC3337.BIN"
+        ]
+    },
+    "END_WAIT_MOTION": {
+        "num": 88,
+        "description": "WAIT_MOTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
+        "LS_comic": [
+            "COMIC010.BIN",
+            "COMIC205.BIN",
+            "COMIC103.BIN",
+            "COMIC311.BIN",
+            "COMIC404.BIN",
+            "COMIC411.BIN",
+            "COMIC702.BIN",
+            "COMIC709.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1007.BIN",
+            "COMIC1206.BIN",
+            "COMIC1312.BIN",
+            "COMIC1503.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2230.BIN",
+            "COMIC2307.BIN",
+            "COMIC2312.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3323.BIN",
+            "COMIC3326.BIN",
+            "COMIC3331.BIN",
+            "COMIC3337.BIN"
+        ]
+    },
+    "CHANGE_SPEED": {
+        "num": 89,
+        "description": "ゲームの速度を変える" + newLine
+                    + "引数１：速度倍率" + newLine
+                    + "引数２：変化する時間（フレーム）" + newLine
+                    + "引数３：リアルタイムで通常に戻す時間",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC012.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC318.BIN",
+            "COMIC404.BIN",
+            "COMIC409.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC605.BIN",
+            "COMIC702.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC706.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1990.BIN",
+            "COMIC1110.BIN",
+            "COMIC1121.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1208.BIN",
+            "COMIC1309.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1321.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2990.BIN",
+            "COMIC2102.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2216.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2221.BIN",
+            "COMIC2309.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2330.BIN",
+            "COMIC2337.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3059.BIN",
+            "COMIC3060.BIN",
+            "COMIC2990.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3284.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3248.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3324.BIN",
+            "COMIC3337.BIN",
+            "COMIC3301.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN"
+        ]
+    },
+    "CHANGE_CAM_TYPE": {
+        "num": 90,
+        "description": "",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC301.BIN",
+            "COMIC311.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC404.BIN",
+            "COMIC409.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC500.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN",
+            "COMIC900.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2437.BIN"
+        ]
+    },
+    "Set2P": {
+        "num": 91,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
+    },
+    "CharChk_and_Tx": {
+        "num": 92,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
+    },
+    "ChangeR": {
+        "num": 93,
+        "description": ""
+    },
+    "ChangeG": {
+        "num": 94,
+        "description": ""
+    },
+    "ChangeB": {
+        "num": 95,
+        "description": ""
+    },
+    "ChangeColor": {
+        "num": 96,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
+    },
+    "SetGray": {
+        "num": 97,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
+    },
+    "MoveX": {
+        "num": 98,
+        "description": "画像のx座標を移動させる" + newLine
+                    + "引数１：移動させるx座標" + newLine
+                    + "引数２：変化する時間（フレーム）" + newLine
+                    + "引数３：詳細不明",
+        "LS_bin": [
+            "CHARSEL.BIN",
+            "OP_ANIME.BIN"
+        ]
+    },
+    "MoveY": {
+        "num": 99,
+        "description": "画像のx座標を移動させる" + newLine
+                    + "引数１：移動させるy座標" + newLine
+                    + "引数２：変化する時間（フレーム）" + newLine
+                    + "引数３：詳細不明",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN"
+        ]
+    },
+    "MoveZ": {
+        "num": 100,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL3D.BIN"
+        ]
+    },
+    "SetUV_X": {
+        "num": 101,
+        "description": "",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
+    },
+    "RePlay": {
+        "num": 102,
+        "description": "",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC100.BIN",
+            "COMIC300.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN"
+        ]
+    },
+    "IsStart": {
+        "num": 103,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "HK_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN"
+        ]
+    },
+    "ShowGoal": {
+        "num": 104,
+        "description": "ゴールの文字（FINISH）を見せる",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1990.BIN",
+            "COMIC1121.BIN",
+            "COMIC1208.BIN",
+            "COMIC1321.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2990.BIN",
+            "COMIC2102.BIN",
+            "COMIC2221.BIN",
+            "COMIC2337.BIN"
+        ],
+        "RS_comic": [
+            "COMIC2990.BIN",
+            "COMIC3248.BIN",
+            "COMIC3301.BIN",
+            "COMIC3472.BIN"
+        ]
+    },
+    "CHK_WIN_TRAIN": {
+        "num": 105,
+        "description": "指定車両が勝利したかチェックする" + newLine
+                    + "勝った場合、次のコマンドへ行く" + newLine
+                    + "負けた場合、指定のラベルまで飛ぶ" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：指定のラベル",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1121.BIN",
+            "COMIC1321.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2990.BIN",
+            "COMIC2102.BIN",
+            "COMIC2221.BIN",
+            "COMIC2337.BIN"
+        ],
+        "RS_comic": [
+            "COMIC2990.BIN",
+            "COMIC3248.BIN",
+            "COMIC3301.BIN",
+            "COMIC3472.BIN"
+        ]
+    },
+    "END_CHK_WINTRAIN": {
+        "num": 106,
+        "description": "CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1121.BIN",
+            "COMIC1321.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2990.BIN",
+            "COMIC2102.BIN",
+            "COMIC2221.BIN",
+            "COMIC2337.BIN"
+        ],
+        "RS_comic": [
+            "COMIC2990.BIN",
+            "COMIC3248.BIN",
+            "COMIC3301.BIN",
+            "COMIC3472.BIN"
+        ]
+    },
+    "N_ADD_OBJ": {
+        "num": 107,
+        "description": "",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC500.BIN",
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2333.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3499.BIN"
+        ]
+    },
+    "N_POS": {
+        "num": 108,
+        "description": "",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "START_TIME_LINE": {
+        "num": 109,
+        "description": "リアルタイム測定を始める",
+        "LS_comic": [
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1120.BIN",
+            "COMIC1400.BIN",
+            "COMIC1999.BIN",
+            "COMIC1997.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2101.BIN",
+            "COMIC2209.BIN",
+            "COMIC2201.BIN",
+            "COMIC2220.BIN",
+            "COMIC2300.BIN",
+            "COMIC2317.BIN",
+            "COMIC2320.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2422.BIN",
+            "COMIC2424.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3024.BIN",
+            "COMIC3010.BIN",
+            "COMIC3039.BIN",
+            "COMIC3060.BIN",
+            "COMIC3064.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3105.BIN",
+            "COMIC3113.BIN",
+            "COMIC3121.BIN",
+            "COMIC3138.BIN",
+            "COMIC3205.BIN",
+            "COMIC3219.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3310.BIN",
+            "COMIC3327.BIN",
+            "COMIC3313.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3439.BIN",
+            "COMIC3461.BIN",
+            "COMIC3499.BIN",
+            "COMIC3403.BIN",
+            "COMIC3405.BIN",
+            "COMIC3409.BIN",
+            "COMIC3999.BIN",
+            "COMIC3995.BIN"
+        ]
+    },
+    "N_MOVE": {
+        "num": 110,
+        "description": "",
+        "LS_comic": [
+            "COMIC318.BIN",
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2333.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3499.BIN"
+        ]
+    },
+    "WAIT_TIME_LINE": {
+        "num": 111,
+        "description": "START_TIME_LINEが始まってから、指定時間まで待つ" + newLine
+                    + "引数１：指定時間",
+        "LS_comic": [
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1120.BIN",
+            "COMIC1400.BIN",
+            "COMIC1999.BIN",
+            "COMIC1997.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2101.BIN",
+            "COMIC2209.BIN",
+            "COMIC2201.BIN",
+            "COMIC2220.BIN",
+            "COMIC2300.BIN",
+            "COMIC2317.BIN",
+            "COMIC2320.BIN",
+            "COMIC2334.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2422.BIN",
+            "COMIC2424.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3024.BIN",
+            "COMIC3010.BIN",
+            "COMIC3039.BIN",
+            "COMIC3060.BIN",
+            "COMIC3064.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3105.BIN",
+            "COMIC3113.BIN",
+            "COMIC3121.BIN",
+            "COMIC3138.BIN",
+            "COMIC3205.BIN",
+            "COMIC3219.BIN",
+            "COMIC3230.BIN",
+            "COMIC3231.BIN",
+            "COMIC3310.BIN",
+            "COMIC3327.BIN",
+            "COMIC3313.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3439.BIN",
+            "COMIC3461.BIN",
+            "COMIC3499.BIN",
+            "COMIC3403.BIN",
+            "COMIC3405.BIN",
+            "COMIC3409.BIN",
+            "COMIC3999.BIN",
+            "COMIC3995.BIN"
+        ]
+    },
+    "N_DEL_OBJ": {
+        "num": 112,
+        "description": "",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC300.BIN",
+            "COMIC318.BIN",
+            "COMIC500.BIN",
+            "OP.BIN"
+        ]
+    },
+    "SCREEN_FADE": {
+        "num": 113,
+        "description": "指定の色でFade効果を出す" + newLine
+                    + "引数１：0（FadeIn）、1（FadeOut）" + newLine
+                    + "引数２：カラーR" + newLine
+                    + "引数３：カラーG" + newLine
+                    + "引数４：カラーB" + newLine
+                    + "引数５：変化する時間（フレーム）",
+        "LS_comic": [
+            "COMIC413.BIN",
+            "COMIC500.BIN",
+            "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3307.BIN",
+            "COMIC3400.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "N_CHANGE_ANIME": {
+        "num": 114,
+        "description": "",
+        "LS_comic": [
+            "COMIC300.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2333.BIN"
+        ]
+    },
+    "TRAIN_SPEED": {
+        "num": 115,
+        "description": "指定車両のスピードを設定する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：スピード" + newLine
+                    + "引数３：変化する時間（フレーム）" + newLine
+                    + "引数４：変化方法",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC207.BIN",
+            "COMIC209.BIN",
+            "COMIC101.BIN",
+            "COMIC500.BIN",
+            "COMIC700.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1119.BIN",
+            "COMIC1207.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2003.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2333.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3279.BIN",
+            "COMIC3208.BIN",
+            "COMIC3214.BIN",
+            "COMIC3220.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3319.BIN",
+            "COMIC3335.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3400.BIN",
+            "COMIC3451.BIN",
+            "COMIC3452.BIN",
+            "COMIC3431.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3461.BIN",
+            "COMIC3463.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "TRAIN_FLG": {
+        "num": 116,
+        "description": "",
+        "LS_comic": [
+            "COMIC108.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC302.BIN",
+            "COMIC500.BIN",
+            "COMIC703.BIN",
+            "COMIC706.BIN",
+            "COMIC902.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3049.BIN",
+            "COMIC3014.BIN",
+            "COMIC3319.BIN",
+            "COMIC3331.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN"
+        ]
+    },
+    "SCENE_LIGHT": {
+        "num": 117,
+        "description": ""
+    },
+    "CHANGE_CAM_LENGTH": {
+        "num": 118,
+        "description": "",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC301.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC404.BIN",
+            "COMIC409.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC900.BIN"
+        ]
+    },
+    "CHANGE_CAM_DIRX": {
+        "num": 119,
+        "description": "",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC301.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC404.BIN",
+            "COMIC409.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC900.BIN"
+        ]
+    },
+    "CHANGE_CAM_DIRY": {
+        "num": 120,
+        "description": "",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC120.BIN",
+            "COMIC121.BIN",
+            "COMIC301.BIN",
+            "COMIC314.BIN",
+            "COMIC315.BIN",
+            "COMIC316.BIN",
+            "COMIC404.BIN",
+            "COMIC409.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN",
+            "COMIC900.BIN"
+        ]
+    },
+    "CHANGE_CAM_DIRZ": {
+        "num": 121,
+        "description": ""
+    },
+    "R_Drift": {
+        "num": 122,
+        "description": "指定車両を右ドリフトさせる" + newLine
+                    + "引数１：0（1P）、1（2P）",
+        "LS_comic": [
+            "COMIC404.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1007.BIN",
+            "COMIC1008.BIN",
+            "COMIC1020.BIN",
+            "COMIC1303.BIN",
+            "COMIC1309.BIN",
+            "COMIC1313.BIN",
+            "COMIC1404.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2225.BIN"
+        ]
+    },
+    "L_Drift": {
+        "num": 123,
+        "description": "指定車両を左ドリフトさせる" + newLine
+                    + "引数１：0（1P）、1（2P）",
+        "LS_comic": [
+            "COMIC404.BIN",
+            "COMIC406.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1008.BIN",
+            "COMIC1020.BIN",
+            "COMIC1303.BIN",
+            "COMIC1309.BIN",
+            "COMIC1313.BIN",
+            "COMIC1404.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2225.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3050.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "IS_TRAIN_HIT": {
+        "num": 124,
+        "description": "",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "CS_bin": [
+            "COL_BOX.BIN"
+        ],
+        "RS_bin": [
+            "TOBU.BIN"
+        ]
+    },
+    "TO_RAIL": {
+        "num": 125,
+        "description": "指定車両を指定レールに置く" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：レール番号" + newLine
+                    + "引数３：ボーン番号" + newLine
+                    + "引数４：【SSのみ】ボーンから細かい位置調整",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC209.BIN",
+            "COMIC500.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1119.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2100.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2438.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3208.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3400.BIN",
+            "COMIC3461.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SLEEP_TRAIN": {
+        "num": 126,
+        "description": "指定車両を消す" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：１（True）、0（False）",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC207.BIN",
+            "COMIC209.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC120.BIN",
+            "COMIC318.BIN",
+            "COMIC400.BIN",
+            "COMIC500.BIN",
+            "COMIC600.BIN",
+            "COMIC700.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1120.BIN",
+            "COMIC1200.BIN",
+            "COMIC1204.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2309.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN",
+            "COMIC2438.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3066.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3016.BIN",
+            "COMIC3028.BIN",
+            "COMIC3030.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3100.BIN",
+            "COMIC3136.BIN",
+            "COMIC3200.BIN",
+            "COMIC3279.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "RandWAngle": {
+        "num": 127,
+        "description": "",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "RandMove": {
+        "num": 128,
+        "description": "",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "ADD_OBJ": {
+        "num": 129,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "START_COMIC": {
+        "num": 130,
+        "description": "",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "RS_bin": [
+            "TOBU.BIN"
+        ]
+    },
+    "SetRand3DObj": {
+        "num": 131,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "Offset3DObj": {
+        "num": 132,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "RandPos": {
+        "num": 133,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "RandPlaySE": {
+        "num": 134,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "RandAngleX": {
+        "num": 135,
+        "description": ""
+    },
+    "RandAngleY": {
+        "num": 136,
+        "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
+    },
+    "RandAngleZ": {
+        "num": 137,
+        "description": ""
+    },
+    "CHK_TRAIN_STATE": {
+        "num": 138,
+        "description": "",
+        "LS_comic": [
+            "COMIC206.BIN",
+            "COMIC301.BIN",
+            "COMIC716.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3324.BIN"
+        ]
+    },
+    "END_CHK_TRAIN_STATE": {
+        "num": 139,
+        "description": "",
+        "LS_comic": [
+            "COMIC206.BIN",
+            "COMIC301.BIN",
+            "COMIC716.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3324.BIN"
+        ]
+    },
+    "CHK_TRAIN_SPEED_U": {
+        "num": 140,
+        "description": "指定車両のスピードが、指定時間内に" + newLine
+                    + "指定スピードより大きい場合" + newLine
+                    + "次のコマンドへ行く" + newLine
+                    + "そうではない場合、指定ラベルまで飛ぶ" + newLine
+                    + "引数１：指定ラベル" + newLine
+                    + "引数２：0（1P）、1（2P）" + newLine
+                    + "引数３：指定スピード" + newLine
+                    + "引数４：指定時間",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC204.BIN",
+            "COMIC202.BIN",
+            "COMIC301.BIN",
+            "COMIC405.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1001.BIN",
+            "COMIC1002.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2202.BIN",
+            "COMIC2210.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2223.BIN",
+            "COMIC2309.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2437.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3216.BIN",
+            "COMIC3222.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3224.BIN",
+            "COMIC3220.BIN",
+            "COMIC3323.BIN",
+            "COMIC3451.BIN",
+            "COMIC3458.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN"
+        ]
+    },
+    "CHK_TRAIN_SPEED_D": {
+        "num": 141,
+        "description": "指定車両のスピードが、指定時間内に" + newLine
+                    + "指定スピードより小さい場合" + newLine
+                    + "次のコマンドへ行く" + newLine
+                    + "そうではない場合、指定ラベルまで飛ぶ" + newLine
+                    + "引数１：指定ラベル" + newLine
+                    + "引数２：0（1P）、1（2P）" + newLine
+                    + "引数３：指定スピード" + newLine
+                    + "引数４：指定時間"
+    },
+    "END_CHK_TRAIN_SPEED_U": {
+        "num": 142,
+        "description": "CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC204.BIN",
+            "COMIC202.BIN",
+            "COMIC301.BIN",
+            "COMIC405.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1001.BIN",
+            "COMIC1002.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2202.BIN",
+            "COMIC2210.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2223.BIN",
+            "COMIC2309.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2437.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3216.BIN",
+            "COMIC3222.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3224.BIN",
+            "COMIC3220.BIN",
+            "COMIC3323.BIN",
+            "COMIC3451.BIN",
+            "COMIC3458.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN"
+        ]
+    },
+    "END_CHK_TRAIN_SPEED_D": {
+        "num": 143,
+        "description": "CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル"
+    },
+    "ChkStory_and_Tx": {
+        "num": 144,
+        "description": "",
+        "LS_bin": [
+            "STORYSEL.BIN"
+        ]
+    },
+    "ClearStory_and_Tx": {
+        "num": 145,
+        "description": "",
+        "LS_bin": [
+            "STORYSEL.BIN"
+        ]
+    },
+    "N_L_ANGLE_X": {
+        "num": 146,
+        "description": "",
+        "LS_comic": [
+            "COMIC318.BIN"
+        ]
+    },
+    "N_L_ANGLE_Y": {
+        "num": 147,
+        "description": "",
+        "LS_comic": [
+            "COMIC318.BIN"
+        ]
+    },
+    "N_L_ANGLE_Z": {
+        "num": 148,
+        "description": "",
+        "LS_comic": [
+            "COMIC318.BIN"
+        ]
+    },
+    "Comic_Glay": {
+        "num": 149,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "N_MoveMesh_X": {
+        "num": 150,
+        "description": ""
+    },
+    "N_MoveMesh_Y": {
+        "num": 151,
+        "description": ""
+    },
+    "N_MoveMesh_Z": {
+        "num": 152,
+        "description": ""
+    },
+    "SetComic_Blur": {
+        "num": 153,
+        "description": "？",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC318.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1207.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2403.BIN",
+            "COMIC2424.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3070.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3131.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SetComic_Blur_Speed": {
+        "num": 154,
+        "description": "？" + newLine
+                    + "引数１：？" + newLine
+                    + "引数２：変化するフレーム" + newLine
+                    + "引数３：変化効果",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC205.BIN",
+            "COMIC206.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC318.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1207.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2403.BIN",
+            "COMIC2424.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3013.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3070.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3131.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "TRACK_BOMB": {
+        "num": 155,
+        "description": "指定車両の台車が爆発する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：【SSから】１（True）、0（False）",
+        "LS_comic": [
+            "COMIC120.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1401.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2333.BIN",
+            "COMIC2442.BIN"
+        ]
+    },
+    "Hide_Sky_Doom": {
+        "num": 156,
+        "description": ""
+    },
+    "ADD_POINT": {
+        "num": 157,
+        "description": "バトルポイントを加算する" + newLine
+                    + "引数１：配列のインデックス" + newLine
+                    + "引数２：ポイント",
+        "LS_comic": [
+            "COMIC003.BIN",
+            "COMIC013.BIN",
+            "COMIC004.BIN",
+            "COMIC005.BIN",
+            "COMIC006.BIN",
+            "COMIC007.BIN",
+            "COMIC008.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC205.BIN",
+            "COMIC103.BIN",
+            "COMIC108.BIN",
+            "COMIC110.BIN",
+            "COMIC121.BIN",
+            "COMIC114.BIN",
+            "COMIC405.BIN",
+            "COMIC401.BIN",
+            "COMIC408.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC701.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC709.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC716.BIN",
+            "COMIC706.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1007.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1204.BIN",
+            "COMIC1206.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1310.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1404.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2101.BIN",
+            "COMIC2301.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2306.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3036.BIN",
+            "COMIC3035.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3124.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3241.BIN",
+            "COMIC3279.BIN",
+            "COMIC3242.BIN",
+            "COMIC3243.BIN",
+            "COMIC3246.BIN",
+            "COMIC3227.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3458.BIN",
+            "COMIC3441.BIN",
+            "COMIC3471.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "CHK_POINT": {
+        "num": 158,
+        "description": "バトルポイントをチェックする" + newLine
+                    + "指定ポイントより以上なら次のコマンドへ行く" + newLine
+                    + "そうではない場合、次のポイントチェックコマンド行まで飛ぶ" + newLine
+                    + "引数１：配列のインデックス" + newLine
+                    + "引数２：ポイント",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC207.BIN",
+            "COMIC112.BIN",
+            "COMIC118.BIN",
+            "COMIC121.BIN",
+            "COMIC406.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC715.BIN",
+            "COMIC706.BIN",
+            "COMIC705.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1102.BIN",
+            "COMIC1110.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1312.BIN",
+            "COMIC1401.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2102.BIN",
+            "COMIC2221.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2305.BIN",
+            "COMIC2337.BIN",
+            "COMIC2437.BIN",
+            "COMIC2441.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3035.BIN",
+            "COMIC3052.BIN",
+            "COMIC3053.BIN",
+            "COMIC3057.BIN",
+            "COMIC3066.BIN",
+            "COMIC3050.BIN",
+            "COMIC3124.BIN",
+            "COMIC3218.BIN",
+            "COMIC3226.BIN",
+            "COMIC3234.BIN",
+            "COMIC3276.BIN",
+            "COMIC3279.BIN",
+            "COMIC3242.BIN",
+            "COMIC3248.BIN",
+            "COMIC3301.BIN",
+            "COMIC3458.BIN",
+            "COMIC3473.BIN",
+            "COMIC3438.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "ELSE_CHK_POINT": {
+        "num": 159,
+        "description": "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
+                    + "指定のポイントより少なく、最近チェックした" + newLine
+                    + "インデックスと同じ場合、ここで止める" + newLine
+                    + "引数１：配列のインデックス",
+        "LS_comic": [
+            "COMIC121.BIN",
+            "COMIC706.BIN"
+        ]
+    },
+    "ELSE_IF_CHK_POINT": {
+        "num": 160,
+        "description": "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
+                    + "指定のポイントより少なく、最近チェックした" + newLine
+                    + "インデックスと同じ場合 " + newLine
+                    + "ここで止めてポイントをチェックする" + newLine
+                    + "引数１：配列のインデックス" + newLine
+                    + "引数２：ポイント",
+        "LS_comic": [
+            "COMIC121.BIN",
+            "COMIC706.BIN"
+        ]
+    },
+    "END_CHK_POINT": {
+        "num": 161,
+        "description": "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
+                    + "指定のポイントより少なく、最近チェックした" + newLine
+                    + "インデックスと同じ場合、ここで止める" + newLine
+                    + "引数１：配列のインデックス",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC207.BIN",
+            "COMIC112.BIN",
+            "COMIC118.BIN",
+            "COMIC121.BIN",
+            "COMIC406.BIN",
+            "COMIC408.BIN",
+            "COMIC409.BIN",
+            "COMIC410.BIN",
+            "COMIC411.BIN",
+            "COMIC412.BIN",
+            "COMIC413.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC715.BIN",
+            "COMIC706.BIN",
+            "COMIC705.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1102.BIN",
+            "COMIC1110.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1312.BIN",
+            "COMIC1401.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1511.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2102.BIN",
+            "COMIC2221.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2305.BIN",
+            "COMIC2337.BIN",
+            "COMIC2437.BIN",
+            "COMIC2441.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3035.BIN",
+            "COMIC3052.BIN",
+            "COMIC3053.BIN",
+            "COMIC3057.BIN",
+            "COMIC3066.BIN",
+            "COMIC3050.BIN",
+            "COMIC3124.BIN",
+            "COMIC3218.BIN",
+            "COMIC3226.BIN",
+            "COMIC3234.BIN",
+            "COMIC3276.BIN",
+            "COMIC3279.BIN",
+            "COMIC3242.BIN",
+            "COMIC3248.BIN",
+            "COMIC3301.BIN",
+            "COMIC3458.BIN",
+            "COMIC3473.BIN",
+            "COMIC3438.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "GOTO_SCRIPT": {
+        "num": 162,
+        "description": "指定のスクリプトを並列処理で実行し" + newLine
+                    + "次のコマンドへ行く" + newLine
+                    + "引数１：スクリプト番号",
+        "LS_comic": [
+            "COMIC105.BIN",
+            "COMIC111.BIN",
+            "COMIC113.BIN",
+            "COMIC112.BIN",
+            "COMIC115.BIN",
+            "COMIC118.BIN",
+            "COMIC116.BIN",
+            "COMIC117.BIN",
+            "COMIC122.BIN",
+            "COMIC413.BIN",
+            "COMIC700.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1100.BIN",
+            "COMIC1121.BIN",
+            "COMIC1119.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1300.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1500.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2003.BIN",
+            "COMIC2005.BIN",
+            "COMIC2006.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2209.BIN",
+            "COMIC2232.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2212.BIN",
+            "COMIC2221.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2309.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2319.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2303.BIN",
+            "COMIC2308.BIN",
+            "COMIC2327.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2405.BIN",
+            "COMIC2418.BIN",
+            "COMIC2435.BIN",
+            "COMIC2413.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2433.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2438.BIN",
+            "COMIC2439.BIN",
+            "COMIC2442.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3012.BIN",
+            "COMIC3069.BIN",
+            "COMIC3024.BIN",
+            "COMIC3034.BIN",
+            "COMIC3036.BIN",
+            "COMIC3035.BIN",
+            "COMIC3046.BIN",
+            "COMIC3053.BIN",
+            "COMIC3057.BIN",
+            "COMIC3066.BIN",
+            "COMIC3003.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3032.BIN",
+            "COMIC3039.BIN",
+            "COMIC3054.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3001.BIN",
+            "COMIC3067.BIN",
+            "COMIC3100.BIN",
+            "COMIC3111.BIN",
+            "COMIC3112.BIN",
+            "COMIC3132.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3124.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3133.BIN",
+            "COMIC3116.BIN",
+            "COMIC3101.BIN",
+            "COMIC3138.BIN",
+            "COMIC3200.BIN",
+            "COMIC3221.BIN",
+            "COMIC3226.BIN",
+            "COMIC3234.BIN",
+            "COMIC3275.BIN",
+            "COMIC3241.BIN",
+            "COMIC3284.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3250.BIN",
+            "COMIC3242.BIN",
+            "COMIC3244.BIN",
+            "COMIC3237.BIN",
+            "COMIC3220.BIN",
+            "COMIC3201.BIN",
+            "COMIC3300.BIN",
+            "COMIC3316.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3326.BIN",
+            "COMIC3331.BIN",
+            "COMIC3301.BIN",
+            "COMIC3400.BIN",
+            "COMIC3412.BIN",
+            "COMIC3453.BIN",
+            "COMIC3422.BIN",
+            "COMIC3458.BIN",
+            "COMIC3429.BIN",
+            "COMIC3462.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3432.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3463.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3926.BIN",
+            "COMIC3928.BIN",
+            "COMIC3929.BIN",
+            "COMIC3999.BIN",
+            "COMIC3930.BIN",
+            "COMIC3931.BIN",
+            "COMIC3932.BIN",
+            "COMIC3933.BIN"
+        ]
+    },
+    "SHEAK_COMIC": {
+        "num": 163,
+        "description": "指定のコマを揺らす" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：１（True）、0（False）",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC202.BIN",
+            "COMIC203.BIN",
+            "COMIC208.BIN",
+            "COMIC209.BIN",
+            "COMIC101.BIN",
+            "COMIC120.BIN",
+            "COMIC316.BIN",
+            "COMIC318.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1110.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1321.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2333.BIN",
+            "COMIC2316.BIN",
+            "COMIC2335.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2424.BIN",
+            "COMIC2416.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3007.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3060.BIN",
+            "COMIC3064.BIN",
+            "COMIC3070.BIN",
+            "COMIC3113.BIN",
+            "COMIC3121.BIN",
+            "COMIC3138.BIN",
+            "COMIC3136.BIN",
+            "COMIC3205.BIN",
+            "COMIC3207.BIN",
+            "COMIC3219.BIN",
+            "COMIC3230.BIN",
+            "COMIC3310.BIN",
+            "COMIC3304.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3338.BIN",
+            "COMIC3439.BIN",
+            "COMIC3461.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3403.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN"
+        ]
+    },
+    "STORY_OPEN": {
+        "num": 164,
+        "description": "ストーリーを開放する" + newLine
+                    + "引数１：ストーリーインデックス",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC318.BIN",
+            "COMIC605.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1321.BIN",
+            "COMIC1401.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2001.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2201.BIN",
+            "COMIC2333.BIN",
+            "COMIC2337.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3065.BIN",
+            "COMIC3128.BIN",
+            "COMIC3279.BIN",
+            "COMIC3201.BIN",
+            "COMIC3301.BIN"
+        ]
+    },
+    "STORY_CLEAR": {
+        "num": 165,
+        "description": "ストーリーをクリア処理する" + newLine
+                    + "引数１：ストーリーインデックス",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1321.BIN",
+            "COMIC1401.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2001.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2201.BIN",
+            "COMIC2333.BIN",
+            "COMIC2337.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3065.BIN",
+            "COMIC3128.BIN",
+            "COMIC3279.BIN",
+            "COMIC3201.BIN",
+            "COMIC3301.BIN",
+            "COMIC3401.BIN"
+        ]
+    },
+    "CHAR_OPEN": {
+        "num": 166,
+        "description": "車両を開放する" + newLine
+                    + "引数１：車両インデックス",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC120.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1020.BIN",
+            "COMIC1121.BIN",
+            "COMIC1207.BIN",
+            "COMIC1321.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2001.BIN",
+            "COMIC2101.BIN",
+            "COMIC2201.BIN",
+            "COMIC2333.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3065.BIN",
+            "COMIC3128.BIN",
+            "COMIC3279.BIN",
+            "COMIC3201.BIN",
+            "COMIC3301.BIN",
+            "COMIC3401.BIN"
+        ]
+    },
+    "SAVE_GAME": {
+        "num": 167,
+        "description": "ゲーム情報をセーブする",
+        "LS_comic": [
+            "COMIC012.BIN",
+            "COMIC209.BIN",
+            "COMIC122.BIN",
+            "COMIC120.BIN",
+            "COMIC318.BIN",
+            "COMIC413.BIN",
+            "COMIC605.BIN",
+            "COMIC715.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1121.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1321.BIN",
+            "COMIC1401.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2001.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2201.BIN",
+            "COMIC2333.BIN",
+            "COMIC2337.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3065.BIN",
+            "COMIC3128.BIN",
+            "COMIC3279.BIN",
+            "COMIC3201.BIN",
+            "COMIC3301.BIN",
+            "COMIC3401.BIN"
+        ]
+    },
+    "KEISUKE_COUNT": {
+        "num": 168,
+        "description": "啓介がカウントする",
+        "LS_comic": [
+            "COMIC400.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1200.BIN"
+        ]
+    },
+    "RandPlayComicSE": {
+        "num": 169,
+        "description": "スクリプト内のSEのリストから" + newLine
+                    + "ランダムに選んで再生する" + newLine
+                    + "引数１：startインデックス" + newLine
+                    + "引数２：endインデックス" + newLine
+                    + "引数３：詳細不明",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC121.BIN",
+            "COMIC311.BIN",
+            "COMIC409.BIN",
+            "COMIC601.BIN",
+            "COMIC715.BIN"
+        ]
+    },
+    "TITLE_MODE": {
+        "num": 170,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3999.BIN"
+        ]
+    },
+    "GOING": {
+        "num": 171,
+        "description": "",
+        "LS_comic": [
+            "COMIC302.BIN",
+            "COMIC400.BIN",
+            "COMIC700.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1100.BIN",
+            "COMIC1301.BIN",
+            "COMIC1400.BIN",
+            "COMIC1500.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2003.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2300.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3227.BIN",
+            "COMIC3300.BIN",
+            "COMIC3319.BIN",
+            "COMIC3400.BIN",
+            "COMIC3435.BIN",
+            "COMIC3463.BIN"
+        ]
+    },
+    "RAND_IF": {
+        "num": 172,
+        "description": "",
+        "LS_comic": [
+            "COMIC304.BIN"
+        ]
+    },
+    "ELSE_RAND_IF": {
+        "num": 173,
+        "description": "",
+        "LS_comic": [
+            "COMIC304.BIN"
+        ]
+    },
+    "END_RAND_IF": {
+        "num": 174,
+        "description": "",
+        "LS_comic": [
+            "COMIC304.BIN"
+        ]
+    },
+    "CHK_SP_BREAK": {
+        "num": 175,
+        "description": "",
+        "LS_comic": [
+            "COMIC401.BIN"
+        ]
+    },
+    "END_CHK_SP_BREAK": {
+        "num": 176,
+        "description": "",
+        "LS_comic": [
+            "COMIC401.BIN"
+        ]
+    },
+    "CHK_DRIFT": {
+        "num": 177,
+        "description": "",
+        "LS_comic": [
+            "COMIC404.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2223.BIN",
+            "COMIC2413.BIN",
+            "COMIC2414.BIN",
+            "COMIC2439.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3052.BIN",
+            "COMIC3135.BIN",
+            "COMIC3262.BIN",
+            "COMIC3279.BIN",
+            "COMIC3319.BIN",
+            "COMIC3469.BIN"
+        ]
+    },
+    "END_CHK_DRIFT": {
+        "num": 178,
+        "description": "",
+        "LS_comic": [
+            "COMIC404.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2223.BIN",
+            "COMIC2413.BIN",
+            "COMIC2414.BIN",
+            "COMIC2439.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3052.BIN",
+            "COMIC3135.BIN",
+            "COMIC3262.BIN",
+            "COMIC3279.BIN",
+            "COMIC3319.BIN",
+            "COMIC3469.BIN"
+        ]
+    },
+    "ENDING_MODE": {
+        "num": 179,
+        "description": "",
+        "LS_comic": [
+            "COMIC500.BIN",
+            "COMIC902.BIN",
+            "COMIC903.BIN"
+        ]
+    },
+    "ChkCause_and_Tx": {
+        "num": 180,
+        "description": "",
+        "LS_bin": [
+            "CAUSESEL.BIN"
+        ]
+    },
+    "SET_DRAW_TYPE": {
+        "num": 181,
+        "description": "",
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "To_TxSize": {
+        "num": 182,
+        "description": "",
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
+    },
+    "OPEN_CAUSE": {
+        "num": 183,
+        "description": "",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC300.BIN"
+        ]
+    },
+    "DIS_TRAIN_SPEED": {
+        "num": 184,
+        "description": "スクリプトでスピード設定処理を止める" + newLine
+                    + "引数１：0（1P）、1（2P）",
+        "LS_comic": [
+            "COMIC200.BIN",
+            "COMIC700.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1119.BIN",
+            "COMIC1320.BIN",
+            "COMIC1400.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2003.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2300.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2438.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3008.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3220.BIN",
+            "COMIC3300.BIN",
+            "COMIC3319.BIN",
+            "COMIC3335.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3400.BIN",
+            "COMIC3451.BIN",
+            "COMIC3452.BIN",
+            "COMIC3427.BIN",
+            "COMIC3431.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3461.BIN",
+            "COMIC3463.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN"
+        ]
+    },
+    "CHK_RACE_TIME": {
+        "num": 185,
+        "description": "RACE_STARTから経過した時間をチェックする" + newLine
+                    + "チェックした時間が指定時間より少ない場合" + newLine
+                    + "次のコマンドへ行く、そうではない場合、END_CHK_RACE_TIMEまで飛ぶ" + newLine
+                    + "引数１：指定時間",
+        "LS_comic": [
+            "COMIC201.BIN",
+            "COMIC203.BIN",
+            "COMIC207.BIN"
+        ]
+    },
+    "END_CHK_RACE_TIME": {
+        "num": 186,
+        "description": "CHK_RACE_TIMEで飛ぶ場合、この行で止める",
+        "LS_comic": [
+            "COMIC201.BIN",
+            "COMIC203.BIN",
+            "COMIC207.BIN"
+        ]
+    },
+    "End_Comic": {
+        "num": 187,
+        "description": "スクリプトを終了する" + newLine
+                    + "引数１：スクリプト番号",
+        "LS_comic": [
+            "COMIC209.BIN",
+            "COMIC605.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2219.BIN",
+            "COMIC2201.BIN",
+            "COMIC2330.BIN",
+            "COMIC2331.BIN",
+            "COMIC2332.BIN",
+            "COMIC2425.BIN",
+            "COMIC2426.BIN",
+            "COMIC2439.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN",
+            "COMIC2429.BIN",
+            "COMIC2430.BIN",
+            "COMIC2431.BIN",
+            "COMIC2432.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3042.BIN",
+            "COMIC3003.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3060.BIN",
+            "COMIC3124.BIN",
+            "COMIC3234.BIN",
+            "COMIC3276.BIN",
+            "COMIC3237.BIN",
+            "COMIC3323.BIN",
+            "COMIC3324.BIN",
+            "COMIC3473.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3461.BIN",
+            "COMIC3927.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "WAIT_RAIL": {
+        "num": 188,
+        "description": "指定時間内に、指定したレールを通過するまで待つ" + newLine
+                    + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：レール番号" + newLine
+                    + "引数３：ボーン番号" + newLine
+                    + "引数４：指定時間（フレーム）",
+        "LS_comic": [
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC700.BIN",
+            "COMIC702.BIN",
+            "COMIC709.BIN",
+            "COMIC712.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1303.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2333.BIN",
+            "COMIC2405.BIN"
+        ]
+    },
+    "END_WAIT_RAIL": {
+        "num": 189,
+        "description": "WAIT_RAILで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：0（1P）、1（2P）",
+        "LS_comic": [
+            "COMIC205.BIN",
+            "COMIC207.BIN",
+            "COMIC208.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC714.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1008.BIN",
+            "COMIC1106.BIN",
+            "COMIC1206.BIN",
+            "COMIC1303.BIN",
+            "COMIC1309.BIN",
+            "COMIC1501.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2011.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2219.BIN",
+            "COMIC2235.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2333.BIN",
+            "COMIC2303.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2308.BIN",
+            "COMIC2326.BIN",
+            "COMIC2327.BIN",
+            "COMIC2328.BIN",
+            "COMIC2329.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2331.BIN",
+            "COMIC2332.BIN",
+            "COMIC2336.BIN",
+            "COMIC2338.BIN",
+            "COMIC2403.BIN",
+            "COMIC2405.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2438.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN",
+            "COMIC2429.BIN",
+            "COMIC2430.BIN",
+            "COMIC2431.BIN",
+            "COMIC2432.BIN",
+            "COMIC2443.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3018.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3048.BIN",
+            "COMIC3013.BIN",
+            "COMIC3014.BIN",
+            "COMIC3016.BIN",
+            "COMIC3028.BIN",
+            "COMIC3030.BIN",
+            "COMIC3050.BIN",
+            "COMIC3070.BIN",
+            "COMIC3067.BIN",
+            "COMIC3068.BIN",
+            "COMIC3071.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3131.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3278.BIN",
+            "COMIC3286.BIN",
+            "COMIC3220.BIN",
+            "COMIC3247.BIN",
+            "COMIC3288.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3336.BIN",
+            "COMIC3338.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3478.BIN",
+            "COMIC3443.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3472.BIN",
+            "COMIC3477.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN",
+            "COMIC3481.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "COMIC_SCALE": {
+        "num": 190,
+        "description": "指定したコマのスケールを設定する" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：x倍率" + newLine
+                    + "引数３：y倍率" + newLine
+                    + "引数４：変化するフレーム" + newLine
+                    + "引数５：変化効果",
+        "LS_comic": [
+            "COMIC208.BIN",
+            "COMIC601.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1110.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1998.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2002.BIN",
+            "COMIC2900.BIN",
+            "COMIC2300.BIN",
+            "COMIC2424.BIN"
+        ],
+        "RS_comic": [
+            "COMIC2900.BIN",
+            "COMIC3138.BIN",
+            "COMIC3996.BIN"
+        ]
+    },
+    "USO_COUNT": {
+        "num": 191,
+        "description": "H7001　VS　KQ21XXの" + newLine
+                    + "バトルのみ使われたコマンド。" + newLine
+                    + "１からカウントを数える",
+        "BS_comic": [
+            "COMIC1500.BIN"
+        ]
+    },
+    "WaitRandPlaySE": {
+        "num": 192,
+        "description": "RandPlayComicSEから再生されたSEを待つ",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC121.BIN",
+            "COMIC311.BIN",
+            "COMIC409.BIN",
+            "COMIC601.BIN",
+            "COMIC715.BIN"
+        ]
+    },
+    "FROM": {
+        "num": 193,
+        "description": "あるコマンドがFROMに飛ばし引数が一致した場合、この行で止める" + newLine
+                    + "引数１：数字",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC200.BIN",
+            "COMIC205.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC103.BIN",
+            "COMIC121.BIN",
+            "COMIC300.BIN",
+            "COMIC308.BIN",
+            "COMIC311.BIN",
+            "COMIC400.BIN",
+            "COMIC409.BIN",
+            "COMIC412.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC705.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1991.BIN",
+            "COMIC1100.BIN",
+            "COMIC1992.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1993.BIN",
+            "COMIC1300.BIN",
+            "COMIC1306.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1994.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1995.BIN",
+            "COMIC1500.BIN",
+            "COMIC1996.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2010.BIN",
+            "COMIC2005.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2217.BIN",
+            "COMIC2212.BIN",
+            "COMIC2223.BIN",
+            "COMIC2300.BIN",
+            "COMIC2311.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2991.BIN",
+            "COMIC2303.BIN",
+            "COMIC2308.BIN",
+            "COMIC2326.BIN",
+            "COMIC2327.BIN",
+            "COMIC2328.BIN",
+            "COMIC2329.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN",
+            "COMIC2427.BIN"
+        ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "UV_01.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3012.BIN",
+            "COMIC3035.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3053.BIN",
+            "COMIC3057.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3051.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3060.BIN",
+            "COMIC3067.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3128.BIN",
+            "COMIC3200.BIN",
+            "COMIC3226.BIN",
+            "COMIC3279.BIN",
+            "COMIC3250.BIN",
+            "COMIC3246.BIN",
+            "COMIC3214.BIN",
+            "COMIC3227.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3332.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3326.BIN",
+            "COMIC3331.BIN",
+            "COMIC3324.BIN",
+            "COMIC3337.BIN",
+            "COMIC3301.BIN",
+            "COMIC3400.BIN",
+            "COMIC3453.BIN",
+            "COMIC3451.BIN",
+            "COMIC3458.BIN",
+            "COMIC3431.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3463.BIN",
+            "COMIC3472.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN",
+            "COMIC3926.BIN",
+            "COMIC3928.BIN",
+            "COMIC3929.BIN",
+            "COMIC3999.BIN",
+            "COMIC3930.BIN",
+            "COMIC3931.BIN",
+            "COMIC3932.BIN",
+            "COMIC3933.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "GOTO": {
+        "num": 194,
+        "description": "引数と一致する一番最初のFROMまで飛ばす" + newLine
+                    + "引数１：FROMの数字",
+        "LS_comic": [
+            "COMIC002.BIN",
+            "COMIC121.BIN",
+            "COMIC308.BIN",
+            "COMIC311.BIN",
+            "COMIC409.BIN",
+            "COMIC412.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC704.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC720.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC705.BIN",
+            "COMIC900.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1206.BIN",
+            "COMIC1306.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1401.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2217.BIN",
+            "COMIC2311.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2326.BIN",
+            "COMIC2328.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2442.BIN"
+        ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "H2000_00.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3035.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3053.BIN",
+            "COMIC3057.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3997.BIN",
+            "COMIC3124.BIN",
+            "COMIC3128.BIN",
+            "COMIC3226.BIN",
+            "COMIC3279.BIN",
+            "COMIC3250.BIN",
+            "COMIC3247.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3326.BIN",
+            "COMIC3301.BIN",
+            "COMIC3472.BIN",
+            "COMIC3926.BIN",
+            "COMIC3928.BIN",
+            "COMIC3929.BIN",
+            "COMIC3999.BIN",
+            "COMIC3930.BIN",
+            "COMIC3931.BIN",
+            "COMIC3932.BIN",
+            "COMIC3933.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "CHK_TRAIN_TYPE": {
+        "num": 195,
+        "description": "指定車両が車両インデックスと同じ場合、" + newLine
+                    + "引数３のFROMに飛ばす" + newLine
+                    + "そうではない場合、引数４のFROMに飛ばす" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：車両インデックス" + newLine
+                    + "引数３：FROMの数字" + newLine
+                    + "引数４：FROMの数字",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC001.BIN",
+            "COMIC002.BIN",
+            "COMIC009.BIN",
+            "COMIC010.BIN",
+            "COMIC200.BIN",
+            "COMIC205.BIN",
+            "COMIC100.BIN",
+            "COMIC101.BIN",
+            "COMIC103.BIN",
+            "COMIC121.BIN",
+            "COMIC300.BIN",
+            "COMIC308.BIN",
+            "COMIC311.BIN",
+            "COMIC400.BIN",
+            "COMIC409.BIN",
+            "COMIC412.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC718.BIN",
+            "COMIC704.BIN",
+            "COMIC707.BIN",
+            "COMIC708.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC711.BIN",
+            "COMIC712.BIN",
+            "COMIC719.BIN",
+            "COMIC720.BIN",
+            "COMIC717.BIN",
+            "COMIC716.BIN",
+            "COMIC715.BIN",
+            "COMIC705.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1991.BIN",
+            "COMIC1992.BIN",
+            "COMIC1993.BIN",
+            "COMIC1300.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1994.BIN",
+            "COMIC1401.BIN",
+            "COMIC1995.BIN",
+            "COMIC1996.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2300.BIN",
+            "COMIC2333.BIN",
+            "COMIC2991.BIN",
+            "COMIC2308.BIN",
+            "COMIC2326.BIN",
+            "COMIC2327.BIN",
+            "COMIC2328.BIN",
+            "COMIC2329.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3010.BIN",
+            "COMIC3028.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3279.BIN",
+            "COMIC3214.BIN",
+            "COMIC3300.BIN",
+            "COMIC3332.BIN",
+            "COMIC3337.BIN",
+            "COMIC3400.BIN",
+            "COMIC3431.BIN",
+            "COMIC3926.BIN",
+            "COMIC3928.BIN",
+            "COMIC3929.BIN",
+            "COMIC3999.BIN",
+            "COMIC3930.BIN",
+            "COMIC3931.BIN",
+            "COMIC3932.BIN",
+            "COMIC3933.BIN"
+        ]
+    },
+    "RAND_IF_AVG": {
+        "num": 196,
+        "description": "引数の数字分、0から始まるランダムな整数を作り" + newLine
+                    + "FROMの数字として飛ばす" + newLine
+                    + "引数１：数字",
+        "LS_comic": [
+            "COMIC412.BIN",
+            "COMIC700.BIN",
+            "COMIC701.BIN",
+            "COMIC704.BIN",
+            "COMIC710.BIN",
+            "COMIC712.BIN"
+        ]
+    },
+    "CHK_NOTCH": {
+        "num": 197,
+        "description": "指定車両が指定時間分ノッチを維持した場合" + newLine
+                    + "引数３のFROMに飛ばす" + newLine
+                    + "そうではない場合、引数４のFROMに飛ばす" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：指定時間（フレーム）" + newLine
+                    + "引数３：FROMの数字" + newLine
+                    + "引数４：FROMの数字",
+        "LS_comic": [
+            "COMIC710.BIN",
+            "COMIC712.BIN",
+            "COMIC716.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2403.BIN"
+        ]
+    },
+    "WAIT_RAIL_ONLY": {
+        "num": 198,
+        "description": "指定時間内に、指定したレールを通過するまで待つ" + newLine
+                    + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：レール番号" + newLine
+                    + "引数３：指定時間（フレーム）",
+        "LS_comic": [
+            "COMIC701.BIN",
+            "COMIC702.BIN",
+            "COMIC703.BIN",
+            "COMIC704.BIN",
+            "COMIC709.BIN",
+            "COMIC710.BIN",
+            "COMIC719.BIN",
+            "COMIC714.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1008.BIN",
+            "COMIC1106.BIN",
+            "COMIC1110.BIN",
+            "COMIC1206.BIN",
+            "COMIC1309.BIN",
+            "COMIC1313.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2011.BIN",
+            "COMIC2100.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2219.BIN",
+            "COMIC2235.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2303.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2308.BIN",
+            "COMIC2326.BIN",
+            "COMIC2327.BIN",
+            "COMIC2328.BIN",
+            "COMIC2329.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2331.BIN",
+            "COMIC2332.BIN",
+            "COMIC2336.BIN",
+            "COMIC2338.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2438.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN",
+            "COMIC2429.BIN",
+            "COMIC2430.BIN",
+            "COMIC2431.BIN",
+            "COMIC2432.BIN",
+            "COMIC2443.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3018.BIN",
+            "COMIC3024.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3048.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3014.BIN",
+            "COMIC3016.BIN",
+            "COMIC3028.BIN",
+            "COMIC3030.BIN",
+            "COMIC3050.BIN",
+            "COMIC3070.BIN",
+            "COMIC3067.BIN",
+            "COMIC3068.BIN",
+            "COMIC3071.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3131.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3278.BIN",
+            "COMIC3286.BIN",
+            "COMIC3220.BIN",
+            "COMIC3247.BIN",
+            "COMIC3288.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3336.BIN",
+            "COMIC3338.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3478.BIN",
+            "COMIC3443.BIN",
+            "COMIC3464.BIN",
+            "COMIC3470.BIN",
+            "COMIC3471.BIN",
+            "COMIC3472.BIN",
+            "COMIC3477.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN",
+            "COMIC3481.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "ONE_TRACK_DRIFT": {
+        "num": 199,
+        "description": "指定車両を単線ドリフトさせる" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：-1(左）、0（戻し）、1（右）",
+        "LS_comic": [
+            "COMIC714.BIN"
+        ]
+    },
+    "LAST_STATION": {
+        "num": 200,
+        "description": "",
+        "LS_comic": [
+            "COMIC207.BIN"
+        ]
+    },
+    "OSSAN": {
+        "num": 201,
+        "description": "指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "１（True）、0（False）",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC200.BIN",
+            "COMIC207.BIN",
+            "COMIC100.BIN",
+            "COMIC300.BIN",
+            "COMIC400.BIN",
+            "COMIC600.BIN"
+        ]
+    },
+    "SET_TAIL_SCALE": {
+        "num": 202,
+        "description": "",
+        "LS_comic": [
+            "COMIC000.BIN",
+            "COMIC009.BIN",
+            "COMIC200.BIN",
+            "COMIC205.BIN",
+            "COMIC100.BIN",
+            "COMIC121.BIN",
+            "COMIC300.BIN",
+            "COMIC311.BIN",
+            "COMIC400.BIN",
+            "COMIC409.BIN",
+            "COMIC600.BIN",
+            "COMIC601.BIN",
+            "COMIC700.BIN",
+            "COMIC722.BIN"
+        ]
+    },
+    "OPEN_HUTA": {
+        "num": 203,
+        "description": "",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC205.BIN",
+            "COMIC121.BIN",
+            "COMIC311.BIN",
+            "COMIC409.BIN",
+            "COMIC601.BIN",
+            "COMIC722.BIN"
+        ]
+    },
+    "SET_GN": {
+        "num": 204,
+        "description": "",
+        "LS_comic": [
+            "COMIC009.BIN",
+            "COMIC205.BIN",
+            "COMIC121.BIN",
+            "COMIC311.BIN",
+            "COMIC409.BIN",
+            "COMIC601.BIN",
+            "COMIC722.BIN"
+        ]
+    },
+    "MDL_GETINDEX": {
+        "num": 205,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR2000_TRACK.BIN",
+            "JR2000_TRACK_LOW2.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "RAPID_00.BIN",
+            "SIN_TETSU.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "CLASH_MEI_KASENCHU.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "LIGHT_4.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "MUTRACK_LOW.BIN",
+            "NANA_VS_SURU.BIN",
+            "PANO_0.BIN",
+            "PANO_2.BIN",
+            "PANTA_FAN2.BIN",
+            "RAPID_00.BIN",
+            "SKYTREE.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "TOWN_LIGHT.BIN",
+            "WHEEL_FIRE.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "INDEX_BONE_ROT_X": {
+        "num": 206,
+        "description": ""
+    },
+    "INDEX_BONE_ROT_Y": {
+        "num": 207,
+        "description": "",
+        "BS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "INDEX_BONE_ROT_Z": {
+        "num": 208,
+        "description": "",
+        "CS_bin": [
+            "VERUP_SCENE.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ROT_X": {
+        "num": 209,
+        "description": "",
+        "CS_bin": [
+            "H2800_00.BIN",
+            "KIN_NARA.BIN"
+        ],
+        "RS_bin": [
+            "H2800_00.BIN",
+            "NANA_VS_SURU.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ROT_Y": {
+        "num": 210,
+        "description": "",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_TRACK.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MU2000_0.BIN",
+            "NANA_VS_SURU.BIN",
+            "PANO_0.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ROT_Z": {
+        "num": 211,
+        "description": "",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "JR2000_TRACK.BIN",
+            "JR2000_TRACK_LOW2.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MUTRACK_LOW.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "CREATE_INDEX": {
+        "num": 212,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR2000_TRACK.BIN",
+            "JR2000_TRACK_LOW2.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "RAPID_00.BIN",
+            "SIN_TETSU.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "CLASH_MEI_KASENCHU.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "LIGHT_4.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "MUTRACK_LOW.BIN",
+            "NANA_VS_SURU.BIN",
+            "PANO_0.BIN",
+            "PANO_2.BIN",
+            "PANTA_FAN2.BIN",
+            "RAPID_00.BIN",
+            "SKYTREE.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "TOWN_LIGHT.BIN",
+            "WHEEL_FIRE.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "IB_LI_CREATE_ROT_X": {
+        "num": 213,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_TK.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SYADANKI_MEI.BIN"
+        ]
+    },
+    "IB_LI_CREATE_ROT_Y": {
+        "num": 214,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANTA_FAN2.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "IB_LI_CREATE_ROT_Z": {
+        "num": 215,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "IB_LI_SET_ROT_X": {
+        "num": 216,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_TK.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SYADANKI_MEI.BIN"
+        ]
+    },
+    "IB_LI_SET_ROT_Y": {
+        "num": 217,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANTA_FAN2.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "IB_LI_SET_ROT_Z": {
+        "num": 218,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_X": {
+        "num": 219,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_TK.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SYADANKI_MEI.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_Y": {
+        "num": 220,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANTA_FAN2.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_Z": {
+        "num": 221,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "ADD_MY_OBJ": {
+        "num": 222,
+        "description": "",
+        "RS_bin": [
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_BONE_L_POS_X": {
+        "num": 223,
+        "description": "",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "PAD_SET_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "NANA_VS_SURU.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_BONE_L_POS_Y": {
+        "num": 224,
+        "description": "",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_BONE_L_POS_Z": {
+        "num": 225,
+        "description": "",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_TRACK.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "DRC_00.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "NANA_VS_SURU.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "IB_LI_CREATE_L_POS_X": {
+        "num": 226,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
+    },
+    "IB_LI_CREATE_L_POS_Y": {
+        "num": 227,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "IB_LI_CREATE_L_POS_Z": {
+        "num": 228,
+        "description": "",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "IB_LI_SET_L_POS_X": {
+        "num": 229,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
+    },
+    "IB_LI_SET_L_POS_Y": {
+        "num": 230,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "IB_LI_SET_L_POS_Z": {
+        "num": 231,
+        "description": "",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "FROM_ADDMT": {
+        "num": 232,
+        "description": ""
+    },
+    "MOVE_UV_X": {
+        "num": 233,
+        "description": ""
+    },
+    "MOVE_UV_Y": {
+        "num": 234,
+        "description": ""
+    },
+    "CREATE_UV_MOVE_X": {
+        "num": 235,
+        "description": "",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "D4_SKY.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_LPOSX": {
+        "num": 236,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_LPOSY": {
+        "num": 237,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_LPOSZ": {
+        "num": 238,
+        "description": "",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "MENU_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "RELEASE_ALL_IB_LIST": {
+        "num": 239,
+        "description": ""
+    },
+    "ADD_MY_OBJ_INDEX": {
+        "num": 240,
+        "description": ""
+    },
+    "TO_TAGET_POS": {
+        "num": 241,
+        "description": ""
+    },
+    "ATK_HIT": {
+        "num": 242,
+        "description": ""
+    },
+    "ATK_END": {
+        "num": 243,
+        "description": ""
+    },
+    "SET_RELEASE_PARAM": {
+        "num": 244,
+        "description": ""
+    },
+    "CREATE_LENSFLEAR": {
+        "num": 245,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "SIGNAL_AMB_2BLUE.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "AMB_SIGNAL_1BLUE.BIN",
+            "AMB_SIGNAL_GG.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "ASAKUSA_BRIDGE.BIN",
+            "BASE_OBJ.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SKYTREE.BIN",
+            "SYADANKI_MEI.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "SET_LENSFLEAR_PARAM": {
+        "num": 246,
+        "description": ""
+    },
+    "SET_LENSFLEAR_MT": {
+        "num": 247,
+        "description": "",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "SIGNAL_AMB_2BLUE.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "AMB_SIGNAL_1BLUE.BIN",
+            "AMB_SIGNAL_GG.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "ASAKUSA_BRIDGE.BIN",
+            "BASE_OBJ.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "RAIL_POS_TO_BUFF": {
+        "num": 248,
+        "description": "指定したレールにBUFFを設置する" + newLine
+                    + "引数１：レール番号" + newLine
+                    + "引数２：ボーン番号" + newLine
+                    + "引数３：BUFFのインデックス",
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1106.BIN",
+            "COMIC1206.BIN",
+            "COMIC1400.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2100.BIN",
+            "COMIC2102.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2221.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2333.BIN",
+            "COMIC2304.BIN",
+            "COMIC2315.BIN",
+            "COMIC2337.BIN",
+            "COMIC2400.BIN",
+            "COMIC2403.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3018.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3048.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3070.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3131.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3281.BIN",
+            "COMIC3278.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3323.BIN",
+            "COMIC3336.BIN",
+            "COMIC3301.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3468.BIN",
+            "COMIC3443.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3472.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "BUFF_TO_CAM_POS": {
+        "num": 249,
+        "description": "",
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3408.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "BUFF_TO_TARGET_POS": {
+        "num": 250,
+        "description": "BUFFにあるカメラのターゲットを設定する" + newLine
+                    + "引数１：BUFFのインデックス" + newLine
+                    + "引数２：x座標" + newLine
+                    + "引数３：y座標" + newLine
+                    + "引数４：z座標" + newLine
+                    + "引数５：変化する時間（フレーム）" + newLine
+                    + "引数６：カメラ効果",
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2100.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3408.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "FTV_BASE_PROC": {
+        "num": 251,
+        "description": ""
+    },
+    "FTV_NEXT_PROC": {
+        "num": 252,
+        "description": "同じ画像を使うFVTの場合" + newLine
+                    + "引数２に続いて引数１のFVTを出す" + newLine
+                    + "引数１：FVT番号" + newLine
+                    + "引数２：FVT番号（prev）",
+        "BS_comic": [
+            "COMIC1001.BIN",
+            "COMIC1002.BIN",
+            "COMIC1003.BIN",
+            "COMIC1004.BIN",
+            "COMIC1005.BIN",
+            "COMIC1006.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1101.BIN",
+            "COMIC1103.BIN",
+            "COMIC1104.BIN",
+            "COMIC1102.BIN",
+            "COMIC1105.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1200.BIN",
+            "COMIC1203.BIN",
+            "COMIC1204.BIN",
+            "COMIC1205.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1304.BIN",
+            "COMIC1305.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1307.BIN",
+            "COMIC1310.BIN",
+            "COMIC1308.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN",
+            "COMIC1402.BIN",
+            "COMIC1403.BIN",
+            "COMIC1404.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1504.BIN",
+            "COMIC1505.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2004.BIN",
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2103.BIN",
+            "COMIC2105.BIN",
+            "COMIC2104.BIN",
+            "COMIC2106.BIN",
+            "COMIC2200.BIN",
+            "COMIC2202.BIN",
+            "COMIC2203.BIN",
+            "COMIC2205.BIN",
+            "COMIC2206.BIN",
+            "COMIC2207.BIN",
+            "COMIC2204.BIN",
+            "COMIC2222.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2214.BIN",
+            "COMIC2215.BIN",
+            "COMIC2216.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2220.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2311.BIN",
+            "COMIC2313.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2323.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2305.BIN",
+            "COMIC2310.BIN",
+            "COMIC2321.BIN",
+            "COMIC2330.BIN",
+            "COMIC2405.BIN",
+            "COMIC2406.BIN",
+            "COMIC2407.BIN",
+            "COMIC2409.BIN",
+            "COMIC2420.BIN",
+            "COMIC2421.BIN",
+            "COMIC2422.BIN",
+            "COMIC2423.BIN",
+            "COMIC2424.BIN",
+            "COMIC2435.BIN",
+            "COMIC2413.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2419.BIN",
+            "COMIC2402.BIN",
+            "COMIC2404.BIN",
+            "COMIC2436.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3011.BIN",
+            "COMIC3012.BIN",
+            "COMIC3015.BIN",
+            "COMIC3019.BIN",
+            "COMIC3022.BIN",
+            "COMIC3023.BIN",
+            "COMIC3031.BIN",
+            "COMIC3034.BIN",
+            "COMIC3038.BIN",
+            "COMIC3043.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3013.BIN",
+            "COMIC3027.BIN",
+            "COMIC3017.BIN",
+            "COMIC3032.BIN",
+            "COMIC3033.BIN",
+            "COMIC3039.BIN",
+            "COMIC3040.BIN",
+            "COMIC3047.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3061.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3111.BIN",
+            "COMIC3118.BIN",
+            "COMIC3112.BIN",
+            "COMIC3114.BIN",
+            "COMIC3115.BIN",
+            "COMIC3120.BIN",
+            "COMIC3122.BIN",
+            "COMIC3124.BIN",
+            "COMIC3126.BIN",
+            "COMIC3125.BIN",
+            "COMIC3127.BIN",
+            "COMIC3128.BIN",
+            "COMIC3113.BIN",
+            "COMIC3133.BIN",
+            "COMIC3121.BIN",
+            "COMIC3134.BIN",
+            "COMIC3116.BIN",
+            "COMIC3117.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3216.BIN",
+            "COMIC3217.BIN",
+            "COMIC3223.BIN",
+            "COMIC3218.BIN",
+            "COMIC3221.BIN",
+            "COMIC3225.BIN",
+            "COMIC3228.BIN",
+            "COMIC3229.BIN",
+            "COMIC3226.BIN",
+            "COMIC3234.BIN",
+            "COMIC3239.BIN",
+            "COMIC3236.BIN",
+            "COMIC3241.BIN",
+            "COMIC3238.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3245.BIN",
+            "COMIC3251.BIN",
+            "COMIC3256.BIN",
+            "COMIC3240.BIN",
+            "COMIC3254.BIN",
+            "COMIC3253.BIN",
+            "COMIC3252.BIN",
+            "COMIC3255.BIN",
+            "COMIC3249.BIN",
+            "COMIC3258.BIN",
+            "COMIC3259.BIN",
+            "COMIC3260.BIN",
+            "COMIC3280.BIN",
+            "COMIC3237.BIN",
+            "COMIC3214.BIN",
+            "COMIC3215.BIN",
+            "COMIC3219.BIN",
+            "COMIC3227.BIN",
+            "COMIC3235.BIN",
+            "COMIC3314.BIN",
+            "COMIC3311.BIN",
+            "COMIC3315.BIN",
+            "COMIC3312.BIN",
+            "COMIC3310.BIN",
+            "COMIC3316.BIN",
+            "COMIC3318.BIN",
+            "COMIC3323.BIN",
+            "COMIC3325.BIN",
+            "COMIC3326.BIN",
+            "COMIC3327.BIN",
+            "COMIC3328.BIN",
+            "COMIC3329.BIN",
+            "COMIC3330.BIN",
+            "COMIC3331.BIN",
+            "COMIC3313.BIN",
+            "COMIC3320.BIN",
+            "COMIC3321.BIN",
+            "COMIC3317.BIN",
+            "COMIC3334.BIN",
+            "COMIC3322.BIN",
+            "COMIC3338.BIN",
+            "COMIC3412.BIN",
+            "COMIC3414.BIN",
+            "COMIC3416.BIN",
+            "COMIC3417.BIN",
+            "COMIC3415.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3427.BIN",
+            "COMIC3426.BIN",
+            "COMIC3428.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3440.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3447.BIN",
+            "COMIC3448.BIN",
+            "COMIC3449.BIN",
+            "COMIC3450.BIN",
+            "COMIC3432.BIN",
+            "COMIC3433.BIN",
+            "COMIC3424.BIN",
+            "COMIC3434.BIN",
+            "COMIC3436.BIN",
+            "COMIC3437.BIN",
+            "COMIC3446.BIN",
+            "COMIC3444.BIN",
+            "COMIC3413.BIN",
+            "COMIC3419.BIN",
+            "COMIC3420.BIN",
+            "COMIC3423.BIN",
+            "COMIC3430.BIN",
+            "COMIC3431.BIN"
+        ]
+    },
+    "MDL_INDEX_TO_VIEW": {
+        "num": 253,
+        "description": "",
+        "BS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "SET_FOG_LENGTH": {
+        "num": 254,
+        "description": "",
+        "BS_comic": [
+            "COMIC1300.BIN"
+        ],
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2300.BIN",
+            "COMIC2437.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN",
+            "COMIC2429.BIN",
+            "COMIC2430.BIN",
+            "COMIC2431.BIN",
+            "COMIC2432.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3464.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "SET_UV_MOVE_X": {
+        "num": 255,
+        "description": "",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "D4_SKY.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "SET_UV_LOOP_X": {
+        "num": 256,
+        "description": "",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "D4_SKY.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "CREATE_MESH_INDEX": {
+        "num": 257,
+        "description": "",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "KOUSATEN.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
+    },
+    "SET_MESH_INDEX": {
+        "num": 258,
+        "description": "",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "KOUSATEN.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ADD_ROT_X": {
+        "num": 259,
+        "description": "",
+        "BS_bin": [
+            "MUSIC_LIST_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MUSIC_LIST_OBJ.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ADD_ROT_Y": {
+        "num": 260,
+        "description": "",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ADD_ROT_Z": {
+        "num": 261,
+        "description": ""
+    },
+    "CHANGE_SCALL": {
+        "num": 262,
+        "description": "",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
+    },
+    "CHK_CLEAR_STORY": {
+        "num": 263,
+        "description": "",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN"
+        ]
+    },
+    "CHK_OPEN_STORY": {
+        "num": 264,
+        "description": "",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN"
+        ]
+    },
+    "SET_LENSFLEAR_ALL_FLG": {
+        "num": 265,
+        "description": "",
+        "BS_bin": [
+            "HK_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "CHK_USE_CHAR": {
+        "num": 266,
+        "description": "",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN"
+        ]
+    },
+    "SET_OBJ_FOG_NO": {
+        "num": 267,
+        "description": "",
+        "CS_bin": [
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIGNAL_AMB_2BLUE.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "TOBU.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
+    },
+    "SET_OBJ_RENDER_ID": {
+        "num": 268,
+        "description": "",
+        "BS_bin": [
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "OP_OBJ_D3.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
+    },
+    "PLAY_STAGE_BGM": {
+        "num": 269,
+        "description": "ステージBGMリストの引数のものを再生する" + newLine
+                    + "引数１：ステージBGMのインデックス",
+        "BS_comic": [
+            "COMIC1010.BIN",
+            "COMIC1105.BIN",
+            "COMIC1200.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2209.BIN",
+            "COMIC2235.BIN",
+            "COMIC2300.BIN",
+            "COMIC2318.BIN",
+            "COMIC2338.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2437.BIN",
+            "COMIC2443.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3024.BIN",
+            "COMIC3071.BIN",
+            "COMIC2900.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3214.BIN",
+            "COMIC3220.BIN",
+            "COMIC3288.BIN",
+            "COMIC3310.BIN",
+            "COMIC3338.BIN",
+            "COMIC3462.BIN",
+            "COMIC3454.BIN",
+            "COMIC3431.BIN",
+            "COMIC3481.BIN"
+        ]
+    },
+    "CHANGE_TRAIN_FOG": {
+        "num": 270,
+        "description": "",
+        "RS_comic": [
+            "COMIC3464.BIN"
+        ]
+    },
+    "FIRST_OBJ_SET_ANIME": {
+        "num": 271,
+        "description": "",
+        "BS_comic": [
+            "COMIC1105.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2318.BIN",
+            "COMIC2303.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN",
+            "COMIC2429.BIN",
+            "COMIC2430.BIN",
+            "COMIC2431.BIN",
+            "COMIC2432.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3067.BIN",
+            "COMIC3068.BIN"
+        ]
+    },
+    "SET_CAMPOINT_2P2C": {
+        "num": 272,
+        "description": "引数１～５のカメラの状態を引数６～１０の状態に変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：距離" + newLine
+                    + "引数３：x座標" + newLine
+                    + "引数４：y座標" + newLine
+                    + "引数５：z座標" + newLine
+                    + "引数６：0（1P）、1（2P）" + newLine
+                    + "引数７：距離" + newLine
+                    + "引数８：x座標" + newLine
+                    + "引数９：y座標" + newLine
+                    + "引数１０：z座標",
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1312.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2232.BIN",
+            "COMIC2217.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2300.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2306.BIN",
+            "COMIC2330.BIN",
+            "COMIC2403.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3284.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3308.BIN",
+            "COMIC3310.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3467.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SET_CAMPOINT_1P2C": {
+        "num": 273,
+        "description": ""
+    },
+    "CAM_POINT_PER": {
+        "num": 274,
+        "description": "カメラのPERを設定する" + newLine
+                    + "引数１：PER" + newLine
+                    + "引数２：変化方法" + newLine
+                    + "引数３：変化する時間（フレーム）",
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1200.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1312.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2232.BIN",
+            "COMIC2217.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2306.BIN",
+            "COMIC2330.BIN",
+            "COMIC2403.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3124.BIN",
+            "COMIC3119.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3308.BIN",
+            "COMIC3310.BIN",
+            "COMIC3319.BIN",
+            "COMIC3331.BIN",
+            "COMIC3302.BIN",
+            "COMIC3455.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "CAM_TARGET_PER": {
+        "num": 275,
+        "description": "カメラのターゲットのPERを設定する" + newLine
+                    + "引数１：PER" + newLine
+                    + "引数２：変化方法" + newLine
+                    + "引数３：変化する時間（フレーム）",
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1010.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1106.BIN",
+            "COMIC1107.BIN",
+            "COMIC1108.BIN",
+            "COMIC1110.BIN",
+            "COMIC1200.BIN",
+            "COMIC1206.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1312.BIN",
+            "COMIC1400.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1501.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2102.BIN",
+            "COMIC2200.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2219.BIN",
+            "COMIC2213.BIN",
+            "COMIC2221.BIN",
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2337.BIN",
+            "COMIC2403.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3018.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3132.BIN",
+            "COMIC3124.BIN",
+            "COMIC3119.BIN",
+            "COMIC3265.BIN",
+            "COMIC3275.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3319.BIN",
+            "COMIC3331.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3455.BIN",
+            "COMIC3456.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SET_CAM_POINT_LENGTH": {
+        "num": 276,
+        "description": "カメラの距離を設定する" + newLine
+                    + "引数１：カメラ番号" + newLine
+                    + "引数２：距離" + newLine
+                    + "引数３：変化方法" + newLine
+                    + "引数４：変化する時間（フレーム）",
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1101.BIN",
+            "COMIC1110.BIN",
+            "COMIC1207.BIN",
+            "COMIC1300.BIN",
+            "COMIC1301.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1312.BIN",
+            "COMIC1401.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1510.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2232.BIN",
+            "COMIC2217.BIN",
+            "COMIC2219.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2306.BIN",
+            "COMIC2330.BIN",
+            "COMIC2403.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3214.BIN",
+            "COMIC3308.BIN",
+            "COMIC3310.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3467.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SET_CAM_OFFSET": {
+        "num": 277,
+        "description": "カメラのoffsetを設定する" + newLine
+                    + "引数１：カメラ番号" + newLine
+                    + "引数２：x座標" + newLine
+                    + "引数３：y座標" + newLine
+                    + "引数４：z座標" + newLine
+                    + "引数５：変化方法" + newLine
+                    + "引数６：変化する時間（フレーム）",
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1100.BIN",
+            "COMIC1107.BIN",
+            "COMIC1110.BIN",
+            "COMIC1207.BIN",
+            "COMIC1303.BIN",
+            "COMIC1306.BIN",
+            "COMIC1312.BIN",
+            "COMIC1404.BIN",
+            "COMIC1401.BIN",
+            "COMIC1503.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN",
+            "COMIC1509.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2006.BIN",
+            "COMIC2007.BIN",
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2232.BIN",
+            "COMIC2213.BIN",
+            "COMIC2300.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2330.BIN",
+            "COMIC2403.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN",
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3021.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3284.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3308.BIN",
+            "COMIC3310.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3337.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3467.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3442.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "START_WIPER": {
+        "num": 278,
+        "description": "ワイパーを動かす" + newLine
+                    + "引数１：１（True）、0（False）",
+        "BS_comic": [
+            "COMIC1107.BIN",
+            "COMIC1200.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2400.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN"
+        ]
+    },
+    "CREATE_TRAIN_ORG": {
+        "num": 279,
+        "description": "車両モデルを作成する" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２：車両インデックス" + newLine
+                    + "引数３：詳細不明",
+        "BS_comic": [
+            "COMIC1300.BIN",
+            "COMIC1999.BIN"
+        ]
+    },
+    "ORG_SET_RAIL": {
+        "num": 280,
+        "description": ""
+    },
+    "ORG_ADD": {
+        "num": 281,
+        "description": ""
+    },
+    "SET_CAMPOINT_K": {
+        "num": 282,
+        "description": "詳細不明。SSからは引数を使わない",
+        "BS_comic": [
+            "COMIC1300.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2333.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3472.BIN",
+            "COMIC3499.BIN"
+        ]
+    },
+    "ORG_SET_POS": {
+        "num": 283,
+        "description": "CREATE_TRAIN_ORGから" + newLine
+                    + "作成したモデルの位置を設定する" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２～：詳細不明",
+        "BS_comic": [
+            "COMIC1300.BIN"
+        ]
+    },
+    "ORG_SET_FOG": {
+        "num": 284,
+        "description": ""
+    },
+    "ORG_RELEASE": {
+        "num": 285,
+        "description": "CREATE_TRAIN_ORGから" + newLine
+                    + "作成したモデルを解放する" + newLine
+                    + "引数１：作成インデックス",
+        "BS_comic": [
+            "COMIC1300.BIN"
+        ]
+    },
+    "PLAY_FTV_END": {
+        "num": 286,
+        "description": "現在再生中のFVTを全部止める",
+        "BS_comic": [
+            "COMIC1300.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ]
+    },
+    "CNG_TRAIN_MAT_COL": {
+        "num": 287,
+        "description": "指定車両のカラーを変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～：",
+        "BS_comic": [
+            "COMIC1207.BIN"
+        ]
+    },
+    "CNG_ORG_MAT_COL": {
+        "num": 288,
+        "description": "CREATE_TRAIN_ORGから" + newLine
+                    + "作成したモデルのカラーを変える" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２～：",
+        "BS_comic": [
+            "COMIC1300.BIN",
+            "COMIC1999.BIN"
+        ]
+    },
+    "IS_CAUTION": {
+        "num": 289,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3999.BIN"
+        ]
+    },
+    "ENDWAIT_COMIC": {
+        "num": 290,
+        "description": "GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine
+                    + "引数１：スクリプト番号",
+        "BS_comic": [
+            "COMIC1121.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3034.BIN",
+            "COMIC3066.BIN",
+            "COMIC3003.BIN",
+            "COMIC3054.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3001.BIN",
+            "COMIC3100.BIN",
+            "COMIC3114.BIN",
+            "COMIC3132.BIN",
+            "COMIC3120.BIN",
+            "COMIC3124.BIN",
+            "COMIC3101.BIN",
+            "COMIC3200.BIN",
+            "COMIC3225.BIN",
+            "COMIC3234.BIN",
+            "COMIC3284.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3238.BIN",
+            "COMIC3244.BIN",
+            "COMIC3300.BIN",
+            "COMIC3319.BIN",
+            "COMIC3327.BIN",
+            "COMIC3330.BIN",
+            "COMIC3301.BIN",
+            "COMIC3400.BIN",
+            "COMIC3422.BIN",
+            "COMIC3425.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3454.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SET_COMIC_BG_COLOR": {
+        "num": 291,
+        "description": "BGの色を変える" + newLine
+                    + "引数１：カラーR" + newLine
+                    + "引数２：カラーG" + newLine
+                    + "引数３：カラーB",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3247.BIN",
+            "COMIC3307.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "TX_2_TRAIN": {
+        "num": 292,
+        "description": "",
+        "BS_comic": [
+            "COMIC1991.BIN",
+            "COMIC1992.BIN",
+            "COMIC1207.BIN",
+            "COMIC1993.BIN",
+            "COMIC1994.BIN",
+            "COMIC1995.BIN",
+            "COMIC1996.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2991.BIN"
+        ]
+    },
+    "CHANGE_MT_COL_TRAIN": {
+        "num": 293,
+        "description": ""
+    },
+    "CNG_MT_COL": {
+        "num": 294,
+        "description": "",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "DRC_00.BIN",
+            "DRC_01.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "RETURN": {
+        "num": 295,
+        "description": "このコマンドから一番近い上のFROMまで飛ぶ" + newLine
+                    + "引数１：FROMの数字",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2005.BIN",
+            "COMIC2212.BIN",
+            "COMIC2223.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN",
+            "COMIC2437.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3035.BIN",
+            "COMIC3052.BIN",
+            "COMIC3051.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3250.BIN",
+            "COMIC3246.BIN",
+            "COMIC3324.BIN",
+            "COMIC3453.BIN",
+            "COMIC3451.BIN",
+            "COMIC3458.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "ReLoadSE": {
+        "num": 296,
+        "description": "",
+        "BS_comic": [
+            "COMIC1998.BIN",
+            "COMIC1997.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3996.BIN",
+            "COMIC3995.BIN"
+        ]
+    },
+    "BASE_POINT_CAM": {
+        "num": 297,
+        "description": "",
+        "BS_bin": [
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "OP_OBJ_D3.BIN"
+        ]
+    },
+    "STOP_3D": {
+        "num": 298,
+        "description": "3Dシーンの動きを止める" + newLine
+                    + "引数１：１（True）、0（False）",
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN",
+            "COMIC1120.BIN",
+            "COMIC1207.BIN",
+            "COMIC1321.BIN",
+            "COMIC1401.BIN",
+            "COMIC1511.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2001.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2400.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3066.BIN",
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3001.BIN",
+            "COMIC3100.BIN",
+            "COMIC3136.BIN",
+            "COMIC3200.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3301.BIN",
+            "COMIC3302.BIN",
+            "COMIC3400.BIN",
+            "COMIC3461.BIN",
+            "COMIC3472.BIN",
+            "COMIC3401.BIN",
+            "COMIC3499.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN"
+        ]
+    },
+    "STOP_STAGE_BGM": {
+        "num": 299,
+        "description": "ステージのBGMを止める" + newLine
+                    + "SSからはインデックスが-1の場合" + newLine
+                    + "再生中の全てのステージBGMを止める" + newLine
+                    + "引数１：ステージBGMのインデックス" + newLine
+                    + "引数２：fade時間（フレーム）",
+        "BS_comic": [
+            "COMIC1010.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2001.BIN",
+            "COMIC2007.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN",
+            "COMIC2209.BIN",
+            "COMIC2213.BIN",
+            "COMIC2235.BIN",
+            "COMIC2318.BIN",
+            "COMIC2338.BIN",
+            "COMIC2412.BIN",
+            "COMIC2401.BIN",
+            "COMIC2437.BIN",
+            "COMIC2443.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3024.BIN",
+            "COMIC3066.BIN",
+            "COMIC3063.BIN",
+            "COMIC3071.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3247.BIN",
+            "COMIC3288.BIN",
+            "COMIC3310.BIN",
+            "COMIC3304.BIN",
+            "COMIC3338.BIN",
+            "COMIC3429.BIN",
+            "COMIC3454.BIN",
+            "COMIC3499.BIN",
+            "COMIC3481.BIN"
+        ]
+    },
+    "TRAIN_UD": {
+        "num": 300,
+        "description": "",
+        "BS_comic": [
+            "COMIC1404.BIN",
+            "COMIC1999.BIN"
+        ]
+    },
+    "SET_CAM_TARGET_OFFSET": {
+        "num": 301,
+        "description": "",
+        "BS_comic": [
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1110.BIN",
+            "COMIC1207.BIN",
+            "COMIC1400.BIN",
+            "COMIC1401.BIN",
+            "COMIC1502.BIN",
+            "COMIC1503.BIN",
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2209.BIN",
+            "COMIC2217.BIN",
+            "COMIC2300.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2318.BIN",
+            "COMIC2324.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2302.BIN",
+            "COMIC2330.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3012.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3044.BIN",
+            "COMIC3049.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3058.BIN",
+            "COMIC3060.BIN",
+            "COMIC3070.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3100.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3279.BIN",
+            "COMIC3286.BIN",
+            "COMIC3213.BIN",
+            "COMIC3308.BIN",
+            "COMIC3310.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3337.BIN",
+            "COMIC3400.BIN",
+            "COMIC3469.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3478.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3900.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SET_CAM_POINT_1T_ROT": {
+        "num": 302,
+        "description": ""
+    },
+    "SET_CAM_T_LENGHT": {
+        "num": 303,
+        "description": ""
+    },
+    "SET_CAM_T_ROT_X": {
+        "num": 304,
+        "description": ""
+    },
+    "SET_CAM_T_ROT_Y": {
+        "num": 305,
+        "description": ""
+    },
+    "SET_CAM_T_OFFSET": {
+        "num": 306,
+        "description": ""
+    },
+    "NO_OUTRUN": {
+        "num": 307,
+        "description": "",
+        "BS_comic": [
+            "COMIC1005.BIN",
+            "COMIC1007.BIN",
+            "COMIC1009.BIN",
+            "COMIC1207.BIN",
+            "COMIC1306.BIN",
+            "COMIC1309.BIN",
+            "COMIC1311.BIN",
+            "COMIC1312.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2100.BIN",
+            "COMIC2101.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2208.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2232.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2317.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2302.BIN",
+            "COMIC2304.BIN",
+            "COMIC2306.BIN",
+            "COMIC2315.BIN",
+            "COMIC2330.BIN",
+            "COMIC2331.BIN",
+            "COMIC2332.BIN",
+            "COMIC2403.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3018.BIN",
+            "COMIC3069.BIN",
+            "COMIC3029.BIN",
+            "COMIC3034.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3044.BIN",
+            "COMIC3048.BIN",
+            "COMIC3049.BIN",
+            "COMIC3052.BIN",
+            "COMIC3008.BIN",
+            "COMIC3013.BIN",
+            "COMIC3028.BIN",
+            "COMIC3054.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN",
+            "COMIC3070.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3100.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3135.BIN",
+            "COMIC3124.BIN",
+            "COMIC3131.BIN",
+            "COMIC3119.BIN",
+            "COMIC3123.BIN",
+            "COMIC3200.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3284.BIN",
+            "COMIC3281.BIN",
+            "COMIC3287.BIN",
+            "COMIC3277.BIN",
+            "COMIC3278.BIN",
+            "COMIC3279.BIN",
+            "COMIC3243.BIN",
+            "COMIC3244.BIN",
+            "COMIC3286.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3247.BIN",
+            "COMIC3300.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3310.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3331.BIN",
+            "COMIC3336.BIN",
+            "COMIC3337.BIN",
+            "COMIC3400.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3469.BIN",
+            "COMIC3418.BIN",
+            "COMIC3421.BIN",
+            "COMIC3429.BIN",
+            "COMIC3435.BIN",
+            "COMIC3438.BIN",
+            "COMIC3478.BIN",
+            "COMIC3441.BIN",
+            "COMIC3442.BIN",
+            "COMIC3443.BIN",
+            "COMIC3445.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3454.BIN",
+            "COMIC3433.BIN",
+            "COMIC3436.BIN",
+            "COMIC3431.BIN",
+            "COMIC3472.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SET_WHEEL_FIRE": {
+        "num": 308,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "RELOAD_OP_TRAIN": {
+        "num": 309,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3999.BIN"
+        ]
+    },
+    "BackR_Drift": {
+        "num": 310,
+        "description": "",
+        "CS_comic": [
+            "COMIC2226.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3999.BIN"
+        ]
+    },
+    "BackL_Drift": {
+        "num": 311,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2226.BIN"
+        ]
+    },
+    "CHK_MOTION": {
+        "num": 312,
+        "description": "",
+        "CS_comic": [
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2320.BIN",
+            "COMIC2325.BIN",
+            "COMIC2333.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3049.BIN",
+            "COMIC3055.BIN",
+            "COMIC3056.BIN"
+        ]
+    },
+    "ORG_SET_STYLE_POS": {
+        "num": 313,
+        "description": ""
+    },
+    "RECREATE_TRAIN": {
+        "num": 314,
+        "description": ""
+    },
+    "SET_CAMPOINT_1P2T": {
+        "num": 315,
+        "description": "",
+        "BS_comic": [
+            "COMIC1106.BIN",
+            "COMIC1206.BIN",
+            "COMIC1400.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2100.BIN",
+            "COMIC2102.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2221.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2333.BIN",
+            "COMIC2304.BIN",
+            "COMIC2315.BIN",
+            "COMIC2337.BIN",
+            "COMIC2403.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3018.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3048.BIN",
+            "COMIC3008.BIN",
+            "COMIC3013.BIN",
+            "COMIC3070.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3131.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3281.BIN",
+            "COMIC3278.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3323.BIN",
+            "COMIC3336.BIN",
+            "COMIC3301.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3468.BIN",
+            "COMIC3443.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3472.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "BUFF_TO_SC_CAM_POS": {
+        "num": 316,
+        "description": "",
+        "BS_comic": [
+            "COMIC1106.BIN",
+            "COMIC1206.BIN",
+            "COMIC1400.BIN",
+            "COMIC1506.BIN",
+            "COMIC1508.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2009.BIN",
+            "COMIC2100.BIN",
+            "COMIC2102.BIN",
+            "COMIC2211.BIN",
+            "COMIC2210.BIN",
+            "COMIC2224.BIN",
+            "COMIC2225.BIN",
+            "COMIC2226.BIN",
+            "COMIC2228.BIN",
+            "COMIC2209.BIN",
+            "COMIC2229.BIN",
+            "COMIC2230.BIN",
+            "COMIC2231.BIN",
+            "COMIC2233.BIN",
+            "COMIC2217.BIN",
+            "COMIC2218.BIN",
+            "COMIC2221.BIN",
+            "COMIC2301.BIN",
+            "COMIC2307.BIN",
+            "COMIC2309.BIN",
+            "COMIC2312.BIN",
+            "COMIC2313.BIN",
+            "COMIC2314.BIN",
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2333.BIN",
+            "COMIC2304.BIN",
+            "COMIC2315.BIN",
+            "COMIC2337.BIN",
+            "COMIC2403.BIN",
+            "COMIC2412.BIN",
+            "COMIC2415.BIN",
+            "COMIC2416.BIN",
+            "COMIC2414.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3018.BIN",
+            "COMIC3035.BIN",
+            "COMIC3041.BIN",
+            "COMIC3042.BIN",
+            "COMIC3045.BIN",
+            "COMIC3048.BIN",
+            "COMIC3008.BIN",
+            "COMIC3013.BIN",
+            "COMIC3070.BIN",
+            "COMIC3129.BIN",
+            "COMIC3130.BIN",
+            "COMIC3132.BIN",
+            "COMIC3131.BIN",
+            "COMIC3222.BIN",
+            "COMIC3224.BIN",
+            "COMIC3262.BIN",
+            "COMIC3263.BIN",
+            "COMIC3264.BIN",
+            "COMIC3265.BIN",
+            "COMIC3266.BIN",
+            "COMIC3267.BIN",
+            "COMIC3268.BIN",
+            "COMIC3269.BIN",
+            "COMIC3270.BIN",
+            "COMIC3271.BIN",
+            "COMIC3272.BIN",
+            "COMIC3273.BIN",
+            "COMIC3274.BIN",
+            "COMIC3275.BIN",
+            "COMIC3282.BIN",
+            "COMIC3283.BIN",
+            "COMIC3281.BIN",
+            "COMIC3278.BIN",
+            "COMIC3247.BIN",
+            "COMIC3248.BIN",
+            "COMIC3308.BIN",
+            "COMIC3309.BIN",
+            "COMIC3332.BIN",
+            "COMIC3333.BIN",
+            "COMIC3323.BIN",
+            "COMIC3336.BIN",
+            "COMIC3301.BIN",
+            "COMIC3455.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3456.BIN",
+            "COMIC3468.BIN",
+            "COMIC3443.BIN",
+            "COMIC3464.BIN",
+            "COMIC3471.BIN",
+            "COMIC3472.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3477.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SC_ORG_MODE_CHANGE": {
+        "num": 317,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "SC_ORG_INIT_POS": {
+        "num": 318,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "SC_ORG_SET_POS": {
+        "num": 319,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "SC_ORG_SET_ROT": {
+        "num": 320,
+        "description": ""
+    },
+    "SC_ORG_SET_X_ROT": {
+        "num": 321,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "SC_ORG_SET_Y_ROT": {
+        "num": 322,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "SC_ORG_SET_Z_ROT": {
+        "num": 323,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "SET_SC_KOTEI_CAM_POS": {
+        "num": 324,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2333.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3997.BIN",
+            "COMIC3998.BIN",
+            "COMIC3499.BIN"
+        ]
+    },
+    "SET_SC_KOTEI_CAM_T_POS": {
+        "num": 325,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2333.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3499.BIN"
+        ]
+    },
+    "START_SC_WIPER": {
+        "num": 326,
+        "description": "",
+        "BS_comic": [
+            "COMIC1999.BIN"
+        ]
+    },
+    "SUPER_DRIFT": {
+        "num": 327,
+        "description": "",
+        "BS_comic": [
+            "COMIC1312.BIN"
+        ]
+    },
+    "CNG_TRAIN_NO_MAT_COL": {
+        "num": 328,
+        "description": "",
+        "BS_comic": [
+            "COMIC1401.BIN"
+        ]
+    },
+    "ERR_CMD": {
+        "num": 329,
+        "description": ""
+    },
+    "K_HN": {
+        "num": 330,
+        "description": "",
+        "BS_comic": [
+            "COMIC1009.BIN",
+            "COMIC1020.BIN"
+        ]
+    },
+    "TO_TRACK_RAIL": {
+        "num": 331,
+        "description": ""
+    },
+    "IS_NO_DRAMA": {
+        "num": 332,
+        "description": "",
+        "BS_comic": [
+            "COMIC1000.BIN",
+            "COMIC1100.BIN",
+            "COMIC1200.BIN",
+            "COMIC1300.BIN",
+            "COMIC1400.BIN",
+            "COMIC1500.BIN"
+        ],
+        "CS_comic": [
+            "COMIC2000.BIN",
+            "COMIC2997.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2300.BIN",
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2412.BIN",
+            "COMIC2433.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3997.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3300.BIN",
+            "COMIC3400.BIN",
+            "COMIC3451.BIN"
+        ]
+    },
+    "CNG_TRAIN_NO_MAT_RGBA": {
+        "num": 333,
+        "description": "",
+        "BS_comic": [
+            "COMIC1996.BIN"
+        ]
+    },
+    "SHOW_RECORD": {
+        "num": 334,
+        "description": ""
+    },
+    "WAIT_RECORD_END": {
+        "num": 335,
+        "description": ""
+    },
+    "IB_LI_SET_UPDATE_FLG": {
+        "num": 336,
+        "description": "",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
+        ],
+        "RS_bin": [
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "PTCL_SCALL": {
+        "num": 337,
+        "description": ""
+    },
+    "PTCL_COLOR": {
+        "num": 338,
+        "description": ""
+    },
+    "PTCL_ALPHA": {
+        "num": 339,
+        "description": ""
+    },
+    "PTCL_DRAWTYPE": {
+        "num": 340,
+        "description": ""
+    },
+    "PTCL_ANGLE": {
+        "num": 341,
+        "description": ""
+    },
+    "PTCL_RAND_ANGLE": {
+        "num": 342,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "PTCL_RAND_COLOR": {
+        "num": 343,
+        "description": ""
+    },
+    "PTCL_RAND_ALPHA": {
+        "num": 344,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "PTCL_RAND_SCALL": {
+        "num": 345,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "IB_ADD_PTCL": {
+        "num": 346,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "PTCL_RAND_TONE_COLOR": {
+        "num": 347,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "IS_ALPHA_END": {
+        "num": 348,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "PTCL_L_POS": {
+        "num": 349,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "PTCL_RAND_L_POS": {
+        "num": 350,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "CREATE_MAT_COLOR_R_INTERLIST": {
+        "num": 351,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "CREATE_MAT_EMISSIVE_R_INTERLIST": {
+        "num": 352,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
+    },
+    "SET_MAT_COLOR_R": {
+        "num": 353,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "SET_MAT_COLOR_G": {
+        "num": 354,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "SET_MAT_COLOR_B": {
+        "num": 355,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "SET_MAT_COLOR_LOOP": {
+        "num": 356,
+        "description": "",
+        "CS_bin": [
+            "KOUSATEN.BIN"
+        ]
+    },
+    "SET_MAT_EMISSIVE_R": {
+        "num": 357,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
+    },
+    "SET_MAT_EMISSIVE_G": {
+        "num": 358,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
+    },
+    "SET_MAT_EMISSIVE_B": {
+        "num": 359,
+        "description": ""
+    },
+    "SET_MAT_EMISSIVE_LOOP": {
+        "num": 360,
+        "description": ""
+    },
+    "CREATE_MAT_COLOR_G_INTERLIST": {
+        "num": 361,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "CREATE_MAT_EMISSIVE_G_INTERLIST": {
+        "num": 362,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
+    },
+    "CREATE_MAT_COLOR_B_INTERLIST": {
+        "num": 363,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "CREATE_MAT_EMISSIVE_B_INTERLIST": {
+        "num": 364,
+        "description": "",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
+    },
+    "CREATE_UV_MOVE_Y": {
+        "num": 365,
+        "description": "",
+        "CS_bin": [
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
+    },
+    "SET_UV_MOVE_Y": {
+        "num": 366,
+        "description": "",
+        "CS_bin": [
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
+    },
+    "SET_UV_LOOP_Y": {
+        "num": 367,
+        "description": "",
+        "CS_bin": [
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
+    },
+    "INDEX_RAND_ROT_X": {
+        "num": 368,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
+        ],
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_RAND_ROT_Y": {
+        "num": 369,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
+    },
+    "INDEX_RAND_ROT_Z": {
+        "num": 370,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
+        ],
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN"
+        ]
+    },
+    "INDEX_RAND_POS_X": {
+        "num": 371,
+        "description": "",
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_RAND_POS_Y": {
+        "num": 372,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN"
+        ],
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_RAND_POS_Z": {
+        "num": 373,
+        "description": "",
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "RAND_SHOW_MESH": {
+        "num": 374,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
+        ]
+    },
+    "INDEX_RAND_SCALL": {
+        "num": 375,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN"
+        ]
+    },
+    "ADD_CHILD_OBJ": {
+        "num": 376,
+        "description": "",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "ADD_OBJ_INDEX": {
+        "num": 377,
+        "description": "",
+        "CS_bin": [
+            "AMB_LIGHT.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
+    },
+    "GAS_TARBIN": {
+        "num": 378,
+        "description": "",
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3997.BIN",
+            "COMIC3998.BIN"
+        ]
+    },
+    "ENGINE_START": {
+        "num": 379,
+        "description": "",
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN",
+            "COMIC2900.BIN",
+            "COMIC2100.BIN",
+            "COMIC2200.BIN",
+            "COMIC2300.BIN",
+            "COMIC2400.BIN"
+        ],
+        "RS_comic": [
+            "COMIC2900.BIN",
+            "COMIC3997.BIN",
+            "COMIC3998.BIN"
+        ]
+    },
+    "CHANGE_CHILDOBJ_ANIME": {
+        "num": 380,
+        "description": "",
+        "CS_comic": [
+            "COMIC2997.BIN",
+            "COMIC2998.BIN"
+        ],
+        "CS_bin": [
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3997.BIN",
+            "COMIC3998.BIN"
+        ]
+    },
+    "IB_SET_W_MT": {
+        "num": 381,
+        "description": "",
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "TOBU.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
+    },
+    "CHK_OBJ_PARAM": {
+        "num": 382,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "SET_OBJ_PARAM": {
+        "num": 383,
+        "description": ""
+    },
+    "INDEX_DIR_CAM": {
+        "num": 384,
+        "description": ""
+    },
+    "CNG_MT_LIGHT": {
+        "num": 385,
+        "description": "",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
+        ],
+        "RS_bin": [
+            "DRC_00.BIN",
+            "DRC_01.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "ADD_OBJ_INDEX2": {
+        "num": 386,
+        "description": "",
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_NK_ROAD_L.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN"
+        ]
+    },
+    "CNG_MT_ALPHA": {
+        "num": 387,
+        "description": ""
+    },
+    "CREATE_MAT_ALPHA_INTERLIST": {
+        "num": 388,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "SET_MAT_ALPHA": {
+        "num": 389,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "RESTART_MESH_LIST": {
+        "num": 390,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "RAIL_ANIME_CHANGE": {
+        "num": 391,
+        "description": "",
+        "CS_comic": [
+            "COMIC2300.BIN"
+        ]
+    },
+    "STOP_COMIC_SE_ALL": {
+        "num": 392,
+        "description": "",
+        "CS_comic": [
+            "COMIC2001.BIN",
+            "COMIC2101.BIN",
+            "COMIC2200.BIN",
+            "COMIC2201.BIN",
+            "COMIC2300.BIN",
+            "COMIC2401.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3002.BIN",
+            "COMIC3003.BIN",
+            "COMIC3004.BIN",
+            "COMIC3005.BIN",
+            "COMIC3006.BIN",
+            "COMIC3007.BIN",
+            "COMIC3008.BIN",
+            "COMIC3009.BIN",
+            "COMIC3010.BIN",
+            "COMIC3102.BIN",
+            "COMIC3103.BIN",
+            "COMIC3104.BIN",
+            "COMIC3105.BIN",
+            "COMIC3106.BIN",
+            "COMIC3107.BIN",
+            "COMIC3108.BIN",
+            "COMIC3109.BIN",
+            "COMIC3110.BIN",
+            "COMIC3136.BIN",
+            "COMIC3137.BIN",
+            "COMIC3202.BIN",
+            "COMIC3203.BIN",
+            "COMIC3204.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3209.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3231.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3302.BIN",
+            "COMIC3303.BIN",
+            "COMIC3304.BIN",
+            "COMIC3305.BIN",
+            "COMIC3306.BIN",
+            "COMIC3307.BIN",
+            "COMIC3461.BIN",
+            "COMIC3474.BIN",
+            "COMIC3475.BIN",
+            "COMIC3499.BIN",
+            "COMIC3402.BIN",
+            "COMIC3403.BIN",
+            "COMIC3404.BIN",
+            "COMIC3405.BIN",
+            "COMIC3406.BIN",
+            "COMIC3407.BIN",
+            "COMIC3408.BIN",
+            "COMIC3409.BIN",
+            "COMIC3410.BIN",
+            "COMIC3411.BIN"
+        ]
+    },
+    "HURIKO": {
+        "num": 393,
+        "description": "",
+        "CS_comic": [
+            "COMIC2308.BIN",
+            "COMIC2326.BIN",
+            "COMIC2327.BIN",
+            "COMIC2328.BIN",
+            "COMIC2329.BIN"
+        ]
+    },
+    "FTV_PLAY_AND_PREV": {
+        "num": 394,
+        "description": "",
+        "CS_comic": [
+            "COMIC2309.BIN"
+        ]
+    },
+    "FTV_END_INHERIT": {
+        "num": 395,
+        "description": "",
+        "CS_comic": [
+            "COMIC2309.BIN"
+        ]
+    },
+    "STATION_NAME_PRIORITY": {
+        "num": 396,
+        "description": "",
+        "CS_comic": [
+            "COMIC2200.BIN",
+            "COMIC2209.BIN",
+            "COMIC2309.BIN",
+            "COMIC2400.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3058.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3300.BIN",
+            "COMIC3400.BIN"
+        ]
+    },
+    "ALL_FIT": {
+        "num": 397,
+        "description": "",
+        "CS_comic": [
+            "COMIC2100.BIN",
+            "COMIC2210.BIN",
+            "COMIC2300.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3029.BIN",
+            "COMIC3028.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3237.BIN",
+            "COMIC3219.BIN",
+            "COMIC3300.BIN",
+            "COMIC3319.BIN",
+            "COMIC3323.BIN",
+            "COMIC3465.BIN",
+            "COMIC3466.BIN",
+            "COMIC3467.BIN",
+            "COMIC3468.BIN",
+            "COMIC3478.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "SWAP_TX": {
+        "num": 398,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "CNG_TX": {
+        "num": 399,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "CHK_CAUSE": {
+        "num": 400,
+        "description": "",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "UV_01.BIN"
+        ],
+        "RS_bin": [
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "CNG_ANIME": {
+        "num": 401,
+        "description": "",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "UV_01.BIN"
+        ],
+        "RS_bin": [
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MEI.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "CHK_OUHUKU": {
+        "num": 402,
+        "description": "",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "UV_01.BIN"
+        ],
+        "RS_bin": [
+            "H8200_00.BIN",
+            "RAPID_00.BIN"
+        ]
+    },
+    "SET_TRAIN_PTCL_AREA": {
+        "num": 403,
+        "description": "",
+        "CS_comic": [
+            "COMIC2300.BIN",
+            "COMIC2301.BIN",
+            "COMIC2309.BIN",
+            "COMIC2302.BIN"
+        ]
+    },
+    "WAIT_DOSAN_LENGTH": {
+        "num": 404,
+        "description": "",
+        "CS_comic": [
+            "COMIC2318.BIN",
+            "COMIC2320.BIN",
+            "COMIC2333.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ]
+    },
+    "END_DOSAN_LENGTH": {
+        "num": 405,
+        "description": "",
+        "CS_comic": [
+            "COMIC2318.BIN",
+            "COMIC2333.BIN"
+        ]
+    },
+    "DOSANSEN": {
+        "num": 406,
+        "description": "",
+        "CS_comic": [
+            "COMIC2318.BIN",
+            "COMIC2319.BIN",
+            "COMIC2333.BIN",
+            "COMIC2408.BIN",
+            "COMIC2417.BIN"
+        ]
+    },
+    "MESH_INDEX_SE_UV_ANIME_FLG": {
+        "num": 407,
+        "description": "",
+        "CS_bin": [
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN"
+        ],
+        "RS_bin": [
+            "H8008_00.BIN",
+            "H8200_00.BIN"
+        ]
+    },
+    "WEATHER": {
+        "num": 408,
+        "description": "",
+        "CS_bin": [
+            "HQ_TK.BIN"
+        ]
+    },
+    "TRAIN_DIR": {
+        "num": 409,
+        "description": "",
+        "CS_comic": [
+            "COMIC2400.BIN",
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2437.BIN",
+            "COMIC2438.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3008.BIN",
+            "COMIC3010.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3400.BIN",
+            "COMIC3408.BIN",
+            "COMIC3411.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "IS_USE_CHAR": {
+        "num": 410,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
+    },
+    "QUICK_SAVE_EVENT": {
+        "num": 411,
+        "description": "",
+        "CS_comic": [
+            "COMIC2011.BIN",
+            "COMIC2303.BIN",
+            "COMIC2308.BIN",
+            "COMIC2326.BIN",
+            "COMIC2327.BIN",
+            "COMIC2328.BIN",
+            "COMIC2329.BIN",
+            "COMIC2336.BIN",
+            "COMIC2427.BIN",
+            "COMIC2428.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3067.BIN",
+            "COMIC3068.BIN"
+        ]
+    },
+    "NONE_GOAL": {
+        "num": 412,
+        "description": ""
+    },
+    "ENGINE_STOP": {
+        "num": 413,
+        "description": "",
+        "CS_comic": [
+            "COMIC2333.BIN"
+        ]
+    },
+    "IS_BTL_MODE": {
+        "num": 414,
+        "description": "",
+        "CS_comic": [
+            "COMIC2990.BIN",
+            "COMIC2100.BIN",
+            "COMIC2303.BIN",
+            "COMIC2433.BIN",
+            "COMIC2427.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3067.BIN",
+            "COMIC2990.BIN",
+            "COMIC3100.BIN",
+            "COMIC3200.BIN",
+            "COMIC3300.BIN",
+            "COMIC3400.BIN"
+        ]
+    },
+    "IS_FREE_MODE": {
+        "num": 415,
+        "description": "",
+        "CS_comic": [
+            "COMIC2990.BIN"
+        ],
+        "RS_comic": [
+            "COMIC2990.BIN"
+        ]
+    },
+    "FIRST_OBJ_SET_ANIME_SCENE": {
+        "num": 416,
+        "description": "",
+        "CS_comic": [
+            "COMIC2011.BIN",
+            "COMIC2336.BIN"
+        ]
+    },
+    "G_HIDE_MESH": {
+        "num": 417,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
+    },
+    "G_SHOW_MESH": {
+        "num": 418,
+        "description": "",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
+    },
+    "STOP_WIPER": {
+        "num": 419,
+        "description": "",
+        "CS_comic": [
+            "COMIC2429.BIN",
+            "COMIC2430.BIN",
+            "COMIC2431.BIN",
+            "COMIC2432.BIN"
+        ]
+    },
+    "TRAIN_ANIME_CHANGE": {
+        "num": 420,
+        "description": "",
+        "CS_comic": [
+            "COMIC2100.BIN"
+        ]
+    },
+    "MESH_INDEX_UV_RESTRT": {
+        "num": 421,
+        "description": "",
+        "CS_bin": [
+            "H8200_00.BIN",
+            "JR2000.BIN"
+        ],
+        "RS_bin": [
+            "H8200_00.BIN"
+        ]
+    },
+    "SET_COMIC_COLOR": {
+        "num": 422,
+        "description": "",
+        "RS_comic": [
+            "COMIC3901.BIN",
+            "COMIC3902.BIN",
+            "COMIC3903.BIN",
+            "COMIC3904.BIN",
+            "COMIC3905.BIN",
+            "COMIC3906.BIN",
+            "COMIC3907.BIN",
+            "COMIC3908.BIN",
+            "COMIC3909.BIN",
+            "COMIC3910.BIN",
+            "COMIC3911.BIN",
+            "COMIC3912.BIN",
+            "COMIC3913.BIN",
+            "COMIC3914.BIN",
+            "COMIC3915.BIN",
+            "COMIC3916.BIN",
+            "COMIC3917.BIN",
+            "COMIC3918.BIN",
+            "COMIC3919.BIN",
+            "COMIC3920.BIN",
+            "COMIC3921.BIN",
+            "COMIC3922.BIN",
+            "COMIC3923.BIN",
+            "COMIC3924.BIN",
+            "COMIC3925.BIN",
+            "COMIC3934.BIN",
+            "COMIC3935.BIN"
+        ]
+    },
+    "CHK_OUTRUN_CNT": {
+        "num": 423,
+        "description": "",
+        "CS_comic": [
+            "COMIC2010.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN"
+        ]
+    },
+    "CHK_D_AND_NOTCH": {
+        "num": 424,
+        "description": ""
+    },
+    "ADD_CPU_LEN_OUTRUN": {
+        "num": 425,
+        "description": "",
+        "CS_comic": [
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN"
+        ]
+    },
+    "ADD_CPU_SPEED_D_AND_NOTCH": {
+        "num": 426,
+        "description": "",
+        "CS_comic": [
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN"
+        ]
+    },
+    "CHK_HIT_CNT": {
+        "num": 427,
+        "description": "",
+        "CS_comic": [
+            "COMIC2103.BIN"
+        ]
+    },
+    "TOP_SPEED_HOSYO": {
+        "num": 428,
+        "description": "",
+        "CS_comic": [
+            "COMIC2008.BIN",
+            "COMIC2009.BIN",
+            "COMIC2010.BIN",
+            "COMIC2013.BIN",
+            "COMIC2014.BIN",
+            "COMIC2015.BIN",
+            "COMIC2016.BIN",
+            "COMIC2017.BIN",
+            "COMIC2018.BIN",
+            "COMIC2105.BIN",
+            "COMIC2106.BIN"
+        ]
+    },
+    "SET_ROOT_BLOCK": {
+        "num": 429,
+        "description": "",
+        "CS_comic": [
+            "COMIC2200.BIN",
+            "COMIC2400.BIN"
+        ]
+    },
+    "RIFT": {
+        "num": 430,
+        "description": "",
+        "CS_comic": [
+            "COMIC2403.BIN"
+        ]
+    },
+    "COLLISION": {
+        "num": 431,
+        "description": "",
+        "CS_comic": [
+            "COMIC2410.BIN",
+            "COMIC2411.BIN"
+        ]
+    },
+    "DIR_VIEW_CHANGE": {
+        "num": 432,
+        "description": "",
+        "CS_comic": [
+            "COMIC2410.BIN",
+            "COMIC2411.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN"
+        ]
+    },
+    "CHK_RAIL_NO": {
+        "num": 433,
+        "description": "",
+        "CS_comic": [
+            "COMIC2411.BIN"
+        ]
+    },
+    "TRACK_CHANGE": {
+        "num": 434,
+        "description": "",
+        "CS_comic": [
+            "COMIC2412.BIN",
+            "COMIC2433.BIN",
+            "COMIC2434.BIN"
+        ]
+    },
+    "CHK_LENGTH_DIR": {
+        "num": 435,
+        "description": "",
+        "CS_comic": [
+            "COMIC2436.BIN",
+            "COMIC2439.BIN",
+            "COMIC2440.BIN",
+            "COMIC2441.BIN"
+        ]
+    },
+    "CHK_POS_DIR": {
+        "num": 436,
+        "description": "",
+        "CS_comic": [
+            "COMIC2439.BIN",
+            "COMIC2441.BIN"
+        ]
+    },
+    "TRUE_CLASH": {
+        "num": 437,
+        "description": "",
+        "CS_comic": [
+            "COMIC2441.BIN",
+            "COMIC2442.BIN"
+        ]
+    },
+    "KATARIN_RUN": {
+        "num": 438,
+        "description": "",
+        "RS_comic": [
+            "COMIC3059.BIN",
+            "COMIC3323.BIN",
+            "COMIC3324.BIN",
+            "COMIC3900.BIN"
+        ]
+    },
+    "DRAW_UI": {
+        "num": 439,
+        "description": "",
+        "RS_comic": [
+            "COMIC3900.BIN"
+        ]
+    },
+    "STOP_SCRIPT_BGM": {
+        "num": 440,
+        "description": "",
+        "RS_comic": [
+            "COMIC3010.BIN",
+            "COMIC3407.BIN"
+        ]
+    },
+    "SET_STATION_NO": {
+        "num": 441,
+        "description": "",
+        "RS_comic": [
+            "COMIC3000.BIN",
+            "COMIC3010.BIN",
+            "COMIC3200.BIN"
+        ]
+    },
+    "SET_CPU_BREAKE": {
+        "num": 442,
+        "description": ""
+    },
+    "AMB_ANIME": {
+        "num": 443,
+        "description": "",
+        "RS_comic": [
+            "COMIC3029.BIN"
+        ]
+    },
+    "ONE_DRIFT_FALSE": {
+        "num": 444,
+        "description": "",
+        "RS_comic": [
+            "COMIC3058.BIN"
+        ]
+    },
+    "L_One_Drift": {
+        "num": 445,
+        "description": "",
+        "RS_comic": [
+            "COMIC3057.BIN",
+            "COMIC3999.BIN"
+        ]
+    },
+    "R_One_Drift": {
+        "num": 446,
+        "description": ""
+    },
+    "Ret_One_Drift": {
+        "num": 447,
+        "description": ""
+    },
+    "FRONT_JUMP": {
+        "num": 448,
+        "description": "",
+        "RS_comic": [
+            "COMIC3059.BIN",
+            "COMIC3470.BIN"
+        ]
+    },
+    "REAR_JUMP": {
+        "num": 449,
+        "description": "",
+        "RS_comic": [
+            "COMIC3059.BIN",
+            "COMIC3279.BIN"
+        ]
+    },
+    "FRONT_MOVE_X": {
+        "num": 450,
+        "description": "",
+        "RS_comic": [
+            "COMIC3059.BIN",
+            "COMIC3470.BIN"
+        ]
+    },
+    "TRACK_MOVE": {
+        "num": 451,
+        "description": "",
+        "RS_comic": [
+            "COMIC3059.BIN",
+            "COMIC3060.BIN",
+            "COMIC3279.BIN"
+        ]
+    },
+    "TRAIN_JUMP": {
+        "num": 452,
+        "description": "",
+        "RS_comic": [
+            "COMIC3060.BIN"
+        ]
+    },
+    "SET_LIGHT": {
+        "num": 453,
+        "description": "",
+        "RS_comic": [
+            "COMIC3059.BIN"
+        ]
+    },
+    "SET_COL_KASENCHU": {
+        "num": 454,
+        "description": "",
+        "RS_comic": [
+            "COMIC3059.BIN"
+        ]
+    },
+    "SET_KAISO": {
+        "num": 455,
+        "description": "",
+        "RS_comic": [
+            "COMIC3008.BIN"
+        ]
+    },
+    "SET_FOR": {
+        "num": 456,
+        "description": "",
+        "RS_comic": [
+            "COMIC3200.BIN",
+            "COMIC3208.BIN",
+            "COMIC3213.BIN"
+        ]
+    },
+    "CHK_TRAIN_COL": {
+        "num": 457,
+        "description": "",
+        "RS_comic": [
+            "COMIC3227.BIN",
+            "COMIC3331.BIN",
+            "COMIC3463.BIN"
+        ]
+    },
+    "VOL_SCRIPT_BGM": {
+        "num": 458,
+        "description": "",
+        "RS_comic": [
+            "COMIC3103.BIN",
+            "COMIC3202.BIN",
+            "COMIC3205.BIN",
+            "COMIC3206.BIN",
+            "COMIC3207.BIN",
+            "COMIC3208.BIN",
+            "COMIC3210.BIN",
+            "COMIC3211.BIN",
+            "COMIC3212.BIN",
+            "COMIC3213.BIN",
+            "COMIC3214.BIN",
+            "COMIC3232.BIN",
+            "COMIC3233.BIN",
+            "COMIC3302.BIN",
+            "COMIC3406.BIN"
+        ]
+    },
+    "IF_NOTCH": {
+        "num": 459,
+        "description": "",
+        "RS_comic": [
+            "COMIC3246.BIN"
+        ]
+    },
+    "SET_BRIND_SW": {
+        "num": 460,
+        "description": ""
+    },
+    "SET_MIKOSHI": {
+        "num": 461,
+        "description": "",
+        "RS_comic": [
+            "COMIC3310.BIN",
+            "COMIC3338.BIN",
+            "COMIC3409.BIN"
+        ]
+    },
+    "ADD_FIRE": {
+        "num": 462,
+        "description": "",
+        "RS_comic": [
+            "COMIC3279.BIN",
+            "COMIC3323.BIN",
+            "COMIC3470.BIN"
+        ]
+    },
+    "BREAKE_OR_HIT": {
+        "num": 463,
+        "description": "",
+        "RS_comic": [
+            "COMIC3319.BIN"
+        ]
+    },
+    "OUTRUN": {
+        "num": 464,
+        "description": "",
+        "RS_comic": [
+            "COMIC3323.BIN",
+            "COMIC3324.BIN"
+        ]
+    },
+    "SOFT_ATK": {
+        "num": 465,
+        "description": "",
+        "RS_comic": [
+            "COMIC3319.BIN",
+            "COMIC3435.BIN",
+            "COMIC3463.BIN"
+        ]
+    },
+    "RAIL_STOP": {
+        "num": 466,
+        "description": ""
+    },
+    "CHANGE_OUHUKU_LINE": {
+        "num": 467,
+        "description": "",
+        "RS_comic": [
+            "COMIC3451.BIN",
+            "COMIC3459.BIN",
+            "COMIC3460.BIN",
+            "COMIC3461.BIN",
+            "COMIC3479.BIN",
+            "COMIC3480.BIN"
+        ]
+    },
+    "BRIND_ATK": {
+        "num": 468,
+        "description": "",
+        "RS_comic": [
+            "COMIC3429.BIN",
+            "COMIC3462.BIN",
+            "COMIC3441.BIN",
+            "COMIC3464.BIN",
+            "COMIC3431.BIN"
+        ]
+    },
+    "OPEN_POS_DLG": {
+        "num": 469,
+        "description": "",
+        "RS_comic": [
+            "COMIC3400.BIN"
+        ]
+    },
+    "PLAY_STAGEBGM_BLOCK": {
+        "num": 470,
+        "description": ""
+    },
+    "SET_BTL_POINT": {
+        "num": 471,
+        "description": ""
+    },
+    "CAM_TRAIN": {
+        "num": 472,
+        "description": ""
+    },
+    "PLAY_SCRIPT_BGM": {
+        "num": 473,
+        "description": ""
+    },
+    "CNG_FOR": {
+        "num": 474,
+        "description": ""
+    },
+    "SET_RAILBLOCK_CHECKER": {
+        "num": 475,
+        "description": ""
+    },
+    "RAIN_SE": {
+        "num": 476,
+        "description": ""
+    },
+    "TRAIN_STOP": {
+        "num": 477,
+        "description": ""
+    },
+    "KOTEICAM_BLEND": {
+        "num": 478,
+        "description": ""
+    },
+    "SCRIPT_RAIN": {
+        "num": 479,
+        "description": ""
+    },
+    "LINE_CHANGE": {
+        "num": 480,
+        "description": ""
+    },
+    "WAIT_RAIL_MORE_ONLY": {
+        "num": 481,
+        "description": ""
+    },
+    "SET_SE_VOL": {
+        "num": 482,
+        "description": ""
+    },
+    "CAM_TARGET_TRACK": {
+        "num": 483,
+        "description": ""
+    },
+    "DECAL_D37": {
+        "num": 484,
+        "description": ""
+    },
+    "DECAL_D39": {
+        "num": 485,
+        "description": ""
+    },
+    "DECAL_SMOKE": {
+        "num": 486,
+        "description": ""
+    },
+    "RAIL_PRIORITY": {
+        "num": 487,
+        "description": ""
+    },
+    "GET_KEY": {
+        "num": 488,
+        "description": ""
+    },
+    "SHOW_LIGHT": {
+        "num": 489,
+        "description": ""
+    },
+    "SHOW_IN_LIGHT": {
+        "num": 490,
+        "description": ""
+    },
+    "FOG_POW": {
+        "num": 491,
+        "description": ""
+    },
+    "STORY_WIN": {
+        "num": 492,
+        "description": ""
+    },
+    "RAIN_PARTICLE": {
+        "num": 493,
+        "description": ""
+    },
+    "D39_FIRE": {
+        "num": 494,
+        "description": ""
+    },
+    "SET_CPU_SPEED": {
+        "num": 495,
+        "description": ""
+    },
+    "BODY_AUDIO_PLAY": {
+        "num": 496,
+        "description": ""
+    },
+    "BODY_AUDIO_STOP": {
+        "num": 497,
+        "description": ""
+    },
+    "CNG_FADE_SPRITE": {
+        "num": 498,
+        "description": ""
+    },
+    "RAIL_DRIFT_CHK": {
+        "num": 499,
+        "description": ""
+    },
+    "INQ_WAIT": {
+        "num": 500,
+        "description": ""
+    },
+    "CNG_SCCAM_TRAIN": {
+        "num": 501,
+        "description": ""
+    },
+    "STOP_TRAIN_SE": {
+        "num": 502,
+        "description": ""
+    },
+    "PLAY_SCRIPT_BGM_TIME": {
+        "num": 503,
+        "description": ""
+    },
+    "CNG_BODY_COLOR": {
+        "num": 504,
+        "description": ""
+    },
+    "LOAD_TRAIN": {
+        "num": 505,
+        "description": ""
+    },
+    "SHOW_BLOCK": {
+        "num": 506,
+        "description": ""
+    },
+    "UPDATE_LIGHT_FRARE": {
+        "num": 507,
+        "description": ""
+    },
+    "WAIT_RAIL_MORE_GOTO": {
+        "num": 508,
+        "description": ""
+    },
+    "CREATE_AURA": {
+        "num": 509,
+        "description": ""
+    },
+    "AURA_ALPHA": {
+        "num": 510,
+        "description": ""
+    },
+    "SET_LV_JUMP": {
+        "num": 511,
+        "description": ""
+    },
+    "CREATE_EFFECT_CAM": {
+        "num": 512,
+        "description": ""
+    },
+    "TO_EFFECT_CAM": {
+        "num": 513,
+        "description": ""
+    },
+    "EFFECT_CAM_POW": {
+        "num": 514,
+        "description": ""
+    },
+    "EFFECT_CAM_COLOR": {
+        "num": 515,
+        "description": ""
+    },
+    "EFFECT_CAM_ALPHA": {
+        "num": 516,
+        "description": ""
+    },
+    "HIDE_LIGHT": {
+        "num": 517,
+        "description": ""
+    },
+    "USE_EFFECT_CAM": {
+        "num": 518,
+        "description": ""
+    },
+    "USE_EFFECT_CAM_RGB": {
+        "num": 519,
+        "description": ""
+    },
+    "EFFECT_CAM_RGB": {
+        "num": 520,
+        "description": ""
+    },
+    "COPY_TRAIN_POS": {
+        "num": 521,
+        "description": ""
+    },
+    "COL_SET": {
+        "num": 522,
+        "description": ""
+    },
+    "CNG_CPU_TRAIN": {
+        "num": 523,
+        "description": ""
+    },
+    "BTN_GOTO": {
+        "num": 524,
+        "description": ""
+    },
+    "NO_TIMESCALE_KOMA": {
+        "num": 525,
+        "description": ""
+    },
+    "EFFCAM_NOIZE": {
+        "num": 526,
+        "description": ""
+    },
+    "EFFCAM_GRI": {
+        "num": 527,
+        "description": ""
+    },
+    "EFFCAM_BLOCKNOISE": {
+        "num": 528,
+        "description": ""
+    },
+    "CREATE_TQ5000_FLAGMENT": {
+        "num": 529,
+        "description": ""
+    },
+    "USE_TQ5000_FLAGMENT": {
+        "num": 530,
+        "description": ""
+    },
+    "TQ5000_FLAGPOS": {
+        "num": 531,
+        "description": ""
+    },
+    "HUMIKIRI_VOL": {
+        "num": 532,
+        "description": ""
+    },
+    "TO_EFFECT_CAM_BODY": {
+        "num": 533,
+        "description": ""
+    },
+    "TO_NORM_CAM": {
+        "num": 534,
+        "description": ""
+    },
+    "TO_920": {
+        "num": 535,
+        "description": ""
+    },
+    "NO_TIMESCALE_FVT": {
+        "num": 536,
+        "description": ""
+    },
+    "CNG_TARGET_BODY": {
+        "num": 537,
+        "description": ""
+    },
+    "SC_ADD_POINT": {
+        "num": 538,
+        "description": ""
+    },
+    "CHK_SC_POINT": {
+        "num": 539,
+        "description": ""
+    },
+    "KAISO_TO_DUEL": {
+        "num": 540,
+        "description": ""
+    },
+    "SHOW_ST": {
+        "num": 541,
+        "description": ""
+    },
+    "ORG_UPDATE": {
+        "num": 542,
+        "description": ""
+    },
+    "SET_RAILBLOCK_POS": {
+        "num": 543,
+        "description": ""
+    },
+    "SET_LIGHT_OVER": {
+        "num": 544,
+        "description": ""
+    },
+    "CREATE_STAFFROLL": {
+        "num": 545,
+        "description": ""
+    },
+    "STAFFROLL_START": {
+        "num": 546,
+        "description": ""
+    },
+    "WAIT_STAFFROLL": {
+        "num": 547,
+        "description": ""
+    },
+    "SC_OUTRUN": {
+        "num": 548,
+        "description": ""
+    },
+    "CREATE_TAKMIS": {
+        "num": 549,
+        "description": ""
+    },
+    "SET_TAKMIS_POS": {
+        "num": 550,
+        "description": ""
+    },
+    "SET_TAKMIS_ALPHA": {
+        "num": 551,
+        "description": ""
+    },
+    "FRONT_DOOR": {
+        "num": 552,
+        "description": ""
+    },
+    "SET_KOMA_DEPTH": {
+        "num": 553,
+        "description": ""
+    },
+    "D37_FIRE": {
+        "num": 554,
+        "description": ""
+    },
+    "AMB_HIT_WAIT": {
+        "num": 555,
+        "description": ""
+    },
+    "ShowRecord": {
+        "num": 556,
+        "description": ""
+    },
+    "FIT_PER": {
+        "num": 557,
+        "description": ""
+    },
+    "CREATE_COMIC_PC": {
+        "num": 558,
+        "description": ""
+    },
+    "SET_COMIC_PC": {
+        "num": 559,
+        "description": ""
+    },
+    "PAUSE_STAGE_BGM": {
+        "num": 560,
+        "description": ""
+    },
+    "SET_KAKAPO": {
+        "num": 561,
+        "description": ""
+    },
+    "KOMA_KAKAPO": {
+        "num": 562,
+        "description": ""
+    },
+    "START_TARBINE": {
+        "num": 563,
+        "description": ""
+    },
+    "END_TARBINE": {
+        "num": 564,
+        "description": ""
+    },
+    "TARBINE_FTV_START": {
+        "num": 565,
+        "description": ""
+    },
+    "TARBINE_FTV_END": {
+        "num": 566,
+        "description": ""
+    },
+    "STORY_ENGINE": {
+        "num": 567,
+        "description": ""
+    },
+    "RAND_GOTO": {
+        "num": 568,
+        "description": ""
+    },
+    "KQ_SOUND": {
+        "num": 569,
+        "description": ""
+    },
+    "STORY_GOTO": {
+        "num": 570,
+        "description": ""
+    },
+    "PLAY223HONE": {
+        "num": 571,
+        "description": ""
+    },
+    "RB26": {
+        "num": 572,
+        "description": ""
+    },
+    "PLAYORGSE": {
+        "num": 573,
+        "description": ""
+    },
+    "H2300_GOAL": {
+        "num": 574,
+        "description": ""
+    },
+    "DEKI_BACK_OPEN": {
+        "num": 575,
+        "description": ""
+    },
+    "DEKI_GN_MOVE": {
+        "num": 576,
+        "description": ""
+    },
+    "DEKI_TAMIYA_START": {
+        "num": 577,
+        "description": ""
+    },
+    "DEKI_GN_START": {
+        "num": 578,
+        "description": ""
+    },
+    "DEKI_SOUND": {
+        "num": 579,
+        "description": ""
+    },
+    "DEKI_USE_TRANSAM": {
+        "num": 580,
+        "description": ""
+    },
+    "DEKI_FRONT_OPEN": {
+        "num": 581,
+        "description": ""
+    },
+    "REV_DRIFT": {
+        "num": 582,
+        "description": ""
+    },
+    "DEKI_GN_STOP": {
+        "num": 583,
+        "description": ""
+    },
+    "STORY_GN": {
+        "num": 584,
+        "description": ""
+    },
+    "IS_ONE_TRACK_DRIFT": {
+        "num": 585,
+        "description": ""
+    },
+    "SCRIPT_CMD_MAX": {
+        "num": 586,
+        "description": ""
+    }
+}
