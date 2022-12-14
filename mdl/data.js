@@ -16,19 +16,19 @@ function readTextFile(file){
 function createTd(table, data) {
     let tr = document.createElement("tr");
     table.appendChild(tr);
+    let imageFlag = true;
+    if (data.length > 2 && data[2] == "なし") {
+        imageFlag = false;
+    }
     for (let i = 0; i < data.length; i++) {
         let td = document.createElement("td");
         tr.appendChild(td);
         td.innerHTML = data[i];
-        if (i == 0) {
+        if (i == 0 && imageFlag) {
             let imageTd = document.createElement("td");
             tr.appendChild(imageTd);
             let name = data[i].split(".smf")[0];
             imageTd.innerHTML = "<a href='./image/" + name + ".png' target='_blank' rel='noopener noreferrer'><img src='./image/" + name + ".png' width='200'></a>";
-        }
-        if (i == 2 && data[i] == "なし") {
-            let tds = tr.getElementsByTagName("td");
-            tds[1].innerHTML = "";
         }
     }
 }
