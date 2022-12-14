@@ -29,6 +29,9 @@ function createTd(table, data) {
             tr.appendChild(imageTd);
             let name = data[i].split(".smf")[0];
             imageTd.innerHTML = "<a href='./image/" + name + ".png' target='_blank' rel='noopener noreferrer'><img src='./image/" + name + ".png' width='200'></a>";
+        } else {
+            let td = document.createElement("td");
+            tr.appendChild(td);
         }
     }
 }
