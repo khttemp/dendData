@@ -24,14 +24,13 @@ function createTd(table, data) {
         let td = document.createElement("td");
         tr.appendChild(td);
         td.innerHTML = data[i];
-        if (i == 0 && imageFlag) {
+        if (i == 0) {
             let imageTd = document.createElement("td");
             tr.appendChild(imageTd);
-            let name = data[i].split(".smf")[0];
-            imageTd.innerHTML = "<a href='./image/" + name + ".png' target='_blank' rel='noopener noreferrer'><img src='./image/" + name + ".png' width='200'></a>";
-        } else {
-            let td = document.createElement("td");
-            tr.appendChild(td);
+            if (imageFlag) {
+                let name = data[i].split(".smf")[0];
+                imageTd.innerHTML = "<a href='./image/" + name + ".png' target='_blank' rel='noopener noreferrer'><img src='./image/" + name + ".png' width='200'></a>";
+            }
         }
     }
 }
