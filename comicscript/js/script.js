@@ -219,7 +219,7 @@ angular.module('myApp', ['myModule'])
                         $scope.trainList = $scope.trainIndexList[arr[2]];
                         let temp = arr[arr.length - 1];
                         $scope.selectFile = temp.split("_")[0];
-                        $scope.pdfFileUrl = "./graph/LS/" + temp.split("_")[0] + ".pdf";
+                        $scope.pdfFileUrl = "./graph/" + arr[2] + "/" + temp.split("_")[0] + ".pdf";
                         TableInput(allText);
                     }
                 }
