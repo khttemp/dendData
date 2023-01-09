@@ -58,6 +58,9 @@
                     <th colspan="{{comicList.num.length+1}}">{{selectFile}}</th>
                 </tr>
                 <tr>
+                    <th colspan="{{comicList.num.length+1}}"><a ng-href="{{pdfFileUrl}}">PDFファイルで流れを見る</a></th>
+                </tr>
+                <tr>
                     <th class="comicTitle">COMIC</th>
                     <td ng-repeat="num in comicList.num track by $index" ng-click="updateScript(num, $event)" class="comicList comic-num">{{num | numberFixedLen:3}}</td>
                 </tr>

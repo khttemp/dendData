@@ -2,6 +2,7 @@ angular.module('myApp', ['myModule'])
     .controller('myCtrl', ['$scope', function($scope) {
         $scope.railList = [];
         $scope.selectFile = "RAIL002";
+        $scope.pdfFileUrl = "./graph/LS/RAIL002.pdf";
         $scope.trainIndexList = {
             "LS":[
                 "H2000",
@@ -218,6 +219,7 @@ angular.module('myApp', ['myModule'])
                         $scope.trainList = $scope.trainIndexList[arr[2]];
                         let temp = arr[arr.length - 1];
                         $scope.selectFile = temp.split("_")[0];
+                        $scope.pdfFileUrl = "./graph/LS/" + temp.split("_")[0] + ".pdf";
                         TableInput(allText);
                     }
                 }
