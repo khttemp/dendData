@@ -312,6 +312,12 @@ angular.module('myApp', ['myModule'])
                     }
                     addComicDescription += "RS"
                 }
+                if (CMD[cmd]["SS_comic"] != undefined) {
+                    if (usedFlag) {
+                        addComicDescription += "、";
+                    }
+                    addComicDescription += "SS"
+                }
                 addComicDescription += "】<br>";
 
                 if (CMD[cmd].description != "") {
