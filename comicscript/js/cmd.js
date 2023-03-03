@@ -2,7 +2,8 @@ const newLine = "<br>";
 const CMD = {
     "Tx": {
         "num": 0,
-        "description": "【モデルバイナリ】画像をロードする",
+        "description": "【モデルバイナリ】画像をロードする" + newLine
+                    + "引数１：画像サイズ情報のインデックス",
         "LS_bin": [
             "BTL_04.BIN",
             "CHARSEL.BIN",
@@ -103,7 +104,7 @@ const CMD = {
         "description": "【モデルバイナリ】画面中央を基準に画像を移動させる" + newLine
                     + "引数１：移動させるx座標" + newLine
                     + "引数２：移動させるy座標" + newLine
-                    + "引数３：詳細不明",
+                    + "引数３：詳細不明（０）",
         "LS_bin": [
             "BTL_04.BIN",
             "CHARSEL.BIN",
@@ -126,7 +127,11 @@ const CMD = {
     },
     "ColorALL": {
         "num": 5,
-        "description": "",
+        "description": "【モデルバイナリ】画像のカラーを変える" + newLine
+                    + "引数１：R(0~255)" + newLine
+                    + "引数２：G(0~255)" + newLine
+                    + "引数３：B(0~255)" + newLine
+                    + "引数４：詳細不明（０）",
         "LS_bin": [
             "CHARSEL.BIN",
             "COUNT.BIN",
@@ -145,14 +150,18 @@ const CMD = {
     },
     "Move": {
         "num": 6,
-        "description": "",
+        "description": "【モデルバイナリ】画像を現在位置から移動させる" + newLine
+                    + "引数１：x座標" + newLine
+                    + "引数２：y座標" + newLine
+                    + "引数３：詳細不明（０）" + newLine
+                    + "引数４：移動するまで変化する時間（フレーム）",
         "LS_bin": [
             "TITLE_LOGO.BIN"
         ]
     },
     "STAGE_BGM": {
         "num": 7,
-        "description": "【LS、BSのみ】ステージBGMの1番目を再生する",
+        "description": "ステージBGMの1番目を再生する",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC400.BIN",
@@ -219,7 +228,8 @@ const CMD = {
     },
     "Set3DObj": {
         "num": 12,
-        "description": "",
+        "description": "【モデルバイナリ】SMFを置く" + newLine
+                    + "引数１：SMF情報インデックス",
         "LS_bin": [
             "BTL_01.BIN",
             "BTL_03.BIN",
@@ -285,14 +295,14 @@ const CMD = {
     },
     "SetWAngleY": {
         "num": 14,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～４：詳細不明",
         "LS_bin": [
             "CHARSEL3D.BIN"
         ]
     },
     "SetWAngleZ": {
         "num": 15,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～４：詳細不明",
         "LS_bin": [
             "BTL_03.BIN",
             "CHARSEL3D.BIN"
@@ -308,7 +318,7 @@ const CMD = {
     },
     "SetLAngleZ": {
         "num": 18,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～４：詳細不明",
         "LS_bin": [
             "CHARSEL3D.BIN"
         ]
@@ -339,7 +349,8 @@ const CMD = {
     },
     "ShowMesh": {
         "num": 25,
-        "description": "",
+        "description": "【モデルバイナリ】メッシュを表示する" + newLine
+                    + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
             "BTL_03.BIN",
@@ -397,7 +408,8 @@ const CMD = {
     },
     "HideMesh": {
         "num": 26,
-        "description": "",
+        "description": "【モデルバイナリ】メッシュを非表示する" + newLine
+                    + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
             "BTL_03.BIN",
@@ -471,14 +483,14 @@ const CMD = {
     },
     "PlayAnime": {
         "num": 27,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "Length_End": {
         "num": 28,
-        "description": "",
+        "description": "【モデルバイナリ】引数１：詳細不明",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -506,7 +518,7 @@ const CMD = {
     },
     "SetScall": {
         "num": 29,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～１０：詳細不明",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "SCENE3DOBJ.BIN"
@@ -591,7 +603,7 @@ const CMD = {
     },
     "FADE_STAGE_BGM": {
         "num": 32,
-        "description": "",
+        "description": "今再生中のBGMをフェードアウトする",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -607,9 +619,8 @@ const CMD = {
     },
     "CHANGE_SCENE": {
         "num": 33,
-        "description": "シーンを変える（メニューや漫画などの）" + newLine
-                    + "デフォルトで引数はなし" + newLine
-                    + "LSのH7001のみ引数「100」を使う",
+        "description": "フェードアウトしてシーンを変える（メニューに戻るなど）" + newLine
+                    + "引数１：詳細不明（０）",
         "LS_comic": [
             "COMIC012.BIN",
             "COMIC209.BIN",
@@ -701,7 +712,7 @@ const CMD = {
     },
     "LPos": {
         "num": 34,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "OP_ANIME.BIN",
@@ -718,7 +729,7 @@ const CMD = {
     },
     "LLoopX": {
         "num": 36,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
             "SELECTSCENE.BIN",
             "TITLE_MENU.BIN"
@@ -726,7 +737,7 @@ const CMD = {
     },
     "LLoopY": {
         "num": 37,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "OP_ANIME.BIN"
@@ -734,7 +745,7 @@ const CMD = {
     },
     "LLoopZ": {
         "num": 38,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "OP_ANIME.BIN"
@@ -742,21 +753,21 @@ const CMD = {
     },
     "Angle": {
         "num": 39,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "AngleLoop": {
         "num": 40,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
             "TITLE_MENU.BIN"
         ]
     },
     "Move2": {
         "num": 41,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
@@ -767,7 +778,7 @@ const CMD = {
     },
     "PosY": {
         "num": 43,
-        "description": "",
+        "description": "【モデルバイナリ】引数１：詳細不明",
         "LS_bin": [
             "TITLE_MENU.BIN"
         ]
@@ -778,7 +789,9 @@ const CMD = {
     },
     "PlaySE": {
         "num": 45,
-        "description": "",
+        "description": "【モデルバイナリ】SEを再生する" + newLine
+                    + "引数１：SE情報インデックス" + newLine
+                    + "引数２：詳細不明（０）",
         "LS_bin": [
             "BTL_03.BIN",
             "COUNT.BIN",
@@ -799,14 +812,19 @@ const CMD = {
     },
     "SET_MT_NONE": {
         "num": 46,
-        "description": "",
+        "description": "【モデルバイナリ】詳細不明",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "SetCamPos": {
         "num": 47,
-        "description": "【LSのみ】詳細不明",
+        "description": "カメラ位置を絶対座標で設定" + newLine
+                    + "引数１：x座標" + newLine
+                    + "引数２：y座標" + newLine
+                    + "引数３：z座標" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -833,7 +851,12 @@ const CMD = {
     },
     "SetCamTarget": {
         "num": 48,
-        "description": "【LSのみ】詳細不明",
+        "description": "注視点位置を絶対座標で設定" + newLine
+                    + "引数１：x座標" + newLine
+                    + "引数２：y座標" + newLine
+                    + "引数３：z座標" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -849,9 +872,9 @@ const CMD = {
     },
     "CamMoveWait": {
         "num": 49,
-        "description": "【LSのみ】【推定】カメラの動きが終わるまで待つが" + newLine
+        "description": "カメラの動きが終わるまで待つが" + newLine
                     + "ボタンで早送りできるようにする" + newLine
-                    + "引数１：１（True）、0（False）",
+                    + "引数１：1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -1204,8 +1227,8 @@ const CMD = {
                     + "引数１：コマの番号" + newLine
                     + "引数２：x座標" + newLine
                     + "引数３：y座標" + newLine
-                    + "引数４：アニメ時間（フレーム）" + newLine
-                    + "引数５：アニメ効果の種類",
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -1875,8 +1898,8 @@ const CMD = {
                     + "引数１：コマの番号" + newLine
                     + "引数２：from Alpha" + newLine
                     + "引数３：to Alpha" + newLine
-                    + "引数４：アニメ時間（フレーム）" + newLine
-                    + "引数５：アニメ効果の種類",
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -2544,7 +2567,7 @@ const CMD = {
         "num": 53,
         "description": "コミックを待つ" + newLine
                     + "引数１：コマの番号" + newLine
-                    + "引数２：【不明】（SSでは使わない。）",
+                    + "引数２：詳細不明（１）（SSでは使わない。）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -2984,7 +3007,7 @@ const CMD = {
     },
     "SKY_DOME": {
         "num": 55,
-        "description": "",
+        "description": "【モデルバイナリ】空を設定",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ],
@@ -3015,7 +3038,7 @@ const CMD = {
     "Fill_BG": {
         "num": 56,
         "description": "画面をBGで埋める" + newLine
-                    + "引数１：１（True）、0（False）",
+                    + "引数１：1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -4324,8 +4347,8 @@ const CMD = {
     },
     "CamComtroll": {
         "num": 58,
-        "description": "スクリプトのCam設定できるようにする。" + newLine
-                    + "引数１：１（True）、0（False）",
+        "description": "スクリプトのカメラを設定できるようにする。" + newLine
+                    + "引数１：1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -4759,7 +4782,7 @@ const CMD = {
     },
     "ComicSceneStop": {
         "num": 59,
-        "description": "指定したのコマの中の動きを止める" + newLine
+        "description": "Scene_to_Comicのコマの動きを止める" + newLine
                     + "引数１：コマの番号",
         "LS_comic": [
             "COMIC000.BIN",
@@ -5382,11 +5405,11 @@ const CMD = {
     },
     "EyeMove": {
         "num": 61,
-        "description": "視点を動かす。" + newLine
+        "description": "視点を動かす" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
-                    + "引数３：アニメ時間（フレーム）" + newLine
-                    + "引数４：アニメ効果の種類",
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -5728,8 +5751,8 @@ const CMD = {
         "num": 62,
         "description": "Zoomを設定する。" + newLine
                     + "引数１：zoom倍率" + newLine
-                    + "引数２：アニメ時間（フレーム）" + newLine
-                    + "引数３：アニメ効果の種類",
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -5963,9 +5986,9 @@ const CMD = {
         "num": 63,
         "description": "BGのAlphaを設定する" + newLine
                     + "引数１：BGのAlpha設定" + newLine
-                    + "引数２：アニメ時間（フレーム）" + newLine
-                    + "引数３：アニメ効果の種類" + newLine
-                    + "引数４：【不明】（SSでは使わない。）",
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法" + newLine
+                    + "引数４：（SSで追加。未使用）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -6086,7 +6109,7 @@ const CMD = {
     },
     "StartCount": {
         "num": 65,
-        "description": "【LSのみ】5秒カウントを数える",
+        "description": "5秒カウントを数える",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC100.BIN",
@@ -6096,7 +6119,7 @@ const CMD = {
     },
     "WaitMoveEye": {
         "num": 66,
-        "description": "【LS、BS、CSのみ】EyeMoveが終わるまで待つ" + newLine
+        "description": "EyeMoveが終わるまで待つ" + newLine
                     + "引数１：１（True）、0（False：ボタンで待たずに進める）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -8783,7 +8806,7 @@ const CMD = {
     "SkipEventFlg": {
         "num": 73,
         "description": "スキップできるようにする" + newLine
-                    + "引数１：１（True）、0（False）",
+                    + "引数１：1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -9039,11 +9062,11 @@ const CMD = {
     "PlayComicSE": {
         "num": 74,
         "description": "SEを再生する" + newLine
-                    + "引数１：スクリプト内のSE番号" + newLine
-                    + "引数２：【不明】（SSでは使わない。）" + newLine
-                    + "引数３：【不明】（SSでは使わない。）" + newLine
-                    + "引数４：再生が終わるまで待つ[１（True）、0（False）]" + newLine
-                    + "引数５：0設定時、ボタンを押すとスキップする",
+                    + "引数１：スクリプト内のSEグループ番号" + newLine
+                    + "引数２：SEグループ内のインデックス番号（SSでは使わない。）" + newLine
+                    + "引数３：ループ設定[1（True）、0（False）]（SSでは使わない。）" + newLine
+                    + "引数４：再生が終わるまで待つ[1（True）、0（False）]" + newLine
+                    + "引数５：ボタンを押すとスキップする[1（True）、0（False）]",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC012.BIN",
@@ -9456,7 +9479,7 @@ const CMD = {
         "num": 75,
         "description": "SEの再生を停止する" + newLine
                     + "引数１：スクリプト内のSE番号" + newLine
-                    + "引数２：【不明】（SSでは使わない。）",
+                    + "引数２：詳細不明（０）（SSでは使わない。）",
         "BS_comic": [
             "COMIC1000.BIN",
             "COMIC1100.BIN",
@@ -9583,7 +9606,7 @@ const CMD = {
     },
     "StopComicBGM": {
         "num": 77,
-        "description": "BGMを再生を停止する" + newLine
+        "description": "BGMを停止する" + newLine
                     + "引数１：スクリプト内のBGM番号" + newLine
                     + "引数２：fadeの時間（フレーム）",
         "LS_comic": [
@@ -9688,7 +9711,7 @@ const CMD = {
         "description": "BGMのVolumeを変える" + newLine
                     + "引数１：スクリプト内のBGM番号" + newLine
                     + "引数２：Volume" + newLine
-                    + "引数３：変化する時間（フレーム）",
+                    + "引数３：変化時間（フレーム）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -10079,7 +10102,8 @@ const CMD = {
         "num": 80,
         "description": "現在のBGMのVolumeを変える" + newLine
                     + "引数１：Volume" + newLine
-                    + "引数２：変化する時間（フレーム）",
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：BGMインデックス。-1の場合、全てのBGM（BSから追加）",
         "LS_comic": [
             "COMIC001.BIN",
             "COMIC002.BIN",
@@ -10670,7 +10694,9 @@ const CMD = {
     },
     "SET_CPU_FLG": {
         "num": 81,
-        "description": "【RSまで】CPUのフラグを設定。詳細不明（SSでは使わない）",
+        "description": "詳細不明" + newLine
+                    + "引数１：CPU車両（１）" + newLine
+                    + "引数２：1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC207.BIN",
@@ -10709,15 +10735,15 @@ const CMD = {
     "SET_CPU_MODE": {
         "num": 82,
         "description": "CPUのモードを設定する" + newLine
-                    + "引数１：CPU（SSでは使わない）" + newLine
+                    + "引数１：CPU車両（１）（SSでは使わない）" + newLine
                     + "引数２：走るモード" + newLine
                     + "引数３：minLen" + newLine
                     + "引数４：maxLen" + newLine
                     + "引数５：maxSpeed" + newLine
                     + "引数６：minSpeed" + newLine
                     + "引数７：【RSまで】デフォルト速度。【SSから】ブレーキ時間" + newLine
-                    + "引数８：【不明】（SSでは使わない）" + newLine
-                    + "引数９：【不明】（SSでは使わない）",
+                    + "引数８：詳細不明（０）（SSでは使わない）" + newLine
+                    + "引数９：詳細不明（０）（SSでは使わない）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC100.BIN",
@@ -10931,7 +10957,7 @@ const CMD = {
                     + "指定距離より以上なら、指定ラベルのEND_CHK_LENGTHまで飛ぶ" + newLine
                     + "引数１：指定距離" + newLine
                     + "引数２：指定ラベル" + newLine
-                    + "引数３：指定時間",
+                    + "引数３：指定時間（フレーム）",
         "LS_comic": [
             "COMIC003.BIN",
             "COMIC013.BIN",
@@ -11835,11 +11861,11 @@ const CMD = {
     },
     "CHK_POSTION": {
         "num": 85,
-        "description": "指定時間内に引数１の条件を満たす場合、次のコマンドへ行く" + newLine
+        "description": "指定時間内に、引数１の条件を満たす場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine
                     + "引数２：指定ラベル" + newLine
-                    + "引数３：指定時間",
+                    + "引数３：指定時間（フレーム）",
         "LS_comic": [
             "COMIC402.BIN",
             "COMIC405.BIN",
@@ -12104,7 +12130,7 @@ const CMD = {
     },
     "WAIT_MOTION": {
         "num": 87,
-        "description": "【RSまで】指定の動きをした場合、次のコマンドへ行く" + newLine
+        "description": "指定の動きをした場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１【推定】" + newLine
                     + "　0（複線ドリフト）" + newLine
@@ -12198,7 +12224,7 @@ const CMD = {
         "description": "ゲームの速度を変える" + newLine
                     + "引数１：速度倍率" + newLine
                     + "引数２：変化する時間（フレーム）" + newLine
-                    + "引数３：リアルタイムで通常に戻す時間",
+                    + "引数３：通常に戻す時間（フレーム）。0以下の場合、解除するまで",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC010.BIN",
@@ -12510,14 +12536,17 @@ const CMD = {
     },
     "Set2P": {
         "num": 91,
-        "description": "",
+        "description": "【モデルバイナリ】2P設定",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "CharChk_and_Tx": {
         "num": 92,
-        "description": "",
+        "description": "【モデルバイナリ】車両の開放によって、アイコンの設定" + newLine
+                    + "引数１：車両インデックス" + newLine
+                    + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
+                    + "引数３：未開放の場合、imgサイズ情報のインデックス",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
@@ -12536,21 +12565,21 @@ const CMD = {
     },
     "ChangeColor": {
         "num": 96,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～８：詳細不明",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "SetGray": {
         "num": 97,
-        "description": "",
+        "description": "【モデルバイナリ】引数１：詳細不明",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "MoveX": {
         "num": 98,
-        "description": "【モデルバイナリ】画像のx座標を移動させる" + newLine
+        "description": "【モデルバイナリ】対象のx座標を移動させる" + newLine
                     + "引数１：移動させるx座標" + newLine
                     + "引数２：変化する時間（フレーム）" + newLine
                     + "引数３：詳細不明",
@@ -12561,7 +12590,7 @@ const CMD = {
     },
     "MoveY": {
         "num": 99,
-        "description": "【モデルバイナリ】画像のx座標を移動させる" + newLine
+        "description": "【モデルバイナリ】対象のy座標を移動させる" + newLine
                     + "引数１：移動させるy座標" + newLine
                     + "引数２：変化する時間（フレーム）" + newLine
                     + "引数３：詳細不明",
@@ -12572,21 +12601,25 @@ const CMD = {
     },
     "MoveZ": {
         "num": 100,
-        "description": "",
+        "description": "【モデルバイナリ】対象のz座標を移動させる" + newLine
+                    + "引数１：移動させるy座標" + newLine
+                    + "引数２：変化する時間（フレーム）" + newLine
+                    + "引数３：詳細不明",
         "LS_bin": [
             "CHARSEL3D.BIN"
         ]
     },
     "SetUV_X": {
         "num": 101,
-        "description": "",
+        "description": "【モデルバイナリ】引数１：詳細不明",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "RePlay": {
         "num": 102,
-        "description": "【LSのみ】詳細不明",
+        "description": "詳細不明" + newLine
+                    + "引数１：詳細不明（１）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -12598,7 +12631,9 @@ const CMD = {
     },
     "IsStart": {
         "num": 103,
-        "description": "",
+        "description": "【モデルバイナリ】バトルが始まるとANIMEを適用する" + newLine
+                    + "引数１：ANIME要素２" + newLine
+                    + "引数２：ANIME要素３",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ],
@@ -12612,7 +12647,7 @@ const CMD = {
     },
     "ShowGoal": {
         "num": 104,
-        "description": "【RSまで】ゴールの文字（FINISH）を見せる",
+        "description": "ゴールの文字（FINISH）を見せる",
         "LS_comic": [
             "COMIC012.BIN",
             "COMIC209.BIN",
@@ -12722,7 +12757,8 @@ const CMD = {
     },
     "N_ADD_OBJ": {
         "num": 107,
-        "description": "",
+        "description": "オブジェクトを追加する" + newLine
+                    + "引数１～４：詳細不明",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC300.BIN",
@@ -12744,13 +12780,13 @@ const CMD = {
             "COMIC3499.BIN"
         ],
         "SS_comic": [
-            "COMIC3997.BIN",
             "COMIC3998.BIN"
         ]
     },
     "N_POS": {
         "num": 108,
-        "description": "",
+        "description": "オブジェクトを配置する" + newLine
+                    + "引数１～４：詳細不明",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC300.BIN",
@@ -12763,7 +12799,7 @@ const CMD = {
     },
     "START_TIME_LINE": {
         "num": 109,
-        "description": "リアルタイム測定を始める",
+        "description": "ゲーム内でタイム測定を始める",
         "LS_comic": [
             "OP.BIN"
         ],
@@ -12867,7 +12903,8 @@ const CMD = {
     },
     "N_MOVE": {
         "num": 110,
-        "description": "",
+        "description": "オブジェクトを動かす" + newLine
+                    + "引数１～６：詳細不明",
         "LS_comic": [
             "COMIC318.BIN",
             "OP.BIN"
@@ -12886,7 +12923,6 @@ const CMD = {
             "COMIC3499.BIN"
         ],
         "SS_comic": [
-            "COMIC3997.BIN",
             "COMIC3998.BIN"
         ]
     },
@@ -12996,7 +13032,8 @@ const CMD = {
     },
     "N_DEL_OBJ": {
         "num": 112,
-        "description": "",
+        "description": "オブジェクトを削除する" + newLine
+                    + "引数１：オブジェクトインデックス",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC300.BIN",
@@ -13012,7 +13049,7 @@ const CMD = {
                     + "引数２：カラーR" + newLine
                     + "引数３：カラーG" + newLine
                     + "引数４：カラーB" + newLine
-                    + "引数５：変化する時間（フレーム）",
+                    + "引数５：変化時間（フレーム）",
         "LS_comic": [
             "COMIC413.BIN",
             "COMIC500.BIN",
@@ -13047,7 +13084,11 @@ const CMD = {
     },
     "N_CHANGE_ANIME": {
         "num": 114,
-        "description": "",
+        "description": "オブジェクトにANIMEを適用する" + newLine
+                    + "引数１：オブジェクトインデックス" + newLine
+                    + "引数２：ANIME要素１" + newLine
+                    + "引数３：ANIME要素２" + newLine
+                    + "引数４：ANIME要素３",
         "LS_comic": [
             "COMIC300.BIN"
         ],
@@ -13063,7 +13104,7 @@ const CMD = {
         "description": "指定車両のスピードを設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：スピード" + newLine
-                    + "引数３：変化する時間（フレーム）" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
                     + "引数４：変化方法",
         "LS_comic": [
             "COMIC200.BIN",
@@ -13198,7 +13239,8 @@ const CMD = {
     },
     "TRAIN_FLG": {
         "num": 116,
-        "description": "",
+        "description": "車輪に火花を散らす" + newLine
+                    + "引数１～４：詳細不明",
         "LS_comic": [
             "COMIC108.BIN",
             "COMIC121.BIN",
@@ -13228,7 +13270,10 @@ const CMD = {
     },
     "CHANGE_CAM_LENGTH": {
         "num": 118,
-        "description": "",
+        "description": "カメラの距離を変える" + newLine
+                    + "引数１：距離" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC010.BIN",
@@ -13262,7 +13307,10 @@ const CMD = {
     },
     "CHANGE_CAM_DIRX": {
         "num": 119,
-        "description": "",
+        "description": "カメラのx座標を変える" + newLine
+                    + "引数１：x座標に加える距離" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC010.BIN",
@@ -13296,7 +13344,10 @@ const CMD = {
     },
     "CHANGE_CAM_DIRY": {
         "num": 120,
-        "description": "",
+        "description": "カメラのy座標を変える" + newLine
+                    + "引数１：y座標に加える距離" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC010.BIN",
@@ -13387,7 +13438,8 @@ const CMD = {
     },
     "IS_TRAIN_HIT": {
         "num": 124,
-        "description": "",
+        "description": "【モデルバイナリ】車両でオブジェクトをヒットした場合" + newLine
+                    + "引数１～６：詳細不明",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -13405,7 +13457,7 @@ const CMD = {
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：レール番号" + newLine
                     + "引数３：ボーン番号" + newLine
-                    + "引数４：【SSのみ】ボーンから細かい位置調整",
+                    + "引数４：ボーンから細かい位置調整（SSから追加）",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC202.BIN",
@@ -13493,7 +13545,7 @@ const CMD = {
         "num": 126,
         "description": "指定車両を消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：１（True）、0（False）",
+                    + "引数２：1（True）、0（False）",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC202.BIN",
@@ -13642,7 +13694,7 @@ const CMD = {
     },
     "RandWAngle": {
         "num": 127,
-        "description": "",
+        "description": "【モデルバイナリ】詳細不明",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -13650,7 +13702,7 @@ const CMD = {
     },
     "RandMove": {
         "num": 128,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～６：詳細不明",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -13658,14 +13710,16 @@ const CMD = {
     },
     "ADD_OBJ": {
         "num": 129,
-        "description": "",
+        "description": "【モデルバイナリ】オブジェクトを追加する" + newLine
+                    + "引数１～６：詳細不明",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "START_COMIC": {
         "num": 130,
-        "description": "",
+        "description": "【モデルバイナリ】コミックスクリプトを読む" + newLine
+                    + "引数１：コミックスクリプト番号",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -13676,28 +13730,35 @@ const CMD = {
     },
     "SetRand3DObj": {
         "num": 131,
-        "description": "",
+        "description": "【モデルバイナリ】指定範囲内のオブジェクトをランダム1個選んで置く" + newLine
+                    + "引数１：範囲Start（オブジェクトインデックス）" + newLine
+                    + "引数２：範囲End（オブジェクトインデックス）",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "Offset3DObj": {
         "num": 132,
-        "description": "",
+        "description": "【モデルバイナリ】オブジェクトの元のインデックスから、指定数分ずらしたインデックスで配置する" + newLine
+                    + "引数１：offsetする数値",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "RandPos": {
         "num": 133,
-        "description": "",
+        "description": "【モデルバイナリ】オブジェクトをランダムに配置する" + newLine
+                    + "引数１～６：詳細不明",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "RandPlaySE": {
         "num": 134,
-        "description": "",
+        "description": "【モデルバイナリ】SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
+                    + "引数１：範囲Start（SEグループインデックス）" + newLine
+                    + "引数２：範囲End（SEグループインデックス）" + newLine
+                    + "引数３：SEグループ内のインデックス",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
@@ -13708,7 +13769,7 @@ const CMD = {
     },
     "RandAngleY": {
         "num": 136,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
@@ -13719,8 +13780,13 @@ const CMD = {
     },
     "CHK_TRAIN_STATE": {
         "num": 138,
-        "description": "",
-        "LS_comic": [
+        "description": "指定車両が指定時間内に、車両状態が引数３の条件を満たす場合、次のコマンドへ行く" + newLine
+                    + "そうではない場合、指定ラベルまで飛ぶ" + newLine
+                    + "引数１：指定ラベル" + newLine
+                    + "引数２：0（1P）、1（2P）" + newLine
+                    + "引数３：0（どの車両も脱線してない）、1（少なくとも1両以上脱線状態）" + newLine
+                   + "引数４：指定時間（フレーム）",
+        "LS_comic": [ 
             "COMIC206.BIN",
             "COMIC301.BIN",
             "COMIC716.BIN"
@@ -13734,7 +13800,8 @@ const CMD = {
     },
     "END_CHK_TRAIN_STATE": {
         "num": 139,
-        "description": "",
+        "description": "CHK_TRAIN_STATEで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC206.BIN",
             "COMIC301.BIN",
@@ -13749,9 +13816,7 @@ const CMD = {
     },
     "CHK_TRAIN_SPEED_U": {
         "num": 140,
-        "description": "指定車両のスピードが、指定時間内に" + newLine
-                    + "指定スピードより大きい場合" + newLine
-                    + "次のコマンドへ行く" + newLine
+        "description": "指定車両が指定時間内に、指定スピードより大きい場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１：指定ラベル" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
@@ -13820,9 +13885,7 @@ const CMD = {
     },
     "CHK_TRAIN_SPEED_D": {
         "num": 141,
-        "description": "指定車両のスピードが、指定時間内に" + newLine
-                    + "指定スピードより小さい場合" + newLine
-                    + "次のコマンドへ行く" + newLine
+        "description": "指定車両が指定時間内に、指定スピードより小さい場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１：指定ラベル" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
@@ -13907,42 +13970,52 @@ const CMD = {
     },
     "ChkStory_and_Tx": {
         "num": 144,
-        "description": "",
+        "description": "【モデルバイナリ】ストーリーの開放によって、画像の設定" + newLine
+                    + "引数１：ストーリーインデックス" + newLine
+                    + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
+                    + "引数３：未開放の場合、imgサイズ情報のインデックス",
         "LS_bin": [
             "STORYSEL.BIN"
         ]
     },
     "ClearStory_and_Tx": {
         "num": 145,
-        "description": "",
+        "description": "【モデルバイナリ】ストーリーのクリアによって、画像の設定" + newLine
+                    + "引数１：ストーリーインデックス" + newLine
+                    + "引数２：クリアの場合、imgサイズ情報のインデックス" + newLine
+                    + "引数３：クリアではない場合、imgサイズ情報のインデックス",
         "LS_bin": [
             "STORYSEL.BIN"
         ]
     },
     "N_L_ANGLE_X": {
         "num": 146,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～４：詳細不明",
         "LS_comic": [
             "COMIC318.BIN"
         ]
     },
     "N_L_ANGLE_Y": {
         "num": 147,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～４：詳細不明",
         "LS_comic": [
             "COMIC318.BIN"
         ]
     },
     "N_L_ANGLE_Z": {
         "num": 148,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～４：詳細不明",
         "LS_comic": [
             "COMIC318.BIN"
         ]
     },
     "Comic_Glay": {
         "num": 149,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～２：詳細不明",
         "BS_comic": [
             "COMIC1999.BIN"
         ]
@@ -13961,7 +14034,9 @@ const CMD = {
     },
     "SetComic_Blur": {
         "num": 153,
-        "description": "？",
+        "description": "コミックにぼかしを適用する（SetComic_Blur_Speedで発動）" + newLine
+                + "引数１：コマの番号（SSでは使わない）" + newLine
+                + "引数２：ぼかし数値（SSでは使わない）",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC202.BIN",
@@ -14357,9 +14432,10 @@ const CMD = {
     },
     "SetComic_Blur_Speed": {
         "num": 154,
-        "description": "？" + newLine
-                    + "引数１：？" + newLine
-                    + "引数２：変化するフレーム" + newLine
+        "description": "コミックに「ぼかしとスピード線」を入れる" + newLine
+                    + "引数１：コマの番号（SSでは使わない）" + newLine
+                    + "引数１：ぼかし数値" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化効果",
         "LS_comic": [
             "COMIC200.BIN",
@@ -14634,7 +14710,7 @@ const CMD = {
         "num": 155,
         "description": "指定車両の台車が爆発する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：【SSから】１（True）、0（False）",
+                    + "引数２：【SSから】1（True）、0（False）",
         "LS_comic": [
             "COMIC120.BIN",
             "COMIC710.BIN",
@@ -14920,7 +14996,7 @@ const CMD = {
         "description": "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
                     + "指定のポイントより少なく、最近チェックした" + newLine
                     + "インデックスと同じ場合 " + newLine
-                    + "ここで止めてポイントをチェックする" + newLine
+                    + "ここで止めて、またポイントをチェックする" + newLine
                     + "引数１：配列のインデックス" + newLine
                     + "引数２：ポイント",
         "LS_comic": [
@@ -15342,7 +15418,7 @@ const CMD = {
         "num": 163,
         "description": "指定のコマを揺らす" + newLine
                     + "引数１：コマの番号" + newLine
-                    + "引数２：１（True）、0（False）",
+                    + "引数２：1（True）、0（False）",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC202.BIN",
@@ -15674,7 +15750,7 @@ const CMD = {
     },
     "KEISUKE_COUNT": {
         "num": 168,
-        "description": "【LS、BSのみ】啓介がカウントする",
+        "description": "啓介がカウントする",
         "LS_comic": [
             "COMIC400.BIN"
         ],
@@ -15684,11 +15760,10 @@ const CMD = {
     },
     "RandPlayComicSE": {
         "num": 169,
-        "description": "【LSのみ】スクリプト内のSEのリストから" + newLine
-                    + "ランダムに選んで再生する" + newLine
-                    + "引数１：startインデックス" + newLine
-                    + "引数２：endインデックス" + newLine
-                    + "引数３：詳細不明",
+        "description": "スクリプト内のSE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
+                    + "引数１：範囲start（SEグループインデックス）" + newLine
+                    + "引数２：範囲end（SEグループインデックス）" + newLine
+                    + "引数３：SEグループ内のインデックス",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC121.BIN",
@@ -15700,7 +15775,7 @@ const CMD = {
     },
     "TITLE_MODE": {
         "num": 170,
-        "description": "",
+        "description": "タイトル画面へ",
         "BS_comic": [
             "COMIC1999.BIN"
         ],
@@ -15710,7 +15785,9 @@ const CMD = {
     },
     "GOING": {
         "num": 171,
-        "description": "",
+        "description": "指定車両を運転できるようにする" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（True）、0（False）",
         "LS_comic": [
             "COMIC302.BIN",
             "COMIC400.BIN",
@@ -15752,42 +15829,56 @@ const CMD = {
     },
     "RAND_IF": {
         "num": 172,
-        "description": "",
+        "description": "次の行へ行くか（Trueとする）、ELSE_RAND_IFまで飛ぶ。（Falseとする）" + newLine
+                    + "Trueの場合、ELSE_RAND_IFの行があればEND_RAND_IFまで飛ぶ" + newLine
+                    + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC304.BIN"
         ]
     },
     "ELSE_RAND_IF": {
         "num": 173,
-        "description": "",
+        "description": "RAND_IFのFalse判定で、指定ラベルまで飛ぶ場合、この行で止める。" + newLine
+                    + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC304.BIN"
         ]
     },
     "END_RAND_IF": {
         "num": 174,
-        "description": "",
+        "description": "RAND_IFのTrue判定で、ELSE_RAND_IFによって" + newLine
+                    + "指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC304.BIN"
         ]
     },
     "CHK_SP_BREAK": {
         "num": 175,
-        "description": "",
+        "description": "指定車両が、指定時間内に非常ブレーキを使った場合、次の行へ行く。" + newLine
+                    + "そうではない場合、指定ラベルまで飛ぶ。" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：指定時間（フレーム）" + newLine
+                    + "引数３：指定ラベル",
         "LS_comic": [
             "COMIC401.BIN"
         ]
     },
     "END_CHK_SP_BREAK": {
         "num": 176,
-        "description": "",
+        "description": "CHK_SP_BREAKで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC401.BIN"
         ]
     },
     "CHK_DRIFT": {
         "num": 177,
-        "description": "",
+        "description": "指定車両が、指定時間内にドリフトした場合、次の行へ行く。" + newLine
+                    + "そうではない場合、指定ラベルまで飛ぶ。" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：指定時間（フレーム）" + newLine
+                    + "引数３：指定ラベル",
         "LS_comic": [
             "COMIC404.BIN"
         ],
@@ -15811,7 +15902,8 @@ const CMD = {
     },
     "END_CHK_DRIFT": {
         "num": 178,
-        "description": "",
+        "description": "CHK_DRIFTで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+                    + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC404.BIN"
         ],
@@ -15835,7 +15927,7 @@ const CMD = {
     },
     "ENDING_MODE": {
         "num": 179,
-        "description": "",
+        "description": "エンディングモードにする",
         "LS_comic": [
             "COMIC500.BIN",
             "COMIC902.BIN",
@@ -15844,14 +15936,17 @@ const CMD = {
     },
     "ChkCause_and_Tx": {
         "num": 180,
-        "description": "",
+        "description": "【モデルバイナリ】コースの開放によって、画像の設定" + newLine
+                    + "引数１：二人バトル、または沿線コースのインデックス" + newLine
+                    + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
+                    + "引数３：未開放の場合、imgサイズ情報のインデックス",
         "LS_bin": [
             "CAUSESEL.BIN"
         ]
     },
     "SET_DRAW_TYPE": {
         "num": 181,
-        "description": "",
+        "description": "【モデルバイナリ】引数１：詳細不明",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -15867,7 +15962,7 @@ const CMD = {
     },
     "To_TxSize": {
         "num": 182,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -15883,7 +15978,8 @@ const CMD = {
     },
     "OPEN_CAUSE": {
         "num": 183,
-        "description": "",
+        "description": "コースを開放する" + newLine
+                    + "引数１：コースのインデックス",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC300.BIN"
@@ -15974,7 +16070,7 @@ const CMD = {
     },
     "CHK_RACE_TIME": {
         "num": 185,
-        "description": "【LSのみ】RACE_STARTから経過した時間をチェックする" + newLine
+        "description": "RACE_STARTから経過した時間をチェックする" + newLine
                     + "チェックした時間が指定時間より少ない場合" + newLine
                     + "次のコマンドへ行く、そうではない場合、END_CHK_RACE_TIMEまで飛ぶ" + newLine
                     + "引数１：指定時間",
@@ -15986,7 +16082,7 @@ const CMD = {
     },
     "END_CHK_RACE_TIME": {
         "num": 186,
-        "description": "【LSのみ】CHK_RACE_TIMEで飛ぶ場合、この行で止める",
+        "description": "CHK_RACE_TIMEで飛ぶ場合、この行で止める",
         "LS_comic": [
             "COMIC201.BIN",
             "COMIC203.BIN",
@@ -16453,9 +16549,8 @@ const CMD = {
     },
     "USO_COUNT": {
         "num": 191,
-        "description": "【BSのみ】H7001　VS　KQ21XXの" + newLine
-                    + "バトルのみ使われたコマンド。" + newLine
-                    + "１からカウントを数える",
+        "description": "１からカウントを数える" + newLine
+                    + "（H7001　VS　KQ21XXのバトルのみ使われたコマンド。）",
         "BS_comic": [
             "COMIC1500.BIN"
         ]
@@ -17051,7 +17146,7 @@ const CMD = {
     },
     "RAND_IF_AVG": {
         "num": 196,
-        "description": "【LSのみ】引数の数字分、0から始まるランダムな整数を作り" + newLine
+        "description": "引数の数字分、0から始まるランダムな整数を作り" + newLine
                     + "FROMの数字として飛ばす" + newLine
                     + "引数１：数字",
         "LS_comic": [
@@ -17065,7 +17160,7 @@ const CMD = {
     },
     "CHK_NOTCH": {
         "num": 197,
-        "description": "【LS、CSのみ】指定車両が指定時間分ノッチを維持した場合" + newLine
+        "description": "指定車両が指定時間分、ノッチを維持した場合" + newLine
                     + "引数３のFROMに飛ばす" + newLine
                     + "そうではない場合、引数４のFROMに飛ばす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -17380,7 +17475,7 @@ const CMD = {
     },
     "ONE_TRACK_DRIFT": {
         "num": 199,
-        "description": "【LSのみ】指定車両を単線ドリフトさせる" + newLine
+        "description": "指定車両を単線ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：-1(左）、0（戻し）、1（右）",
         "LS_comic": [
@@ -17389,16 +17484,16 @@ const CMD = {
     },
     "LAST_STATION": {
         "num": 200,
-        "description": "【LSのみ】詳細不明",
+        "description": "詳細不明",
         "LS_comic": [
             "COMIC207.BIN"
         ]
     },
     "OSSAN": {
         "num": 201,
-        "description": "【LSのみ】指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine
+        "description": "指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "１（True）、0（False）",
+                    + "1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -17411,7 +17506,11 @@ const CMD = {
     },
     "SET_TAIL_SCALE": {
         "num": 202,
-        "description": "",
+        "description": "デキ3のテールランプを付ける" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：詳細不明" + newLine
+                    + "引数３：詳細不明" + newLine
+                    + "引数４：変化時間（フレーム）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC009.BIN",
@@ -17431,7 +17530,8 @@ const CMD = {
     },
     "OPEN_HUTA": {
         "num": 203,
-        "description": "",
+        "description": "デキ3の蓋をオープンする" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC205.BIN",
@@ -17444,7 +17544,8 @@ const CMD = {
     },
     "SET_GN": {
         "num": 204,
-        "description": "",
+        "description": "デキ3のGN起動" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC205.BIN",
@@ -21241,7 +21342,7 @@ const CMD = {
     "START_WIPER": {
         "num": 278,
         "description": "【BS、CS】ワイパーを動かす" + newLine
-                    + "引数１：１（True）、0（False）",
+                    + "引数１：1（True）、0（False）",
         "BS_comic": [
             "COMIC1107.BIN",
             "COMIC1200.BIN"
@@ -21679,7 +21780,7 @@ const CMD = {
     "STOP_3D": {
         "num": 298,
         "description": "3Dシーンの動きを止める" + newLine
-                    + "引数１：１（True）、0（False）",
+                    + "引数１：1（True）、0（False）",
         "BS_comic": [
             "COMIC1009.BIN",
             "COMIC1020.BIN",
