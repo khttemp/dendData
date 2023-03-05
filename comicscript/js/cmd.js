@@ -12485,7 +12485,10 @@ const CMD = {
     },
     "CHANGE_CAM_TYPE": {
         "num": 90,
-        "description": "",
+        "description": "カメラタイプを変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：詳細不明" + newLine
+                    + "引数３：詳細不明",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC010.BIN",
@@ -13240,7 +13243,8 @@ const CMD = {
     "TRAIN_FLG": {
         "num": 116,
         "description": "車輪に火花を散らす" + newLine
-                    + "引数１～４：詳細不明",
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～４：詳細不明",
         "LS_comic": [
             "COMIC108.BIN",
             "COMIC121.BIN",
