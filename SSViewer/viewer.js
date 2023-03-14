@@ -50,7 +50,14 @@ window.addEventListener('load', () => {
 
         reader.addEventListener("load", () => {
             allTextList = reader.result.split("\n").map(m => m.trim());
-            readStageData();
+            try {
+                if (!readStageData()) {
+                    file.value = "";
+                }
+            } catch (error) {
+                let errorDiv = document.getElementById("errorDiv");
+                errorDiv.innerHTML = error;
+            }
         }, false);
 
         if (inputFile) {
@@ -74,15 +81,22 @@ function readStageData() {
     railList = [];
     ambList = [];
     let errorDiv = document.getElementById("errorDiv");
+    errorDiv.innerHTML = "";
+    let dataTableBody = document.getElementById("dataTableBody");
+    dataTableBody.innerHTML = "";
 
     //MdlCnt
     let index = findText("MdlCnt:");
     if (index == -1) {
         errorDiv.innerHTML = "MdlCnt:を探せません";
-        return;
+        return false;
     }
     let mdlText = allTextList[index];
     let mdlAllCnt = Number(mdlText.split("\t")[1]);
+    if (isNaN(mdlAllCnt)) {
+        errorDiv.innerHTML = "MdlCntの数字が不正です";
+        return false;
+    }
     let mdlCnt = 0;
     index++;
     while (mdlCnt < mdlAllCnt) {
@@ -94,8 +108,8 @@ function readStageData() {
 
         let mdlInfoList = mdlInfoText.split("\t");
         if (mdlInfoList.length < 5) {
-            errorDiv.innerHTML = index + "行のデータを読み込めません";
-            return;
+            errorDiv.innerHTML = "モデルデータの" + (mdlCnt + 1) + "行目を読み込めません";
+            return false;
         }
         mdlList.push(mdlInfoList.slice(0, 5));
         mdlCnt++;
@@ -106,10 +120,14 @@ function readStageData() {
     index = findText("RailCnt:");
     if (index == -1) {
         errorDiv.innerHTML = "RailCnt:を探せません";
-        return;
+        return false;
     }
     let railText = allTextList[index];
     let railAllCnt = Number(railText.split("\t")[1]);
+    if (isNaN(railAllCnt)) {
+        errorDiv.innerHTML = "RailCntの数字が不正です";
+        return false;
+    }
     let railCnt = 0;
     index++;
     while (railCnt < railAllCnt) {
@@ -121,14 +139,14 @@ function readStageData() {
 
         let railInfoList = railInfoText.split("\t");
         if (railInfoList.length < 17) {
-            errorDiv.innerHTML = index + "行のデータを読み込めません";
-            return;
+            errorDiv.innerHTML = "レールデータの" + (railCnt + 1) + "行目を読み込めません";
+            return false;
         }
         let railDataNum = Number(railInfoList[16]);
         let readEndIndex = 17 + railDataNum * 4;
         if (railInfoList.length < readEndIndex) {
-            errorDiv.innerHTML = index + "行のデータを読み込めません";
-            return;
+            errorDiv.innerHTML = "レールデータの" + (railCnt + 1) + "行目を読み込めません";
+            return false;
         }
 
         if (maxRailData < railDataNum) {
@@ -144,16 +162,20 @@ function readStageData() {
     index = findText("AmbCnt:");
     if (index == -1) {
         errorDiv.innerHTML = "AmbCnt:を探せません";
-        return;
+        return false;
     }
     let ambText = allTextList[index];
     let ambAllCnt = Number(ambText.split("\t")[1]);
+    if (isNaN(ambAllCnt)) {
+        errorDiv.innerHTML = "AmbCntの数字が不正です";
+        return false;
+    }
     let ambCnt = 0;
     index++;
     while (ambCnt < ambAllCnt) {
         if (index >= allTextList.length) {
-            errorDiv.innerHTML = "設定したAmbCntが実のデータより大きいです";
-            return;
+            errorDiv.innerHTML = "テキストの終端に到達しました。設定したAmbCntが実のデータより大きいです";
+            return false;
         }
         let ambInfoText = allTextList[index];
         if (ambInfoText == "" || ambInfoText.indexOf("//") == 0) {
@@ -163,14 +185,14 @@ function readStageData() {
 
         let ambInfoList = ambInfoText.split("\t");
         if (ambInfoList.length < 4) {
-            errorDiv.innerHTML = index + "行のデータを読み込めません";
-            return;
+            errorDiv.innerHTML = "AMBデータの" + (ambCnt + 1) + "行目を読み込めません";
+            return false;
         }
         let ambDataNum = Number(ambInfoList[3]);
         let readEndIndex = 4 + ambDataNum * 13;
         if (ambInfoList.length < readEndIndex) {
-            errorDiv.innerHTML = index + "行のデータを読み込めません";
-            return;
+            errorDiv.innerHTML = "AMBデータの" + (ambCnt + 1) + "行目を読み込めません";
+            return false;
         }
 
         ambList.push(ambInfoList.slice(0, readEndIndex));
@@ -187,6 +209,7 @@ function readStageData() {
 
     select.selectedIndex = 0;
     selectList(0);
+    return true;
 }
 
 function toHex(number, mode) {
