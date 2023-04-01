@@ -1,50 +1,47 @@
-var allText;
-
-function readTextFile(file){
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function (){
-        if (rawFile.readyState === 4){
-            if (rawFile.status === 200 || rawFile.status == 0){
-                allText = rawFile.responseText;
-            }
-        }
-    };
-    rawFile.send(null);
-}
-
 function createTd(table, data) {
     let tr = document.createElement("tr");
     table.appendChild(tr);
-    let imageFlag = true;
-    if (data.length > 2 && data[2] == "なし") {
-        imageFlag = false;
-    }
     for (let i = 0; i < data.length; i++) {
         let td = document.createElement("td");
         tr.appendChild(td);
-        td.innerHTML = data[i];
+        if (i == 1) {
+            td.innerHTML = data[i].replaceAll("|", "<br>");
+        } else {
+            td.innerHTML = data[i];
+        }
+
         if (i == 0) {
             let imageTd = document.createElement("td");
             tr.appendChild(imageTd);
-            if (imageFlag) {
-                let name = data[i].split(".smf")[0];
-                imageTd.innerHTML = "<a href='./image/" + name + ".png' target='_blank' rel='noopener noreferrer'><img src='./image/" + name + ".png' width='200'></a>";
-            }
+            let name = data[i].split(".smf")[0];
+            let imgPath = "./image/" + name + ".png";
+            $.ajax({
+                url: imgPath,
+                type: "HEAD",
+                success: function() {
+                    imageTd.innerHTML = `<a href="${imgPath}" target="_blank" rel="noopener noreferrer"><img src="${imgPath}" width="200"></a>`;
+                }
+            });
         }
     }
 }
 
-function init(value) {
-    readTextFile(value);
-    let rows = allText.split("\n");
-    let modelTable = document.getElementById("modelTable");
-    for (let i = 0; i < rows.length; i++) {
-        let data = rows[i].split("\t");
-        createTd(modelTable, data);
-    }
-}
-
-window.onload = function() {
-    init("./model.txt");
-}
+$(document).ready(function() {
+    $.ajax({
+        url: "./model.csv",
+        dataType: "text",
+        success: function(data) {
+            allText = data;
+        }
+    }).done(function(data) {
+        let rows = data.split("\n");
+        rows.splice(0, 1);
+        let modelTable = document.getElementById("modelTable");
+        for (let i = 0; i < rows.length; i++) {
+            let data = rows[i].split(",");
+            if (data.length >= 2) {
+                createTd(modelTable, data);
+            }
+        }
+    });
+});
