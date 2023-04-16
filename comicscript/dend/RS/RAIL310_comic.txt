@@ -1,0 +1,1149 @@
+comicTitle	3900	0	-1
+imgList
+seList
+bgmList
+DRAW_UI	0.0
+CamComtroll	0.0
+TO_RAIL	0.0	27.0	0.0
+TO_RAIL	1.0	26.0	107.0
+WaitFrame	30.0
+BtnWait
+CamComtroll	1.0
+SET_CAMPOINT_2P2C	0.0	5.0	-5.0	5.0	0.0	1.0	8.0	-5.0	5.0	0.0	0.0
+CAM_POINT_PER	0.0	0.0	0.0
+CAM_TARGET_PER	0.0	0.0	0.0
+SET_CAM_POINT_LENGTH	0.0	15.0	0.0	0.0
+SET_CAM_OFFSET	0.0	15.0	8.0	0.0	7.0	0.0
+Scene_to_Comic	0.0	1280.0	720.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	255.0	255.0	0.0	0.0
+SetComic_Blur	0.0	0.0
+SetComic_Blur_Speed	0.0	0.0	0.0	0.0
+BtnWait
+TRAIN_SPEED	0.0	45.0	60.0	2.0
+TRAIN_SPEED	1.0	49.0	30.0	2.0
+WaitFrame	30.0
+TRAIN_SPEED	1.0	45.0	30.0	2.0
+WaitFrame	30.0
+BtnWait
+SET_CAM_OFFSET	0.0	-9.0	9.0	0.0	7.0	180.0
+SET_CAM_POINT_LENGTH	0.0	19.0	7.0	180.0
+SET_CAM_TARGET_OFFSET	0.0	6.5	-2.0	-3.0	7.0	180.0
+WaitFrame	90.0
+KATARIN_RUN	0.0	-45.0	90.0	2.0
+KATARIN_RUN	1.0	-45.0	90.0	2.0
+WaitFrame	60.0
+BtnWait
+KATARIN_RUN	0.0	0.0	60.0	1.0
+KATARIN_RUN	1.0	0.0	60.0	1.0
+ComicSceneStop	0.0
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+CamComtroll	0.0
+TRAIN_SPEED	0.0	0.0	60.0	2.0
+TRAIN_SPEED	1.0	0.0	60.0	2.0
+WaitFrame	60.0
+DRAW_UI	1.0
+ComicEnd
+comicTitle	3901	0	-1
+imgList	RS_Takumi.png	dend_staff_01.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-800.0	40.0	0.0	0.0
+ComicPos	0.0	-270.0	40.0	30.0	2.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	800.0	40.0	0.0	0.0
+ComicPos	1.0	-270.0	40.0	30.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-900.0	260.0	0.0	0.0
+ComicPos	2.0	-300.0	260.0	30.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+ComicPos	0.0	-390.0	40.0	180.0	0.0
+ComicPos	1.0	-430.0	40.0	180.0	0.0
+ComicPos	2.0	-200.0	260.0	180.0	0.0
+WaitFrame	180.0
+ComicPos	0.0	880.0	40.0	30.0	2.0
+ComicPos	1.0	-880.0	40.0	30.0	2.0
+ComicPos	2.0	900.0	260.0	30.0	2.0
+ComicAlpha	0.0	128.0	0.0	15.0	0.0
+ComicAlpha	1.0	255.0	0.0	15.0	0.0
+ComicAlpha	2.0	255.0	0.0	15.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3902	0	-1
+imgList	wataru.png	dend_staff_02.png	kazumi.png	dend_staff_03.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-415.0	100.0	0.0	0.0
+ComicPos	0.0	-180.0	100.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SetComic	1.0	2.0
+ComicPos	1.0	450.0	-200.0	0.0	0.0
+ComicPos	1.0	320.0	-130.0	480.0	0.0
+ComicAlpha	1.0	0.0	128.0	30.0	0.0
+SetComic	2.0	0.0
+ComicPos	2.0	-415.0	100.0	0.0	0.0
+ComicPos	2.0	-180.0	100.0	360.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SetComic	3.0	2.0
+ComicPos	3.0	450.0	-200.0	0.0	0.0
+ComicPos	3.0	320.0	-130.0	360.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SET_COMIC_COLOR	1.0	0.0	0.0	0.0	0.0	0.0
+SetComic	4.0	1.0
+ComicPos	4.0	-380.0	265.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+SetComic	5.0	3.0
+ComicPos	5.0	260.0	265.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	128.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+ComicAlpha	3.0	255.0	0.0	30.0	0.0
+ComicAlpha	4.0	255.0	0.0	30.0	0.0
+ComicAlpha	5.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3903	0	-1
+imgList	RS_Keisuke.png	dend_staff_04.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-800.0	20.0	0.0	0.0
+ComicPos	0.0	-270.0	20.0	30.0	2.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	800.0	20.0	0.0	0.0
+ComicPos	1.0	-270.0	20.0	30.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-900.0	260.0	0.0	0.0
+ComicPos	2.0	-300.0	260.0	30.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+ComicPos	0.0	-390.0	20.0	180.0	0.0
+ComicPos	1.0	-430.0	20.0	180.0	0.0
+ComicPos	2.0	-200.0	260.0	180.0	0.0
+WaitFrame	180.0
+ComicPos	0.0	880.0	20.0	30.0	2.0
+ComicPos	1.0	-880.0	20.0	30.0	2.0
+ComicPos	2.0	900.0	260.0	30.0	2.0
+ComicAlpha	0.0	128.0	0.0	15.0	0.0
+ComicAlpha	1.0	255.0	0.0	15.0	0.0
+ComicAlpha	2.0	255.0	0.0	15.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3904	0	-1
+imgList	kyoichi.png	dend_staff_05.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	270.0	45.0	0.0	0.0
+ComicPos	0.0	380.0	45.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	270.0	45.0	0.0	0.0
+ComicPos	1.0	380.0	45.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	265.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3905	0	-1
+imgList	kai1P.png	dend_staff_06.png	kai2P.png	dend_staff_26.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	200.0	63.0	0.0	0.0
+ComicPos	0.0	380.0	63.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SetComic	1.0	2.0
+ComicPos	1.0	-200.0	135.0	0.0	0.0
+ComicPos	1.0	-385.0	135.0	480.0	0.0
+ComicAlpha	1.0	0.0	128.0	30.0	0.0
+SetComic	2.0	0.0
+ComicPos	2.0	200.0	63.0	0.0	0.0
+ComicPos	2.0	380.0	63.0	360.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SetComic	3.0	2.0
+ComicPos	3.0	-200.0	135.0	0.0	0.0
+ComicPos	3.0	-385.0	135.0	360.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SET_COMIC_COLOR	1.0	0.0	0.0	0.0	0.0	0.0
+SetComic	4.0	1.0
+ComicPos	4.0	240.0	265.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+SetComic	5.0	3.0
+ComicPos	5.0	-410.0	295.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	128.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+ComicAlpha	3.0	255.0	0.0	30.0	0.0
+ComicAlpha	4.0	255.0	0.0	30.0	0.0
+ComicAlpha	5.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3906	0	-1
+imgList	miki2P.png	dend_staff_07.png	saiga.png	okakin.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-190.0	51.0	0.0	0.0
+ComicPos	0.0	-270.0	51.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-190.0	51.0	0.0	0.0
+ComicPos	1.0	-270.0	51.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-100.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SetComic	3.0	2.0
+ComicPos	3.0	-500.0	134.0	0.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+SetComic	4.0	3.0
+ComicPos	4.0	130.0	160.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+ComicAlpha	3.0	255.0	0.0	30.0	0.0
+ComicAlpha	4.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3907	0	-1
+imgList	mako_d3.png	mako_name.png	sayuki_d3.png	sayuki_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-320.0	72.0	0.0	0.0
+ComicPos	0.0	-450.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SetComic	1.0	2.0
+ComicPos	1.0	320.0	72.0	0.0	0.0
+ComicPos	1.0	450.0	72.0	480.0	0.0
+ComicAlpha	1.0	0.0	128.0	30.0	0.0
+SetComic	2.0	0.0
+ComicPos	2.0	-320.0	72.0	0.0	0.0
+ComicPos	2.0	-450.0	72.0	360.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+SetComic	3.0	2.0
+ComicPos	3.0	320.0	72.0	0.0	0.0
+ComicPos	3.0	450.0	72.0	360.0	0.0
+ComicAlpha	3.0	0.0	255.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SET_COMIC_COLOR	1.0	0.0	0.0	0.0	0.0	0.0
+SetComic	4.0	1.0
+ComicPos	4.0	-380.0	265.0	0.0	0.0
+ComicAlpha	4.0	0.0	255.0	30.0	0.0
+SetComic	5.0	3.0
+ComicPos	5.0	350.0	265.0	0.0	0.0
+ComicAlpha	5.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	128.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+ComicAlpha	3.0	255.0	0.0	30.0	0.0
+ComicAlpha	4.0	255.0	0.0	30.0	0.0
+ComicAlpha	5.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3908	0	-1
+imgList	kenta_D3.png	kenta_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-230.0	72.0	0.0	0.0
+ComicPos	0.0	-390.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-230.0	72.0	0.0	0.0
+ComicPos	1.0	-390.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-326.0	260.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	320.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3909	0	-1
+imgList	nakazato_D3.png	nakazato_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-320.0	72.0	0.0	0.0
+ComicPos	0.0	-450.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-320.0	72.0	0.0	0.0
+ComicPos	1.0	-450.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-320.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3910	0	-1
+imgList	ryosuke_D3.png	ryosuke_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	290.0	72.0	0.0	0.0
+ComicPos	0.0	390.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	290.0	72.0	0.0	0.0
+ComicPos	1.0	390.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	380.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3911	0	-1
+imgList	seiji_D3.png	seiji_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-440.0	30.0	0.0	0.0
+ComicPos	0.0	-300.0	-35.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-440.0	30.0	0.0	0.0
+ComicPos	1.0	-300.0	-35.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-350.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3912	0	-1
+imgList	singo_D3.png	singo_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	230.0	72.0	0.0	0.0
+ComicPos	0.0	390.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	230.0	72.0	0.0	0.0
+ComicPos	1.0	390.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	380.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3913	0	-1
+imgList	takumisan_D3.png	takumisan_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-450.0	72.0	0.0	0.0
+ComicPos	0.0	390.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-450.0	72.0	0.0	0.0
+ComicPos	1.0	390.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	0.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3914	0	-1
+imgList	hukumen_D3.png	hukumen_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-360.0	72.0	0.0	0.0
+ComicPos	0.0	-470.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-360.0	72.0	0.0	0.0
+ComicPos	1.0	-470.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-310.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3915	0	-1
+imgList	bunta_D3.png	bunta_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	230.0	106.0	0.0	0.0
+ComicPos	0.0	390.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	230.0	106.0	0.0	0.0
+ComicPos	1.0	390.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	380.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3916	0	-1
+imgList	tukamoto_D3.png	tukamoto_name.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-230.0	72.0	0.0	0.0
+ComicPos	0.0	-390.0	72.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-230.0	72.0	0.0	0.0
+ComicPos	1.0	-390.0	72.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-380.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3917	0	-1
+imgList	RS_Suetsugu.png	RS_N_Sue.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	800.0	30.0	0.0	0.0
+ComicPos	0.0	270.0	30.0	30.0	2.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-800.0	30.0	0.0	0.0
+ComicPos	1.0	270.0	30.0	30.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	900.0	260.0	0.0	0.0
+ComicPos	2.0	300.0	260.0	30.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+ComicPos	0.0	390.0	30.0	180.0	0.0
+ComicPos	1.0	430.0	30.0	180.0	0.0
+ComicPos	2.0	200.0	260.0	180.0	0.0
+WaitFrame	180.0
+ComicPos	0.0	-880.0	30.0	30.0	2.0
+ComicPos	1.0	880.0	30.0	30.0	2.0
+ComicPos	2.0	-900.0	260.0	30.0	2.0
+ComicAlpha	0.0	128.0	0.0	15.0	0.0
+ComicAlpha	1.0	255.0	0.0	15.0	0.0
+ComicAlpha	2.0	255.0	0.0	15.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3918	0	-1
+imgList	RS_Kawai.png	RS_N_Kawai.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	800.0	40.0	0.0	0.0
+ComicPos	0.0	270.0	40.0	30.0	2.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-800.0	40.0	0.0	0.0
+ComicPos	1.0	270.0	40.0	30.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	900.0	260.0	0.0	0.0
+ComicPos	2.0	300.0	260.0	30.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+ComicPos	0.0	390.0	40.0	180.0	0.0
+ComicPos	1.0	430.0	40.0	180.0	0.0
+ComicPos	2.0	200.0	260.0	180.0	0.0
+WaitFrame	180.0
+ComicPos	0.0	-880.0	40.0	30.0	2.0
+ComicPos	1.0	880.0	40.0	30.0	2.0
+ComicPos	2.0	-900.0	260.0	30.0	2.0
+ComicAlpha	0.0	128.0	0.0	15.0	0.0
+ComicAlpha	1.0	255.0	0.0	15.0	0.0
+ComicAlpha	2.0	255.0	0.0	15.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3919	0	-1
+imgList	RS_Ninomiya.png	RS_N_Nino.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-800.0	23.0	0.0	0.0
+ComicPos	0.0	-270.0	23.0	30.0	2.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	800.0	23.0	0.0	0.0
+ComicPos	1.0	-270.0	23.0	30.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-900.0	260.0	0.0	0.0
+ComicPos	2.0	-300.0	260.0	30.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+ComicPos	0.0	-390.0	23.0	180.0	0.0
+ComicPos	1.0	-430.0	23.0	180.0	0.0
+ComicPos	2.0	-200.0	260.0	180.0	0.0
+WaitFrame	180.0
+ComicPos	0.0	880.0	23.0	30.0	2.0
+ComicPos	1.0	-880.0	23.0	30.0	2.0
+ComicPos	2.0	900.0	260.0	30.0	2.0
+ComicAlpha	0.0	128.0	0.0	15.0	0.0
+ComicAlpha	1.0	255.0	0.0	15.0	0.0
+ComicAlpha	2.0	255.0	0.0	15.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3920	0	-1
+imgList	RS_Sakai.png	RS_N_Sakai.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	800.0	23.0	0.0	0.0
+ComicPos	0.0	270.0	23.0	30.0	2.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	-800.0	23.0	0.0	0.0
+ComicPos	1.0	270.0	23.0	30.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	900.0	260.0	0.0	0.0
+ComicPos	2.0	300.0	260.0	30.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+ComicPos	0.0	390.0	23.0	180.0	0.0
+ComicPos	1.0	430.0	23.0	180.0	0.0
+ComicPos	2.0	200.0	260.0	180.0	0.0
+WaitFrame	180.0
+ComicPos	0.0	-880.0	23.0	30.0	2.0
+ComicPos	1.0	880.0	23.0	30.0	2.0
+ComicPos	2.0	-900.0	260.0	30.0	2.0
+ComicAlpha	0.0	128.0	0.0	15.0	0.0
+ComicAlpha	1.0	255.0	0.0	15.0	0.0
+ComicAlpha	2.0	255.0	0.0	15.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3921	0	-1
+imgList	RS_Tachi.png	RS_N_Tachi.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	-800.0	20.0	0.0	0.0
+ComicPos	0.0	-270.0	20.0	30.0	2.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	800.0	20.0	0.0	0.0
+ComicPos	1.0	-270.0	20.0	30.0	2.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	-900.0	260.0	0.0	0.0
+ComicPos	2.0	-300.0	260.0	30.0	2.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	30.0
+ComicPos	0.0	-390.0	20.0	180.0	0.0
+ComicPos	1.0	-430.0	20.0	180.0	0.0
+ComicPos	2.0	-200.0	260.0	180.0	0.0
+WaitFrame	180.0
+ComicPos	0.0	880.0	20.0	30.0	2.0
+ComicPos	1.0	-880.0	20.0	30.0	2.0
+ComicPos	2.0	900.0	260.0	30.0	2.0
+ComicAlpha	0.0	128.0	0.0	15.0	0.0
+ComicAlpha	1.0	255.0	0.0	15.0	0.0
+ComicAlpha	2.0	255.0	0.0	15.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3922	0	-1
+imgList	RS_Nazo.png	RS_N_Nazo.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	460.0	97.0	0.0	0.0
+ComicPos	0.0	320.0	97.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	460.0	97.0	0.0	0.0
+ComicPos	1.0	320.0	97.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	250.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3923	0	-1
+imgList	RS_Nazo.png	RS_N_Itsuki.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	460.0	97.0	0.0	0.0
+ComicPos	0.0	320.0	97.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	460.0	97.0	0.0	0.0
+ComicPos	1.0	320.0	97.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	250.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3924	0	-1
+imgList	RS_Nazo.png	RS_N_Ike.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	460.0	97.0	0.0	0.0
+ComicPos	0.0	320.0	97.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	460.0	97.0	0.0	0.0
+ComicPos	1.0	320.0	97.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	250.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3925	0	-1
+imgList	RS_Nazo.png	RS_N_Ike.png
+seList
+bgmList
+HideALLComic
+SetComic	0.0	0.0
+ComicPos	0.0	460.0	97.0	0.0	0.0
+ComicPos	0.0	320.0	97.0	480.0	0.0
+ComicAlpha	0.0	0.0	128.0	30.0	0.0
+SET_COMIC_COLOR	0.0	0.0	0.0	0.0	0.0	0.0
+SetComic	1.0	0.0
+ComicPos	1.0	460.0	97.0	0.0	0.0
+ComicPos	1.0	320.0	97.0	360.0	0.0
+ComicAlpha	1.0	0.0	255.0	30.0	0.0
+SetComic	2.0	1.0
+ComicPos	2.0	250.0	265.0	0.0	0.0
+ComicAlpha	2.0	0.0	255.0	30.0	0.0
+WaitFrame	330.0
+ComicAlpha	0.0	128.0	0.0	30.0	0.0
+ComicAlpha	1.0	255.0	0.0	30.0	0.0
+ComicAlpha	2.0	255.0	0.0	30.0	0.0
+WaitFrame	30.0
+HideALLComic
+ComicEnd
+comicTitle	3926	0	-1
+imgList
+seList
+bgmList
+CHK_TRAIN_TYPE	0.0	0.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3901.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	1.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3917.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	2.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3903.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	3.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3918.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	4.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3919.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	5.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3920.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	6.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3921.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	11.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3902.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	12.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3916.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	13.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3904.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	14.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3905.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	15.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3906.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	16.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3909.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	17.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3912.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	18.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3910.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	19.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3907.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	20.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3908.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	21.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3911.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	22.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3914.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	23.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3935.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	24.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3915.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	25.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3913.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	0.0	26.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3912.0
+GOTO	300.0
+FROM	200.0
+FROM	300.0
+ComicEnd
+comicTitle	3927	0	-1
+imgList
+seList
+bgmList
+End_Comic	3901.0
+End_Comic	3902.0
+End_Comic	3903.0
+End_Comic	3904.0
+End_Comic	3905.0
+End_Comic	3906.0
+End_Comic	3907.0
+End_Comic	3908.0
+End_Comic	3909.0
+End_Comic	3910.0
+End_Comic	3911.0
+End_Comic	3912.0
+End_Comic	3913.0
+End_Comic	3914.0
+End_Comic	3915.0
+End_Comic	3916.0
+End_Comic	3917.0
+End_Comic	3918.0
+End_Comic	3919.0
+End_Comic	3920.0
+End_Comic	3921.0
+End_Comic	3922.0
+End_Comic	3923.0
+End_Comic	3924.0
+End_Comic	3925.0
+End_Comic	3935.0
+ComicEnd
+comicTitle	3928	0	-1
+imgList
+seList
+bgmList
+CHK_TRAIN_TYPE	1.0	0.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3901.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	1.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3917.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	2.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3903.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	3.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3918.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	4.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3919.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	5.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3920.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	6.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3921.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	11.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3902.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	12.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3916.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	13.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3904.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	14.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3905.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	15.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3906.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	16.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3909.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	17.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3912.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	18.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3910.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	19.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3907.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	20.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3908.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	21.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3911.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	22.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3914.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	23.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3935.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	24.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3915.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	25.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3913.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	1.0	26.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3912.0
+GOTO	300.0
+FROM	200.0
+FROM	300.0
+ComicEnd
+comicTitle	3929	0	-1
+imgList
+seList
+bgmList
+CHK_TRAIN_TYPE	2.0	0.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3901.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	1.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3917.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	2.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3903.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	3.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3918.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	4.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3919.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	5.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3920.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	6.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3921.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	11.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3902.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	12.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3916.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	13.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3904.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	14.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3905.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	15.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3906.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	16.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3909.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	17.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3912.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	18.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3910.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	19.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3907.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	20.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3908.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	21.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3911.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	22.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3914.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	23.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3935.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	24.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3915.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	25.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3913.0
+GOTO	300.0
+FROM	200.0
+CHK_TRAIN_TYPE	2.0	26.0	100.0	200.0
+FROM	100.0
+GOTO_SCRIPT	3912.0
+GOTO	300.0
+FROM	200.0
+FROM	300.0
+ComicEnd

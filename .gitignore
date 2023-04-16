@@ -1,1 +1,9 @@
-make*/
+__pycache__
+bin/
+makeCmdJson/*.json
+makeCmdJson/*.ini
+makeComicTxt/*/*_comic.txt
+makeComicTxt/*/*.ini
+mdl/make
+makeGraph/*/*.pdf
+makeGraph/*/*.ini

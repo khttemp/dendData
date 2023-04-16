@@ -1,0 +1,30 @@
+comicTitle	902	0	0
+imgList	musium_logo.tga
+seList
+bgmList
+Stage_BGM_Vol	100.0	0.0
+STAGE_BGM
+ENDING_MODE
+TRAIN_FLG	0.0	1.0	0.0	0.0
+TRAIN_SPEED	0.0	60.0	360.0	0.0
+CHANGE_CAM_TYPE	0.0	8.0	0.0
+WaitFrame	180.0
+SetComic	0.0	0.0
+ComicPos	0.0	0.0	0.0	0.0	0.0
+ComicAlpha	0.0	0.0	255.0	60.0	0.0
+WaitFrame	210.0
+ComicAlpha	0.0	255.0	0.0	60.0	0.0
+WaitFrame	120.0
+BtnWait
+Stage_BGM_Vol	0.0	60.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd
+comicTitle	901	3	16
+imgList
+seList
+bgmList
+Stage_BGM_Vol	0.0	60.0
+CHANGE_SCENE	0.0
+WaitFrame	120.0
+ComicEnd

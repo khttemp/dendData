@@ -26912,8 +26912,47 @@ const CMD = {
             "COMIC4234.BIN"
         ]
     },
-    "SCRIPT_CMD_MAX": {
+    "RESET_BLOCK": {
         "num": 586,
+        "description": ""
+    },
+    "IS_BTLMODE_END_CHK": {
+        "num": 587,
+        "description": "",
+        "SS_cmn": [
+            "comic2992.bin"
+        ]
+    },
+    "SHOW_WIN_TRAIN": {
+        "num": 588,
+        "description": "",
+        "SS_cmn": [
+            "comic2994.bin"
+        ]
+    },
+    "NO_RUN": {
+        "num": 589,
+        "description": "",
+        "SS_cmn": [
+            "comic46041.bin"
+        ]
+    },
+    "COMIC_TO_BTL": {
+        "num": 590,
+        "description": "",
+        "SS_cmn": [
+            "comic46035.bin"
+        ]
+    },
+    "SET_MSGWND_INDEX": {
+        "num": 591,
+        "description": "",
+        "SS_cmn": [
+            "comic46067.bin"
+        ]
+    },
+    "SCRIPT_CMD_MAX": {
+        "num": 592,
         "description": ""
     }
 }

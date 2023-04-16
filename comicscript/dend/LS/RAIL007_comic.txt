@@ -29,7 +29,7 @@ ComicPos	1.0	0.0	0.0	0.0	0.0
 ComicAlpha	1.0	0.0	255.0	60.0	0.0
 PlayComicSE	0.0	0.0	0.0	1.0	0.0
 ComicWait	1.0	1.0
-BtnWait	
+BtnWait
 SetComic	3.0	1.0
 ComicPos	3.0	340.0	300.0	0.0	0.0
 ComicAlpha	3.0	0.0	0.0	0.0	0.0
@@ -43,7 +43,7 @@ PlayComicSE	1.0	0.0	0.0	0.0	0.0
 ComicWait	3.0	1.0
 ComicAlpha	2.0	0.0	255.0	60.0	0.0
 ComicWait	2.0	1.0
-BtnWait	
+BtnWait
 SetComic	4.0	3.0
 ComicPos	4.0	-136.0	496.0	0.0	0.0
 ComicAlpha	4.0	0.0	255.0	60.0	0.0
@@ -54,7 +54,7 @@ PlayComicSE	4.0	0.0	0.0	0.0	0.0
 SetComic	5.0	6.0
 ComicPos	5.0	-123.0	650.0	0.0	0.0
 ComicWait	4.0	1.0
-BtnWait	
+BtnWait
 SLEEP_TRAIN	2.0	1.0
 SLEEP_TRAIN	0.0	0.0
 EyeMove	0.0	1400.0	60.0	7.0
@@ -68,35 +68,35 @@ CHANGE_CAM_DIRY	100.0	450.0	7.0
 CHANGE_CAM_DIRX	-5.0	0.0	0.0
 CHANGE_CAM_DIRX	-2.0	225.0	2.0
 BG_Alpha	0.0	60.0	0.0	0.0
-BG_Wait	
+BG_Wait
 PlayComicSE	6.0	0.0	0.0	0.0	0.0
 Fill_BG	0.0
 WaitFrame	165.0
 CHANGE_CAM_DIRX	-7.0	225.0	1.0
 StopComicBGM	0.0	60.0
 WaitFrame	120.0
-HideALLComic	
+HideALLComic
 RePlay	1.0
-StartCount	
+StartCount
 WaitFrame	150.0
 CamComtroll	0.0
 CHANGE_CAM_TYPE	-1.0	-1.0	-1.0
 SET_CPU_FLG	1.0	0.0
 SET_CPU_MODE	1.0	1.0	700.0	800.0	170.0	140.0	110.0	0.0	0.0
-ComicEnd	
-SkipEventPoint	
+ComicEnd
+SkipEventPoint
 SLEEP_TRAIN	2.0	1.0
 SLEEP_TRAIN	0.0	0.0
-HideALLComic	
+HideALLComic
 SkipEventFlg	0.0
 StopComicBGM	0.0	30.0
 CamComtroll	0.0
 Fill_BG	0.0
 RePlay	1.0
-StartCount	
+StartCount
 SET_CPU_FLG	1.0	0.0
 SET_CPU_MODE	1.0	1.0	700.0	800.0	170.0	140.0	110.0	0.0	0.0
-ComicEnd	
+ComicEnd
 comicTitle	601	0	15
 imgList	FACE498.bmp	ryotaku.bmp
 seList	P57_00.wav	P57_01.wav	P57_0_01.wav	P57_0_02.wav	masa_suten.wav	masa_dri.wav	masa_ds.wav	masa_kaisatsu.wav	masa_keitai.wav	masa_kusatta.wav	masa_meiwaku.wav	masa_ranobe.wav	masa_saka.wav	masa_sukima.wav	masa_sui.wav	masa_ini.wav	masa_inemuri.wav	masa_nodri.wav	VO0529.wav	TURBO.wav
@@ -201,7 +201,7 @@ WaitFrame	60.0
 ComicPos	1.0	0.0	0.0	30.0	2.0
 COMIC_SCALE	1.0	1.0	1.0	30.0	2.0
 WaitFrame	30.0
-HideALLComic	
+HideALLComic
 Fill_BG	0.0
 FTV_Play	205.0
 FTV_Wait	205.0
@@ -289,7 +289,7 @@ WaitFrame	10.0
 FTV_Play	223.0
 RandPlayComicSE	5.0	17.0	0.0
 FTV_Wait	223.0
-WaitRandPlaySE	
+WaitRandPlaySE
 FTV_End	223.0
 Stage_BGM_Vol	100.0	30.0
 WaitFrame	120.0
@@ -321,7 +321,7 @@ WaitFrame	30.0
 ComicPos	1.0	0.0	0.0	30.0	2.0
 COMIC_SCALE	1.0	1.0	1.0	30.0	2.0
 WaitFrame	30.0
-HideALLComic	
+HideALLComic
 Fill_BG	0.0
 FTV_Play	229.0
 FTV_Wait	229.0
@@ -342,7 +342,7 @@ SET_TAIL_SCALE	0.0	1.0	1.0	90.0
 RandPlayComicSE	19.0	19.0	0.0
 FROM	2000.0
 Stage_BGM_Vol	100.0	30.0
-ComicEnd	
+ComicEnd
 comicTitle	605	3	0
 imgList	yamamoto.bmp	hirai.bmp	omaega.bmp	yamamoto2.bmp
 seList	VO0526.wav	VO0527.wav	VO0528.wav
@@ -354,7 +354,7 @@ CHK_WIN_TRAIN	0.0	0.0
 STORY_CLEAR	5.0
 STORY_OPEN	6.0
 CHAR_OPEN	8.0
-SAVE_GAME	
+SAVE_GAME
 CHANGE_SPEED	0.1	15.0	-1.0
 WaitFrame	10.0
 CHANGE_SPEED	1.0	30.0	-1.0
@@ -368,9 +368,9 @@ Fill_BG	1.0
 BG_Alpha	0.0	0.0	0.0	-1.0
 BG_Alpha	255.0	30.0	0.0	-1.0
 PlayComicSE	0.0	0.0	0.0	1.0	0.0
-BG_Wait	
+BG_Wait
 SkipEventFlg	1.0
-BtnWait	
+BtnWait
 Stage_BGM_Vol	0.0	30.0
 EyeMove	0.0	480.0	30.0	2.0
 SetComic	1.0	1.0
@@ -379,24 +379,24 @@ ComicAlpha	1.0	0.0	255.0	15.0	0.0
 ComicWait	1.0	1.0
 PlayComicBGM	0.0	1.0	65.0
 PlayComicSE	1.0	0.0	0.0	1.0	0.0
-BtnWait	
+BtnWait
 EyeMove	-1000.0	480.0	60.0	7.0
 WaitMoveEye	0.0
-HideALLComic	
+HideALLComic
 EyeMove	0.0	0.0	0.0	0.0
 SetComic	2.0	2.0
 ComicPos	2.0	0.0	0.0	0.0	0.0
 ComicAlpha	2.0	0.0	255.0	60.0	0.0
 PlayComicSE	2.0	0.0	0.0	1.0	0.0
 ComicWait	2.0	1.0
-BtnWait	
+BtnWait
 StopComicBGM	0.0	60.0
 CHANGE_SCENE	0.0
 WaitFrame	120.0
-ComicEnd	
+ComicEnd
 END_CHK_WINTRAIN	0.0
 SkipEventFlg	0.0
-ShowGoal	
+ShowGoal
 CHANGE_SPEED	0.1	15.0	-1.0
 WaitFrame	10.0
 CHANGE_SPEED	1.0	30.0	-1.0
@@ -405,11 +405,11 @@ Stage_BGM_Vol	0.0	60.0
 StopComicBGM	0.0	60.0
 CHANGE_SCENE	0.0
 WaitFrame	120.0
-ComicEnd	
-SkipEventPoint	
+ComicEnd
+SkipEventPoint
 SkipEventFlg	0.0
 Stage_BGM_Vol	0.0	60.0
 StopComicBGM	0.0	60.0
 CHANGE_SCENE	0.0
 WaitFrame	120.0
-ComicEnd	
+ComicEnd
