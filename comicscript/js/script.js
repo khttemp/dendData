@@ -282,7 +282,7 @@ angular.module('myApp', ['myModule'])
             }
         }
         readTextFile("./dend/LS/RAIL002_comic.txt");
-        $scope.obj = $scope.railList[0];
+        $scope.obj = $scope.railList[1];
 
         function setProperty(comicNum, cmdList, cmd, idx){
             if (idx == 0) {
