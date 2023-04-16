@@ -21,10 +21,10 @@
 ./dend/RS/RAIL302_comic.txt
 ./dend/RS/RAIL303_comic.txt
 ./dend/RS/RAIL304_comic.txt
-./dend/SS/hx200(ver118)_comic.txt
-./dend/SS/e233(ver118)_comic.txt
-./dend/SS/tq5050(ver118)_comic.txt
-./dend/SS/tq5000(ver125)_comic.txt
-./dend/SS/tq300(ver125)_comic.txt
-./dend/SS/tq8500(ver107)_comic.txt
-./dend/SS/tq8500＿last(ver107)_comic.txt
+./dend/SS/hx200(ver129)_comic.txt
+./dend/SS/e233(ver129)_comic.txt
+./dend/SS/tq5050(ver129)_comic.txt
+./dend/SS/tq5000(ver129)_comic.txt
+./dend/SS/tq300(ver129)_comic.txt
+./dend/SS/tq8500(ver129)_comic.txt
+./dend/SS/tq8500＿last(ver129)_comic.txt
