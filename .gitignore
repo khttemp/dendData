@@ -7,3 +7,4 @@ makeComicTxt/*/*.ini
 mdl/make
 makeGraph/*/*.pdf
 makeGraph/*/*.ini
+*.bat

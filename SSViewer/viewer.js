@@ -406,6 +406,11 @@ function selectList(idx, flag = true) {
                                 td.style.backgroundColor = "#FE9A3E";
                             }
                         }
+                        if (idx % 4 == 1 || idx % 4 == 3) {
+                            if (Number(list[idx]) >= railList.length) {
+                                td.style.backgroundColor = "red";
+                            }
+                        }
                         td.innerHTML = element;
                         break;
                 }
