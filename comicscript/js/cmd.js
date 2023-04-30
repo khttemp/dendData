@@ -21769,7 +21769,8 @@ const CMD = {
     },
     "TX_2_TRAIN": {
         "num": 292,
-        "description": "引数１～５：詳細不明",
+        "description": "詳細不明" + newLine
+                    + "引数１～５：詳細不明",
         "BS_comic": [
             "COMIC1991.BIN",
             "COMIC1992.BIN",
@@ -23383,7 +23384,8 @@ const CMD = {
     },
     "CNG_TRAIN_NO_MAT_COL": {
         "num": 328,
-        "description": "引数１～７：詳細不明",
+        "description": "詳細不明" + newLine
+                    + "引数１～７：詳細不明",
         "BS_comic": [
             "COMIC1401.BIN"
         ]
@@ -23407,7 +23409,7 @@ const CMD = {
     "IS_NO_DRAMA": {
         "num": 332,
         "description": "ドラマチックモードではない場合、引数１のFROMに" + newLine
-                    + "ドラマチックモードの場合、引数２のFROMに飛ぶ" + newLine
+                    + "合う場合、引数２のFROMに飛ぶ" + newLine
                     + "引数１：FROMの数字" + newLine
                     + "引数２：FROMの数字",
         "BS_comic": [
@@ -23447,7 +23449,8 @@ const CMD = {
     },
     "CNG_TRAIN_NO_MAT_RGBA": {
         "num": 333,
-        "description": "引数１～８：詳細不明",
+        "description": "詳細不明" + newLine
+                    + "引数１～８：詳細不明",
         "BS_comic": [
             "COMIC1996.BIN"
         ]
@@ -23462,7 +23465,9 @@ const CMD = {
     },
     "IB_LI_SET_UPDATE_FLG": {
         "num": 336,
-        "description": "",
+        "description": "【モデルバイナリ】モデルインデックスのLI設定のフラグを変更する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：1（True）、0（False）",
         "CS_bin": [
             "H2000_00.BIN",
             "H2800_00.BIN",
@@ -23528,7 +23533,7 @@ const CMD = {
     },
     "PTCL_RAND_ANGLE": {
         "num": 342,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～８：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23549,7 +23554,7 @@ const CMD = {
     },
     "PTCL_RAND_ALPHA": {
         "num": 344,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23566,7 +23571,7 @@ const CMD = {
     },
     "PTCL_RAND_SCALL": {
         "num": 345,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23583,7 +23588,7 @@ const CMD = {
     },
     "IB_ADD_PTCL": {
         "num": 346,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23600,7 +23605,7 @@ const CMD = {
     },
     "PTCL_RAND_TONE_COLOR": {
         "num": 347,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～４：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23617,7 +23622,7 @@ const CMD = {
     },
     "IS_ALPHA_END": {
         "num": 348,
-        "description": "",
+        "description": "【モデルバイナリ】引数１：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23634,7 +23639,7 @@ const CMD = {
     },
     "PTCL_L_POS": {
         "num": 349,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23651,7 +23656,7 @@ const CMD = {
     },
     "PTCL_RAND_L_POS": {
         "num": 350,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～９：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -23668,7 +23673,7 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_R_INTERLIST": {
         "num": 351,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -23682,7 +23687,7 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_R_INTERLIST": {
         "num": 352,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -23692,7 +23697,7 @@ const CMD = {
     },
     "SET_MAT_COLOR_R": {
         "num": 353,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -23706,7 +23711,7 @@ const CMD = {
     },
     "SET_MAT_COLOR_G": {
         "num": 354,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -23720,7 +23725,7 @@ const CMD = {
     },
     "SET_MAT_COLOR_B": {
         "num": 355,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "KOUSATEN.BIN"
@@ -23732,14 +23737,14 @@ const CMD = {
     },
     "SET_MAT_COLOR_LOOP": {
         "num": 356,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "CS_bin": [
             "KOUSATEN.BIN"
         ]
     },
     "SET_MAT_EMISSIVE_R": {
         "num": 357,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -23749,7 +23754,7 @@ const CMD = {
     },
     "SET_MAT_EMISSIVE_G": {
         "num": 358,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -23767,7 +23772,7 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_G_INTERLIST": {
         "num": 361,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -23781,7 +23786,7 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_G_INTERLIST": {
         "num": 362,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -23791,7 +23796,7 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_B_INTERLIST": {
         "num": 363,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -23805,7 +23810,7 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_B_INTERLIST": {
         "num": 364,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -23815,7 +23820,7 @@ const CMD = {
     },
     "CREATE_UV_MOVE_Y": {
         "num": 365,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -23841,7 +23846,7 @@ const CMD = {
     },
     "SET_UV_MOVE_Y": {
         "num": 366,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -23867,7 +23872,7 @@ const CMD = {
     },
     "SET_UV_LOOP_Y": {
         "num": 367,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -23892,7 +23897,7 @@ const CMD = {
     },
     "INDEX_RAND_ROT_X": {
         "num": 368,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -23907,7 +23912,7 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Y": {
         "num": 369,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -23926,7 +23931,7 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Z": {
         "num": 370,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -23941,7 +23946,7 @@ const CMD = {
     },
     "INDEX_RAND_POS_X": {
         "num": 371,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "RS_bin": [
             "CLASH_MEI_KASENCHU.BIN",
             "MEI.BIN",
@@ -23952,7 +23957,7 @@ const CMD = {
     },
     "INDEX_RAND_POS_Y": {
         "num": 372,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -23967,7 +23972,7 @@ const CMD = {
     },
     "INDEX_RAND_POS_Z": {
         "num": 373,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "RS_bin": [
             "CLASH_MEI_KASENCHU.BIN",
             "MEI.BIN",
@@ -23978,7 +23983,7 @@ const CMD = {
     },
     "RAND_SHOW_MESH": {
         "num": 374,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -23988,7 +23993,7 @@ const CMD = {
     },
     "INDEX_RAND_SCALL": {
         "num": 375,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "D3_1BOOK.BIN",
@@ -24005,7 +24010,7 @@ const CMD = {
     },
     "ADD_CHILD_OBJ": {
         "num": 376,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～４：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -24021,7 +24026,7 @@ const CMD = {
     },
     "ADD_OBJ_INDEX": {
         "num": 377,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
             "AMB_LIGHT.BIN",
             "JR2000_02.BIN",
@@ -24035,7 +24040,9 @@ const CMD = {
     },
     "GAS_TARBIN": {
         "num": 378,
-        "description": "",
+        "description": "車両にガスタービンがある場合、動かす" + newLine
+                    + "SSで車両がデキ3の場合、GNを動かす" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
             "COMIC2998.BIN"
@@ -24058,7 +24065,8 @@ const CMD = {
     },
     "ENGINE_START": {
         "num": 379,
-        "description": "",
+        "description": "車両が気動車の場合、エンジンを動かす" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
             "COMIC2998.BIN",
@@ -24096,7 +24104,9 @@ const CMD = {
     },
     "CHANGE_CHILDOBJ_ANIME": {
         "num": 380,
-        "description": "",
+        "description": "車両の子オブジェクトのANIMEを変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～５：詳細不明",
         "CS_comic": [
             "COMIC2997.BIN",
             "COMIC2998.BIN"
@@ -24115,7 +24125,7 @@ const CMD = {
     },
     "IB_SET_W_MT": {
         "num": 381,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "AMB_LANDBRIDGH.BIN",
             "AMB_LIGHT.BIN",
@@ -24141,7 +24151,14 @@ const CMD = {
     },
     "CHK_OBJ_PARAM": {
         "num": 382,
-        "description": "",
+        "description": "【モデルバイナリ】車両の状態によって条件が合えば、引数３のFROMに" + newLine
+                    + "条件が合わなければ、引数４のFROMに飛ぶ" + newLine
+                    + "引数１" + newLine
+                    + "　0（指定車両モデルのインデックス位置）" + newLine
+                    + "　1（車両カラーインデックス位置）" + newLine
+                    + "引数２：インデックス値" + newLine
+                    + "引数３：FROM数字" + newLine
+                    + "引数４：FROM数字",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "D3_1BOOK.BIN",
@@ -24210,7 +24227,13 @@ const CMD = {
     },
     "CNG_MT_LIGHT": {
         "num": 385,
-        "description": "",
+        "description": "【モデルバイナリ】メッシュのマテリアルのDIFFを変える" + newLine
+                    + "引数１：メッシュNo" + newLine
+                    + "引数２：そのメッシュのマテリアルNo" + newLine
+                    + "引数３：DIFF_R" + newLine
+                    + "引数４：DIFF_G" + newLine
+                    + "引数５：DIFF_B" + newLine
+                    + "引数６：DIFF_A",
         "CS_bin": [
             "H2000_00.BIN",
             "H2800_00.BIN",
@@ -24268,7 +24291,7 @@ const CMD = {
     },
     "ADD_OBJ_INDEX2": {
         "num": 386,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "CS_bin": [
             "AMB_LANDBRIDGH.BIN",
             "AMB_NK_ROAD_L.BIN"
@@ -24285,7 +24308,7 @@ const CMD = {
     },
     "CREATE_MAT_ALPHA_INTERLIST": {
         "num": 388,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
@@ -24303,7 +24326,7 @@ const CMD = {
     },
     "SET_MAT_ALPHA": {
         "num": 389,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
@@ -24321,7 +24344,7 @@ const CMD = {
     },
     "RESTART_MESH_LIST": {
         "num": 390,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
@@ -24339,14 +24362,16 @@ const CMD = {
     },
     "RAIL_ANIME_CHANGE": {
         "num": 391,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～３：詳細不明",
         "CS_comic": [
             "COMIC2300.BIN"
         ]
     },
     "STOP_COMIC_SE_ALL": {
         "num": 392,
-        "description": "",
+        "description": "全てのSEを消す" + newLine
+                    + "引数１：フェードアウトするフレーム時間（SSでは使わない）",
         "CS_comic": [
             "COMIC2001.BIN",
             "COMIC2101.BIN",
@@ -24521,7 +24546,9 @@ const CMD = {
     },
     "HURIKO": {
         "num": 393,
-        "description": "",
+        "description": "指定車両の振り子機能を操作する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：マイナス（左）、普通（0）、プラス（右）",
         "CS_comic": [
             "COMIC2308.BIN",
             "COMIC2326.BIN",
@@ -24532,14 +24559,17 @@ const CMD = {
     },
     "FTV_PLAY_AND_PREV": {
         "num": 394,
-        "description": "",
+        "description": "引数２に続いて引数１のFVTを再生する" + newLine
+                    + "引数１：FVT番号" + newLine
+                    + "引数２：FVT番号",
         "CS_comic": [
             "COMIC2309.BIN"
         ]
     },
     "FTV_END_INHERIT": {
         "num": 395,
-        "description": "",
+        "description": "【推定】FTV_PLAY_AND_PREVをするためのコマンド" + newLine
+                    + "引数１：FVT番号",
         "CS_comic": [
             "COMIC2309.BIN"
         ],
@@ -24549,7 +24579,8 @@ const CMD = {
     },
     "STATION_NAME_PRIORITY": {
         "num": 396,
-        "description": "",
+        "description": "駅名表示のフラグを操作する" + newLine
+                    + "引数１：1（True）、0（False）(SSでは使わない)",
         "CS_comic": [
             "COMIC2200.BIN",
             "COMIC2209.BIN",
@@ -24576,7 +24607,9 @@ const CMD = {
     },
     "ALL_FIT": {
         "num": 397,
-        "description": "",
+        "description": "指定車両を傾かないようにする" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（True）、0（False）",
         "CS_comic": [
             "COMIC2100.BIN",
             "COMIC2210.BIN",
@@ -24627,7 +24660,9 @@ const CMD = {
     },
     "SWAP_TX": {
         "num": 398,
-        "description": "",
+        "description": "【モデルバイナリ】テクスチャーを変えるインデックスを用意する" + newLine
+                    + "引数１：用意するインデックス" + newLine
+                    + "引数２：テクスチャーファイル",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "D3_1BOOK.BIN",
@@ -24702,7 +24737,10 @@ const CMD = {
     },
     "CNG_TX": {
         "num": 399,
-        "description": "",
+        "description": "【モデルバイナリ】SWAP_TXでマテリアルのテクスチャーを変える" + newLine
+                    + "引数１：SWAP_TXのインデックス" + newLine
+                    + "引数２：メッシュNo" + newLine
+                    + "引数３：そのメッシュのマテリアルNo",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "D3_1BOOK.BIN",
@@ -24777,7 +24815,11 @@ const CMD = {
     },
     "CHK_CAUSE": {
         "num": 400,
-        "description": "",
+        "description": "【モデルバイナリ】選択したコースが引数１と一致する場合、引数２のFROMに" + newLine
+                    + "一致しない場合、引数３のFROMに飛ぶ" + newLine
+                    + "引数１：コース番号" + newLine
+                    + "引数２：FROM数字" + newLine
+                    + "引数３：FROM数字",
         "CS_bin": [
             "H2000_00.BIN",
             "H2000_01.BIN",
@@ -24851,7 +24893,9 @@ const CMD = {
     },
     "CNG_ANIME": {
         "num": 401,
-        "description": "",
+        "description": "【モデルバイナリ】ANIMEを実行する" + newLine
+                    + "引数１：ANIME要素２" + newLine
+                    + "引数２：ANIME要素３",
         "CS_bin": [
             "H2000_00.BIN",
             "H2000_01.BIN",
@@ -24936,7 +24980,10 @@ const CMD = {
     },
     "CHK_OUHUKU": {
         "num": 402,
-        "description": "",
+        "description": "【モデルバイナリ】往復状態の場合引数１のFROMに" + newLine
+                    + "そうではない場合、引数２のFROMに飛ぶ" + newLine
+                    + "引数１：FROM数字" + newLine
+                    + "引数２：FROM数字",
         "CS_bin": [
             "H2000_00.BIN",
             "H2000_01.BIN",
@@ -24973,7 +25020,9 @@ const CMD = {
     },
     "SET_TRAIN_PTCL_AREA": {
         "num": 403,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～３：詳細不明",
         "CS_comic": [
             "COMIC2300.BIN",
             "COMIC2301.BIN",
@@ -24983,7 +25032,9 @@ const CMD = {
     },
     "WAIT_DOSAN_LENGTH": {
         "num": 404,
-        "description": "",
+        "description": "土讃線を待つコマンド" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～３：詳細不明",
         "CS_comic": [
             "COMIC2318.BIN",
             "COMIC2320.BIN",
@@ -24994,7 +25045,8 @@ const CMD = {
     },
     "END_DOSAN_LENGTH": {
         "num": 405,
-        "description": "",
+        "description": "WAIT_DOSAN_LENGTHの待ち時間が終わった場合、この行で止める" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2318.BIN",
             "COMIC2333.BIN"
@@ -25002,7 +25054,9 @@ const CMD = {
     },
     "DOSANSEN": {
         "num": 406,
-        "description": "",
+        "description": "土讃線する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：詳細不明",
         "CS_comic": [
             "COMIC2318.BIN",
             "COMIC2319.BIN",
@@ -25013,7 +25067,7 @@ const CMD = {
     },
     "MESH_INDEX_SE_UV_ANIME_FLG": {
         "num": 407,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -25027,14 +25081,17 @@ const CMD = {
     },
     "WEATHER": {
         "num": 408,
-        "description": "",
+        "description": "【モデルバイナリ】詳細不明",
         "CS_bin": [
             "HQ_TK.BIN"
         ]
     },
     "TRAIN_DIR": {
         "num": 409,
-        "description": "",
+        "description": "【CS、RS】指定車両を推進運転するように方向を変える" + newLine
+                    + "【SS】指定車両を折り返し運転するように方向を変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（デフォルト方向）、-1（逆方向）",
         "CS_comic": [
             "COMIC2400.BIN",
             "COMIC2410.BIN",
@@ -25073,7 +25130,11 @@ const CMD = {
     },
     "IS_USE_CHAR": {
         "num": 410,
-        "description": "",
+        "description": "【モデルバイナリ】引数１の車両を使える場合、引数２のFROM数字へ" + newLine
+                    + "使えない場合、引数３のFROM数字へ飛ぶ" + newLine
+                    + "引数１：車両インデックス" + newLine
+                    + "引数２：FROM数字" + newLine
+                    + "引数３：FROM数字",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
         ],
@@ -25083,7 +25144,7 @@ const CMD = {
     },
     "QUICK_SAVE_EVENT": {
         "num": 411,
-        "description": "",
+        "description": "引数１：詳細不明",
         "CS_comic": [
             "COMIC2011.BIN",
             "COMIC2303.BIN",
@@ -25103,14 +25164,16 @@ const CMD = {
     },
     "NONE_GOAL": {
         "num": 412,
-        "description": "",
+        "description": "NONE_GOALのフラグを設定する" + newLine
+                    + "引数：1（True）、0（False）",
         "SS_comic": [
             "COMIC41044.BIN"
         ]
     },
     "ENGINE_STOP": {
         "num": 413,
-        "description": "",
+        "description": "車両が気動車の場合、エンジンを止める" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2333.BIN"
         ],
@@ -25120,7 +25183,10 @@ const CMD = {
     },
     "IS_BTL_MODE": {
         "num": 414,
-        "description": "",
+        "description": "バトルモードの場合、引数１のFROMに" + newLine
+                    + "そうではない場合、引数２のFROMに飛ぶ" + newLine
+                    + "引数１：FROMの数字" + newLine
+                    + "引数２：FROMの数字",
         "CS_comic": [
             "COMIC2990.BIN",
             "COMIC2100.BIN",
@@ -25144,7 +25210,10 @@ const CMD = {
     },
     "IS_FREE_MODE": {
         "num": 415,
-        "description": "",
+        "description": "試運転モードの場合、引数１のFROMに" + newLine
+                    + "そうではない場合、引数２のFROMに飛ぶ" + newLine
+                    + "引数１：FROMの数字" + newLine
+                    + "引数２：FROMの数字",
         "CS_comic": [
             "COMIC2990.BIN"
         ],
@@ -25157,7 +25226,9 @@ const CMD = {
     },
     "FIRST_OBJ_SET_ANIME_SCENE": {
         "num": 416,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～４：詳細不明",
         "CS_comic": [
             "COMIC2011.BIN",
             "COMIC2336.BIN"
@@ -25165,7 +25236,7 @@ const CMD = {
     },
     "G_HIDE_MESH": {
         "num": 417,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
         ],
@@ -25175,7 +25246,7 @@ const CMD = {
     },
     "G_SHOW_MESH": {
         "num": 418,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
         ],
@@ -25185,7 +25256,8 @@ const CMD = {
     },
     "STOP_WIPER": {
         "num": 419,
-        "description": "",
+        "description": "ワイパーを止める" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2429.BIN",
             "COMIC2430.BIN",
@@ -25198,14 +25270,18 @@ const CMD = {
     },
     "TRAIN_ANIME_CHANGE": {
         "num": 420,
-        "description": "",
+        "description": "【モデルバイナリ】車両のANIMEを変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：メッシュNo" + newLine
+                    + "引数３：ANIME要素２" + newLine
+                    + "引数４：ANIME要素３",
         "CS_comic": [
             "COMIC2100.BIN"
         ]
     },
     "MESH_INDEX_UV_RESTRT": {
         "num": 421,
-        "description": "",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
             "H8200_00.BIN",
             "JR2000.BIN"
@@ -25216,7 +25292,8 @@ const CMD = {
     },
     "SET_COMIC_COLOR": {
         "num": 422,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～６：詳細不明",
         "RS_comic": [
             "COMIC3901.BIN",
             "COMIC3902.BIN",
@@ -25249,7 +25326,13 @@ const CMD = {
     },
     "CHK_OUTRUN_CNT": {
         "num": 423,
-        "description": "",
+        "description": "指定車両の今まで脱線した数を数えて" + newLine
+                    + "指定数より以下の場合、引数３のFROMへ" + newLine
+                    + "超える場合、引数４のFROMへ飛ぶ" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：脱線数" + newLine
+                    + "引数３：FROM数字" + newLine
+                    + "引数４：FROM数字",
         "CS_comic": [
             "COMIC2010.BIN",
             "COMIC2105.BIN",
@@ -25262,7 +25345,8 @@ const CMD = {
     },
     "ADD_CPU_LEN_OUTRUN": {
         "num": 425,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～３：詳細不明",
         "CS_comic": [
             "COMIC2008.BIN",
             "COMIC2009.BIN",
@@ -25279,7 +25363,8 @@ const CMD = {
     },
     "ADD_CPU_SPEED_D_AND_NOTCH": {
         "num": 426,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～３：詳細不明",
         "CS_comic": [
             "COMIC2008.BIN",
             "COMIC2009.BIN",
@@ -25296,14 +25381,22 @@ const CMD = {
     },
     "CHK_HIT_CNT": {
         "num": 427,
-        "description": "",
+        "description": "指定車両の今までHITした数を数えて" + newLine
+                    + "指定数より以下の場合、引数３のFROMへ" + newLine
+                    + "超える場合、引数４のFROMへ飛ぶ" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：HIT数" + newLine
+                    + "引数３：FROM数字" + newLine
+                    + "引数４：FROM数字",
         "CS_comic": [
             "COMIC2103.BIN"
         ]
     },
     "TOP_SPEED_HOSYO": {
         "num": 428,
-        "description": "",
+        "description": "CPUのmaxSpeed要素を指定速度に変更する" + newLine
+                    + "引数１：CPU(1)" + newLine
+                    + "引数２：指定速度",
         "CS_comic": [
             "COMIC2008.BIN",
             "COMIC2009.BIN",
@@ -25320,7 +25413,7 @@ const CMD = {
     },
     "SET_ROOT_BLOCK": {
         "num": 429,
-        "description": "",
+        "description": "詳細不明",
         "CS_comic": [
             "COMIC2200.BIN",
             "COMIC2400.BIN"
@@ -25328,14 +25421,16 @@ const CMD = {
     },
     "RIFT": {
         "num": 430,
-        "description": "",
+        "description": "指定車両をパワーリフトする" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2403.BIN"
         ]
     },
     "COLLISION": {
         "num": 431,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～２：詳細不明",
         "CS_comic": [
             "COMIC2410.BIN",
             "COMIC2411.BIN"
@@ -25343,7 +25438,9 @@ const CMD = {
     },
     "DIR_VIEW_CHANGE": {
         "num": 432,
-        "description": "",
+        "description": "指定車両の先頭車番と後尾車番を入れ替える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（デフォルト）、-1（入れ替え）",
         "CS_comic": [
             "COMIC2410.BIN",
             "COMIC2411.BIN",
@@ -25353,14 +25450,21 @@ const CMD = {
     },
     "CHK_RAIL_NO": {
         "num": 433,
-        "description": "",
+        "description": "指定車両がどのレールにいるかによって、FROM分岐処理する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：現在0レールの場合、飛ぶFROM数字" + newLine
+                    + "引数３：現在100レールの場合、飛ぶFROM数字" + newLine
+                    + "引数４：現在200レールの場合、飛ぶFROM数字" + newLine
+                    + "引数５：現在300レールの場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2411.BIN"
         ]
     },
     "TRACK_CHANGE": {
         "num": 434,
-        "description": "",
+        "description": "指定車両の台車を変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：0（標準軌）、1（狭軌）",
         "CS_comic": [
             "COMIC2412.BIN",
             "COMIC2433.BIN",
@@ -25369,7 +25473,12 @@ const CMD = {
     },
     "CHK_LENGTH_DIR": {
         "num": 435,
-        "description": "",
+        "description": "推進運転対応の距離測定コマンド【RSにはバグあり】" + newLine
+                    + "引数１：指定距離" + newLine
+                    + "引数２：指定時間（フレーム）" + newLine
+                    + "引数３～４：詳細不明" + newLine
+                    + "引数５：指定時間内に指定距離を満たした場合、飛ぶFROM数字" + newLine
+                    + "引数６：指定時間内に指定距離を満たせなかった場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2436.BIN",
             "COMIC2439.BIN",
@@ -25379,7 +25488,12 @@ const CMD = {
     },
     "CHK_POS_DIR": {
         "num": 436,
-        "description": "",
+        "description": "推進運転対応の位置測定コマンド【RSにはバグあり】" + newLine
+                    + "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine
+                    + "引数２：指定時間（フレーム）" + newLine
+                    + "引数３～４：詳細不明" + newLine
+                    + "引数５：指定時間内に指定距離を満たした場合、飛ぶFROM数字" + newLine
+                    + "引数６：指定時間内に指定距離を満たせなかった場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2439.BIN",
             "COMIC2441.BIN"
@@ -25387,7 +25501,8 @@ const CMD = {
     },
     "TRUE_CLASH": {
         "num": 437,
-        "description": "",
+        "description": "CPUが脱線しやすく、回復し難くなる" + newLine
+                    + "引数１：1（True）、0（False）",
         "CS_comic": [
             "COMIC2441.BIN",
             "COMIC2442.BIN"
