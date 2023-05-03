@@ -17016,9 +17016,8 @@ const CMD = {
     },
     "CHK_TRAIN_TYPE": {
         "num": 195,
-        "description": "指定車両が車両インデックスと同じ場合、" + newLine
-                    + "引数３のFROMに飛ばす" + newLine
-                    + "そうではない場合、引数４のFROMに飛ばす" + newLine
+        "description": "指定車両が車両インデックスと同じ場合、引数３のFROMへ" + newLine
+                    + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：車両インデックス" + newLine
                     + "引数３：FROMの数字" + newLine
@@ -17164,9 +17163,8 @@ const CMD = {
     },
     "CHK_NOTCH": {
         "num": 197,
-        "description": "指定車両が指定時間分、ノッチを維持した場合" + newLine
-                    + "引数３のFROMに飛ばす" + newLine
-                    + "そうではない場合、引数４のFROMに飛ばす" + newLine
+        "description": "指定車両が指定時間分、ノッチを維持した場合、引数３のFROMへ" + newLine
+                    + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
                     + "引数３：FROMの数字" + newLine
@@ -23408,8 +23406,8 @@ const CMD = {
     },
     "IS_NO_DRAMA": {
         "num": 332,
-        "description": "ドラマチックモードではない場合、引数１のFROMに" + newLine
-                    + "合う場合、引数２のFROMに飛ぶ" + newLine
+        "description": "ドラマチックモードではない場合、引数１のFROMへ" + newLine
+                    + "合う場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROMの数字" + newLine
                     + "引数２：FROMの数字",
         "BS_comic": [
@@ -24151,8 +24149,8 @@ const CMD = {
     },
     "CHK_OBJ_PARAM": {
         "num": 382,
-        "description": "【モデルバイナリ】車両の状態によって条件が合えば、引数３のFROMに" + newLine
-                    + "条件が合わなければ、引数４のFROMに飛ぶ" + newLine
+        "description": "【モデルバイナリ】車両の状態によって条件が合えば、引数３のFROMへ" + newLine
+                    + "条件が合わなければ、引数４のFROMへ飛ぶ" + newLine
                     + "引数１" + newLine
                     + "　0（指定車両モデルのインデックス位置）" + newLine
                     + "　1（車両カラーインデックス位置）" + newLine
@@ -24815,8 +24813,8 @@ const CMD = {
     },
     "CHK_CAUSE": {
         "num": 400,
-        "description": "【モデルバイナリ】選択したコースが引数１と一致する場合、引数２のFROMに" + newLine
-                    + "一致しない場合、引数３のFROMに飛ぶ" + newLine
+        "description": "【モデルバイナリ】選択したコースが引数１と一致する場合、引数２のFROMへ" + newLine
+                    + "一致しない場合、引数３のFROMへ飛ぶ" + newLine
                     + "引数１：コース番号" + newLine
                     + "引数２：FROM数字" + newLine
                     + "引数３：FROM数字",
@@ -24980,8 +24978,8 @@ const CMD = {
     },
     "CHK_OUHUKU": {
         "num": 402,
-        "description": "【モデルバイナリ】往復状態の場合引数１のFROMに" + newLine
-                    + "そうではない場合、引数２のFROMに飛ぶ" + newLine
+        "description": "【モデルバイナリ】往復状態の場合引数１のFROMへ" + newLine
+                    + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROM数字" + newLine
                     + "引数２：FROM数字",
         "CS_bin": [
@@ -25183,8 +25181,8 @@ const CMD = {
     },
     "IS_BTL_MODE": {
         "num": 414,
-        "description": "バトルモードの場合、引数１のFROMに" + newLine
-                    + "そうではない場合、引数２のFROMに飛ぶ" + newLine
+        "description": "バトルモードの場合、引数１のFROMへ" + newLine
+                    + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROMの数字" + newLine
                     + "引数２：FROMの数字",
         "CS_comic": [
@@ -25210,8 +25208,8 @@ const CMD = {
     },
     "IS_FREE_MODE": {
         "num": 415,
-        "description": "試運転モードの場合、引数１のFROMに" + newLine
-                    + "そうではない場合、引数２のFROMに飛ぶ" + newLine
+        "description": "試運転モードの場合、引数１のFROMへ" + newLine
+                    + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROMの数字" + newLine
                     + "引数２：FROMの数字",
         "CS_comic": [
@@ -25510,7 +25508,11 @@ const CMD = {
     },
     "KATARIN_RUN": {
         "num": 438,
-        "description": "",
+        "description": "指定車両を指定角度で右片輪走行させる" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：指定角度。【プラス（上）、マイナス（下）】" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3323.BIN",
@@ -25525,7 +25527,9 @@ const CMD = {
     },
     "DRAW_UI": {
         "num": 439,
-        "description": "",
+        "description": "UIを設定する" + newLine
+                    + "引数１：0（隠す）、1（表示）" + newLine
+                    + "引数２：変化時間【SSのみ】",
         "RS_comic": [
             "COMIC3900.BIN"
         ],
@@ -25552,7 +25556,10 @@ const CMD = {
     },
     "STOP_SCRIPT_BGM": {
         "num": 440,
-        "description": "",
+        "description": "指定スクリプトで再生しているBGMを止める" + newLine
+                    + "引数１：スクリプト番号" + newLine
+                    + "引数２：そのスクリプトのBGM番号" + newLine
+                    + "引数３：fade時間（フレーム）",
         "RS_comic": [
             "COMIC3010.BIN",
             "COMIC3407.BIN"
@@ -25596,7 +25603,9 @@ const CMD = {
     },
     "SET_STATION_NO": {
         "num": 441,
-        "description": "",
+        "description": "初期に表示させる駅を決める" + newLine
+                    + "引数１：0（1P）、1（2P）【SSでは読み込まない】" + newLine
+                    + "引数２：駅インデックス",
         "RS_comic": [
             "COMIC3000.BIN",
             "COMIC3010.BIN",
@@ -25614,21 +25623,24 @@ const CMD = {
     },
     "AMB_ANIME": {
         "num": 443,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１～４：詳細不明",
         "RS_comic": [
             "COMIC3029.BIN"
         ]
     },
     "ONE_DRIFT_FALSE": {
         "num": 444,
-        "description": "",
+        "description": "詳細不明" + newLine
+                    + "引数１：詳細不明",
         "RS_comic": [
             "COMIC3058.BIN"
         ]
     },
     "L_One_Drift": {
         "num": 445,
-        "description": "",
+        "description": "指定車両を左片輪ドリフトさせる" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "RS_comic": [
             "COMIC3057.BIN",
             "COMIC3999.BIN"
@@ -25636,15 +25648,19 @@ const CMD = {
     },
     "R_One_Drift": {
         "num": 446,
-        "description": ""
+        "description": "指定車両を右片輪ドリフトさせる" + newLine
+                    + "引数１：0（1P）、1（2P）"
     },
     "Ret_One_Drift": {
         "num": 447,
-        "description": ""
+        "description": "指定車両を片輪ドリフト解除する" + newLine
+                    + "引数１：0（1P）、1（2P）"
     },
     "FRONT_JUMP": {
         "num": 448,
-        "description": "",
+        "description": "車両の前の部分を上げる" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～７：詳細不明",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3470.BIN"
@@ -25652,7 +25668,9 @@ const CMD = {
     },
     "REAR_JUMP": {
         "num": 449,
-        "description": "",
+        "description": "車両の後ろの部分を上げる" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～７：詳細不明",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3279.BIN"
@@ -25660,7 +25678,9 @@ const CMD = {
     },
     "FRONT_MOVE_X": {
         "num": 450,
-        "description": "",
+        "description": "車両の前の部分を動かす" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～４：詳細不明",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3470.BIN"
@@ -25668,7 +25688,9 @@ const CMD = {
     },
     "TRACK_MOVE": {
         "num": 451,
-        "description": "",
+        "description": "車両の台車を動かす" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～８：詳細不明",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3060.BIN",
@@ -25677,7 +25699,14 @@ const CMD = {
     },
     "TRAIN_JUMP": {
         "num": 452,
-        "description": "",
+        "description": "車両をジャンプさせる" + newLine
+                    + "【RSの場合】" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～７：詳細不明" + newLine
+                    + "【SSの場合】" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：ジャンプ高さ" + newLine
+                    + "引数３：ジャンプさせる時間（フレーム）",
         "RS_comic": [
             "COMIC3060.BIN"
         ],
@@ -25687,7 +25716,13 @@ const CMD = {
     },
     "SET_LIGHT": {
         "num": 453,
-        "description": "",
+        "description": "指定車両のライト設定する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２【SSのみ】" + newLine
+                    + "　0（全てのライトを消す）" + newLine
+                    + "　1（ライトを消し、内側のライトは付ける）" + newLine
+                    + "　2（全てのライトを付ける）" + newLine
+                    + "引数３：変化時間【SSのみ】",
         "RS_comic": [
             "COMIC3059.BIN"
         ],
@@ -25698,21 +25733,27 @@ const CMD = {
     },
     "SET_COL_KASENCHU": {
         "num": 454,
-        "description": "",
+        "description": "ぶつけられる架線柱を設定する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：SMFリストNo",
         "RS_comic": [
             "COMIC3059.BIN"
         ]
     },
     "SET_KAISO": {
         "num": 455,
-        "description": "",
+        "description": "指定車両に回送幕を設定する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（True）、0（False）",
         "RS_comic": [
             "COMIC3008.BIN"
         ]
     },
     "SET_FOR": {
         "num": 456,
-        "description": "",
+        "description": "指定車両の行先幕を設定する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（True）、0（False）",
         "RS_comic": [
             "COMIC3200.BIN",
             "COMIC3208.BIN",
@@ -25721,7 +25762,11 @@ const CMD = {
     },
     "CHK_TRAIN_COL": {
         "num": 457,
-        "description": "",
+        "description": "指定時間内に車両にぶつけた場合、引数２のFROMへ" + newLine
+                    + "そうではない場合、引数３のFROMへ飛ぶ" + newLine
+                    + "引数１：指定時間（フレーム）" + newLine
+                    + "引数２：FROM数字" + newLine
+                    + "引数３：FROM数字",
         "RS_comic": [
             "COMIC3227.BIN",
             "COMIC3331.BIN",
@@ -25730,7 +25775,11 @@ const CMD = {
     },
     "VOL_SCRIPT_BGM": {
         "num": 458,
-        "description": "",
+        "description": "指定スクリプトで再生しているBGMのVolumeを変える" + newLine
+                    + "引数１：スクリプト番号" + newLine
+                    + "引数２：そのスクリプトのBGM番号" + newLine
+                    + "引数３：Volume" + newLine
+                    + "引数４：変化時間（フレーム）",
         "RS_comic": [
             "COMIC3103.BIN",
             "COMIC3202.BIN",
@@ -25804,14 +25853,20 @@ const CMD = {
     },
     "IF_NOTCH": {
         "num": 459,
-        "description": "",
+        "description": "指定車両の現在ノッチが指定した数の場合、引数３のFROMへ" + newLine
+                    + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：指定ノッチ数" + newLine
+                    + "引数３：FROM数字" + newLine
+                    + "引数４：FROM数字",
         "RS_comic": [
             "COMIC3246.BIN"
         ]
     },
     "SET_BRIND_SW": {
         "num": 460,
-        "description": "",
+        "description": "カメラをデフォルトに戻す" + newLine
+                    + "引数１：1（デフォルト）【SSで読み込みしない】",
         "SS_comic": [
             "COMIC3500.BIN",
             "COMIC2900.BIN",
@@ -25823,7 +25878,9 @@ const CMD = {
     },
     "SET_MIKOSHI": {
         "num": 461,
-        "description": "",
+        "description": "スクリプトの指定のイメージを暴れ神輿のように表示する" + newLine
+                    + "引数１：スクリプト内のイメージ番号" + newLine
+                    + "引数２：1（True）、0（False）",
         "RS_comic": [
             "COMIC3310.BIN",
             "COMIC3338.BIN",
@@ -25832,7 +25889,9 @@ const CMD = {
     },
     "ADD_FIRE": {
         "num": 462,
-        "description": "",
+        "description": "車輪に火花を散らす" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～４：詳細不明",
         "RS_comic": [
             "COMIC3279.BIN",
             "COMIC3323.BIN",
@@ -25841,14 +25900,22 @@ const CMD = {
     },
     "BREAKE_OR_HIT": {
         "num": 463,
-        "description": "",
+        "description": "指定時間内にブレーキした場合、引数１のFROMへ" + newLine
+                    + "指定時間内にぶつけた場合は引数２のFROMへ飛ぶ" + newLine
+                    + "どっちでもない場合は、次の行へ行く" + newLine
+                    + "引数１：FROM数字" + newLine
+                    + "引数２：FROM数字" + newLine
+                    + "引数３：FROM数字",
         "RS_comic": [
             "COMIC3319.BIN"
         ]
     },
     "OUTRUN": {
         "num": 464,
-        "description": "",
+        "description": "指定車両を強制脱線させる" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：車両インデックス" + newLine
+                    + "引数３～４：詳細不明",
         "RS_comic": [
             "COMIC3323.BIN",
             "COMIC3324.BIN"
@@ -25856,7 +25923,9 @@ const CMD = {
     },
     "SOFT_ATK": {
         "num": 465,
-        "description": "",
+        "description": "指定車両がぶつけても、脱線しないようにする" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（True）、0（False）",
         "RS_comic": [
             "COMIC3319.BIN",
             "COMIC3435.BIN",
@@ -25869,7 +25938,9 @@ const CMD = {
     },
     "CHANGE_OUHUKU_LINE": {
         "num": 467,
-        "description": "",
+        "description": "往復マップの場合、指定車両の方向を逆にする" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：0（デフォルト）、1（逆方向）",
         "RS_comic": [
             "COMIC3451.BIN",
             "COMIC3459.BIN",
@@ -25881,7 +25952,10 @@ const CMD = {
     },
     "BRIND_ATK": {
         "num": 468,
-        "description": "",
+        "description": "ブラインドアタックする" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（True）、0（False）" + newLine
+                    + "引数３：変化時間（フレーム）【SSのみ】",
         "RS_comic": [
             "COMIC3429.BIN",
             "COMIC3462.BIN",
@@ -25896,7 +25970,7 @@ const CMD = {
     },
     "OPEN_POS_DLG": {
         "num": 469,
-        "description": "",
+        "description": "詳細不明",
         "RS_comic": [
             "COMIC3400.BIN"
         ]
