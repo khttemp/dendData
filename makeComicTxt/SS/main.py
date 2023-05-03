@@ -192,4 +192,4 @@ makeScript("{0}/tq5050/stagedata.txt".format(binPath), "comic_tq5050", "tq5050(v
 makeScript("{0}/tq5000/stagedata.txt".format(binPath), "comic_tq5000", "tq5000(ver129)_comic.txt")
 makeScript("{0}/tq300/stagedata.txt".format(binPath), "comic_tq300", "tq300(ver129)_comic.txt")
 makeScript("{0}/tq8500/stagedata.txt".format(binPath), "comic_tq8500", "tq8500(ver129)_comic.txt")
-makeScript("{0}/tq8500_last/stagedata.txt".format(binPath), "comic_tq8500_last", "tq8500＿last(ver129)_comic.txt")
+makeScript("{0}/tq8500＿last/stagedata.txt".format(binPath), "comic_tq8500_last", "tq8500＿last(ver129)_comic.txt")

@@ -90,13 +90,13 @@ fileList = [
     "{0}/tq5000/stagedata.txt".format(binPath),
     "{0}/tq300/stagedata.txt".format(binPath),
     "{0}/tq8500/stagedata.txt".format(binPath),
-    "{0}/tq8500_last/stagedata.txt".format(binPath)
+    "{0}/tq8500＿last/stagedata.txt".format(binPath)
 ]
 
 for file in fileList:
     startVer = 129
     path = os.path.join(os.getcwd(), file)
-    scriptFolder = "comic_" + file.split("/")[4]
+    scriptFolder = "comic_" + file.split("/")[4].replace("＿", "_")
     base, ext = os.path.splitext(os.path.basename(path))
     A = pgv.AGraph(directed=True, strict=True, rankdir="LR")
     
@@ -126,5 +126,5 @@ for file in fileList:
             A.add_edge(gotoScript[0], gotoScript[1], color="red")
 
     drawPath = os.path.join(os.getcwd(), file.split("/")[4])
-    A.draw("{0}.pdf".format(drawPath), prog="neato")
+    A.draw("{0}(ver129).pdf".format(drawPath), prog="neato")
     del A
