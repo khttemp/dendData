@@ -76,13 +76,13 @@ fileList = [
     "{0}/SS/tq5000/stagedata.txt".format(binPath),
     "{0}/SS/tq300/stagedata.txt".format(binPath),
     "{0}/SS/tq8500/stagedata.txt".format(binPath),
-    "{0}/SS/tq8500_last/stagedata.txt".format(binPath)
+    "{0}/SS/tq8500＿last/stagedata.txt".format(binPath)
 ]
 
 def callSSCmd(cmdJson):
     for file in fileList:
         path = os.path.join(os.getcwd(), file)
-        scriptFolder = "comic_" + file.split("/")[3]
+        scriptFolder = "comic_" + file.split("/")[3].replace("＿", "_")
         scriptMap = getSSScript(path)
         
         for script in scriptMap:
