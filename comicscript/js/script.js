@@ -347,6 +347,10 @@ angular.module('myApp', ['myModule'])
                 return $scope.fvtList[Number(index)];
             } else if (cmd == "FTV_PLAY_AND_PREV" && idx == 1) {
                 return $scope.fvtList[Number(index)];
+            } else if (cmd == "SET_MIKOSHI" && idx == 1) {
+                return $scope.headerInfoList[comicNum]["imgList"][index];
+            } else if (cmd == "BODY_AUDIO_PLAY" && idx == 2) {
+                return $scope.headerInfoList[comicNum]["seList"][index];
             }
             return "";
         }
