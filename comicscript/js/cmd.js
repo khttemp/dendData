@@ -26998,11 +26998,15 @@ const CMD = {
     },
     "CNG_SCCAM_TRAIN": {
         "num": 501,
-        "description": ""
+        "description": "カメラを変える" + newLine
+                    + "引数１：カメラ番号" + newLine
+                    + "引数２：0（1P）、1（2P）" + newLine
+                    + "引数３：スクリーン番号【SSで引数で渡す場合】"
     },
     "STOP_TRAIN_SE": {
         "num": 502,
-        "description": "",
+        "description": "車両から出ているSEを止める" + newLine
+                    + "引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC3599.BIN",
             "COMIC36998.BIN",
@@ -27029,7 +27033,12 @@ const CMD = {
     },
     "PLAY_SCRIPT_BGM_TIME": {
         "num": 503,
-        "description": "",
+        "description": "指定スクリプトで再生しているBGMを再生する" + newLine
+                    + "引数１：スクリプト番号" + newLine
+                    + "引数２：そのスクリプトのBGM番号" + newLine
+                    + "引数３：ループする[-1（True）、1（False）]" + newLine
+                    + "引数４：Volume" + newLine
+                    + "引数５：開始する時間",
         "SS_comic": [
             "COMIC4014.BIN",
             "COMIC4029.BIN"
@@ -27037,15 +27046,21 @@ const CMD = {
     },
     "CNG_BODY_COLOR": {
         "num": 504,
-        "description": ""
+        "description": "指定車両のカラーバリエーションを変える" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：カラーインデックス"
     },
     "LOAD_TRAIN": {
         "num": 505,
-        "description": ""
+        "description": "指定車両を車両インデックスで改めてロードする" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：車両インデックス"
     },
     "SHOW_BLOCK": {
         "num": 506,
-        "description": "",
+        "description": "ブロックのフラグを設定する" + newLine
+                    + "引数１：ブロックNo。-1の場合、全てのブロック" + newLine
+                    + "引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC4049.BIN",
             "COMIC42013.BIN"
@@ -27053,7 +27068,7 @@ const CMD = {
     },
     "UPDATE_LIGHT_FRARE": {
         "num": 507,
-        "description": "",
+        "description": "ライトフレアを更新する",
         "SS_comic": [
             "COMIC4046.BIN",
             "COMIC40001.BIN",
@@ -27063,7 +27078,22 @@ const CMD = {
     },
     "WAIT_RAIL_MORE_GOTO": {
         "num": 508,
-        "description": "",
+        "description": "指定車両が、指定時間内にレールを通過するとFROMへ飛ばす。" + newLine
+                    + "通過できなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：レール番号" + newLine
+                    + "引数３：引数２のレール通過時、飛ばすFROM数字" + newLine
+                    + "引数４：レール番号" + newLine
+                    + "引数５：引数４のレール通過時、飛ばすFROM数字" + newLine
+                    + "引数６：レール番号" + newLine
+                    + "引数７：引数６のレール通過時、飛ばすFROM数字" + newLine
+                    + "引数８：レール番号" + newLine
+                    + "引数９：引数８のレール通過時、飛ばすFROM数字" + newLine
+                    + "引数１０：レール番号" + newLine
+                    + "引数１１：引数１０のレール通過時、飛ばすFROM数字" + newLine
+                    + "引数１２：レール番号" + newLine
+                    + "引数１３：引数１２のレール通過時、飛ばすFROM数字" + newLine
+                    + "引数１４：指定時間（フレーム）",
         "SS_comic": [
             "COMIC4083.BIN",
             "COMIC4084.BIN",
@@ -27079,7 +27109,8 @@ const CMD = {
     },
     "CREATE_AURA": {
         "num": 509,
-        "description": "",
+        "description": "指定車両にオーラをつけられるようにする" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3500.BIN",
             "COMIC40031.BIN"
@@ -27087,7 +27118,10 @@ const CMD = {
     },
     "AURA_ALPHA": {
         "num": 510,
-        "description": "",
+        "description": "オーラのalphaを調整する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：alpha" + newLine
+                    + "引数３：変化時間（フレーム）",
         "SS_comic": [
             "COMIC3503.BIN",
             "COMIC3533.BIN",
@@ -27096,7 +27130,9 @@ const CMD = {
     },
     "SET_LV_JUMP": {
         "num": 511,
-        "description": "",
+        "description": "高くジャンプするイベントで、指定車両のジャンプの高さを調整する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：ジャンプの高さ（PER）",
         "SS_comic": [
             "COMIC4082.BIN",
             "COMIC4088.BIN"

@@ -351,6 +351,8 @@ angular.module('myApp', ['myModule'])
                 return $scope.headerInfoList[comicNum]["imgList"][index];
             } else if (cmd == "BODY_AUDIO_PLAY" && idx == 2) {
                 return $scope.headerInfoList[comicNum]["seList"][index];
+            } else if (cmd == "PLAY_SCRIPT_BGM_TIME" && idx == 2) {
+                return $scope.headerInfoList[Number(cmdList[1])]["bgmList"][index];
             }
             return "";
         }
