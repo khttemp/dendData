@@ -115,10 +115,9 @@ def callSSCmd(cmdJson):
 
             for comicData in decryptFile.comicDataList:
                 d = cmdJson[comicData[0]]
-                if "SS_comic" not in d:
-                    d["SS_cmn"] = []
-
-                if "SS_comic" not in d and file not in d["SS_cmn"]:
+                if "SS_comic" not in d or file.upper() not in d["SS_comic"]:
+                    if "SS_cmn" not in d:
+                        d["SS_cmn"] = []
                     d["SS_cmn"].append(file)
 
     return cmdJson
