@@ -27487,11 +27487,11 @@ const CMD = {
         "num": 561,
         "description": "KAKAPO動きを設定する" + newLine
                     + "引数１：長さ" + newLine
-                    + "引数２：変化時間" + newLine
-                    + "引数３：変化方法" + newLine
+                    + "引数２：引数１の変化時間" + newLine
+                    + "引数３：引数１の変化方法" + newLine
                     + "引数４：回す角度" + newLine
-                    + "引数５：変化時間" + newLine
-                    + "引数６：変化方法",
+                    + "引数５：引数４の変化時間" + newLine
+                    + "引数６：引数４の変化方法",
         "SS_comic": [
             "COMIC3506.BIN"
         ]
