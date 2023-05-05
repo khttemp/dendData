@@ -27435,7 +27435,8 @@ const CMD = {
     },
     "FIT_PER": {
         "num": 557,
-        "description": "指定車両の片輪走行時、傾むく加速度を調整する" + newLine
+        "description": "指定車両の片輪走行時、傾むく程度（PER）を調整する" + newLine
+                    + "カーブの強さは変わらない" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：PER",
         "SS_comic": [
