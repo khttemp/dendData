@@ -9,13 +9,22 @@ f = codecs.open("cmd.json", "r", "utf-8", "strict")
 cmdJson = json.load(f)
 f.close()
 
-cmdJson = Cmd.callCmd("LS", cmdJson)
-cmdJson = Cmd.callCmd("BS", cmdJson)
-cmdJson = Cmd.callCmd("CS", cmdJson)
-cmdJson = Cmd.callCmd("RS", cmdJson)
-cmdJson = SSCmd.callSSCmd(cmdJson)
+keys = list(cmdJson.keys())
 
-lines = json.dumps(cmdJson, indent=4, ensure_ascii=False)
+newJson = {}
+for key in keys:
+    newJson[key] = {
+        "num": cmdJson[key]["num"],
+        "description": cmdJson[key]["description"]
+    }
+
+newJson = Cmd.callCmd("LS", newJson)
+newJson = Cmd.callCmd("BS", newJson)
+newJson = Cmd.callCmd("CS", newJson)
+newJson = Cmd.callCmd("RS", newJson)
+newJson = SSCmd.callSSCmd(newJson)
+
+lines = json.dumps(newJson, indent=4, ensure_ascii=False)
 f = codecs.open("result.json", "w", "utf-8", "strict")
 f.write(lines)
 f.close()

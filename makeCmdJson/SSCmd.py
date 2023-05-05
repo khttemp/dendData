@@ -118,6 +118,7 @@ def callSSCmd(cmdJson):
                 if "SS_comic" not in d or file.upper() not in d["SS_comic"]:
                     if "SS_cmn" not in d:
                         d["SS_cmn"] = []
-                    d["SS_cmn"].append(file)
+                    if file.upper() not in d["SS_cmn"]:
+                        d["SS_cmn"].append(file.upper())
 
     return cmdJson
