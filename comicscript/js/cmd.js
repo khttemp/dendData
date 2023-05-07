@@ -27319,7 +27319,7 @@ const CMD = {
     },
     "SC_OUTRUN": {
         "num": 548,
-        "description": "スクリプトで脱線させる" + newLine
+        "description": "スクリプトで脱線させる。またライトも消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：車両インデックス" + newLine
                     + "引数３：ずらすx座標" + newLine
