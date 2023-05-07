@@ -311,6 +311,7 @@ angular.module('myApp', ['myModule'])
                         addComicDescription += "、";
                     }
                     addComicDescription += "RS"
+                    usedFlag = true;
                 }
                 if (CMD[cmd]["SS_comic"] != undefined) {
                     if (usedFlag) {
