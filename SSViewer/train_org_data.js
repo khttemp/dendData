@@ -295,6 +295,7 @@ function addTrainElement(
         //テーブル中身（その他の中で性能データ）
         if (isPerfData) {
             let perfInfoList = dataText.split("\t");
+            console.log(labelInfoList.length)
             if (perfInfoList.length < labelInfoList.length - 3) {
                 errorDiv.innerHTML = `${insertTableLabelName}を読み込めません`;
                 return false;
@@ -313,6 +314,10 @@ function addTrainElement(
                             if (i == labelInfoList.length - 3) {
                                 if (perfInfoList.length > i) {
                                     td.innerHTML = perfInfoList[i];
+                                    if (isNaN(perfInfoList[i])) {
+                                        errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                        return false;
+                                    }
                                 } else {
                                     td.innerHTML = (Number(perfInfoList[12]) * 0.8).toPrecision(5);
                                 }
@@ -320,6 +325,10 @@ function addTrainElement(
                             else if (i == labelInfoList.length - 2) {
                                 if (perfInfoList.length > i) {
                                     td.innerHTML = perfInfoList[i];
+                                    if (isNaN(perfInfoList[i])) {
+                                        errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                        return false;
+                                    }
                                 } else {
                                     td.innerHTML = (Number(perfInfoList[13]) * 0.8).toPrecision(5);
                                 }
@@ -327,17 +336,20 @@ function addTrainElement(
                             else if (i == labelInfoList.length - 1) {
                                 if (perfInfoList.length > i) {
                                     td.innerHTML = perfInfoList[i];
+                                    if (isNaN(perfInfoList[i])) {
+                                        errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                        return false;
+                                    }
                                 } else {
                                     td.innerHTML = 0.5;
                                 }
                             }
                             else {
                                 td.innerHTML = perfInfoList[i];
-                            }
-
-                            if (isNaN(perfInfoList[i])) {
-                                errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
-                                return false;
+                                if (isNaN(perfInfoList[i])) {
+                                    errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                    return false;
+                                }
                             }
                             break;
                         case 2:
