@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSのデータビューア</title>
+        <script src="./train_org_data.js"></script>
+    </head>
+    <style>
+        table {
+            table-layout: fixed;
+        }
+        
+        th {
+            min-width: 75px;
+        }
+    </style>
+    <body>
+        <div>train_org_dataに入れる「車両性能.txt」を添付してください</div>
+        <br />
+        <div>
+            <input type="file" id="file" accept="text/plain" />
+        </div>
+
+        <div id="errorDiv"></div>
+        <hr />
+        <div id="dataDiv">
+            <br />
+            <div id="tableDiv">
+                <div>
+                    <div></div>
+                    <table border="1" id="notchTableBody"></table>
+                </div>
+                <div>
+                    <div></div>
+                    <table border="1" id="perfTableBody"></table>
+                </div>
+                <div>
+                    <div></div>
+                    <table border="1" id="rainTableBody"></table>
+                </div>
+                <div>
+                    <div></div>
+                    <table border="1" id="carbTableBody"></table>
+                </div>
+                <div>
+                    <div></div>
+                    <table border="1" id="oneWheelTableBody"></table>
+                </div>
+                <div>
+                    <div></div>
+                    <table border="1" id="otherTableBody"></table>
+                </div>
+                <div>
+                    <div></div>
+                    <table border="1" id="hurikoTableBody"></table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
