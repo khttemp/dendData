@@ -64,7 +64,7 @@
                 <tbody>
                     <tr ng-repeat="cmdInfo in filtered = (cmdInfoList | filter:myFilter)">
                         <td style="min-width:50px;">{{cmdInfo.num}}</td>
-                        <td style="max-width:200px;">{{cmdInfo.name}}</td>
+                        <td style="min-width:200px;">{{cmdInfo.name}}</td>
                         <td>
                             <div ng-repeat="desc in cmdInfo.description track by $index">
                                 {{desc}}
