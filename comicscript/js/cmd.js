@@ -29527,7 +29527,7 @@ const CMD = {
                     + "引数２：車両インデックス" + newLine
                     + "引数３：ずらすx座標" + newLine
                     + "引数４：ずらすy座標" + newLine
-                    + "引数５：ずらすz座標",
+                    + "引数５：z軸に傾ける数値",
         "SS_comic": [
             "COMIC42007.BIN",
             "COMIC42008.BIN"
