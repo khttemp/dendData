@@ -32,10 +32,13 @@ const CMD = {
                     + "引数４：to縦の倍率" + newLine
                     + "引数５：引数１、２から　引数３、４まで変化する時間（フレーム）",
         "LS_bin": [
+            "BTL_04.BIN",
             "CAUSESEL.BIN",
             "CHARSEL.BIN",
             "COUNT.BIN",
-            "STORYSEL.BIN"
+            "OP_ANIME.BIN",
+            "STORYSEL.BIN",
+            "TITLE_LOGO.BIN"
         ],
         "BS_bin": [
             "COUNT.BIN"
@@ -58,11 +61,15 @@ const CMD = {
             "CAUSESEL.BIN",
             "CHARSEL.BIN",
             "COUNT.BIN",
+            "OP_ANIME.BIN",
             "SCENE3DOBJ.BIN",
-            "STORYSEL.BIN"
+            "STORYSEL.BIN",
+            "TITLE_LOGO.BIN"
         ],
         "BS_bin": [
-            "COUNT.BIN"
+            "COUNT.BIN",
+            "HK_OBJ.BIN",
+            "OP_OBJ.BIN"
         ],
         "CS_bin": [
             "COUNT.BIN"
@@ -73,7 +80,24 @@ const CMD = {
     },
     "End": {
         "num": 3,
-        "description": "【モデルバイナリ】コマンドを終了する"
+        "description": "【モデルバイナリ】コマンドを終了する",
+        "LS_bin": [
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN",
+            "HK_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "COUNT.BIN",
+            "TOBU.BIN"
+        ]
     },
     "Pos": {
         "num": 4,
@@ -83,9 +107,13 @@ const CMD = {
                     + "引数３：詳細不明（０）",
         "LS_bin": [
             "BTL_04.BIN",
+            "CHARSEL.BIN",
             "CHARSEL3D.BIN",
             "COUNT.BIN",
-            "OP_ANIME.BIN"
+            "OP_ANIME.BIN",
+            "SELECTSCENE.BIN",
+            "TITLE_LOGO.BIN",
+            "TITLE_MENU.BIN"
         ],
         "BS_bin": [
             "COUNT.BIN"
@@ -105,7 +133,19 @@ const CMD = {
                     + "引数３：B(0~255)" + newLine
                     + "引数４：詳細不明（０）",
         "LS_bin": [
-            "CHARSEL.BIN"
+            "CHARSEL.BIN",
+            "COUNT.BIN",
+            "OP_ANIME.BIN",
+            "TITLE_LOGO.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
         ]
     },
     "Move": {
@@ -114,7 +154,10 @@ const CMD = {
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
                     + "引数３：詳細不明（０）" + newLine
-                    + "引数４：移動するまで変化する時間（フレーム）"
+                    + "引数４：移動するまで変化する時間（フレーム）",
+        "LS_bin": [
+            "TITLE_LOGO.BIN"
+        ]
     },
     "STAGE_BGM": {
         "num": 7,
@@ -126,6 +169,9 @@ const CMD = {
             "COMIC902.BIN",
             "COMIC903.BIN"
         ],
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
         "BS_comic": [
             "COMIC1000.BIN",
             "COMIC1100.BIN",
@@ -133,6 +179,15 @@ const CMD = {
             "COMIC1320.BIN",
             "COMIC1400.BIN",
             "COMIC1500.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
         ]
     },
     "SetFlat3D": {
@@ -146,8 +201,25 @@ const CMD = {
     "SetCamDir": {
         "num": 10,
         "description": "",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ],
         "BS_bin": [
+            "HK_OBJ.BIN",
             "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "TOWN_LIGHT.BIN"
         ]
     },
     "DisCamDir": {
@@ -223,13 +295,17 @@ const CMD = {
     },
     "SetWAngleY": {
         "num": 14,
-        "description": "【モデルバイナリ】引数１～４：詳細不明"
+        "description": "【モデルバイナリ】引数１～４：詳細不明",
+        "LS_bin": [
+            "CHARSEL3D.BIN"
+        ]
     },
     "SetWAngleZ": {
         "num": 15,
         "description": "【モデルバイナリ】引数１～４：詳細不明",
         "LS_bin": [
-            "BTL_03.BIN"
+            "BTL_03.BIN",
+            "CHARSEL3D.BIN"
         ]
     },
     "SetLAngleX": {
@@ -276,6 +352,9 @@ const CMD = {
         "description": "【モデルバイナリ】メッシュを表示する" + newLine
                     + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
+            "BTL_01.BIN",
+            "BTL_03.BIN",
+            "CHARSEL3D.BIN",
             "OP_ANIME.BIN",
             "SCENE3DOBJ.BIN"
         ],
@@ -284,6 +363,7 @@ const CMD = {
             "CHAR_SEL_OBJ.BIN",
             "HK_OBJ.BIN",
             "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
             "MUSIUM_OBJ.BIN",
             "OP_OBJ.BIN"
         ],
@@ -296,12 +376,19 @@ const CMD = {
             "H8200_00.BIN",
             "HUMIKIRI25.BIN",
             "HUMIKIRI60.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
             "KQ2199_00.BIN",
             "KQ21XX_00.BIN",
-            "KQ21XX_01.BIN"
+            "KQ21XX_01.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "VERUP_SCENE.BIN"
         ],
         "RS_bin": [
             "1RAILHUMIKIRI25.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ_D4.BIN",
             "D4_2BOOK.BIN",
@@ -314,7 +401,9 @@ const CMD = {
             "MEI_HUMIKIRI25.BIN",
             "MEI_HUMIKIRI25_COL.BIN",
             "MEI_HUMIKIRI50.BIN",
-            "SYADANKI_MEI.BIN"
+            "MENU_OBJ_D4.BIN",
+            "SYADANKI_MEI.BIN",
+            "YU_0.BIN"
         ]
     },
     "HideMesh": {
@@ -322,13 +411,20 @@ const CMD = {
         "description": "【モデルバイナリ】メッシュを非表示する" + newLine
                     + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
-            "BTL_01.BIN"
+            "BTL_01.BIN",
+            "BTL_03.BIN",
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN",
+            "SCENE3DOBJ.BIN"
         ],
         "BS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
             "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
             "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
             "OP_OBJ.BIN"
         ],
         "CS_bin": [
@@ -340,13 +436,29 @@ const CMD = {
             "H2800_00.BIN",
             "H8008_00.BIN",
             "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN",
             "KQ2199_00.BIN",
             "KQ21XX_00.BIN",
             "KQ21XX_01.BIN",
             "MENU_OBJ.BIN",
-            "OP_OBJ_D3.BIN"
+            "MUSIC_LIST_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIGNAL_AMB_2BLUE.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
         ],
         "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ_D4.BIN",
             "D4_2BOOK.BIN",
@@ -354,15 +466,27 @@ const CMD = {
             "H2800_00.BIN",
             "H8008_00.BIN",
             "H8200_00.BIN",
+            "HS9000_00.BIN",
             "KQ2199_00.BIN",
             "KQ21XX_00.BIN",
             "KQ21XX_01.BIN",
-            "MENU_OBJ_D4.BIN"
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SYADANKI_MEI.BIN",
+            "TOBU.BIN",
+            "YU_0.BIN"
         ]
     },
     "PlayAnime": {
         "num": 27,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "Length_End": {
         "num": 28,
@@ -396,7 +520,19 @@ const CMD = {
         "num": 29,
         "description": "【モデルバイナリ】引数１～１０：詳細不明",
         "LS_bin": [
-            "CHARSEL3D.BIN"
+            "CHARSEL3D.BIN",
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
         ]
     },
     "RACE_START": {
@@ -406,11 +542,17 @@ const CMD = {
             "COMIC200.BIN",
             "COMIC700.BIN"
         ],
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
         "BS_comic": [
             "COMIC1000.BIN",
             "COMIC1100.BIN",
             "COMIC1300.BIN",
             "COMIC1400.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -420,9 +562,15 @@ const CMD = {
             "COMIC2300.BIN",
             "COMIC2400.BIN"
         ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
         "RS_comic": [
             "COMIC2900.BIN",
             "COMIC3220.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -437,13 +585,37 @@ const CMD = {
     "RACE_END": {
         "num": 31,
         "description": "バトルが終わる",
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ],
         "SS_comic": [
             "COMIC2990.BIN"
         ]
     },
     "FADE_STAGE_BGM": {
         "num": 32,
-        "description": "今再生中のBGMをフェードアウトする"
+        "description": "今再生中のBGMをフェードアウトする",
+        "LS_bin": [
+            "COUNT.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
+        ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
+        ]
     },
     "CHANGE_SCENE": {
         "num": 33,
@@ -468,6 +640,10 @@ const CMD = {
             "COMIC901.BIN",
             "COMIC903.BIN"
         ],
+        "LS_bin": [
+            "BTL_04.BIN",
+            "COUNT.BIN"
+        ],
         "BS_comic": [
             "COMIC1009.BIN",
             "COMIC1020.BIN",
@@ -479,6 +655,9 @@ const CMD = {
             "COMIC1321.BIN",
             "COMIC1401.BIN",
             "COMIC1511.BIN"
+        ],
+        "BS_bin": [
+            "COUNT.BIN"
         ],
         "CS_comic": [
             "COMIC2001.BIN",
@@ -499,6 +678,9 @@ const CMD = {
             "COMIC2401.BIN",
             "COMIC2440.BIN"
         ],
+        "CS_bin": [
+            "COUNT.BIN"
+        ],
         "RS_comic": [
             "COMIC3064.BIN",
             "COMIC3070.BIN",
@@ -511,6 +693,9 @@ const CMD = {
             "COMIC3472.BIN",
             "COMIC3499.BIN",
             "COMIC3477.BIN"
+        ],
+        "RS_bin": [
+            "COUNT.BIN"
         ],
         "SS_comic": [
             "COMIC3536.BIN",
@@ -534,7 +719,9 @@ const CMD = {
         "num": 34,
         "description": "【モデルバイナリ】引数１～３：詳細不明",
         "LS_bin": [
+            "CHARSEL3D.BIN",
             "OP_ANIME.BIN",
+            "SELECTSCENE.BIN",
             "TITLE_MENU.BIN"
         ],
         "BS_bin": [
@@ -547,15 +734,27 @@ const CMD = {
     },
     "LLoopX": {
         "num": 36,
-        "description": "【モデルバイナリ】引数１～３：詳細不明"
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "LS_bin": [
+            "SELECTSCENE.BIN",
+            "TITLE_MENU.BIN"
+        ]
     },
     "LLoopY": {
         "num": 37,
-        "description": "【モデルバイナリ】引数１～３：詳細不明"
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN"
+        ]
     },
     "LLoopZ": {
         "num": 38,
-        "description": "【モデルバイナリ】引数１～３：詳細不明"
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN"
+        ]
     },
     "Angle": {
         "num": 39,
@@ -566,11 +765,17 @@ const CMD = {
     },
     "AngleLoop": {
         "num": 40,
-        "description": "【モデルバイナリ】引数１～３：詳細不明"
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "LS_bin": [
+            "TITLE_MENU.BIN"
+        ]
     },
     "Move2": {
         "num": 41,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
     },
     "PosX": {
         "num": 42,
@@ -578,7 +783,10 @@ const CMD = {
     },
     "PosY": {
         "num": 43,
-        "description": "【モデルバイナリ】引数１：詳細不明"
+        "description": "【モデルバイナリ】引数１：詳細不明",
+        "LS_bin": [
+            "TITLE_MENU.BIN"
+        ]
     },
     "PosZ": {
         "num": 44,
@@ -592,6 +800,7 @@ const CMD = {
         "LS_bin": [
             "BTL_03.BIN",
             "COUNT.BIN",
+            "OP_ANIME.BIN",
             "SCENE3DOBJ.BIN"
         ],
         "BS_bin": [
@@ -608,7 +817,10 @@ const CMD = {
     },
     "SET_MT_NONE": {
         "num": 46,
-        "description": "【モデルバイナリ】詳細不明"
+        "description": "【モデルバイナリ】詳細不明",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "SetCamPos": {
         "num": 47,
@@ -3104,7 +3316,33 @@ const CMD = {
     },
     "SKY_DOME": {
         "num": 55,
-        "description": "【モデルバイナリ】空を設定"
+        "description": "【モデルバイナリ】空を設定",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ],
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "Fill_BG": {
         "num": 56,
@@ -13472,7 +13710,10 @@ const CMD = {
     },
     "Set2P": {
         "num": 91,
-        "description": "【モデルバイナリ】2P設定"
+        "description": "【モデルバイナリ】2P設定",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
     },
     "CharChk_and_Tx": {
         "num": 92,
@@ -13505,7 +13746,10 @@ const CMD = {
     },
     "SetGray": {
         "num": 97,
-        "description": "【モデルバイナリ】引数１：詳細不明"
+        "description": "【モデルバイナリ】引数１：詳細不明",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
     },
     "MoveX": {
         "num": 98,
@@ -13514,7 +13758,8 @@ const CMD = {
                     + "引数２：変化する時間（フレーム）" + newLine
                     + "引数３：詳細不明",
         "LS_bin": [
-            "CHARSEL.BIN"
+            "CHARSEL.BIN",
+            "OP_ANIME.BIN"
         ]
     },
     "MoveY": {
@@ -13522,18 +13767,28 @@ const CMD = {
         "description": "【モデルバイナリ】対象のy座標を移動させる" + newLine
                     + "引数１：移動させるy座標" + newLine
                     + "引数２：変化する時間（フレーム）" + newLine
-                    + "引数３：詳細不明"
+                    + "引数３：詳細不明",
+        "LS_bin": [
+            "CHARSEL3D.BIN",
+            "OP_ANIME.BIN"
+        ]
     },
     "MoveZ": {
         "num": 100,
         "description": "【モデルバイナリ】対象のz座標を移動させる" + newLine
                     + "引数１：移動させるy座標" + newLine
                     + "引数２：変化する時間（フレーム）" + newLine
-                    + "引数３：詳細不明"
+                    + "引数３：詳細不明",
+        "LS_bin": [
+            "CHARSEL3D.BIN"
+        ]
     },
     "SetUV_X": {
         "num": 101,
-        "description": "【モデルバイナリ】引数１：詳細不明"
+        "description": "【モデルバイナリ】引数１：詳細不明",
+        "LS_bin": [
+            "CHARSEL.BIN"
+        ]
     },
     "RePlay": {
         "num": 102,
@@ -14777,23 +15032,38 @@ const CMD = {
     },
     "RandWAngle": {
         "num": 127,
-        "description": "【モデルバイナリ】詳細不明"
+        "description": "【モデルバイナリ】詳細不明",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "RandMove": {
         "num": 128,
-        "description": "【モデルバイナリ】引数１～６：詳細不明"
+        "description": "【モデルバイナリ】引数１～６：詳細不明",
+        "LS_bin": [
+            "BTL_03.BIN",
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "ADD_OBJ": {
         "num": 129,
         "description": "【モデルバイナリ】オブジェクトを追加する" + newLine
-                    + "引数１～６：詳細不明"
+                    + "引数１～６：詳細不明",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "START_COMIC": {
         "num": 130,
         "description": "【モデルバイナリ】コミックスクリプトを読む" + newLine
                     + "引数１：コミックスクリプト番号",
         "LS_bin": [
+            "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
+        ],
+        "RS_bin": [
+            "TOBU.BIN"
         ]
     },
     "SetRand3DObj": {
@@ -14816,14 +15086,20 @@ const CMD = {
     "RandPos": {
         "num": 133,
         "description": "【モデルバイナリ】オブジェクトをランダムに配置する" + newLine
-                    + "引数１～６：詳細不明"
+                    + "引数１～６：詳細不明",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "RandPlaySE": {
         "num": 134,
         "description": "【モデルバイナリ】SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
                     + "引数１：範囲Start（SEグループインデックス）" + newLine
                     + "引数２：範囲End（SEグループインデックス）" + newLine
-                    + "引数３：SEグループ内のインデックス"
+                    + "引数３：SEグループ内のインデックス",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "RandAngleX": {
         "num": 135,
@@ -14831,7 +15107,10 @@ const CMD = {
     },
     "RandAngleY": {
         "num": 136,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "LS_bin": [
+            "SCENE3DOBJ.BIN"
+        ]
     },
     "RandAngleZ": {
         "num": 137,
@@ -17987,6 +18266,38 @@ const CMD = {
             "COMIC2427.BIN",
             "COMIC2999.BIN"
         ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "UV_01.BIN"
+        ],
         "RS_comic": [
             "COMIC3000.BIN",
             "COMIC3012.BIN",
@@ -18046,6 +18357,53 @@ const CMD = {
             "COMIC3931.BIN",
             "COMIC3932.BIN",
             "COMIC3933.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -18207,6 +18565,10 @@ const CMD = {
             "COMIC2442.BIN",
             "COMIC2999.BIN"
         ],
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "H2000_00.BIN"
+        ],
         "RS_comic": [
             "COMIC3012.BIN",
             "COMIC3035.BIN",
@@ -18236,6 +18598,14 @@ const CMD = {
             "COMIC3931.BIN",
             "COMIC3932.BIN",
             "COMIC3933.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN"
         ],
         "SS_comic": [
             "COMIC2991.BIN",
@@ -18855,69 +19225,29 @@ const CMD = {
         "num": 205,
         "description": "【モデルバイナリ】オブジェクトのフレームを取得する" + newLine
                     + "引数１：新たに扱うモデルインデックス" + newLine
-                    + "引数２：オブジェクトのフレーム名称"
-    },
-    "INDEX_BONE_ROT_X": {
-        "num": 206,
-        "description": "詳細不明" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明"
-    },
-    "INDEX_BONE_ROT_Y": {
-        "num": 207,
-        "description": "詳細不明" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明"
-    },
-    "INDEX_BONE_ROT_Z": {
-        "num": 208,
-        "description": "詳細不明" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明"
-    },
-    "INDEX_BONE_L_ROT_X": {
-        "num": 209,
-        "description": "【モデルバイナリ】モデルのROT_Xを設定" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
-        "CS_bin": [
-            "KIN_NARA.BIN"
-        ]
-    },
-    "INDEX_BONE_L_ROT_Y": {
-        "num": 210,
-        "description": "【モデルバイナリ】モデルのROT_Yを設定" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：オブジェクトのフレーム名称",
         "BS_bin": [
-            "CHAR_SEL_OBJ.BIN"
-        ]
-    },
-    "INDEX_BONE_L_ROT_Z": {
-        "num": 211,
-        "description": "【モデルバイナリ】モデルのROT_Zを設定" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
-        "CS_bin": [
-            "JR2000_TRACK.BIN",
-            "JR2000_TRACK_LOW2.BIN"
-        ],
-        "RS_bin": [
-            "MUTRACK_LOW.BIN"
-        ]
-    },
-    "CREATE_INDEX": {
-        "num": 212,
-        "description": "【モデルバイナリ】モデルインデックスを生成する" + newLine
-                    + "引数１：生成するインデックス個数",
-        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
-            "MENU_OBJ.BIN"
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
         ],
         "CS_bin": [
             "AMB_LANDBRIDGH.BIN",
             "AMB_LIGHT.BIN",
             "AMB_NK_ROAD_L.BIN",
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
             "D3_1BOOK.BIN",
             "D3_2BOOK.BIN",
             "DEBUG_DIR.BIN",
@@ -18926,6 +19256,8 @@ const CMD = {
             "H7001_00.BIN",
             "H8008_00.BIN",
             "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
             "HS9000_00.BIN",
             "HS9000_01.BIN",
             "HUMIKIRI25.BIN",
@@ -18942,15 +19274,24 @@ const CMD = {
             "K800_00.BIN",
             "K80_00.BIN",
             "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
             "KIN_NARA_ST.BIN",
             "KQ2199_00.BIN",
             "KQ21XX_00.BIN",
+            "KQ_HONSEN.BIN",
             "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
             "PANTA_FAN1.BIN",
             "PANTA_FAN6.BIN",
             "PANTA_FAN8.BIN",
             "RAPID_00.BIN",
-            "UV_00.BIN"
+            "SIN_TETSU.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
         ],
         "RS_bin": [
             "1RAILHUMIKIRI25.BIN",
@@ -18958,7 +19299,11 @@ const CMD = {
             "AMB_LIGHT.BIN",
             "AMB_LIGHT_D4.BIN",
             "AMB_NK_ROAD_L.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
             "AMB_SIGNAL_Y_FLASH.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
             "CLASH_MEI_KASENCHU.BIN",
             "D4_2BOOK.BIN",
             "D4_SKY.BIN",
@@ -18984,6 +19329,7 @@ const CMD = {
             "KQ2199_00.BIN",
             "KQ21XX_00.BIN",
             "LIGHT_4.BIN",
+            "MEI.BIN",
             "MEI_HUMIKIRI25.BIN",
             "MEI_HUMIKIRI25_COL.BIN",
             "MEI_HUMIKIRI50.BIN",
@@ -19006,74 +19352,73 @@ const CMD = {
             "TOBU50K_0.BIN",
             "TOBU50K_1.BIN",
             "TOWN_LIGHT.BIN",
+            "WHEEL_FIRE.BIN",
             "YU_0.BIN",
             "YU_1.BIN",
             "YU_2.BIN"
         ]
     },
-    "IB_LI_CREATE_ROT_X": {
-        "num": 213,
-        "description": "【モデルバイナリ】ROT_XのLIインデックスを生成する" + newLine
+    "INDEX_BONE_ROT_X": {
+        "num": 206,
+        "description": "詳細不明" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数"
+                    + "引数２～４：詳細不明"
     },
-    "IB_LI_CREATE_ROT_Y": {
-        "num": 214,
-        "description": "【モデルバイナリ】ROT_YのLIインデックスを生成する" + newLine
+    "INDEX_BONE_ROT_Y": {
+        "num": 207,
+        "description": "詳細不明" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数"
-    },
-    "IB_LI_CREATE_ROT_Z": {
-        "num": 215,
-        "description": "【モデルバイナリ】ROT_ZのLIインデックスを生成する" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数"
-    },
-    "IB_LI_SET_ROT_X": {
-        "num": 216,
-        "description": "【モデルバイナリ】ROT_XのLIインデックスに値を設定する" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：LIインデックス" + newLine
-                    + "引数３：ROT_X値" + newLine
-                    + "引数４：変化時間（フレーム）" + newLine
-                    + "引数５：変化方法"
-    },
-    "IB_LI_SET_ROT_Y": {
-        "num": 217,
-        "description": "【モデルバイナリ】ROT_YのLIインデックスに値を設定する" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：LIインデックス" + newLine
-                    + "引数３：ROT_Y値" + newLine
-                    + "引数４：変化時間（フレーム）" + newLine
-                    + "引数５：変化方法"
-    },
-    "IB_LI_SET_ROT_Z": {
-        "num": 218,
-        "description": "【モデルバイナリ】ROT_ZのLIインデックスに値を設定する" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：LIインデックス" + newLine
-                    + "引数３：ROT_Z値" + newLine
-                    + "引数４：変化時間（フレーム）" + newLine
-                    + "引数５：変化方法"
-    },
-    "IB_LI_SET_LOOP_X": {
-        "num": 219,
-        "description": "【モデルバイナリ】モデルインデックスのROT_Xに関するLI設定をループさせる" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：1（True）、0（False）"
-    },
-    "IB_LI_SET_LOOP_Y": {
-        "num": 220,
-        "description": "【モデルバイナリ】モデルインデックスのROT_Yに関するLI設定をループさせる" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：1（True）、0（False）"
-    },
-    "IB_LI_SET_LOOP_Z": {
-        "num": 221,
-        "description": "【モデルバイナリ】モデルインデックスのROT_Zに関するLI設定をループさせる" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：1（True）、0（False）",
+                    + "引数２～４：詳細不明",
+        "BS_bin": [
+            "MENU_OBJ.BIN"
+        ],
         "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
+    },
+    "INDEX_BONE_ROT_Z": {
+        "num": 208,
+        "description": "詳細不明" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２～４：詳細不明",
+        "CS_bin": [
+            "VERUP_SCENE.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ROT_X": {
+        "num": 209,
+        "description": "【モデルバイナリ】モデルのROT_Xを設定" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２～４：詳細不明",
+        "CS_bin": [
+            "H2800_00.BIN",
+            "KIN_NARA.BIN"
+        ],
+        "RS_bin": [
+            "H2800_00.BIN",
+            "NANA_VS_SURU.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ROT_Y": {
+        "num": 210,
+        "description": "【モデルバイナリ】モデルのROT_Yを設定" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２～４：詳細不明",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
             "H2000_00.BIN",
             "H2800_00.BIN",
             "H7001_00.BIN",
@@ -19081,16 +19426,21 @@ const CMD = {
             "H8200_00.BIN",
             "HS9000_00.BIN",
             "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_TRACK.BIN",
             "JR223_00.BIN",
             "K8000_00.BIN",
             "K800_00.BIN",
             "K80_00.BIN",
             "KQ2199_00.BIN",
             "KQ21XX_00.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
             "RAPID_00.BIN",
             "UV_00.BIN"
         ],
         "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
             "DRC_00.BIN",
             "E233_0.BIN",
             "H2000_00.BIN",
@@ -19109,8 +19459,669 @@ const CMD = {
             "KQ2199_00.BIN",
             "KQ21XX_00.BIN",
             "MU2000_0.BIN",
+            "NANA_VS_SURU.BIN",
+            "PANO_0.BIN",
+            "PANO_2.BIN",
             "RAPID_00.BIN",
             "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "INDEX_BONE_L_ROT_Z": {
+        "num": 211,
+        "description": "【モデルバイナリ】モデルのROT_Zを設定" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２～４：詳細不明",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "JR2000_TRACK.BIN",
+            "JR2000_TRACK_LOW2.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MUTRACK_LOW.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
+    },
+    "CREATE_INDEX": {
+        "num": 212,
+        "description": "【モデルバイナリ】モデルインデックスを生成する" + newLine
+                    + "引数１：生成するインデックス個数",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR2000_TRACK.BIN",
+            "JR2000_TRACK_LOW2.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "RAPID_00.BIN",
+            "SIN_TETSU.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "CLASH_MEI_KASENCHU.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "LIGHT_4.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "MUTRACK_LOW.BIN",
+            "NANA_VS_SURU.BIN",
+            "PANO_0.BIN",
+            "PANO_2.BIN",
+            "PANTA_FAN2.BIN",
+            "RAPID_00.BIN",
+            "SKYTREE.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "TOWN_LIGHT.BIN",
+            "WHEEL_FIRE.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
+    },
+    "IB_LI_CREATE_ROT_X": {
+        "num": 213,
+        "description": "【モデルバイナリ】ROT_XのLIインデックスを生成する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：生成するLIインデックス個数",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_TK.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SYADANKI_MEI.BIN"
+        ]
+    },
+    "IB_LI_CREATE_ROT_Y": {
+        "num": 214,
+        "description": "【モデルバイナリ】ROT_YのLIインデックスを生成する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：生成するLIインデックス個数",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANTA_FAN2.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "IB_LI_CREATE_ROT_Z": {
+        "num": 215,
+        "description": "【モデルバイナリ】ROT_ZのLIインデックスを生成する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：生成するLIインデックス個数",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "IB_LI_SET_ROT_X": {
+        "num": 216,
+        "description": "【モデルバイナリ】ROT_XのLIインデックスに値を設定する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：ROT_X値" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_TK.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SYADANKI_MEI.BIN"
+        ]
+    },
+    "IB_LI_SET_ROT_Y": {
+        "num": 217,
+        "description": "【モデルバイナリ】ROT_YのLIインデックスに値を設定する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：ROT_Y値" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANTA_FAN2.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "IB_LI_SET_ROT_Z": {
+        "num": 218,
+        "description": "【モデルバイナリ】ROT_ZのLIインデックスに値を設定する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：ROT_Z値" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_X": {
+        "num": 219,
+        "description": "【モデルバイナリ】モデルインデックスのROT_Xに関するLI設定をループさせる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：1（True）、0（False）",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_TK.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SYADANKI_MEI.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_Y": {
+        "num": 220,
+        "description": "【モデルバイナリ】モデルインデックスのROT_Yに関するLI設定をループさせる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：1（True）、0（False）",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PANTA_FAN1.BIN",
+            "PANTA_FAN6.BIN",
+            "PANTA_FAN8.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "D4_SKY.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K80_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANTA_FAN2.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
+    },
+    "IB_LI_SET_LOOP_Z": {
+        "num": 221,
+        "description": "【モデルバイナリ】モデルインデックスのROT_Zに関するLI設定をループさせる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：1（True）、0（False）",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "DEBUG_DIR.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "1RAILHUMIKIRI25.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "SYADANKI_MEI.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
             "TOBU50K_0.BIN",
             "YU_0.BIN"
         ]
@@ -19129,15 +20140,20 @@ const CMD = {
                     + "引数１：モデルインデックス" + newLine
                     + "引数２～４：詳細不明",
         "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
             "PAD_SET_OBJ.BIN"
         ],
         "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
             "PAD_SET_OBJ.BIN",
             "VERUP_SCENE.BIN"
         ],
         "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
             "H2300_00.BIN",
-            "H2300_01.BIN"
+            "H2300_01.BIN",
+            "NANA_VS_SURU.BIN",
+            "TOBU.BIN"
         ]
     },
     "INDEX_BONE_L_POS_Y": {
@@ -19146,23 +20162,35 @@ const CMD = {
                     + "引数１：モデルインデックス" + newLine
                     + "引数２～４：詳細不明",
         "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
             "HK_OBJ.BIN",
             "KIN_OBJ.BIN",
-            "OP_OBJ.BIN"
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
         ],
         "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
             "HQ_TK.BIN",
             "KIN_NARA.BIN",
             "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
             "OP_OBJ_D3.BIN",
-            "SIN_TETSU.BIN"
+            "PAD_SET_OBJ.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
         ],
         "RS_bin": [
             "AMB_SIGNAL_WAIT_RED.BIN",
             "AMB_SIGNAL_WAIT_YE.BIN",
             "AMB_SIGNAL_Y_FLASH.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "CLASH_MEI_KASENCHU.BIN",
             "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
             "NANA_VS_SURU.BIN",
             "TOBU.BIN"
         ]
@@ -19173,14 +20201,73 @@ const CMD = {
                     + "引数１：モデルインデックス" + newLine
                     + "引数２～４：詳細不明",
         "BS_bin": [
-            "CHAR_SEL_OBJ.BIN"
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
         ],
         "CS_bin": [
+            "BOOKSEL_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
-            "JR2000_TRACK.BIN"
+            "COMICSEL_OBJ.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_TRACK.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "PAD_SET_OBJ.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "VERUP_SCENE.BIN"
         ],
         "RS_bin": [
-            "CHAR_SEL_OBJ_D4.BIN"
+            "CHAR_SEL_OBJ_D4.BIN",
+            "DRC_00.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ_D4.BIN",
+            "MU2000_0.BIN",
+            "NANA_VS_SURU.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
         ]
     },
     "IB_LI_CREATE_L_POS_X": {
@@ -19189,20 +20276,75 @@ const CMD = {
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：生成するLIインデックス個数",
         "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
             "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN"
         ]
     },
     "IB_LI_CREATE_L_POS_Y": {
         "num": 227,
         "description": "【モデルバイナリ】POS_YのLIインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数"
+                    + "引数２：生成するLIインデックス個数",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "IB_LI_CREATE_L_POS_Z": {
         "num": 228,
         "description": "【モデルバイナリ】POS_ZのLIインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数"
+                    + "引数２：生成するLIインデックス個数",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
     },
     "IB_LI_SET_L_POS_X": {
         "num": 229,
@@ -19211,7 +20353,20 @@ const CMD = {
                     + "引数２：LIインデックス" + newLine
                     + "引数３：POS_X値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
-                    + "引数５：変化方法"
+                    + "引数５：変化方法",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
     },
     "IB_LI_SET_L_POS_Y": {
         "num": 230,
@@ -19220,7 +20375,41 @@ const CMD = {
                     + "引数２：LIインデックス" + newLine
                     + "引数３：POS_Y値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
-                    + "引数５：変化方法"
+                    + "引数５：変化方法",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "IB_LI_SET_L_POS_Z": {
         "num": 231,
@@ -19229,7 +20418,18 @@ const CMD = {
                     + "引数２：LIインデックス" + newLine
                     + "引数３：POS_Z値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
-                    + "引数５：変化方法"
+                    + "引数５：変化方法",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
     },
     "FROM_ADDMT": {
         "num": 232,
@@ -19247,25 +20447,97 @@ const CMD = {
         "num": 235,
         "description": "【モデルバイナリ】メッシュのMOVE_Xに関するインデックス生成する" + newLine
                     + "引数１：メッシュインデックス" + newLine
-                    + "引数２：生成するインデックス個数"
+                    + "引数２：生成するインデックス個数",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "D4_SKY.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "IB_LI_SET_LOOP_LPOSX": {
         "num": 236,
         "description": "【モデルバイナリ】モデルインデックスのPOS_Xに関するLI設定をループさせる" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：1（True）、0（False）"
+                    + "引数２：1（True）、0（False）",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
     },
     "IB_LI_SET_LOOP_LPOSY": {
         "num": 237,
         "description": "【モデルバイナリ】モデルインデックスのPOS_Yに関するLI設定をループさせる" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：1（True）、0（False）"
+                    + "引数２：1（True）、0（False）",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "KIN_OBJ.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "COMICSEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "DEBUG_DIR.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIC_LIST_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "PAD_SET_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "IB_LI_SET_LOOP_LPOSZ": {
         "num": 238,
         "description": "【モデルバイナリ】モデルインデックスのPOS_Zに関するLI設定をループさせる" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：1（True）、0（False）"
+                    + "引数２：1（True）、0（False）",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "MENU_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
     },
     "RELEASE_ALL_IB_LIST": {
         "num": 239,
@@ -19310,6 +20582,10 @@ const CMD = {
             "HUMIKIRI60.BIN",
             "KIN_NARA.BIN",
             "KQ_HONSEN.BIN",
+            "SIGNAL_AMB_2BLUE.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
             "SIN_TETSU.BIN"
         ],
         "RS_bin": [
@@ -19318,11 +20594,17 @@ const CMD = {
             "AMB_SIGNAL_GG.BIN",
             "AMB_SIGNAL_WAIT_RED.BIN",
             "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
             "ASAKUSA_BRIDGE.BIN",
             "BASE_OBJ.BIN",
             "MEI.BIN",
             "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
             "MEI_HUMIKIRI50.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SKYTREE.BIN",
             "SYADANKI_MEI.BIN",
             "TOBU.BIN"
         ]
@@ -19335,7 +20617,43 @@ const CMD = {
         "num": 247,
         "description": "【モデルバイナリ】生成したレンズフレアにMTを設定する" + newLine
                     + "引数１：レンズフレアインデックス" + newLine
-                    + "引数２：MT名称"
+                    + "引数２：MT名称",
+        "BS_bin": [
+            "BASE_OBJ.BIN",
+            "HK_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HUMIKIRI25.BIN",
+            "HUMIKIRI60.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "SIGNAL_AMB_2BLUE.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "AMB_SIGNAL_1BLUE.BIN",
+            "AMB_SIGNAL_GG.BIN",
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "ASAKUSA_BRIDGE.BIN",
+            "BASE_OBJ.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MEI_HUMIKIRI50.BIN",
+            "SIGNAL_AMB_BLUE.BIN",
+            "SIGNAL_AMB_RED.BIN",
+            "SIGNAL_AMB_Y.BIN",
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
     },
     "RAIL_POS_TO_BUFF": {
         "num": 248,
@@ -20140,7 +21458,17 @@ const CMD = {
     },
     "MDL_INDEX_TO_VIEW": {
         "num": 253,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "BS_bin": [
+            "MENU_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
+        ]
     },
     "SET_FOG_LENGTH": {
         "num": 254,
@@ -20154,6 +21482,10 @@ const CMD = {
         "BS_comic": [
             "COMIC1300.BIN"
         ],
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
         "CS_comic": [
             "COMIC2300.BIN",
             "COMIC2437.BIN",
@@ -20164,8 +21496,14 @@ const CMD = {
             "COMIC2431.BIN",
             "COMIC2432.BIN"
         ],
+        "CS_bin": [
+            "MENU_OBJ.BIN"
+        ],
         "RS_comic": [
             "COMIC3464.BIN"
+        ],
+        "RS_bin": [
+            "MENU_OBJ_D4.BIN"
         ]
     },
     "SET_UV_MOVE_X": {
@@ -20173,24 +21511,84 @@ const CMD = {
         "description": "【モデルバイナリ】メッシュにMOVE_X値を設定する" + newLine
                     + "引数１：メッシュインデックス" + newLine
                     + "引数２：UVインデックス" + newLine
-                    + "引数３～５：詳細不明"
+                    + "引数３～５：詳細不明",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "D4_SKY.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "SET_UV_LOOP_X": {
         "num": 256,
         "description": "【モデルバイナリ】メッシュに設定したMOVE_Xをループさせる" + newLine
                     + "引数１：メッシュインデックス" + newLine
-                    + "引数２：1（True）、0（False）"
+                    + "引数２：1（True）、0（False）",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "D4_SKY.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "CREATE_MESH_INDEX": {
         "num": 257,
         "description": "【モデルバイナリ】メッシュインデックスを生成する" + newLine
                     + "引数１：生成するインデックス個数",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
         "CS_bin": [
-            "KOUSATEN.BIN"
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "KOUSATEN.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
         ],
         "RS_bin": [
             "AMB_ES_HOME.BIN",
             "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
             "WHEEL_FIRE.BIN"
         ]
     },
@@ -20199,7 +21597,43 @@ const CMD = {
         "description": "【モデルバイナリ】オブジェクトのメッシュのインデックスを取得する" + newLine
                     + "引数１：新たに扱うメッシュインデックス" + newLine
                     + "引数２：オブジェクトの元のメッシュインデックス１" + newLine
-                    + "引数３：オブジェクトの元のメッシュインデックス２"
+                    + "引数３：オブジェクトの元のメッシュインデックス２",
+        "BS_bin": [
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "KOUSATEN.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_SKY.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
     },
     "INDEX_BONE_L_ADD_ROT_X": {
         "num": 259,
@@ -20277,40 +21711,94 @@ const CMD = {
     "CHK_CLEAR_STORY": {
         "num": 263,
         "description": "【モデルバイナリ】ストーリーをクリアしたかチェック" + newLine
-                    + "引数１～３：詳細不明"
+                    + "引数１～３：詳細不明",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN"
+        ]
     },
     "CHK_OPEN_STORY": {
         "num": 264,
         "description": "【モデルバイナリ】ストーリーが開放されたかチェック" + newLine
-                    + "引数１～５：詳細不明"
+                    + "引数１～５：詳細不明",
+        "BS_bin": [
+            "BOOKSEL_OBJ.BIN"
+        ]
     },
     "SET_LENSFLEAR_ALL_FLG": {
         "num": 265,
-        "description": "【モデルバイナリ】引数１：詳細不明"
+        "description": "【モデルバイナリ】引数１：詳細不明",
+        "BS_bin": [
+            "HK_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "AMB_SIGNAL_WAIT_RED.BIN",
+            "AMB_SIGNAL_WAIT_YE.BIN",
+            "AMB_SIGNAL_Y_FLASH.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "TOBU.BIN"
+        ]
     },
     "CHK_USE_CHAR": {
         "num": 266,
         "description": "【モデルバイナリ】車両を使えるかチェックする" + newLine
-                    + "引数１～３：詳細不明"
+                    + "引数１～３：詳細不明",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN"
+        ]
     },
     "SET_OBJ_FOG_NO": {
         "num": 267,
         "description": "【モデルバイナリ】引数１：詳細不明",
         "CS_bin": [
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "MENU_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
             "SIGNAL_AMB_2BLUE.BIN",
             "SIGNAL_AMB_BLUE.BIN",
             "SIGNAL_AMB_RED.BIN",
-            "SIGNAL_AMB_Y.BIN"
+            "SIGNAL_AMB_Y.BIN",
+            "SIN_TETSU.BIN"
         ],
         "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
             "SIGNAL_AMB_BLUE.BIN",
             "SIGNAL_AMB_RED.BIN",
-            "SIGNAL_AMB_Y.BIN"
+            "SIGNAL_AMB_Y.BIN",
+            "TOBU.BIN",
+            "TOWN_LIGHT.BIN"
         ]
     },
     "SET_OBJ_RENDER_ID": {
         "num": 268,
-        "description": "【モデルバイナリ】引数１：詳細不明"
+        "description": "【モデルバイナリ】引数１：詳細不明",
+        "BS_bin": [
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "OP_OBJ_D3.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
     },
     "PLAY_STAGE_BGM": {
         "num": 269,
@@ -22388,10 +23876,34 @@ const CMD = {
                     + "引数４：カラーR" + newLine
                     + "引数５：カラーG" + newLine
                     + "引数６：カラーB",
+        "BS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "OP_OBJ.BIN"
+        ],
         "CS_bin": [
-            "H2000_00.BIN"
+            "CHAR_SEL_OBJ.BIN",
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ.BIN",
+            "MUSIUM_OBJ.BIN",
+            "OPTION_OBJ.BIN",
+            "OP_OBJ_D3.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
         ],
         "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
             "DRC_00.BIN",
             "DRC_01.BIN",
             "E233_0.BIN",
@@ -22400,18 +23912,32 @@ const CMD = {
             "H2000_01.BIN",
             "H2300_00.BIN",
             "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
             "H7011_0.BIN",
             "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
             "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MENU_OBJ_D4.BIN",
             "MU2000_0.BIN",
             "MU2000_1.BIN",
             "MU2000_2.BIN",
             "PANO_0.BIN",
             "PANO_1.BIN",
             "PANO_2.BIN",
+            "RAPID_00.BIN",
             "T200_00.BIN",
             "T200_01.BIN",
             "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
             "YU_0.BIN",
             "YU_1.BIN",
             "YU_2.BIN"
@@ -22485,7 +24011,13 @@ const CMD = {
     },
     "BASE_POINT_CAM": {
         "num": 297,
-        "description": "【モデルバイナリ】引数１：詳細不明"
+        "description": "【モデルバイナリ】引数１：詳細不明",
+        "BS_bin": [
+            "OP_OBJ.BIN"
+        ],
+        "CS_bin": [
+            "OP_OBJ_D3.BIN"
+        ]
     },
     "STOP_3D": {
         "num": 298,
@@ -24211,7 +25743,49 @@ const CMD = {
         "num": 336,
         "description": "【モデルバイナリ】モデルインデックスのLI設定のフラグを変更する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：1（True）、0（False）"
+                    + "引数２：1（True）、0（False）",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
+        ],
+        "RS_bin": [
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "H2000_00.BIN",
+            "H2300_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MU2000_0.BIN",
+            "PANO_0.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN"
+        ]
     },
     "PTCL_SCALL": {
         "num": 337,
@@ -24256,11 +25830,37 @@ const CMD = {
     },
     "PTCL_RAND_ALPHA": {
         "num": 344,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
     },
     "PTCL_RAND_SCALL": {
         "num": 345,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
     },
     "IB_ADD_PTCL": {
         "num": 346,
@@ -24281,7 +25881,20 @@ const CMD = {
     },
     "PTCL_RAND_TONE_COLOR": {
         "num": 347,
-        "description": "【モデルバイナリ】引数１～４：詳細不明"
+        "description": "【モデルバイナリ】引数１～４：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
     },
     "IS_ALPHA_END": {
         "num": 348,
@@ -24302,43 +25915,128 @@ const CMD = {
     },
     "PTCL_L_POS": {
         "num": 349,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
     },
     "PTCL_RAND_L_POS": {
         "num": 350,
-        "description": "【モデルバイナリ】引数１～９：詳細不明"
+        "description": "【モデルバイナリ】引数１～９：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "SKYTREE.BIN",
+            "TOBU.BIN"
+        ]
     },
     "CREATE_MAT_COLOR_R_INTERLIST": {
         "num": 351,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
     },
     "CREATE_MAT_EMISSIVE_R_INTERLIST": {
         "num": 352,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
     },
     "SET_MAT_COLOR_R": {
         "num": 353,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
     },
     "SET_MAT_COLOR_G": {
         "num": 354,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
     },
     "SET_MAT_COLOR_B": {
         "num": 355,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
     },
     "SET_MAT_COLOR_LOOP": {
         "num": 356,
-        "description": "【モデルバイナリ】引数１～３：詳細不明"
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "CS_bin": [
+            "KOUSATEN.BIN"
+        ]
     },
     "SET_MAT_EMISSIVE_R": {
         "num": 357,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
     },
     "SET_MAT_EMISSIVE_G": {
         "num": 358,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
     },
     "SET_MAT_EMISSIVE_B": {
         "num": 359,
@@ -24350,40 +26048,142 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_G_INTERLIST": {
         "num": 361,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
     },
     "CREATE_MAT_EMISSIVE_G_INTERLIST": {
         "num": 362,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
     },
     "CREATE_MAT_COLOR_B_INTERLIST": {
         "num": 363,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ.BIN",
+            "KOUSATEN.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CHAR_SEL_OBJ_D4.BIN",
+            "NANA_VS_SURU.BIN"
+        ]
     },
     "CREATE_MAT_EMISSIVE_B_INTERLIST": {
         "num": 364,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "BASE_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "BASE_OBJ.BIN"
+        ]
     },
     "CREATE_UV_MOVE_Y": {
         "num": 365,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
     },
     "SET_UV_MOVE_Y": {
         "num": 366,
         "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
-            "JR2000.BIN"
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "BASE_OBJ.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
         ]
     },
     "SET_UV_LOOP_Y": {
         "num": 367,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN",
+            "KIN_NARA.BIN",
+            "MENU_OBJ.BIN",
+            "VERUP_SCENE.BIN"
+        ],
+        "RS_bin": [
+            "AMB_ES_HOME.BIN",
+            "AMB_HIGHBILL_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
+            "SKYTREE.BIN",
+            "TEST.BIN",
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
+        ]
     },
     "INDEX_RAND_ROT_X": {
         "num": 368,
         "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
             "KIN_NARA.BIN"
+        ],
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
         ]
     },
     "INDEX_RAND_ROT_Y": {
@@ -24392,49 +26192,95 @@ const CMD = {
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
-            "JR2000_03.BIN"
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
         ],
         "RS_bin": [
+            "BASE_OBJ.BIN",
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MENU_OBJ_D4.BIN",
             "TEST.BIN",
-            "TOBU.BIN"
+            "TOBU.BIN",
+            "WHEEL_FIRE.BIN"
         ]
     },
     "INDEX_RAND_ROT_Z": {
         "num": 370,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
-    },
-    "INDEX_RAND_POS_X": {
-        "num": 371,
         "description": "【モデルバイナリ】引数１～５：詳細不明",
-        "RS_bin": [
-            "MENU_OBJ_D4.BIN"
-        ]
-    },
-    "INDEX_RAND_POS_Y": {
-        "num": 372,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
+        ],
         "RS_bin": [
             "CLASH_MEI_KASENCHU.BIN",
             "MEI.BIN",
             "MEI_HUMIKIRI25_COL.BIN"
         ]
     },
+    "INDEX_RAND_POS_X": {
+        "num": 371,
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "INDEX_RAND_POS_Y": {
+        "num": 372,
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN"
+        ],
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "TOBU.BIN"
+        ]
+    },
     "INDEX_RAND_POS_Z": {
         "num": 373,
-        "description": "【モデルバイナリ】引数１～５：詳細不明"
+        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "RS_bin": [
+            "CLASH_MEI_KASENCHU.BIN",
+            "MEI.BIN",
+            "MEI_HUMIKIRI25_COL.BIN",
+            "MENU_OBJ_D4.BIN",
+            "TOBU.BIN"
+        ]
     },
     "RAND_SHOW_MESH": {
         "num": 374,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
+        ]
     },
     "INDEX_RAND_SCALL": {
         "num": 375,
         "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
             "D3_1BOOK.BIN",
-            "D3_2BOOK.BIN"
+            "D3_2BOOK.BIN",
+            "JR2000.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN"
         ],
         "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
             "D4_2BOOK.BIN"
         ]
     },
@@ -24445,18 +26291,27 @@ const CMD = {
             "JR2000.BIN",
             "JR2000_01.BIN",
             "JR2000_02.BIN",
-            "JR2000_03.BIN"
+            "JR2000_03.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
         ],
         "RS_bin": [
-            "SKYTREE.BIN"
+            "SKYTREE.BIN",
+            "TOBU.BIN"
         ]
     },
     "ADD_OBJ_INDEX": {
         "num": 377,
         "description": "【モデルバイナリ】引数１～５：詳細不明",
         "CS_bin": [
+            "AMB_LIGHT.BIN",
             "JR2000_02.BIN",
             "JR2000_03.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "TOWN_LIGHT.BIN"
         ]
     },
     "GAS_TARBIN": {
@@ -24570,7 +26425,29 @@ const CMD = {
     },
     "IB_SET_W_MT": {
         "num": 381,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "BOOKSEL_OBJ.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "KANKU_BRIDGE.BIN",
+            "KIN_NARA.BIN",
+            "KIN_NARA_ST.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_LIGHT.BIN",
+            "AMB_LIGHT_D4.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN",
+            "TOBU.BIN",
+            "TOWN_LIGHT.BIN"
+        ]
     },
     "CHK_OBJ_PARAM": {
         "num": 382,
@@ -24584,6 +26461,8 @@ const CMD = {
                     + "引数４：FROM数字",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
             "H2000_00.BIN",
             "H2800_00.BIN",
             "H7001_00.BIN",
@@ -24591,7 +26470,11 @@ const CMD = {
             "H8200_00.BIN",
             "HS9000_00.BIN",
             "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
             "JR223_00.BIN",
+            "JR223_01.BIN",
             "K8000_00.BIN",
             "K800_00.BIN",
             "K80_00.BIN",
@@ -24602,6 +26485,7 @@ const CMD = {
         ],
         "RS_bin": [
             "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
             "DRC_00.BIN",
             "E233_0.BIN",
             "E233_1.BIN",
@@ -24615,6 +26499,7 @@ const CMD = {
             "HS9000_00.BIN",
             "HX200_0.BIN",
             "JR223_00.BIN",
+            "JR223_01.BIN",
             "K8000_00.BIN",
             "K800_00.BIN",
             "K80_00.BIN",
@@ -24624,9 +26509,12 @@ const CMD = {
             "PANO_0.BIN",
             "RAPID_00.BIN",
             "T200_00.BIN",
+            "T200_01.BIN",
             "TOBU50K_0.BIN",
             "TOBU50K_1.BIN",
-            "YU_0.BIN"
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
         ]
     },
     "SET_OBJ_PARAM": {
@@ -24645,11 +26533,74 @@ const CMD = {
                     + "引数３：DIFF_R" + newLine
                     + "引数４：DIFF_G" + newLine
                     + "引数５：DIFF_B" + newLine
-                    + "引数６：DIFF_A"
+                    + "引数６：DIFF_A",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "JR2000.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN"
+        ],
+        "RS_bin": [
+            "DRC_00.BIN",
+            "DRC_01.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "K8000_00.BIN",
+            "K800_00.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
+        ]
     },
     "ADD_OBJ_INDEX2": {
         "num": 386,
-        "description": "【モデルバイナリ】引数１～３：詳細不明"
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "CS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_NK_ROAD_L.BIN"
+        ],
+        "RS_bin": [
+            "AMB_LANDBRIDGH.BIN",
+            "AMB_NK_ROAD_L.BIN",
+            "LIGHT_4.BIN"
+        ]
     },
     "CNG_MT_ALPHA": {
         "num": 387,
@@ -24657,12 +26608,9 @@ const CMD = {
     },
     "CREATE_MAT_ALPHA_INTERLIST": {
         "num": 388,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
-    },
-    "SET_MAT_ALPHA": {
-        "num": 389,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
             "HQ_TK.BIN",
             "KIN_NARA.BIN",
@@ -24671,13 +26619,46 @@ const CMD = {
             "SIN_TETSU.BIN"
         ],
         "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
+        ]
+    },
+    "SET_MAT_ALPHA": {
+        "num": 389,
+        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
             "MEI.BIN",
             "TOBU.BIN"
         ]
     },
     "RESTART_MESH_LIST": {
         "num": 390,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "KIN_NARA.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "SIN_TETSU.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "MEI.BIN",
+            "TOBU.BIN"
+        ]
     },
     "RAIL_ANIME_CHANGE": {
         "num": 391,
@@ -24998,10 +26979,16 @@ const CMD = {
                     + "引数１：用意するインデックス" + newLine
                     + "引数２：テクスチャーファイル",
         "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
             "H2000_01.BIN",
             "H2800_00.BIN",
             "H7001_00.BIN",
             "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
             "HS9000_00.BIN",
             "HS9000_01.BIN",
             "JR2000.BIN",
@@ -25015,12 +27002,18 @@ const CMD = {
             "K8000_02.BIN",
             "K800_00.BIN",
             "K800_01.BIN",
-            "K80_00.BIN"
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN"
         ],
         "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
             "DRC_00.BIN",
             "E233_0.BIN",
             "E233_1.BIN",
+            "H2000_00.BIN",
             "H2000_01.BIN",
             "H2300_00.BIN",
             "H2300_01.BIN",
@@ -25029,7 +27022,9 @@ const CMD = {
             "H7001_01.BIN",
             "H7011_0.BIN",
             "H7011_1.BIN",
+            "H8008_00.BIN",
             "H8008_01.BIN",
+            "H8200_00.BIN",
             "HS9000_00.BIN",
             "HS9000_01.BIN",
             "JR223_00.BIN",
@@ -25040,6 +27035,9 @@ const CMD = {
             "K800_00.BIN",
             "K800_01.BIN",
             "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
             "MU2000_0.BIN",
             "MU2000_1.BIN",
             "MU2000_2.BIN",
@@ -25057,7 +27055,78 @@ const CMD = {
         "description": "【モデルバイナリ】SWAP_TXでマテリアルのテクスチャーを変える" + newLine
                     + "引数１：SWAP_TXのインデックス" + newLine
                     + "引数２：メッシュNo" + newLine
-                    + "引数３：そのメッシュのマテリアルNo"
+                    + "引数３：そのメッシュのマテリアルNo",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN",
+            "D3_1BOOK.BIN",
+            "D3_2BOOK.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN",
+            "D4_2BOOK.BIN",
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H7011_0.BIN",
+            "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN"
+        ]
     },
     "CHK_CAUSE": {
         "num": 400,
@@ -25142,11 +27211,86 @@ const CMD = {
         "description": "【モデルバイナリ】ANIMEを実行する" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_KB.BIN",
+            "HQ_TK.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KIN_NARA.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "KQ_HONSEN.BIN",
+            "OP_OBJ_D3.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "UV_01.BIN"
+        ],
         "RS_bin": [
+            "DRC_00.BIN",
+            "E233_0.BIN",
+            "E233_1.BIN",
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2300_00.BIN",
+            "H2300_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
             "H7011_0.BIN",
             "H7011_1.BIN",
+            "H8008_00.BIN",
+            "H8008_01.BIN",
             "H8200_00.BIN",
-            "HX200_0.BIN"
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "HX200_0.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "MEI.BIN",
+            "MU2000_0.BIN",
+            "MU2000_1.BIN",
+            "MU2000_2.BIN",
+            "PANO_0.BIN",
+            "PANO_1.BIN",
+            "PANO_2.BIN",
+            "RAPID_00.BIN",
+            "T200_00.BIN",
+            "T200_01.BIN",
+            "TOBU.BIN",
+            "TOBU50K_0.BIN",
+            "TOBU50K_1.BIN",
+            "YU_0.BIN",
+            "YU_1.BIN",
+            "YU_2.BIN"
         ]
     },
     "CHK_OUHUKU": {
@@ -25154,7 +27298,40 @@ const CMD = {
         "description": "【モデルバイナリ】往復状態の場合引数１のFROMへ" + newLine
                     + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROM数字" + newLine
-                    + "引数２：FROM数字"
+                    + "引数２：FROM数字",
+        "CS_bin": [
+            "H2000_00.BIN",
+            "H2000_01.BIN",
+            "H2800_00.BIN",
+            "H7001_00.BIN",
+            "H7001_01.BIN",
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HS9000_00.BIN",
+            "HS9000_01.BIN",
+            "JR2000.BIN",
+            "JR2000_01.BIN",
+            "JR2000_02.BIN",
+            "JR2000_03.BIN",
+            "JR223_00.BIN",
+            "JR223_01.BIN",
+            "K8000_00.BIN",
+            "K8000_01.BIN",
+            "K8000_02.BIN",
+            "K800_00.BIN",
+            "K800_01.BIN",
+            "K80_00.BIN",
+            "KQ2199_00.BIN",
+            "KQ21XX_00.BIN",
+            "KQ21XX_01.BIN",
+            "RAPID_00.BIN",
+            "UV_00.BIN",
+            "UV_01.BIN"
+        ],
+        "RS_bin": [
+            "H8200_00.BIN",
+            "RAPID_00.BIN"
+        ]
     },
     "SET_TRAIN_PTCL_AREA": {
         "num": 403,
@@ -25207,15 +27384,22 @@ const CMD = {
         "num": 407,
         "description": "【モデルバイナリ】引数１～２：詳細不明",
         "CS_bin": [
-            "H8200_00.BIN"
+            "H8008_00.BIN",
+            "H8200_00.BIN",
+            "HQ_TK.BIN",
+            "JR2000.BIN"
         ],
         "RS_bin": [
+            "H8008_00.BIN",
             "H8200_00.BIN"
         ]
     },
     "WEATHER": {
         "num": 408,
-        "description": "【モデルバイナリ】詳細不明"
+        "description": "【モデルバイナリ】詳細不明",
+        "CS_bin": [
+            "HQ_TK.BIN"
+        ]
     },
     "TRAIN_DIR": {
         "num": 409,
@@ -25281,7 +27465,13 @@ const CMD = {
                     + "使えない場合、引数３のFROM数字へ飛ぶ" + newLine
                     + "引数１：車両インデックス" + newLine
                     + "引数２：FROM数字" + newLine
-                    + "引数３：FROM数字"
+                    + "引数３：FROM数字",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
     },
     "QUICK_SAVE_EVENT": {
         "num": 411,
@@ -25389,7 +27579,13 @@ const CMD = {
     },
     "G_SHOW_MESH": {
         "num": 418,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "CHAR_SEL_OBJ.BIN"
+        ],
+        "RS_bin": [
+            "CHAR_SEL_OBJ_D4.BIN"
+        ]
     },
     "STOP_WIPER": {
         "num": 419,
@@ -25418,7 +27614,14 @@ const CMD = {
     },
     "MESH_INDEX_UV_RESTRT": {
         "num": 421,
-        "description": "【モデルバイナリ】引数１～２：詳細不明"
+        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "CS_bin": [
+            "H8200_00.BIN",
+            "JR2000.BIN"
+        ],
+        "RS_bin": [
+            "H8200_00.BIN"
+        ]
     },
     "SET_COMIC_COLOR": {
         "num": 422,
@@ -27834,7 +30037,7 @@ const CMD = {
         "num": 584,
         "description": "ストーリーモードで上り調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）",
+                    + "引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）"
     },
     "IS_ONE_TRACK_DRIFT": {
         "num": 585,

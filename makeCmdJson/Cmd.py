@@ -81,12 +81,13 @@ def callCmd(game, cmdJson):
         for scriptDataInfoList in decryptFile.scriptDataAllInfoList:
             for scriptDataInfo in scriptDataInfoList:
                 if len(scriptDataInfo) > 1:
-                    comicNum = scriptDataInfo[1][1]
-                    comicData = cmdList[comicNum]
-                    d = cmdJson[comicData]
-                    if "{0}_bin".format(game) not in d:
-                        d["{0}_bin".format(game)] = []
-                    if file not in d["{0}_bin".format(game)]:
-                        d["{0}_bin".format(game)].append(file)
+                    for scriptData in scriptDataInfo[1:]:
+                        comicNum = scriptData[1]
+                        comicData = cmdList[comicNum]
+                        d = cmdJson[comicData]
+                        if "{0}_bin".format(game) not in d:
+                            d["{0}_bin".format(game)] = []
+                        if file not in d["{0}_bin".format(game)]:
+                            d["{0}_bin".format(game)].append(file)
     
     return cmdJson

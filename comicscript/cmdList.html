@@ -1,0 +1,81 @@
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>電Ⅾコマンドリスト</title>
+        <link rel="stylesheet" href="./js/jquery-ui.min.css">
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script src="./js/angular.min.js"></script>
+    </head>
+    <style>
+        .notFixed {
+            overflow-y: scroll;
+            height: calc(100% - 230px);
+        }
+    </style>
+    <body ng-controller="myCtrl">
+        <div>
+            <div>
+                <a href="scriptViewer.html" target="_blank">電ⅮコミックスクリプトViewer</a>
+            </div>
+            <br />
+            <div>
+                <div>
+                    <input type="checkbox" id="modelCheck" ng-model="modelCheck">
+                    <label for="modelCheck">モデルバイナリを除外する</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="allNotUsed" ng-model="allNotUsed">
+                    <label for="allNotUsed">全く使われてないコマンドを除外する</label>
+                </div>
+                <br />
+                <div>
+                    <div>
+                        絞り込むゲームを選択する（AND条件）
+                    </div>
+                    <input type="checkbox" id="LSCheck" ng-model="LSCheck">
+                    <label for="LSCheck">LS</label>
+                    <input type="checkbox" id="BSCheck" ng-model="BSCheck">
+                    <label for="BSCheck">BS</label>
+                    <input type="checkbox" id="CSCheck" ng-model="CSCheck">
+                    <label for="CSCheck">CS</label>
+                    <input type="checkbox" id="RSCheck" ng-model="RSCheck">
+                    <label for="RSCheck">RS</label>
+                    <input type="checkbox" id="SSCheck" ng-model="SSCheck">
+                    <label for="SSCheck">SS</label>
+                </div>
+                
+            </div>
+            <div id="errorDiv"></div>
+            <br />
+            {{ filtered.length }}件発見
+            <hr />
+        </div>
+        <div class="notFixed">
+            <table id="script" border="1">
+                <thead>
+                    <tr>
+                        <th>番号</th>
+                        <th>コマンド名</th>
+                        <th>説明</th>
+                        <th colspan="5">使われたゲーム</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cmdInfo in filtered = (cmdInfoList | filter:myFilter)">
+                        <td style="min-width:50px;">{{cmdInfo.num}}</td>
+                        <td style="max-width:200px;">{{cmdInfo.name}}</td>
+                        <td>
+                            <div ng-repeat="desc in cmdInfo.description track by $index">
+                                {{desc}}
+                            </div>
+                        </td>
+                        <td ng-repeat="series in cmdInfo.cmdUsedList track by $index">{{series}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script src="./js/cmd.js"></script>
+    <script src="./js/cmdList.js"></script>
+</html>

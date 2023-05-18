@@ -1,0 +1,72 @@
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>電ⅮコミックスクリプトViewer</title>
+        <link rel="stylesheet" href="./js/jquery-ui.min.css">
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script src="./js/angular.min.js"></script>
+        <script>
+            $( function() {
+                $( document ).tooltip({
+                    content:function(){
+                        return this.getAttribute("title");
+                    }
+                });
+            } );
+        </script>
+    </head>
+    <style>
+        .scriptList {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+            min-width: 50px;
+        }
+        .cmd-property {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        div.ui-tooltip {
+            max-width: 400px;
+        }
+    </style>
+    <body ng-controller="myCtrl">
+        <div>
+            <a href="cmdList.html" target="_blank">コマンドリスト</a>
+        </div>
+        <div>コミックスクリプトのbinファイルを添付してください</div>
+        <br />
+        ゲーム（CHK_TRAIN_TYPEのindex判定に使う）
+        <div>
+            <input type="radio" name="series" id="radioLS" ng-model="series" value="LS" /><label for="radioLS">LS</label>
+            <input type="radio" name="series" id="radioBS" ng-model="series" value="BS" /><label for="radioBS">BS</label>
+            <input type="radio" name="series" id="radioCS" ng-model="series" value="CS" /><label for="radioCS">CS</label>
+            <input type="radio" name="series" id="radioRS" ng-model="series" value="RS" /><label for="radioRS">RS</label>
+            <input type="radio" name="series" id="radioSS" ng-model="series" value="SS" /><label for="radioSS">SS</label>
+        </div>
+        <br />
+        <div>
+            <input type="file" id="file" onchange="angular.element(this).scope().fileUpload(this)" />
+        </div>
+        <div id="errorDiv"></div>
+        <hr />
+        <div>
+            <table id="script" border="1">
+                <tr ng-repeat="cmdList in selectScript track by $index">
+                    <td ng-repeat="cmd in cmdList track by $index" class="scriptList">
+                        <div ng-if="cmd.property != ''" title="{{cmd.property}}" class="cmd-property">
+                            {{cmd.info}}
+                        </div>
+                        <div ng-if="cmd.property == ''">
+                            {{cmd.info}}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script src="./js/cmd.js"></script>
+    <script src="./js/cmdList.js"></script>
+</html>
