@@ -28016,7 +28016,12 @@ const CMD = {
         "num": 448,
         "description": "車両の前の部分を上げる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～７：詳細不明",
+                    + "引数２：車両インデックス" + newLine
+                    + "引数３：ずらすx座標" + newLine
+                    + "引数４：ずらすy座標" + newLine
+                    + "引数５：z軸に傾ける数値" + newLine
+                    + "引数６：ずらす変化時間（フレーム）" + newLine
+                    + "引数７：戻す変化時間（フレーム）",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3470.BIN"
@@ -28026,7 +28031,12 @@ const CMD = {
         "num": 449,
         "description": "車両の後ろの部分を上げる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～７：詳細不明",
+                    + "引数２：車両インデックス" + newLine
+                    + "引数３：ずらすx座標" + newLine
+                    + "引数４：ずらすy座標" + newLine
+                    + "引数５：z軸に傾ける数値" + newLine
+                    + "引数６：ずらす変化時間（フレーム）" + newLine
+                    + "引数７：戻す変化時間（フレーム）",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3279.BIN"
@@ -28046,7 +28056,13 @@ const CMD = {
         "num": 451,
         "description": "車両の台車を動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～８：詳細不明",
+                    + "引数２：車両インデックス" + newLine
+                    + "引数３：台車インデックス" + newLine
+                    + "引数３：ずらすx座標" + newLine
+                    + "引数４：ずらすy座標" + newLine
+                    + "引数５：z軸に傾ける数値" + newLine
+                    + "引数６：変化時間（フレーム）" + newLine
+                    + "引数７：変化方法",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3060.BIN",
