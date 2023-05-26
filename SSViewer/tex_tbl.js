@@ -137,7 +137,9 @@ function uploadFile(inputElement) {
             }
         }, false);
 
-        reader.readAsText(file);
+        if (file != null) {
+            reader.readAsText(file);
+        }
     }
 }
 
@@ -242,7 +244,7 @@ function readBodyColor(allTextList) {
                     dataTd.innerHTML = textLineList[i];
                     if (i == 0) {
                         let name = textLineList[i];
-                        if (matTexList.indexOf(name) == -1) {
+                        if (matTexList.length > 0 && matTexList.indexOf(name) == -1) {
                             let msg = "Warn：body_colorの中に、mat_tblにない要素があります（赤色）";
                             document.getElementById("errorDiv").innerHTML = msg;
                             dataTd.style.color = "red";
