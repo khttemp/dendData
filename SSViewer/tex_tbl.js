@@ -71,6 +71,8 @@ let textureWrapModeList = [
     "Mirror",
     "MirrorOnce"
 ];
+let matTexList = [];
+let texTexList = [];
 
 function uploadFile(inputElement) {
     document.getElementById("bodyColorTableDiv").innerHTML = "";
@@ -80,7 +82,12 @@ function uploadFile(inputElement) {
     let fileList = inputElement.files;
     // ファイルの数を取得
     let fileCount = fileList.length;
-    // 選択されたファイルの数だけ処理する
+
+    let processFileList = [
+        {"name":"mat_tbl", "file": null},
+        {"name":"tex_tbl", "file": null},
+        {"name":"body_color", "file": null}
+    ];
     for (let i = 0; i < fileCount; i++) {
         // ファイルを取得
         let file = fileList[i];
@@ -91,16 +98,34 @@ function uploadFile(inputElement) {
             return;
         }
 
+        if (name == "body_color.txt") {
+            let processInfo = processFileList.find(({name}) => name === "body_color");
+            processInfo["file"] = file;
+        } else if (name == "mat_tbl.txt") {
+            let processInfo = processFileList.find(({name}) => name === "mat_tbl");
+            processInfo["file"] = file;
+        } else if (name == "tex_tbl.txt") {
+            let processInfo = processFileList.find(({name}) => name === "tex_tbl");
+            processInfo["file"] = file;
+        }
+    }
+
+    let fileKeyList = Object.keys(processFileList);
+    for (let i = 0; i < fileKeyList.length; i++) {
+        let name = processFileList[fileKeyList[i]]["name"];
+        console.log(`${name} 読み込み中...`);
+        let file = processFileList[fileKeyList[i]]["file"];
+
         let allTextList = "";
         const reader = new FileReader();
         reader.addEventListener("load", () => {
             try {
                 allTextList = reader.result.split("\n").map(m => m.trim());
-                if (name == "body_color.txt") {
+                if (name == "body_color") {
                     readBodyColor(allTextList);
-                } else if (name == "mat_tbl.txt") {
+                } else if (name == "mat_tbl") {
                     readMatTbl(allTextList);
-                } else if (name == "tex_tbl.txt") {
+                } else if (name == "tex_tbl") {
                     readTexTbl(allTextList);
                 }
                 document.getElementById("focusLink").style.display = "inline";
@@ -214,6 +239,14 @@ function readBodyColor(allTextList) {
                         throw new Error(msg);
                     }
                     dataTd.innerHTML = textLineList[i];
+                    if (i == 0) {
+                        let name = textLineList[i];
+                        if (matTexList.indexOf(name) == -1) {
+                            let msg = "Warn：body_colorの中に、mat_tblにない要素があります（赤色）";
+                            document.getElementById("errorDiv").innerHTML = msg;
+                            dataTd.style.color = "red";
+                        }
+                    }
                 }
                 cnt++;
                 if (cnt >= matNameCnt) {
@@ -280,6 +313,12 @@ function readMatTbl(allTextList) {
                     dataTd.innerHTML = textLineList[j];
                 }
             } else {
+                if (j == 0) {
+                    let name = textLineList[j];
+                    if (matTexList.indexOf(name) == -1) {
+                        matTexList.push(name);
+                    }
+                }
                 dataTd.innerHTML = textLineList[j];
             }   
         }
@@ -336,6 +375,12 @@ function readTexTbl(allTextList) {
                     dataTd.innerHTML = textLineList[j];
                 }
             } else {
+                if (j == 0) {
+                    let name = textLineList[j];
+                    if (texTexList.indexOf(name) == -1) {
+                        texTexList.push(name);
+                    }
+                }
                 dataTd.innerHTML = textLineList[j];
             }   
         }
