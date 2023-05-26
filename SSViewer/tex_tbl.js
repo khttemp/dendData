@@ -75,6 +75,7 @@ let matTexList = [];
 let texTexList = [];
 
 function uploadFile(inputElement) {
+    document.getElementById("errorDiv").innerHTML = "";
     document.getElementById("bodyColorTableDiv").innerHTML = "";
     document.getElementById("matTblTableDiv").innerHTML = "";
     document.getElementById("texTblTableDiv").innerHTML = "";
