@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSのtex_tblビューア</title>
+        <script src="./tex_tbl.js"></script>
+    </head>
+    <style>
+        table {
+            table-layout: fixed;
+        }
+        
+        th {
+            min-width: 75px;
+        }
+
+        .header {
+            font-weight: bold;
+        }
+
+        #dataDiv {
+            max-width: 2000px;
+            height: calc(100% - 150px);
+            overflow-x: scroll;
+            padding-bottom: 10px;
+        }
+
+        .span-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+            padding-right: 10px;
+        }
+    </style>
+    <body>
+        <div>tex_tblの中身を全部添付してください</div>
+        <div>※body_color、mat_tbl、tex_tblのみ読み込みます</div>
+        <br />
+        <div>
+            <input type="file" id="file" onchange="uploadFile(this)" onaccept="text/plain" multiple />
+        </div>
+        <div style="display:none" id="focusLink">
+            <span class="span-link" onclick='scrollView("bodyColorTableDiv")'>body-colorへ行く</span>
+            <span class="span-link" onclick='scrollView("matTblTableDiv")'>mat-tblへ行く</span>
+            <span class="span-link" onclick='scrollView("texTblTableDiv")'>tex-tblへ行く</span>
+        </div>
+
+        <div id="errorDiv"></div>
+        <hr />
+        <div id="dataDiv">
+            <div id="bodyColorTableDiv"></div>
+            <div id="matTblTableDiv"></div>
+            <div id="texTblTableDiv"></div>
+        </div>
+    </body>
+</html>
