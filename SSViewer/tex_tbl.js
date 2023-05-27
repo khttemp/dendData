@@ -1,4 +1,41 @@
 let allTextList;
+let trainList = [
+    "H2000",
+    "X200",
+    "H4050",
+    "H7011",
+    "E233",
+    "H8200",
+    "TQ5050",
+    "TQ5000",
+    "TQ9001",
+    "TQ300",
+    "TQ8500",
+    "Pano",
+    "Mu2000",
+    "T50000",
+    "T200",
+    "DRC",
+    "H2800",
+    "H9000",
+    "KQ21XX",
+    "JR2000",
+    "Rapit",
+    "K8000",
+    "Arban21000R",
+    "H8008",
+    "KQ2199",
+    "H2300",
+    "JR223",
+    "K800",
+    "H7001",
+    "K80",
+    "Yuri",
+    "AE86",
+    "Deki",
+    "MIZ1000",
+    "KB1300",
+];
 let texTblFileList = [
     "body_color.txt",
     "mat_tbl.txt",
@@ -202,6 +239,12 @@ function readBodyColor(allTextList) {
                     }
                     let dataTd = document.createElement("td");
                     dataTr.appendChild(dataTd);
+                    if (i == 0) {
+                        if (trainList.indexOf(textLineList[i]) == -1) {
+                            let msg = "Matのリストが設定したMat名数と不一致です";
+                            throw new Error(msg);
+                        }
+                    }
                     dataTd.innerHTML = textLineList[i];
                     dataTd.style.backgroundColor = "#CCCCCC";
                 }
@@ -238,7 +281,6 @@ function readBodyColor(allTextList) {
                     dataTr.appendChild(dataTd);
                     if (i >= textLineList.length) {
                         let msg = "テキスチャーの数が設定したカラー組の数より少ないです"
-                        document.getElementById("errorDiv").innerHTML = msg;
                         throw new Error(msg);
                     }
                     dataTd.innerHTML = textLineList[i];
