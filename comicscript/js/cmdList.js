@@ -60,13 +60,15 @@ angular.module('myApp', [])
             let csFlag = true;
             let rsFlag = true;
             let ssFlag = true;
+            let cmdNameFlag = true;
             if (!$scope.modelCheck && 
                 !$scope.allNotUsed &&
                 !$scope.LSCheck &&
                 !$scope.BSCheck &&
                 !$scope.CSCheck &&
                 !$scope.RSCheck &&
-                !$scope.SSCheck) {
+                !$scope.SSCheck &&
+                !$scope.cmdName) {
                 return item;
             }
             if ($scope.modelCheck) {
@@ -105,6 +107,11 @@ angular.module('myApp', [])
                     ssFlag = false;
                 }
             }
+            if ($scope.cmdName) {
+                if (item.name.toUpperCase().indexOf($scope.cmdName.toUpperCase()) == -1) {
+                    cmdNameFlag = false;
+                }
+            }
 
             if (modelCheckFlag && 
                 allNotUsedFlag &&
@@ -112,7 +119,8 @@ angular.module('myApp', [])
                 bsFlag &&
                 csFlag &&
                 rsFlag &&
-                ssFlag) {
+                ssFlag &&
+                cmdNameFlag) {
                 return item;
             }
         }

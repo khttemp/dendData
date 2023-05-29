@@ -200,7 +200,7 @@ const CMD = {
     },
     "SetCamDir": {
         "num": 10,
-        "description": "",
+        "description": "【モデルバイナリ】詳細不明",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ],
