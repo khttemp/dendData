@@ -13659,20 +13659,33 @@ const CMD = {
         "description": "カメラタイプを変える" + newLine
                     + "引数１：0（1P）、1（2P）、-1（デフォルト）" + newLine
                     + "引数２：カメラ番号" + newLine
-                    + "　-1,8（デフォルト）" + newLine
-                    + "　０（TOP）" + newLine
-                    + "　１（UP）" + newLine
-                    + "　２（FRONT）" + newLine
-                    + "　３（MORE_UP）" + newLine
-                    + "　６（MORE_FRONT）" + newLine
-                    + "　７（カメラを固定させる）" + newLine
+                    + "　LS定義" + newLine
+                    + "　　-1,8（デフォルト）" + newLine
+                    + "　　０（TOP）" + newLine
+                    + "　　１（UP）" + newLine
+                    + "　　２（FRONT）" + newLine
+                    + "　　３（MORE_UP）" + newLine
+                    + "　　６（MORE_FRONT）" + newLine
+                    + "　　７（カメラを固定させる）" + newLine
+                    + "　BSの定義" + newLine
+                    + "　　７以外（デフォルト）" + newLine
+                    + "　　７（カメラを固定させる）" + newLine
+                    + "　CS以後の定義" + newLine
+                    + "　　０（TOP）" + newLine
+                    + "　　１（UP）" + newLine
+                    + "　　２（FRONT）" + newLine
+                    + "　　３（BACK）" + newLine
+                    + "　　４以上（DRIVER）" + newLine
+                    + "　　５以上（デフォルト）" + newLine
                     + "引数３" + newLine
-                    + "　引数２が-1の場合：-1（デフォルト）" + newLine
-                    + "　引数２が6番の場合：1（ちょっと高め）、2（ちょっと低め）" + newLine
-                    + "　引数２が7番の場合：1（先頭車両を注視点とする）、6（注視点も固定）" + newLine
-                    + "　引数２が6,7番以外" + newLine
-                    + "　　6（カメラの向きを180度回転）" + newLine
-                    + "　　0,1,2（効果なし？一部引数２と組み合わせできないものあり）",
+                    + "　LS、BS定義" + newLine
+                    + "　　引数２が-1の場合：-1（デフォルト）" + newLine
+                    + "　　引数２が6番の場合：1（ちょっと高め）、2（ちょっと低め）" + newLine
+                    + "　　引数２が7番の場合：1（先頭車両を注視点とする）、6（注視点も固定）" + newLine
+                    + "　　引数２が6,7番以外" + newLine
+                    + "　　　6（カメラの向きを180度回転）" + newLine
+                    + "　　　0,1,2（効果なし？一部引数２と組み合わせできないものあり）" + newLine
+                    + "　CS以後の定義：読み込まない？",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC010.BIN",
