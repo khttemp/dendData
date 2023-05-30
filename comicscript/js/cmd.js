@@ -13675,7 +13675,7 @@ const CMD = {
                     + "　　１（UP）" + newLine
                     + "　　２（FRONT）" + newLine
                     + "　　３（BACK）" + newLine
-                    + "　　４以上（DRIVER）" + newLine
+                    + "　　４（DRIVER）" + newLine
                     + "　　５以上（デフォルト）" + newLine
                     + "引数３" + newLine
                     + "　LS、BS定義" + newLine
