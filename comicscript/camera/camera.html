@@ -1,0 +1,251 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>カメラの解説</title>
+    </head>
+    <style>
+        td {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <h3>LSのカメラ調整法</h3>
+        <div>カメラは下記のように調整する。</div>
+        <div>※LSのCOMIC000.binから抜粋</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="6">・・・</td>
+                </tr>
+                <tr>
+                    <td>CamComtroll</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>SetCamPos</td>
+                    <td>-15.0</td>
+                    <td>20.0</td>
+                    <td>500.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SetCamTarget</td>
+                    <td>-15.0</td>
+                    <td>5.0</td>
+                    <td>380.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SetCamPos</td>
+                    <td>-27.0</td>
+                    <td>3.0</td>
+                    <td>375.0</td>
+                    <td>600.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>SetCamTarget</td>
+                    <td>-5.0</td>
+                    <td>12.0</td>
+                    <td>360.0</td>
+                    <td>600.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td colspan="6">・・・</td>
+                </tr>
+                <tr>
+                    <td>CamComtroll</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td colspan="6">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>CamComtrollの1.0コマンドで、まずカメラを動かせるようにする</div>
+        <div>次にSetCamPosでカメラの絶対座標の位置</div>
+        <div>SetCamTargetで注視点の絶対座標の位置を決める</div>
+        <br />
+        <div>変化時間や変化方法を設定すると、</div>
+        <div>現在のカメラの位置、注視点の位置からゆっくり変わるようになる</div>
+        <div>このカメラの調整は、止まっている物体に向けてカメラを移動させたいときなどで有効</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>イメージ</th>
+                    <th>ゲーム画面</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/01.png" width="500px;"></td>
+                    <td><img src="./image/02.png" width="500px;"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>カメラのイメージは、図のように矢印の方向で撮っているようなイメージである</div>
+        <hr />
+        <div>カメラは下記のように、別の方法で調整できる</div>
+        <div>※LSのCOMIC010.binから抜粋</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="4">・・・</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_TYPE</td>
+                    <td>0.0</td>
+                    <td>2.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_LENGTH</td>
+                    <td>25.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_LENGTH</td>
+                    <td>30.0</td>
+                    <td>60.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_DIRY</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_DIRY</td>
+                    <td>-45.0</td>
+                    <td>60.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_DIRX</td>
+                    <td>-10.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_DIRX</td>
+                    <td>1.0</td>
+                    <td>60.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td colspan="4">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>CHANGE_CAM_TYPEを使って相対位置でカメラを調整できる</div>
+        <div>一部の機能を除いて、車両の速度に合わせてカメラも注視点も移動するので</div>
+        <div>絶対座標で指定より便利な機能である</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>カメラ番号</th>
+                    <th>解説</th>
+                    <th>ゲーム画面</th>
+                </tr>
+                <tr>
+                    <td>-1, 0, 8<br>（下記以外の番号）</td>
+                    <td>デフォルトのカメラ。<br>先頭車両から見る視点</td>
+                    <td><img src="./image/cam0.png" width="500px;"></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>TOPのカメラ。<br>先頭車両の上から見る視点</td>
+                    <td><img src="./image/cam1.png" width="500px;"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>FRONTのカメラ。<br>先頭車両の前面が注視点</td>
+                    <td><img src="./image/cam2.png" width="500px;"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>MORE_TOPのカメラ。<br>先頭車両のかなり上から見る視点</td>
+                    <td><img src="./image/cam3.png" width="500px;"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>MORE_FRONTのカメラ。<br>先頭車両の前面が注視点。<br>FRONTカメラよりもっと近い。</td>
+                    <td><img src="./image/cam6.png" width="500px;"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>カメラを現在位置から固定。<br>発動した瞬間、カメラの位置が止まる。<br>引数３を【1】にすると注視点はそのまま。<br>【6】にすると注視点も固定する。<br>(※図は、デフォルトカメラから<br>引数３を【6】にしたもの)</td>
+                    <td><img src="./image/cam7.png" width="500px;"></td>
+                </tr>
+                <tr>
+                    <td>0-6<br>1-6<br>2-6<br>3-6</td>
+                    <td>引数２が【0,1,2,3】のとき<br>引数３を【6】にすることで、<br>カメラを180度回転する。<br>（※図はTOPカメラの180度回転）</td>
+                    <td><img src="./image/cam1-6.png" width="500px;"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>CHANGE_CAM_LENGTHは、カメラと注視点の距離を調整する</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>距離10</th>
+                    <th>デフォルト</th>
+                    <th>距離50</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/camLen10.png" width="350px;"></td>
+                    <td><img src="./image/camLen.png" width="350px;"></td>
+                    <td><img src="./image/camLen50.png" width="350px;"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>CHANGE_CAM_DIRX、</div>
+        <div>CHANGE_CAM_DIRY、</div>
+        <div>CHANGE_CAM_DIRZは、カメラを回転する</div>
+        <br />
+        <div>ちなみに、CHANGE_CAM_DIRZは、見た目があまり大きくないため、</div>
+        <div>ゲームで一度も使われたことがない。</div>
+        </div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>回転軸</th>
+                    <th>回転数値-15</th>
+                    <th>デフォルト</th>
+                    <th>回転数値15</th>
+                </tr>
+                <tr>
+                    <td>X回転</td>
+                    <td><img src="./image/camX-15.png" width="350px;"></td>
+                    <td><img src="./image/cam2.png" width="350px;"></td>
+                    <td><img src="./image/camX15.png" width="350px;"></td>
+                </tr>
+                <tr>
+                    <td>Y回転</td>
+                    <td><img src="./image/camY-15.png" width="350px;"></td>
+                    <td><img src="./image/cam2.png" width="350px;"></td>
+                    <td><img src="./image/camY15.png" width="350px;"></td>
+                </tr>
+                <tr>
+                    <td>Z回転</td>
+                    <td><img src="./image/camZ-15.png" width="350px;"></td>
+                    <td><img src="./image/cam2.png" width="350px;"></td>
+                    <td><img src="./image/camZ15.png" width="350px;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
