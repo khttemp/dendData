@@ -2,6 +2,11 @@
     <head>
         <meta charset="utf-8">
         <title>カメラの解説</title>
+        <script>
+            function scrollView(id) {
+                document.getElementById(id).scrollIntoView();
+            }
+        </script>
     </head>
     <style>
         td {
@@ -9,11 +14,20 @@
             padding-right: 12px;
             text-align: center;
         }
+
+        .span-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+            padding-right: 10px;
+        }
     </style>
     <body>
         <h1>カメラ調整仕様書</h1>
+        <span class="span-link" onclick='scrollView("LSCamera")'>LSのカメラ調整法へ行く</span>
+        <span class="span-link" onclick='scrollView("BSCamera")'>BS以降のカメラ調整法へ行く</span>
         <hr />
-        <h2>LSのカメラ調整法</h2>
+        <h2 id="LSCamera">LSのカメラ調整法</h2>
         <h3>・絶対座標で指定する方法</h3>
         <div>カメラは下記のように調整する。</div>
         <div>※LSのCOMIC000.binから抜粋</div>
@@ -317,7 +331,7 @@
         <div>上記のコマンドは、2Pを追う注視点に、</div>
         <div>カメラの位置は石橋から、30フレームで、ちょっと上に上げる効果である</div>
         <hr />
-        <h2>BS以降のカメラ調整法</h2>
+        <h2 id="BSCamera">BS以降のカメラ調整法</h2>
         <h3>・レールを利用した、絶対座標で指定する方法</h3>
         <div>LSのように、絶対座標での調整は、微妙な調整が大変である。</div>
         <div>これを少しでも便利にするため、BUFFという要素を使う</div>
