@@ -420,6 +420,74 @@
         <div>結果、カメラの視点はこうなる。</div>
         <div>そして、最後のコマンドはカメラの位置を【+6.5, +5.0, -50.0】ずらした位置に</div>
         <div>600フレームで移動するので、結果的にカメラの現在位置からZ軸に【-50】移動するカメラ効果になる</div>
+        <br />
+        <div>※SSでは、「BUFF_TO_CAM_POS」を廃止。</div>
+        <div>カメラを動かすのは、全部「BUFF_TO_SC_CAM_POS」に統一。</div>
+        <div>ただし、これは元々「SET_CAMPOINT_1P2T」で使う、車両を追うカメラの調整用だったため（後述）</div>
+        <div>固定カメラとして使うためには、先に「SET_CAMPOINT_K」を宣言するべき。</div>
+        <br />
+        <div>※SSのCOMIC42035.BINから抜粋</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="7">・・・</td>
+                </tr>
+                <tr>
+                    <td>SET_CAMPOINT_K</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>33.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>33.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>15.0</td>
+                    <td>13.5</td>
+                    <td>12.5</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>-10.0</td>
+                    <td>13.5</td>
+                    <td>12.5</td>
+                    <td>300.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_TARGET_POS</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>5.0</td>
+                    <td>-100.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_TARGET_POS</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                    <td>300.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td colspan="7">・・・</td>
+                </tr>
+            </tbody>
+        </table>
         <hr />
         <h3>・相対座標で指定する方法</h3>
         <div>「BUFF_TO_TARGET_POS」のように、注視点を固定するコマンドはあまり使われてない。</div>
