@@ -11,7 +11,10 @@
         }
     </style>
     <body>
-        <h3>LSのカメラ調整法</h3>
+        <h1>カメラ調整仕様書</h1>
+        <hr />
+        <h2>LSのカメラ調整法</h2>
+        <h3>・絶対座標で指定する方法</h3>
         <div>カメラは下記のように調整する。</div>
         <div>※LSのCOMIC000.binから抜粋</div>
         <br />
@@ -91,6 +94,7 @@
         </table>
         <div>カメラのイメージは、図のように矢印の方向で撮っているようなイメージである</div>
         <hr />
+        <h3>・相対座標で指定する方法</h3>
         <div>カメラは下記のように、別の方法で調整できる</div>
         <div>※LSのCOMIC010.binから抜粋</div>
         <br />
@@ -185,7 +189,7 @@
                 </tr>
                 <tr>
                     <td>7</td>
-                    <td>カメラを現在位置から固定。<br>発動した瞬間、カメラの位置が止まる。<br>引数３を【1】にすると注視点はそのまま。<br>【6】にすると注視点も固定する。<br>(※図は、デフォルトカメラから<br>引数３を【6】にしたもの)</td>
+                    <td>カメラを現在位置から固定。<br>発動した瞬間、カメラの位置が止まる。<br>引数３を【1】にすると注視点はそのまま。<br>【6】にすると注視点も固定する。<br>(※図は、デフォルトカメラから<br>引数３を【1】にしたもの)</td>
                     <td><img src="./image/cam7.png" width="500px;"></td>
                 </tr>
                 <tr>
@@ -247,5 +251,410 @@
                 </tr>
             </tbody>
         </table>
+        <br />
+        <br />
+        <div>上記のコマンドは、LSでしか使われていない。</div>
+        <div>ある場所に固定して、シーンを撮るためには、絶対座標が有効であるが・・・</div>
+        <div>下記のコマンドは、LSで使われた、石橋付近のカメラ効果である</div>
+        <div>※LSのCOMIC702.BINから抜粋</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="6">・・・</td>
+                </tr>
+                <tr>
+                    <td>CamComtroll</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_CAM_TYPE</td>
+                    <td>1.0</td>
+                    <td>7.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>CHANGE_SPEED</td>
+                    <td>0.35</td>
+                    <td>60.0</td>
+                    <td>-1.0</td>
+                </tr>
+                <tr>
+                    <td>SetCamPos</td>
+                    <td>3523.0</td>
+                    <td>-373.0</td>
+                    <td>14176.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SetCamPos</td>
+                    <td>3523.0</td>
+                    <td>-368.0</td>
+                    <td>14176.0</td>
+                    <td>30.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td colspan="6">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>適用画面</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="./image/ishibashi.png" width="500px">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>上記のコマンドは、2Pを追う注視点に、</div>
+        <div>カメラの位置は石橋から、30フレームで、ちょっと上に上げる効果である</div>
+        <hr />
+        <h2>BS以降のカメラ調整法</h2>
+        <h3>・レールを利用した、絶対座標で指定する方法</h3>
+        <div>LSのように、絶対座標での調整は、微妙な調整が大変である。</div>
+        <div>これを少しでも便利にするため、BUFFという要素を使う</div>
+        <div>※RSのCOMIC3008.BINから抜粋</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="7">・・・</td>
+                </tr>
+                <tr>
+                    <td>CamComtroll</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>3.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>6.5</td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_TARGET_POS</td>
+                    <td>0.0</td>
+                    <td>6.5</td>
+                    <td>5.0</td>
+                    <td>50.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>6.5</td>
+                    <td>5.0</td>
+                    <td>-50.0</td>
+                    <td>600.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td colspan="7">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>BUFFの指定は、必ず「RAIL_POS_TO_BUFF」のコマンドで位置を指定する</div>
+        <div>BUFFは何個でも指定できるが、特殊な状況を除いて1個のみ指定するのが普通である。</div>
+        <div>上記のコマンドは、RAIL【3, 0】の場所にBUFF[0]を指定している</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>BUFFの定義</td>
+                </tr>
+                <tr>
+                    <td><img src="./image/buff.png" width="800px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>イメージはこうである</div>
+        <div>ここで、RAIL【3, 0】を基準に、カメラの位置と注視点の位置を決める。</div>
+        <div>必ず、両方とも明示的に決めないと正しいカメラ効果が発動しない。</div>
+        <div>カメラの位置は（x, y, z）を【+6.5, +5.0, 0.0】ずらして</div>
+        <div>注視点の位置は（x, y, z）を【+6.5, +5.0, 50.0】ずらす</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>BUFF適用</td>
+                </tr>
+                <tr>
+                    <td><img src="./image/buff2.png" width="800px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>結果、カメラの視点はこうなる。</div>
+        <div>そして、最後のコマンドはカメラの位置を【+6.5, +5.0, -50.0】ずらした位置に</div>
+        <div>600フレームで移動するので、結果的にカメラの現在位置からZ軸に【-50】移動するカメラ効果になる</div>
+        <hr />
+        <h3>・相対座標で指定する方法</h3>
+        <div>「BUFF_TO_TARGET_POS」のように、注視点を固定するコマンドはあまり使われてない。</div>
+        <div>電車でDのほとんどのカメラ効果の中で注視点は【車両を追う】注視点がほとんどである。</div>
+        <br />
+        <div>・「SET_CAMPOINT_2P2C」を使う方法</div>
+        <div>※RSのCOMIC3012.BINから抜粋</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="12">・・・</td>
+                </tr>
+                <tr>
+                    <td>CamComtroll</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAMPOINT_2P2C</td>
+                    <td>0.0</td>
+                    <td>20.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>160.0</td>
+                    <td>-7.0</td>
+                    <td>3.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_TARGET_OFFSET</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>CAM_POINT_PER</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>CAM_TARGET_PER</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_POINT_LENGTH</td>
+                    <td>1.0</td>
+                    <td>30.0</td>
+                    <td>7.0</td>
+                    <td>60.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_OFFSET</td>
+                    <td>1.0</td>
+                    <td>-6.0</td>
+                    <td>9.0</td>
+                    <td>0.0</td>
+                    <td>7.0</td>
+                    <td>60.0</td>
+                </tr>
+                <tr>
+                    <td colspan="12">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>「SET_CAMPOINT_2P2C」の具体的なカメラの位置は図の通りである。</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>カメラの位置定義</td>
+                </tr>
+                <tr>
+                    <td><img src="./image/2p2c1.png" width="800px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>引数１～５で「0番カメラ」の位置を、引数６～１０で「1番カメラ」の位置を決める</div>
+        <div>それぞれのカメラは、指定車両の先頭車の、一番前の台車の中心を基準に</div>
+        <div>指定距離分進めて、そこからx, y, z軸に移動したところである。</div>
+        <div>注視点はデフォルトで台車の中心になる。</div>
+        <br />
+        <div>決めた後、CAM_POINT_PERでカメラの位置を</div>
+        <div>CAM_TARGET_PERで注視点の位置を決める</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>0番、1番カメラ</th>
+                    <th>図</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/2p2c2.png" width="600px"></td>
+                    <td><img src="./image/2p2c3.png" width="300px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>例えば、カメラと注視点の位置が図のようになっている場合</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>PER = 0</th>
+                    <th>図</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/2p2c4.png" width="600px"></td>
+                    <td><img src="./image/2p2c5.png" width="300px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>PER = 0を指定すれば</div>
+        <div>0番カメラが、1Pを見ている動きになり</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>PER = 1</th>
+                    <th>図</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/2p2c6.png" width="600px"></td>
+                    <td><img src="./image/2p2c7.png" width="300px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>PER = 1を指定すれば</div>
+        <div>1番カメラが、2Pを見ている動きになり</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>PER = 0.5</th>
+                    <th>図</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/2p2c8.png" width="600px"></td>
+                    <td><img src="./image/2p2c9.png" width="300px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>PER = 0.5を指定すれば</div>
+        <div>それぞれカメラの位置、注視点の位置がこうなる</div>
+        <br />
+        <div>ここで、それぞれのカメラと注視点の位置をまた変える方法は下記の通り。</div>
+        <div>SET_CAM_POINT_LENGTH：カメラと注視点の【距離】を変える</div>
+        <div>SET_CAM_OFFSET：カメラの【x, y, z】を変える</div>
+        <div>SET_CAM_TARGET_OFFSET：注視点の【x, y, z】を変える</div>
+        <hr />
+        <div>・「SET_CAMPOINT_1P2T」を使う方法</div>
+        <div>※RSのCOMIC3018.BINから抜粋</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="7">・・・</td>
+                </tr>
+                <tr>
+                    <td>CamComtroll</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAMPOINT_1P2T</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_TARGET_OFFSET</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>260.0</td>
+                    <td>4.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>16.0</td>
+                    <td>11.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>CAM_TARGET_PER</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>17.0</td>
+                    <td>13.0</td>
+                    <td>0.0</td>
+                    <td>180.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td colspan="7">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>これは、上記の方法と似ているが</div>
+        <div>「SET_CAMPOINT_1P2T」でそれぞれの0番カメラ、1番カメラの注視点を置き</div>
+        <div>「RAIL_POS_TO_BUFF」、「BUFF_TO_SC_CAM_POS」で固定するカメラの位置を決めて</div>
+        <div>「CAM_TARGET_PER」で最終的な注視点を決める</div>
+        <br />
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>PER = 0.1</th>
+                    <th>図</th>
+                </tr>
+                <tr>
+                    <td><img src="./image/1p2t1.png" width="600px"></td>
+                    <td><img src="./image/1p2t2.png" width="300px"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>これは、PER = 0.1にした場合の</div>
+        <div>カメラの位置、注視点の位置である</div>
+        <br />
+        <div>他にも、下記のようなカメラコマンドもあるが・・・</div>
+        <div>・SET_CAMPOINT_K</div>
+        <div>・SET_SC_KOTEI_CAM_POS</div>
+        <div>・SET_SC_KOTEI_CAM_T_POS</div>
+        <div>LSのSetCamPos、SetCamTargetと似ている、絶対座標のコマンドである</div>
+        <div>SSでは、このコマンドの使い方が違うこと、</div>
+        <div>また、あまり使われたことがないコマンドであるため、使い方については記載しない。</div>
     </body>
 </html>

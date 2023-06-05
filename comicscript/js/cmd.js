@@ -20926,11 +20926,11 @@ const CMD = {
     },
     "BUFF_TO_CAM_POS": {
         "num": 249,
-        "description": "BUFFにあるカメラの座標を設定する" + newLine
+        "description": "BUFFの位置を基準に、固定視点用のカメラの位置を決める" + newLine
                     + "引数１：BUFFのインデックス" + newLine
-                    + "引数２：x座標" + newLine
-                    + "引数３：y座標" + newLine
-                    + "引数４：z座標" + newLine
+                    + "引数２：ずらすx座標" + newLine
+                    + "引数３：ずらすy座標" + newLine
+                    + "引数４：ずらすz座標" + newLine
                     + "引数５：変化時間（フレーム）" + newLine
                     + "引数６：変化方法",
         "BS_comic": [
@@ -20952,11 +20952,11 @@ const CMD = {
     },
     "BUFF_TO_TARGET_POS": {
         "num": 250,
-        "description": "BUFFにある注視点の座標を設定する" + newLine
+        "description": "BUFFの位置を基準に、固定視点用の注視点の位置を決める" + newLine
                     + "引数１：BUFFのインデックス" + newLine
-                    + "引数２：x座標" + newLine
-                    + "引数３：y座標" + newLine
-                    + "引数４：z座標" + newLine
+                    + "引数２：ずらすx座標" + newLine
+                    + "引数３：ずらすy座標" + newLine
+                    + "引数４：ずらすz座標" + newLine
                     + "引数５：変化時間（フレーム）" + newLine
                     + "引数６：変化方法" + newLine
                     + "引数７：スクリーン番号【SSで引数で渡す場合】",
@@ -21916,9 +21916,9 @@ const CMD = {
     "FIRST_OBJ_SET_ANIME": {
         "num": 271,
         "description": "ANIMEを実行する" + newLine
-                    + "ANIME要素１（binファイルインデックス）" + newLine
-                    + "ANIME要素２" + newLine
-                    + "ANIME要素３",
+                    + "引数１：ANIME要素１（binファイルインデックス）" + newLine
+                    + "引数２：ANIME要素２" + newLine
+                    + "引数３：ANIME要素３",
         "BS_comic": [
             "COMIC1105.BIN"
         ],
@@ -21939,7 +21939,8 @@ const CMD = {
     },
     "SET_CAMPOINT_2P2C": {
         "num": 272,
-        "description": "【BSから】引数１〜５のカメラの状態を引数６〜１０の状態に変える" + newLine
+        "description": "0番カメラの状態を、引数１〜５に" + newLine
+                    + "1番カメラの状態を、引数６〜１０の状態に変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：距離" + newLine
                     + "引数３：x座標" + newLine
@@ -21950,7 +21951,8 @@ const CMD = {
                     + "引数８：x座標" + newLine
                     + "引数９：y座標" + newLine
                     + "引数１０：z座標" + newLine
-                    + "引数１１：スクリーン番号【SSで引数で渡す場合】",
+                    + "引数１１：PER【SSでは読み込みしない】" + newLine
+                    + "引数１２：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1005.BIN",
             "COMIC1010.BIN",
@@ -22251,7 +22253,9 @@ const CMD = {
     },
     "CAM_POINT_PER": {
         "num": 274,
-        "description": "カメラのPERを設定する" + newLine
+        "description": "SET_CAMPOINT_2P2Cのコマンドで決めた" + newLine
+                    + "0番カメラを始点に、1番カメラを終点にして" + newLine
+                    + "引数１で決めた大きさ（PER）で決まる位置をカメラの位置とする" + newLine
                     + "引数１：PER" + newLine
                     + "引数２：変化方法" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -22577,7 +22581,9 @@ const CMD = {
     },
     "CAM_TARGET_PER": {
         "num": 275,
-        "description": "注視点のPERを設定する" + newLine
+        "description": "SET_CAMPOINT_2P2C、またはSET_CAMPOINT_1P2Tのコマンドで決めた" + newLine
+                    + "0番カメラの注視点を始点に、1番カメラの注視点を終点にして" + newLine
+                    + "引数１で決めた大きさ（PER）で決まる位置を注視点の位置とする" + newLine
                     + "引数１：PER" + newLine
                     + "引数２：変化方法" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -25091,7 +25097,7 @@ const CMD = {
     },
     "SET_CAMPOINT_1P2T": {
         "num": 315,
-        "description": "注視点を引数１から引数２に移す" + newLine
+        "description": "0番カメラの注視点を引数１に、1番カメラの注視点を引数２にする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
                     + "引数３：スクリーン番号【SSで引数で渡す場合】",
@@ -25317,7 +25323,7 @@ const CMD = {
     },
     "BUFF_TO_SC_CAM_POS": {
         "num": 316,
-        "description": "BUFFに設置したカメラの位置を変える" + newLine
+        "description": "BUFFの位置を基準に、SET_CAMPOINT_1P2Tで決めた注視点を見るカメラの位置を変える" + newLine
                     + "引数１：BUFFのインデックス" + newLine
                     + "引数２：x座標" + newLine
                     + "引数３：y座標" + newLine
