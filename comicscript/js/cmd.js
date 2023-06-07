@@ -28583,8 +28583,8 @@ const CMD = {
     },
     "KOTEICAM_BLEND": {
         "num": 478,
-        "description": "カメラモードを固定カメラに変える" + newLine
-                    + "引数１：固定カメラのPER" + newLine
+        "description": "固定カメラモードから、SET_CAMPOINT_2P2Cで変わるときのアニメーションを与える" + newLine
+                    + "引数１：固定カメラ位置と、SET_CAMPOINT_2P2Cで決めたカメラ位置のPER" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
         "SS_comic": [

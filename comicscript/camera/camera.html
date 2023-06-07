@@ -738,5 +738,217 @@
         <div>LSのSetCamPos、SetCamTargetと似ている、絶対座標のコマンドである</div>
         <div>SSでは、このコマンドの使い方が違う。</div>
         <div>また、あまり使われたことがないコマンドであるため、使い方については記載しない。</div>
+        <hr />
+        <h2>SS専用のカメラコマンド</h2>
+        <h3>・CAM_TRAIN</h3>
+        <div>※SSのCOMIC3503.BINから抜粋</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="3">・・・</td>
+                </tr>
+                <tr>
+                    <td>FROM</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <td>CAM_TRAIN</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>WaitFrame</td>
+                    <td>180.0</td>
+                </tr>
+                <tr>
+                    <td colspan="3">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>F1~F4のカメラ切り替え効果を、スクリプト化したものと考えてもいい</div>
+        <div>ただし、正面と運転席の効果しかない</div>
+        <div>運転席視点のスクリプト使われることが多い</div>
+        <br />
+        <h3>・KOTEICAM_BLEND</h3>
+        <div>※SSのCOMIC42035.BINから抜粋</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="12">・・・</td>
+                </tr>
+                <tr>
+                    <td>SET_CAMPOINT_K</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>33.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>33.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>15.0</td>
+                    <td>13.5</td>
+                    <td>12.5</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>-10.0</td>
+                    <td>13.5</td>
+                    <td>12.5</td>
+                    <td>300.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_TARGET_POS</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>5.0</td>
+                    <td>-100.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_TARGET_POS</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                    <td>300.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>WAIT_RAIL_ONLY</td>
+                    <td>0.0</td>
+                    <td>30.0</td>
+                    <td>1200.0</td>
+                </tr>
+                <tr>
+                    <td>END_WAIT_RAIL</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAMPOINT_2P2C</td>
+                    <td>0.0</td>
+                    <td>25.0</td>
+                    <td>-6.5</td>
+                    <td>9.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>30.0</td>
+                    <td>5.0</td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>CAM_POINT_PER</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>CAM_TARGET_PER</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_OFFSET</td>
+                    <td>0.0</td>
+                    <td>-20.0</td>
+                    <td>12.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_TARGET_OFFSET</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>-10.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_POINT_LENGTH</td>
+                    <td>0.0</td>
+                    <td>50.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_POINT_LENGTH</td>
+                    <td>0.0</td>
+                    <td>25.0</td>
+                    <td>7.0</td>
+                    <td>120.0</td>
+                </tr>
+                <tr>
+                    <td>KOTEICAM_BLEND</td>
+                    <td>1.0</td>
+                    <td>120.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td colspan="12">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>これは、まず固定カメラモードで、RAIL【33, 0】にBUFF[0]とBUFF[1]を設置し</div>
+        <div>それぞれのBUFFを基準に、カメラ位置と注視点位置を決める</div>
+        <br />
+        <div>そしてWAIT_RAIL_ONLYで、1Pがレール番号【30】に達すると</div>
+        <div>SET_CAMPOINT_2P2Cで、0番カメラ、1番カメラ、</div>
+        <div>カメラ位置のPER、注視点位置のPER、</div>
+        <div>0番カメラとその注視点の微妙な調整を行っている</div>
+        <br />
+        <div>こういう風に、固定カメラモードから、注視点を追う（SET_CAMPOINT_2P2C）のカメラモードにするとき</div>
+        <div>KOTEICAM_BLENDは、こういう切り替え処理にアニメーションを与える</div>
+        <div>この効果がないと、いきなりカメラが瞬時で変わるシーンになる</div>
+        <br />
+        <h3>・CAM_TARGET_TRACK</h3>
+        <div>※SSのCOMIC4280.BINから抜粋</div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td colspan="4">・・・</td>
+                </tr>
+                <tr>
+                    <td>CAM_TARGET_TRACK</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>WaitFrame</td>
+                    <td>45.0</td>
+                </tr>
+                <tr>
+                    <td colspan="4">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div>SSで1回のみ使われたコマンド</div>
+        <div>カメラの注視点を、台車周りに変える</div>
+        <div>引数１のカメラ番号の意味は、SET_CAMPOINT_2P2Cで決めたカメラの番号である</div>
+        <br />
+        <h3>・CNG_SCCAM_TRAIN</h3>
+        <div>SSで使われたことがないコマンド</div>
+        <div>SET_CAMPOINT_2P2Cで決めたカメラの番号の注視点を、車両のデフォルト注視点に変える</div>
     </body>
 </html>
