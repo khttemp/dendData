@@ -25691,7 +25691,8 @@ const CMD = {
     "CNG_TRAIN_NO_MAT_COL": {
         "num": 328,
         "description": "詳細不明" + newLine
-                    + "引数１～７：詳細不明",
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～７：詳細不明",
         "BS_comic": [
             "COMIC1401.BIN"
         ]
@@ -25758,7 +25759,8 @@ const CMD = {
     "CNG_TRAIN_NO_MAT_RGBA": {
         "num": 333,
         "description": "詳細不明" + newLine
-                    + "引数１～８：詳細不明",
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２～８：詳細不明",
         "BS_comic": [
             "COMIC1996.BIN"
         ]
@@ -27635,9 +27637,9 @@ const CMD = {
     },
     "TRAIN_ANIME_CHANGE": {
         "num": 420,
-        "description": "【モデルバイナリ】車両のANIMEを変える" + newLine
+        "description": "車両のANIMEを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：メッシュNo" + newLine
+                    + "引数２：車両インデックス" + newLine
                     + "引数３：ANIME要素２" + newLine
                     + "引数４：ANIME要素３",
         "CS_comic": [
