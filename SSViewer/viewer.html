@@ -12,10 +12,30 @@
         th {
             min-width: 75px;
         }
+
+        .bar-container{
+            width: 100%;
+            background: #ccc;
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .loader{
+            height: 20px;
+            background: #434334;
+            width: 0px;
+            transition: width 0.1s ease;
+        }
     </style>
     <body>
         <div>StageData.txtを添付してください</div>
-        <div>※MdlCnt、RailCnt、AmbCntのみ読み込みます</div>
+        <div>
+            <div>読み込み：</div>
+            <div class="bar-container">
+                <div class="loader" id="progress">
+                </div>
+            </div>
+        </div>
         <br />
         <div>
             <input type="file" id="file" accept="text/plain" />
@@ -24,22 +44,8 @@
         <div id="errorDiv"></div>
         <hr />
         <div id="dataDiv">
-            <div id="selectDiv">
-                <select style="width:200px" disabled>
-                    <option>モデルリスト</option>
-                    <option>レールリスト</option>
-                    <option>AMBリスト</option>
-                    <option selected hidden></option>
-                </select>
-            </div>
             <br />
-            <div id="checkboxDiv"></div>
-            <br />
-            <div id="tableDiv">
-                <table border="1">
-                    <tbody id="dataTableBody"></tbody>
-                </table>
-            </div>
+            <div id="tableDiv" style="display:none;"></div>
         </div>
     </body>
 </html>

@@ -1,54 +1,42 @@
 let allTextList;
-let mdlList = [];
-let railList = [];
-let ambList = [];
-let mdlHeaderList = ["index", "モデル名", "flg", "flg", "架線柱"];
-let railHeaderList = [
-    "index", "prevRailIndex", "BlockNo", 
-    "pos_x", "pos_y", "pos_z", 
-    "dir_x", "dir_y", "dir_z",
-    "モデル", "架線柱", "per",
-    "flg", "flg", "flg", "flg",
-    "rail_data",
-    "next_rail", "next_no", "prev_rail", "prev_no"
+let searchTextList = [
+    ["Story:", "storyTableBody", "ステージ名"],
+	["Track:", "trackTableBody", "台車モデル"],
+	["Dir:", "dirTableBody", "基本の向き"],
+	["COMIC_DATA", "comicDataTableBody", "参照するcomicscript"],
+	["COMIC_IMAGE", "comicImageTableBody", "参照する画像"],
+	["COMIC_SE", "comicSETableBody", "参照するSE"],
+	["RailPos:", "railPosTableBody", "デフォルトのレール位置"],
+	["FreeRun:", "freeRunTableBody", "試運転のレール位置"],
+	["VSPos:", "vsPosTableBody", "対戦のレール位置"],
+	["FadeImage:", "fadeImageTableBody", "読み込み中の画像"],
+	["StageRes:", "stageResTableBody", "路線別画像データ"],
+	["SetTexInfo:", "setTexInfo", "画像設定情報"],
+	["STCnt:", "stCntTableBody", "駅名情報"],
+	["CPU:", "cpuTableBody", "ＣＰＵ切り替え"],
+	["ComicScript:", "comicScriptTableBody", "comicscriptリスト"],
+	["RainChecker:", "rainCheckerTableBody", "雨イベントリスト"],
+	["DosanInfo:", "dosanInfoTableBody", "土讃線スペシャルリスト"],
+	["MdlCnt:", "mdlCntTableBody", "モデルリスト"],
+	["RailCnt:", "railCntTableBody", "レールデータ"],
+	["RailPri:", "railPriTableBody", "優先レール設定"],
+	["BtlPri:", "btlPriTableBody", "バトル用の優先レール設定"],
+	["NoDriftRail:", "NoDriftRailTableBody", "ドリフト除外"],
+	["AmbCnt:", "ambCntTableBody", "AMBデータ"],
 ];
-let railHeaderColorList = [
-    "", "#E7B5E8", "#E7D5E8",
-    "#B7D5E8", "#B7D5E8", "#B7D5E8",
-    "#99F5FF", "#99F5FF", "#99F5FF",
-    "#C9F58F", "#99F58F", "#C9A1AE",
-    "#78F2D3", "#78F2D3", "#78F2D3", "#78F2D3",
-    "",
-    "#FBF585", "#FBF585", "#F593E3", "#F593E3"
-];
-let maxRailData = -1;
-
-let ambHeaderList = [
-    "index", "rail", "length",
-    "amd_data",
-    "モデル", "親index",
-    "pos_x", "pos_y", "pos_z", 
-    "dir_x", "dir_y", "dir_z",
-    "joint_dir_x", "joint_dir_y", "joint_dir_z",
-    "per", "kasenchu_per"
-];
-let ambHeaderColorList = [
-    "", "", "",
-    "",
-    "#C9F58F", "",
-    "#B7D5E8", "#B7D5E8", "#B7D5E8",
-    "#99F5FF", "#99F5FF", "#99F5FF",
-    "#99F58F", "#99F58F", "#99F58F",
-    "#C9A1AE", "#F593E3"
-];
+var progressStatus = 0;
 
 window.addEventListener('load', () => {
+    initTable();
+
     let file = document.getElementById("file");
     file.addEventListener("change", () => {
         const reader = new FileReader();
         let [inputFile] = document.getElementById("file").files;
 
-        reader.addEventListener("load", () => {
+        reader.addEventListener("load", async () => {
+            let tableDiv = document.getElementById("tableDiv");
+            tableDiv.style.display = "none";
             allTextList = reader.result.split("\n").map(m => m.trim());
             try {
                 if (!readStageData()) {
@@ -56,7 +44,11 @@ window.addEventListener('load', () => {
                 }
             } catch (error) {
                 let errorDiv = document.getElementById("errorDiv");
-                errorDiv.innerHTML = error;
+                let stackList = error.stack.split("\n");
+                console.log(stackList)
+                let errorLine = stackList[1];
+                let errorNum = errorLine.substring(errorLine.indexOf("viewer.js"), errorLine.length - 1);
+                errorDiv.innerHTML = `${errorNum}：${error}`;
             }
         }, false);
 
@@ -76,140 +68,1076 @@ function findText(t) {
     }
     return -1;
 }
-function readStageData() {
-    mdlList = [];
-    railList = [];
-    ambList = [];
+function initTable() {
+    let tableDiv = document.getElementById("tableDiv");
+    tableDiv.innerHTML = "";
+    for (let i = 0; i < searchTextList.length; i++) {
+        let div = document.createElement("div");
+        tableDiv.appendChild(div);
+        let titleDiv = document.createElement("div");
+        div.appendChild(titleDiv);
+        let table = document.createElement("table");
+        div.appendChild(table);
+        table.border = "1";
+        table.id = searchTextList[i][1];
+    }
     let errorDiv = document.getElementById("errorDiv");
     errorDiv.innerHTML = "";
-    let dataTableBody = document.getElementById("dataTableBody");
-    dataTableBody.innerHTML = "";
-
-    //MdlCnt
-    let index = findText("MdlCnt:");
-    if (index == -1) {
-        errorDiv.innerHTML = "MdlCnt:を探せません";
-        return false;
-    }
-    let mdlText = allTextList[index];
-    let mdlAllCnt = Number(mdlText.split("\t")[1]);
-    if (isNaN(mdlAllCnt)) {
-        errorDiv.innerHTML = "MdlCntの数字が不正です";
-        return false;
-    }
-    let mdlCnt = 0;
-    index++;
-    while (mdlCnt < mdlAllCnt) {
-        let mdlInfoText = allTextList[index];
-        if (mdlInfoText == "" || mdlInfoText.indexOf("//") == 0) {
-            index++;
+}
+function getProgressPer(start, end, count) {
+    let diff = end - start;
+    return diff / count;
+}
+async function setProgress(value) {
+    let loader = document.getElementById("progress");
+    loader.style.width = `${value * 100}%`;
+    await sleep(1);
+}
+async function sleep(miliseconds) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, miliseconds)
+    });
+}
+function readTbl(str) {
+    let array = str.split("\t").filter(e=>e);
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        if (element.indexOf("//") == 0) {
             continue;
         }
+        newArray.push(element);
+    }
+    return newArray;
+}
+async function readStageData() {
+    initTable();
 
-        let mdlInfoList = mdlInfoText.split("\t");
-        if (mdlInfoList.length < 5) {
-            errorDiv.innerHTML = "モデルデータの" + (mdlCnt + 1) + "行目を読み込めません";
-            return false;
+    for (let i = 0; i < searchTextList.length; i++) {
+        await setProgress(i / searchTextList.length);
+        let tableBody = document.getElementById(searchTextList[i][1]);
+        let div = tableBody.parentNode.getElementsByTagName("div")[0];
+        div.innerHTML = `<h3 style="margin-bottom:0px;">${searchTextList[i][2]}（${searchTextList[i][0]}）</h3>`;
+
+        let index = findText(searchTextList[i][0]);
+        if (index == -1) {
+            // Track: 存在しない場合
+            if (i == 1) {
+                setTrack(tableBody, 1, false);
+                continue;
+            }
+            // Dir: 存在しない場合
+            else if (i == 2) {
+                setDir(tableBody, 1, false);
+                continue;
+            }
+            // BtlPri: 存在しない場合
+            else if (i == 20) {
+                setBtlPri(tableBody, []);
+                continue;
+            }
+            // NoDriftRail: 存在しない場合
+            else if (i == 21) {
+                setNoDriftRail(tableBody, []);
+                continue;
+            }
+            else {
+                let errorDiv = document.getElementById("errorDiv");
+                errorDiv.innerHTML = `${searchTextList[i][0]}を探せません`;
+                return false;
+            }
         }
-        mdlList.push(mdlInfoList.slice(0, 5));
-        mdlCnt++;
-        index++;
+        
+        // Story:
+        if (i == 0) {
+            let array = readTbl(allTextList[index]);
+            let story = array[1];
+            setStory(tableBody, story);
+        }
+        // Track:
+        else if (i == 1) {
+            let array = readTbl(allTextList[index]);
+            let num = Number(array[1]);
+            setTrack(tableBody, num);
+        }
+        // Dir:
+        else if (i == 2) {
+            let array = readTbl(allTextList[index]);
+            let num = Number(array[1]);
+            setDir(tableBody, num);
+        }
+        // COMIC_DATA
+        else if (i == 3) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let comicDataList = [];
+            for (let c = 0; c < cnt; c++) {
+                let dataArray = readTbl(allTextList[index + 1 + c]);
+                comicDataList.push(dataArray[0])
+            }
+            setComicData(tableBody, "comic_bin", comicDataList);
+        }
+        // COMIC_IMAGE
+        else if (i == 4) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let comicDataList = [];
+            for (let c = 0; c < cnt; c++) {
+                let dataArray = readTbl(allTextList[index + 1 + c]);
+                comicDataList.push(dataArray[0])
+            }
+            setComicData(tableBody, "comic_img", comicDataList);
+        }
+        // COMIC_SE
+        else if (i == 5) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let comicDataList = [];
+            for (let c = 0; c < cnt; c++) {
+                let dataArray = readTbl(allTextList[index + 1 + c]);
+                comicDataList.push(dataArray[0])
+            }
+            setComicData(tableBody, "comic_se", comicDataList);
+        }
+        // RailPos:
+        else if (i == 6) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let railDataList = [];
+            for (let c = 0; c < cnt; c++) {
+                let railArray = readTbl(allTextList[index + 1 + c]);
+                railDataList.push(railArray)
+            }
+            setRailData(tableBody, "レール位置", railDataList);
+        }
+        // FreeRun:
+        else if (i == 7) {
+            let cnt = 1
+            let railDataList = [];
+            for (let c = 0; c < cnt; c++) {
+                let railArray = readTbl(allTextList[index + 1 + c]);
+                railDataList.push(railArray)
+            }
+            setRailData(tableBody, "試運転のレール位置", railDataList);
+        }
+        // VSPos:
+        else if (i == 8) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let railDataList = [];
+            for (let c = 0; c < cnt; c++) {
+                let railArray = readTbl(allTextList[index + 1 + c]);
+                railDataList.push(railArray)
+            }
+            setRailData(tableBody, "対戦のレール位置", railDataList);
+        }
+        // FadeImage:
+        else if (i == 9) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let imageList = [];
+            for (let c = 0; c < cnt; c++) {
+                let imageArray = readTbl(allTextList[index + 1 + c]);
+                imageList.push(imageArray)
+            }
+            setFadeImage(tableBody, imageList);
+        }
+        // StageRes:
+        else if (i == 10) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let imageList = [];
+            for (let c = 0; c < cnt; c++) {
+                let imageArray = readTbl(allTextList[index + 1 + c]);
+                imageList.push(imageArray)
+            }
+            setStageRes(tableBody, imageList);
+        }
+        // SetTexInfo:
+        else if (i == 11) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let texInfoList = [];
+            for (let c = 0; c < cnt; c++) {
+                let texInfoArray = readTbl(allTextList[index + 1 + c]);
+                texInfoList.push(texInfoArray)
+            }
+            setTexInfo(tableBody, texInfoList);
+        }
+        // STCnt:
+        else if (i == 12) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let stationList = [];
+            for (let c = 0; c < cnt; c++) {
+                let stationArray = readTbl(allTextList[index + 1 + c]);
+                stationArray.splice(0, 1)
+                stationList.push(stationArray)
+            }
+            setStation(tableBody, stationList);
+        }
+        // CPU:
+        else if (i == 13) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let cpuList = [];
+            for (let c = 0; c < cnt; c++) {
+                let cpuArray = readTbl(allTextList[index + 1 + c]);
+                cpuList.push(cpuArray)
+            }
+            setCPU(tableBody, cpuList);
+        }
+        // ComicScript:
+        else if (i == 14) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let comicScriptList = [];
+            for (let c = 0; c < cnt; c++) {
+                let comicScriptArray = readTbl(allTextList[index + 1 + c]);
+                comicScriptList.push(comicScriptArray)
+            }
+            setComicScript(tableBody, comicScriptList);
+        }
+        // RainChecker:
+        else if (i == 15) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let rainCheckerList = [];
+            for (let c = 0; c < cnt; c++) {
+                let rainCheckerArray = readTbl(allTextList[index + 1 + c]);
+                rainCheckerList.push(rainCheckerArray)
+            }
+            setRainChecker(tableBody, rainCheckerList);
+        }
+        // DosanInfo:
+        else if (i == 16) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let dosanInfoList = [];
+            for (let c = 0; c < cnt; c++) {
+                let dosanInfoArray = readTbl(allTextList[index + 1 + c]);
+                dosanInfoList.push(dosanInfoArray)
+            }
+            setDosanInfo(tableBody, dosanInfoList);
+        }
+        // MdlCnt:
+        else if (i == 17) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let modelList = [];
+
+            for (let c = 0; c < cnt; c++) {
+                let modelArray = readTbl(allTextList[index + 1 + c]);
+                modelList.push(modelArray)
+            }
+            await setMdlCnt(i, tableBody, modelList);
+        }
+        // RailCnt:
+        else if (i == 18) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let railList = [];
+
+            for (let c = 0; c < cnt; c++) {
+                let railArray = readTbl(allTextList[index + 1 + c]);
+                railList.push(railArray)
+            }
+            await setRailCnt(i, tableBody, railList);
+        }
+        // RailPri:
+        else if (i == 19) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let railPriList = [];
+            for (let c = 0; c < cnt; c++) {
+                let railPriArray = readTbl(allTextList[index + 1 + c]);
+                railPriList.push(railPriArray)
+            }
+            setRailPri(tableBody, railPriList);
+        }
+        // BtlPri:
+        else if (i == 20) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let btlPriList = [];
+            for (let c = 0; c < cnt; c++) {
+                let btlPriArray = readTbl(allTextList[index + 1 + c]);
+                btlPriList.push(btlPriArray)
+            }
+            setBtlPri(tableBody, btlPriList);
+        }
+        // NoDriftRail:
+        else if (i == 21) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let noDriftRailList = [];
+            for (let c = 0; c < cnt; c++) {
+                let noDriftRailArray = readTbl(allTextList[index + 1 + c]);
+                noDriftRailList.push(noDriftRailArray)
+            }
+            setNoDriftRail(tableBody, noDriftRailList);
+        }
+        // AmbCnt:
+        else if (i == 22) {
+            let array = readTbl(allTextList[index]);
+            let cnt = Number(array[1]);
+            let ambList = [];
+            for (let c = 0; c < cnt; c++) {
+                let ambArray = readTbl(allTextList[index + 1 + c]);
+                ambList.push(ambArray)
+            }
+            await setAmbCnt(i, tableBody, ambList);
+        }
+    }
+    setProgress(1);
+    let tableDiv = document.getElementById("tableDiv");
+    tableDiv.style.display = "inline";
+}
+
+function setStory(tableBody, story) {
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+    let th = document.createElement("th");
+    th.innerHTML = "ステージ";
+    headTr.appendChild(th);
+
+    let tr = document.createElement("tr");
+    tbody.appendChild(tr);
+    let td = document.createElement("td");
+    tr.appendChild(td);
+    td.innerHTML = story;
+}
+function setTrack(tableBody, num, flag=true) {
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+    let th = document.createElement("th");
+    th.innerHTML = "台車";
+    headTr.appendChild(th);
+
+    let tr = document.createElement("tr");
+    tbody.appendChild(tr);
+    let td = document.createElement("td");
+    tr.appendChild(td);
+    let resultStr = "標準軌";
+    if (num > 0) {
+        resultStr = "狭軌";
     }
 
-    //RailCnt
-    index = findText("RailCnt:");
-    if (index == -1) {
-        errorDiv.innerHTML = "RailCnt:を探せません";
-        return false;
+    if (!flag) {
+        resultStr += "（デフォルト）";
     }
-    let railText = allTextList[index];
-    let railAllCnt = Number(railText.split("\t")[1]);
-    if (isNaN(railAllCnt)) {
-        errorDiv.innerHTML = "RailCntの数字が不正です";
-        return false;
+    td.innerHTML = resultStr;
+}
+function setDir(tableBody, dir, flag=true) {
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+    let th = document.createElement("th");
+    th.innerHTML = "向き";
+    headTr.appendChild(th);
+
+    let tr = document.createElement("tr");
+    tbody.appendChild(tr);
+    let td = document.createElement("td");
+    tr.appendChild(td);
+
+    let resultStr = dir;
+    if (!flag) {
+        resultStr += "（デフォルト）";
     }
-    let railCnt = 0;
-    index++;
-    while (railCnt < railAllCnt) {
-        let railInfoText = allTextList[index];
-        if (railInfoText == "" || railInfoText.indexOf("//") == 0) {
-            index++;
-            continue;
-        }
+    td.innerHTML = resultStr;
+}
+function setComicData(tableBody, title, comicDataList) {
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+    let th = document.createElement("th");
+    th.innerHTML = `読み込む ${title}`;
+    headTr.appendChild(th);
 
-        let railInfoList = railInfoText.split("\t");
-        if (railInfoList.length < 17) {
-            errorDiv.innerHTML = "レールデータの" + (railCnt + 1) + "行目を読み込めません";
-            return false;
-        }
-        let railDataNum = Number(railInfoList[16]);
-        let readEndIndex = 17 + railDataNum * 4;
-        if (railInfoList.length < readEndIndex) {
-            errorDiv.innerHTML = "レールデータの" + (railCnt + 1) + "行目を読み込めません";
-            return false;
-        }
-
-        if (maxRailData < railDataNum) {
-            maxRailData = railDataNum;
-        }
-
-        railList.push(railInfoList.slice(0, readEndIndex));
-        railCnt++;
-        index++;
+    for (let i = 0; i < comicDataList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        let td = document.createElement("td");
+        tr.appendChild(td);
+        td.innerHTML = comicDataList[i];
     }
+}
+function setRailData(tableBody, title, railDataList) {
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+    let th = document.createElement("th");
+    th.innerHTML = `${title}`;
+    th.colSpan = 3;
+    headTr.appendChild(th);
 
-    //AmbCnt
-    index = findText("AmbCnt:");
-    if (index == -1) {
-        errorDiv.innerHTML = "AmbCnt:を探せません";
-        return false;
+    for (let i = 0; i < railDataList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < railDataList[i].length; j++) {
+            if (j >= 3) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            td.style.width = "50px";
+            td.innerHTML = railDataList[i][j];
+        }
     }
-    let ambText = allTextList[index];
-    let ambAllCnt = Number(ambText.split("\t")[1]);
-    if (isNaN(ambAllCnt)) {
-        errorDiv.innerHTML = "AmbCntの数字が不正です";
-        return false;
-    }
-    let ambCnt = 0;
-    index++;
-    while (ambCnt < ambAllCnt) {
-        if (index >= allTextList.length) {
-            errorDiv.innerHTML = "テキストの終端に到達しました。設定したAmbCntが実のデータより大きいです";
-            return false;
-        }
-        let ambInfoText = allTextList[index];
-        if (ambInfoText == "" || ambInfoText.indexOf("//") == 0) {
-            index++;
-            continue;
-        }
+}
+function setFadeImage(tableBody, fadeImageList) {
+    let thTitle = ["denファイル", "imgファイル"];
 
-        let ambInfoList = ambInfoText.split("\t");
-        if (ambInfoList.length < 4) {
-            errorDiv.innerHTML = "AMBデータの" + (ambCnt + 1) + "行目を読み込めません";
-            return false;
-        }
-        let ambDataNum = Number(ambInfoList[3]);
-        let readEndIndex = 4 + ambDataNum * 13;
-        if (ambInfoList.length < readEndIndex) {
-            errorDiv.innerHTML = "AMBデータの" + (ambCnt + 1) + "行目を読み込めません";
-            return false;
-        }
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
 
-        ambList.push(ambInfoList.slice(0, readEndIndex));
-        ambCnt++;
-        index++;
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
     }
 
-    let selectDiv = document.getElementById("selectDiv");
-    let select = selectDiv.getElementsByTagName("select")[0];
-    select.disabled = false;
-    select.addEventListener("change", () => {
-        selectList(select.selectedIndex);
-    }, false);
+    for (let i = 0; i < fadeImageList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < fadeImageList[i].length; j++) {
+            if (j >= 2) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML = fadeImageList[i][j];
+        }
+    }
+}
+function setStageRes(tableBody, stageResList) {
+    let thTitle = ["index", "denファイル", "imgファイル"];
 
-    select.selectedIndex = 0;
-    selectList(0);
-    return true;
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < stageResList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < stageResList[i].length; j++) {
+            if (j >= 3) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            } else {
+                td.innerHTML = stageResList[i][j];
+            }
+        }
+    }
+}
+function setTexInfo(tableBody, texInfoList) {
+    let thTitle = [
+        "index",
+        "amb番号",
+        "amb_child番号",
+        "路線別画像データ番号",
+        "tex_type",
+        "change_index",
+        "mat_index",
+        "f1",
+        "f2"
+    ];
+    let typeDict = {
+        0: "駅表 表",
+        1: "駅表 裏",
+        2: "ローカルY軸反転",
+        10: "時刻表示案内",
+        11: "阪急LED",
+        20: "ホーム",
+        30: "テクスチャー変更",
+        31: "UV変更",
+        32: "メッシュの表示切替"
+    }
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < texInfoList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < texInfoList[i].length; j++) {
+            if (j >= 9) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            } 
+            else if (j == 4) {
+                td.innerHTML = typeDict[Number(texInfoList[i][j])];
+            }
+            else {
+                td.innerHTML = texInfoList[i][j];
+            }
+        }
+    }
+}
+function setStation(tableBody, stationList) {
+    let thTitle = ["stIndex", "レール", "オフセット", "駅名", "ふりがな", "英語"];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < stationList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < stationList[i].length; j++) {
+            if (j >= 6) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML = stationList[i][j];
+        }
+    }
+}
+function setCPU(tableBody, cpuList) {
+    let thTitle = [
+        "index",
+        "レール",
+        "train_no",
+        "run_type",
+        "min_len",
+        "max_len",
+        "max_speed",
+        "min_speed",
+        "p1"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < cpuList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < cpuList[i].length; j++) {
+            if (j >= 9) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            } else {
+                td.innerHTML = cpuList[i][j];
+            }
+        }
+    }
+}
+function setComicScript(tableBody, comicScriptList) {
+    let thTitle = [
+        "index",
+        "comic_bin",
+        "event_type",
+        "レール",
+        "オフセット"
+    ];
+
+    let eventTypeList = [
+        "Player",
+		"CPU",
+		"Fast",
+		"Goal",
+		"GoalEvent",
+		"FreeRunFastEvent",
+		"BtlFastEvent"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < comicScriptList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < comicScriptList[i].length; j++) {
+            if (j >= 5) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            } 
+            else if (j == 2) {
+                td.innerHTML = eventTypeList[Number(comicScriptList[i][j])];
+            }
+            else {
+                td.innerHTML = comicScriptList[i][j];
+            }
+        }
+    }
+}
+function setRainChecker(tableBody, rainCheckerList) {
+    let thTitle = [
+        "index",
+        "event_no",
+        "event_type",
+        "レール",
+        "オフセット",
+        "param"
+    ];
+
+    let eventTypeDict = {
+        0: "雨停止",
+		1: "雨開始",
+		2: "ワイパー開始",
+		3: "ワイパー停止",
+		4: "音だけ停止",
+		5: "音だけ開始",
+		10: "地下突入",
+		11: "地下から出現",
+		100: "CityPos",
+		101: "CityScale",
+		102: "MountPos"
+    }
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < rainCheckerList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < rainCheckerList[i].length; j++) {
+            if (rainCheckerList[i][j].indexOf("//") == 0) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            }
+            else if (j == 2) {
+                td.innerHTML = eventTypeDict[Number(rainCheckerList[i][j])];
+            }
+            else {
+                td.innerHTML = rainCheckerList[i][j];
+            }
+        }
+    }
+}
+function setDosanInfo(tableBody, dosanInfoList) {
+    let thTitle = [
+        "index",
+        "event_no",
+        "event_type",
+        "レール",
+        "オフセット",
+        "param"
+    ];
+
+    let eventTypeDict = {
+		10: "TrainJump"
+    }
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < dosanInfoList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < dosanInfoList[i].length; j++) {
+            if (dosanInfoList[i][j].indexOf("//") == 0) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            }
+            else if (j == 2) {
+                td.innerHTML = eventTypeDict[Number(dosanInfoList[i][j])];
+            }
+            else {
+                td.innerHTML = dosanInfoList[i][j];
+            }
+        }
+    }
+}
+async function setMdlCnt(index, tableBody, modelList) {
+    let thTitle = [
+        "index",
+        "モデル名",
+        "flg",
+        "flg",
+        "架線柱"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    let start = index / searchTextList.length;
+    let end = (index + 1) / searchTextList.length;
+    let diff = getProgressPer(
+        start,
+        end,
+        modelList.length
+    );
+
+    for (let i = 0; i < modelList.length; i++) {
+        if (i % 20 == 0) {
+            await setProgress(start + i * diff);
+        }
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < modelList[i].length; j++) {
+            if (j >= 5) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            }
+            else if (j == 2 || j == 3) {
+                td.innerHTML = toHex(modelList[i][j], "char");
+            }
+            else {
+                td.innerHTML = modelList[i][j];
+            }
+        }
+    }
+}
+async function setRailCnt(index, tableBody, railList) {
+    let thTitle = [
+        "index", "prevRailIndex", "BlockNo", 
+        "pos_x", "pos_y", "pos_z", 
+        "dir_x", "dir_y", "dir_z",
+        "モデル", "架線柱", "per",
+        "flg", "flg", "flg", "flg",
+        "rail_data",
+        "next_rail", "next_no", "prev_rail", "prev_no"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    let railHeaderColorList = [
+        "", "#E7B5E8", "#E7D5E8",
+        "#B7D5E8", "#B7D5E8", "#B7D5E8",
+        "#99F5FF", "#99F5FF", "#99F5FF",
+        "#C9F58F", "#99F58F", "#C9A1AE",
+        "#78F2D3", "#78F2D3", "#78F2D3", "#78F2D3",
+        "",
+        "#FBF585", "#FBF585", "#F593E3", "#F593E3"
+    ];
+
+    let start = index / searchTextList.length;
+    let end = (index + 1) / searchTextList.length;
+    let diff = getProgressPer(
+        start,
+        end,
+        railList.length
+    );
+
+    let railDataCnt = 0;
+    for (let i = 0; i < railList.length; i++) {
+        if (i % 20 == 0) {
+            await setProgress(start + i * diff);
+        }
+        railDataCnt = 0;
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < railList[i].length; j++) {
+            if (railDataCnt > 0) {
+                if (j > 16 + 4 * railDataCnt) {
+                    break;
+                }
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            // index
+            switch (j) {
+                // index
+                case 0:
+                    td.innerHTML = i;
+                    break;
+                case 12:
+                case 13:
+                case 14:
+                case 15:
+                    td.innerHTML = toHex(railList[i][j], "char");
+                    break;
+                default:
+                    if (j == 16) {
+                        railDataCnt = Number(railList[i][j]);
+                    }
+                    td.innerHTML = railList[i][j];
+                    break;
+            }
+            if (j > 16) {
+                let idx = (j - 17) % 4 + 17;
+                td.style.backgroundColor = railHeaderColorList[idx];
+            } else {
+                td.style.backgroundColor = railHeaderColorList[j];
+            }
+            td.style.minWidth = "80px";
+        }
+    }
+}
+function setRailPri(tableBody, railPriList) {
+    let thTitle = [
+        "rail_index",
+        "pri_rail_index"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < railPriList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < railPriList[i].length; j++) {
+            if (j >= 2) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML = railPriList[i][j];
+        }
+    }
+}
+function setBtlPri(tableBody, btlPriList) {
+    let thTitle = [
+        "rail_index",
+        "pri_rail_index"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < btlPriList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < btlPriList[i].length; j++) {
+            if (j >= 2) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML = btlPriList[i][j];
+        }
+    }
+}
+function setNoDriftRail(tableBody, noDriftRailList) {
+    let thTitle = [
+        "rail_index",
+        "pri_rail_index"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    for (let i = 0; i < noDriftRailList.length; i++) {
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < noDriftRailList[i].length; j++) {
+            if (j >= 2) {
+                break;
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML = noDriftRailList[i][j];
+        }
+    }
+}
+async function setAmbCnt(index, tableBody, ambList) {
+    let thTitle = [
+        "index", "rail", "length",
+        "amd_data",
+        "モデル", "親index",
+        "pos_x", "pos_y", "pos_z", 
+        "dir_x", "dir_y", "dir_z",
+        "joint_dir_x", "joint_dir_y", "joint_dir_z",
+        "per", "kasenchu_per"
+    ];
+
+    let tbody = document.createElement("tbody");
+    tableBody.appendChild(tbody);
+    let headTr = document.createElement("tr");
+    tbody.appendChild(headTr);
+
+    for (let i = 0; i < thTitle.length; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = thTitle[i];
+        headTr.appendChild(th);
+    }
+
+    let ambHeaderColorList = [
+        "", "", "",
+        "",
+        "#C9F58F", "",
+        "#B7D5E8", "#B7D5E8", "#B7D5E8",
+        "#99F5FF", "#99F5FF", "#99F5FF",
+        "#99F58F", "#99F58F", "#99F58F",
+        "#C9A1AE", "#F593E3"
+    ];
+
+    let start = index / searchTextList.length;
+    let end = (index + 1) / searchTextList.length;
+    let diff = getProgressPer(
+        start,
+        end,
+        ambList.length
+    );
+
+    let ambDataCnt = 0
+    for (let i = 0; i < ambList.length; i++) {
+        if (i % 20 == 0) {
+            await setProgress(start + i * diff);
+        }
+        ambDataCnt = 0;
+        let tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        for (let j = 0; j < ambList[i].length; j++) {
+            if (ambDataCnt > 0) {
+                if (j > 4 + 13 * ambDataCnt) {
+                    break;
+                }
+            }
+            if (j > 4 && j % 13 == 4) {
+                tr = document.createElement("tr");
+                tbody.appendChild(tr);
+                for (let k = 0; k < 4; k++) {
+                    let newTd = document.createElement("td");
+                    newTd.style.borderWidth = "0px";
+                    tr.appendChild(newTd);
+                }
+            }
+            let td = document.createElement("td");
+            tr.appendChild(td);
+            if (j == 0) {
+                td.innerHTML = i;
+            } else {
+                if (j == 3) {
+                    ambDataCnt = Number(ambList[i][j]);
+                }
+                td.innerHTML = ambList[i][j];
+            }
+            if (j >= 17) {
+                let idx = (j - 4) % 13 + 4;
+                td.style.backgroundColor = ambHeaderColorList[idx];
+            } else {
+                td.style.backgroundColor = ambHeaderColorList[j];
+            }   
+        }
+    }
 }
 
 function toHex(number, mode) {
@@ -226,257 +1154,4 @@ function toHex(number, mode) {
         number += compNum;
     }
     return "0x" + (zeroFill + number.toString(16).toUpperCase()).slice(sliceNum);
-}
-
-function changeIndexAndName() {
-    let select = selectDiv.getElementsByTagName("select")[0];
-    selectList(select.selectedIndex, false);
-}
-
-function selectList(idx, flag = true) {
-    if (flag) {
-        let checkboxDiv = document.getElementById("checkboxDiv");
-        checkboxDiv.innerHTML = "";
-    }
-    let dataTableBody = document.getElementById("dataTableBody");
-    dataTableBody.innerHTML = "";
-    if (idx == 0) {
-        if (flag) {
-            //checkboxDiv
-            let kasenchuCheckbox = document.createElement("input");
-            kasenchuCheckbox.type = "checkbox";
-            kasenchuCheckbox.id = "kasenchu";
-            kasenchuCheckbox.name = "kasenchu";
-            kasenchuCheckbox.addEventListener("change", changeIndexAndName);
-            checkboxDiv.appendChild(kasenchuCheckbox);
-
-            let kasenchuLabel = document.createElement("label");
-            kasenchuLabel.htmlFor = "kasenchu"
-            kasenchuLabel.innerHTML = "架線柱index -> 架線柱名称に変える";
-            checkboxDiv.appendChild(kasenchuLabel);
-        }
-        //dataTableBody
-        let tr = document.createElement("tr");
-        dataTableBody.appendChild(tr);
-        for (let i = 0; i < mdlHeaderList.length; i++) {
-            let th = document.createElement("th");
-            tr.appendChild(th);
-            th.innerHTML = mdlHeaderList[i];
-        }
-
-        mdlList.forEach((list, index) => {
-            let tr = document.createElement("tr");
-            dataTableBody.appendChild(tr);
-            list.forEach((element, idx) => {
-                let td = document.createElement("td");
-                tr.appendChild(td);
-                switch (idx) {
-                    case 0:
-                        td.innerHTML = index;
-                        break;
-                    case 1:
-                        td.innerHTML = element;
-                        break;
-                    case 2:
-                    case 3:
-                        td.innerHTML = toHex(Number(element), "char");
-                        break;
-                    case 4:
-                        let kasenchu = document.getElementById("kasenchu");
-                        if (kasenchu.checked) {
-                            if (Number(element) >= 0 && Number(element) < mdlList.length) {
-                                element = mdlList[element][1]
-                            }
-                        }
-                        td.innerHTML = element;
-                        break;
-                    default:
-                        break;
-                }
-            });
-        });
-    } else if (idx == 1) {
-        if (flag) {
-            //checkboxDiv
-            let mdlNoCheckbox = document.createElement("input");
-            mdlNoCheckbox.type = "checkbox";
-            mdlNoCheckbox.id = "mdlNo";
-            mdlNoCheckbox.name = "mdlNo";
-            mdlNoCheckbox.addEventListener("change", changeIndexAndName);
-            checkboxDiv.appendChild(mdlNoCheckbox);
-
-            let mdlNoLabel = document.createElement("label");
-            mdlNoLabel.htmlFor = "mdlNo"
-            mdlNoLabel.innerHTML = "モデルindex -> モデル名称に変える";
-            checkboxDiv.appendChild(mdlNoLabel);
-
-            let br = document.createElement("br");
-            checkboxDiv.appendChild(br);
-
-            let kasenchuCheckbox = document.createElement("input");
-            kasenchuCheckbox.type = "checkbox";
-            kasenchuCheckbox.id = "kasenchu";
-            kasenchuCheckbox.name = "kasenchu";
-            kasenchuCheckbox.addEventListener("change", changeIndexAndName);
-            checkboxDiv.appendChild(kasenchuCheckbox);
-
-            let kasenchuLabel = document.createElement("label");
-            kasenchuLabel.htmlFor = "kasenchu"
-            kasenchuLabel.innerHTML = "架線柱index -> 架線柱名称に変える";
-            checkboxDiv.appendChild(kasenchuLabel);
-        }
-        //dataTableBody
-        let tr = document.createElement("tr");
-        dataTableBody.appendChild(tr);
-
-        let copyRailHeaderList = JSON.parse(JSON.stringify(railHeaderList));
-        let copyRailHeaderColorList = JSON.parse(JSON.stringify(railHeaderColorList));
-        if (maxRailData > 1) {
-            for (let i = 0; i < maxRailData - 1; i++) {
-                copyRailHeaderList = copyRailHeaderList.concat(["next_rail", "next_no", "prev_rail", "prev_no"]);
-                copyRailHeaderColorList = copyRailHeaderColorList.concat(railHeaderColorList.slice(-4));
-            }
-        }
-        for (let i = 0; i < copyRailHeaderList.length; i++) {
-            let th = document.createElement("th");
-            tr.appendChild(th);
-            th.innerHTML = copyRailHeaderList[i];
-        }
-
-        railList.forEach((list, index) => {
-            let tr = document.createElement("tr");
-            dataTableBody.appendChild(tr);
-            let disableRail = false;
-            if (Number(list[15]) >= 128) {
-                disableRail = true;
-            }
-            list.forEach((element, idx) => {
-                let td = document.createElement("td");
-                if (!disableRail) {
-                    td.style.backgroundColor = copyRailHeaderColorList[idx];
-                } else {
-                    td.style.backgroundColor = "#E3E1DF";
-                }
-                tr.appendChild(td);
-                switch (idx) {
-                    case 0:
-                        td.innerHTML = index;
-                        break;
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 11:
-                    case 16:
-                        td.innerHTML = element;
-                        break;
-                    case 9:
-                        let mdlNo = document.getElementById("mdlNo");
-                        if (mdlNo.checked) {
-                            if (Number(element) >= 0 && Number(element) < mdlList.length) {
-                                element = mdlList[element][1]
-                            }
-                        }
-                        td.innerHTML = element;
-                        break;
-                    case 10:
-                        let kasenchu = document.getElementById("kasenchu");
-                        if (kasenchu.checked) {
-                            if (Number(element) >= 0 && Number(element) < mdlList.length) {
-                                element = mdlList[element][1]
-                            }
-                        }
-                        td.innerHTML = element;
-                        break;
-                    case 12:
-                    case 13:
-                    case 14:
-                    case 15:
-                        td.innerHTML = toHex(Number(element), "char");
-                        break;
-                    default:
-                        if (idx % 4 == 3) {
-                            let prevRailIndex = Number(list[1]);
-                            let prev_rail = Number(list[idx]);
-                            if (prevRailIndex != prev_rail && !disableRail) {
-                                td.style.backgroundColor = "#FE9A3E";
-                            }
-                        }
-                        if (idx % 4 == 1 || idx % 4 == 3) {
-                            if (Number(list[idx]) >= railList.length) {
-                                td.style.backgroundColor = "red";
-                            }
-                        }
-                        td.innerHTML = element;
-                        break;
-                }
-            });
-        });
-    } else if (idx == 2) {
-        if (flag) {
-            //checkboxDiv
-            let mdlNoCheckbox = document.createElement("input");
-            mdlNoCheckbox.type = "checkbox";
-            mdlNoCheckbox.id = "mdlNo";
-            mdlNoCheckbox.name = "mdlNo";
-            mdlNoCheckbox.addEventListener("change", changeIndexAndName);
-            checkboxDiv.appendChild(mdlNoCheckbox);
-
-            let mdlNoLabel = document.createElement("label");
-            mdlNoLabel.htmlFor = "mdlNo"
-            mdlNoLabel.innerHTML = "モデルindex -> モデル名称に変える";
-            checkboxDiv.appendChild(mdlNoLabel);
-
-            let br = document.createElement("br");
-            checkboxDiv.appendChild(br);
-        }
-        //dataTableBody
-        let tr = document.createElement("tr");
-        dataTableBody.appendChild(tr);
-
-        for (let i = 0; i < ambHeaderList.length; i++) {
-            let th = document.createElement("th");
-            tr.appendChild(th);
-            th.innerHTML = ambHeaderList[i];
-        }
-        ambList.forEach((list, index) => {
-            let tr = document.createElement("tr");
-            dataTableBody.appendChild(tr);
-            list.forEach((element, idx) => {
-                if (idx > 4 && idx % 13 == 4) {
-                    tr = document.createElement("tr");
-                    dataTableBody.appendChild(tr);
-                    for (let i = 0; i < 4; i++) {
-                        let td = document.createElement("td");
-                        tr.appendChild(td);
-                    }
-                }
-                let td = document.createElement("td");
-                td.style.backgroundColor = ambHeaderColorList[(idx - 4) % 13 + 4];
-                tr.appendChild(td);
-                switch (idx) {
-                    case 0:
-                        td.innerHTML = index;
-                        break;
-                    default:
-                        if (idx % 13 == 4) {
-                            let mdlNo = document.getElementById("mdlNo");
-                            if (mdlNo.checked) {
-                                if (Number(element) >= 0 && Number(element) < mdlList.length) {
-                                    element = mdlList[element][1]
-                                }
-                            }
-                        }
-                        td.innerHTML = element;
-                        break;
-                }
-            });
-        });
-    } else {
-        return;
-    }
 }
