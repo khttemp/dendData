@@ -26,6 +26,8 @@ let searchTextList = [
 ];
 var progressStatus = 0;
 
+let modelList = [];
+
 window.addEventListener('load', () => {
     initTable();
 
@@ -45,10 +47,11 @@ window.addEventListener('load', () => {
             } catch (error) {
                 let errorDiv = document.getElementById("errorDiv");
                 let stackList = error.stack.split("\n");
-                console.log(stackList)
                 let errorLine = stackList[1];
                 let errorNum = errorLine.substring(errorLine.indexOf("viewer.js"), errorLine.length - 1);
                 errorDiv.innerHTML = `${errorNum}：${error}`;
+                let tableDiv = document.getElementById("tableDiv");
+                tableDiv.style.display = "inline";
             }
         }, false);
 
@@ -113,287 +116,296 @@ function readTbl(str) {
     return newArray;
 }
 async function readStageData() {
-    initTable();
+    try {
+        initTable();
 
-    for (let i = 0; i < searchTextList.length; i++) {
-        await setProgress(i / searchTextList.length);
-        let tableBody = document.getElementById(searchTextList[i][1]);
-        let div = tableBody.parentNode.getElementsByTagName("div")[0];
-        div.innerHTML = `<h3 style="margin-bottom:0px;">${searchTextList[i][2]}（${searchTextList[i][0]}）</h3>`;
+        for (let i = 0; i < searchTextList.length; i++) {
+            await setProgress(i / searchTextList.length);
+            let tableBody = document.getElementById(searchTextList[i][1]);
+            let div = tableBody.parentNode.getElementsByTagName("div")[0];
+            div.innerHTML = `<h3 style="margin-bottom:0px;">${searchTextList[i][2]}（${searchTextList[i][0]}）</h3>`;
 
-        let index = findText(searchTextList[i][0]);
-        if (index == -1) {
-            // Track: 存在しない場合
-            if (i == 1) {
-                setTrack(tableBody, 1, false);
-                continue;
+            let index = findText(searchTextList[i][0]);
+            if (index == -1) {
+                // Track: 存在しない場合
+                if (i == 1) {
+                    setTrack(tableBody, 1, false);
+                    continue;
+                }
+                // Dir: 存在しない場合
+                else if (i == 2) {
+                    setDir(tableBody, 1, false);
+                    continue;
+                }
+                // BtlPri: 存在しない場合
+                else if (i == 20) {
+                    setBtlPri(tableBody, []);
+                    continue;
+                }
+                // NoDriftRail: 存在しない場合
+                else if (i == 21) {
+                    setNoDriftRail(tableBody, []);
+                    continue;
+                }
+                else {
+                    let errorDiv = document.getElementById("errorDiv");
+                    errorDiv.innerHTML = `${searchTextList[i][0]}を探せません`;
+                    return false;
+                }
             }
-            // Dir: 存在しない場合
+            
+            // Story:
+            if (i == 0) {
+                let array = readTbl(allTextList[index]);
+                let story = array[1];
+                setStory(tableBody, story);
+            }
+            // Track:
+            else if (i == 1) {
+                let array = readTbl(allTextList[index]);
+                let num = Number(array[1]);
+                setTrack(tableBody, num);
+            }
+            // Dir:
             else if (i == 2) {
-                setDir(tableBody, 1, false);
-                continue;
+                let array = readTbl(allTextList[index]);
+                let num = Number(array[1]);
+                setDir(tableBody, num);
             }
-            // BtlPri: 存在しない場合
+            // COMIC_DATA
+            else if (i == 3) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let comicDataList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let dataArray = readTbl(allTextList[index + 1 + c]);
+                    comicDataList.push(dataArray[0])
+                }
+                setComicData(tableBody, "comic_bin", comicDataList);
+            }
+            // COMIC_IMAGE
+            else if (i == 4) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let comicDataList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let dataArray = readTbl(allTextList[index + 1 + c]);
+                    comicDataList.push(dataArray[0])
+                }
+                setComicData(tableBody, "comic_img", comicDataList);
+            }
+            // COMIC_SE
+            else if (i == 5) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let comicDataList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let dataArray = readTbl(allTextList[index + 1 + c]);
+                    comicDataList.push(dataArray[0])
+                }
+                setComicData(tableBody, "comic_se", comicDataList);
+            }
+            // RailPos:
+            else if (i == 6) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let railDataList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let railArray = readTbl(allTextList[index + 1 + c]);
+                    railDataList.push(railArray)
+                }
+                setRailData(tableBody, "レール位置", railDataList);
+            }
+            // FreeRun:
+            else if (i == 7) {
+                let cnt = 1
+                let railDataList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let railArray = readTbl(allTextList[index + 1 + c]);
+                    railDataList.push(railArray)
+                }
+                setRailData(tableBody, "試運転のレール位置", railDataList);
+            }
+            // VSPos:
+            else if (i == 8) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let railDataList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let railArray = readTbl(allTextList[index + 1 + c]);
+                    railDataList.push(railArray)
+                }
+                setRailData(tableBody, "対戦のレール位置", railDataList);
+            }
+            // FadeImage:
+            else if (i == 9) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let imageList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let imageArray = readTbl(allTextList[index + 1 + c]);
+                    imageList.push(imageArray)
+                }
+                setFadeImage(tableBody, imageList);
+            }
+            // StageRes:
+            else if (i == 10) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let imageList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let imageArray = readTbl(allTextList[index + 1 + c]);
+                    imageList.push(imageArray)
+                }
+                setStageRes(tableBody, imageList);
+            }
+            // SetTexInfo:
+            else if (i == 11) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let texInfoList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let texInfoArray = readTbl(allTextList[index + 1 + c]);
+                    texInfoList.push(texInfoArray)
+                }
+                setTexInfo(tableBody, texInfoList);
+            }
+            // STCnt:
+            else if (i == 12) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let stationList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let stationArray = readTbl(allTextList[index + 1 + c]);
+                    stationArray.splice(0, 1)
+                    stationList.push(stationArray)
+                }
+                setStation(tableBody, stationList);
+            }
+            // CPU:
+            else if (i == 13) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let cpuList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let cpuArray = readTbl(allTextList[index + 1 + c]);
+                    cpuList.push(cpuArray)
+                }
+                setCPU(tableBody, cpuList);
+            }
+            // ComicScript:
+            else if (i == 14) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let comicScriptList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let comicScriptArray = readTbl(allTextList[index + 1 + c]);
+                    comicScriptList.push(comicScriptArray)
+                }
+                setComicScript(tableBody, comicScriptList);
+            }
+            // RainChecker:
+            else if (i == 15) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let rainCheckerList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let rainCheckerArray = readTbl(allTextList[index + 1 + c]);
+                    rainCheckerList.push(rainCheckerArray)
+                }
+                setRainChecker(tableBody, rainCheckerList);
+            }
+            // DosanInfo:
+            else if (i == 16) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let dosanInfoList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let dosanInfoArray = readTbl(allTextList[index + 1 + c]);
+                    dosanInfoList.push(dosanInfoArray)
+                }
+                setDosanInfo(tableBody, dosanInfoList);
+            }
+            // MdlCnt:
+            else if (i == 17) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                modelList = [];
+
+                for (let c = 0; c < cnt; c++) {
+                    let modelArray = readTbl(allTextList[index + 1 + c]);
+                    modelList.push(modelArray)
+                }
+                await setMdlCnt(i, tableBody, modelList);
+            }
+            // RailCnt:
+            else if (i == 18) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let railList = [];
+
+                for (let c = 0; c < cnt; c++) {
+                    let railArray = readTbl(allTextList[index + 1 + c]);
+                    railList.push(railArray)
+                }
+                await setRailCnt(i, tableBody, railList);
+            }
+            // RailPri:
+            else if (i == 19) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let railPriList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let railPriArray = readTbl(allTextList[index + 1 + c]);
+                    railPriList.push(railPriArray)
+                }
+                setRailPri(tableBody, railPriList);
+            }
+            // BtlPri:
             else if (i == 20) {
-                setBtlPri(tableBody, []);
-                continue;
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let btlPriList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let btlPriArray = readTbl(allTextList[index + 1 + c]);
+                    btlPriList.push(btlPriArray)
+                }
+                setBtlPri(tableBody, btlPriList);
             }
-            // NoDriftRail: 存在しない場合
+            // NoDriftRail:
             else if (i == 21) {
-                setNoDriftRail(tableBody, []);
-                continue;
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let noDriftRailList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let noDriftRailArray = readTbl(allTextList[index + 1 + c]);
+                    noDriftRailList.push(noDriftRailArray)
+                }
+                setNoDriftRail(tableBody, noDriftRailList);
             }
-            else {
-                let errorDiv = document.getElementById("errorDiv");
-                errorDiv.innerHTML = `${searchTextList[i][0]}を探せません`;
-                return false;
+            // AmbCnt:
+            else if (i == 22) {
+                let array = readTbl(allTextList[index]);
+                let cnt = Number(array[1]);
+                let ambList = [];
+                for (let c = 0; c < cnt; c++) {
+                    let ambArray = readTbl(allTextList[index + 1 + c]);
+                    ambList.push(ambArray)
+                }
+                await setAmbCnt(i, tableBody, ambList);
             }
         }
-        
-        // Story:
-        if (i == 0) {
-            let array = readTbl(allTextList[index]);
-            let story = array[1];
-            setStory(tableBody, story);
-        }
-        // Track:
-        else if (i == 1) {
-            let array = readTbl(allTextList[index]);
-            let num = Number(array[1]);
-            setTrack(tableBody, num);
-        }
-        // Dir:
-        else if (i == 2) {
-            let array = readTbl(allTextList[index]);
-            let num = Number(array[1]);
-            setDir(tableBody, num);
-        }
-        // COMIC_DATA
-        else if (i == 3) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let comicDataList = [];
-            for (let c = 0; c < cnt; c++) {
-                let dataArray = readTbl(allTextList[index + 1 + c]);
-                comicDataList.push(dataArray[0])
-            }
-            setComicData(tableBody, "comic_bin", comicDataList);
-        }
-        // COMIC_IMAGE
-        else if (i == 4) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let comicDataList = [];
-            for (let c = 0; c < cnt; c++) {
-                let dataArray = readTbl(allTextList[index + 1 + c]);
-                comicDataList.push(dataArray[0])
-            }
-            setComicData(tableBody, "comic_img", comicDataList);
-        }
-        // COMIC_SE
-        else if (i == 5) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let comicDataList = [];
-            for (let c = 0; c < cnt; c++) {
-                let dataArray = readTbl(allTextList[index + 1 + c]);
-                comicDataList.push(dataArray[0])
-            }
-            setComicData(tableBody, "comic_se", comicDataList);
-        }
-        // RailPos:
-        else if (i == 6) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let railDataList = [];
-            for (let c = 0; c < cnt; c++) {
-                let railArray = readTbl(allTextList[index + 1 + c]);
-                railDataList.push(railArray)
-            }
-            setRailData(tableBody, "レール位置", railDataList);
-        }
-        // FreeRun:
-        else if (i == 7) {
-            let cnt = 1
-            let railDataList = [];
-            for (let c = 0; c < cnt; c++) {
-                let railArray = readTbl(allTextList[index + 1 + c]);
-                railDataList.push(railArray)
-            }
-            setRailData(tableBody, "試運転のレール位置", railDataList);
-        }
-        // VSPos:
-        else if (i == 8) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let railDataList = [];
-            for (let c = 0; c < cnt; c++) {
-                let railArray = readTbl(allTextList[index + 1 + c]);
-                railDataList.push(railArray)
-            }
-            setRailData(tableBody, "対戦のレール位置", railDataList);
-        }
-        // FadeImage:
-        else if (i == 9) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let imageList = [];
-            for (let c = 0; c < cnt; c++) {
-                let imageArray = readTbl(allTextList[index + 1 + c]);
-                imageList.push(imageArray)
-            }
-            setFadeImage(tableBody, imageList);
-        }
-        // StageRes:
-        else if (i == 10) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let imageList = [];
-            for (let c = 0; c < cnt; c++) {
-                let imageArray = readTbl(allTextList[index + 1 + c]);
-                imageList.push(imageArray)
-            }
-            setStageRes(tableBody, imageList);
-        }
-        // SetTexInfo:
-        else if (i == 11) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let texInfoList = [];
-            for (let c = 0; c < cnt; c++) {
-                let texInfoArray = readTbl(allTextList[index + 1 + c]);
-                texInfoList.push(texInfoArray)
-            }
-            setTexInfo(tableBody, texInfoList);
-        }
-        // STCnt:
-        else if (i == 12) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let stationList = [];
-            for (let c = 0; c < cnt; c++) {
-                let stationArray = readTbl(allTextList[index + 1 + c]);
-                stationArray.splice(0, 1)
-                stationList.push(stationArray)
-            }
-            setStation(tableBody, stationList);
-        }
-        // CPU:
-        else if (i == 13) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let cpuList = [];
-            for (let c = 0; c < cnt; c++) {
-                let cpuArray = readTbl(allTextList[index + 1 + c]);
-                cpuList.push(cpuArray)
-            }
-            setCPU(tableBody, cpuList);
-        }
-        // ComicScript:
-        else if (i == 14) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let comicScriptList = [];
-            for (let c = 0; c < cnt; c++) {
-                let comicScriptArray = readTbl(allTextList[index + 1 + c]);
-                comicScriptList.push(comicScriptArray)
-            }
-            setComicScript(tableBody, comicScriptList);
-        }
-        // RainChecker:
-        else if (i == 15) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let rainCheckerList = [];
-            for (let c = 0; c < cnt; c++) {
-                let rainCheckerArray = readTbl(allTextList[index + 1 + c]);
-                rainCheckerList.push(rainCheckerArray)
-            }
-            setRainChecker(tableBody, rainCheckerList);
-        }
-        // DosanInfo:
-        else if (i == 16) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let dosanInfoList = [];
-            for (let c = 0; c < cnt; c++) {
-                let dosanInfoArray = readTbl(allTextList[index + 1 + c]);
-                dosanInfoList.push(dosanInfoArray)
-            }
-            setDosanInfo(tableBody, dosanInfoList);
-        }
-        // MdlCnt:
-        else if (i == 17) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let modelList = [];
-
-            for (let c = 0; c < cnt; c++) {
-                let modelArray = readTbl(allTextList[index + 1 + c]);
-                modelList.push(modelArray)
-            }
-            await setMdlCnt(i, tableBody, modelList);
-        }
-        // RailCnt:
-        else if (i == 18) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let railList = [];
-
-            for (let c = 0; c < cnt; c++) {
-                let railArray = readTbl(allTextList[index + 1 + c]);
-                railList.push(railArray)
-            }
-            await setRailCnt(i, tableBody, railList);
-        }
-        // RailPri:
-        else if (i == 19) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let railPriList = [];
-            for (let c = 0; c < cnt; c++) {
-                let railPriArray = readTbl(allTextList[index + 1 + c]);
-                railPriList.push(railPriArray)
-            }
-            setRailPri(tableBody, railPriList);
-        }
-        // BtlPri:
-        else if (i == 20) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let btlPriList = [];
-            for (let c = 0; c < cnt; c++) {
-                let btlPriArray = readTbl(allTextList[index + 1 + c]);
-                btlPriList.push(btlPriArray)
-            }
-            setBtlPri(tableBody, btlPriList);
-        }
-        // NoDriftRail:
-        else if (i == 21) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let noDriftRailList = [];
-            for (let c = 0; c < cnt; c++) {
-                let noDriftRailArray = readTbl(allTextList[index + 1 + c]);
-                noDriftRailList.push(noDriftRailArray)
-            }
-            setNoDriftRail(tableBody, noDriftRailList);
-        }
-        // AmbCnt:
-        else if (i == 22) {
-            let array = readTbl(allTextList[index]);
-            let cnt = Number(array[1]);
-            let ambList = [];
-            for (let c = 0; c < cnt; c++) {
-                let ambArray = readTbl(allTextList[index + 1 + c]);
-                ambList.push(ambArray)
-            }
-            await setAmbCnt(i, tableBody, ambList);
-        }
+        setProgress(1);
+    } catch (error) {
+        let errorDiv = document.getElementById("errorDiv");
+        let stackList = error.stack.split("\n");
+        let errorLine = stackList[1];
+        let errorNum = errorLine.substring(errorLine.indexOf("viewer.js"), errorLine.length - 1);
+        errorDiv.innerHTML = `${errorNum}：${error}`;
+    } finally {
+        let tableDiv = document.getElementById("tableDiv");
+        tableDiv.style.display = "inline";
     }
-    setProgress(1);
-    let tableDiv = document.getElementById("tableDiv");
-    tableDiv.style.display = "inline";
 }
 
 function setStory(tableBody, story) {
@@ -876,6 +888,15 @@ async function setMdlCnt(index, tableBody, modelList) {
             else if (j == 2 || j == 3) {
                 td.innerHTML = toHex(modelList[i][j], "char");
             }
+            else if (j == 4) {
+                let idx = Number(modelList[i][j]);
+                if (idx >= 0 && idx < modelList.length) {
+                    td.innerHTML = modelList[idx][1];
+                    td.title = modelList[i][j];
+                } else {
+                    td.innerHTML = modelList[i][j];
+                }
+            }
             else {
                 td.innerHTML = modelList[i][j];
             }
@@ -944,6 +965,34 @@ async function setRailCnt(index, tableBody, railList) {
                 case 0:
                     td.innerHTML = i;
                     break;
+                case 9:
+                case 10:
+                    let idx = Number(railList[i][j]);
+                    if (idx >= 0 && idx < modelList.length) {
+                        td.innerHTML = modelList[idx][1];
+                        td.title = railList[i][j];
+                    } else {
+                        if (j == 10) {
+                            if (idx == 255 || idx == -1) {
+                                let modelIdx = railList[i][j - 1];
+                                let baseIdx = Number(modelList[modelIdx][4]);
+                                if (baseIdx >= 0 && baseIdx < 254) {
+                                    td.innerHTML = modelList[baseIdx][1];
+                                    td.style.backgroundColor = "gold";
+                                    td.title = railList[i][j];
+                                } else {
+                                    td.innerHTML = railList[i][j];
+                                    td.style.backgroundColor = "lightgray";
+                                }
+                            } else {
+                                td.innerHTML = railList[i][j];
+                                td.style.backgroundColor = "lightgray";
+                            }
+                        } else {
+                            td.innerHTML = railList[i][j];
+                        }
+                    }
+                    break;
                 case 12:
                 case 13:
                 case 14:
@@ -961,7 +1010,9 @@ async function setRailCnt(index, tableBody, railList) {
                 let idx = (j - 17) % 4 + 17;
                 td.style.backgroundColor = railHeaderColorList[idx];
             } else {
-                td.style.backgroundColor = railHeaderColorList[j];
+                if (["lightgray", "gold"].indexOf(td.style.backgroundColor) == -1) {
+                    td.style.backgroundColor = railHeaderColorList[j];
+                }
             }
             td.style.minWidth = "80px";
         }
@@ -1127,8 +1178,18 @@ async function setAmbCnt(index, tableBody, ambList) {
             } else {
                 if (j == 3) {
                     ambDataCnt = Number(ambList[i][j]);
+                    td.innerHTML = ambList[i][j];
+                } else if (j % 13 == 4) {
+                    let idx = Number(ambList[i][j]);
+                    if (idx >= 0 && idx < modelList.length) {
+                        td.innerHTML = modelList[idx][1];
+                        td.title = ambList[i][j];
+                    } else {
+                        td.innerHTML = ambList[i][j];
+                    }
+                } else {
+                    td.innerHTML = ambList[i][j];
                 }
-                td.innerHTML = ambList[i][j];
             }
             if (j >= 17) {
                 let idx = (j - 4) % 13 + 4;
