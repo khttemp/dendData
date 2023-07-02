@@ -192,7 +192,7 @@ function addTrainElement(
         let notchText = allTextList[index];
         notchCnt = Number(notchText.split("\t")[1]);
         if (isNaN(notchCnt)) {
-            errorDiv.innerHTML = "ノッチのCntの数字が不正です";
+            errorDiv.innerHTML = `ノッチのCntの数字が不正です<br>エラーが出るデータ：【${notchText.split("\t")}】`;
             return false;
         }
     }
@@ -236,13 +236,13 @@ function addTrainElement(
         for (let i = 0; i < labelInfoList.length; i++) {
             let notchText = allTextList[index];
             if (notchText == "" || notchText.indexOf("//") == 0) {
-                errorDiv.innerHTML = "ノッチデータの" + (i + 1) + "行目が空データです。";
+                errorDiv.innerHTML = `ノッチデータの ${i + 1}行目が空データです。<br>エラーが出るデータ：【${notchText.split("\t")}】`;
                 return false;
             }
 
             let notchInfoList = notchText.split("\t");
             if (notchInfoList.length < notchCnt) {
-                errorDiv.innerHTML = "ノッチデータの" + (i + 1) + "行目を読み込めません";
+                errorDiv.innerHTML = `ノッチデータの ${i + 1}行目を読み込めません。<br>エラーが出るデータ：【${notchText.split("\t")}】`;
                 return false;
             }
             let tr = document.createElement("tr");
@@ -261,7 +261,7 @@ function addTrainElement(
                     } else {
                         td.innerHTML = notchInfoList[j - 1];
                         if (isNaN(notchInfoList[j - 1])) {
-                            errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                            errorDiv.innerHTML = `数字で読み込めない文字が含まれています<br>エラーが出るデータ：【${notchText.split("\t")}】`;
                             return false;
                         }
                     }
@@ -269,13 +269,13 @@ function addTrainElement(
                     if (j == 0) {
                         td.innerHTML = notchInfoList[j];
                         if (isNaN(notchInfoList[j])) {
-                            errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                            errorDiv.innerHTML = `数字で読み込めない文字が含まれています<br>エラーが出るデータ：【${notchText.split("\t")}】`;
                             return false;
                         }
                     } else {
                         td.innerHTML = notchInfoList[j - 1];
                         if (isNaN(notchInfoList[j - 1])) {
-                            errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                            errorDiv.innerHTML = `数字で読み込めない文字が含まれています<br>エラーが出るデータ：【${notchText.split("\t")}】`;
                             return false;
                         }
                     }
@@ -295,9 +295,8 @@ function addTrainElement(
         //テーブル中身（その他の中で性能データ）
         if (isPerfData) {
             let perfInfoList = dataText.split("\t");
-            console.log(labelInfoList.length)
             if (perfInfoList.length < labelInfoList.length - 3) {
-                errorDiv.innerHTML = `${insertTableLabelName}を読み込めません`;
+                errorDiv.innerHTML = `${insertTableLabelName}を読み込めません<br>エラーが出るデータ：【${dataText.split("\t")}】`;
                 return false;
             }
             for (let i = 0; i < labelInfoList.length; i++) {
@@ -315,7 +314,7 @@ function addTrainElement(
                                 if (perfInfoList.length > i) {
                                     td.innerHTML = perfInfoList[i];
                                     if (isNaN(perfInfoList[i])) {
-                                        errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                        errorDiv.innerHTML = `数字で読み込めない文字が含まれています<br>エラーが出るデータ：【${dataText.split("\t")}】`;
                                         return false;
                                     }
                                 } else {
@@ -326,7 +325,7 @@ function addTrainElement(
                                 if (perfInfoList.length > i) {
                                     td.innerHTML = perfInfoList[i];
                                     if (isNaN(perfInfoList[i])) {
-                                        errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                        errorDiv.innerHTML = `数字で読み込めない文字が含まれています<br>エラーが出るデータ：【${dataText.split("\t")}】`;
                                         return false;
                                     }
                                 } else {
@@ -337,7 +336,7 @@ function addTrainElement(
                                 if (perfInfoList.length > i) {
                                     td.innerHTML = perfInfoList[i];
                                     if (isNaN(perfInfoList[i])) {
-                                        errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                        errorDiv.innerHTML = `数字で読み込めない文字が含まれています<br>エラーが出るデータ：【${dataText.split("\t")}】`;
                                         return false;
                                     }
                                 } else {
@@ -347,7 +346,7 @@ function addTrainElement(
                             else {
                                 td.innerHTML = perfInfoList[i];
                                 if (isNaN(perfInfoList[i])) {
-                                    errorDiv.innerHTML = "数字で読み込めない文字が含まれています";
+                                    errorDiv.innerHTML = `数字で読み込めない文字が含まれています<br>エラーが出るデータ：【${dataText.split("\t")}】`;
                                     return false;
                                 }
                             }
