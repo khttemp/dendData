@@ -4,7 +4,7 @@ function createTd(table, data) {
     for (let i = 0; i < data.length; i++) {
         let td = document.createElement("td");
         tr.appendChild(td);
-        if (i == 1) {
+        if (i == 2) {
             td.innerHTML = data[i].replaceAll("|", "<br>");
         } else {
             td.innerHTML = data[i];
