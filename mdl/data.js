@@ -13,6 +13,10 @@ function createTd(table, data) {
         if (i == 0) {
             let imageTd = document.createElement("td");
             tr.appendChild(imageTd);
+            if (data[1] == "-") {
+                imageTd.innerHTML = "構築できず";
+                continue;
+            }
             let name = data[i].split(".smf")[0];
             let imgPath = "./image/" + name + ".png";
             $.ajax({
