@@ -5,10 +5,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="data.js"></script>
     </head>
+    <style>
+        #sortTable th {
+            cursor:pointer;
+        }
+    </style>
     <body>
         <div>
             <div id="model">
-                <table border="1">
+                <table border="1" id="sortTable">
                     <tbody id="modelTable">
                         <tr>
                             <th>smf名</th>
