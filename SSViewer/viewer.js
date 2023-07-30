@@ -104,14 +104,16 @@ async function sleep(miliseconds) {
     });
 }
 function readTbl(str) {
-    let array = str.split("\t").filter(e=>e);
     let newArray = [];
-    for (let i = 0; i < array.length; i++) {
-        let element = array[i];
-        if (element.indexOf("//") == 0) {
-            continue;
+    if (str.length > 1 && str.indexOf("//") != 0) {
+        let array = str.split("\t").filter(e=>e);
+        for (let i = 0; i < array.length; i++) {
+            let element = array[i];
+            if (element.indexOf("//") == 0) {
+                continue;
+            }
+            newArray.push(element);
         }
-        newArray.push(element);
     }
     return newArray;
 }
@@ -179,8 +181,11 @@ async function readStageData() {
                 let comicDataList = [];
                 for (let c = 0; c < cnt; c++) {
                     let dataArray = readTbl(allTextList[index + 1 + c]);
-                    comicDataList.push(dataArray[0])
+                    if (dataArray.length > 0) {
+                        comicDataList.push(dataArray[0])
+                    }
                 }
+                countCheck("COMIC_DATA", comicDataList, cnt);
                 setComicData(tableBody, "comic_bin", comicDataList);
             }
             // COMIC_IMAGE
@@ -190,8 +195,11 @@ async function readStageData() {
                 let comicDataList = [];
                 for (let c = 0; c < cnt; c++) {
                     let dataArray = readTbl(allTextList[index + 1 + c]);
-                    comicDataList.push(dataArray[0])
+                    if (dataArray.length > 0) {
+                        comicDataList.push(dataArray[0])
+                    }
                 }
+                countCheck("COMIC_IMAGE", comicDataList, cnt);
                 setComicData(tableBody, "comic_img", comicDataList);
             }
             // COMIC_SE
@@ -201,8 +209,11 @@ async function readStageData() {
                 let comicDataList = [];
                 for (let c = 0; c < cnt; c++) {
                     let dataArray = readTbl(allTextList[index + 1 + c]);
-                    comicDataList.push(dataArray[0])
+                    if (dataArray.length > 0) {
+                        comicDataList.push(dataArray[0])
+                    }
                 }
+                countCheck("COMIC_SE", comicDataList, cnt);
                 setComicData(tableBody, "comic_se", comicDataList);
             }
             // RailPos:
@@ -212,8 +223,11 @@ async function readStageData() {
                 let railDataList = [];
                 for (let c = 0; c < cnt; c++) {
                     let railArray = readTbl(allTextList[index + 1 + c]);
-                    railDataList.push(railArray)
+                    if (railArray.length > 0) {
+                        railDataList.push(railArray)
+                    }
                 }
+                countCheck("RailPos:", railDataList, cnt);
                 setRailData(tableBody, "レール位置", railDataList);
             }
             // FreeRun:
@@ -222,8 +236,11 @@ async function readStageData() {
                 let railDataList = [];
                 for (let c = 0; c < cnt; c++) {
                     let railArray = readTbl(allTextList[index + 1 + c]);
-                    railDataList.push(railArray)
+                    if (railArray.length > 0) {
+                        railDataList.push(railArray)
+                    }
                 }
+                countCheck("FreeRun:", railDataList, cnt);
                 setRailData(tableBody, "試運転のレール位置", railDataList);
             }
             // VSPos:
@@ -233,8 +250,11 @@ async function readStageData() {
                 let railDataList = [];
                 for (let c = 0; c < cnt; c++) {
                     let railArray = readTbl(allTextList[index + 1 + c]);
-                    railDataList.push(railArray)
+                    if (railArray.length > 0) {
+                        railDataList.push(railArray)
+                    }
                 }
+                countCheck("VSPos:", railDataList, cnt);
                 setRailData(tableBody, "対戦のレール位置", railDataList);
             }
             // FadeImage:
@@ -244,8 +264,11 @@ async function readStageData() {
                 let imageList = [];
                 for (let c = 0; c < cnt; c++) {
                     let imageArray = readTbl(allTextList[index + 1 + c]);
-                    imageList.push(imageArray)
+                    if (imageArray.length > 0) {
+                        imageList.push(imageArray)
+                    }
                 }
+                countCheck("FadeImage:", imageList, cnt);
                 setFadeImage(tableBody, imageList);
             }
             // StageRes:
@@ -255,8 +278,11 @@ async function readStageData() {
                 let imageList = [];
                 for (let c = 0; c < cnt; c++) {
                     let imageArray = readTbl(allTextList[index + 1 + c]);
-                    imageList.push(imageArray)
+                    if (imageArray.length > 0) {
+                        imageList.push(imageArray)
+                    }
                 }
+                countCheck("StageRes:", imageList, cnt);
                 setStageRes(tableBody, imageList);
             }
             // SetTexInfo:
@@ -266,8 +292,11 @@ async function readStageData() {
                 let texInfoList = [];
                 for (let c = 0; c < cnt; c++) {
                     let texInfoArray = readTbl(allTextList[index + 1 + c]);
-                    texInfoList.push(texInfoArray)
+                    if (texInfoArray.length > 0) {
+                        texInfoList.push(texInfoArray)
+                    }
                 }
+                countCheck("SetTexInfo:", texInfoList, cnt);
                 setTexInfo(tableBody, texInfoList);
             }
             // STCnt:
@@ -277,9 +306,12 @@ async function readStageData() {
                 let stationList = [];
                 for (let c = 0; c < cnt; c++) {
                     let stationArray = readTbl(allTextList[index + 1 + c]);
-                    stationArray.splice(0, 1)
-                    stationList.push(stationArray)
+                    if (stationArray.length > 0) {
+                        stationArray.splice(0, 1)
+                        stationList.push(stationArray)
+                    }
                 }
+                countCheck("STCnt:", stationList, cnt);
                 setStation(tableBody, stationList);
             }
             // CPU:
@@ -289,8 +321,11 @@ async function readStageData() {
                 let cpuList = [];
                 for (let c = 0; c < cnt; c++) {
                     let cpuArray = readTbl(allTextList[index + 1 + c]);
-                    cpuList.push(cpuArray)
+                    if (cpuArray.length > 0) {
+                        cpuList.push(cpuArray)
+                    }
                 }
+                countCheck("CPU:", cpuList, cnt);
                 setCPU(tableBody, cpuList);
             }
             // ComicScript:
@@ -300,8 +335,11 @@ async function readStageData() {
                 let comicScriptList = [];
                 for (let c = 0; c < cnt; c++) {
                     let comicScriptArray = readTbl(allTextList[index + 1 + c]);
-                    comicScriptList.push(comicScriptArray)
+                    if (comicScriptArray.length > 0) {
+                        comicScriptList.push(comicScriptArray)
+                    }
                 }
+                countCheck("ComicScript:", comicScriptList, cnt);
                 setComicScript(tableBody, comicScriptList);
             }
             // RainChecker:
@@ -311,8 +349,11 @@ async function readStageData() {
                 let rainCheckerList = [];
                 for (let c = 0; c < cnt; c++) {
                     let rainCheckerArray = readTbl(allTextList[index + 1 + c]);
-                    rainCheckerList.push(rainCheckerArray)
+                    if (rainCheckerArray.length > 0) {
+                        rainCheckerList.push(rainCheckerArray)
+                    }
                 }
+                countCheck("RainChecker:", rainCheckerList, cnt);
                 setRainChecker(tableBody, rainCheckerList);
             }
             // DosanInfo:
@@ -322,8 +363,11 @@ async function readStageData() {
                 let dosanInfoList = [];
                 for (let c = 0; c < cnt; c++) {
                     let dosanInfoArray = readTbl(allTextList[index + 1 + c]);
-                    dosanInfoList.push(dosanInfoArray)
+                    if (dosanInfoArray.length > 0) {
+                        dosanInfoList.push(dosanInfoArray)
+                    }
                 }
+                countCheck("DosanInfo:", dosanInfoList, cnt);
                 setDosanInfo(tableBody, dosanInfoList);
             }
             // MdlCnt:
@@ -334,8 +378,11 @@ async function readStageData() {
 
                 for (let c = 0; c < cnt; c++) {
                     let modelArray = readTbl(allTextList[index + 1 + c]);
-                    modelList.push(modelArray)
+                    if (modelArray.length > 0) {
+                        modelList.push(modelArray)
+                    }
                 }
+                countCheck("MdlCnt:", modelList, cnt);
                 await setMdlCnt(i, tableBody, modelList);
             }
             // RailCnt:
@@ -346,8 +393,11 @@ async function readStageData() {
 
                 for (let c = 0; c < cnt; c++) {
                     let railArray = readTbl(allTextList[index + 1 + c]);
-                    railList.push(railArray)
+                    if (railArray.length > 0) {
+                        railList.push(railArray)
+                    }
                 }
+                countCheck("RailCnt:", railList, cnt);
                 await setRailCnt(i, tableBody, railList);
             }
             // RailPri:
@@ -357,8 +407,11 @@ async function readStageData() {
                 let railPriList = [];
                 for (let c = 0; c < cnt; c++) {
                     let railPriArray = readTbl(allTextList[index + 1 + c]);
-                    railPriList.push(railPriArray)
+                    if (railPriArray.length > 0) {
+                        railPriList.push(railPriArray)
+                    }
                 }
+                countCheck("RailPri:", railPriList, cnt);
                 setRailPri(tableBody, railPriList);
             }
             // BtlPri:
@@ -368,8 +421,11 @@ async function readStageData() {
                 let btlPriList = [];
                 for (let c = 0; c < cnt; c++) {
                     let btlPriArray = readTbl(allTextList[index + 1 + c]);
-                    btlPriList.push(btlPriArray)
+                    if (btlPriArray.length > 0) {
+                        btlPriList.push(btlPriArray)
+                    }
                 }
+                countCheck("BtlPri:", btlPriList, cnt);
                 setBtlPri(tableBody, btlPriList);
             }
             // NoDriftRail:
@@ -379,8 +435,11 @@ async function readStageData() {
                 let noDriftRailList = [];
                 for (let c = 0; c < cnt; c++) {
                     let noDriftRailArray = readTbl(allTextList[index + 1 + c]);
-                    noDriftRailList.push(noDriftRailArray)
+                    if (noDriftRailArray.length > 0) {
+                        noDriftRailList.push(noDriftRailArray)
+                    }
                 }
+                countCheck("NoDriftRail:", noDriftRailList, cnt);
                 setNoDriftRail(tableBody, noDriftRailList);
             }
             // AmbCnt:
@@ -390,8 +449,11 @@ async function readStageData() {
                 let ambList = [];
                 for (let c = 0; c < cnt; c++) {
                     let ambArray = readTbl(allTextList[index + 1 + c]);
-                    ambList.push(ambArray)
+                    if (ambArray.length > 0) {
+                        ambList.push(ambArray)
+                    }
                 }
+                countCheck("ambCnt:", ambList, cnt);
                 await setAmbCnt(i, tableBody, ambList);
             }
         }
@@ -405,6 +467,12 @@ async function readStageData() {
     } finally {
         let tableDiv = document.getElementById("tableDiv");
         tableDiv.style.display = "inline";
+    }
+}
+
+function countCheck(name, list, cnt) {
+    if (list.length != cnt) {
+        throw new Error(`【${name}】読み込んだデータと設定数が不一致です`);
     }
 }
 
