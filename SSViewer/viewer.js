@@ -178,11 +178,18 @@ async function readStageData() {
             else if (i == 3) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let comicDataList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let dataArray = readTbl(allTextList[index + 1 + c]);
-                    if (dataArray.length > 0) {
-                        comicDataList.push(dataArray[0])
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let dataArray = readTbl(allTextList[index + 1 + c]);
+                        if (dataArray.length > 0) {
+                            comicDataList.push(dataArray[0]);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("COMIC_DATA", comicDataList, cnt);
@@ -192,11 +199,18 @@ async function readStageData() {
             else if (i == 4) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let comicDataList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let dataArray = readTbl(allTextList[index + 1 + c]);
-                    if (dataArray.length > 0) {
-                        comicDataList.push(dataArray[0])
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let dataArray = readTbl(allTextList[index + 1 + c]);
+                        if (dataArray.length > 0) {
+                            comicDataList.push(dataArray[0]);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("COMIC_IMAGE", comicDataList, cnt);
@@ -206,11 +220,18 @@ async function readStageData() {
             else if (i == 5) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let comicDataList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let dataArray = readTbl(allTextList[index + 1 + c]);
-                    if (dataArray.length > 0) {
-                        comicDataList.push(dataArray[0])
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let dataArray = readTbl(allTextList[index + 1 + c]);
+                        if (dataArray.length > 0) {
+                            comicDataList.push(dataArray[0]);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("COMIC_SE", comicDataList, cnt);
@@ -220,11 +241,18 @@ async function readStageData() {
             else if (i == 6) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let railDataList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let railArray = readTbl(allTextList[index + 1 + c]);
-                    if (railArray.length > 0) {
-                        railDataList.push(railArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let railArray = readTbl(allTextList[index + 1 + c]);
+                        if (railArray.length > 0) {
+                            railDataList.push(railArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("RailPos:", railDataList, cnt);
@@ -233,11 +261,18 @@ async function readStageData() {
             // FreeRun:
             else if (i == 7) {
                 let cnt = 1
+                let realCount = 0;
                 let railDataList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let railArray = readTbl(allTextList[index + 1 + c]);
-                    if (railArray.length > 0) {
-                        railDataList.push(railArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let railArray = readTbl(allTextList[index + 1 + c]);
+                        if (railArray.length > 0) {
+                            railDataList.push(railArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("FreeRun:", railDataList, cnt);
@@ -247,11 +282,18 @@ async function readStageData() {
             else if (i == 8) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let railDataList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let railArray = readTbl(allTextList[index + 1 + c]);
-                    if (railArray.length > 0) {
-                        railDataList.push(railArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let railArray = readTbl(allTextList[index + 1 + c]);
+                        if (railArray.length > 0) {
+                            railDataList.push(railArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("VSPos:", railDataList, cnt);
@@ -261,11 +303,18 @@ async function readStageData() {
             else if (i == 9) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let imageList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let imageArray = readTbl(allTextList[index + 1 + c]);
-                    if (imageArray.length > 0) {
-                        imageList.push(imageArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let imageArray = readTbl(allTextList[index + 1 + c]);
+                        if (imageArray.length > 0) {
+                            imageList.push(imageArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("FadeImage:", imageList, cnt);
@@ -275,11 +324,18 @@ async function readStageData() {
             else if (i == 10) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let imageList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let imageArray = readTbl(allTextList[index + 1 + c]);
-                    if (imageArray.length > 0) {
-                        imageList.push(imageArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let imageArray = readTbl(allTextList[index + 1 + c]);
+                        if (imageArray.length > 0) {
+                            imageList.push(imageArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("StageRes:", imageList, cnt);
@@ -289,11 +345,18 @@ async function readStageData() {
             else if (i == 11) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let texInfoList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let texInfoArray = readTbl(allTextList[index + 1 + c]);
-                    if (texInfoArray.length > 0) {
-                        texInfoList.push(texInfoArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let texInfoArray = readTbl(allTextList[index + 1 + c]);
+                        if (texInfoArray.length > 0) {
+                            texInfoList.push(texInfoArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("SetTexInfo:", texInfoList, cnt);
@@ -303,12 +366,19 @@ async function readStageData() {
             else if (i == 12) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let stationList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let stationArray = readTbl(allTextList[index + 1 + c]);
-                    if (stationArray.length > 0) {
-                        stationArray.splice(0, 1)
-                        stationList.push(stationArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let stationArray = readTbl(allTextList[index + 1 + c]);
+                        if (stationArray.length > 0) {
+                            stationArray.splice(0, 1)
+                            stationList.push(stationArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("STCnt:", stationList, cnt);
@@ -318,11 +388,18 @@ async function readStageData() {
             else if (i == 13) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let cpuList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let cpuArray = readTbl(allTextList[index + 1 + c]);
-                    if (cpuArray.length > 0) {
-                        cpuList.push(cpuArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let cpuArray = readTbl(allTextList[index + 1 + c]);
+                        if (cpuArray.length > 0) {
+                            cpuList.push(cpuArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("CPU:", cpuList, cnt);
@@ -332,11 +409,18 @@ async function readStageData() {
             else if (i == 14) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let comicScriptList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let comicScriptArray = readTbl(allTextList[index + 1 + c]);
-                    if (comicScriptArray.length > 0) {
-                        comicScriptList.push(comicScriptArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let comicScriptArray = readTbl(allTextList[index + 1 + c]);
+                        if (comicScriptArray.length > 0) {
+                            comicScriptList.push(comicScriptArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("ComicScript:", comicScriptList, cnt);
@@ -346,11 +430,18 @@ async function readStageData() {
             else if (i == 15) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let rainCheckerList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let rainCheckerArray = readTbl(allTextList[index + 1 + c]);
-                    if (rainCheckerArray.length > 0) {
-                        rainCheckerList.push(rainCheckerArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let rainCheckerArray = readTbl(allTextList[index + 1 + c]);
+                        if (rainCheckerArray.length > 0) {
+                            rainCheckerList.push(rainCheckerArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("RainChecker:", rainCheckerList, cnt);
@@ -360,11 +451,18 @@ async function readStageData() {
             else if (i == 16) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let dosanInfoList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let dosanInfoArray = readTbl(allTextList[index + 1 + c]);
-                    if (dosanInfoArray.length > 0) {
-                        dosanInfoList.push(dosanInfoArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let dosanInfoArray = readTbl(allTextList[index + 1 + c]);
+                        if (dosanInfoArray.length > 0) {
+                            dosanInfoList.push(dosanInfoArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("DosanInfo:", dosanInfoList, cnt);
@@ -374,12 +472,18 @@ async function readStageData() {
             else if (i == 17) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 modelList = [];
-
-                for (let c = 0; c < cnt; c++) {
-                    let modelArray = readTbl(allTextList[index + 1 + c]);
-                    if (modelArray.length > 0) {
-                        modelList.push(modelArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let modelArray = readTbl(allTextList[index + 1 + c]);
+                        if (modelArray.length > 0) {
+                            modelList.push(modelArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("MdlCnt:", modelList, cnt);
@@ -389,12 +493,18 @@ async function readStageData() {
             else if (i == 18) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let railList = [];
-
-                for (let c = 0; c < cnt; c++) {
-                    let railArray = readTbl(allTextList[index + 1 + c]);
-                    if (railArray.length > 0) {
-                        railList.push(railArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let railArray = readTbl(allTextList[index + 1 + c]);
+                        if (railArray.length > 0) {
+                            railList.push(railArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("RailCnt:", railList, cnt);
@@ -404,11 +514,18 @@ async function readStageData() {
             else if (i == 19) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let railPriList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let railPriArray = readTbl(allTextList[index + 1 + c]);
-                    if (railPriArray.length > 0) {
-                        railPriList.push(railPriArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let railPriArray = readTbl(allTextList[index + 1 + c]);
+                        if (railPriArray.length > 0) {
+                            railPriList.push(railPriArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("RailPri:", railPriList, cnt);
@@ -418,11 +535,18 @@ async function readStageData() {
             else if (i == 20) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let btlPriList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let btlPriArray = readTbl(allTextList[index + 1 + c]);
-                    if (btlPriArray.length > 0) {
-                        btlPriList.push(btlPriArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let btlPriArray = readTbl(allTextList[index + 1 + c]);
+                        if (btlPriArray.length > 0) {
+                            btlPriList.push(btlPriArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("BtlPri:", btlPriList, cnt);
@@ -432,11 +556,18 @@ async function readStageData() {
             else if (i == 21) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let noDriftRailList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let noDriftRailArray = readTbl(allTextList[index + 1 + c]);
-                    if (noDriftRailArray.length > 0) {
-                        noDriftRailList.push(noDriftRailArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let noDriftRailArray = readTbl(allTextList[index + 1 + c]);
+                        if (noDriftRailArray.length > 0) {
+                            noDriftRailList.push(noDriftRailArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("NoDriftRail:", noDriftRailList, cnt);
@@ -446,11 +577,18 @@ async function readStageData() {
             else if (i == 22) {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
+                let realCount = 0;
                 let ambList = [];
-                for (let c = 0; c < cnt; c++) {
-                    let ambArray = readTbl(allTextList[index + 1 + c]);
-                    if (ambArray.length > 0) {
-                        ambList.push(ambArray)
+                if (cnt > 0) {
+                    for (let c = 0; ; c++) {
+                        let ambArray = readTbl(allTextList[index + 1 + c]);
+                        if (ambArray.length > 0) {
+                            ambList.push(ambArray);
+                            realCount++;
+                        }
+                        if (realCount >= cnt) {
+                            break;
+                        }
                     }
                 }
                 countCheck("ambCnt:", ambList, cnt);
@@ -1074,6 +1212,62 @@ async function setRailCnt(index, tableBody, railList) {
                     td.innerHTML = railList[i][j];
                     break;
             }
+
+            if (j == 1) {
+                prevRail = Number(railList[i][j]);
+                if (prevRail != -1 && prevRail != 0) {
+                    currentRailDataCnt = Number(railList[i][16]);
+                    prevRailDataCnt = Number(railList[prevRail][16]);
+                    if (currentRailDataCnt != prevRailDataCnt) {
+                        if (currentRailDataCnt == 2) {
+                            currentRailLeftPrevRailNo = Number(railList[i][19]);
+                            currentRailRightPrevRailNo = Number(railList[i][23]);
+                            if (currentRailLeftPrevRailNo == prevRail || currentRailRightPrevRailNo == prevRail) {
+                                if (currentRailLeftPrevRailNo == prevRail) {
+                                    baseX = Number(railList[i][3]);
+                                    if (baseX != 6.5) {
+                                        throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                    }
+                                } else if (currentRailRightPrevRailNo == prevRail) {
+                                    baseX = Number(railList[i][3]);
+                                    if (baseX != -6.5) {
+                                        throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                    }
+                                }
+                            }
+                        }
+                        else if (currentRailDataCnt == 1) {
+                            currentRailPrevRailNo = Number(railList[i][19]);
+                            if (currentRailPrevRailNo == prevRail) {
+                                prevRailNextLeftRailNo = Number(railList[prevRail][17]);
+                                prevRailNextRightRailNo = Number(railList[prevRail][21]);
+                                if (prevRailNextLeftRailNo == i || prevRailNextRightRailNo == i) {
+                                    if (prevRailNextLeftRailNo == i) {
+                                        baseX = Number(railList[i][3]);
+                                        if (baseX != -6.5) {
+                                            if (baseX == 6.5) {
+                                                console.log(`レール No.${prevRail}のNextを自動補正しました`);
+                                            } else {
+                                                throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                            }
+                                        }
+                                    } else if (prevRailNextRightRailNo == i) {
+                                        baseX = Number(railList[i][3]);
+                                        if (baseX != 6.5) {
+                                            if (baseX == -6.5) {
+                                                console.log(`レール No.${prevRail}のNextを自動補正しました`);
+                                            } else {
+                                                throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             if (j > 16) {
                 let idx = (j - 17) % 4 + 17;
                 td.style.backgroundColor = railHeaderColorList[idx];
