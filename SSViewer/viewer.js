@@ -1213,8 +1213,19 @@ async function setRailCnt(index, tableBody, railList) {
                     break;
             }
 
-            if (j == 1) {
-                prevRail = Number(railList[i][j]);
+            if (j > 16) {
+                let idx = (j - 17) % 4 + 17;
+                td.style.backgroundColor = railHeaderColorList[idx];
+            } else {
+                if (["lightgray", "gold"].indexOf(td.style.backgroundColor) == -1) {
+                    td.style.backgroundColor = railHeaderColorList[j];
+                }
+            }
+            td.style.minWidth = "80px";
+
+            if (j == 16 + 4 * railDataCnt) {
+                // baseX検査
+                prevRail = Number(railList[i][1]);
                 if (prevRail != -1 && prevRail != 0) {
                     currentRailDataCnt = Number(railList[i][16]);
                     prevRailDataCnt = Number(railList[prevRail][16]);
@@ -1226,11 +1237,15 @@ async function setRailCnt(index, tableBody, railList) {
                                 if (currentRailLeftPrevRailNo == prevRail) {
                                     baseX = Number(railList[i][3]);
                                     if (baseX != 6.5) {
+                                        baseTd = tr.childNodes[3];
+                                        baseTd.style.backgroundColor = "red";
                                         throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                     }
                                 } else if (currentRailRightPrevRailNo == prevRail) {
                                     baseX = Number(railList[i][3]);
                                     if (baseX != -6.5) {
+                                        baseTd = tr.childNodes[3];
+                                        baseTd.style.backgroundColor = "red";
                                         throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                     }
                                 }
@@ -1248,6 +1263,8 @@ async function setRailCnt(index, tableBody, railList) {
                                             if (baseX == 6.5) {
                                                 console.log(`レール No.${prevRail}のNextを自動補正しました`);
                                             } else {
+                                                baseTd = tr.childNodes[3];
+                                                baseTd.style.backgroundColor = "red";
                                                 throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                             }
                                         }
@@ -1257,6 +1274,8 @@ async function setRailCnt(index, tableBody, railList) {
                                             if (baseX == -6.5) {
                                                 console.log(`レール No.${prevRail}のNextを自動補正しました`);
                                             } else {
+                                                baseTd = tr.childNodes[3];
+                                                baseTd.style.backgroundColor = "red";
                                                 throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                             }
                                         }
@@ -1266,17 +1285,18 @@ async function setRailCnt(index, tableBody, railList) {
                         }
                     }
                 }
-            }
 
-            if (j > 16) {
-                let idx = (j - 17) % 4 + 17;
-                td.style.backgroundColor = railHeaderColorList[idx];
-            } else {
-                if (["lightgray", "gold"].indexOf(td.style.backgroundColor) == -1) {
-                    td.style.backgroundColor = railHeaderColorList[j];
+                // 存在しないNext検査
+                currentRailDataCnt = Number(railList[i][16]);
+                for (let cnt = 0; cnt < currentRailDataCnt; cnt++) {
+                    nextRailNo = Number(railList[i][17 + cnt*4]);
+                    if (nextRailNo >= railList.length) {
+                        nextRailTd = tr.childNodes[17 + cnt*4];
+                        nextRailTd.style.backgroundColor = "red";
+                        throw new Error(`レール No.${i}のNextレール(${nextRailNo})が異常です`);
+                    }
                 }
             }
-            td.style.minWidth = "80px";
         }
     }
 }
