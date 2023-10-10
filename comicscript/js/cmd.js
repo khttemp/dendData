@@ -13958,7 +13958,10 @@ const CMD = {
     "N_ADD_OBJ": {
         "num": 107,
         "description": "オブジェクトを追加する" + newLine
-                    + "引数１～４：詳細不明",
+                    + "引数１：オブジェクトindex" + newLine
+                    + "引数２：binファイルindex" + newLine
+                    + "引数３：アニメ要素１" + newLine
+                    + "引数４：アニメ要素２",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC300.BIN",
@@ -14771,7 +14774,12 @@ const CMD = {
     "IS_TRAIN_HIT": {
         "num": 124,
         "description": "【モデルバイナリ】車両でオブジェクトをヒットした場合" + newLine
-                    + "引数１～６：詳細不明",
+                    + "引数１：x範囲" + newLine
+                    + "引数２：y範囲" + newLine
+                    + "引数３：z範囲" + newLine
+                    + "引数４：ANIME要素２" + newLine
+                    + "引数５：ANIME要素３" + newLine
+                    + "引数６：ぶつけ判定",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -15082,7 +15090,7 @@ const CMD = {
     },
     "START_COMIC": {
         "num": 130,
-        "description": "【モデルバイナリ】コミックスクリプトを読む" + newLine
+        "description": "【モデルバイナリ】コミックスクリプトを実行する" + newLine
                     + "引数１：コミックスクリプト番号",
         "LS_bin": [
             "BTL_03.BIN",
@@ -20154,8 +20162,10 @@ const CMD = {
     },
     "ADD_MY_OBJ": {
         "num": 222,
-        "description": "詳細不明" + newLine
-                    + "引数１～５：詳細不明",
+        "description": "オブジェクトのANIMEを追加で実行する" + newLine
+                    + "引数１：ANIME要素２" + newLine
+                    + "引数２：ANIME要素３" + newLine
+                    + "引数３～５：詳細不明",
         "RS_bin": [
             "TOBU.BIN"
         ]
@@ -26207,7 +26217,12 @@ const CMD = {
     },
     "INDEX_RAND_ROT_X": {
         "num": 368,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】ランダムにX軸に回転する" + newLine
+                    + "引数１：INDEX番号" + newLine
+                    + "引数２：ランダムの数字範囲（START）" + newLine
+                    + "引数３：ランダムの数字範囲（END）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -26222,7 +26237,12 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Y": {
         "num": 369,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】ランダムにY軸に回転する" + newLine
+                    + "引数１：INDEX番号" + newLine
+                    + "引数２：ランダムの数字範囲（START）" + newLine
+                    + "引数３：ランダムの数字範囲（END）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -26241,7 +26261,12 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Z": {
         "num": 370,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】ランダムにZ軸に回転する" + newLine
+                    + "引数１：INDEX番号" + newLine
+                    + "引数２：ランダムの数字範囲（START）" + newLine
+                    + "引数３：ランダムの数字範囲（END）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -26256,7 +26281,12 @@ const CMD = {
     },
     "INDEX_RAND_POS_X": {
         "num": 371,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】ランダムにX軸に移動する" + newLine
+                    + "引数１：INDEX番号" + newLine
+                    + "引数２：ランダムの数字範囲（START）" + newLine
+                    + "引数３：ランダムの数字範囲（END）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "RS_bin": [
             "CLASH_MEI_KASENCHU.BIN",
             "MEI.BIN",
@@ -26267,7 +26297,12 @@ const CMD = {
     },
     "INDEX_RAND_POS_Y": {
         "num": 372,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】ランダムにY軸に移動する" + newLine
+                    + "引数１：INDEX番号" + newLine
+                    + "引数２：ランダムの数字範囲（START）" + newLine
+                    + "引数３：ランダムの数字範囲（END）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -26282,7 +26317,12 @@ const CMD = {
     },
     "INDEX_RAND_POS_Z": {
         "num": 373,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】ランダムにZ軸に移動する" + newLine
+                    + "引数１：INDEX番号" + newLine
+                    + "引数２：ランダムの数字範囲（START）" + newLine
+                    + "引数３：ランダムの数字範囲（END）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "RS_bin": [
             "CLASH_MEI_KASENCHU.BIN",
             "MEI.BIN",
