@@ -1,6 +1,10 @@
-function createTd(table, data) {
+function createTd(table, data, imageDir) {
     let tr = document.createElement("tr");
     table.appendChild(tr);
+	let imageFlag = true;
+	if (Number(data[1]) == -1) {
+		imageFlag = false;
+	}
     for (let i = 0; i < data.length; i++) {
         let td = document.createElement("td");
         tr.appendChild(td);
@@ -18,7 +22,7 @@ function createTd(table, data) {
                 continue;
             }
             let name = data[i].split(".smf")[0];
-            let imgPath = "./image/" + name + ".png";
+            let imgPath = imageDir + name + ".png";
             $.ajax({
                 url: imgPath,
                 type: "HEAD",
@@ -29,26 +33,6 @@ function createTd(table, data) {
         }
     }
 }
-
-$(document).ready(function() {
-    $.ajax({
-        url: "./model.csv",
-        dataType: "text",
-        success: function(data) {
-            allText = data;
-        }
-    }).done(function(data) {
-        let rows = data.split("\n");
-        rows.splice(0, 1);
-        let modelTable = document.getElementById("modelTable");
-        for (let i = 0; i < rows.length; i++) {
-            let data = rows[i].split(",");
-            if (data.length >= 2) {
-                createTd(modelTable, data);
-            }
-        }
-    });
-});
 
 window.addEventListener('load', function () {
 	let column_no = 0; //今回クリックされた列番号

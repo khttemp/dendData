@@ -13,7 +13,7 @@
     <body>
         <div>
             <div>
-                <p><a href="./mdlInfoLS.html">LSのモデルリスト</a></p>
+                <p><a href="./mdlInfo.html">CS・RSのモデルリスト</a></p>
             </div>
             <div id="model">
                 <table border="1" id="sortTable">
@@ -23,6 +23,7 @@
                             <th>画像</th>
                             <th>長さ</th>
                             <th>マップ</th>
+                            <th>備考</th>
                         </tr>
                     </tbody>
                 </table>
@@ -32,7 +33,7 @@
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: "./model.csv",
+                url: "./modelLS.csv",
                 dataType: "text",
                 success: function(data) {
                     allText = data;
@@ -44,7 +45,7 @@
                 for (let i = 0; i < rows.length; i++) {
                     let data = rows[i].split(",");
                     if (data.length >= 2) {
-                        createTd(modelTable, data, "./image/");
+                        createTd(modelTable, data, "./imageLS/");
                     }
                 }
             });
