@@ -2,6 +2,7 @@ function createTd(table, data, imageDir) {
     let tr = document.createElement("tr");
     table.appendChild(tr);
     for (let i = 0; i < data.length; i++) {
+        let imageFlag = true;
         let td = document.createElement("td");
         tr.appendChild(td);
         if (i == 2) {
@@ -16,6 +17,8 @@ function createTd(table, data, imageDir) {
             if (data[1] == "-") {
                 imageTd.innerHTML = "構築できず";
                 continue;
+            } else if (data[1] == "") {
+                imageFlag = false;
             }
             let name = "";
             if (data[i].includes(".smf")) {
@@ -23,14 +26,16 @@ function createTd(table, data, imageDir) {
             } else if (data[i].includes(".SMF")) {
                 name = data[i].split(".SMF")[0];
             }
-            let imgPath = imageDir + name + ".png";
-            $.ajax({
-                url: imgPath,
-                type: "HEAD",
-                success: function() {
-                    imageTd.innerHTML = `<a href="${imgPath}" target="_blank" rel="noopener noreferrer"><img src="${imgPath}" width="200"></a>`;
-                }
-            });
+            if (imageFlag) {
+                let imgPath = imageDir + name + ".png";
+                $.ajax({
+                    url: imgPath,
+                    type: "HEAD",
+                    success: function() {
+                        imageTd.innerHTML = `<a href="${imgPath}" target="_blank" rel="noopener noreferrer"><img src="${imgPath}" width="200"></a>`;
+                    }
+                });
+            }
         }
     }
 }
