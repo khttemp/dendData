@@ -20162,7 +20162,7 @@ const CMD = {
     },
     "ADD_MY_OBJ": {
         "num": 222,
-        "description": "オブジェクトのANIMEを追加で実行する" + newLine
+        "description": "【モデルバイナリ】オブジェクトのANIMEを追加で実行する" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３" + newLine
                     + "引数３～５：詳細不明",
@@ -20603,7 +20603,7 @@ const CMD = {
         "num": 245,
         "description": "【モデルバイナリ】レンズフレアを生成する" + newLine
                     + "引数１：生成する個数" + newLine
-                    + "引数２～：詳細不明",
+                    + "引数２～：ヘッダーの「tga情報」インデックス",
         "BS_bin": [
             "BASE_OBJ.BIN",
             "HK_OBJ.BIN",
@@ -20651,7 +20651,7 @@ const CMD = {
     },
     "SET_LENSFLEAR_MT": {
         "num": 247,
-        "description": "【モデルバイナリ】生成したレンズフレアにMTを設定する" + newLine
+        "description": "【モデルバイナリ】生成したレンズフレアにマテリアルに設定する" + newLine
                     + "引数１：レンズフレアインデックス" + newLine
                     + "引数２：MT名称",
         "BS_bin": [
@@ -26499,7 +26499,9 @@ const CMD = {
     },
     "IB_SET_W_MT": {
         "num": 381,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】MDL_GETINDEXで取得した、モデルインデックスにマテリアル要素を追加する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：追加するマテリアル要素数",
         "CS_bin": [
             "AMB_LANDBRIDGH.BIN",
             "AMB_LIGHT.BIN",
@@ -26665,7 +26667,10 @@ const CMD = {
     },
     "ADD_OBJ_INDEX2": {
         "num": 386,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】マテリアル要素にANIMEを追加で実行する" + newLine
+                    + "引数１：マテリアル要素インデックス" + newLine
+                    + "引数２：ANIME要素２" + newLine
+                    + "引数３：ANIME要素３",
         "CS_bin": [
             "AMB_LANDBRIDGH.BIN",
             "AMB_NK_ROAD_L.BIN"
