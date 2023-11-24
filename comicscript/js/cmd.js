@@ -12996,6 +12996,7 @@ const CMD = {
         "description": "指定時間内に、引数１の条件を満たす場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine
+                    + "　【BSのみ】0（CPUが前にいる）、１（CPUが後ろにいる）" + newLine
                     + "引数２：指定ラベル" + newLine
                     + "引数３：指定時間（フレーム）",
         "LS_comic": [
