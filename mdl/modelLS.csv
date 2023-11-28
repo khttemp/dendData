@@ -61,7 +61,7 @@ amb_mdl_mans00.smf,8,RAIL002(Set3DObj)|RAIL004(Set3DObj)|RAIL006(Set3DObj)|RAIL0
 amb_mdl_bill_00.smf,8,RAIL002(Set3DObj)|RAIL004(Set3DObj)|RAIL006(Set3DObj)|RAIL007(Set3DObj)|RAIL008(Set3DObj)|RAIL010(Set3DObj)|RAIL011(Set3DObj)|RAIL020(Set3DObj),
 amb_mdl_bill_01.smf,8,未使用(Set3DObj),
 kasenchu_2st.smf,1,RAIL002(rail)|RAIL003(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL012(rail)|RAIL020(rail)|RAIL021(rail),
-4Rail_konkuri_only.smf,8,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
+4Rail_konkuri_only.smf,8,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),走れるレールなし
 kasenchu_3rail_konkuri.smf,1,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
 kasenchu_4rail_konkuri.smf,1,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
 2Rail_Tekkyou.smf,8,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
