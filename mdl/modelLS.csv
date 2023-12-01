@@ -11,7 +11,7 @@ kasenchu_st.smf,1,RAIL001(rail)|RAIL002(rail)|RAIL003(rail)|RAIL004(rail)|RAIL00
 nakatu_st.smf,8,RAIL001(rail)|RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
 1Rail_25_Konkuri.smf,8,RAIL002(rail)|RAIL003(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL012(rail)|RAIL020(rail)|RAIL021(rail),
 1Rail_konkuri.smf,8,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),100のレール
-takara_st.smf,8,RAIL002(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),走れるレールは2~4番線のみ
+takara_st.smf,8,RAIL002(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),走れるレールは3~4番線のみ
 kasenchu_takaraduka.smf,1,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
 2Rail50_Tekkyou.smf,8,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
 2Rail25_Humikiri.smf,8,RAIL002(rail)|RAIL004(rail)|RAIL006(rail)|RAIL007(rail)|RAIL008(rail)|RAIL010(rail)|RAIL011(rail)|RAIL020(rail),
