@@ -108,6 +108,14 @@ let textureWrapModeList = [
     "Mirror",
     "MirrorOnce"
 ];
+let shaderTypeNotUsedColor = {
+    "Lux": [7, ],
+    "InLight": [2, 3, 6, 7, 8, 9, 17, 18, 19],
+    "StencilTransparent": [2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16, 17, 18, 19],
+    "TrainWndDist_withBlue": [2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16, 17, 18, 19],
+    "TrainInStencil": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "Toon": [3, 5, 6, 8, 9],
+}
 let matTexList = [];
 let texTexList = [];
 
@@ -332,6 +340,7 @@ function readMatTbl(allTextList) {
         let dataTr = document.createElement("tr");
         table.appendChild(dataTr);
         let textLineList = allTextList[index + i].split("\t");
+        let shaderTypeNum = -1;
         for (let j = 0; j < matTblHeader.length; j++) {
             let dataTd = document.createElement("td");
             dataTr.appendChild(dataTd);
@@ -345,6 +354,7 @@ function readMatTbl(allTextList) {
                 } else {
                     dataTd.innerHTML = textLineList[j];
                 }
+                shaderTypeNum = Number(textLineList[j])
             } else if (j == 2) {
                 if (0 <= Number(textLineList[j]) && Number(textLineList[j]) < luxBlendModeList.length) {
                     dataTd.innerHTML = luxBlendModeList[textLineList[j]];
@@ -366,6 +376,16 @@ function readMatTbl(allTextList) {
                 }
                 dataTd.innerHTML = textLineList[j];
             }   
+        }
+
+        if (shaderTypeNum >= 0) {
+            let colorList = shaderTypeNotUsedColor[shaderTypeList[shaderTypeNum]];
+            if (colorList != undefined) {
+                for (let j = 0; j < colorList.length; j++) {
+                    let tdIndex = colorList[j];
+                    dataTr.childNodes[tdIndex].style.backgroundColor = "gray";
+                }
+            }
         }
     }
 }
