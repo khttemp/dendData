@@ -30153,8 +30153,8 @@ const CMD = {
     },
     "IS_BTLMODE_END_CHK": {
         "num": 587,
-        "description": "バトルモードの場合、1Pが勝った場合、引数１のスクリプトを" + newLine
-                    + "2Pが勝った場合、引数２のスクリプトを読み込む" + newLine
+        "description": "バトルモードの場合、1Pが自走不能になった場合、引数１のスクリプトを" + newLine
+                    + "2Pが自走不能に場合、引数２のスクリプトを読み込む" + newLine
                     + "引数１：スクリプト番号" + newLine
                     + "引数２：スクリプト番号",
         "SS_cmn": [
