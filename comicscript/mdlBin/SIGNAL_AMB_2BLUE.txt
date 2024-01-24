@@ -1,0 +1,13 @@
+imgList
+smfList
+wavList
+-	---#0, 0#---	1,0,1
+0	SET_OBJ_FOG_NO	0.0
+0	CREATE_LENSFLEAR	2.0	0.0	0.0
+0	SET_LENSFLEAR_MT	0.0	F00
+0	SET_LENSFLEAR_MT	1.0	F01
+0	HideMesh	1.0
+0	HideMesh	3.0
+0	HideMesh	4.0
+0	HideMesh	5.0
+-	---#0, 1#---	600,0,1

@@ -1,0 +1,11 @@
+imgList
+smfList
+wavList
+-	---#0, 0#---	1,0,1
+0	CREATE_MESH_INDEX	1.0
+0	SET_MESH_INDEX	0.0	0.0	11.0
+0	CREATE_UV_MOVE_Y	0.0	2.0
+0	SET_UV_MOVE_Y	0.0	0.0	1.0	90.0	0.0
+0	SET_UV_MOVE_Y	0.0	1.0	0.0	0.0	0.0
+0	SET_UV_LOOP_Y	0.0	1.0
+-	---#0, 1#---	600,0,1

@@ -1,0 +1,17 @@
+imgList
+smfList	CAM_LIGHT.smf
+wavList
+-	---#0, 0#---	1,0,1
+0	CREATE_INDEX	2.0
+0	MDL_GETINDEX	0.0	N00
+0	MDL_GETINDEX	1.0	N01
+0	IB_SET_W_MT	0.0	1.0
+0	IB_SET_W_MT	1.0	1.0
+0	ADD_OBJ_INDEX2	0.0	0.0	2.0
+0	ADD_OBJ_INDEX2	1.0	0.0	2.0
+-	---#0, 1#---	600,0,1
+-	---#0, 2#---	1,0,1
+0	Set3DObj	0.0
+0	SetCamDir	
+0	SET_OBJ_RENDER_ID	4.0
+0	SET_OBJ_FOG_NO	2.0

@@ -1,0 +1,74 @@
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>電Ⅾコミックスクリプト</title>
+        <link rel="stylesheet" href="./js/jquery-ui.min.css">
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script src="./js/angular.min.js"></script>
+        <script>
+            $( function() {
+                $( document ).tooltip({
+                    content:function(){
+                        return this.getAttribute("title");
+                    }
+                });
+            } );
+        </script>
+    </head>
+    <style>
+        .comicList {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+        .comicTitle {
+            min-width: 90px;
+        }
+        .scriptList {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+        .cmd-property {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        .section-property {
+            background-color: #CCCCCC;
+        }
+        .active {
+            background-color: yellow;
+        }
+        div.ui-tooltip {
+            max-width: 400px;
+        }
+    </style>
+    <body ng-controller="myCtrl">
+        <div>
+            <table id="script" border="1">
+                <tr ng-repeat="cmdList in scriptList track by $index">
+                    <td ng-repeat="cmd in cmdList track by $index" class="scriptList" ng-class="cmd.property == '---section---' ? 'section-property' : ''">
+                        <div ng-if="cmd.property != '' && cmd.property != '---section---'" title="{{cmd.property}}" class="cmd-property">
+                            {{cmd.info}}
+                        </div>
+                        <div ng-if="cmd.property == '---section---'" class="sec-property">
+                            {{cmd.info}}
+                        </div>
+                        <div ng-if="cmd.property == ''">
+                            {{cmd.info}}
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: fixed; right: 10px; top: 10px;">
+            <select id="select" ng-model="obj" ng-options="mdlBin.name for mdlBin in mdlBinFileList track by mdlBin.path" ng-change="updateFile(obj.path)">
+                <option value="" disabled>モデルバイナリのファイルを選択</option>
+            </select>
+        </div>
+    </body>
+    <script src="./js/cmd.js"></script>
+    <script src="./js/mdlBinScript.js"></script>
+</html>
