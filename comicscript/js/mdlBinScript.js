@@ -15,7 +15,7 @@ angular.module('myApp', [])
                 if (rawFile.readyState === 4){
                     if (rawFile.status === 200 || rawFile.status == 0){
                         var allText = rawFile.responseText;
-                        let rows = allText.split("\r\n");
+                        let rows = allText.split("\n");
                         for (let i = 0; i < rows.length; i++){
                             let filename = rows[i].split(".txt")[0]
                             let info = {"name":filename + ".bin", "path":"./mdlBin/" + rows[i]};
