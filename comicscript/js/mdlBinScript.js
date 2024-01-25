@@ -17,6 +17,9 @@ angular.module('myApp', [])
                         var allText = rawFile.responseText;
                         let rows = allText.split("\n");
                         for (let i = 0; i < rows.length; i++){
+                            if (rows[i] == "") {
+                                continue;
+                            }
                             let filename = rows[i].split(".txt")[0]
                             let info = {"name":filename + ".bin", "path":"./mdlBin/" + rows[i]};
                             $scope.mdlBinFileList.push(info);
