@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>変化方法の式</title>
+    </head>
+    <body>
+        <h1>変化の設定式</h1>
+        <div>初期設定時、必要なパラメータは下記となる</div>
+        <hr>
+        <div>パラメータ１：type</div>
+        <div>パラメータ２：start</div>
+        <div>パラメータ３：end</div>
+        <div>パラメータ４：frame</div>
+        <br>
+        <div>このパラメータを受けて、内部で決まる変数は下記となる</div>
+        <br>
+        <div>m_Inter_type = パラメータの[type]で初期化される</div>
+        <div>m_Start = パラメータの[start]で初期化される。</div>
+        <div>m_End = パラメータの[end]で初期化される</div>
+        <div>m_Time = 必ず0で初期化される</div>
+        <div>m_Time_All = パラメータの[frame]で初期化される</div>
+        <div>m_Pos = 【m_Start】の値を受け継ぐ。ただし、m_Timeがm_Time_Allと同じ場合、【m_End】の値を受け継ぐ</div>
+        <hr>
+        <div>または、このようにパラメータ３つで受けることもある</div>
+        <br>
+        <div>パラメータ１：type</div>
+        <div>パラメータ２：end</div>
+        <div>パラメータ３：frame</div>
+        <br>
+        <div>m_Inter_type = パラメータの[type]で初期化される</div>
+        <div>m_Start = 【m_Pos】の値を受け継ぐ。</div>
+        <div>m_End = パラメータの[end]で初期化される</div>
+        <div>m_Time = 必ず0で初期化される</div>
+        <div>m_Time_All = パラメータの[frame]で初期化される</div>
+        <div>m_Pos = 変化しない。ただし、m_Timeがm_Time_Allと同じ場合、【m_End】の値を受け継ぐ</div>
+        <hr>
+        <div>次に、この設定でupdateする場合下記の式で計算する</div>
+        <div>
+            ・m_Time_Allが0ではない場合、m_Timeに1フレーム加算する。
+            ・m_Startがm_Endと同じ場合（上限値達成）、またはm_Timeがm_Time_Allと同じ場合（設定frameまで時間が過ぎた）<br>
+            　m_Posは【m_End】の値を受け継ぎ、処理を終了する。
+            <br>
+            ・m_Posは下記のように計算される
+            <h2>typeが０(Flat)</h2>
+            <div>
+                num = m_Time / m_Time_All<br>
+                m_Pos = m_Start + (m_End - m_Start)*num
+            </div>
+            <h2>typeが１(Add)</h2>
+            <div>
+                num = m_Time / m_Time_All<br>
+                m_Pos = m_Start + (m_End - m_Start)*(num^2)
+            </div>
+            <h2>typeが２(Sub)</h2>
+            <div>
+                num = (m_Time_All - m_Time) / m_Time_All<br>
+                m_Pos = m_End + (m_Start - m_End)*(num^2)
+            </div>
+            <h2>typeが３(Add2)</h2>
+            <div>
+                num = m_Time / m_Time_All<br>
+                m_Pos = m_Start + (m_End - m_Start)*(num^4)
+            </div>
+            <h2>typeが４(Sub2)</h2>
+            <div>
+                num = (m_Time_All - m_Time) / m_Time_All<br>
+                m_Pos = m_End + (m_Start - m_End)*(num^4)
+            </div>
+            <h2>typeが５(Add4)</h2>
+            <div>
+                num = m_Time / m_Time_All<br>
+                m_Pos = m_Start + (m_End - m_Start)*(num^8)
+            </div>
+            <h2>typeが６(Sub4)</h2>
+            <div>
+                num = (m_Time_All - m_Time) / m_Time_All<br>
+                m_Pos = m_End + (m_Start - m_End)*(num^8)
+            </div>
+            <h2>typeが７(AddSub)</h2>
+            <div>
+                num = (m_Start + m_End) / 2<br>
+                num2 = m_Time_All / 2<br>
+                もし、m_Time < num2なら、m_Pos = 【Addの値】、その他は m_Pos = 【Subの値】
+            </div>
+            <h2>typeが８(SubAdd)</h2>
+            <div>
+                num = (m_Start + m_End) / 2<br>
+                num2 = m_Time_All / 2<br>
+                もし、m_Time < num2なら、m_Pos = 【Subの値】、その他は m_Pos = 【Addの値】
+            </div>
+            <h2>typeが９(AddSub2)</h2>
+            <div>
+                num = (m_Start + m_End) / 2<br>
+                num2 = m_Time_All / 2<br>
+                もし、m_Time < num2なら、m_Pos = 【Add2の値】、その他は m_Pos = 【Sub2の値】
+            </div>
+        </div>
+    </body>
+</html>
