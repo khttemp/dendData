@@ -41,8 +41,12 @@
         <div>次に、この設定でupdateする場合下記の式で計算する</div>
         <div>
             ・m_Time_Allが0ではない場合、m_Timeに1フレーム加算する。<br>
+            ・この後、m_Time >= m_Time_Allの場合、m_Timeは、1フレーム加算した値を捨て、m_Time_Allの値を使う。<br>
+            ・この後、m_Timeが0より小さい値の場合、m_Timeは既存の値を捨て、0の固定値を使う。<br>
+            <br>
             ・m_Startがm_Endと同じ場合、またはm_Timeがm_Time_Allと同じ場合（設定frameまで時間が過ぎた）<br>
             　m_Posは【m_End】の値を受け継ぎ、処理を終了する。<br>
+            <br>
             ・上記の条件と違う場合、m_Posは下記のように計算される<br>
             ・後に、数値を取得する場合は、m_Posの値を使う
             <h2>typeが０(Flat)</h2>
