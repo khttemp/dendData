@@ -11,36 +11,40 @@
         <div>パラメータ２：start</div>
         <div>パラメータ３：end</div>
         <div>パラメータ４：frame</div>
+        <div><b>=> Set(type, start, end, frame)</b></div>
         <br>
-        <div>このパラメータを受けて、内部で決まる変数は下記となる</div>
+        <div>このパラメータを受けて、内部で決まる変数は下記となる。</div>
+        <div>ただし、m_Endがパラメータのendと同じ場合、スキップする（2度設定しない）</div>
         <br>
         <div>m_Inter_type = パラメータの[type]で初期化される</div>
         <div>m_Start = パラメータの[start]で初期化される。</div>
-        <div>m_End = パラメータの[end]で初期化される</div>
+        <div>m_End = 初期値０。m_Endがパラメータの[end]と違う場合、パラメータの[end]で初期化される</div>
         <div>m_Time = 必ず0で初期化される</div>
         <div>m_Time_All = パラメータの[frame]で初期化される</div>
         <div>m_Pos = 【m_Start】の値を受け継ぐ。ただし、m_Timeがm_Time_Allと同じ場合、【m_End】の値を受け継ぐ</div>
         <hr>
         <div>または、このようにパラメータ３つで受けることもある</div>
+        <div>同じく、m_Endがパラメータのendと同じ場合、スキップする（2度設定しない）</div>
         <br>
         <div>パラメータ１：type</div>
         <div>パラメータ２：end</div>
         <div>パラメータ３：frame</div>
+        <div><b>=> Set(type, end, frame)</b></div>
         <br>
         <div>m_Inter_type = パラメータの[type]で初期化される</div>
         <div>m_Start = 【m_Pos】の値を受け継ぐ。</div>
-        <div>m_End = パラメータの[end]で初期化される</div>
+        <div>m_End = 初期値０。m_Endがパラメータの[end]と違う場合、パラメータの[end]で初期化される</div>
         <div>m_Time = 必ず0で初期化される</div>
         <div>m_Time_All = パラメータの[frame]で初期化される</div>
-        <div>m_Pos = 変化しない。ただし、m_Timeがm_Time_Allと同じ場合、【m_End】の値を受け継ぐ</div>
+        <div>m_Pos = 変化しない（初期値０）。ただし、m_Timeがm_Time_Allと同じ場合、【m_End】の値を受け継ぐ</div>
         <hr>
         <div>次に、この設定でupdateする場合下記の式で計算する</div>
         <div>
-            ・m_Time_Allが0ではない場合、m_Timeに1フレーム加算する。
-            ・m_Startがm_Endと同じ場合（上限値達成）、またはm_Timeがm_Time_Allと同じ場合（設定frameまで時間が過ぎた）<br>
-            　m_Posは【m_End】の値を受け継ぎ、処理を終了する。
-            <br>
-            ・m_Posは下記のように計算される
+            ・m_Time_Allが0ではない場合、m_Timeに1フレーム加算する。<br>
+            ・m_Startがm_Endと同じ場合、またはm_Timeがm_Time_Allと同じ場合（設定frameまで時間が過ぎた）<br>
+            　m_Posは【m_End】の値を受け継ぎ、処理を終了する。<br>
+            ・上記の条件と違う場合、m_Posは下記のように計算される<br>
+            ・後に、数値を取得する場合は、m_Posの値を使う
             <h2>typeが０(Flat)</h2>
             <div>
                 num = m_Time / m_Time_All<br>
@@ -94,6 +98,351 @@
                 num2 = m_Time_All / 2<br>
                 もし、m_Time < num2なら、m_Pos = 【Add2の値】、その他は m_Pos = 【Sub2の値】
             </div>
+        </div>
+        <hr>
+        <h1>実際の計算（片輪走行）</h1>
+        <div>
+            <h2>片輪走行中</h2>
+            京阪80系のデフォルト設定値<br>
+            ・OneWheelPow = 0.08<br>
+            ・OneWheelTime = 0.8<br>
+            ・OneWheelAfterTime = 5.0<br>
+            で、計算してみよう。<br>
+            <br>
+            片輪走行中の場合、<br>
+            OneWheelPowのSet(1【Add】, OneWheelPow, OneWheelTime)を1回実行した後、<br>
+            update()続けて実行する。<br>
+            <br>
+            初期値が0なので、初期設定はこうなる。
+            <br><br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>変数</th>
+                        <th>初期設定数値</th>
+                        <th>Logの数値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m_Inter_type</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>m_Start</td>
+                        <td>0 = (m_Pos値)</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_End</td>
+                        <td>0.08 = (OneWheelPow値)</td>
+                        <td>0.08</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time_All</td>
+                        <td>0.8 = (OneWheelTime値)</td>
+                        <td>0.8</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>m_Pos</td>
+                        <td>0 = (変化なし)</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            ここで、1フレームのupdateが行われる。<br>
+            このフレームの厳密な数値は環境によって毎回違うが、<br>
+            60FPSの場合、約0.0166・・・(1/60)である。（たまに、0.00002410077など極端に低い数値もありうる）<br>
+            ここでは、フレームを固定値0.0166にして計算する。<br>
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>変数</th>
+                        <th>1回目update数値</th>
+                        <th>Logの数値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m_Inter_type</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>m_Start</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_End</td>
+                        <td>0.08</td>
+                        <td>0.08</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time</td>
+                        <td>0.0166</td>
+                        <td>0.0166</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time_All</td>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>m_Pos</td>
+                        <td>3.4445E-05</td>
+                        <td>3.4445E-05</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            次に、改めて2回目のUpdateが行われる。
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>変数</th>
+                        <th>2回目update数値</th>
+                        <th>Logの数値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m_Inter_type</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>m_Start</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_End</td>
+                        <td>0.08</td>
+                        <td>0.08</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time</td>
+                        <td>0.0332</td>
+                        <td>0.0331328</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time_All</td>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>m_Pos</td>
+                        <td>0.0001377800</td>
+                        <td>0.0001372228</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            まだ片輪走行中なら、続けて3回目のupdateが行われる。
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>変数</th>
+                        <th>3回目update数値</th>
+                        <th>Logの数値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m_Inter_type</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>m_Start</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_End</td>
+                        <td>0.08</td>
+                        <td>0.08</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time</td>
+                        <td>0.0498</td>
+                        <td>0.0497328</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time_All</td>
+                        <td>0.8</td>
+                        <td>0.8</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>m_Pos</td>
+                        <td>0.000310005</td>
+                        <td>0.000309169</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            ここで、m_Timeが貯まり続けて、m_Time_Allと同じくなる場合（設定frameまで時間が過ぎた）<br>
+            m_Posはこれ以上更新されずに、m_Endの値を使う。(m_Pos = m_End)
+        </div>
+        <hr>
+        <div>
+            <h2>片輪走行してない</h2>
+            京阪80系のデフォルト設定値<br>
+            ・OneWheelPow = 0.08<br>
+            ・OneWheelTime = 0.8<br>
+            ・OneWheelAfterTime = 5.0<br>
+            で、計算してみよう。<br>
+            <br>
+            浮いていたり、普通に走っていると、<br>
+            OneWheelPowのSet(1【Add】, 0, OneWheelAfterTime)を1回実行した後、<br>
+            update()続けて実行する。<br>
+            <br>
+            ここでは、m_Posは上限いっぱいのOneWheelPowに達している設定で計算してみよう。
+            <br><br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>変数</th>
+                        <th>初期設定数値</th>
+                        <th>Logの数値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m_Inter_type</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>m_Start</td>
+                        <td>0.08 = (m_Pos値)</td>
+                        <td>0.08</td>
+                    </tr>
+                    <tr>
+                        <td>m_End</td>
+                        <td>0 = (固定設定値)</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time_All</td>
+                        <td>5.0 = (OneWheelAfterTime値)</td>
+                        <td>5.0</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>m_Pos</td>
+                        <td>0.08 = (変化なし)</td>
+                        <td>0.08</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            ここで、1フレームのupdateが行われる。<br>
+            同じく、数値の計算は、フレームを固定値0.0166にする。<br>
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>変数</th>
+                        <th>1回目update数値</th>
+                        <th>Logの数値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m_Inter_type</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>m_Start</td>
+                        <td>0.08</td>
+                        <td>0.08</td>
+                    </tr>
+                    <tr>
+                        <td>m_End</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time</td>
+                        <td>0.0166</td>
+                        <td>0.0165643</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time_All</td>
+                        <td>5.0</td>
+                        <td>5.0</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>m_Pos</td>
+                        <td>0.079999118</td>
+                        <td>0.07999912</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            次に、改めて2回目のUpdateが行われる。
+            <br><br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>変数</th>
+                        <th>2回目update数値</th>
+                        <th>Logの数値</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>m_Inter_type</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>m_Start</td>
+                        <td>0.08</td>
+                        <td>0.08</td>
+                    </tr>
+                    <tr>
+                        <td>m_End</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time</td>
+                        <td>0.0332</td>
+                        <td>0.0331643</td>
+                    </tr>
+                    <tr>
+                        <td>m_Time_All</td>
+                        <td>5.0</td>
+                        <td>5.0</td>
+                    </tr>
+                    <tr style="background-color: yellow;">
+                        <td>m_Pos</td>
+                        <td>0.079996473</td>
+                        <td>0.07999648</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            同じく、m_Timeが貯まり続けて、m_Time_Allと同じくなる場合（設定frameまで時間が過ぎた）<br>
+            m_Posはこれ以上更新されずに、m_Endの値を使う。(m_Pos = m_End)
         </div>
     </body>
 </html>
