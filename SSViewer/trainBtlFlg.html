@@ -1,0 +1,433 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSの車両フラグ</title>
+    </head>
+    <style>
+        td {
+            text-align: center;
+            min-width: 50px;
+        }
+
+        tr:nth-of-type(4n-3) td {
+            border-top: 2px solid black;
+        }
+
+        tr:nth-of-type(4n) td {
+            border-bottom: 2px solid black;
+        }
+
+        .flg-name {
+            text-align: left;
+            padding: 0px 15px;
+        }
+    </style>
+    <body>
+        <h1>SSの車両フラグ</h1>
+        <div>運転中に車両自体がどのような状態かの「trainBtlFlg」</div>
+        <div>コミックスクリプトや、車両の特殊技などに関する、「TRAIN_PARAM_FLAG」</div>
+        <div>SSで使う車両のフラグは大きく2種類ある</div>
+        <div>
+            <h1>trainBtlFlg</h1>
+            <div>このフラグは下記のように64個定義されており、</div>
+            <div>最後の要素はフラグのMAX値判定であるため使わない</div>
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>番号</th>
+                        <th>フラグ名称</th>
+                        <th>説明</th>
+                        <th>備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="flg-name">eTBF_CNG_F_TRACK</td>
+                        <td>前の台車が転線したフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="flg-name">eTBF_CNG_B_TRACK</td>
+                        <td>後ろの台車が転線したフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="flg-name">eTBF_DRIFT</td>
+                        <td>ドリフト中（水色の状態）</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="flg-name">eTBF_JMP_F_TRACK</td>
+                        <td>前の台車がジャンプしたフラグ。<br>ドリフトもジャンプしたとみなす</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="flg-name">eTBF_JMP_B_TRACK</td>
+                        <td>後ろの台車がジャンプしたフラグ。<br>ドリフトもジャンプしたとみなす</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td class="flg-name">eTBF_F_DRIFT_TO_B_DRIFT</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td class="flg-name">eTBF_F_DRIFT_TO_B_DRIFT_END_RESEARV</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td class="flg-name">eTBF_SEARCH_DRIFT_FRONT</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td class="flg-name">eTBF_SEARCH_DRIFT_BACK</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td class="flg-name">eTBF_R_MOVE</td>
+                        <td>どの方向にドリフトしたかのフラグ？</td>
+                        <td>詳細を調査中</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td class="flg-name">eTBF_L_MOVE</td>
+                        <td>どの方向にドリフトしたかのフラグ？</td>
+                        <td>詳細を調査中</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td class="flg-name">eTBF_BR_MOVE</td>
+                        <td>どの方向に後輪ドリフトしたかのフラグ？</td>
+                        <td>詳細を調査中</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td class="flg-name">eTBF_BL_MOVE</td>
+                        <td>どの方向に後輪ドリフトしたかのフラグ？</td>
+                        <td>詳細を調査中</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td class="flg-name">eTBF_BR_COMP_TO_END</td>
+                        <td>後輪ドリフト解除時のフラグ？</td>
+                        <td>詳細を調査中</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td class="flg-name">eTBF_BL_COMP_TO_END</td>
+                        <td>後輪ドリフト解除時のフラグ？</td>
+                        <td>詳細を調査中</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td class="flg-name">eTBF_1WHEEL_DRIFT_R</td>
+                        <td>右方向の片輪ドリフトしたフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td class="flg-name">eTBF_1WHEEL_DRIFT_L</td>
+                        <td>左方向の片輪ドリフトしたフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td class="flg-name">eTBG_HAKO</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td class="flg-name">eTBF_R_FIRE</td>
+                        <td>右片輪走行中の火花フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td class="flg-name">eTBF_L_FIRE</td>
+                        <td>左片輪走行中の火花フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td class="flg-name">eTBF_R_WHEEL</td>
+                        <td>右片輪走行中のフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td class="flg-name">eTBF_L_WHEEL</td>
+                        <td>左片輪走行中のフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td class="flg-name">eTBF_RET_WHEEL</td>
+                        <td>限界まで片輪走行し、戻ろうとするフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td class="flg-name">eTBF_FIT_R_FIRE</td>
+                        <td>ドリフトや片輪走行で戻るときの、<br>右車輪が着地時の火花フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td class="flg-name">eTBF_FIT_L_FIRE</td>
+                        <td>ドリフトや片輪走行で戻るときの、<br>左車輪が着地時の火花フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td class="flg-name">eTBF_FIRE_BREAKE</td>
+                        <td>ブレーキによる火花フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td class="flg-name">eTBF_BOOST</td>
+                        <td>ライトニングフルノッチのフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td class="flg-name">eTBF_KUTEN</td>
+                        <td>空転の火花フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td class="flg-name">eTBF_ST_FIRE</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td class="flg-name">eTBF_R_ATK</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td class="flg-name">eTBF_L_ATK</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td class="flg-name">eTBF_CLASH</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td class="flg-name">eTBF_CLASH_LINE_CNG</td>
+                        <td>転線中に車両にぶつけたときのフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td class="flg-name">eTBF_NO_OUTRUN</td>
+                        <td>コミックスクリプトによる、NO_OUTRUNのフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td class="flg-name">eTBF_ALL_FIT</td>
+                        <td>コミックスクリプトによる、ALL_FITのフラグ</td>
+                        <td>（確認中）</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td class="flg-name">eTBF_R_OUT</td>
+                        <td>右側の脱線フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td class="flg-name">eTBF_L_OUT</td>
+                        <td>左側の脱線フラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td class="flg-name">eTBF_OUTRUN_JUMP</td>
+                        <td>脱線して戻るときにジャンプしたフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>39</td>
+                        <td class="flg-name">eTBF_1TRACK_DRIFT_R</td>
+                        <td>右側の単線ドリフトフラグ</td>
+                        <td>（確認中）</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td class="flg-name">eTBF_1TRACK_DRIFT_L</td>
+                        <td>左側の単線ドリフトフラグ</td>
+                        <td>（確認中）</td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td class="flg-name">eTBG_FRONT_TRAIN_NO_RUN</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td class="flg-name">eTBF_CLASH_FLY</td>
+                        <td>バレルロールなどの、クラッシュして飛ぶフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>43</td>
+                        <td class="flg-name">eTBF_HI_JUMP</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>44</td>
+                        <td class="flg-name">eTBF_HI_JUMP_NOW</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td class="flg-name">eTBF_LV_JUMP</td>
+                        <td>ある坂で指定速度以上になり、ジャンプしたフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>46</td>
+                        <td class="flg-name">eTBF_HUMIKIRI</td>
+                        <td><s>踏切を渡るときのフラグ</s></td>
+                        <td>使わない</td>
+                    </tr>
+                    <tr>
+                        <td>47</td>
+                        <td class="flg-name">eTBF_BRIDGE</td>
+                        <td>橋を渡るときのフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>48</td>
+                        <td class="flg-name">eTBF_DOSAN_AREA</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td class="flg-name">eTBF_DOSAN_ENABLE</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td class="flg-name">eTBF_DOSAN_SKY</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>51</td>
+                        <td class="flg-name">eTBF_DOSAN_BOUND_F</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>52</td>
+                        <td class="flg-name">eTBF_DOSAN_BOUND_B</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>53</td>
+                        <td class="flg-name">eTBF_CLASH_CAM_TAGE</td>
+                        <td>バレルロールなどの、クラッシュして飛ぶときのカメラフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>54</td>
+                        <td class="flg-name">eTBF_STOP</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>55</td>
+                        <td class="flg-name">eTBF_TRACK_CAUTION</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>56</td>
+                        <td class="flg-name">eTBF_TRACK_ERR</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>57</td>
+                        <td class="flg-name">eTBF_CLASH_STOP</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>58</td>
+                        <td class="flg-name">eTBF_ONE_DRIFT_FALSE</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>59</td>
+                        <td class="flg-name">eTBF_TRACK_MOVE</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td class="flg-name">eTBF_LIGHT_OFF</td>
+                        <td></td>
+                        <td>未詳</td>
+                    </tr>
+                    <tr>
+                        <td>61</td>
+                        <td class="flg-name">eTBF_SCRIPT_KATARIN</td>
+                        <td>コミックスクリプトの、KATARIN_RUNのフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>62</td>
+                        <td class="flg-name">eTBF_SCRIPT_OUTRUN</td>
+                        <td>コミックスクリプトの、OUTRUNのフラグ</td>
+                        <td>（確認中）</td>
+                    </tr>
+                    <tr>
+                        <td>63</td>
+                        <td class="flg-name">eTBF_ONE_CLASH</td>
+                        <td>片輪ドリフト中、ホームなどでぶつけたときのフラグ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>64</td>
+                        <td class="flg-name">eTBF_MAX</td>
+                        <td>フラグのMAX値</td>
+                        <td>使わない</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
