@@ -1,0 +1,381 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSの速度仕様書</title>
+    </head>
+    <style>
+        .code {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            background-color: #DDDDDD;
+        }
+
+        .constant-color {
+            color: green;
+            font-weight: bold;
+        }
+
+        .variable-color {
+            color: violet
+        }
+
+        .variable2-color {
+            color: red
+        }
+    </style>
+    <body>
+        <h1>加速の仕様</h1>
+        <div>
+            ・力行を入れても加速できないパターンがある。<br>
+            　1. 当然のことであるが、自走不能の場合<br>
+            　2. 啓介の恭子戦で出たセリフ通り、ジャンプ中の場合<br>
+            <hr>
+            <h2>1. Tlkの計算</h2>
+            <div>
+                加速できる場合、内部コードで、まず下記の式を計算する。<br>
+                <div class="code">
+                    Tlk = <span class="constant-color">Weight</span> - <span class="variable2-color">now_speed</span>*<span class="constant-color">None_Tlk</span><br>
+                </div>
+                ・「Weight」、「None_Tlk」は車両性能で決まっている数値<br>
+                ・「now_speed」は、現在の速度の値である。初期値は止まっているので、【0】になる。<br>
+                <br>
+                次に計算された「Tlk」の数値と（Tlk[Calc]とする。）<br>
+                車両性能で定義している「Tlk」を比較して（Tlk[Train]とする。）<br>
+                Tlk[Calc]が、Tlk[Train]より小さくなった場合、ノッチを上げる<br>
+                逆に、Tlk[Calc]が、Tlk[Train]より大きくなった場合、ノッチを下げる<br>
+                <br>
+                このとき、比較するTlk[Train]は、現在のノッチ数より1段階上のTlk[Train]数値を比較する。<br>
+                ノッチを初めて入れたときの初期値は、「0」として計算する。<br>
+            </div>
+            <br><hr>
+            <h2>2. m_TrainOrg_Addの計算</h2>
+            <div>
+                ノッチの最大スピードである、NotchMaxSpeedは、車両性能で定義している「speed」であるが<br>
+                <br>
+                もし、自分の車両が、「ガスタービン起動」や「920系退化」した場合は<br>
+                ここから、「1.2倍」適用する。（m_GasTarbinPower＝1.2）<br>
+                <div class="code">
+                    <span class="variable-color">NormMaxSpeed</span> = <span class="constant-color">speed</span>（現在ノッチ数）<br>
+                    NotchMaxSpeed = <span class="variable-color">NormMaxSpeed</span> * <span class="variable-color">m_GasTarbinPowe</span>（＝1.0）
+                </div>
+                計算する際、注意点として、speedの値はそのまま使うのではなく、<br>
+                【(km/h)の数値 / 60 * 1.11】をした値として計算しなければならない。<br>
+                つまり、70km/hは、「1.295」として計算する。<br>
+                <br>
+                NotchPerの計算は下記となる。<br>
+                <div class="code">
+                    NotchPer = 1 - (<span class="variable2-color">m_TrainOrg_Add</span> / <span class="variable-color">NotchMaxSpeed</span>)<br>
+                    <br>
+                    もし、雨ステージの場合は、車両性能で決まっている、「雨の加速度」をかける。<br>
+                    NotchPer = <span class="variable-color">NotchPer</span> * <span class="constant-color">RainAdd</span>（雨の加速度）
+                </div>
+                <br>
+                m_TrainOrg_Addは、加速補正されてない「純粋な速度値」である。初期値は「0」で決まっている。<br>
+                純粋な速度値であるため、速度が補正された合計の数値を表す、速度計に表示された数値とはちょっと違う。<br>
+                <br>
+                最後に、下記の式を計算して、「m_TrainOrg_Add」に1フレームごと加算する。
+                <div class="code">
+                    <span class="constant-color">[Add_Best]</span> * <span class="variable-color">[NotchPer]</span> * <span class="constant-color">[add（現在ノッチ数）]</span> * <span class="variable-color">[m_GasTarbinPower]</span> * <span class="variable2-color">[mBtlTrain.NotchPer]</span> * [FPS値]
+                </div>
+                <br>
+                mBtlTrain.NotchPerは、初期値は1.0で決まっているが、<br>
+                「京急の過給」だったり、「7001のマルーンスター加速」だったり、「デキ3の加速」が適用されたりすると<br>
+                この値が、「1.03」になったり、「1.0～1.05」になったり、「1.0～1.2」になったりする。<br>
+                <br>
+                FPSの値は、環境によって違うが、60FPSの場合、およそ「1.0」である。<br>
+            </div>
+            <br><hr>
+            <h2>3. SpeedUpdate</h2>
+            <div>
+                <h3>3-1. UpdateNowSpeedPer</h3>
+                この動作は、1フレームごとアップデートされる<br>
+                <hr><br>
+                まず、坂のパーセントを計算する式は下記の通り<br>
+                <div class="code">
+                    lv_per = mBtlTrain.GetTrainLv()<br>
+                    <br>
+                    もし、上り坂の場合<br>
+                    　　lv = <span class="variable-color">lv_per</span>*<span class="constant-color">UpHill</span><br>
+                    もし、下り坂の場合<br>
+                    　　lv = <span class="variable-color">lv_per</span>*<span class="constant-color">DownHill</span><br>
+                    <br>
+                    最終的に<br>
+                    lv_per = (1 - <span class="variable-color">lv</span>*0.01) * mBtlTrain.NotchPer
+                </div>
+                mBtlTrain.NotchPerは、上記でも説明したように<br>
+                初期値は1.0で決まっているが、<br>
+                「京急の過給」だったり、「7001のマルーンスター加速」だったり、「デキ3の加速」が適用されたりすると<br>
+                この値が、「1.03」になったり、「1.0～1.05」になったり、「1.0～1.2」になったりする。<br>
+                <br>
+                こういう複雑な式で計算された、最終的に計算されたこのlv_perは、<br>
+                <h3>左上の坂のパーセントとして表示される</h3>
+                ゆえに、ここの計算は気にすることはない。<br>
+                <br><hr>
+                <br>
+                次は、now_speed_perの計算。<br>
+                上記の「now_speed」と厳密には違う変数だが、<br>
+                後の後述するnow_speedの計算で使われる。<br>
+                <div class="code">
+                    now_speed_per = <span class="variable2-color">m_TrainOrg_AddPer（＝1.01）</span><br>
+                    　　　　　　　　* m_SpeedUpFrame（＝1.0）<br>
+                    　　　　　　　　* m_ClashDownFrame（＝1.0）<br>
+                    　　　　　　　　* m_DriftAddPer<br>
+                    　　　　　　　　* m_Drift2Per<br>
+                    　　　　　　　　* <span class="variable-color">mBtlTrain.NotchPer</span>
+                </div>
+                m_TrainOrg_AddPerは、今のところ「1.01」固定で考えても良い。<br>
+                m_SpeedUpFrameは、まだどこで使われるのが分からないが、「1.0」固定で考えても良い。<br>
+                m_ClashDownFrameは、クラッシュしたとき、急激な速度変化に使われる。それがなければ「1.0」のまま<br>
+                <br>
+                m_DriftAddPerは、ドリフトしたときの加速補正の値。初期値は「1.0」だが、<br>
+                　　・ドリフトすると、D_Addの数値分だけ上昇し、解除するとゆっくり1.0に戻る<br>
+                　　・片輪ドリフトすると、D_Add_OneWheeleの数値分だけ上昇し、解除するとゆっくり1.0に戻る<br>
+                <br>
+                m_Drift2Perは、ドリフトの立ち上がりをしたときの加速補正の値。初期値は「1.0」だが、<br>
+                　　・後輪ドリフトによる立ち上がりは、D_Add2の数値分だけ上昇し、解除するとゆっくり1.0に戻る<br>
+                　　・片輪ドリフトによる立ち上がりは、D_Add_MaxOneWheeleの数値分だけ上昇し、解除するとゆっくり1.0に戻る<br>
+                <br>
+                mBtlTrain.NotchPerは、上記に説明があるので省略する<br>
+                <br><hr><br>
+                次は、ライトニングフルノッチの計算。<br>
+                <div class="code">
+                    spd_sub = (m_TrainOrg_Add - <span class="constant-color">LightningFullNotch_Speed</span>) * 0.1<br>
+                    <br>
+                    もし、spd_subが、<span class="constant-color">LightningFullNotch_Per</span>より大きい場合、<br>
+                    spd_sub = <span class="constant-color">LightningFullNotch_Per</span><br>
+                    <br>
+                    spd_sub = spd_sub * mBtlTrain.NotchPer
+                </div>
+                同じく、計算する際、注意点として、LightningFullNotch_Speedの値はそのまま使うのではなく、<br>
+                【(km/h)の数値 / 60 * 1.11】をした値として計算しなければならない。<br>
+                つまり、90km/hは、「1.665」として計算する。<br>
+                <br>
+                式で見ればわかるが、ライトニングフルノッチは、<br>
+                現在スピードが「LightningFullNotch_Speed」より少ないと全く発動されず、<br>
+                現在スピードから「LightningFullNotch_Speed」の差に、0.1を掛けて、<br>
+                「LightningFullNotch_Per」の数値を最大値として調整する。<br>
+                <br>
+                計算された、spd_subは、ライトニングフルノッチが発動すると<br>
+                上記で計算した、「now_speed_per」に【加算】する。<br>
+                <br>
+                1フレーム過ぎるたびに、spd_subは、ゆっくり0まで減る。<br>
+                <br><hr><br>
+                次は、OneWheelPowの片輪走行の計算<br>
+                これは車両性能で、片輪走行の機能があると適用されるものだが、<br>
+                <br>
+                片輪走行すると、OneWheelTime（フレーム）の間に、<br>
+                OneWheelPowの分、ゆっくり増えて<br>
+                片輪走行が終わると、OneWheelAfterTime（フレーム）の間に、<br>
+                OneWheelPerに入った数値から0まで、ゆっくり減る<br>
+                <br>
+                この説明は、「変化の設定式」と言って、<br>
+                <a href="https://khttemp.github.io/dendData/comicscript/perType.html">ここのリンク</a>で、もっと詳しい説明が載っているので参照。<br>
+                <br>
+                計算された、片輪走行は<br>
+                上記で計算した、「now_speed_per」にまた【加算】する。<br>
+                <hr>
+                <h3>3-2. UpdateNowSpeed</h3>
+                <div>
+                    ここまで読んでくれてお疲れ様。<br>
+                    やっとnow_speedをアップデートできる。<br>
+                    <div class="code">
+                        now_speed = m_TrainOrg_Add * now_speed_per * lv_per
+                    </div>
+                    つまり、now_speedは、<br>
+                    <br>
+                    加速補正されてない「純粋な速度値」（m_TrainOrg_Add）<br>
+                    ドリフトや特殊技で、掛算で補正される数値（now_speed_per）<br>
+                    坂の速度補正（lv_per）<br>
+                    <br>
+                    この3つを掛けることで、「now_speed」が更新され、速度計に反映する。<br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h2>NotchPer、mBtlTrain.NotchPerの違い</h2>
+            <div>
+                <h3>NotchPerは</h3>
+                ・純粋な現在の速度（m_TrainOrg_Add）<br>
+                ・車両性能で定義したノッチのspeed<br>
+                ・ガスタービン起動・920系退化<br>
+                <br>
+                に依存する値であり、<br>
+                m_TrainOrg_Addの加算するときの式でしか使われてない。<br>
+                <br>
+                <h3>mBtlTrain.NotchPerは</h3>
+                ・京急の過給（1.0 -> 1.03）<br>
+                ・7001のマルーンスター加速（1.0 -> 1.01 -> 1.02 -> 1.035 -> 1.05）<br>
+                ・デキ3の加速（1.0 -> 1.1 -> 1.2）<br>
+                <br>
+                に依存する値であり、<br>
+                m_TrainOrg_Addの加算するときの式で使われるだけではなく<br>
+                <br>
+                ・坂のパーセント計算<br>
+                ・now_speed_perの計算<br>
+                ・ライトニングフルノッチの計算<br>
+                <br>
+                など色々使われるので、補正の影響ををかなり受ける。<br>
+            </div>
+        </div>
+        <hr>
+        <h1>京阪8000系で計算してみよう</h1>
+        <div>
+            <div>    
+                例）京阪8000系の車両性能の数値は下記の通り<br>
+                <br>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>性能名</th>
+                            <th>数値</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>None_Tlk</td>
+                            <td>40.0</td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td>220.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ１のTlk</td>
+                            <td>300.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ２のTlk</td>
+                            <td>185.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ３のTlk</td>
+                            <td>153.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ４のTlk</td>
+                            <td>131.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ５のTlk</td>
+                            <td>111.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                止まっている状態から、ノッチを「初めて」入れたとき、ノッチ数は「０」なので<br>
+                Tlk[Calc]を計算して、1段階上の、「ノッチ１のTlk」と比較する。<br>
+                止まっていたので、「now_speed」は「0」である。
+                <div class="code">
+                    Tlk[Calc] = <span class="constant-color">220.0</span> - <span class="variable-color">0</span>*<span class="constant-color">40.0</span><br>
+                    Tlk[Calc] = <span class="variable-color">220.0</span><br>
+                    <br>
+                    Tlk[Calc] < <span class="constant-color">300.0（ノッチ１のTlk）</span>
+                </div>
+                <br>
+                ノッチ１のTlkより小さいので、ノッチ数は上がり、「１ノッチ」になる。
+            </div>
+            <div>
+                例）京阪8000系の車両性能の数値は下記の通り<br>
+                <br>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>性能名</th>
+                            <th>数値</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ノッチ１のspeed</td>
+                            <td>70.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ２のspeed</td>
+                            <td>110.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ３のspeed</td>
+                            <td>135.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ４のspeed</td>
+                            <td>155.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ５のspeed</td>
+                            <td>160.0</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ１のadd</td>
+                            <td>1.1</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ２のadd</td>
+                            <td>1.1</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ３のadd</td>
+                            <td>1.15</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ４のadd</td>
+                            <td>1.2</td>
+                        </tr>
+                        <tr>
+                            <td>ノッチ５のadd</td>
+                            <td>1.25</td>
+                        </tr>
+                        <tr>
+                            <td>Add_Best</td>
+                            <td>0.0169</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                FPSの値は、1.0とする。<br>
+                <div class="code">
+                    NotchMaxSpeed = <span class="constant-color">1.295</span>（ノッチ１のspeed） * <span class="variable-color">1.0</span><br>
+                    <br>
+                    NotchPer = 1 - (<span class="variable2-color">m_TrainOrg_Add</span>（＝0） / 1.295)<br>
+                    NotchPer = 1<br>
+                    <br>
+                    m_TrainOrg_Add += <span class="constant-color">0.0169</span> * <span class="variable-color">1</span> * <span class="constant-color">1.1</span> * <span class="variable-color">1.0</span> * <span class="variable-color">1.0</span> * 1.0<br>
+                    m_TrainOrg_Add += 0.01859<br>
+                </div>
+                <hr>
+                <br>
+                坂は105.9%としよう。京阪8000系は、特殊技の補正はないが、<br>
+                上記でも説明したように、表示される坂の数値は、特殊技の補正済みの数値である。<br>
+                <br>
+                また、クラッシュはしてないし、ドリフトもしてない<br>
+                <div class="code">
+                    lv_per = 1.059<br>
+                    <br>
+                    now_speed_per = <span class="variable2-color">1.01</span><br>
+                    　　　　　　　　* 1.0<br>
+                    　　　　　　　　* 1.0<br>
+                    　　　　　　　　* 1.0<br>
+                    　　　　　　　　* 1.0<br>
+                    　　　　　　　　* 1.0<br>
+                    now_speed_per = 1.01<br>
+                </div>
+                <br>
+                これによって、now_speedは<br>
+                <div class="code">
+                    now_speed = 0.01859 * 1.01 * 1.059<br>
+                    now_speed = 0.0198836781
+                </div>
+                この数値は、km/hに変えると、1フレーム後の速度値は<br>
+                約、1.075km/hになる。<br>
+                <br>
+                続けて計算すると、わずか22フレームで<br>
+                速度は20km/hを超えるようになる。<br>
+                <br>
+                <img src="./speedAdd.png">
+            </div>
+        </div>
+    </body>
+</html>
