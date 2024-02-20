@@ -11868,7 +11868,7 @@ const CMD = {
         "num": 82,
         "description": "CPUのモードを設定する" + newLine
                     + "引数１：CPU車両（１）（SSでは使わない）" + newLine
-                    + "引数２：走るモード" + newLine
+                    + "引数２：走るモード（詳しくは、<a href='https://khttemp.github.io/dendData/comicscript/cpuMode/cpuMode.html'>【こちらのリンク】</a>を参照）" + newLine
                     + "引数３：minLen" + newLine
                     + "引数４：maxLen" + newLine
                     + "引数５：maxSpeed" + newLine
@@ -25909,7 +25909,11 @@ const CMD = {
     },
     "IB_ADD_PTCL": {
         "num": 346,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】詳細不明" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２～３：詳細不明" + newLine
+                    + "引数４：ANIME要素２" + newLine
+                    + "引数５：ANIME要素３",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -28876,7 +28880,7 @@ const CMD = {
     },
     "SET_CPU_SPEED": {
         "num": 495,
-        "description": "CPUのmaxSpeedを引数１の分、増やす" + newLine
+        "description": "CPUの急加速補正を引数１の分、増やす" + newLine
                     + "引数１：増やすスピード" + newLine
                     + "引数２：変化時間",
         "SS_comic": [

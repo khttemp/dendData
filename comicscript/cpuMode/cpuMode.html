@@ -1,0 +1,668 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CPU_MODEの動き</title>
+        <script>
+            function scrollView(id) {
+                document.getElementById(id).scrollIntoView();
+            }
+        </script>
+    </head>
+    <style>
+        td {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+
+        .span-link {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+            padding-right: 10px;
+        }
+
+        .not-read {
+            background-color: #CCCCCC;
+        }
+
+        .read {
+            background-color: lightgreen;
+        }
+
+        .read2 {
+            background-color: lightskyblue;
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 5px 15px;
+        }
+    </style>
+    <body>
+        <h1>CPU_MODEの仕様書</h1>
+        <span class="span-link" onclick='scrollView("RSCPUMode")'>RSまでのCPU_MODEへ行く</span>
+        <span class="span-link" onclick='scrollView("SSCPUMode")'>SSのCPU_MODEへ行く</span>
+        <hr />
+        <h2 id="RSCPUMode">RSまでのCPU_MODE</h2>
+        <hr>
+        <h2 id="SSCPUMode">SSのCPU_MODE</h2>
+        <div>
+            SSも、旧作みたいにCPUモードを設定するなら、stagedataからの設定と<br>
+            コミックスクリプトでの設定の２つの方法がある。<br>
+            <br>
+            stagedataからの設定は下記の通り<br>
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>index</th>
+                        <th>レール</th>
+                        <th>train_no</th>
+                        <th>run_type</th>
+                        <th>min_len</th>
+                        <th>max_len</th>
+                        <th>max_speed</th>
+                        <th>min_speed</th>
+                        <th>p1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>56</td>
+                        <td>1</td>
+                        <td>17</td>
+                        <td>8</td>
+                        <td>20</td>
+                        <td>230</td>
+                        <td>140</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">・・・</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>414</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>230</td>
+                        <td>150</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            コミックスクリプトからの設定は下記の通り<br>
+            <br>
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <td colspan="10">・・・</td>
+                    </tr>
+                    <tr>
+                        <td>SET_CPU_MODE</td>
+                        <td>1</td>
+                        <td>11</td>
+                        <td>40</td>
+                        <td>50</td>
+                        <td>210</td>
+                        <td>100</td>
+                        <td>110</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td colspan="10">・・・</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            stagedataの、「index」は読み込まないので、必ず順番通りに書く必要はないが、<br>
+            紛らわしいので順番通りに書いた方がいい。<br>
+            train_noも、旧作からの名残りなので、別の数字で書いても意味はないが、<br>
+            普段、CPUの車両を示す「1」と書くのが普通である。<br>
+            <br>
+            コミックスクリプトも、「SET_CPU_MODE」の1番目のパラメータも<br>
+            stagedataの、train_noと同じ意味で、同じく使わないデータである。<br>
+            また、8番目～9番目のパラメータも、使わないデータであるため、普通は「0」で書く<br>
+            <br>
+            stagedataとコミックスクリプトは、<br>
+            組み合わせると、それぞれこのような関係である。<br>
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>index</th>
+                        <th>レール</th>
+                        <th>train_no</th>
+                        <th>run_type</th>
+                        <th>min_len</th>
+                        <th>max_len</th>
+                        <th>max_speed</th>
+                        <th>min_speed</th>
+                        <th>p1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="not-read">0</td>
+                        <td class="read2">56</td>
+                        <td class="not-read">1</td>
+                        <td class="read">17</td>
+                        <td class="read">8</td>
+                        <td class="read">20</td>
+                        <td class="read">230</td>
+                        <td class="read">140</td>
+                        <td class="read">2</td>
+                    </tr>
+                    <tr>
+                        <td colspan="9">・・・</td>
+                    </tr>
+                    <tr>
+                        <td class="not-read">8</td>
+                        <td class="read2">414</td>
+                        <td class="not-read">1</td>
+                        <td class="read">10</td>
+                        <td class="read">3</td>
+                        <td class="read">5</td>
+                        <td class="read">230</td>
+                        <td class="read">150</td>
+                        <td class="read"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="11">-</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>SET_CPU_MODE</td>
+                        <td class="not-read">1</td>
+                        <td class="read">11</td>
+                        <td class="read">40</td>
+                        <td class="read">50</td>
+                        <td class="read">210</td>
+                        <td class="read">100</td>
+                        <td class="read">110</td>
+                        <td class="not-read">0</td>
+                        <td class="not-read">0</td>
+                    </tr>
+                    <tr>
+                        <td colspan="11">・・・</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            stagedataは、どのレール番号から、CPU_MODEを切り替えるかの「レール」の要素があり、<br>
+            コミックスクリプトは、スクリプト自体がどのレール番号から実行するかの、<br>
+            「レール」の要素は、別のところで、すでに定義されているので必要ない。<br>
+            <br>
+            run_typeは、CPUをどのように走らせるかのタイプである。<br>
+            min_lenは、プレイヤーとCPUの最低距離<br>
+            max_lenは、プレイヤーとCPUの最高距離<br>
+            max_speedは、CPUの最高速度<br>
+            min_speedは、CPUの最低速度<br>
+            最後のp1は、CPUのブレーキ時間（秒）である。ただし、この要素は「run_type」によって、読み込みしないこともある。<br>
+        </div>
+        <hr>
+        <div>
+            <h2>内部変数の定義</h2>
+            <div>
+                <h3>・train_len</h3>
+                <div><img src="train_len.png" width="500px"></div><br>
+                <div>
+                    厳密には、CPU車両の「TopBodyPos」という、およそ運転席の位置から、<br>
+                    自分車両の「FJ」という、およそ一番前のカプラーの位置の、横から見た距離。<br>
+                    また、これを元に、CPUのものが前にあると「TP_TOP」<br>
+                    自分のものが前にあると「TP_Btm」と定義している。
+                </div>
+            </div>
+            <div>
+                <h3>・org_length</h3>
+                <div><img src="org_length.png" width="500px"></div><br>
+                <div>
+                    車両の全体の長さ。<br>
+                    千切れたりして短くなると、長さも短くなる。<br>
+                    <br>
+                    ただし、org_lengthを使うのは<br>
+                    run_typeが７（CPU_LENGTH_TOP）、または１３（CPU_LENGTH_BTM_SPEED）の場合のみで<br>
+                    ７（CPU_LENGTH_TOP）＝CPUの車両の長さ<br>
+                    １３（CPU_LENGTH_BTM_SPEED）＝プレイヤーの車両の長さ<br>
+                    その他のタイプは、「0」扱いにする。
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h1>CPUモードの動き</h1>
+        <h2>基本的な動きの定義</h2>
+        <div>
+            SSで定義されているCPUモードの動きは、
+            （１、７、１０、１１、１３）の５つしか定義されてない。<br>
+            別のCPUモードは、この基本的な動きから応用したもの、<br>
+            あるいは、本当にSSでは定義されてない動きになる。<br>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１（CPU_TOP）の場合</h2>
+            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <div>
+                ①「train_len」が、「min_len」より大きくなった場合<br>
+                　CPUは加速をやめ、惰性運転のみになる。<br>
+                <br>
+                　１．さらに、「train_len」が、「max_len」より大きくなった場合<br>
+                　　　CPUはブレーキをかけて、速度をmin_speed（最低速度）まで落とす【補正】をする。<br>
+                <br>
+                　２．さらに、「train_len」が、「max_len + 150」より大きくなった場合<br>
+                　　　CPUは、min_speed（最低速度）で走る【補正】をする。<br>
+                　　　ただし、この最低速度は60キロより小さく設定すると、強制的に60キロで設定する。<br>
+                <br>
+                ②「train_len」が、「min_len」より小さくなった場合<br>
+                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+            </div>
+            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+            <div>
+                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが７（CPU_LENGTH_TOP）の場合</h2>
+            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <div>
+                ①「train_len」が、「org_length + min_len」より大きくなった場合<br>
+                　CPUは加速をやめ、惰性運転のみになる。<br>
+                <br>
+                　１．さらに、「train_len」が、「org_length + max_len」より大きくなった場合<br>
+                　　　CPUはブレーキをかけて、速度を遅する【補正】をする。<br>
+                <br>
+                　２．さらに、「train_len」が、「org_length + max_len + 150」より大きくなった場合<br>
+                　　　CPUは、min_speed（最低速度）で走る【補正】をする。<br>
+                　　　ただし、この最低速度は60キロより小さく設定すると、強制的に60キロで設定する。<br>
+                <br>
+                ②「train_len」が、「org_length + min_len」より小さくなった場合<br>
+                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+            </div>
+            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+            <div>
+                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１０（CPU_TOP_AND_SPEED）の場合</h2>
+            <div>※スピードの計算で使われる変数が知識が必要。<a href="https://khttemp.github.io/dendData/SSViewer/speedAdd.html">【こっちのサイト】</a>も参照</div>
+            <br>
+            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <div>
+                ①「train_len」が、「min_len」より小さくなった場合<br>
+                　add_speed = (min_len - train_len) / 120<br>
+                　の急加速する補正速度を計算する。<br>
+                　ただし、この急加速速度は、別途設定しない限り最大「10」キロまで設定される。<br>
+                　（※注意：分かりやすく10キロと書いているが、<br>
+                　　厳密な計算は、[10 / 60 * 1.11] = 0.185より大きいと、add_speedは0.185で固定される。）
+                <br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　つまり、CPUは<b>ドリフト加速補正を除いた、</b>プレイヤーの純粋な速度＋10キロで常に補正される仕様なので<br>
+                　プレイヤーのドリフト加速がよっぽど良くない限り、CPUはほぼ追い抜かれない。<br>
+                <br>
+                ②「train_len」が、「max_len」より小さくなった場合<br>
+                　add_speed = add_speed * 0.99<br>
+                　の急加速する補正速度を減らす方向で調整する。<br>
+                　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
+                　その場合、急加速速度の補正値はない。<br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                ③その他の場合<br>
+                　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
+                　add_speed = (min_len - train_len) / 120<br>
+                　の急加速する補正速度を計算する。<br>
+                　必然的にマイナス数値になるが、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+            </div>
+            <br>
+            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+            <div>
+                　add_speed = (train_len - min_len) / 120<br>
+                　の急加速する補正速度を計算する。<br>
+                　ただし、値が0.1より小さい場合、0.1で固定される。<br>
+                <br>
+                　その後、add_speedは、別途設定しない限り最高「20キロ(0.37)」まで設定される。<br>
+                　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
+                　つまり、約5.4キロ～20キロの加速補正が行われる。<br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　この効果は、CPUが後ろにいると、プレイヤーより最高20キロ加速補正した速度で追い抜こうとする。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１１（CPU_BTM_AND_SPEED）の場合</h2>
+            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <div>
+                　add_speed = (min_len - train_len) / 120
+                　の急加速する補正速度を計算する。<br>
+                　ただし、値が-0.2より大きい場合、-0.2で固定される。<br>
+                <br>
+                　その後、add_speedは、別途設定しない限り最低「-20キロ(-0.37)」まで設定される。<br>
+                　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　つまり、前にあるとき、最低距離のよりもっと離れている場合は、最低-20キロ～約-10.8キロの減速する補正が行われ、<br>
+                　最低速度内に入ると、ちょっとだけ加速補正が行われる。<br>
+                <br>
+            </div>
+            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+            <div>
+                ①「train_len」が、「min_len」より小さい場合<br>
+                　add_speed = (train_len - min_len) / 120<br>
+                　の急加速する補正速度を計算する。<br>
+                　ただし、値が-0.1より大きい場合、-0.1で固定される。<br>
+                <br>
+                　その後、add_speedは、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　つまり、最低距離のより近づいている場合は、最低-10キロ～約-5.4キロの減速する補正が行われる。<br>
+                <br>
+                ②「train_len」が、「max_len」より小さい場合<br>
+                　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
+                　add_speed = add_speed * 0.99<br>
+                　の減速する補正速度を減らす方向で調整する。<br>
+                　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
+                　その場合、補正値はない。<br>
+                <br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                ③その他の場合<br>
+                　つまり、CPUとプレイヤーの距離が、最高距離より離れている場合<br>
+                　add_speed = (train_len - min_len) / 120
+                　の急加速する補正速度を計算する。<br>
+                　ただし、別途設定しない限り最低「-10キロ(-0.185)」まで<br>
+                　最高「10キロ(0.185)」まで設定される<br>
+                <br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　つまり、最高10キロ～最低-10キロで加速、減速する補正が行われる。<br>
+                <br>
+                また、このCPUの走るタイプが１１（CPU_BTM_AND_SPEED）の場合<br>
+                CPUの現在速度が、設定した「min_speed」より小さくなった場合、<br>
+                [m_TrainOrg_Add]を「min_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整<br>
+                CPUの現在速度が、設定した「max_speed」より大きくなった場合、<br>
+                [m_TrainOrg_Add]を「max_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整する。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１３（CPU_LENGTH_BTM_SPEED）の場合</h2>
+            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <div>
+                　add_speed = (min_len + (org_length - train_len)) / 120
+                　の急加速する補正速度を計算する。<br>
+                　ただし、値が-0.2より大きい場合、-0.2で固定される。<br>
+                <br>
+                　その後、add_speedは、別途設定しない限り最低「-20キロ(-0.37)」まで設定される。<br>
+                　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　つまり、前にあるとき、最低距離のよりもっと離れている場合は、最低-20キロ～約-10.8キロの減速する補正が行われ、<br>
+                　最低速度内に入ると、ちょっとだけ加速補正が行われる。<br>
+                <br>
+            </div>
+            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+            <div>
+                ①「train_len」が、「min_len + org_length」より小さい場合<br>
+                　add_speed = (train_len - (min_len + org_length)) / 120<br>
+                　の急加速する補正速度を計算する。<br>
+                　ただし、値が-0.1より大きい場合、-0.1で固定される。<br>
+                <br>
+                　その後、add_speedは、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　つまり、最低距離のより近づいている場合は、最低-10キロ～約-5.4キロの減速する補正が行われる。<br>
+                <br>
+                ②「train_len」が、「max_len + org_length」より小さい場合<br>
+                　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
+                　add_speed = add_speed * 0.99<br>
+                　の減速する補正速度を減らす方向で調整する。<br>
+                　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
+                　その場合、補正値はない。<br>
+                <br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                ③その他の場合<br>
+                　つまり、CPUとプレイヤーの距離が、最高距離より離れている場合<br>
+                　add_speed = (train_len - (min_len + org_length)) / 120
+                　の急加速する補正速度を計算する。<br>
+                　ただし、別途設定しない限り最低「-10キロ(-0.185)」まで<br>
+                　最高「10キロ(0.185)」まで設定される<br>
+                <br>
+                　その後、<br>
+                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <br>
+                　つまり、最高10キロ～最低-10キロで加速、減速する補正が行われる。<br>
+                <br>
+                また、このCPUの走るタイプが１３（CPU_LENGTH_BTM_SPEED）の場合<br>
+                CPUの現在速度が、設定した「min_speed」より小さくなった場合、<br>
+                [m_TrainOrg_Add]を「min_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整<br>
+                CPUの現在速度が、設定した「max_speed」より大きくなった場合、<br>
+                [m_TrainOrg_Add]を「max_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整する。<br>
+            </div>
+        </div>
+        <hr>
+        <h2>応用的な動きの定義</h2>
+        <div class="box">
+            <h3>run_typeが１００の場合</h3>
+            <div>
+                これは、stagedataからのみ設定できる動きである。<br>
+                また、書き方も下記のようにちょっと違う。<br>
+                <br>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>index</th>
+                            <th>レール</th>
+                            <th>train_no</th>
+                            <th>run_type</th>
+                            <th>min_len</th>
+                            <th>max_len</th>
+                            <th>max_speed</th>
+                            <th>min_speed</th>
+                            <th>p1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="not-read">0</td>
+                            <td class="read">317</td>
+                            <td class="not-read">1</td>
+                            <td class="read">9</td>
+                            <td class="read">150</td>
+                            <td class="read">180</td>
+                            <td class="read">180</td>
+                            <td class="read">150</td>
+                            <td class="read">3</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">・・・</td>
+                        </tr>
+                        <tr>
+                            <td class="not-read">3</td>
+                            <td class="read">358</td>
+                            <td class="not-read">1</td>
+                            <td class="read">100</td>
+                            <td class="read">10</td>
+                            <td class="read">10</td>
+                            <td class="not-read">0</td>
+                            <td class="not-read">0</td>
+                            <td class="not-read"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                run_typeが１００の場合、min_lenとmax_lenの数値のみ読むが、<br>
+                実際の意味は、上記で説明してた急加速補正の別途設定になる。<br>
+                min_lenは急加速補正する最大速度<br>
+                max_lenは、加速する補正の時間を入れる。<br>
+                <br>
+                つまり、初期の急加速補正は、(10, 0)で設定されているが、<br>
+                上記の設定は、(10, 10)で設定する意味である。<br>
+                <br>
+                似たようなことを、コミックスクリプトでも設定はできるが、コマンドが違う。<br>
+                コミックスクリプトの場合は、下記のようにする。<br>
+                <br>
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td colspan="10">・・・</td>
+                        </tr>
+                        <tr>
+                            <td>SET_CPU_MODE</td>
+                            <td>1</td>
+                            <td>11</td>
+                            <td>40</td>
+                            <td>50</td>
+                            <td>210</td>
+                            <td>100</td>
+                            <td>110</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>SET_CPU_SPEED</td>
+                            <td>30</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td colspan="10">・・・</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                SSから追加されたコマンド、SET_CPU_SPEEDでする。<br>
+                上記の場合、設定を(30, 0)にする意味である。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h3>run_typeが９（CPU_BREAKE_TOP）の場合</h3>
+            p1が定義されている場合、その分のフレームまでブレーキをかけ<br>
+            １０（CPU_TOP_AND_SPEED）の動きに変える。
+        </div>
+        <br>
+        <div class="box">
+            <h3>run_typeが１７（CPU_BREAKE_BTM）の場合</h3>
+            p1が定義されている場合、その分のフレームまでブレーキをかけ<br>
+            １１（CPU_BTM_AND_SPEED）の動きに変える。
+        </div>
+        <br>
+        <div>
+            結果的に、CPUのモードはこうなる。<br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>CPUモード</th>
+                        <th>プレイヤーの速度に影響？</th>
+                        <th>車両の長さに影響？</th>
+                        <th>ブレーキ？</th>
+                        <th>変わるCPUモード</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>１（CPU_TOP）</td>
+                        <td>しない</td>
+                        <td>しない</td>
+                        <td>しない</td>
+                        <td>１（CPU_TOP）</td>
+                    </tr>
+                    <tr>
+                        <td>７（CPU_LENGTH_TOP）</td>
+                        <td>しない</td>
+                        <td>する(CPUの車両の長さ)</td>
+                        <td>しない</td>
+                        <td>７（CPU_LENGTH_TOP）</td>
+                    </tr>
+                    <tr>
+                        <td>９（CPU_BREAKE_TOP）</td>
+                        <td>する</td>
+                        <td>しない</td>
+                        <td>する</td>
+                        <td>１０（CPU_TOP_AND_SPEED）</td>
+                    </tr>
+                    <tr>
+                        <td>１０（CPU_TOP_AND_SPEED）</td>
+                        <td>する</td>
+                        <td>しない</td>
+                        <td>しない</td>
+                        <td>１０（CPU_TOP_AND_SPEED）</td>
+                    </tr>
+                    <tr>
+                        <td>１１（CPU_BTM_AND_SPEED）</td>
+                        <td>する</td>
+                        <td>しない</td>
+                        <td>しない</td>
+                        <td>１１（CPU_BTM_AND_SPEED）</td>
+                    </tr>
+                    <tr>
+                        <td>１３（CPU_LENGTH_BTM_SPEED）</td>
+                        <td>する</td>
+                        <td>する(プレイヤーの車両の長さ)</td>
+                        <td>しない</td>
+                        <td>１３（CPU_LENGTH_BTM_SPEED）</td>
+                    </tr>
+                    <tr>
+                        <td>１７（CPU_BREAKE_BTM）</td>
+                        <td>する</td>
+                        <td>しない</td>
+                        <td>する</td>
+                        <td>１１（CPU_BTM_AND_SPEED）</td>
+                    </tr>
+                    <tr>
+                        <td>１００（急加速補正）</td>
+                        <td>既存のCPUモード次第</td>
+                        <td>既存のCPUモード次第</td>
+                        <td>既存のCPUモード次第</td>
+                        <td>既存のCPUモード維持</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
