@@ -45,6 +45,155 @@
         <span class="span-link" onclick='scrollView("SSCPUMode")'>SSのCPU_MODEへ行く</span>
         <hr />
         <h2 id="RSCPUMode">RSまでのCPU_MODE</h2>
+        全部推測で書いたので、必ずこうなると保証しない。<br>
+        <br>
+        <div class="box">
+            <h2>run_typeが１（CPU_TOP）の場合</h2>
+            <div>
+                現状のSSと似たような動きになると思われる。<br>
+                CPUが前にいる場合、<br>
+                CPUとプレイヤーの距離が、最低距離より小さくなると、CPUは最高速度で走り、<br>
+                CPUとプレイヤーの距離が、最高距離より大きくなると、CPUは最低速度で走る。<br>
+                CPUが後ろにいるとCPUはずっと最高速度で走る。<br>
+                あまりにも離れていると、デフォルト速度で走る。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが２（CPU_W）の場合</h2>
+            <div>
+                LSのみ使われる。<br>
+                詳しい動作方法は分からないが、最低速度と最高速度、<br>
+                最低距離と最高距離を適切に組み合わせて<br>
+                CPUがプレイヤーのより前、あるいは後ろにあっても<br>
+                サイドバイサイドになるように調整すると思われる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが３（CPU_BTM）の場合</h2>
+            <div>
+                LSのみ使われる。<br>
+                CPUが後ろにいる場合、<br>
+                CPUとプレイヤーの距離が、最低距離より小さくなると、CPUは最低速度で走り、<br>
+                CPUとプレイヤーの距離が、最高距離より大きくなると、CPUは最高速度で走る。<br>
+                ただし、前にいるとCPUはずっと最低速度で走る。<br>
+                あまりにも離れていると、デフォルト速度で走る。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが４（CPU_RYOSUKE_BTM）の場合</h2>
+            <div>
+                LSのみ使われる。<br>
+                CPUが後ろにいる場合、CPU_BTMと同じ動きと思われるが<br>
+                設定した最低距離～最高距離になるために、速度の加減を調整している動きと思われる。<br>
+                ただし、このようなモードで、CPUが前に出ると<br>
+                CPUモードが自動的に５（CPU_RYOSUKE_TOP）に変わる<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが５（CPU_RYOSUKE_TOP）の場合</h2>
+            <div>
+                LSのみ使われる。<br>
+                CPUが前にいる場合、CPU_TOPと同じ動きと思われるが<br>
+                設定した最低距離～最高距離になるために、速度の加減を調整している動きと思われる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが６（CPU_PLAYER）の場合</h2>
+            <div>
+                BS～RSに使われる。<br>
+                CPU_BTMと同じ動きと思われるが<br>
+                プレイヤーの速度に合わせて、加速する仕様になっている。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが７（CPU_LENGTH_TOP）の場合</h2>
+            <div>
+                RSのみ使われる。SSと同じ動きと思われる。<br>
+                CPU_TOPに、CPU車両の長さを距離に入れた動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが８（CPU_LENGTH_BTM）の場合</h2>
+            <div>
+                RSのみ使われる。<br>
+                CPU_BTMに、プレイヤー車両の長さを距離に入れた動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが９（CPU_LENGTH_BTM）の場合</h2>
+            <div>
+                RSのみ使われる。<br>
+                SSのp1みたいに、min_lenにブレーキするフレームを入れる。<br>
+                CPUモードは変わったりしない。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１０（CPU_TOP_AND_SPEED）の場合</h2>
+            <div>
+                SSと同じ動きと思われる。<br>
+                CPU_TOPに、プレイヤーの速度に影響する動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１１（CPU_BTM_AND_SPEED）の場合</h2>
+            <div>
+                SSと同じ動きと思われる。<br>
+                後ろについて、プレイヤーの速度に影響する動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１２（CPU_LENGTH_TOP_SPEED）の場合</h2>
+            <div>
+                RSのみ使われる。<br>
+                CPU_TOPに、プレイヤーの速度に影響し、CPU車両の長さを距離に入れた動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１３（CPU_LENGTH_TOP_SPEED）の場合</h2>
+            <div>
+                SSと同じ動きと思われる。<br>
+                後ろについて、プレイヤーの速度に影響し、プレイヤーの車両の長さを距離に入れた動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１４（CPU_PLAYER_LINE）の場合</h2>
+            <div>
+                RSのみ使われる。<br>
+                3番目以後のパラメータはない。<br>
+                プレイヤーの線路に転線する動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１５（CPU_MY_LINE）の場合</h2>
+            <div>
+                RSのみ使われる。<br>
+                3番目以後のパラメータはない。<br>
+                プレイヤーの線路と違う、自分の線路に転線する動きになる。<br>
+            </div>
+        </div>
+        <br>
+        <div class="box">
+            <h2>run_typeが１６（CPU_BTM_AND_ATK）の場合</h2>
+            <div>
+                RSのみ使われる。<br>
+                基本的にはプレイヤーの後ろにいるが、<br>
+                プレイヤーがドリフトをすると、ぶつけに来る。<br>
+            </div>
+        </div>
         <hr>
         <h2 id="SSCPUMode">SSのCPU_MODE</h2>
         <div>
@@ -196,8 +345,8 @@
             </table>
             <br>
             stagedataは、どのレール番号から、CPU_MODEを切り替えるかの「レール」の要素があり、<br>
-            コミックスクリプトは、スクリプト自体がどのレール番号から実行するかの、<br>
-            「レール」の要素は、別のところで、すでに定義されているので必要ない。<br>
+            コミックスクリプトは、スクリプト自体がどのレール番号から実行するかの「レール」の要素が<br>
+            すでに定義されているので必要ない。<br>
             <br>
             run_typeは、CPUをどのように走らせるかのタイプである。<br>
             min_lenは、プレイヤーとCPUの最低距離<br>
@@ -593,7 +742,7 @@
         </div>
         <br>
         <div>
-            結果的に、CPUのモードはこうなる。<br>
+            結果的に、SSのCPUのモードはこうなる。<br>
             <table border="1">
                 <thead>
                     <tr>
