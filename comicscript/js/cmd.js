@@ -11868,7 +11868,7 @@ const CMD = {
         "num": 82,
         "description": "CPUのモードを設定する" + newLine
                     + "引数１：CPU車両（１）（SSでは使わない）" + newLine
-                    + "引数２：走るモード（詳しくは、<a href='https://khttemp.github.io/dendData/comicscript/cpuMode/cpuMode.html'>【こちらのリンク】</a>を参照）" + newLine
+                    + "引数２：走るモード（詳しくは、上記のリンクを参照）" + newLine
                     + "引数３：minLen" + newLine
                     + "引数４：maxLen" + newLine
                     + "引数５：maxSpeed" + newLine
