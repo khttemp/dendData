@@ -2,10 +2,18 @@
     <head>
         <meta charset="utf-8">
         <title>CPU_MODEの動き</title>
+        <script src="../js/jquery.js"></script>
         <script>
             function scrollView(id) {
                 document.getElementById(id).scrollIntoView();
             }
+        </script>
+        <script>
+            $(document).ready(() => {
+                $(".openDetailDiv").click((e) => {
+                    $(e.target).next().slideToggle();
+                });
+            });
         </script>
     </head>
     <style>
@@ -37,6 +45,16 @@
         .box {
             border: 1px solid black;
             padding: 5px 15px;
+        }
+
+        .openDetailDiv {
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+
+        .detailDiv {
+            display: none;
         }
     </style>
     <body>
@@ -395,243 +413,296 @@
         <br>
         <div class="box">
             <h2>run_typeが１（CPU_TOP）の場合</h2>
-            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <img src="cpu_top.png">
             <div>
-                ①「train_len」が、「min_len」より大きくなった場合<br>
-                　CPUは加速をやめ、惰性運転のみになる。<br>
-                <br>
-                　１．さらに、「train_len」が、「max_len」より大きくなった場合<br>
-                　　　CPUはブレーキをかけて、速度をmin_speed（最低速度）まで落とす【補正】をする。<br>
-                <br>
-                　２．さらに、「train_len」が、「max_len + 150」より大きくなった場合<br>
-                　　　CPUは、min_speed（最低速度）で走る【補正】をする。<br>
-                　　　ただし、この最低速度は60キロより小さく設定すると、強制的に60キロで設定する。<br>
-                <br>
-                ②「train_len」が、「min_len」より小さくなった場合<br>
-                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+                CPUの先頭車両を基準に、距離がmin_lenより小さくなると、max_speedで走り<br>
+                距離がmax_lenより大きくなると、min_speedで走る。<br>
+                ただし、CPUが後ろにいると、ずっとmax_speedで走る。<br>
             </div>
-            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
-            <div>
-                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+            <br>
+            <div class="openDetailDiv">詳しい計算を見る。</div>
+            <div class="detailDiv">
+                <h3>・このとき、CPUが自分より前にいる場合</h3>
+                <div>
+                    ①「train_len」が、「min_len」より大きくなった場合<br>
+                    　CPUは加速をやめ、惰性運転のみになる。<br>
+                    <br>
+                    　１．さらに、「train_len」が、「max_len」より大きくなった場合<br>
+                    　　　CPUはブレーキをかけて、速度をmin_speed（最低速度）まで落とす【補正】をする。<br>
+                    <br>
+                    　２．さらに、「train_len」が、「max_len + 150」より大きくなった場合<br>
+                    　　　CPUは、min_speed（最低速度）で走る【補正】をする。<br>
+                    　　　ただし、この最低速度は60キロより小さく設定すると、強制的に60キロで設定する。<br>
+                    <br>
+                    ②「train_len」が、「min_len」より小さくなった場合<br>
+                    　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+                </div>
+                <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+                <div>
+                    　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+                </div>
             </div>
         </div>
         <br>
         <div class="box">
             <h2>run_typeが７（CPU_LENGTH_TOP）の場合</h2>
-            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <img src="cpu_length_top.png">
             <div>
-                ①「train_len」が、「org_length + min_len」より大きくなった場合<br>
-                　CPUは加速をやめ、惰性運転のみになる。<br>
-                <br>
-                　１．さらに、「train_len」が、「org_length + max_len」より大きくなった場合<br>
-                　　　CPUはブレーキをかけて、速度を遅する【補正】をする。<br>
-                <br>
-                　２．さらに、「train_len」が、「org_length + max_len + 150」より大きくなった場合<br>
-                　　　CPUは、min_speed（最低速度）で走る【補正】をする。<br>
-                　　　ただし、この最低速度は60キロより小さく設定すると、強制的に60キロで設定する。<br>
-                <br>
-                ②「train_len」が、「org_length + min_len」より小さくなった場合<br>
-                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+                CPUの先頭車両を基準に、距離がorg_length + min_lenより小さくなると、max_speedで走り<br>
+                距離がorg_length + max_lenより大きくなると、min_speedで走る。<br>
+                ただし、CPUが後ろにいると、ずっとmax_speedで走る。<br>
             </div>
-            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
-            <div>
-                　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+            <br>
+            <div class="openDetailDiv">詳しい計算を見る。</div>
+            <div class="detailDiv">
+                <h3>・このとき、CPUが自分より前にいる場合</h3>
+                <div>
+                    ①「train_len」が、「org_length + min_len」より大きくなった場合<br>
+                    　CPUは加速をやめ、惰性運転のみになる。<br>
+                    <br>
+                    　１．さらに、「train_len」が、「org_length + max_len」より大きくなった場合<br>
+                    　　　CPUはブレーキをかけて、速度を遅する【補正】をする。<br>
+                    <br>
+                    　２．さらに、「train_len」が、「org_length + max_len + 150」より大きくなった場合<br>
+                    　　　CPUは、min_speed（最低速度）で走る【補正】をする。<br>
+                    　　　ただし、この最低速度は60キロより小さく設定すると、強制的に60キロで設定する。<br>
+                    <br>
+                    ②「train_len」が、「org_length + min_len」より小さくなった場合<br>
+                    　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+                </div>
+                <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+                <div>
+                    　CPUは加速を始め、速度をmax_speed（最高速度）で走る【補正】をする。
+                </div>
             </div>
         </div>
         <br>
         <div class="box">
             <h2>run_typeが１０（CPU_TOP_AND_SPEED）の場合</h2>
-            <div>※スピードの計算で使われる変数が知識が必要。<a href="https://khttemp.github.io/dendData/SSViewer/speedAdd.html">【こっちのサイト】</a>も参照</div>
-            <br>
-            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <img src="cpu_top.png">
             <div>
-                ①「train_len」が、「min_len」より小さくなった場合<br>
-                　add_speed = (min_len - train_len) / 120<br>
-                　の急加速する補正速度を計算する。<br>
-                　ただし、この急加速速度は、別途設定しない限り最大「10」キロまで設定される。<br>
-                　（※注意：分かりやすく10キロと書いているが、<br>
-                　　厳密な計算は、[10 / 60 * 1.11] = 0.185より大きいと、add_speedは0.185で固定される。）
-                <br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                　つまり、CPUは<b>ドリフト加速補正を除いた、</b>プレイヤーの純粋な速度＋10キロで常に補正される仕様なので<br>
-                　プレイヤーのドリフト加速がよっぽど良くない限り、CPUはほぼ追い抜かれない。<br>
-                <br>
-                ②「train_len」が、「max_len」より小さくなった場合<br>
-                　add_speed = add_speed * 0.99<br>
-                　の急加速する補正速度を減らす方向で調整する。<br>
-                　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
-                　その場合、急加速速度の補正値はない。<br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                ③その他の場合<br>
-                　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
-                　add_speed = (min_len - train_len) / 120<br>
-                　の急加速する補正速度を計算する。<br>
-                　必然的にマイナス数値になるが、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                基本は、CPU_TOPと似たような動きだが、<br>
+                プレイヤーの速度に合わせてCPUも速度補正する機能がある。<br>
             </div>
             <br>
-            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
-            <div>
-                　add_speed = (train_len - min_len) / 120<br>
-                　の急加速する補正速度を計算する。<br>
-                　ただし、値が0.1より小さい場合、0.1で固定される。<br>
+            <div class="openDetailDiv">詳しい計算を見る。</div>
+            <div class="detailDiv">
+                <div>※スピードの計算で使われる変数が知識が必要。<a href="https://khttemp.github.io/dendData/SSViewer/speedAdd.html">【こっちのサイト】</a>も参照</div>
                 <br>
-                　その後、add_speedは、別途設定しない限り最高「20キロ(0.37)」まで設定される。<br>
-                　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
-                　つまり、約5.4キロ～20キロの加速補正が行われる。<br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                <h3>・このとき、CPUが自分より前にいる場合</h3>
+                <div>
+                    ①「train_len」が、「min_len」より小さくなった場合<br>
+                    　add_speed = (min_len - train_len) / 120<br>
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、この急加速速度は、別途設定しない限り最大「10」キロまで設定される。<br>
+                    　（※注意：分かりやすく10キロと書いているが、<br>
+                    　　厳密な計算は、[10 / 60 * 1.11] = 0.185より大きいと、add_speedは0.185で固定される。）
+                    <br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　つまり、CPUは<b>ドリフト加速補正を除いた、</b>プレイヤーの純粋な速度＋10キロで常に補正される仕様なので<br>
+                    　プレイヤーのドリフト加速がよっぽど良くない限り、CPUはほぼ追い抜かれない。<br>
+                    <br>
+                    ②「train_len」が、「max_len」より小さくなった場合<br>
+                    　add_speed = add_speed * 0.99<br>
+                    　の急加速する補正速度を減らす方向で調整する。<br>
+                    　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
+                    　その場合、急加速速度の補正値はない。<br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    ③その他の場合<br>
+                    　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
+                    　add_speed = (min_len - train_len) / 120<br>
+                    　の急加速する補正速度を計算する。<br>
+                    　必然的にマイナス数値になるが、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                </div>
                 <br>
-                　この効果は、CPUが後ろにいると、プレイヤーより最高20キロ加速補正した速度で追い抜こうとする。<br>
+                <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+                <div>
+                    　add_speed = (train_len - min_len) / 120<br>
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、値が0.1より小さい場合、0.1で固定される。<br>
+                    <br>
+                    　その後、add_speedは、別途設定しない限り最高「20キロ(0.37)」まで設定される。<br>
+                    　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
+                    　つまり、約5.4キロ～20キロの加速補正が行われる。<br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　この効果は、CPUが後ろにいると、プレイヤーより最高20キロ加速補正した速度で追い抜こうとする。<br>
+                </div>
             </div>
         </div>
         <br>
         <div class="box">
             <h2>run_typeが１１（CPU_BTM_AND_SPEED）の場合</h2>
-            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <img src="cpu_btm.png">
             <div>
-                　add_speed = (min_len - train_len) / 120
-                　の急加速する補正速度を計算する。<br>
-                　ただし、値が-0.2より大きい場合、-0.2で固定される。<br>
-                <br>
-                　その後、add_speedは、別途設定しない限り最低「-20キロ(-0.37)」まで設定される。<br>
-                　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                　つまり、前にあるとき、最低距離のよりもっと離れている場合は、最低-20キロ～約-10.8キロの減速する補正が行われ、<br>
-                　最低速度内に入ると、ちょっとだけ加速補正が行われる。<br>
-                <br>
+                プレイヤーの速度に合わせてCPUも速度補正する機能がある。<br>
+                プレイヤーの先頭車両を基準に、距離がmin_lenより小さくなると、減速して離れようとし<br>
+                距離がmax_lenより大きくなると、加速して追いついてくる走りになる。<br>
+                ただし、CPUが前にいると、なるべくプレイヤーより、ちょっと減らした速度で走る<br>
             </div>
-            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
-            <div>
-                ①「train_len」が、「min_len」より小さい場合<br>
-                　add_speed = (train_len - min_len) / 120<br>
-                　の急加速する補正速度を計算する。<br>
-                　ただし、値が-0.1より大きい場合、-0.1で固定される。<br>
+            <br>
+            <div class="openDetailDiv">詳しい計算を見る。</div>
+            <div class="detailDiv">
+                <div>※スピードの計算で使われる変数が知識が必要。<a href="https://khttemp.github.io/dendData/SSViewer/speedAdd.html">【こっちのサイト】</a>も参照</div>
                 <br>
-                　その後、add_speedは、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                　つまり、最低距離のより近づいている場合は、最低-10キロ～約-5.4キロの減速する補正が行われる。<br>
-                <br>
-                ②「train_len」が、「max_len」より小さい場合<br>
-                　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
-                　add_speed = add_speed * 0.99<br>
-                　の減速する補正速度を減らす方向で調整する。<br>
-                　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
-                　その場合、補正値はない。<br>
-                <br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                ③その他の場合<br>
-                　つまり、CPUとプレイヤーの距離が、最高距離より離れている場合<br>
-                　add_speed = (train_len - min_len) / 120
-                　の急加速する補正速度を計算する。<br>
-                　ただし、別途設定しない限り最低「-10キロ(-0.185)」まで<br>
-                　最高「10キロ(0.185)」まで設定される<br>
-                <br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                　つまり、最高10キロ～最低-10キロで加速、減速する補正が行われる。<br>
-                <br>
-                また、このCPUの走るタイプが１１（CPU_BTM_AND_SPEED）の場合<br>
-                CPUの現在速度が、設定した「min_speed」より小さくなった場合、<br>
-                [m_TrainOrg_Add]を「min_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整<br>
-                CPUの現在速度が、設定した「max_speed」より大きくなった場合、<br>
-                [m_TrainOrg_Add]を「max_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整する。<br>
+                <h3>・このとき、CPUが自分より前にいる場合</h3>
+                <div>
+                    　add_speed = (min_len - train_len) / 120
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、値が-0.2より大きい場合、-0.2で固定される。<br>
+                    <br>
+                    　その後、add_speedは、別途設定しない限り最低「-20キロ(-0.37)」まで設定される。<br>
+                    　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　つまり、前にあるとき、最低距離のよりもっと離れている場合は、最低-20キロ～約-10.8キロの減速する補正が行われ、<br>
+                    　最低速度内に入ると、ちょっとだけ加速補正が行われる。<br>
+                    <br>
+                </div>
+                <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+                <div>
+                    ①「train_len」が、「min_len」より小さい場合<br>
+                    　add_speed = (train_len - min_len) / 120<br>
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、値が-0.1より大きい場合、-0.1で固定される。<br>
+                    <br>
+                    　その後、add_speedは、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　つまり、最低距離のより近づいている場合は、最低-10キロ～約-5.4キロの減速する補正が行われる。<br>
+                    <br>
+                    ②「train_len」が、「max_len」より小さい場合<br>
+                    　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
+                    　add_speed = add_speed * 0.99<br>
+                    　の減速する補正速度を減らす方向で調整する。<br>
+                    　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
+                    　その場合、補正値はない。<br>
+                    <br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    ③その他の場合<br>
+                    　つまり、CPUとプレイヤーの距離が、最高距離より離れている場合<br>
+                    　add_speed = (train_len - min_len) / 120
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、別途設定しない限り最低「-10キロ(-0.185)」まで<br>
+                    　最高「10キロ(0.185)」まで設定される<br>
+                    <br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　つまり、最高10キロ～最低-10キロで加速、減速する補正が行われる。<br>
+                    <br>
+                    また、このCPUの走るタイプが１１（CPU_BTM_AND_SPEED）の場合<br>
+                    CPUの現在速度が、設定した「min_speed」より小さくなった場合、<br>
+                    [m_TrainOrg_Add]を「min_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整<br>
+                    CPUの現在速度が、設定した「max_speed」より大きくなった場合、<br>
+                    [m_TrainOrg_Add]を「max_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整する。<br>
+                </div>
             </div>
         </div>
         <br>
         <div class="box">
             <h2>run_typeが１３（CPU_LENGTH_BTM_SPEED）の場合</h2>
-            <h3>・このとき、CPUが自分より前にいる場合</h3>
+            <img src="cpu_length_btm_speed.png">
             <div>
-                　add_speed = (min_len + (org_length - train_len)) / 120
-                　の急加速する補正速度を計算する。<br>
-                　ただし、値が-0.2より大きい場合、-0.2で固定される。<br>
-                <br>
-                　その後、add_speedは、別途設定しない限り最低「-20キロ(-0.37)」まで設定される。<br>
-                　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                　つまり、前にあるとき、最低距離のよりもっと離れている場合は、最低-20キロ～約-10.8キロの減速する補正が行われ、<br>
-                　最低速度内に入ると、ちょっとだけ加速補正が行われる。<br>
-                <br>
+                プレイヤーの速度に合わせてCPUも速度補正する機能がある。<br>
+                プレイヤーの先頭車両を基準に、距離がorg_length + min_lenより小さくなると、減速して離れようとし<br>
+                距離がorg_length + max_lenより大きくなると、加速して追いついてくる走りになる。<br>
+                ただし、CPUが前にいると、なるべくプレイヤーより、ちょっと減らした速度で走る<br>
             </div>
-            <h3>・このとき、CPUが自分より後ろにいる場合</h3>
-            <div>
-                ①「train_len」が、「min_len + org_length」より小さい場合<br>
-                　add_speed = (train_len - (min_len + org_length)) / 120<br>
-                　の急加速する補正速度を計算する。<br>
-                　ただし、値が-0.1より大きい場合、-0.1で固定される。<br>
-                <br>
-                　その後、add_speedは、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                　つまり、最低距離のより近づいている場合は、最低-10キロ～約-5.4キロの減速する補正が行われる。<br>
-                <br>
-                ②「train_len」が、「max_len + org_length」より小さい場合<br>
-                　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
-                　add_speed = add_speed * 0.99<br>
-                　の減速する補正速度を減らす方向で調整する。<br>
-                　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
-                　その場合、補正値はない。<br>
-                <br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                ③その他の場合<br>
-                　つまり、CPUとプレイヤーの距離が、最高距離より離れている場合<br>
-                　add_speed = (train_len - (min_len + org_length)) / 120
-                　の急加速する補正速度を計算する。<br>
-                　ただし、別途設定しない限り最低「-10キロ(-0.185)」まで<br>
-                　最高「10キロ(0.185)」まで設定される<br>
-                <br>
-                　その後、<br>
-                　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
-                　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
-                　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
-                <br>
-                　つまり、最高10キロ～最低-10キロで加速、減速する補正が行われる。<br>
-                <br>
-                また、このCPUの走るタイプが１３（CPU_LENGTH_BTM_SPEED）の場合<br>
-                CPUの現在速度が、設定した「min_speed」より小さくなった場合、<br>
-                [m_TrainOrg_Add]を「min_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整<br>
-                CPUの現在速度が、設定した「max_speed」より大きくなった場合、<br>
-                [m_TrainOrg_Add]を「max_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整する。<br>
+            <br>
+            <div class="openDetailDiv">詳しい計算を見る。</div>
+            <div class="detailDiv">
+                <h3>・このとき、CPUが自分より前にいる場合</h3>
+                <div>
+                    　add_speed = (min_len + (org_length - train_len)) / 120
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、値が-0.2より大きい場合、-0.2で固定される。<br>
+                    <br>
+                    　その後、add_speedは、別途設定しない限り最低「-20キロ(-0.37)」まで設定される。<br>
+                    　別途設定した場合、「（設定値の速度 * ２）キロ」まで設定される。<br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　つまり、前にあるとき、最低距離のよりもっと離れている場合は、最低-20キロ～約-10.8キロの減速する補正が行われ、<br>
+                    　最低速度内に入ると、ちょっとだけ加速補正が行われる。<br>
+                    <br>
+                </div>
+                <h3>・このとき、CPUが自分より後ろにいる場合</h3>
+                <div>
+                    ①「train_len」が、「min_len + org_length」より小さい場合<br>
+                    　add_speed = (train_len - (min_len + org_length)) / 120<br>
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、値が-0.1より大きい場合、-0.1で固定される。<br>
+                    <br>
+                    　その後、add_speedは、別途設定しない限り最低「-10キロ(-0.185)」まで設定される。<br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　つまり、最低距離のより近づいている場合は、最低-10キロ～約-5.4キロの減速する補正が行われる。<br>
+                    <br>
+                    ②「train_len」が、「max_len + org_length」より小さい場合<br>
+                    　つまり、CPUとプレイヤーの距離が、最低距離と最高距離の間にある場合<br>
+                    　add_speed = add_speed * 0.99<br>
+                    　の減速する補正速度を減らす方向で調整する。<br>
+                    　この条件が一番初めて発動された場合、add_speedの初期値は０であるため、<br>
+                    　その場合、補正値はない。<br>
+                    <br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    ③その他の場合<br>
+                    　つまり、CPUとプレイヤーの距離が、最高距離より離れている場合<br>
+                    　add_speed = (train_len - (min_len + org_length)) / 120
+                    　の急加速する補正速度を計算する。<br>
+                    　ただし、別途設定しない限り最低「-10キロ(-0.185)」まで<br>
+                    　最高「10キロ(0.185)」まで設定される<br>
+                    <br>
+                    　その後、<br>
+                    　１．CPUの[m_TrainOrg_Add]は、プレイヤーの[m_TrainOrg_Add]と、上記のadd_speedの合計で設定される。<br>
+                    　２．CPUの[m_TrainOrg_AddPer]は、プレイヤーの[m_TrainOrg_AddPer]で設定される。<br>
+                    　３．CPUの[m_SpeedUpFrame]は、プレイヤーの[m_SpeedUpFrame]で設定される。<br>
+                    <br>
+                    　つまり、最高10キロ～最低-10キロで加速、減速する補正が行われる。<br>
+                    <br>
+                    また、このCPUの走るタイプが１３（CPU_LENGTH_BTM_SPEED）の場合<br>
+                    CPUの現在速度が、設定した「min_speed」より小さくなった場合、<br>
+                    [m_TrainOrg_Add]を「min_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整<br>
+                    CPUの現在速度が、設定した「max_speed」より大きくなった場合、<br>
+                    [m_TrainOrg_Add]を「max_speed」で、[m_TrainOrg_AddPer]を「1.0」で再調整する。<br>
+                </div>
             </div>
         </div>
         <hr>
