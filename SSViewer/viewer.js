@@ -1696,7 +1696,7 @@ async function setRailCnt(index, tableBody, railList) {
             }
             td.style.minWidth = "80px";
 
-            if (j == 16 + 4 * railDataCnt) {
+            if (j == 16) {
                 // baseX検査
                 prevRail = Number(railList[i][1]);
                 if (prevRail != -1 && prevRail != 0) {
