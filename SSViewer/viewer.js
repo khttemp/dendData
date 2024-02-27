@@ -610,7 +610,7 @@ async function readStageData() {
 
 function countCheck(name, list, cnt) {
     if (list.length != cnt) {
-        throw new Error(`【${name}】読み込んだデータと設定数が不一致です`);
+        printError(`【${name}】読み込んだデータと設定数が不一致です`);
     }
 }
 
@@ -1239,14 +1239,14 @@ async function setRailCnt(index, tableBody, railList) {
                                     if (baseX != 6.5) {
                                         baseTd = tr.childNodes[3];
                                         baseTd.style.backgroundColor = "red";
-                                        throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                        printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                     }
                                 } else if (currentRailRightPrevRailNo == prevRail) {
                                     baseX = Number(railList[i][3]);
                                     if (baseX != -6.5) {
                                         baseTd = tr.childNodes[3];
                                         baseTd.style.backgroundColor = "red";
-                                        throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                        printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                     }
                                 }
                             }
@@ -1265,7 +1265,7 @@ async function setRailCnt(index, tableBody, railList) {
                                             } else {
                                                 baseTd = tr.childNodes[3];
                                                 baseTd.style.backgroundColor = "red";
-                                                throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                                printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                             }
                                         }
                                     } else if (prevRailNextRightRailNo == i) {
@@ -1276,7 +1276,7 @@ async function setRailCnt(index, tableBody, railList) {
                                             } else {
                                                 baseTd = tr.childNodes[3];
                                                 baseTd.style.backgroundColor = "red";
-                                                throw new Error(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                                printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
                                             }
                                         }
                                     }
@@ -1293,7 +1293,7 @@ async function setRailCnt(index, tableBody, railList) {
                     if (nextRailNo >= railList.length) {
                         nextRailTd = tr.childNodes[17 + cnt*4];
                         nextRailTd.style.backgroundColor = "red";
-                        throw new Error(`レール No.${i}のNextレール(${nextRailNo})が異常です`);
+                        printError(`レール No.${i}のNextレール(${nextRailNo})が異常です`);
                     }
                 }
             }
@@ -1497,4 +1497,10 @@ function toHex(number, mode) {
         number += compNum;
     }
     return "0x" + (zeroFill + number.toString(16).toUpperCase()).slice(sliceNum);
+}
+function printError(error) {
+    let errorDiv = document.getElementById("errorDiv");
+    errorDiv.innerHTML += `${error}<br>`;
+    let tableDiv = document.getElementById("tableDiv");
+    tableDiv.style.display = "inline";
 }
