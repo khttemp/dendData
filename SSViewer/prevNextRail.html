@@ -1,0 +1,1240 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSのレールデータの繋ぎ方</title>
+    </head>
+    <style>
+        td {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+        
+        .box {
+            border: 1px solid black;
+            padding: 5px 15px;
+        }
+
+        .prev {
+            background-color: #CCCCCC;
+        }
+
+        .rail-data {
+            background-color: lightskyblue;
+        }
+
+        .not-rail {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <body>
+        <h1>SSのレールデータの繋ぎ方（仕様書）</h1>
+        レールデータの繋ぎ方は、おおよそ3段階で行われる。<br>
+        <br>
+        <div class="box">
+            レールのindex順番通りに調査が行われる。<br>
+            <br>
+            1. 調査中のレール番号を【now】としよう。<br>
+            　【now】レールの始端と、20番目の要素「prev」のレールの全体ボーン番号を見て<br>
+            　お互い繋がっているか『Unityの物理』で判断する。<br>
+            <br>
+            　複線なら【now】レールの左側、右側の始端と、<br>
+            　20、24番目の要素、つまり左側、右側の「prev」レールの全体ボーン番号で<br>
+            　お互い繋がっているか『Unityの物理』で判断する。<br>
+            <br>
+            　もしUnityの物理的に繋がっていると判断されたら、<br>
+            　【now】レールの始端は「prev」レールの繋がっているボーンと繋げ、（Prev繋ぎ）<br>
+            　「prev」レールの繋がっているボーンは、【now】レールの始端と繋げる。（Next繋ぎ）<br>
+            <br>
+            　また、調査中の【now】のレール番号を超える「prev」レールについては、<br>
+            　ロジックの仕様上、無条件で「判断できない」と判定する。<br>
+            <br>
+            <br>
+            2. ただし、物理判定をする前に、【now】レールの2番目の要素<br>
+            　「prev_rail」が、今まで物理判定していたレール番号の範囲を超える場合<br>
+            　【now】の物理判定を一時的に保留し、prev_railを【now】とみなし、1の調査を行う。<br>
+            　このprev_railの2番目の要素もまた範囲を超える場合、同じく保留し、繰り返す。<br>
+            <br>
+            　今まで調査してたレール番号範囲内になった瞬間、物理判定を行い<br>
+            　一番最近に保留していた調査に戻り、物理判定を行い、保留が無くなるまで行う。<br>
+            <br>
+            <br>
+            3. 1~2の方法で判断出来ないレールのみ集めて、また別判定する。<br>
+            　今度は、(18, 19)番目の要素「next」のレール、ボーン番号と<br>
+            　調査中の【now】のレールの全体ボーン番号で<br>
+            　お互い繋がっているか、改めて『Unityの物理』で再判定する。<br>
+            <br>
+            　複線なら(18, 19)、(22, 23)番目の要素、左側、右側の「next」のレール、ボーン番号と<br>
+            　調査中の【now】のレールの全体ボーン番号で<br>
+            　お互い繋がっているか、改めて『Unityの物理』で再判定する。<br>
+            <br>
+            　もしUnityの物理的に繋がっていると判断されたら、<br>
+            　「next」レールのボーン番号は【now】レールの繋がっているボーンと繋げ、（Prev繋ぎ）<br>
+            　【now】レールの繋がっているボーンは、「next」レールのボーン番号と繋げる。（Next繋ぎ）<br>
+        </div>
+        <br>
+        <div class="box">
+            つまり、最初はprevレール要素で繋がっているか判断し、<br>
+            <br>
+            ・物理的に合わない、<br>
+            ・調査中のレール番号を超える<br>
+            ・記入ミス<br>
+            <br>
+            によって、繋がってない判断されたら<br>
+            次は、nextレール要素で繋がっているか再判断する。<br>
+        </div>
+        <hr>
+        <h2>Q. それではprevレールを、全部ちゃんと記入すれば、nextレールは使わない？</h2>
+        <h2>A. 合ってる。</h2>
+        <div>
+            例えば、下記のように複線と、途中で分かれる単線、<br>
+            そして改めて繋がる複線の構造で作成するなら<br>
+        </div>
+        <br>
+        <img src="prevNext/prevNext.png">
+        <br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>prev_rail</th>
+                    <th>・・・</th>
+                    <th>pos_x</th>
+                    <th>pos_y</th>
+                    <th>pos_z</th>
+                    <th>・・・</th>
+                    <th>rail_data</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>30</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>32</td>
+                    <td>0</td>
+                    <td class="prev">30</td>
+                    <td class="prev">7</td>
+                    <td>35</td>
+                    <td>0</td>
+                    <td class="prev">30</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>31</td>
+                    <td>・・・</td>
+                    <td>-6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>33</td>
+                    <td>0</td>
+                    <td class="prev">31</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>32</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>34</td>
+                    <td>0</td>
+                    <td class="prev">32</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>33</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>38</td>
+                    <td>0</td>
+                    <td class="prev">33</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>31</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>36</td>
+                    <td>0</td>
+                    <td class="prev">31</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>35</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>37</td>
+                    <td>0</td>
+                    <td class="prev">35</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>36</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>38</td>
+                    <td>100</td>
+                    <td class="prev">36</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>34</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>39</td>
+                    <td>0</td>
+                    <td class="prev">34</td>
+                    <td class="prev">7</td>
+                    <td>39</td>
+                    <td>100</td>
+                    <td class="prev">37</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <img src="prevNext/raildata.png" width="500px">
+        <br><br>
+        <div>
+            本来は、この繋ぎ方が定石だが
+        </div>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>prev_rail</th>
+                    <th>・・・</th>
+                    <th>pos_x</th>
+                    <th>pos_y</th>
+                    <th>pos_z</th>
+                    <th>・・・</th>
+                    <th>rail_data</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>30</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">30</td>
+                    <td class="prev not-rail">-1</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">30</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>31</td>
+                    <td>・・・</td>
+                    <td>-6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">31</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>32</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">32</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>33</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">33</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>31</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">31</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>35</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">35</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>36</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td class="not-rail">-1</td>
+                    <td class="not-rail">-1</td>
+                    <td class="prev">36</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>34</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td class="not-rail">-1</td>
+                    <td>0</td>
+                    <td class="prev">34</td>
+                    <td class="prev not-rail">-1</td>
+                    <td class="not-rail">-1</td>
+                    <td class="not-rail">-1</td>
+                    <td class="prev">37</td>
+                    <td class="prev not-rail">-1</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>
+            この例は、<span><b style="font-size: 24px;">あまりにも</b></span>極端すぎるレールデータであるが、<br>
+            この繋ぎ方にしても、エラーが出ることなく、進むことも問題ない。<br>
+            なぜなら、prev_noを指定しなくても、自動的にprevのレール番号の<br>
+            どのボーンに繋がっているか「全体」を見て判断するので<br>
+            ロジック上、prev_noは必要ない。<br>
+            <br>
+            そう。<b style="font-size: 24px;">「一応」</b>、この書き方でも問題ないが<br>
+            このやり方にすると、後に大変なことになるので、<b style="font-size: 36px; color:red">絶対におすすめしない。</b><br>
+        </div>
+        <hr>
+        <h2>Q. 1段階目でprevが、調査中のレール番号を超えることとは？</h2>
+        <h2>A. 下記のような繋ぎ方</h2>
+        <div>
+            例えば、上記と同じ形で繋がっているが、<br>
+            繋ぎ方を下記のようにした場合である<br>
+        </div>
+        <br>
+        <img src="prevNext/prevNext2.png">
+        <br><br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>prev_rail</th>
+                    <th>・・・</th>
+                    <th>pos_x</th>
+                    <th>pos_y</th>
+                    <th>pos_z</th>
+                    <th>・・・</th>
+                    <th>rail_data</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>30</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>32</td>
+                    <td>0</td>
+                    <td class="prev">30</td>
+                    <td class="prev">7</td>
+                    <td>94</td>
+                    <td>0</td>
+                    <td class="prev">30</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>31</td>
+                    <td>・・・</td>
+                    <td>-6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>33</td>
+                    <td>0</td>
+                    <td class="prev">31</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>32</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>34</td>
+                    <td>0</td>
+                    <td class="prev">32</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>33</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>35</td>
+                    <td>0</td>
+                    <td class="prev">33</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>34</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>36</td>
+                    <td>0</td>
+                    <td class="prev">34</td>
+                    <td class="prev">7</td>
+                    <td>36</td>
+                    <td>100</td>
+                    <td class="prev">96</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>94</td>
+                    <td>31</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>95</td>
+                    <td>0</td>
+                    <td class="prev">31</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td>95</td>
+                    <td>94</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>96</td>
+                    <td>0</td>
+                    <td class="prev">94</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>96</td>
+                    <td>95</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>35</td>
+                    <td>100</td>
+                    <td class="prev">95</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>
+            先に左側から敷いておき、右側を後に敷く方法であり、よくあるパターンである。<br>
+            <br>
+            ロジックの仕様上、レール35番を調査する際に<br>
+            まだ調査してない、右側のprevレール「96番」は、『情報なし』のレールとみなし<br>
+            レール35番の右側は「繋がってない」と判断する。<br>
+            <br>
+            これは後に、繋がってないレールの再判定する際に、<br>
+            「レール35番、100のボーン」とレール96番の全体ボーンを見て繋がっているか判断する。<br>
+            <br>
+            この場合、レール35にとって<br>
+            右側のprevレールは、「-1」したものと同様な効果になる。<br>
+        </div>
+        <hr>
+        <h2>Q. SSの阪急宝塚線のレールデータで、宝塚駅の右側のレールの繋ぎ方がおかしい？</h2>
+        <h2>A. 普段のレールの繋ぎ方とはちょっと違うが、物理的に繋がっているので問題ない。</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>prev_rail</th>
+                    <th>・・・</th>
+                    <th>pos_x</th>
+                    <th>pos_y</th>
+                    <th>pos_z</th>
+                    <th>・・・</th>
+                    <th>rail_data</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>11</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>13</td>
+                    <td>0</td>
+                    <td class="prev">11</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>12</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>14</td>
+                    <td>0</td>
+                    <td class="prev">12</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>13</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>15</td>
+                    <td>0</td>
+                    <td class="prev">13</td>
+                    <td class="prev">7</td>
+                    <td>15</td>
+                    <td>100</td>
+                    <td class="prev">815</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>812</td>
+                    <td>811</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>813</td>
+                    <td>0</td>
+                    <td class="prev">811</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>813</td>
+                    <td>812</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>1144</td>
+                    <td>0</td>
+                    <td class="prev">812</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>814</td>
+                    <td>813</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>815</td>
+                    <td>0</td>
+                    <td class="prev">813</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>815</td>
+                    <td>814</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>14</td>
+                    <td>100</td>
+                    <td class="prev">814</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>1144</td>
+                    <td>812</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>19</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>1145</td>
+                    <td>0</td>
+                    <td class="prev">813</td>
+                    <td class="prev">1</td>
+                </tr>
+                <tr>
+                    <td>1145</td>
+                    <td>1144</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>1146</td>
+                    <td>0</td>
+                    <td class="prev">1144</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>1146</td>
+                    <td>1145</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>12</td>
+                    <td>5</td>
+                    <td class="prev">1145</td>
+                    <td class="prev">7</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <img src="prevNext/prevNext3.png">
+        <br><br>
+        <img src="prevNext/1144.png" width="500px">
+        <br><br>
+        <div>
+            ここで注目するところは、1144は「pos_z」で「19」移動したところにある。<br>
+            ゆえに、レール812番の終端から、前方へわずかにずれているので<br>
+            当然、レール812番、７のボーンと繋がってない。<br>
+            結果、レール813番、１のボーンと繋がっている。<br>
+            <br>
+            つまり、レール813番、１のボーンにとっては、<br>
+            「レール1144番、０のボーン」に繋がっている。<br>
+            <br>
+            SSでは、『物理的に繋がっていれば』<br>
+            ０や７のボーンではなく、途中のボーンにも繋げることができる。<br>
+            ただし、こう繋げた場合、分岐は必ず途中で繋げたレールのみ移動する。<br>
+        </div>
+        <br>
+        <img src="prevNext/prevNext4.png">
+        <br><br>
+        <div>
+            同じ理由で、レール1146番の終端は、<br>
+            レール12番、５のボーンに繋がっている。<br>
+        </div>
+        <br>
+        <h3>Q. それじゃレール812番は、なぜレール813番へ直進せず<br>
+        　折り返すときは、レール12番は、なぜレール1146番に行かないか？</h3>
+        <h3>A. 「Next繋ぎ」と「Prev繋ぎ」で、一番最初の情報を優先するため。</h3>
+        <div>
+            一番上で説明していた、「Prev繋ぎ」、「Next繋ぎ」を理解する必要がある。<br>
+            <br><br>
+            <img src="prevNext/prevNext5.png">
+            <br><br>
+            それぞれのボーンには、「Prev繋ぎ」と「Next繋ぎ」の情報が必ず入っている。<br>
+            これは、最初レールが置かれるとき、初期化される繋ぎの情報である。<br>
+            これが、物理的なレールの繋ぎ判定によって、<br>
+            <br>
+            <img src="prevNext/prevNext6.png">
+            <br><br>
+            このような情報に変わる。<br>
+            <br>
+            Next繋ぎの場合、既存のデータに同じレール番号がある場合、<br>
+            <b>そのデータを消してから</b>追加する。<br>
+            <br>
+            Prev繋ぎの場合、既存のデータに同じレール番号があっても、<br>
+            <b>消したりせず、</b>そのまま追加する。<br>
+            <br>
+            <img src="prevNext/prevNext7.png">
+            <br><br>
+            レール813番、１のボーンにとって、<br>
+            Prev繋ぎの情報は、「レール813番、０のボーン」のみあり<br>
+            Next繋ぎの情報は、「レール1144番、０のボーン」がある<br>
+            ゆえに、１のボーンから違うレール番号があるので、そっちへ行く。<br>
+            <br>
+            <img src="prevNext/prevNext8.png">
+            <br><br>
+            レール12番、５のボーンにとっては、<br>
+            Prev繋ぎの情報は、「レール12番、４のボーン」、「レール1146番、５のボーン」の２つがある。<br>
+            （※途中で繋ぐとき、Next繋ぎは指定したままになるが、<br>
+            Prev繋ぎはUnityの物理判定の仕様上、ちょっとずれたりする。<br>
+            ゆえに、「レール1146番、７のボーン」ではない場合もありうる。）<br>
+            <br>
+            Prev繋ぎが複数ある場合は<br>
+            「一番先に入った情報を優先する」という決まりで、<br>
+            折り返しする場合、「レール1146、５のボーン」へ行かず<br>
+            「レール12番、４のボーン」に行く。<br>
+        </div>
+        <hr>
+        <h2>Q. 敷いたレールが、本当に繋がっているか、あるいは途切れているか確実に分かる方法はあるか？</h2>
+        <h2>A. ログに出る。特に、3段階目まで実行してダメだった時に表示される。</h2>
+        <div>
+            <img src="prevNext/RailChkErr.png">
+            <br><br>
+            よく見るレールチェックのエラー。<br>
+            15のレールと14のレールに問題あるというエラーだが<br>
+            これは、オープニングのレールデータのエラーである。<br>
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>index</th>
+                        <th>prev_rail</th>
+                        <th>・・・</th>
+                        <th>pos_x</th>
+                        <th>pos_y</th>
+                        <th>pos_z</th>
+                        <th>・・・</th>
+                        <th>rail_data</th>
+                        <th>next_rail</th>
+                        <th>next_no</th>
+                        <th>prev_rail</th>
+                        <th>prev_no</th>
+                        <th>next_rail</th>
+                        <th>next_no</th>
+                        <th>prev_rail</th>
+                        <th>prev_no</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="16">・・・</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>13</td>
+                        <td>・・・</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>・・・</td>
+                        <td class="rail-data">1</td>
+                        <td>15</td>
+                        <td>0</td>
+                        <td class="prev">13</td>
+                        <td class="prev">7</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>-1</td>
+                        <td>・・・</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>・・・</td>
+                        <td class="rail-data">1</td>
+                        <td>16</td>
+                        <td>0</td>
+                        <td class="prev">-1</td>
+                        <td class="prev">-1</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>15</td>
+                        <td>・・・</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>・・・</td>
+                        <td class="rail-data">1</td>
+                        <td>17</td>
+                        <td>0</td>
+                        <td class="prev">15</td>
+                        <td class="prev">7</td>
+                    </tr>
+                    <tr>
+                        <td colspan="16">・・・</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            まず、「prev」の要素で繋がっているかを判断する。<br>
+            そうすると、ちょうどレール14番の、次のレールがどこなのか繋がってないので<br>
+            今回は、「next」の要素で繋がっているかを判断する。<br>
+            <br>
+            (15, 0)と、レール14番の全体ボーンを見て判断するが、<br>
+            レール15番は、そもそも原点から改めて敷いているので、当然繋がらない。<br>
+            ゆえに、「now:(15, 0)」と「prev:14の全体ボーン」のレールチェックエラーが出る。<br>
+        </div>
+        <hr>
+        <h2>Q. 「RailPri:」の使う理由は？</h2>
+        <h2>A. 主に、あるレールの終端で分岐する次のレールの中で、必ず指定したレール番号へ行くようになる。<br>
+        　ただし、次のレールリストの順番を変えるだけなので、折り返しの時には適用されない。</h2>
+        <div>
+            例えば、東急田園都市線の場合<br>
+        </div>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>prev_rail</th>
+                    <th>・・・</th>
+                    <th>pos_x</th>
+                    <th>pos_y</th>
+                    <th>pos_z</th>
+                    <th>・・・</th>
+                    <th>rail_data</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                    <th>next_rail</th>
+                    <th>next_no</th>
+                    <th>prev_rail</th>
+                    <th>prev_no</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>347</td>
+                    <td>763</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>1441</td>
+                    <td>0</td>
+                    <td class="prev">763</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>733</td>
+                    <td>732</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>734</td>
+                    <td>0</td>
+                    <td class="prev">732</td>
+                    <td class="prev">7</td>
+                    <td>734</td>
+                    <td>100</td>
+                    <td class="prev">732</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td>734</td>
+                    <td>733</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>735</td>
+                    <td>0</td>
+                    <td class="prev">733</td>
+                    <td class="prev">7</td>
+                    <td>735</td>
+                    <td>100</td>
+                    <td class="prev">733</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td>735</td>
+                    <td>734</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">2</td>
+                    <td>736</td>
+                    <td>0</td>
+                    <td class="prev">734</td>
+                    <td class="prev">7</td>
+                    <td>736</td>
+                    <td>100</td>
+                    <td class="prev">734</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>757</td>
+                    <td>733</td>
+                    <td>・・・</td>
+                    <td>6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>758</td>
+                    <td>0</td>
+                    <td class="prev">733</td>
+                    <td class="prev">107</td>
+                </tr>
+                <tr>
+                    <td>758</td>
+                    <td>757</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>759</td>
+                    <td>0</td>
+                    <td class="prev">757</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+                <tr>
+                    <td>786</td>
+                    <td>733</td>
+                    <td>・・・</td>
+                    <td>-6.5</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>787</td>
+                    <td>0</td>
+                    <td class="prev">733</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td>787</td>
+                    <td>786</td>
+                    <td>・・・</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>・・・</td>
+                    <td class="rail-data">1</td>
+                    <td>788</td>
+                    <td>0</td>
+                    <td class="prev">786</td>
+                    <td class="prev">7</td>
+                </tr>
+                <tr>
+                    <td colspan="16">・・・</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>
+            普段は、この繋ぎ方だと、レール733番の場合<br>
+            1. レール347番の、prev_railが範囲を超えるので、一時的に保留し、763番から物理判定を行う。<br>
+            　これもまた範囲を超えるので、この保留作業は、<br>
+            　レール763番 -> 762番 -> 761番 -> 760番 -> ・・・ -> 757番 -> 733番 -> ・・・<br>
+            　-> 360番 -> レール359番になるまで、2段階目が402回行われる。<br>
+            <br>
+            2. 保留作業を360番から順番に解消しているうちに、レール757番の処理が行われる。<br>
+            　レール757番の、prev要素のレール733番によって、<br>
+            　レール733番の右側は、「レール757番、０のボーン」の情報になる。<br>
+            <br>
+            3. レール734番の、prev要素のレール733番によって、<br>
+            　レール733番の左側は「レール734番、０のボーン」、右側は「レール734番、100のボーン」の情報が追加される。<br>
+            <br>
+            4. レール786番の、prev要素のレール733番によって、<br>
+            　レール733番の左側は、「レール786番、０のボーン」の情報が追加される。<br>
+            <br>
+            <img src="prevNext/prevNext9.png">
+            <br><br>
+            <table border="1">
+                <tbody>
+                    <tr>
+                        <td><img src="prevNext/734.png" width="500px"></td>
+                        <td><img src="prevNext/757.png" width="500px"></td>
+                    </tr>
+                    <tr>
+                        <td>734番へ進む</td>
+                        <td>757番へ進む</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            結果、733番の左側は、「レール734番、０のボーン」、「レール786番、０のボーン」<br>
+            右側は「レール757番、０のボーン」、「レール734番、100のボーン」の情報があり<br>
+            普段通りだと、一番先に入った情報を優先するため<br>
+            左側はそのまま直進、右側は右の支線に行くような動きになる。<br>
+            <br>
+            <br>
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>rail_pri_index</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>733</td>
+                    <td>786</td>
+                </tr>
+                <tr>
+                    <td>733</td>
+                    <td>757</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>
+            ゆえに、このようにレール733番のNextレールを書いておくと<br>
+        </div>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>Next No.1</th>
+                    <th>Next No.2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>733（左側）</td>
+                    <td class="rail-data">734, 0</td>
+                    <td>786, 0</td>
+                </tr>
+                <tr>
+                    <td>733（右側）</td>
+                    <td class="rail-data">757, 0</td>
+                    <td>734, 100</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>
+            この順番だったのが
+        </div>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>Next No.1</th>
+                    <th>Next No.2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>733（左側）</td>
+                    <td class="rail-data not-rail">786, 0</td>
+                    <td>734, 0</td>
+                </tr>
+                <tr>
+                    <td>733（右側）</td>
+                    <td class="rail-data">757, 0</td>
+                    <td>734, 100</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>
+            このように変わる。<br>
+            <br>
+            一応、右側は変化はないが<br>
+            レールデータがまた変わって、物理判定の処理順番が変わっても<br>
+            確実に行けるようにしたいなら、書いた方がいい。<br>
+        </div>
+        <hr>
+        <h2>Q. 「BtlPri:」は「RailPri:」とは違う？</h2>
+        <h2>A. バトルモードでのみ使われる機能だが、明らかに動作自体が違う。</h2>
+        <div>
+            主に、阪急宝塚線の「BtlPri:」で使われているが、<br>
+            これは、あるレールの20番目の要素「prev」を変える効果がある。<br>
+            複線の場合は、20、24番めの要素「prev」を全部、<br>
+            指定した数字に変える効果がある。<br>
+            <br>
+            1144番のprevを「813番」から「-1」にしたので、物理判定をせず<br>
+            レールの途中で1144番に行くこともないので、そのまま直進する。<br>
+        </div>
+        <hr>
+        <h2>Q. 「NoDriftRail:」とは？</h2>
+        <h2>A. 本格的に使われたことがないので、今は推測のみだが、<br>
+        　他のレールもドリフト対象にするフラグがあるレールで<br>
+        　ドリフトさせないようにする機能と思われる。</h2>
+        <div>
+        </div>
+    </body>
+</html>
