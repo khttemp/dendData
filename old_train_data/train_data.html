@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>電車でDのデータ</title>
+        <script src="data.js"></script>
+    </head>
+    <body>
+        <div style="position: fixed; right: 10px; top: 10px;">
+            <select onchange="dataChange(this)">
+                <option value="./LSdata.txt" selected>Lightning Stageのデータ</option>
+                <option value="./BSdata.txt">Burning Stageのデータ</option>
+                <option value="./CSdata.txt">Climax Stageのデータ</option>
+                <option value="./RSdata.txt">Rising Stageのデータ</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" id="binaryChkbox" onchange="showBinary(this)">バイナリ数値を隠す
+            </label>
+        </div>
+        <div id="check">
+            <input type="button" id="allCheck" value="車両表示のチェックを全部解除"><br>
+            <div id="trainCheck"></div>
+        </div>
+        <div>
+            <p><h1>ノッチ性能</h1></p>
+            <div id="notch"></div>
+        </div>
+        <hr>
+        <div>
+            <p><h1>車両性能</h1></p>
+            <div id="train"></div>
+        </div>
+    </body>
+</html>

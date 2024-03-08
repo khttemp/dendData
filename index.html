@@ -1,35 +1,49 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>電車でDのデータ</title>
-        <script src="data.js"></script>
     </head>
+    <style>
+        .center {
+            display: flex;
+            align-items: center;
+            flex-direction: column
+        }
+    </style>
     <body>
-        <div style="position: fixed; right: 10px; top: 10px;">
-            <select onchange="dataChange(this)">
-                <option value="./LSdata.txt" selected>Lightning Stageのデータ</option>
-                <option value="./BSdata.txt">Burning Stageのデータ</option>
-                <option value="./CSdata.txt">Climax Stageのデータ</option>
-                <option value="./RSdata.txt">Rising Stageのデータ</option>
-            </select>
-        </div>
-        <div>
-            <label>
-                <input type="checkbox" id="binaryChkbox" onchange="showBinary(this)">バイナリ数値を隠す
-            </label>
-        </div>
-        <div id="check">
-            <input type="button" id="allCheck" value="車両表示のチェックを全部解除"><br>
-            <div id="trainCheck"></div>
-        </div>
-        <div>
-            <p><h1>ノッチ性能</h1></p>
-            <div id="notch"></div>
-        </div>
-        <hr>
-        <div>
-            <p><h1>車両性能</h1></p>
-            <div id="train"></div>
+        <div class="center">
+            <h1>ドキュメントリスト</h1>
+            <h3>電D SS</h3>
+            <ul>
+                <li><a href="./SSViewer/viewer.html">ステージデータViewer</a></li>
+                <li><a href="./SSViewer/tex_tbl.html">tex_tblのViewer</a></li>
+                <li><a href="./SSViewer/train_org_data.html">車両性能のViewer</a></li>
+                <br>
+                <li><a href="./SSViewer/prevNextRail.html">レールデータの繋ぎ方（仕様書）</a></li>
+                <li><a href="./SSViewer/speedAdd.html">加速の仕様書</a></li>
+                <li><a href="./SSViewer/trainBtlFlg.html">車両フラグの仕様書</a></li>
+            </ul>
+            <h3>コミックスクリプト</h3>
+            <ul>
+                <li><a href="./comicscript/script.html">電D コミックスクリプト</a></li>
+                <li><a href="./comicscript/mdlBinScript.html">電D モデルバイナリ</a></li>
+                <br>
+                <li><a href="./comicscript/cmdList.html">コマンドリスト</a></li>
+                <li><a href="./comicscript/scriptViewer.html">コミックスクリプトViewer</a></li>
+                <br>
+                <li><a href="./comicscript/perType.html">変化の詳しい設定式</a></li>
+                <li><a href="./comicscript/camera/camera.html">カメラ調整仕様書</a></li>
+                <li><a href="./comicscript/cpuMode/cpuMode.html">CPU_MODEの仕様書</a></li>
+            </ul>
+            <h3>旧作のモデルプレビューリスト</h3>
+            <ul>
+                <li><a href="./mdl/mdlInfoLS.html">電D LSのモデルリスト</a></li>
+                <li><a href="./mdl/mdlInfoBS.html">電D BSのモデルリスト</a></li>
+                <li><a href="./mdl/mdlInfo.html">電D CS・RSのモデルリスト</a></li>
+            </ul>
+            <h3>車両性能</h3>
+            <ul>
+                <li><a href="./old_train_data/train_data.html">旧作のデフォルト車両性能リスト</a></li>
+            </ul>
         </div>
     </body>
 </html>
