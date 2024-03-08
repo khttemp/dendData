@@ -152,7 +152,7 @@ function allCheck(value) {
 
 function init(value, flag) {
     readTextFile(value);
-    let rows = allText.split("\r\n");
+    let rows = allText.split("\n");
     let count = 1;
     let mdlCnt = rows[0];
     let data = [];
