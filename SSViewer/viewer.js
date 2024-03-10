@@ -494,7 +494,9 @@ for (let ambName of ambModelOriginList) {
 
 var progressStatus = 0;
 
+let texInfoList = [];
 let modelList = [];
+let ambList = [];
 
 window.addEventListener('load', () => {
     initTable();
@@ -814,7 +816,7 @@ async function readStageData() {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
                 let realCount = 0;
-                let texInfoList = [];
+                texInfoList = [];
                 if (cnt > 0) {
                     for (let c = 0; ; c++) {
                         let texInfoArray = readTbl(allTextList[index + 1 + c]);
@@ -1046,7 +1048,7 @@ async function readStageData() {
                 let array = readTbl(allTextList[index]);
                 let cnt = Number(array[1]);
                 let realCount = 0;
-                let ambList = [];
+                ambList = [];
                 if (cnt > 0) {
                     for (let c = 0; ; c++) {
                         let ambArray = readTbl(allTextList[index + 1 + c]);
@@ -1064,6 +1066,7 @@ async function readStageData() {
             }
         }
         setProgress(1);
+        checkTexInfo(texInfoList, modelList, ambList);
     } catch (error) {
         let errorDiv = document.getElementById("errorDiv");
         let stackList = error.stack.split("\n");
@@ -1766,14 +1769,20 @@ async function setRailCnt(index, tableBody, railList) {
                     }
                 }
 
-                // 存在しないNext検査
                 currentRailDataCnt = Number(railList[i][16]);
-                for (let cnt = 0; cnt < currentRailDataCnt; cnt++) {
-                    nextRailNo = Number(railList[i][17 + cnt*4]);
-                    if (nextRailNo >= railList.length) {
-                        nextRailTd = tr.childNodes[17 + cnt*4];
-                        nextRailTd.style.backgroundColor = "red";
-                        printError(`レール No.${i}のNextレール(${nextRailNo})が異常です`);
+                // 繋ぎ方の数を検査
+                if (railList[i].length - 17 < 4 * currentRailDataCnt) {
+                    printError(`レール No.${i}の繋ぎ方の要素が必要数(${4 * currentRailDataCnt})より足りないです->（${railList[i].length - 17}）`)
+                } 
+                // 存在しないNext検査
+                else {
+                    for (let cnt = 0; cnt < currentRailDataCnt; cnt++) {
+                        nextRailNo = Number(railList[i][17 + cnt*4]);
+                        if (nextRailNo >= railList.length) {
+                            nextRailTd = tr.childNodes[17 + cnt*4];
+                            nextRailTd.style.backgroundColor = "red";
+                            printError(`レール No.${i}のNextレール(${nextRailNo})が異常です`);
+                        }
                     }
                 }
             }
@@ -1920,7 +1929,7 @@ async function setAmbCnt(index, tableBody, ambList) {
         tbody.appendChild(tr);
         for (let j = 0; j < ambList[i].length; j++) {
             if (ambDataCnt > 0) {
-                if (j > 4 + 13 * ambDataCnt) {
+                if (j >= 4 + 13 * ambDataCnt) {
                     break;
                 }
             }
@@ -1962,6 +1971,35 @@ async function setAmbCnt(index, tableBody, ambList) {
             } else {
                 td.style.backgroundColor = ambHeaderColorList[j];
             }   
+        }
+    }
+}
+
+function checkTexInfo(texInfoList, modelList, ambList) {
+    for (let i = 0; i < texInfoList.length; i++) {
+        let ambNo = -1;
+        let ambChildNo = -1;
+        for (let j = 0; j < texInfoList[i].length; j++) {
+            if (j >= 9) {
+                break;
+            }
+            if (j == 1) {
+                ambNo = Number(texInfoList[i][j]);
+            }
+            else if (j == 2) {
+                ambChildNo = Number(texInfoList[i][j]);
+                if (ambNo == -1) {
+                    if (ambChildNo < 0 || ambChildNo >= modelList.length) {
+                        printError(`SetTexInfo No.${i}は、存在しないモデル番号（${ambChildNo}）を指定しています`);
+                    }
+                } else {
+                    ambArray = ambList[ambNo];
+                    ambDataCnt = ambArray[3];
+                    if (ambChildNo < 0 || ambChildNo >= ambDataCnt) {
+                        printError(`SetTexInfo No.${i}は、存在しないAMBの子モデル（${ambChildNo}）を指定しています`);
+                    }
+                }
+            }
         }
     }
 }
