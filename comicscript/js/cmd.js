@@ -13983,12 +13983,6 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ],
-        "SS_comic": [
-            "COMIC3998.BIN"
-        ],
-        "SS_cmn": [
-            "COMIC3997.BIN"
         ]
     },
     "N_POS": {
@@ -14179,12 +14173,6 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ],
-        "SS_comic": [
-            "COMIC3998.BIN"
-        ],
-        "SS_cmn": [
-            "COMIC3997.BIN"
         ]
     },
     "WAIT_TIME_LINE": {
@@ -25656,12 +25644,6 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ],
-        "SS_comic": [
-            "COMIC3998.BIN"
-        ],
-        "SS_cmn": [
-            "COMIC3997.BIN"
         ]
     },
     "SET_SC_KOTEI_CAM_T_POS": {
@@ -26494,12 +26476,6 @@ const CMD = {
         "RS_comic": [
             "COMIC3997.BIN",
             "COMIC3998.BIN"
-        ],
-        "SS_comic": [
-            "COMIC3998.BIN"
-        ],
-        "SS_cmn": [
-            "COMIC3997.BIN"
         ]
     },
     "IB_SET_W_MT": {

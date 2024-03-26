@@ -733,11 +733,10 @@
         <br />
         <div>他にも、下記のようなカメラコマンドもあるが・・・</div>
         <div>・SET_CAMPOINT_K(BS~RSバージョン)</div>
-        <div>・SET_SC_KOTEI_CAM_POS</div>
-        <div>・SET_SC_KOTEI_CAM_T_POS</div>
+        <div>・SET_SC_KOTEI_CAM_POS(BS~RSバージョン。SSでは使えない)</div>
+        <div>・SET_SC_KOTEI_CAM_T_POS(BS~RSバージョン。SSでは使えない)</div>
         <div>LSのSetCamPos、SetCamTargetと似ている、絶対座標のコマンドである</div>
-        <div>SSでは、このコマンドの使い方が違う。</div>
-        <div>また、あまり使われたことがないコマンドであるため、使い方については記載しない。</div>
+        <div>BS~RSでもあまり使われたことがないコマンドであるため、使い方については記載しない。</div>
         <hr />
         <h2>SS専用のカメラコマンド</h2>
         <h3>・CAM_TRAIN</h3>
@@ -950,5 +949,179 @@
         <h3>・CNG_SCCAM_TRAIN</h3>
         <div>SSで使われたことがないコマンド</div>
         <div>SET_CAMPOINT_2P2Cで決めたカメラの番号の注視点を、車両のデフォルト注視点に変える</div>
+        <hr />
+        <div>SS基準で、カメラワークの動きを整理するとこうなる。</div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>使ったカメラコマンド</th>
+                    <th>デフォルト注視点</th>
+                    <th>追尾するか？</th>
+                    <th>カメラ位置修正</th>
+                    <th>注視点位置修正</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">SET_CAMPOINT_2P2C</td>
+                    <td rowspan="3">車両の運転席</td>
+                    <td rowspan="3">〇</td>
+                    <td>SET_CAM_OFFSET<br>（2P2Cで決めた、あるカメラのxyz）</td>
+                    <td>SET_CAM_TARGET_OFFSET<br>（2P2Cで決めた、ある注視点xyz）</td>
+                </tr>
+                <tr>
+                    <td>CAM_POINT_PER<br>（2P2C同士のPER）</td>
+                    <td>CAM_TARGET_PER<br>（2P2C同士のPER）</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_POINT_LENGTH<br>（2P2Cで決めた、あるカメラの距離）</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">SET_CAMPOINT_1P2T</td>
+                    <td rowspan="3">車両の運転席</td>
+                    <td rowspan="3">〇</td>
+                    <td>SET_CAM_OFFSET<br>（2P2Cで決めた、あるカメラのxyz）</td>
+                    <td>SET_CAM_TARGET_OFFSET<br>（2P2Cで決めた、ある注視点xyz）</td>
+                </tr>
+                <tr>
+                    <td>CAM_POINT_PER<br>（2P2C同士のPER）</td>
+                    <td>CAM_TARGET_PER<br>（2P2C同士のPER）</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_POINT_LENGTH<br>（2P2Cで決めた、あるカメラの距離）</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>なし<br>（SET_CAMPOINT_1P2T、<br>BUFF_TO_TARGET_POS<br>のように宣言するべき）</td>
+                    <td>×</td>
+                    <td>BUFF_TO_SC_CAM_POS<br>（レール位置で固定した、<br>あるBUFF点からのカメラ位置）</td>
+                    <td>注視点コマンドによって違う</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_TARGET_POS</td>
+                    <td>コマンドで設定した通り</td>
+                    <td>×</td>
+                    <td>カメラコマンドによって違う</td>
+                    <td>BUFF_TO_TARGET_POS<br>（レール位置で固定した、<br>あるBUFF点からの注視点位置）</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Q. それでは、BUFFと車両を追尾する組み合わせも可能か？</h2>
+        <h2>A. 「車両を追尾するカメラ＆BUFFの注視点」は不可能だが、それ以外は可能。</h2>
+        <h3>・車両を追尾するカメラ＆車両を追尾する注視点</h3>
+        「SET_CAMPOINT_2P2C」であるため、省略する。
+        <h3>・BUFFの固定カメラ＆車両を追尾する注視点</h3>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>24.0</td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>12.0</td>
+                    <td>12.5</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAMPOINT_1P2T</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>WaitFrame</td>
+                    <td>60.0</td>
+                </tr>
+                <tr>
+                    <td>SET_CAM_TARGET_OFFSET</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>20.0</td>
+                    <td>0.0</td>
+                    <td>7.0</td>
+                    <td>240.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>6.0</td>
+                    <td>12.0</td>
+                    <td>12.5</td>
+                    <td>240.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>WaitFrame</td>
+                    <td>300.0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h3>BUFFカメラ＆BUFFの注視点</h3>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>SET_CAMPOINT_K</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>24.0</td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>RAIL_POS_TO_BUFF</td>
+                    <td>24.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>6.0</td>
+                    <td>12.5</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_TARGET_POS</td>
+                    <td>1.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                </tr>
+                <tr>
+                    <td>WaitFrame</td>
+                    <td>60.0</td>
+                </tr>
+                <tr>
+                    <td>BUFF_TO_SC_CAM_POS</td>
+                    <td>0.0</td>
+                    <td>6.0</td>
+                    <td>13.0</td>
+                    <td>50.0</td>
+                    <td>240.0</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>WaitFrame</td>
+                    <td>300.0</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>この例は車両を追尾しない、カメラのズームアウトのようになる。</div>
+        <div>カメラと注視点を両方とも固定にしたい場合は、BUFFを2つ指定する必要がある。</div>
     </body>
 </html>
