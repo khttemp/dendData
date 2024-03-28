@@ -13309,9 +13309,10 @@ const CMD = {
             "COMIC3331.BIN",
             "COMIC3337.BIN"
         ],
-        "SS_comic": [
-            "COMIC42043.BIN"
-        ]
+        // 動作しない
+        // "SS_comic": [
+        //     "COMIC42043.BIN" 
+        // ]
     },
     "END_WAIT_MOTION": {
         "num": 88,
@@ -13348,9 +13349,10 @@ const CMD = {
             "COMIC3331.BIN",
             "COMIC3337.BIN"
         ],
-        "SS_comic": [
-            "COMIC42043.BIN"
-        ]
+        // 動作しない
+        // "SS_comic": [
+        //     "COMIC42043.BIN"
+        // ]
     },
     "CHANGE_SPEED": {
         "num": 89,
@@ -16487,6 +16489,9 @@ const CMD = {
         "LS_comic": [
             "COMIC121.BIN",
             "COMIC706.BIN"
+        ],
+        "SS_comic": [
+
         ]
     },
     "ELSE_IF_CHK_POINT": {
@@ -16500,6 +16505,9 @@ const CMD = {
         "LS_comic": [
             "COMIC121.BIN",
             "COMIC706.BIN"
+        ],
+        "SS_comic": [
+
         ]
     },
     "END_CHK_POINT": {
@@ -19163,11 +19171,17 @@ const CMD = {
     },
     "ONE_TRACK_DRIFT": {
         "num": 199,
-        "description": "指定車両を単線ドリフトさせる" + newLine
+        "description": "【LS】指定車両を単線ドリフトさせる" + newLine
+                    + "【SSから】指定車両を単線ドリフトさせる。それが出来ない車両の場合、普通にドリフトさせる。" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：-1(左）、0（戻し）、1（右）",
+                    + "引数２：" + newLine
+                    + "　【LS】-1(左）、0（戻し）、1（右）" + newLine
+                    + "　【SSから】-1(左）、1（右）",
         "LS_comic": [
             "COMIC714.BIN"
+        ],
+        "SS_comic": [
+
         ]
     },
     "LAST_STATION": {
@@ -28035,7 +28049,10 @@ const CMD = {
         "num": 442,
         "description": "CPUブレーキを設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：スピード"
+                    + "引数２：スピード",
+        "SS_comic": [
+
+        ]
     },
     "AMB_ANIME": {
         "num": 443,
@@ -28576,7 +28593,10 @@ const CMD = {
         "description": "指定車両の雨SEを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：Volume" + newLine
-                    + "引数３：変化時間（フレーム）"
+                    + "引数３：変化時間（フレーム）",
+        "SS_comic": [
+
+        ]
     },
     "TRAIN_STOP": {
         "num": 477,
@@ -28761,7 +28781,10 @@ const CMD = {
         "num": 487,
         "description": "レールのpriorityを設定する" + newLine
                     + "引数１：レールindex" + newLine
-                    + "引数２：レールindex"
+                    + "引数２：レールindex",
+        "SS_comic": [
+
+        ]
     },
     "GET_KEY": {
         "num": 488,
@@ -28771,7 +28794,10 @@ const CMD = {
                     + "引数１：キー条件" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
                     + "引数３：FROM数字" + newLine
-                    + "引数４：FROM数字"
+                    + "引数４：FROM数字",
+        "SS_comic": [
+
+        ]
     },
     "SHOW_LIGHT": {
         "num": 489,
@@ -28963,7 +28989,10 @@ const CMD = {
         "description": "カメラを変える" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
-                    + "引数３：スクリーン番号【SSで引数で渡す場合】"
+                    + "引数３：スクリーン番号【SSで引数で渡す場合】",
+        "SS_comic": [
+
+        ]
     },
     "STOP_TRAIN_SE": {
         "num": 502,
@@ -29018,13 +29047,19 @@ const CMD = {
         "num": 504,
         "description": "指定車両のカラーバリエーションを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：カラーインデックス"
+                    + "引数２：カラーインデックス",
+        "SS_comic": [
+
+        ]
     },
     "LOAD_TRAIN": {
         "num": 505,
         "description": "指定車両を車両インデックスで改めてロードする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス"
+                    + "引数２：車両インデックス",
+        "SS_comic": [
+
+        ]
     },
     "SHOW_BLOCK": {
         "num": 506,
@@ -29549,7 +29584,10 @@ const CMD = {
         "num": 542,
         "description": "【推測】車両位置をアップデート" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：1（True）、0（False）"
+                    + "引数２：1（True）、0（False）",
+        "SS_comic": [
+
+        ]
     },
     "SET_RAILBLOCK_POS": {
         "num": 543,
@@ -29559,7 +29597,10 @@ const CMD = {
                     + "引数３：x座標" + newLine
                     + "引数４：y座標" + newLine
                     + "引数５：z座標" + newLine
-                    + "引数６：変化時間（フレーム）"
+                    + "引数６：変化時間（フレーム）",
+        "SS_comic": [
+
+        ]
     },
     "SET_LIGHT_OVER": {
         "num": 544,
@@ -30113,7 +30154,10 @@ const CMD = {
         "num": 584,
         "description": "ストーリーモードで上り調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）"
+                    + "引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）",
+        "SS_comic": [
+
+        ]
     },
     "IS_ONE_TRACK_DRIFT": {
         "num": 585,
@@ -30129,7 +30173,10 @@ const CMD = {
     "RESET_BLOCK": {
         "num": 586,
         "description": "指定車両の現在位置からブロックをチェックする" + newLine
-                    + "引数１：0（1P）、1（2P）"
+                    + "引数１：0（1P）、1（2P）",
+        "SS_comic": [
+
+        ]
     },
     "IS_BTLMODE_END_CHK": {
         "num": 587,
