@@ -25062,7 +25062,7 @@ const CMD = {
         "description": "指定の車両が指定時間内に、指定の動きをした場合、引数４のFROMまで飛ぶ" + newLine
                     + "そうではない場合、引数５のFROMまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：【推定】" + newLine
+                    + "引数２：【推定(RSまで)】" + newLine
                     + "　0（複線ドリフト）" + newLine
                     + "　1（右ドリフト）" + newLine
                     + "　2（左ドリフト）" + newLine
@@ -25072,8 +25072,13 @@ const CMD = {
                     + "　6（土讃線）" + newLine
                     + "　7（左片輪ドリフト）" + newLine
                     + "　8（右片輪ドリフト）" + newLine
-                    + "　9（後輪ドリフト、SSは車両がジャンプしてない）" + newLine
+                    + "　9（後輪ドリフト）" + newLine
                     + "　10（片輪ドリフト戻し）" + newLine
+                    + "【SSから】" + newLine
+                    + "　3（振り子）" + newLine
+                    + "　4（転線、ドリフト、後輪、単線）" + newLine
+                    + "　8（右片輪ドリフト）" + newLine
+                    + "　9（車両がジャンプしてない）" + newLine
                     + "引数３：指定時間（フレーム）" + newLine
                     + "引数４：FROM数字" + newLine
                     + "引数５：FROM数字",
