@@ -14784,7 +14784,7 @@ const CMD = {
     },
     "TO_RAIL": {
         "num": 125,
-        "description": "指定車両を指定レールに置く" + newLine
+        "description": "指定車両を指定レールに置く。置く位置は次のレールに繋がっている必要がある" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：レール番号" + newLine
                     + "引数３：ボーン番号" + newLine
@@ -29059,7 +29059,10 @@ const CMD = {
     },
     "LOAD_TRAIN": {
         "num": 505,
-        "description": "指定車両を車両インデックスで改めてロードする" + newLine
+        "description": "指定車両を車両インデックスで改めてロードする。" + newLine
+                    + "ロードした車両は必ずSLEEP_TRAIN状態になる。" + newLine
+                    + "そのままロードするとレールの外側に置かれる確率が高いため、" + newLine
+                    + "速度を与えて、ちょっと進める必要がある。" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：車両インデックス",
         "SS_comic": [
