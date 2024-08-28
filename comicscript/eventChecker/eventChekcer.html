@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>コミックスクリプトの位置の仕様書</title>
+    </head>
+    <style>
+        td {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <h1>コミックスクリプトの位置の仕様書</h1>
+        <div>
+            これは、コミックスクリプトのイベントが<br>
+            どの範囲まで達すれば発動するかを分析した仕様書である。
+        </div>
+        <br>
+        <div>
+            タイトルは、「コミックスクリプト」と書いているが<br>
+            <b>「駅名表示」、「CPU切り替え」、「RainChecker」、「ゴール判定」</b><br>
+            のイベントにも同じく適用される。
+        </div>
+        <br>
+        <div>
+            イベントをチェックするためのクラス「EventChecker」は、<br>
+            当たり判定に使う「HitChecker」を継承しており、<br>
+            その当たり判定の方法は、四角いボックスに触れると発動する<br>
+            Unityの「BoxCollider」で判定する。
+        </div>
+        <br>
+        <img src="./image/mBox.png"><br>
+        <br>
+        <div>
+            BoxColliderは、長さが100の立方体として定義されている。<br>
+            中心位置は初期値が（0, 0, 50）で定義されているが<br>
+        </div>
+        <br>
+        <img src="./image/mBox1.png" width="500px;"><br>
+        <div>
+            これは、あるオブジェクトにBoxColliderをアタッチした場合<br>
+            初期位置は図のように、Boxの中心位置をオブジェクトの位置基準に設定するため<br>
+            あるレールの始端から反応させるために、Z方向へ+50する。
+        </div>
+        <hr>
+        <div>
+            ただ、これはUnityの仕様なのかバグなのか分からないが注意点がある。
+        </div>
+        <br>
+        <img src="./image/mBox2.png" width="500px;"><br>
+        <div>
+            もし、BoxColliderがこのように<b>ワールド座標基準</b>で回転している場合
+        </div>
+        <br>
+        <img src="./image/mBox3.png"><br>
+        <div>
+            当たり判定は、図にように赤い枠になり、もっと広くなる。
+        </div>
+        <br>
+        <img src="./image/mBox4.png" width="800px;"><br>
+        <div>
+            実際にテストしてみると、オブジェクトは明らかにBoxColliderの外側にあるように見えるが<br>
+            下のDebug画面では、BoxColliderにヒットしていると、ずっとログが出る。<br>
+            ゆえに、回転させると当たり判定がもっと広がる。
+        </div>
+        <hr>
+        <div>
+            宝塚線が下記のようにコミックスクリプトが定義されている場合
+        </div>
+        <br>
+        <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>index</th>
+                        <th>番号</th>
+                        <th>タイプ</th>
+                        <th>レール</th>
+                        <th>オフセット</th>
+                        <th>※コメント</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6">・・・</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>2990</td>
+                        <td>3</td>
+                        <td>798</td>
+                        <td>0</td>
+                        <td>//ゴール</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">・・・</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <img src="./image/goal.png" width="500px;"><br>
+        <br>
+        <div>
+            ゴール判定は、798レール基準にZ方向へ50ほどずらした<br>
+            上記の図のような範囲がゴール・・・と思うが
+        </div>
+        <br>
+        <img src="./image/goal2.png" width="500px;"><br>
+        <br>
+        <div>
+            上記で説明したように、回転しているので図のように範囲になる。<br>
+            つまり、梅田駅の9番以外ゴール判定になる。
+        </div>
+        <br>
+        <img src="./image/goal3.png" width="700px;"><br>
+        <br>
+        <div>
+            実際に、レール位置を変えてやってみると、<br>
+            ここのみ全くゴール判定にならないことが分かる。
+        </div>
+    </body>
+</html>
