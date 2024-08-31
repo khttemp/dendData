@@ -1,0 +1,98 @@
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>CPUの位置判定・距離測定の仕様書</title>
+        <script src="../js/angular.min.js"></script>
+        <script src="./checkLength.js"></script>
+    </head>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 5px 15px;
+        }
+
+        td {
+            padding-left: 12px;
+            padding-right: 12px;
+            text-align: center;
+        }
+    </style>
+    <body ng-controller="myCtrl">
+        <h1>CPUの位置判定・距離測定の仕様書</h1>
+        <div>
+            これは、CHK_POSTION（CPUが自分より前か後ろかの判定）と<br>
+            CHK_LENGTH（CPUと自分がどれほど離れているかの測定）を分析した仕様書である。
+        </div>
+        <br>
+        <img src="./image/box1.png"><br>
+        <br>
+        <div>
+            まず、この二つの判定は「BoxCollider」を使う。<br>
+            中心座標はデフォルトの（0, 0, 0）だけど<br>
+            XYZのサイズが（50000, 1, 0.01）で定義されている
+        </div>
+        <br>
+        <img src="./image/box2.png" width="700px;"><br>
+        <br>
+        <div>
+            つまり、BoxColliderがこのようになっている。
+        </div>
+        <hr>
+        <div>
+        </div>
+        <div>
+            まず、CHK_POSTIONの判定は、基本的に「FJ」と「BodyTopPos」を使って測定する<br><br>
+            FJ：FrontJointの略字と思われる。前方のカプラー<br>
+            BJ：BackJointの略字と思われる。後方のカプラー<br>
+            BodyTopPos：1両目のTopの位置。またこの位置を基準にコミックスクリプトや駅表示などのイベントが発動する<br><br>
+            <div class="box">
+                相手の「BodyTopPos」の位置にBoxColliderを配置し<br>
+                自分の「FJ」の位置からスタートして、車両が向いている向きに<br>
+                最大距離999999までラインを描画する。<br>
+                （厳密は、Y座標を0で変換した位置である。<br>
+                つまり上から見たラインと2次元の四角いColliderと考えても良い）<br>
+                <br>
+                １．ラインがBoxColliderに当たった場合、CPUは自分より前<br>
+                <br>
+                ２．当たってない場合、今度は「FJ」の位置からスタートして、<br>
+                車両の反対方向の向きに、最大距離999999までラインを描画する。<br>
+                ラインがBoxColliderに当たった場合、CPUは自分より後ろ<br>
+                <br>
+                ３．もしこれも当たり判定がなかった場合、下記の方法で再測定する<br>
+                相手の「BodyTopPos」の位置と、自分の「FJ」の距離、「BJ」の距離をそれぞれ測定する。<br>
+                ・もし「FJ」の距離が「BJ」の距離より小さい場合、CPUは自分より前<br>
+                　そうでなければ、CPUは自分より後ろと判定する。<br>
+                ・CPUと自分の距離は「FJ」の距離を使う。
+            </div>
+        </div>
+        <hr>
+        <img src="./image/check1.png" width="700px;"><br>
+        <br>
+        <div>
+            少し極端だけど、プレイヤーは阪急2000系、CPUはX200系<br>
+            それぞれの電車がこのように配置されていると<br>
+        </div>
+        <br>
+        <img src="./image/check2.png" width="700px;"><br>
+        <div>
+            プレイヤーの「FJ」の位置からスタートするライン（赤い線）が<br>
+            相手の「BodyTopPos」の位置にあるBoxColliderに当たっているか判断する。<br>
+            図の場合、当たっているのでCPUが自分より前と判断する。
+        </div>
+        <br>
+        <img src="./image/check3.png" width="700px;"><br>
+        <div>
+            最初の条件で当たったものがなければ、今度は<br>
+            プレイヤーの「FJ」の位置からスタートして逆方向へのライン（赤い線）が<br>
+            相手の「BodyTopPos」の位置にあるBoxColliderに当たっているか判断する。<br>
+            つまり図の場合、当たっているのでCPUが自分より後ろと判断する。
+        </div>
+        <br>
+        <img src="./image/check4.png" width="700px;"><br>
+        <div>
+            また、当たり判定がある場合、距離測定も同時に行われる。<br>
+            図の場合、「FJ」の位置からスタートして、ヒットした点までの距離が<br>
+            CHK_LENGTHで使われる。
+        </div>
+    </body>
+</html>
