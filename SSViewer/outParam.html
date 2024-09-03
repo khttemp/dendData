@@ -1,0 +1,273 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSの片輪走行・脱線の仕様書</title>
+    </head>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 5px 15px;
+        }
+    </style>
+    <body>
+        <h1>SSの片輪走行・脱線の仕様書</h1>
+        <h3>1. BoxColliderの移動</h3>
+        <img src="outParam/Col1.png" width="800px">
+        <br>
+        <div>
+            片輪走行はBoxCollider、現在のスピード、レールを使って判断する。<br>
+            モデルによってそれぞれ違うが、阪急2000系の場合<br>
+            図のようにサイズが（7, 5, 0）の平面のBoxColliderを<br>
+            モデルの中心に配置している。<br>
+            そして、このBoxColliderは速度が増えるとZ方向へ進むようになっており<br>
+            下記の式でZ点を決定する。
+        </div><br>
+        <div class="box">
+            add_pos = m_TrainOrg_Add * m_PrivateSpeedPer * now_speed_per * FPS値(60FPSの場合、およそ1.0)<br>
+            z = add_pos * [車両性能の脱線設定の係数]<br>
+            <br>
+            ※m_PrivateSpeedPerは、普段はおよそ「1.0」の値。クラッシュや自走不能が起きた際に変化する。<br>
+            ※変数の詳細は、<a href="./speedAdd.html">加速の仕様書</a>に書かれている。
+        </div>
+        <br>
+        <div>
+            つまり、160キロで走っていると<br>
+            <br>
+            <div class="box">
+                add_pos = 2.96 * 1.0 * 1.01 * 1.0 = 2.9896<br>
+                z = 2.9896 * 2.9 = 8.66984
+            </div>
+            <br>
+            <img src="outParam/Col2.png" width="800px">
+            <br>
+            図のように、Z方向へ進む。
+        </div>
+        <hr>
+        <h3>2. 現在レールから次のレールまでの「ライン」を定義</h3>
+        <div>
+            次に、1号車の一番前の台車の位置、<br>
+            「現在レール」のボーン位置と、「次のレール」のボーン位置を探す。<br>
+        </div>
+        <br>
+        <img src="outParam/Col3.png" width="800px">
+        <br>
+        <div>
+            つまり、もし現在レールが4番目のボーンにある場合<br>
+            このような直線を描いて
+        </div>
+        <br>
+        <img src="outParam/Col4.png" width="800px">
+        <br>
+        <div>
+            Z方向へ移動したBoxColliderとヒットしているか判断する。<br>
+            もし、ヒットしていない場合<br>
+            <br>
+            <b>1. 速度が遅すぎて、片輪走行しない</b><br>
+            <b>2. 脱線係数が低い</b><br>
+            <br>という意味である。
+        </div>
+        <hr>
+        <h3>3. ヒットした点と「ColL」、「ColR」の距離測定</h3>
+        <div>
+            ヒットしている場合、次はどれほど曲がっているか判断する。<br>
+            レールデータ上「dir_y」が０の場合、続きの処理を行わずに終了する。<br>
+            つまり、当然の話だけど、直線のレールでは片輪走行しない。<br>
+        </div>
+        <br>
+        <img src="outParam/Col5.png" width="800px">
+        <br>
+        <div>
+            直線ではない場合、図のように事前に定義された位置<br>
+            「ColR」と「ColL」のそれぞれの位置から、ヒットしている点までの距離を測定する。<br>
+            <br>
+            図は「ColL」の位置であり、阪急2000系の場合<br>
+            「ColL」は（-3.5, 0, 0）、<br>
+            「ColR」は（3.5, 0, 0）の位置と定義している。
+        </div>
+        <br>
+        <img src="outParam/Col6.png" width="800px">
+        <br>
+        <div>
+            曲がっている場合、ヒットする点は<br>
+            BoxColliderの中心位置からちょっとずれる。<br>
+            <br>
+            このヒット位置から、それぞれの「ColL」、「ColR」の距離を測定すると<br>
+            図の場合、「ColL」の方が距離が長い。
+        </div>
+        <br>
+        <div>
+            これを元に、下記の式を計算する。<br>
+            <br>
+            <div class="box">
+                LLen = 「ColL」とヒットした点までの距離<br>
+                RLen = 「ColR」とヒットした点までの距離<br>
+                m_RailOutParam = (LLen - RLen) * [Carbe]
+            </div>
+            <br>
+            結果値の「m_RailOutParam」は、<b>1フレーム分、あるレールでの「瞬間脱線値」</b>である。<br>
+        </div>
+        <hr>
+        <h3>4. m_RailOutParamの補正①（カント、振り子）</h3>
+        <div>
+            あるレールの角度Z（Rotate Z）の値が０ではない場合、補正が行われる。<br>
+            ただし、Z値が-180より低い場合、360を加えた値。<br>
+            180より高い場合、360を引いた値を使う。<br>
+            整理すると、<b>(-180~180)の範囲で変換した角度Zの値</b>を使う。<br>
+            <br>
+            使うZの値は、現在レールの<b>一番最初に踏んだボーンの「Zの値」</b>を使う。<br>
+            つまり、正方向の場合は、あるレールの1番目のボーン<br>
+            逆方向の場合は、あるレールの最後のボーンの「Zの値」を使う。
+        </div>
+        <br>
+        <div>
+            取得したZの値で、下記のように補正する<br>
+            <br>
+            <div class="box">
+                ※振り子の数は、左側に曲げると「-1」ずつ、右側に曲げると「+1」ずつ増える<br>
+                <br>
+                1. m_RailOutParamの値が(-0.01 ~ 0.01)の場合は補正を行わない。<br>
+                正方向基準、m_RailOutParamの値が-0.01より小さい場合は、2番の処理<br>
+                m_RailOutParamの値が0.01より大きい場合、3番の処理を実施する。<br>
+                <br>
+                <br>
+                2-1. 左側に傾く場合<br>
+                m_RailOutParam = m_RailOutParam + (Zの値 * [カントの係数])<br>
+                <br>
+                2-2. もし、振り子車両で、振り子状態の場合<br>
+                m_RailOutParam = m_RailOutParam + ([曲げた振り子の数] * [振り子角度])<br>
+                <br>
+                2-3. 最終的に補正したm_RailOutParamの値が、0より大きい場合、<b>0で処理する</b><br>
+                <br>
+                <br>
+                3-1. 右側に傾く場合<br>
+                m_RailOutParam = m_RailOutParam + (Zの値 * [カントの係数])<br>
+                <br>
+                3-2. もし、振り子車両で、振り子状態の場合<br>
+                m_RailOutParam = m_RailOutParam + ([曲げた振り子の数] * [振り子角度])<br>
+                <br>
+                3-3. 最終的に補正したm_RailOutParamの値が、0より小さい場合、<b>0で処理する</b><br>
+                <br>
+                <br>
+                もし、逆方向の場合は、処理の順番が「2番→3番」に、「3番→2番」になる。
+            </div>
+            <br>
+        </div>
+        <hr>
+        <h3>5. m_RailOutParamの補正②（ドリフト）</h3>
+        <div>
+            もし、今ドリフト中なら、下記のように補正する<br>
+            <br>
+            <div class="box">
+                m_RailOutParam = m_RailOutParam * 0.05
+            </div>
+            <br>
+            この処理のおかげで、ドリフト中はほぼ脱線しない。
+        </div>
+        <hr>
+        <h3>6. m_RailOutParamの補正③（ブレーキ、最大脱線値）</h3>
+        <div>
+            もし、ブレーキを入れた場合、下記のように補正する<br>
+            <br>
+            <div class="box">
+                m_RailOutParam = m_RailOutParam * [車両性能のブレーキ時、脱線値上昇を軽減]
+            </div>
+            <br>
+            最終的に「m_RailOutParam」の絶対値が、[車両性能の最大脱線値]を超える場合は<br>
+            m_RailOutParamは、[車両性能の最大脱線値]として処理する。
+        </div>
+        <hr>
+        <h3>7. 片輪走行するための式</h3>
+        <div>
+            次の変数を使って、片輪走行をするか判断する。<br>
+            <br>
+            <div class="box">
+                NowOutRun = [車両性能のOutParam] * m_DriftAddPer * m_Drift2Per<br>
+                ※変数の詳細は、<a href="./speedAdd.html">加速の仕様書</a>を参照<br>
+                <br>
+                FitPer = 普段は「1.0」で定義。コミックスクリプト「FIT_PER」によって変化する。<br>
+                <br>
+                m_OutParam = m_OutParam + (m_RailOutParam * GameSpeed)<br>
+                ※GameSpeedは普段は「1.0」で定義。コミックスクリプト「CHANGE_SPEED」によって変化する<br>
+                <br>
+                m_OutPer = m_OutParam * FitPer / NowOutRun
+            </div>
+            <br>
+            この時、m_OutPerが0.25より大きい場合、右側に片輪走行し始め<br>
+            -0.25より小さい場合、左側に片輪倉庫し始める<br>
+            <br>
+            また、コミックスクリプトのイベントなどによって、ゲーム速度が遅くなる場合、<br>
+            瞬間脱線値が低くなり、ある程度脱線を抑える効果がある。
+        </div>
+        <hr>
+        <h3>8. 脱線するための式</h3>
+        <div>
+            上記の式によって、瞬間脱線値の「m_RailOutParam」が蓄積された「m_OutParam」の絶対値が、<br>
+            NowOutRun以上になった瞬間、脱線する。
+        </div>
+        <hr>
+        <h2>整理</h2>
+        <div>
+            ここまで読んでくれてお疲れ様。<br>
+            図で整理すると
+        </div>
+        <br>
+        <img src="outParam/m1.png" width="800px">
+        <div>
+            計算した、瞬間脱線値を求め<br>
+            （※カント、振り子などで補正され）
+        </div>
+        <br>
+        <img src="outParam/m2.png" width="800px">
+        <div>
+            この瞬間脱線値は、[車両性能の最大脱線値]により補正され
+        </div>
+        <br>
+        <img src="outParam/m3.png" width="800px">
+        <div>
+            この値が蓄積されて、ゲージの0.25より大きくなると、片輪走行し始め<br>
+            ゲージがMaxになると脱線する。
+        </div>
+        <hr>
+        表で整理すると、このような関係になる。<br>
+        <br>
+        <table border="1">
+            <thead>
+                <th>性能名</th>
+                <th>デフォルト値から小さくする</th>
+                <th>デフォルト値から大きくする</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Carbe</td>
+                    <td>瞬間脱線値が小さくなる</td>
+                    <td>瞬間脱線値が大きくなる</td>
+                </tr>
+                <tr>
+                    <td>OutParam</td>
+                    <td>ゲージが小さくなったため、ほぼ即脱線する</td>
+                    <td>ゲージが大きくなったため、中々脱線しない</td>
+                </tr>
+                <tr>
+                    <td>TrackOutPer<br>（脱線係数）</td>
+                    <td>ヒットさせるBoxColliderが中々Z軸へ進まない<br>→高い速度でも中々片輪走行しない</td>
+                    <td>ヒットさせるBoxColliderが容易くZ軸へ進む<br>→低い速度でもすぐ片輪走行し始める</td>
+                </tr>
+                <tr>
+                    <td>TrackKntPer<br>（カントの係数）</td>
+                    <td>カントの影響があまりないため、<br>瞬間脱線値が少しだけ小さくなる</td>
+                    <td>カントの影響が大きくなったため、<br>瞬間脱線値がかなり小さくなる</td>
+                </tr>
+                <tr>
+                    <td>Breake_Out_Pow<br>（ブレーキ時、脱線値上昇を軽減）</td>
+                    <td>瞬間脱線値がかなり軽減される。</td>
+                    <td>・1以下の場合、瞬間脱線値があまり軽減されない。<br>・1以上の場合、むしろ上昇する</td>
+                </tr>
+                <tr>
+                    <td>MaxOutParam<br>（1フレーム最大脱線値）</td>
+                    <td>蓄積される最大脱線値が小さくなる<br>→中々脱線しない</td>
+                    <td>蓄積される最大脱線値が大きくなる<br>→脱線しなかったところも脱線する可能性がある</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
