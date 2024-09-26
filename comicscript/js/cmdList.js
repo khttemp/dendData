@@ -3,6 +3,7 @@ angular.module('myApp', [])
         $scope.cmdInfoList = [];
         $scope.modelCheck = true;
         $scope.allNotUsed = true;
+        $scope.notDefined = true;
 
         let cmdKeys = Object.keys(CMD);
         for (let i = 0; i < cmdKeys.length; i++) {
@@ -11,6 +12,9 @@ angular.module('myApp', [])
             let cmdInfo = {};
             let cmdUsedList = [];
             let cmdSeries = "comic";
+            if (CMD[cmdKey]["description"] == NOT_DEFINED) {
+                cmdSeries = "notDefined";
+            }
             if (CMD[cmdKey]["description"].indexOf("【モデルバイナリ】") != -1) {
                 cmdSeries = "model";
             }
@@ -55,6 +59,7 @@ angular.module('myApp', [])
         $scope.myFilter = function(item) {
             let modelCheckFlag = true;
             let allNotUsedFlag = true;
+            let notDefinedFlag = true;
             let lsFlag = true;
             let bsFlag = true;
             let csFlag = true;
@@ -63,6 +68,7 @@ angular.module('myApp', [])
             let cmdNameFlag = true;
             if (!$scope.modelCheck && 
                 !$scope.allNotUsed &&
+                !$scope.notDefined &&
                 !$scope.LSCheck &&
                 !$scope.BSCheck &&
                 !$scope.CSCheck &&
@@ -79,6 +85,11 @@ angular.module('myApp', [])
             if ($scope.allNotUsed) {
                 if (item.cmdUsedList.join("") == "") {
                     allNotUsedFlag = false;
+                }
+            }
+            if ($scope.notDefined) {
+                if (item.cmdSeries == "notDefined") {
+                    notDefinedFlag = false;
                 }
             }
 
@@ -115,6 +126,7 @@ angular.module('myApp', [])
 
             if (modelCheckFlag && 
                 allNotUsedFlag &&
+                notDefinedFlag &&
                 lsFlag &&
                 bsFlag &&
                 csFlag &&

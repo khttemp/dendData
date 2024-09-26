@@ -1,8 +1,11 @@
+const NOT_DEFINED = "未定義のコマンド";
 const newLine = "<br>";
 const CMD = {
     "Tx": {
         "num": 0,
-        "description": "【モデルバイナリ】画像をロードする" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "画像をロードする" + newLine
                     + "引数１：画像サイズ情報のインデックス",
         "LS_bin": [
             "BTL_04.BIN",
@@ -25,7 +28,9 @@ const CMD = {
     },
     "TxSize": {
         "num": 1,
-        "description": "【モデルバイナリ】画像のサイズを変える" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "画像のサイズを変える" + newLine
                     + "引数１：from横の倍率" + newLine
                     + "引数２：from縦の倍率" + newLine
                     + "引数３：to横の倍率" + newLine
@@ -52,7 +57,9 @@ const CMD = {
     },
     "Alpha": {
         "num": 2,
-        "description": "【モデルバイナリ】画像のAlphaを変える" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "画像のAlphaを変える" + newLine
                     + "引数１：from_Alphaの値" + newLine
                     + "引数２：to_Alphaの値" + newLine
                     + "引数３：引数１から　引数２まで変化する時間（フレーム）",
@@ -80,7 +87,9 @@ const CMD = {
     },
     "End": {
         "num": 3,
-        "description": "【モデルバイナリ】コマンドを終了する",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "コマンドを終了する",
         "LS_bin": [
             "COUNT.BIN",
             "OP_ANIME.BIN",
@@ -101,10 +110,12 @@ const CMD = {
     },
     "Pos": {
         "num": 4,
-        "description": "【モデルバイナリ】画面中央を基準に画像を移動させる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "画面中央を基準に画像を移動させる" + newLine
                     + "引数１：移動させるx座標" + newLine
                     + "引数２：移動させるy座標" + newLine
-                    + "引数３：詳細不明（０）",
+                    + "引数３：詳細不明。z座標と思われるが効果なし（０）",
         "LS_bin": [
             "BTL_04.BIN",
             "CHARSEL.BIN",
@@ -127,11 +138,13 @@ const CMD = {
     },
     "ColorALL": {
         "num": 5,
-        "description": "【モデルバイナリ】画像のカラーを変える" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "画像のカラーを変える" + newLine
                     + "引数１：R(0~255)" + newLine
                     + "引数２：G(0~255)" + newLine
                     + "引数３：B(0~255)" + newLine
-                    + "引数４：詳細不明（０）",
+                    + "引数４：変化方法（０）",
         "LS_bin": [
             "CHARSEL.BIN",
             "COUNT.BIN",
@@ -150,10 +163,12 @@ const CMD = {
     },
     "Move": {
         "num": 6,
-        "description": "【モデルバイナリ】画像を現在位置から移動させる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "画像を現在位置から移動させる" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
-                    + "引数３：詳細不明（０）" + newLine
+                    + "引数３：詳細不明。z座標と思われるが効果なし（０）" + newLine
                     + "引数４：移動するまで変化する時間（フレーム）",
         "LS_bin": [
             "TITLE_LOGO.BIN"
@@ -161,7 +176,8 @@ const CMD = {
     },
     "STAGE_BGM": {
         "num": 7,
-        "description": "ステージBGMの1番目を再生する",
+        "description": "ステージBGMの1番目を再生する" + newLine
+                    + "【LS】",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC400.BIN",
@@ -192,15 +208,17 @@ const CMD = {
     },
     "SetFlat3D": {
         "num": 8,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "ChangeFlat3D": {
         "num": 9,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SetCamDir": {
         "num": 10,
-        "description": "【モデルバイナリ】詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルを見えるようにする",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ],
@@ -224,11 +242,15 @@ const CMD = {
     },
     "DisCamDir": {
         "num": 11,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルを見えないようにする",
     },
     "Set3DObj": {
         "num": 12,
-        "description": "【モデルバイナリ】SMFを置く" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "SMFを置く" + newLine
                     + "引数１：SMF情報インデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -291,18 +313,36 @@ const CMD = {
     },
     "SetWAngleX": {
         "num": 13,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをワールド座標基準のX軸で回転する" + newLine
+                    + "引数１：X軸の角度(from)" + newLine
+                    + "引数２：X軸の角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
     },
     "SetWAngleY": {
         "num": 14,
-        "description": "【モデルバイナリ】引数１～４：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをワールド座標基準のY軸で回転する" + newLine
+                    + "引数１：Y軸の角度(from)" + newLine
+                    + "引数２：Y軸の角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
         ]
     },
     "SetWAngleZ": {
         "num": 15,
-        "description": "【モデルバイナリ】引数１～４：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをワールド座標基準のZ軸で回転する" + newLine
+                    + "引数１：Z軸の角度(from)" + newLine
+                    + "引数２：Z軸の角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "LS_bin": [
             "BTL_03.BIN",
             "CHARSEL3D.BIN"
@@ -310,46 +350,66 @@ const CMD = {
     },
     "SetLAngleX": {
         "num": 16,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをローカル座標基準のX軸で回転する" + newLine
+                    + "引数１：X軸の角度(from)" + newLine
+                    + "引数２：X軸の角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
     },
     "SetLAngleY": {
         "num": 17,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをローカル座標基準のY軸で回転する" + newLine
+                    + "引数１：Y軸の角度(from)" + newLine
+                    + "引数２：Y軸の角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
     },
     "SetLAngleZ": {
         "num": 18,
-        "description": "【モデルバイナリ】引数１～４：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをローカル座標基準のZ軸で回転する" + newLine
+                    + "引数１：Z軸の角度(from)" + newLine
+                    + "引数２：Z軸の角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
         ]
     },
     "SetBoneWAngleX": {
         "num": 19,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SetBoneWAngleY": {
         "num": 20,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SetBoneWAngleZ": {
         "num": 21,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SetBoneLAngleX": {
         "num": 22,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SetBoneLAngleY": {
         "num": 23,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SetBoneLAngleZ": {
         "num": 24,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "ShowMesh": {
         "num": 25,
-        "description": "【モデルバイナリ】メッシュを表示する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "メッシュを表示する" + newLine
                     + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -408,7 +468,9 @@ const CMD = {
     },
     "HideMesh": {
         "num": 26,
-        "description": "【モデルバイナリ】メッシュを非表示する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "メッシュを非表示する" + newLine
                     + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -483,14 +545,21 @@ const CMD = {
     },
     "PlayAnime": {
         "num": 27,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "アニメが定義されているモデルのアニメを実行する" + newLine
+                    + "引数１：モデルのアニメインデックス" + newLine
+                    + "引数２：繰り返す回数。-1を指定すると無限に繰り返す",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "Length_End": {
         "num": 28,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで置いたモデルの描画距離を設定する" + newLine
+                    + "引数１：描画距離",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -518,7 +587,21 @@ const CMD = {
     },
     "SetScall": {
         "num": 29,
-        "description": "【モデルバイナリ】引数１～１０：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで置いたモデルのScaleを変える" + newLine
+                    + "引数１：あるセクションでSet3DObjを置いた際のインデックス" + newLine
+                    + "引数２：X方向のScale(from)" + newLine
+                    + "引数３：X方向のScale(to)" + newLine
+                    + "引数４：X方向の変化時間（フレーム）" + newLine
+                    + "引数５：あるセクションでSet3DObjを置いた際のインデックス" + newLine
+                    + "引数６：Y方向のScale(from)" + newLine
+                    + "引数７：Y方向のScale(to)" + newLine
+                    + "引数８：Y方向の変化時間（フレーム）" + newLine
+                    + "引数９：あるセクションでSet3DObjを置いた際のインデックス" + newLine
+                    + "引数１０：Z方向のScale(from)" + newLine
+                    + "引数１１：Z方向のScale(to)" + newLine
+                    + "引数１２：Z方向の変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "SCENE3DOBJ.BIN"
@@ -537,7 +620,8 @@ const CMD = {
     },
     "RACE_START": {
         "num": 30,
-        "description": "バトルを始める",
+        "description": "【LS】" + newLine
+                    + "バトルを始める",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC700.BIN"
@@ -584,7 +668,9 @@ const CMD = {
     },
     "RACE_END": {
         "num": 31,
-        "description": "バトルが終わる",
+        "description": "【LS】" + newLine
+                    + "バトルが終わる" + newLine
+                    + "※RSまでの旧作は、モデルバイナリ専用コマンド",
         "LS_bin": [
             "COUNT.BIN"
         ],
