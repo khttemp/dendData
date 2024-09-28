@@ -30,7 +30,7 @@ const CMD = {
         "num": 1,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "画像のサイズを変える" + newLine
+                    + "Txで表示した画像のサイズを変える" + newLine
                     + "引数１：from横の倍率" + newLine
                     + "引数２：from縦の倍率" + newLine
                     + "引数３：to横の倍率" + newLine
@@ -59,7 +59,7 @@ const CMD = {
         "num": 2,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "画像のAlphaを変える" + newLine
+                    + "Txで表示した画像のAlphaを変える" + newLine
                     + "引数１：from_Alphaの値" + newLine
                     + "引数２：to_Alphaの値" + newLine
                     + "引数３：引数１から　引数２まで変化する時間（フレーム）",
@@ -140,7 +140,7 @@ const CMD = {
         "num": 5,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "画像のカラーを変える" + newLine
+                    + "Txで表示した画像のカラーを変える" + newLine
                     + "引数１：R(0~255)" + newLine
                     + "引数２：G(0~255)" + newLine
                     + "引数３：B(0~255)" + newLine
@@ -165,7 +165,7 @@ const CMD = {
         "num": 6,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "画像を現在位置から移動させる" + newLine
+                    + "Txで表示した画像を現在位置から移動させる" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
                     + "引数３：詳細不明。z座標と思われるが効果なし（０）" + newLine
@@ -176,8 +176,8 @@ const CMD = {
     },
     "STAGE_BGM": {
         "num": 7,
-        "description": "ステージBGMの1番目を再生する" + newLine
-                    + "【LS】",
+        "description": "【LS】" + newLine
+                    + "ステージBGMの1番目を再生する",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC400.BIN",
@@ -689,7 +689,7 @@ const CMD = {
     },
     "FADE_STAGE_BGM": {
         "num": 32,
-        "description": "今再生中のBGMをフェードアウトする",
+        "description": NOT_DEFINED,
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -705,8 +705,9 @@ const CMD = {
     },
     "CHANGE_SCENE": {
         "num": 33,
-        "description": "フェードアウトしてシーンを変える（メニューに戻るなど）" + newLine
-                    + "引数１：詳細不明（０）",
+        "description": "【LS】" + newLine
+                    + "フェードアウトしてシーンを変える（メニューに戻るなど）" + newLine
+                    + "引数１：詳細不明。未使用と思われる",
         "LS_comic": [
             "COMIC012.BIN",
             "COMIC209.BIN",
@@ -803,7 +804,12 @@ const CMD = {
     },
     "LPos": {
         "num": 34,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをローカル座標基準ですぐ移動させる" + newLine
+                    + "引数１：移動させるx座標" + newLine
+                    + "引数２：移動させるy座標" + newLine
+                    + "引数３：移動させるz座標",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "OP_ANIME.BIN",
@@ -816,11 +822,16 @@ const CMD = {
     },
     "LMove": {
         "num": 35,
-        "description": ""
+        "description": NOT_DEFINED,
     },
     "LLoopX": {
         "num": 36,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをローカル座標のX方向へのループ移動を設定する" + newLine
+                    + "引数１：X座標(from)" + newLine
+                    + "引数２：X座標(to)" + newLine
+                    + "引数３：変化時間（フレーム）",
         "LS_bin": [
             "SELECTSCENE.BIN",
             "TITLE_MENU.BIN"
@@ -828,7 +839,12 @@ const CMD = {
     },
     "LLoopY": {
         "num": 37,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをローカル座標のY方向へのループ移動を設定する" + newLine
+                    + "引数１：Y座標(from)" + newLine
+                    + "引数２：Y座標(to)" + newLine
+                    + "引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "OP_ANIME.BIN"
@@ -836,7 +852,12 @@ const CMD = {
     },
     "LLoopZ": {
         "num": 38,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをローカル座標のZ方向へのループ移動を設定する" + newLine
+                    + "引数１：Z座標(from)" + newLine
+                    + "引数２：Z座標(to)" + newLine
+                    + "引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "OP_ANIME.BIN"
@@ -844,45 +865,73 @@ const CMD = {
     },
     "Angle": {
         "num": 39,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像を回転させる" + newLine
+                    + "引数１：回転角度(from)" + newLine
+                    + "引数２：回転角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "AngleLoop": {
         "num": 40,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像に設定した回転をループさせる" + newLine
+                    + "引数１：回転角度(from)" + newLine
+                    + "引数２：回転角度(to)" + newLine
+                    + "引数３：変化時間（フレーム）",
         "LS_bin": [
             "TITLE_MENU.BIN"
         ]
     },
     "Move2": {
         "num": 41,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像を現在位置から移動させる" + newLine
+                    + "引数１：x座標" + newLine
+                    + "引数２：y座標" + newLine
+                    + "引数３：詳細不明。z座標と思われるが効果なし（０）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "PosX": {
         "num": 42,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像をすぐX方向へ移動させる" + newLine
+                    + "引数１：X座標",
     },
     "PosY": {
         "num": 43,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像をすぐY方向へ移動させる" + newLine
+                    + "引数１：Y座標",
         "LS_bin": [
             "TITLE_MENU.BIN"
         ]
     },
     "PosZ": {
         "num": 44,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像をすぐZ方向へ移動させる（効果なしと思われる）" + newLine
+                    + "引数１：Z座標",
     },
     "PlaySE": {
         "num": 45,
-        "description": "【モデルバイナリ】SEを再生する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "SEを再生する" + newLine
                     + "引数１：SE情報インデックス" + newLine
-                    + "引数２：詳細不明（０）",
+                    + "引数２：SEグループ内のインデックス番号（使われてないと思われる）",
         "LS_bin": [
             "BTL_03.BIN",
             "COUNT.BIN",
@@ -903,7 +952,10 @@ const CMD = {
     },
     "SET_MT_NONE": {
         "num": 46,
-        "description": "【モデルバイナリ】詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで置いたモデルをワールド座標基準で回転情報を初期化する" + newLine
+                    + "（まっすぐに立つ効果になる）",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
