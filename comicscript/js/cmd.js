@@ -6885,7 +6885,7 @@ const CMD = {
         "num": 65,
         "description": "【LS、BS、CS、RS】" + newLine
                     + "5秒カウントを数える" + newLine
-                    + "（COUNT.BINの0-0を使う。CS以後も使えるが、comic2900.BINを代わりに使う）",
+                    + "（COUNT.BINの0-0を使う。CS以後のゲームにも使えるが、カウントはcomic2900.BINを使っている）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC100.BIN",
