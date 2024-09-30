@@ -218,7 +218,7 @@ const CMD = {
         "num": 10,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルを見えるようにする",
+                    + "Set3DObjで配置したモデルを見えるようにする",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ],
@@ -244,7 +244,7 @@ const CMD = {
         "num": 11,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルを見えないようにする",
+                    + "Set3DObjで配置したモデルを見えないようにする",
     },
     "Set3DObj": {
         "num": 12,
@@ -315,7 +315,7 @@ const CMD = {
         "num": 13,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをワールド座標基準のX軸で回転する" + newLine
+                    + "Set3DObjで配置したモデルをワールド座標基準のX軸で回転する" + newLine
                     + "引数１：X軸の角度(from)" + newLine
                     + "引数２：X軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -325,7 +325,7 @@ const CMD = {
         "num": 14,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをワールド座標基準のY軸で回転する" + newLine
+                    + "Set3DObjで配置したモデルをワールド座標基準のY軸で回転する" + newLine
                     + "引数１：Y軸の角度(from)" + newLine
                     + "引数２：Y軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -338,7 +338,7 @@ const CMD = {
         "num": 15,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをワールド座標基準のZ軸で回転する" + newLine
+                    + "Set3DObjで配置したモデルをワールド座標基準のZ軸で回転する" + newLine
                     + "引数１：Z軸の角度(from)" + newLine
                     + "引数２：Z軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -352,7 +352,7 @@ const CMD = {
         "num": 16,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをローカル座標基準のX軸で回転する" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標基準のX軸で回転する" + newLine
                     + "引数１：X軸の角度(from)" + newLine
                     + "引数２：X軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -362,7 +362,7 @@ const CMD = {
         "num": 17,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをローカル座標基準のY軸で回転する" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標基準のY軸で回転する" + newLine
                     + "引数１：Y軸の角度(from)" + newLine
                     + "引数２：Y軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -372,7 +372,7 @@ const CMD = {
         "num": 18,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをローカル座標基準のZ軸で回転する" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標基準のZ軸で回転する" + newLine
                     + "引数１：Z軸の角度(from)" + newLine
                     + "引数２：Z軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -558,7 +558,7 @@ const CMD = {
         "num": 28,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで置いたモデルの描画距離を設定する" + newLine
+                    + "Set3DObjで配置したモデルの描画距離を設定する" + newLine
                     + "引数１：描画距離",
         "LS_bin": [
             "BTL_03.BIN",
@@ -589,7 +589,7 @@ const CMD = {
         "num": 29,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで置いたモデルのScaleを変える" + newLine
+                    + "Set3DObjで配置したモデルのScaleを変える" + newLine
                     + "引数１：あるセクションでSet3DObjを実行した際、生成されるインデックス" + newLine
                     + "引数２：X方向のScale(from)" + newLine
                     + "引数３：X方向のScale(to)" + newLine
@@ -806,7 +806,7 @@ const CMD = {
         "num": 34,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをローカル座標基準ですぐ移動させる" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標基準ですぐ移動させる" + newLine
                     + "引数１：移動させるx座標" + newLine
                     + "引数２：移動させるy座標" + newLine
                     + "引数３：移動させるz座標",
@@ -828,7 +828,7 @@ const CMD = {
         "num": 36,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをローカル座標のX方向へのループ移動を設定する" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標のX方向へのループ移動を設定する" + newLine
                     + "引数１：X座標(from)" + newLine
                     + "引数２：X座標(to)" + newLine
                     + "引数３：変化時間（フレーム）",
@@ -841,7 +841,7 @@ const CMD = {
         "num": 37,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをローカル座標のY方向へのループ移動を設定する" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標のY方向へのループ移動を設定する" + newLine
                     + "引数１：Y座標(from)" + newLine
                     + "引数２：Y座標(to)" + newLine
                     + "引数３：変化時間（フレーム）",
@@ -854,7 +854,7 @@ const CMD = {
         "num": 38,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをローカル座標のZ方向へのループ移動を設定する" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標のZ方向へのループ移動を設定する" + newLine
                     + "引数１：Z座標(from)" + newLine
                     + "引数２：Z座標(to)" + newLine
                     + "引数３：変化時間（フレーム）",
@@ -954,7 +954,7 @@ const CMD = {
         "num": 46,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで置いたモデルをワールド座標基準で回転情報を初期化する" + newLine
+                    + "Set3DObjで配置したモデルをワールド座標基準で回転情報を初期化する" + newLine
                     + "（まっすぐに立つ効果になる）",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -14007,7 +14007,7 @@ const CMD = {
         "num": 98,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをワールド座標基準、X方向へ移動する" + newLine
+                    + "Set3DObjで配置したモデルをワールド座標基準、X方向へ移動する" + newLine
                     + "引数１：X方向への距離" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -14020,7 +14020,7 @@ const CMD = {
         "num": 99,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをワールド座標基準、Y方向へ移動する" + newLine
+                    + "Set3DObjで配置したモデルをワールド座標基準、Y方向へ移動する" + newLine
                     + "引数１：Y方向への距離" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -14033,7 +14033,7 @@ const CMD = {
         "num": 100,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "Set3DObjで表示したモデルをワールド座標基準、Z方向へ移動する" + newLine
+                    + "Set3DObjで配置したモデルをワールド座標基準、Z方向へ移動する" + newLine
                     + "引数１：Z方向への距離" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -14979,7 +14979,8 @@ const CMD = {
     },
     "R_Drift": {
         "num": 122,
-        "description": "指定車両を右ドリフトさせる" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両を右ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC404.BIN"
@@ -15006,7 +15007,8 @@ const CMD = {
     },
     "L_Drift": {
         "num": 123,
-        "description": "指定車両を左ドリフトさせる" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両を左ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC404.BIN",
@@ -15033,13 +15035,17 @@ const CMD = {
     },
     "IS_TRAIN_HIT": {
         "num": 124,
-        "description": "【モデルバイナリ】車両でオブジェクトをヒットした場合" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "車両でオブジェクトをヒットした場合。ただしBSでは効果がない" + newLine
                     + "引数１：x範囲" + newLine
                     + "引数２：y範囲" + newLine
                     + "引数３：z範囲" + newLine
                     + "引数４：ANIME要素２" + newLine
                     + "引数５：ANIME要素３" + newLine
-                    + "引数６：ぶつけ判定",
+                    + "引数６：ぶつけ判定" + newLine
+                    + "　LS：3（車両が飛ぶ）、4（ぶつけてドリフト）、その他（何もしない）" + newLine
+                    + "　CS以後：3（車両が飛んで自走不能になる）、その他（何もしない）",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -15053,7 +15059,8 @@ const CMD = {
     },
     "TO_RAIL": {
         "num": 125,
-        "description": "指定車両を指定レールに置く。置く位置は次のレールに繋がっている必要がある" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両を指定レールに置く。置く位置は次のレールに繋がっている必要がある" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：レール番号" + newLine
                     + "引数３：ボーン番号" + newLine
@@ -15159,7 +15166,8 @@ const CMD = {
     },
     "SLEEP_TRAIN": {
         "num": 126,
-        "description": "指定車両を消す" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両を消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
         "LS_comic": [
@@ -15326,7 +15334,9 @@ const CMD = {
     },
     "RandWAngle": {
         "num": 127,
-        "description": "【モデルバイナリ】詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで配置した動くモデルを、ワールド座標基準でランダムに回転させる",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -15334,7 +15344,16 @@ const CMD = {
     },
     "RandMove": {
         "num": 128,
-        "description": "【モデルバイナリ】引数１～６：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで配置したモデルを、ランダムな方向へ移動させる" + newLine
+                    + "引数１：x軸のランダム範囲(1)" + newLine
+                    + "引数２：x軸のランダム範囲(2)" + newLine
+                    + "引数３：z軸のランダム範囲(1)" + newLine
+                    + "引数４：z軸のランダム範囲(2)" + newLine
+                    + "引数５：y軸のランダム範囲(1)" + newLine
+                    + "引数６：y軸のランダム範囲(2)" + newLine
+                    + "引数７：重力の影響度",
         "LS_bin": [
             "BTL_03.BIN",
             "SCENE3DOBJ.BIN"
@@ -15342,15 +15361,24 @@ const CMD = {
     },
     "ADD_OBJ": {
         "num": 129,
-        "description": "【モデルバイナリ】オブジェクトを追加する" + newLine
-                    + "引数１～６：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "モデルのスクリプトから呼ぶスクリプトを追加する。コミックスクリプトでも使える。" + newLine
+                    + "引数１：ANIME要素２" + newLine
+                    + "引数２：ANIME要素３" + newLine
+                    + "引数３：呼び出し元からのx座標。BS以後からは効果なし" + newLine
+                    + "引数４：呼び出し元からのy座標。BS以後からは効果なし" + newLine
+                    + "引数５：呼び出し元からのz座標。BS以後からは効果なし" + newLine
+                    + "引数６：詳細不明",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "START_COMIC": {
         "num": 130,
-        "description": "【モデルバイナリ】コミックスクリプトを実行する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "コミックスクリプトを実行する" + newLine
                     + "引数１：コミックスクリプト番号",
         "LS_bin": [
             "BTL_03.BIN",
