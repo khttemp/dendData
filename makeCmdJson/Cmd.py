@@ -7,13 +7,13 @@ config.read("config.ini")
 
 sys.path.append(config.get("PROGRAM_PATH", "path"))
 
-from cmdList import cmdList
-from railEditor.dendDecrypt.LSdecrypt import RailDecrypt as LSRailDecrypt
-from railEditor.dendDecrypt.BSdecrypt import RailDecrypt as BSRailDecrypt
-from railEditor.dendDecrypt.CSdecrypt import RailDecrypt as CSRailDecrypt
-from railEditor.dendDecrypt.RSdecrypt import RailDecrypt as RSRailDecrypt
-from comicscript.importPy.decrypt import ComicDecrypt
-from mdlBin.importPy.decrypt import MdlBinDecrypt
+from program.cmdList import cmdList
+from program.railEditor.dendDecrypt.LSdecrypt import RailDecrypt as LSRailDecrypt
+from program.railEditor.dendDecrypt.BSdecrypt import RailDecrypt as BSRailDecrypt
+from program.railEditor.dendDecrypt.CSdecrypt import RailDecrypt as CSRailDecrypt
+from program.railEditor.dendDecrypt.RSdecrypt import RailDecrypt as RSRailDecrypt
+from program.comicscript.importPy.decrypt import ComicDecrypt
+from program.mdlBin.importPy.decrypt import MdlBinDecrypt
 
 binPath = config.get("BIN_PATH", "path")
 
@@ -24,17 +24,18 @@ def callCmd(game, cmdJson):
     for file in os.listdir(railPath):
         if "RAIL" not in file:
             continue
+        print("Reading... " + file)
         base, ext = os.path.splitext(file)
         if ext.lower() != ".bin":
             continue
         if game == "LS":
-            decryptFile = LSRailDecrypt(os.path.join(railPath, file), False, False)
+            decryptFile = LSRailDecrypt(os.path.join(railPath, file))
         elif game == "BS":
-            decryptFile = BSRailDecrypt(os.path.join(railPath, file), False, False)
+            decryptFile = BSRailDecrypt(os.path.join(railPath, file))
         elif game == "CS":
-            decryptFile = CSRailDecrypt(os.path.join(railPath, file), False, False)
+            decryptFile = CSRailDecrypt(os.path.join(railPath, file))
         elif game == "RS":
-            decryptFile = RSRailDecrypt(os.path.join(railPath, file), False, False)
+            decryptFile = RSRailDecrypt(os.path.join(railPath, file))
         if not decryptFile.open():
             print(decryptFile.printError())
             sys.exit()
@@ -55,20 +56,20 @@ def callCmd(game, cmdJson):
                 if cmdbin not in d["{0}_comic".format(game)]:
                     d["{0}_comic".format(game)].append(cmdbin)
 
-    if game == "LS":
-        path = "{0}/{1}/script/OP.BIN".format(binPath, game)
-        decryptFile = ComicDecrypt(path, cmdList)
+    comicPath = "{0}/{1}/script".format(binPath, game)
+    for file in os.listdir(comicPath):
+        decryptFile = ComicDecrypt(os.path.join(comicPath, file), cmdList)
         if not decryptFile.open():
             print(decryptFile.printError())
             sys.exit()
 
+        print("Reading Comic... " + file)
         for comicData in decryptFile.comicDataList:
             d = cmdJson[comicData[0]]
-            if "LS_comic" not in d:
-                d["LS_comic"] = []
-            cmdbin = "OP.BIN".format(script[0])
-            if cmdbin not in d["LS_comic"]:
-                d["LS_comic"].append(cmdbin)
+            if "{0}_comic".format(game) not in d:
+                d["{0}_comic".format(game)] = []
+            if file not in d["{0}_comic".format(game)]:
+                d["{0}_comic".format(game)].append(file)
 
     mdlBinPath = "{0}/{1}/bin".format(binPath, game)
     for file in os.listdir(mdlBinPath):
@@ -78,6 +79,7 @@ def callCmd(game, cmdJson):
             print(decryptFile.printError())
             sys.exit()
 
+        print("Reading Bin... " + file)
         for scriptDataInfoList in decryptFile.scriptDataAllInfoList:
             for scriptDataInfo in scriptDataInfoList:
                 if len(scriptDataInfo) > 1:

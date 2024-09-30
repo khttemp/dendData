@@ -990,6 +990,7 @@ const CMD = {
             "COMIC709.BIN",
             "COMIC719.BIN",
             "COMIC717.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ]
     },
@@ -1012,6 +1013,7 @@ const CMD = {
             "COMIC318.BIN",
             "COMIC600.BIN",
             "COMIC700.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ]
     },
@@ -1062,7 +1064,9 @@ const CMD = {
             "COMIC716.BIN",
             "COMIC715.BIN",
             "COMIC902.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC602.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -1080,7 +1084,11 @@ const CMD = {
             "COMIC1500.BIN",
             "COMIC1511.BIN",
             "COMIC1999.BIN",
-            "COMIC1998.BIN"
+            "COMIC1998.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -1225,7 +1233,8 @@ const CMD = {
             "COMIC3999.BIN",
             "COMIC3996.BIN",
             "COMIC3934.BIN",
-            "COMIC3935.BIN"
+            "COMIC3935.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC2900.BIN",
@@ -1452,7 +1461,9 @@ const CMD = {
             "COMIC712.BIN",
             "COMIC716.BIN",
             "COMIC902.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC602.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -1492,7 +1503,14 @@ const CMD = {
             "COMIC1510.BIN",
             "COMIC1511.BIN",
             "COMIC1999.BIN",
-            "COMIC1998.BIN"
+            "COMIC1998.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -1582,7 +1600,9 @@ const CMD = {
             "COMIC2913.BIN",
             "COMIC2914.BIN",
             "COMIC2915.BIN",
-            "COMIC2916.BIN"
+            "COMIC2916.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -1779,7 +1799,13 @@ const CMD = {
             "COMIC3999.BIN",
             "COMIC3996.BIN",
             "COMIC3934.BIN",
-            "COMIC3935.BIN"
+            "COMIC3935.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -2220,7 +2246,9 @@ const CMD = {
             "COMIC716.BIN",
             "COMIC715.BIN",
             "COMIC902.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC602.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -2260,7 +2288,14 @@ const CMD = {
             "COMIC1510.BIN",
             "COMIC1511.BIN",
             "COMIC1999.BIN",
-            "COMIC1998.BIN"
+            "COMIC1998.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -2350,7 +2385,10 @@ const CMD = {
             "COMIC2913.BIN",
             "COMIC2914.BIN",
             "COMIC2915.BIN",
-            "COMIC2916.BIN"
+            "COMIC2916.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -2547,7 +2585,13 @@ const CMD = {
             "COMIC3999.BIN",
             "COMIC3996.BIN",
             "COMIC3934.BIN",
-            "COMIC3935.BIN"
+            "COMIC3935.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -2996,7 +3040,9 @@ const CMD = {
             "COMIC318.BIN",
             "COMIC600.BIN",
             "COMIC601.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC602.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -3031,7 +3077,11 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2009.BIN",
@@ -3093,7 +3143,9 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -3203,7 +3255,12 @@ const CMD = {
             "COMIC3411.BIN",
             "COMIC3477.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -3518,7 +3575,9 @@ const CMD = {
             "COMIC601.BIN",
             "COMIC605.BIN",
             "COMIC700.BIN",
-            "COMIC715.BIN"
+            "COMIC715.BIN",
+            "COMIC602.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -3534,7 +3593,11 @@ const CMD = {
             "COMIC1401.BIN",
             "COMIC1500.BIN",
             "COMIC1511.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -3594,7 +3657,9 @@ const CMD = {
             "COMIC3409.BIN",
             "COMIC3410.BIN",
             "COMIC3411.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -3772,7 +3837,17 @@ const CMD = {
             "COMIC900.BIN",
             "COMIC902.BIN",
             "COMIC901.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC119.BIN",
+            "COMIC309.BIN",
+            "COMIC602.BIN",
+            "COMIC603.BIN",
+            "COMIC604.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -3847,7 +3922,16 @@ const CMD = {
             "COMIC1996.BIN",
             "COMIC1999.BIN",
             "COMIC1998.BIN",
-            "COMIC1997.BIN"
+            "COMIC1997.BIN",
+            "COMIC1021.BIN",
+            "COMIC1109.BIN",
+            "COMIC1201.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -4014,7 +4098,11 @@ const CMD = {
             "COMIC2913.BIN",
             "COMIC2914.BIN",
             "COMIC2915.BIN",
-            "COMIC2916.BIN"
+            "COMIC2916.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2322.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3000.BIN",
@@ -4373,7 +4461,15 @@ const CMD = {
             "COMIC3932.BIN",
             "COMIC3933.BIN",
             "COMIC3934.BIN",
-            "COMIC3935.BIN"
+            "COMIC3935.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3037.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3257.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -4977,6 +5073,8 @@ const CMD = {
             "COMIC717.BIN",
             "COMIC716.BIN",
             "COMIC900.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
@@ -5011,7 +5109,8 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -5075,7 +5174,10 @@ const CMD = {
             "COMIC2436.BIN",
             "COMIC2439.BIN",
             "COMIC2441.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -5187,7 +5289,12 @@ const CMD = {
             "COMIC3411.BIN",
             "COMIC3477.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -5459,7 +5566,8 @@ const CMD = {
             "COMIC120.BIN",
             "COMIC300.BIN",
             "COMIC318.BIN",
-            "COMIC600.BIN"
+            "COMIC600.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -5492,7 +5600,8 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2009.BIN",
@@ -5546,7 +5655,10 @@ const CMD = {
             "COMIC2437.BIN",
             "COMIC2439.BIN",
             "COMIC2441.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -5653,7 +5765,12 @@ const CMD = {
             "COMIC3499.BIN",
             "COMIC3408.BIN",
             "COMIC3411.BIN",
-            "COMIC3900.BIN"
+            "COMIC3900.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -5933,7 +6050,12 @@ const CMD = {
             "COMIC1321.BIN",
             "COMIC1400.BIN",
             "COMIC1401.BIN",
-            "COMIC1511.BIN"
+            "COMIC1511.BIN",
+            "COMIC1201.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -6015,7 +6137,8 @@ const CMD = {
             "COMIC3409.BIN",
             "COMIC3410.BIN",
             "COMIC3411.BIN",
-            "COMIC3900.BIN"
+            "COMIC3900.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3502.BIN",
@@ -6157,7 +6280,8 @@ const CMD = {
             "COMIC318.BIN",
             "COMIC400.BIN",
             "COMIC600.BIN",
-            "COMIC605.BIN"
+            "COMIC605.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -6185,7 +6309,11 @@ const CMD = {
             "COMIC1510.BIN",
             "COMIC1511.BIN",
             "COMIC1999.BIN",
-            "COMIC1998.BIN"
+            "COMIC1998.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -6257,7 +6385,9 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2996.BIN"
+            "COMIC2996.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3002.BIN",
@@ -6326,7 +6456,8 @@ const CMD = {
             "COMIC3409.BIN",
             "COMIC3410.BIN",
             "COMIC3411.BIN",
-            "COMIC3996.BIN"
+            "COMIC3996.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3502.BIN",
@@ -6517,7 +6648,8 @@ const CMD = {
             "COMIC600.BIN",
             "COMIC710.BIN",
             "COMIC712.BIN",
-            "COMIC716.BIN"
+            "COMIC716.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1020.BIN",
@@ -6602,7 +6734,8 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3409.BIN",
             "COMIC3410.BIN",
-            "COMIC3411.BIN"
+            "COMIC3411.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3502.BIN",
@@ -6769,7 +6902,8 @@ const CMD = {
             "COMIC400.BIN",
             "COMIC600.BIN",
             "COMIC605.BIN",
-            "COMIC715.BIN"
+            "COMIC715.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -6924,7 +7058,11 @@ const CMD = {
             "COMIC1400.BIN",
             "COMIC1401.BIN",
             "COMIC1500.BIN",
-            "COMIC1511.BIN"
+            "COMIC1511.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -7035,7 +7173,16 @@ const CMD = {
             "COMIC900.BIN",
             "COMIC902.BIN",
             "COMIC901.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC309.BIN",
+            "COMIC602.BIN",
+            "COMIC603.BIN",
+            "COMIC604.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -7102,7 +7249,16 @@ const CMD = {
             "COMIC1511.BIN",
             "COMIC1999.BIN",
             "COMIC1998.BIN",
-            "COMIC1997.BIN"
+            "COMIC1997.BIN",
+            "COMIC1109.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -7246,7 +7402,11 @@ const CMD = {
             "COMIC2913.BIN",
             "COMIC2914.BIN",
             "COMIC2915.BIN",
-            "COMIC2916.BIN"
+            "COMIC2916.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2322.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3011.BIN",
@@ -7577,7 +7737,13 @@ const CMD = {
             "COMIC3996.BIN",
             "COMIC3995.BIN",
             "COMIC3934.BIN",
-            "COMIC3935.BIN"
+            "COMIC3935.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3257.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -8205,7 +8371,14 @@ const CMD = {
             "COMIC706.BIN",
             "COMIC713.BIN",
             "COMIC705.BIN",
-            "COMIC721.BIN"
+            "COMIC721.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC309.BIN",
+            "COMIC602.BIN",
+            "COMIC603.BIN",
+            "COMIC604.BIN"
         ],
         "BS_comic": [
             "COMIC1106.BIN",
@@ -8369,7 +8542,14 @@ const CMD = {
             "COMIC706.BIN",
             "COMIC713.BIN",
             "COMIC705.BIN",
-            "COMIC721.BIN"
+            "COMIC721.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC309.BIN",
+            "COMIC602.BIN",
+            "COMIC603.BIN",
+            "COMIC604.BIN"
         ],
         "BS_comic": [
             "COMIC1106.BIN",
@@ -8385,7 +8565,8 @@ const CMD = {
             "COMIC3013.BIN",
             "COMIC3119.BIN",
             "COMIC3323.BIN",
-            "COMIC3471.BIN"
+            "COMIC3471.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -8514,7 +8695,11 @@ const CMD = {
             "COMIC706.BIN",
             "COMIC713.BIN",
             "COMIC705.BIN",
-            "COMIC721.BIN"
+            "COMIC721.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC309.BIN"
         ],
         "BS_comic": [
             "COMIC1001.BIN",
@@ -8563,7 +8748,9 @@ const CMD = {
             "COMIC1506.BIN",
             "COMIC1508.BIN",
             "COMIC1509.BIN",
-            "COMIC1510.BIN"
+            "COMIC1510.BIN",
+            "COMIC1109.BIN",
+            "COMIC1111.BIN"
         ],
         "CS_comic": [
             "COMIC2004.BIN",
@@ -8634,7 +8821,8 @@ const CMD = {
             "COMIC2439.BIN",
             "COMIC2440.BIN",
             "COMIC2441.BIN",
-            "COMIC2442.BIN"
+            "COMIC2442.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3011.BIN",
@@ -8776,7 +8964,9 @@ const CMD = {
             "COMIC3420.BIN",
             "COMIC3423.BIN",
             "COMIC3430.BIN",
-            "COMIC3431.BIN"
+            "COMIC3431.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3257.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -9104,7 +9294,14 @@ const CMD = {
             "COMIC706.BIN",
             "COMIC713.BIN",
             "COMIC705.BIN",
-            "COMIC721.BIN"
+            "COMIC721.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC309.BIN",
+            "COMIC602.BIN",
+            "COMIC603.BIN",
+            "COMIC604.BIN"
         ],
         "BS_comic": [
             "COMIC1001.BIN",
@@ -9154,7 +9351,10 @@ const CMD = {
             "COMIC1506.BIN",
             "COMIC1508.BIN",
             "COMIC1509.BIN",
-            "COMIC1510.BIN"
+            "COMIC1510.BIN",
+            "COMIC1021.BIN",
+            "COMIC1109.BIN",
+            "COMIC1111.BIN"
         ],
         "CS_comic": [
             "COMIC2004.BIN",
@@ -9231,7 +9431,8 @@ const CMD = {
             "COMIC2439.BIN",
             "COMIC2440.BIN",
             "COMIC2441.BIN",
-            "COMIC2442.BIN"
+            "COMIC2442.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3011.BIN",
@@ -9383,7 +9584,9 @@ const CMD = {
             "COMIC3420.BIN",
             "COMIC3423.BIN",
             "COMIC3430.BIN",
-            "COMIC3431.BIN"
+            "COMIC3431.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3257.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -9650,7 +9853,8 @@ const CMD = {
             "COMIC400.BIN",
             "COMIC600.BIN",
             "COMIC605.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -9750,7 +9954,8 @@ const CMD = {
             "COMIC3410.BIN",
             "COMIC3411.BIN",
             "COMIC3999.BIN",
-            "COMIC3995.BIN"
+            "COMIC3995.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -9928,6 +10133,8 @@ const CMD = {
             "COMIC700.BIN",
             "COMIC715.BIN",
             "COMIC900.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
@@ -10026,7 +10233,8 @@ const CMD = {
             "COMIC3409.BIN",
             "COMIC3410.BIN",
             "COMIC3411.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -10216,7 +10424,9 @@ const CMD = {
             "COMIC712.BIN",
             "COMIC720.BIN",
             "COMIC716.BIN",
-            "COMIC715.BIN"
+            "COMIC715.BIN",
+            "COMIC602.BIN",
+            "COMIC603.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -10237,7 +10447,11 @@ const CMD = {
             "COMIC1500.BIN",
             "COMIC1511.BIN",
             "COMIC1998.BIN",
-            "COMIC1997.BIN"
+            "COMIC1997.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -10379,7 +10593,8 @@ const CMD = {
             "COMIC3410.BIN",
             "COMIC3411.BIN",
             "COMIC3996.BIN",
-            "COMIC3995.BIN"
+            "COMIC3995.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC2900.BIN",
@@ -10691,7 +10906,8 @@ const CMD = {
         "BS_comic": [
             "COMIC1000.BIN",
             "COMIC1100.BIN",
-            "COMIC1300.BIN"
+            "COMIC1300.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2300.BIN",
@@ -10728,6 +10944,8 @@ const CMD = {
             "COMIC605.BIN",
             "COMIC700.BIN",
             "COMIC715.BIN",
+            "COMIC603.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
@@ -10739,7 +10957,11 @@ const CMD = {
             "COMIC1321.BIN",
             "COMIC1400.BIN",
             "COMIC1401.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -10834,7 +11056,8 @@ const CMD = {
             "COMIC600.BIN",
             "COMIC605.BIN",
             "COMIC700.BIN",
-            "COMIC715.BIN"
+            "COMIC715.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -10844,7 +11067,11 @@ const CMD = {
             "COMIC1321.BIN",
             "COMIC1400.BIN",
             "COMIC1401.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -10935,7 +11162,8 @@ const CMD = {
             "COMIC318.BIN",
             "COMIC600.BIN",
             "COMIC601.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC603.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -10946,7 +11174,11 @@ const CMD = {
             "COMIC1321.BIN",
             "COMIC1400.BIN",
             "COMIC1401.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -11013,7 +11245,9 @@ const CMD = {
             "COMIC600.BIN",
             "COMIC601.BIN",
             "COMIC605.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC602.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -11029,7 +11263,11 @@ const CMD = {
             "COMIC1401.BIN",
             "COMIC1500.BIN",
             "COMIC1511.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -11161,7 +11399,8 @@ const CMD = {
             "COMIC3925.BIN",
             "COMIC3999.BIN",
             "COMIC3934.BIN",
-            "COMIC3935.BIN"
+            "COMIC3935.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3502.BIN",
@@ -11441,7 +11680,13 @@ const CMD = {
             "COMIC900.BIN",
             "COMIC902.BIN",
             "COMIC901.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC602.BIN",
+            "COMIC603.BIN",
+            "COMIC604.BIN"
         ],
         "BS_comic": [
             "COMIC1001.BIN",
@@ -11498,7 +11743,9 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1511.BIN"
+            "COMIC1511.BIN",
+            "COMIC1109.BIN",
+            "COMIC1111.BIN"
         ],
         "CS_comic": [
             "COMIC2004.BIN",
@@ -11583,7 +11830,9 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2443.BIN"
+            "COMIC2443.BIN",
+            "COMIC2322.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3011.BIN",
@@ -11737,7 +11986,9 @@ const CMD = {
             "COMIC3474.BIN",
             "COMIC3475.BIN",
             "COMIC3499.BIN",
-            "COMIC3481.BIN"
+            "COMIC3481.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3257.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -12010,7 +12261,9 @@ const CMD = {
             "COMIC300.BIN",
             "COMIC400.BIN",
             "COMIC600.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -12021,7 +12274,9 @@ const CMD = {
             "COMIC1320.BIN",
             "COMIC1400.BIN",
             "COMIC1500.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -12114,7 +12369,10 @@ const CMD = {
             "COMIC1505.BIN",
             "COMIC1506.BIN",
             "COMIC1509.BIN",
-            "COMIC1510.BIN"
+            "COMIC1510.BIN",
+            "COMIC1111.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN"
         ],
         "CS_comic": [
             "COMIC2003.BIN",
@@ -12318,7 +12576,10 @@ const CMD = {
             "COMIC717.BIN",
             "COMIC716.BIN",
             "COMIC706.BIN",
-            "COMIC705.BIN"
+            "COMIC705.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC119.BIN"
         ],
         "BS_comic": [
             "COMIC1002.BIN",
@@ -12350,7 +12611,9 @@ const CMD = {
             "COMIC1311.BIN",
             "COMIC1402.BIN",
             "COMIC1403.BIN",
-            "COMIC1404.BIN"
+            "COMIC1404.BIN",
+            "COMIC1109.BIN",
+            "COMIC1111.BIN"
         ],
         "CS_comic": [
             "COMIC2005.BIN",
@@ -12387,7 +12650,10 @@ const CMD = {
             "COMIC2302.BIN",
             "COMIC2304.BIN",
             "COMIC2305.BIN",
-            "COMIC2306.BIN"
+            "COMIC2306.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2322.BIN"
         ],
         "RS_comic": [
             "COMIC3011.BIN",
@@ -12520,7 +12786,12 @@ const CMD = {
             "COMIC3470.BIN",
             "COMIC3471.BIN",
             "COMIC3424.BIN",
-            "COMIC3472.BIN"
+            "COMIC3472.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3257.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3509.BIN",
@@ -12771,7 +13042,10 @@ const CMD = {
             "COMIC717.BIN",
             "COMIC716.BIN",
             "COMIC706.BIN",
-            "COMIC705.BIN"
+            "COMIC705.BIN",
+            "COMIC106.BIN",
+            "COMIC107.BIN",
+            "COMIC119.BIN"
         ],
         "BS_comic": [
             "COMIC1002.BIN",
@@ -12802,7 +13076,8 @@ const CMD = {
             "COMIC1311.BIN",
             "COMIC1402.BIN",
             "COMIC1403.BIN",
-            "COMIC1404.BIN"
+            "COMIC1404.BIN",
+            "COMIC1109.BIN"
         ],
         "CS_comic": [
             "COMIC2005.BIN",
@@ -12839,7 +13114,10 @@ const CMD = {
             "COMIC2302.BIN",
             "COMIC2304.BIN",
             "COMIC2305.BIN",
-            "COMIC2306.BIN"
+            "COMIC2306.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2322.BIN"
         ],
         "RS_comic": [
             "COMIC3011.BIN",
@@ -12973,7 +13251,12 @@ const CMD = {
             "COMIC3470.BIN",
             "COMIC3471.BIN",
             "COMIC3424.BIN",
-            "COMIC3472.BIN"
+            "COMIC3472.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3257.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3509.BIN",
@@ -13240,7 +13523,8 @@ const CMD = {
             "COMIC2302.BIN",
             "COMIC2304.BIN",
             "COMIC2305.BIN",
-            "COMIC2306.BIN"
+            "COMIC2306.BIN",
+            "COMIC2322.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -13374,7 +13658,8 @@ const CMD = {
             "COMIC2302.BIN",
             "COMIC2304.BIN",
             "COMIC2305.BIN",
-            "COMIC2306.BIN"
+            "COMIC2306.BIN",
+            "COMIC2322.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -13496,7 +13781,7 @@ const CMD = {
         ],
         // 動作しない
         // "SS_comic": [
-        //     "COMIC42043.BIN" 
+        //     "COMIC42043.BIN"
         // ]
     },
     "END_WAIT_MOTION": {
@@ -13579,7 +13864,8 @@ const CMD = {
             "COMIC716.BIN",
             "COMIC715.BIN",
             "COMIC706.BIN",
-            "COMIC900.BIN"
+            "COMIC900.BIN",
+            "COMIC309.BIN"
         ],
         "BS_comic": [
             "COMIC1007.BIN",
@@ -13601,7 +13887,8 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1511.BIN"
+            "COMIC1511.BIN",
+            "COMIC1111.BIN"
         ],
         "CS_comic": [
             "COMIC2006.BIN",
@@ -13632,7 +13919,8 @@ const CMD = {
             "COMIC2436.BIN",
             "COMIC2439.BIN",
             "COMIC2441.BIN",
-            "COMIC2442.BIN"
+            "COMIC2442.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3029.BIN",
@@ -13688,7 +13976,9 @@ const CMD = {
             "COMIC3433.BIN",
             "COMIC3436.BIN",
             "COMIC3431.BIN",
-            "COMIC3472.BIN"
+            "COMIC3472.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -13919,7 +14209,8 @@ const CMD = {
             "COMIC706.BIN",
             "COMIC900.BIN",
             "COMIC902.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC999.BIN"
         ],
         "CS_comic": [
             "COMIC2437.BIN"
@@ -14209,10 +14500,13 @@ const CMD = {
             "COMIC300.BIN",
             "COMIC318.BIN",
             "COMIC500.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2997.BIN",
@@ -14224,7 +14518,14 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ]
+        ],
+        // コマンド無し
+        // "SS_comic": [
+        //     "COMIC3998.BIN"
+        // ],
+        // "SS_cmn": [
+        //     "COMIC3997.BIN"
+        // ]
     },
     "N_POS": {
         "num": 108,
@@ -14238,6 +14539,7 @@ const CMD = {
             "COMIC200.BIN",
             "COMIC300.BIN",
             "COMIC318.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
@@ -14249,6 +14551,7 @@ const CMD = {
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "ゲーム内でタイム測定を始める",
         "LS_comic": [
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
@@ -14410,10 +14713,12 @@ const CMD = {
                     + "引数６：変化方法",
         "LS_comic": [
             "COMIC318.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2997.BIN",
@@ -14425,7 +14730,14 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ]
+        ],
+        // コマンド無し
+        // "SS_comic": [
+        //     "COMIC3998.BIN"
+        // ],
+        // "SS_cmn": [
+        //     "COMIC3997.BIN"
+        // ]
     },
     "WAIT_TIME_LINE": {
         "num": 111,
@@ -14433,6 +14745,7 @@ const CMD = {
                     + "START_TIME_LINEが始まってから、指定時間まで待つ" + newLine
                     + "引数１：指定時間",
         "LS_comic": [
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
@@ -14591,7 +14904,11 @@ const CMD = {
             "COMIC300.BIN",
             "COMIC318.BIN",
             "COMIC500.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
+        ],
+        "BS_comic": [
+            "COMIC1952.BIN"
         ]
     },
     "SCREEN_FADE": {
@@ -14606,10 +14923,16 @@ const CMD = {
         "LS_comic": [
             "COMIC413.BIN",
             "COMIC500.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN",
             "OP.BIN"
         ],
         "BS_comic": [
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2999.BIN"
@@ -14646,10 +14969,12 @@ const CMD = {
                     + "引数２：ANIME要素２" + newLine
                     + "引数３：ANIME要素３",
         "LS_comic": [
-            "COMIC300.BIN"
+            "COMIC300.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2333.BIN",
@@ -14676,7 +15001,9 @@ const CMD = {
             "COMIC712.BIN",
             "COMIC716.BIN",
             "COMIC902.BIN",
-            "COMIC903.BIN"
+            "COMIC903.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -14688,7 +15015,10 @@ const CMD = {
             "COMIC1320.BIN",
             "COMIC1400.BIN",
             "COMIC1401.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1201.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -14742,7 +15072,8 @@ const CMD = {
             "COMIC3479.BIN",
             "COMIC3480.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3058_.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -14831,7 +15162,9 @@ const CMD = {
             "COMIC500.BIN",
             "COMIC703.BIN",
             "COMIC706.BIN",
-            "COMIC902.BIN"
+            "COMIC902.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ],
         "CS_comic": [
             "COMIC2442.BIN"
@@ -14853,7 +15186,11 @@ const CMD = {
                     + "引数１：シーン番号（０）" + newLine
                     + "引数２：0（ライトを消す）、1（ライトをつける）" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
-                    + "引数４：変化方法"
+                    + "引数４：変化方法",
+        "LS_comic": [
+            "COMIC998.BIN",
+            "COMIC999.BIN"
+        ]
     },
     "CHANGE_CAM_LENGTH": {
         "num": 118,
@@ -14890,7 +15227,8 @@ const CMD = {
             "COMIC720.BIN",
             "COMIC716.BIN",
             "COMIC706.BIN",
-            "COMIC900.BIN"
+            "COMIC900.BIN",
+            "COMIC999.BIN"
         ]
     },
     "CHANGE_CAM_DIRX": {
@@ -14928,7 +15266,8 @@ const CMD = {
             "COMIC720.BIN",
             "COMIC716.BIN",
             "COMIC706.BIN",
-            "COMIC900.BIN"
+            "COMIC900.BIN",
+            "COMIC999.BIN"
         ]
     },
     "CHANGE_CAM_DIRY": {
@@ -14966,7 +15305,8 @@ const CMD = {
             "COMIC720.BIN",
             "COMIC716.BIN",
             "COMIC706.BIN",
-            "COMIC900.BIN"
+            "COMIC900.BIN",
+            "COMIC999.BIN"
         ]
     },
     "CHANGE_CAM_DIRZ": {
@@ -14983,7 +15323,8 @@ const CMD = {
                     + "指定車両を右ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "LS_comic": [
-            "COMIC404.BIN"
+            "COMIC404.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1007.BIN",
@@ -14998,6 +15339,9 @@ const CMD = {
         "CS_comic": [
             "COMIC2225.BIN",
             "COMIC2999.BIN"
+        ],
+        "RS_comic": [
+            "COMIC3037.BIN"
         ],
         "SS_comic": [
             "COMIC3616.BIN",
@@ -15027,7 +15371,8 @@ const CMD = {
         ],
         "RS_comic": [
             "COMIC3050.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3037.BIN"
         ],
         "SS_comic": [
             "COMIC4203.BIN"
@@ -15070,7 +15415,9 @@ const CMD = {
             "COMIC202.BIN",
             "COMIC209.BIN",
             "COMIC500.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -15082,7 +15429,11 @@ const CMD = {
             "COMIC1320.BIN",
             "COMIC1400.BIN",
             "COMIC1401.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN"
         ],
         "CS_comic": [
             "COMIC2100.BIN",
@@ -15183,7 +15534,9 @@ const CMD = {
             "COMIC500.BIN",
             "COMIC600.BIN",
             "COMIC700.BIN",
-            "COMIC715.BIN"
+            "COMIC715.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1009.BIN",
@@ -15197,7 +15550,8 @@ const CMD = {
             "COMIC1400.BIN",
             "COMIC1401.BIN",
             "COMIC1511.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1201.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -15370,6 +15724,9 @@ const CMD = {
                     + "引数４：呼び出し元からのy座標。BS以後からは効果なし" + newLine
                     + "引数５：呼び出し元からのz座標。BS以後からは効果なし" + newLine
                     + "引数６：詳細不明",
+        "LS_comic": [
+            "COMIC999.BIN"
+        ],
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
@@ -15489,7 +15846,8 @@ const CMD = {
             "COMIC301.BIN",
             "COMIC405.BIN",
             "COMIC712.BIN",
-            "COMIC716.BIN"
+            "COMIC716.BIN",
+            "COMIC014.BIN"
         ],
         "BS_comic": [
             "COMIC1001.BIN",
@@ -15573,7 +15931,8 @@ const CMD = {
             "COMIC301.BIN",
             "COMIC405.BIN",
             "COMIC712.BIN",
-            "COMIC716.BIN"
+            "COMIC716.BIN",
+            "COMIC014.BIN"
         ],
         "BS_comic": [
             "COMIC1001.BIN",
@@ -15683,13 +16042,17 @@ const CMD = {
         "description": "詳細不明" + newLine
                     + "引数１～４：詳細不明",
         "LS_comic": [
-            "COMIC318.BIN"
+            "COMIC318.BIN",
+            "COMIC999.BIN"
         ]
     },
     "Comic_Glay": {
         "num": 149,
         "description": "詳細不明" + newLine
                     + "引数１～２：詳細不明",
+        "LS_comic": [
+            "COMIC999.BIN"
+        ],
         "BS_comic": [
             "COMIC1999.BIN"
         ]
@@ -15721,7 +16084,8 @@ const CMD = {
             "COMIC208.BIN",
             "COMIC209.BIN",
             "COMIC318.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1005.BIN",
@@ -15750,7 +16114,9 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN"
         ],
         "CS_comic": [
             "COMIC2009.BIN",
@@ -15804,7 +16170,9 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -15912,7 +16280,12 @@ const CMD = {
             "COMIC3411.BIN",
             "COMIC3477.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -16180,7 +16553,8 @@ const CMD = {
             "COMIC208.BIN",
             "COMIC209.BIN",
             "COMIC318.BIN",
-            "COMIC700.BIN"
+            "COMIC700.BIN",
+            "COMIC999.BIN"
         ],
         "BS_comic": [
             "COMIC1005.BIN",
@@ -16209,7 +16583,9 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN"
         ],
         "CS_comic": [
             "COMIC2009.BIN",
@@ -16263,7 +16639,9 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -16370,7 +16748,12 @@ const CMD = {
             "COMIC3411.BIN",
             "COMIC3477.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -16525,7 +16908,10 @@ const CMD = {
     },
     "Hide_Sky_Doom": {
         "num": 156,
-        "description": ""
+        "description": "",
+        "LS_comic": [
+            "COMIC999.BIN"
+        ]
     },
     "ADD_POINT": {
         "num": 157,
@@ -16562,7 +16948,9 @@ const CMD = {
             "COMIC719.BIN",
             "COMIC720.BIN",
             "COMIC716.BIN",
-            "COMIC706.BIN"
+            "COMIC706.BIN",
+            "COMIC014.BIN",
+            "COMIC106.BIN"
         ],
         "BS_comic": [
             "COMIC1007.BIN",
@@ -16688,7 +17076,8 @@ const CMD = {
             "COMIC720.BIN",
             "COMIC715.BIN",
             "COMIC706.BIN",
-            "COMIC705.BIN"
+            "COMIC705.BIN",
+            "COMIC119.BIN"
         ],
         "BS_comic": [
             "COMIC1009.BIN",
@@ -16728,7 +17117,8 @@ const CMD = {
             "COMIC2337.BIN",
             "COMIC2437.BIN",
             "COMIC2441.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2322.BIN"
         ],
         "RS_comic": [
             "COMIC3035.BIN",
@@ -16834,7 +17224,8 @@ const CMD = {
             "COMIC720.BIN",
             "COMIC715.BIN",
             "COMIC706.BIN",
-            "COMIC705.BIN"
+            "COMIC705.BIN",
+            "COMIC119.BIN"
         ],
         "BS_comic": [
             "COMIC1009.BIN",
@@ -16945,7 +17336,8 @@ const CMD = {
             "COMIC708.BIN",
             "COMIC710.BIN",
             "COMIC712.BIN",
-            "COMIC720.BIN"
+            "COMIC720.BIN",
+            "COMIC119.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -16961,7 +17353,9 @@ const CMD = {
             "COMIC1400.BIN",
             "COMIC1404.BIN",
             "COMIC1500.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -17092,7 +17486,8 @@ const CMD = {
             "COMIC3930.BIN",
             "COMIC3931.BIN",
             "COMIC3932.BIN",
-            "COMIC3933.BIN"
+            "COMIC3933.BIN",
+            "COMIC3058_.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -17269,7 +17664,8 @@ const CMD = {
             "COMIC1321.BIN",
             "COMIC1400.BIN",
             "COMIC1401.BIN",
-            "COMIC1511.BIN"
+            "COMIC1511.BIN",
+            "COMIC1950.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -17317,7 +17713,8 @@ const CMD = {
             "COMIC3499.BIN",
             "COMIC3403.BIN",
             "COMIC3408.BIN",
-            "COMIC3409.BIN"
+            "COMIC3409.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -17616,12 +18013,19 @@ const CMD = {
             "COMIC311.BIN",
             "COMIC409.BIN",
             "COMIC601.BIN",
-            "COMIC715.BIN"
+            "COMIC715.BIN",
+            "COMIC603.BIN",
+            "COMIC998.BIN",
+            "COMIC999.BIN"
         ]
     },
     "TITLE_MODE": {
         "num": 170,
         "description": "タイトル画面へ",
+        "LS_comic": [
+            "COMIC998.BIN",
+            "COMIC999.BIN"
+        ],
         "BS_comic": [
             "COMIC1999.BIN"
         ],
@@ -17746,7 +18150,9 @@ const CMD = {
             "COMIC3262.BIN",
             "COMIC3279.BIN",
             "COMIC3319.BIN",
-            "COMIC3469.BIN"
+            "COMIC3469.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN"
         ]
     },
     "END_CHK_DRIFT": {
@@ -17771,7 +18177,9 @@ const CMD = {
             "COMIC3262.BIN",
             "COMIC3279.BIN",
             "COMIC3319.BIN",
-            "COMIC3469.BIN"
+            "COMIC3469.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN"
         ]
     },
     "ENDING_MODE": {
@@ -17850,7 +18258,9 @@ const CMD = {
             "COMIC1100.BIN",
             "COMIC1119.BIN",
             "COMIC1320.BIN",
-            "COMIC1400.BIN"
+            "COMIC1400.BIN",
+            "COMIC1405.BIN",
+            "COMIC1507.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -18163,7 +18573,9 @@ const CMD = {
             "COMIC2430.BIN",
             "COMIC2431.BIN",
             "COMIC2432.BIN",
-            "COMIC2443.BIN"
+            "COMIC2443.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3018.BIN",
@@ -18235,7 +18647,10 @@ const CMD = {
             "COMIC3479.BIN",
             "COMIC3480.BIN",
             "COMIC3481.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3026.BIN",
+            "COMIC3037.BIN",
+            "COMIC3285.BIN"
         ],
         "SS_comic": [
             "COMIC3511.BIN",
@@ -18398,7 +18813,8 @@ const CMD = {
             "COMIC601.BIN",
             "COMIC710.BIN",
             "COMIC712.BIN",
-            "COMIC716.BIN"
+            "COMIC716.BIN",
+            "COMIC602.BIN"
         ],
         "BS_comic": [
             "COMIC1110.BIN",
@@ -18472,7 +18888,9 @@ const CMD = {
             "COMIC311.BIN",
             "COMIC409.BIN",
             "COMIC601.BIN",
-            "COMIC715.BIN"
+            "COMIC715.BIN",
+            "COMIC603.BIN",
+            "COMIC999.BIN"
         ]
     },
     "FROM": {
@@ -18517,7 +18935,8 @@ const CMD = {
             "COMIC716.BIN",
             "COMIC715.BIN",
             "COMIC705.BIN",
-            "COMIC900.BIN"
+            "COMIC900.BIN",
+            "COMIC014.BIN"
         ],
         "BS_comic": [
             "COMIC1000.BIN",
@@ -18592,7 +19011,8 @@ const CMD = {
             "COMIC2441.BIN",
             "COMIC2442.BIN",
             "COMIC2427.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2399.BIN"
         ],
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -18891,7 +19311,8 @@ const CMD = {
             "COMIC2437.BIN",
             "COMIC2439.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2399.BIN"
         ],
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -19017,7 +19438,8 @@ const CMD = {
             "COMIC717.BIN",
             "COMIC716.BIN",
             "COMIC715.BIN",
-            "COMIC705.BIN"
+            "COMIC705.BIN",
+            "COMIC014.BIN"
         ],
         "BS_comic": [
             "COMIC1991.BIN",
@@ -19192,7 +19614,8 @@ const CMD = {
             "COMIC1506.BIN",
             "COMIC1508.BIN",
             "COMIC1509.BIN",
-            "COMIC1510.BIN"
+            "COMIC1510.BIN",
+            "COMIC1507.BIN"
         ],
         "CS_comic": [
             "COMIC2009.BIN",
@@ -19251,7 +19674,9 @@ const CMD = {
             "COMIC2430.BIN",
             "COMIC2431.BIN",
             "COMIC2432.BIN",
-            "COMIC2443.BIN"
+            "COMIC2443.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3018.BIN",
@@ -19326,7 +19751,10 @@ const CMD = {
             "COMIC3479.BIN",
             "COMIC3480.BIN",
             "COMIC3481.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3026.BIN",
+            "COMIC3037.BIN",
+            "COMIC3285.BIN"
         ],
         "SS_comic": [
             "COMIC3511.BIN",
@@ -19524,7 +19952,8 @@ const CMD = {
             "COMIC600.BIN",
             "COMIC601.BIN",
             "COMIC700.BIN",
-            "COMIC722.BIN"
+            "COMIC722.BIN",
+            "COMIC014.BIN"
         ]
     },
     "OPEN_HUTA": {
@@ -19538,7 +19967,8 @@ const CMD = {
             "COMIC311.BIN",
             "COMIC409.BIN",
             "COMIC601.BIN",
-            "COMIC722.BIN"
+            "COMIC722.BIN",
+            "COMIC014.BIN"
         ]
     },
     "SET_GN": {
@@ -19552,7 +19982,8 @@ const CMD = {
             "COMIC311.BIN",
             "COMIC409.BIN",
             "COMIC601.BIN",
-            "COMIC722.BIN"
+            "COMIC722.BIN",
+            "COMIC014.BIN"
         ]
     },
     "MDL_GETINDEX": {
@@ -21046,7 +21477,9 @@ const CMD = {
             "COMIC2414.BIN",
             "COMIC2408.BIN",
             "COMIC2417.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3018.BIN",
@@ -21104,7 +21537,9 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3411.BIN",
             "COMIC3477.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3026.BIN",
+            "COMIC3285.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -21366,7 +21801,10 @@ const CMD = {
             "COMIC1506.BIN",
             "COMIC1508.BIN",
             "COMIC1509.BIN",
-            "COMIC1510.BIN"
+            "COMIC1510.BIN",
+            "COMIC1021.BIN",
+            "COMIC1109.BIN",
+            "COMIC1111.BIN"
         ],
         "CS_comic": [
             "COMIC2004.BIN",
@@ -21443,7 +21881,8 @@ const CMD = {
             "COMIC2439.BIN",
             "COMIC2440.BIN",
             "COMIC2441.BIN",
-            "COMIC2442.BIN"
+            "COMIC2442.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3011.BIN",
@@ -21588,7 +22027,9 @@ const CMD = {
             "COMIC3420.BIN",
             "COMIC3423.BIN",
             "COMIC3430.BIN",
-            "COMIC3431.BIN"
+            "COMIC3431.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3257.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -22143,7 +22584,8 @@ const CMD = {
         "BS_comic": [
             "COMIC1010.BIN",
             "COMIC1105.BIN",
-            "COMIC1200.BIN"
+            "COMIC1200.BIN",
+            "COMIC1201.BIN"
         ],
         "CS_comic": [
             "COMIC2000.BIN",
@@ -22219,6 +22661,9 @@ const CMD = {
         "description": "車両のFOG値を変更する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：FOGインデックス",
+        "BS_comic": [
+            "COMIC1201.BIN"
+        ],
         "RS_comic": [
             "COMIC3464.BIN"
         ]
@@ -22291,7 +22736,10 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN"
         ],
         "CS_comic": [
             "COMIC2006.BIN",
@@ -22328,7 +22776,8 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -22394,7 +22843,10 @@ const CMD = {
             "COMIC3431.BIN",
             "COMIC3472.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -22598,7 +23050,10 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN"
         ],
         "CS_comic": [
             "COMIC2006.BIN",
@@ -22636,7 +23091,8 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -22692,7 +23148,9 @@ const CMD = {
             "COMIC3431.BIN",
             "COMIC3472.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3058_.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -22929,7 +23387,10 @@ const CMD = {
             "COMIC1508.BIN",
             "COMIC1509.BIN",
             "COMIC1510.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1111.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN"
         ],
         "CS_comic": [
             "COMIC2009.BIN",
@@ -22987,7 +23448,10 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -23060,7 +23524,12 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3411.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3026.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -23366,7 +23835,8 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -23424,7 +23894,10 @@ const CMD = {
             "COMIC3431.BIN",
             "COMIC3472.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3058_.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -23643,7 +24116,8 @@ const CMD = {
             "COMIC2440.BIN",
             "COMIC2441.BIN",
             "COMIC2442.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -23704,7 +24178,9 @@ const CMD = {
             "COMIC3431.BIN",
             "COMIC3472.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3025.BIN",
+            "COMIC3058_.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -23917,7 +24393,11 @@ const CMD = {
                     + "引数１：スクリーン番号",
         "BS_comic": [
             "COMIC1300.BIN",
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1950.BIN",
+            "COMIC1951.BIN",
+            "COMIC1952.BIN",
+            "COMIC1953.BIN"
         ],
         "CS_comic": [
             "COMIC2997.BIN",
@@ -24003,7 +24483,9 @@ const CMD = {
                     + "引数４：カラーG" + newLine
                     + "引数５：カラーB",
         "BS_comic": [
-            "COMIC1207.BIN"
+            "COMIC1207.BIN",
+            "COMIC1201.BIN",
+            "COMIC1202.BIN"
         ]
     },
     "CNG_ORG_MAT_COL": {
@@ -24087,7 +24569,8 @@ const CMD = {
             "COMIC3454.BIN",
             "COMIC3472.BIN",
             "COMIC3401.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3058_.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -24170,7 +24653,8 @@ const CMD = {
                     + "引数２：カラーG" + newLine
                     + "引数３：カラーB",
         "BS_comic": [
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2999.BIN"
@@ -24199,7 +24683,8 @@ const CMD = {
             "COMIC1993.BIN",
             "COMIC1994.BIN",
             "COMIC1995.BIN",
-            "COMIC1996.BIN"
+            "COMIC1996.BIN",
+            "COMIC1201.BIN"
         ],
         "CS_comic": [
             "COMIC2991.BIN"
@@ -24623,7 +25108,8 @@ const CMD = {
             "COMIC2302.BIN",
             "COMIC2330.BIN",
             "COMIC2408.BIN",
-            "COMIC2417.BIN"
+            "COMIC2417.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3012.BIN",
@@ -24673,7 +25159,8 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3411.BIN",
             "COMIC3900.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3058_.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -24934,7 +25421,10 @@ const CMD = {
             "COMIC2403.BIN",
             "COMIC2408.BIN",
             "COMIC2417.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3000.BIN",
@@ -25039,7 +25529,10 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3411.BIN",
             "COMIC3477.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3026.BIN",
+            "COMIC3285.BIN",
+            "COMIC3457.BIN"
         ],
         "SS_comic": [
             "COMIC3500.BIN",
@@ -25389,7 +25882,8 @@ const CMD = {
             "COMIC2325.BIN",
             "COMIC2333.BIN",
             "COMIC2408.BIN",
-            "COMIC2417.BIN"
+            "COMIC2417.BIN",
+            "COMIC2399.BIN"
         ],
         "RS_comic": [
             "COMIC3049.BIN",
@@ -25463,7 +25957,9 @@ const CMD = {
             "COMIC2414.BIN",
             "COMIC2408.BIN",
             "COMIC2417.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3018.BIN",
@@ -25520,7 +26016,9 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3411.BIN",
             "COMIC3477.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3026.BIN",
+            "COMIC3285.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -25693,7 +26191,9 @@ const CMD = {
             "COMIC2414.BIN",
             "COMIC2408.BIN",
             "COMIC2417.BIN",
-            "COMIC2999.BIN"
+            "COMIC2999.BIN",
+            "COMIC2227.BIN",
+            "COMIC2234.BIN"
         ],
         "RS_comic": [
             "COMIC3018.BIN",
@@ -25750,7 +26250,9 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3411.BIN",
             "COMIC3477.BIN",
-            "COMIC3999.BIN"
+            "COMIC3999.BIN",
+            "COMIC3026.BIN",
+            "COMIC3285.BIN"
         ],
         "SS_comic": [
             "COMIC3503.BIN",
@@ -25952,7 +26454,8 @@ const CMD = {
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
         "BS_comic": [
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2997.BIN",
@@ -25963,7 +26466,14 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ]
+        ],
+        // コマンド無し
+        // "SS_comic": [
+        //     "COMIC3998.BIN"
+        // ],
+        // "SS_cmn": [
+        //     "COMIC3997.BIN"
+        // ]
     },
     "SET_SC_KOTEI_CAM_T_POS": {
         "num": 325,
@@ -25974,7 +26484,8 @@ const CMD = {
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
         "BS_comic": [
-            "COMIC1999.BIN"
+            "COMIC1999.BIN",
+            "COMIC1952.BIN"
         ],
         "CS_comic": [
             "COMIC2333.BIN"
@@ -26795,7 +27306,14 @@ const CMD = {
         "RS_comic": [
             "COMIC3997.BIN",
             "COMIC3998.BIN"
-        ]
+        ],
+        // コマンド無し
+        // "SS_comic": [
+        //     "COMIC3998.BIN"
+        // ],
+        // "SS_cmn": [
+        //     "COMIC3997.BIN"
+        // ]
     },
     "IB_SET_W_MT": {
         "num": 381,
@@ -27115,7 +27633,8 @@ const CMD = {
             "COMIC3408.BIN",
             "COMIC3409.BIN",
             "COMIC3410.BIN",
-            "COMIC3411.BIN"
+            "COMIC3411.BIN",
+            "COMIC3476.BIN"
         ],
         "SS_comic": [
             "COMIC3502.BIN",
@@ -27734,7 +28253,8 @@ const CMD = {
             "COMIC2320.BIN",
             "COMIC2333.BIN",
             "COMIC2408.BIN",
-            "COMIC2417.BIN"
+            "COMIC2417.BIN",
+            "COMIC2399.BIN"
         ]
     },
     "END_DOSAN_LENGTH": {
@@ -27743,7 +28263,8 @@ const CMD = {
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2318.BIN",
-            "COMIC2333.BIN"
+            "COMIC2333.BIN",
+            "COMIC2399.BIN"
         ]
     },
     "DOSANSEN": {
@@ -28372,7 +28893,8 @@ const CMD = {
         "description": "詳細不明" + newLine
                     + "引数１：詳細不明",
         "RS_comic": [
-            "COMIC3058.BIN"
+            "COMIC3058.BIN",
+            "COMIC3058_.BIN"
         ]
     },
     "L_One_Drift": {

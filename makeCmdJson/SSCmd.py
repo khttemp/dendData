@@ -8,8 +8,8 @@ config.read("config.ini")
 
 sys.path.append(config.get("PROGRAM_PATH", "path"))
 
-from cmdList import cmdList
-from comicscript.importPy.decrypt import ComicDecrypt
+from program.cmdList import cmdList
+from program.comicscript.importPy.decrypt import ComicDecrypt
 
 initStartVer = 129
 
