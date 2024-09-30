@@ -590,15 +590,15 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
                     + "Set3DObjで置いたモデルのScaleを変える" + newLine
-                    + "引数１：あるセクションでSet3DObjを置いた際のインデックス" + newLine
+                    + "引数１：あるセクションでSet3DObjを実行した際、生成されるインデックス" + newLine
                     + "引数２：X方向のScale(from)" + newLine
                     + "引数３：X方向のScale(to)" + newLine
                     + "引数４：X方向の変化時間（フレーム）" + newLine
-                    + "引数５：あるセクションでSet3DObjを置いた際のインデックス" + newLine
+                    + "引数５：あるセクションでSet3DObjを実行した際、生成されるインデックス" + newLine
                     + "引数６：Y方向のScale(from)" + newLine
                     + "引数７：Y方向のScale(to)" + newLine
                     + "引数８：Y方向の変化時間（フレーム）" + newLine
-                    + "引数９：あるセクションでSet3DObjを置いた際のインデックス" + newLine
+                    + "引数９：あるセクションでSet3DObjを実行した際、生成されるインデックス" + newLine
                     + "引数１０：Z方向のScale(from)" + newLine
                     + "引数１１：Z方向のScale(to)" + newLine
                     + "引数１２：Z方向の変化時間（フレーム）",
@@ -13927,14 +13927,18 @@ const CMD = {
     },
     "Set2P": {
         "num": 91,
-        "description": "【モデルバイナリ】2P設定",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "2P設定",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "CharChk_and_Tx": {
         "num": 92,
-        "description": "【モデルバイナリ】車両の開放によって、アイコンの設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "車両の開放によって、アイコンの設定" + newLine
                     + "引数１：車両インデックス" + newLine
                     + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
                     + "引数３：未開放の場合、imgサイズ情報のインデックス",
@@ -13944,36 +13948,69 @@ const CMD = {
     },
     "ChangeR": {
         "num": 93,
-        "description": ""
+        "description": "モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像のR要素を変える" + newLine
+                    + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
+                    + "引数２：fromのR(0~255)" + newLine
+                    + "引数３：toのR(0~255)" + newLine
+                    + "引数４：変化時間（フレーム）",
     },
     "ChangeG": {
         "num": 94,
-        "description": ""
+        "description": "モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像のG要素を変える" + newLine
+                    + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
+                    + "引数２：fromのG(0~255)" + newLine
+                    + "引数３：toのG(0~255)" + newLine
+                    + "引数４：変化時間（フレーム）",
     },
     "ChangeB": {
         "num": 95,
-        "description": ""
+        "description": "モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像のB要素を変える" + newLine
+                    + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
+                    + "引数２：fromのB(0~255)" + newLine
+                    + "引数３：toのB(0~255)" + newLine
+                    + "引数４：変化時間（フレーム）",
     },
     "ChangeColor": {
         "num": 96,
-        "description": "【モデルバイナリ】引数１～８：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像のG, R, B要素を変える" + newLine
+                    + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
+                    + "引数２：fromのG(0~255)" + newLine
+                    + "引数３：toのG(0~255)" + newLine
+                    + "引数４：fromのR(0~255)" + newLine
+                    + "引数５：toのR(0~255)" + newLine
+                    + "引数６：fromのB(0~255)" + newLine
+                    + "引数７：toのB(0~255)" + newLine
+                    + "引数８：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "SetGray": {
         "num": 97,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像をグレーに変える" + newLine
+                    + "引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "MoveX": {
         "num": 98,
-        "description": "【モデルバイナリ】対象のx座標を移動させる" + newLine
-                    + "引数１：移動させるx座標" + newLine
-                    + "引数２：変化する時間（フレーム）" + newLine
-                    + "引数３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをワールド座標基準、X方向へ移動する" + newLine
+                    + "引数１：X方向への距離" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
         "LS_bin": [
             "CHARSEL.BIN",
             "OP_ANIME.BIN"
@@ -13981,10 +14018,12 @@ const CMD = {
     },
     "MoveY": {
         "num": 99,
-        "description": "【モデルバイナリ】対象のy座標を移動させる" + newLine
-                    + "引数１：移動させるy座標" + newLine
-                    + "引数２：変化する時間（フレーム）" + newLine
-                    + "引数３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをワールド座標基準、Y方向へ移動する" + newLine
+                    + "引数１：Y方向への距離" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN",
             "OP_ANIME.BIN"
@@ -13992,25 +14031,31 @@ const CMD = {
     },
     "MoveZ": {
         "num": 100,
-        "description": "【モデルバイナリ】対象のz座標を移動させる" + newLine
-                    + "引数１：移動させるy座標" + newLine
-                    + "引数２：変化する時間（フレーム）" + newLine
-                    + "引数３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで表示したモデルをワールド座標基準、Z方向へ移動する" + newLine
+                    + "引数１：Z方向への距離" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
         ]
     },
     "SetUV_X": {
         "num": 101,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像を左右反転させる" + newLine
+                    + "引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
     },
     "RePlay": {
         "num": 102,
-        "description": "詳細不明" + newLine
-                    + "引数１：詳細不明（１）",
+        "description": "【LS、BS】" + newLine
+                    + "詳細不明" + newLine
+                    + "引数１：1（True）、0（False）（１）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC200.BIN",
@@ -14022,7 +14067,9 @@ const CMD = {
     },
     "IsStart": {
         "num": 103,
-        "description": "【モデルバイナリ】バトルが始まるとANIMEを適用する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "バトルが始まるとANIMEを適用する" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３",
         "LS_bin": [
@@ -14038,7 +14085,8 @@ const CMD = {
     },
     "ShowGoal": {
         "num": 104,
-        "description": "ゴールの文字（FINISH）を見せる",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "ゴールの文字（FINISH）を見せる",
         "LS_comic": [
             "COMIC012.BIN",
             "COMIC209.BIN",
@@ -14071,7 +14119,8 @@ const CMD = {
     },
     "CHK_WIN_TRAIN": {
         "num": 105,
-        "description": "指定車両が勝利したかチェックする" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両が勝利したかチェックする" + newLine
                     + "勝った場合、次のコマンドへ行く" + newLine
                     + "負けた場合、指定のラベルまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -14111,7 +14160,8 @@ const CMD = {
     },
     "END_CHK_WINTRAIN": {
         "num": 106,
-        "description": "CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル（SSでは使わない）",
         "LS_comic": [
             "COMIC012.BIN",
@@ -14148,7 +14198,8 @@ const CMD = {
     },
     "N_ADD_OBJ": {
         "num": 107,
-        "description": "オブジェクトを追加する" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトを追加する" + newLine
                     + "引数１：オブジェクトindex" + newLine
                     + "引数２：binファイルindex" + newLine
                     + "引数３：アニメ要素１" + newLine
@@ -14177,8 +14228,12 @@ const CMD = {
     },
     "N_POS": {
         "num": 108,
-        "description": "オブジェクトを配置する" + newLine
-                    + "引数１～４：詳細不明",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトを絶対座標に配置する" + newLine
+                    + "引数１：オブジェクトindex" + newLine
+                    + "引数２：x座標" + newLine
+                    + "引数３：y座標" + newLine
+                    + "引数４：z座標",
         "LS_comic": [
             "COMIC200.BIN",
             "COMIC300.BIN",
@@ -14191,7 +14246,8 @@ const CMD = {
     },
     "START_TIME_LINE": {
         "num": 109,
-        "description": "ゲーム内でタイム測定を始める",
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "ゲーム内でタイム測定を始める",
         "LS_comic": [
             "OP.BIN"
         ],
@@ -14344,8 +14400,14 @@ const CMD = {
     },
     "N_MOVE": {
         "num": 110,
-        "description": "オブジェクトを動かす" + newLine
-                    + "引数１～６：詳細不明",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトを指定した絶対座標へ動かす" + newLine
+                    + "引数１：オブジェクトindex" + newLine
+                    + "引数２：x座標" + newLine
+                    + "引数３：y座標" + newLine
+                    + "引数４：z座標" + newLine
+                    + "引数５：変化時間（フレーム）" + newLine
+                    + "引数６：変化方法",
         "LS_comic": [
             "COMIC318.BIN",
             "OP.BIN"
@@ -14367,7 +14429,8 @@ const CMD = {
     },
     "WAIT_TIME_LINE": {
         "num": 111,
-        "description": "START_TIME_LINEが始まってから、指定時間まで待つ" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "START_TIME_LINEが始まってから、指定時間まで待つ" + newLine
                     + "引数１：指定時間",
         "LS_comic": [
             "OP.BIN"
@@ -14520,7 +14583,8 @@ const CMD = {
     },
     "N_DEL_OBJ": {
         "num": 112,
-        "description": "オブジェクトを削除する" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトを削除する" + newLine
                     + "引数１：オブジェクトインデックス",
         "LS_comic": [
             "COMIC200.BIN",
@@ -14532,7 +14596,8 @@ const CMD = {
     },
     "SCREEN_FADE": {
         "num": 113,
-        "description": "指定の色でFade効果を出す" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定の色でFade効果を出す" + newLine
                     + "引数１：0（FadeIn）、1（FadeOut）" + newLine
                     + "引数２：カラーR" + newLine
                     + "引数３：カラーG" + newLine
@@ -14575,11 +14640,11 @@ const CMD = {
     },
     "N_CHANGE_ANIME": {
         "num": 114,
-        "description": "オブジェクトにANIMEを適用する" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトにANIMEを適用する" + newLine
                     + "引数１：オブジェクトインデックス" + newLine
-                    + "引数２：ANIME要素１" + newLine
-                    + "引数３：ANIME要素２" + newLine
-                    + "引数４：ANIME要素３",
+                    + "引数２：ANIME要素２" + newLine
+                    + "引数３：ANIME要素３",
         "LS_comic": [
             "COMIC300.BIN"
         ],
@@ -14593,7 +14658,8 @@ const CMD = {
     },
     "TRAIN_SPEED": {
         "num": 115,
-        "description": "指定車両のスピードを設定する" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両のスピードを設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：スピード" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
@@ -14751,9 +14817,12 @@ const CMD = {
     },
     "TRAIN_FLG": {
         "num": 116,
-        "description": "車輪に火花を散らす" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "車輪に火花を散らす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：火花を散らすフラグ。1（True）、0（False）" + newLine
+                    + "引数３：バトルが終わるまで火花を散らすフラグ。1に設定したら取り消せない" + newLine
+                    + "引数４：詳細不明。未使用と思われる",
         "LS_comic": [
             "COMIC108.BIN",
             "COMIC121.BIN",
@@ -14779,11 +14848,17 @@ const CMD = {
     },
     "SCENE_LIGHT": {
         "num": 117,
-        "description": ""
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "ゲームシーンのライトを調整する" + newLine
+                    + "引数１：シーン番号（０）" + newLine
+                    + "引数２：0（ライトを消す）、1（ライトをつける）" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法"
     },
     "CHANGE_CAM_LENGTH": {
         "num": 118,
-        "description": "カメラの距離を変える" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHANGE_CAM_TYPEのカメラの距離を変える。BS以後は効果なし" + newLine
                     + "引数１：距離" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -14820,8 +14895,9 @@ const CMD = {
     },
     "CHANGE_CAM_DIRX": {
         "num": 119,
-        "description": "カメラのx座標を変える" + newLine
-                    + "引数１：x座標に加える距離" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHANGE_CAM_TYPEのカメラをx軸に回転する。BS以後は効果なし" + newLine
+                    + "引数１：回転角度" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
         "LS_comic": [
@@ -14857,8 +14933,9 @@ const CMD = {
     },
     "CHANGE_CAM_DIRY": {
         "num": 120,
-        "description": "カメラのy座標を変える" + newLine
-                    + "引数１：y座標に加える距離" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHANGE_CAM_TYPEのカメラをy軸に回転する。BS以後は効果なし" + newLine
+                    + "引数１：回転角度" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
         "LS_comic": [
@@ -14894,7 +14971,11 @@ const CMD = {
     },
     "CHANGE_CAM_DIRZ": {
         "num": 121,
-        "description": ""
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHANGE_CAM_TYPEのカメラをz軸に回転する。BS以後は効果なし" + newLine
+                    + "引数１：回転角度" + newLine
+                    + "引数２：変化時間（フレーム）" + newLine
+                    + "引数３：変化方法",
     },
     "R_Drift": {
         "num": 122,
