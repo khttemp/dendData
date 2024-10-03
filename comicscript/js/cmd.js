@@ -15720,9 +15720,9 @@ const CMD = {
                     + "モデルのスクリプトから呼ぶスクリプトを追加する。コミックスクリプトでも使える。" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３" + newLine
-                    + "引数３：呼び出し元からのx座標。BS以後からは効果なし" + newLine
-                    + "引数４：呼び出し元からのy座標。BS以後からは効果なし" + newLine
-                    + "引数５：呼び出し元からのz座標。BS以後からは効果なし" + newLine
+                    + "引数３：呼び出し元からずらすx座標。BS以後からは効果なし" + newLine
+                    + "引数４：呼び出し元からずらすy座標。BS以後からは効果なし" + newLine
+                    + "引数５：呼び出し元からずらすz座標。BS以後からは効果なし" + newLine
                     + "引数６：詳細不明",
         "LS_comic": [
             "COMIC999.BIN"
@@ -15747,7 +15747,9 @@ const CMD = {
     },
     "SetRand3DObj": {
         "num": 131,
-        "description": "【モデルバイナリ】指定範囲内のオブジェクトをランダム1個選んで置く" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "指定範囲内のオブジェクトインデックスをランダム1個選んで、Set3DObjを実行する" + newLine
                     + "引数１：範囲Start（オブジェクトインデックス）" + newLine
                     + "引数２：範囲End（オブジェクトインデックス）",
         "LS_bin": [
@@ -15756,7 +15758,10 @@ const CMD = {
     },
     "Offset3DObj": {
         "num": 132,
-        "description": "【モデルバイナリ】オブジェクトの元のインデックスから、指定数分ずらしたインデックスで配置する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで配置したモデルの元インデックスから" + newLine
+                    + "指定数分ずらしたインデックスで再配置する" + newLine
                     + "引数１：offsetする数値",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15764,15 +15769,24 @@ const CMD = {
     },
     "RandPos": {
         "num": 133,
-        "description": "【モデルバイナリ】オブジェクトをランダムに配置する" + newLine
-                    + "引数１～６：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで配置したモデルをランダムな位置に配置する" + newLine
+                    + "引数１：x軸のランダム範囲(1)" + newLine
+                    + "引数２：x軸のランダム範囲(2)" + newLine
+                    + "引数３：y軸のランダム範囲(1)" + newLine
+                    + "引数４：y軸のランダム範囲(2)" + newLine
+                    + "引数５：z軸のランダム範囲(1)" + newLine
+                    + "引数６：z軸のランダム範囲(2)",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "RandPlaySE": {
         "num": 134,
-        "description": "【モデルバイナリ】SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
                     + "引数１：範囲Start（SEグループインデックス）" + newLine
                     + "引数２：範囲End（SEグループインデックス）" + newLine
                     + "引数３：SEグループ内のインデックス",
@@ -15782,22 +15796,35 @@ const CMD = {
     },
     "RandAngleX": {
         "num": 135,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標のX軸基準で、ランダムな数値で回転する" + newLine
+                    + "引数１：x軸のランダム範囲(1)" + newLine
+                    + "引数２：x軸のランダム範囲(2)",
     },
     "RandAngleY": {
         "num": 136,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標のY軸基準で、ランダムな数値で回転する" + newLine
+                    + "引数１：y軸のランダム範囲(1)" + newLine
+                    + "引数２：y軸のランダム範囲(2)",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "RandAngleZ": {
         "num": 137,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Set3DObjで配置したモデルをローカル座標のZ軸基準で、ランダムな数値で回転する" + newLine
+                    + "引数１：z軸のランダム範囲(1)" + newLine
+                    + "引数２：z軸のランダム範囲(2)",
     },
     "CHK_TRAIN_STATE": {
         "num": 138,
-        "description": "指定車両が指定時間内に、車両状態が引数３の条件を満たす場合、次のコマンドへ行く" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "指定車両が指定時間内に、車両状態が引数３の条件を満たす場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１：指定ラベル" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
@@ -15817,7 +15844,8 @@ const CMD = {
     },
     "END_CHK_TRAIN_STATE": {
         "num": 139,
-        "description": "CHK_TRAIN_STATEで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHK_TRAIN_STATEで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC206.BIN",
@@ -15833,7 +15861,8 @@ const CMD = {
     },
     "CHK_TRAIN_SPEED_U": {
         "num": 140,
-        "description": "指定車両が指定時間内に、指定スピードより大きい場合、次のコマンドへ行く" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両が指定時間内に、指定スピードより大きい場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１：指定ラベル" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
@@ -15903,7 +15932,8 @@ const CMD = {
     },
     "CHK_TRAIN_SPEED_D": {
         "num": 141,
-        "description": "指定車両が指定時間内に、指定スピードより小さい場合、次のコマンドへ行く" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両が指定時間内に、指定スピードより小さい場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
                     + "引数１：指定ラベル" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
@@ -15922,7 +15952,8 @@ const CMD = {
     },
     "END_CHK_TRAIN_SPEED_U": {
         "num": 142,
-        "description": "CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC009.BIN",
@@ -15988,7 +16019,8 @@ const CMD = {
     },
     "END_CHK_TRAIN_SPEED_D": {
         "num": 143,
-        "description": "CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+        "description": "【SS】" + newLine
+                    + "CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
         "SS_cmn": [
             "COMIC46030.BIN",
