@@ -3520,7 +3520,7 @@ const CMD = {
         "num": 55,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS】" + newLine
-                    + "空を設定",
+                    + "空を表示する",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ],
@@ -16035,7 +16035,9 @@ const CMD = {
     },
     "ChkStory_and_Tx": {
         "num": 144,
-        "description": "【モデルバイナリ】ストーリーの開放によって、画像の設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "ストーリーの開放状態を判断して、画像を設定する" + newLine
                     + "引数１：ストーリーインデックス" + newLine
                     + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
                     + "引数３：未開放の場合、imgサイズ情報のインデックス",
@@ -16045,7 +16047,9 @@ const CMD = {
     },
     "ClearStory_and_Tx": {
         "num": 145,
-        "description": "【モデルバイナリ】ストーリーのクリアによって、画像の設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "ストーリーのクリア状態を判断して、画像を設定する" + newLine
                     + "引数１：ストーリーインデックス" + newLine
                     + "引数２：クリアの場合、imgサイズ情報のインデックス" + newLine
                     + "引数３：クリアではない場合、imgサイズ情報のインデックス",
@@ -16055,24 +16059,36 @@ const CMD = {
     },
     "N_L_ANGLE_X": {
         "num": 146,
-        "description": "詳細不明" + newLine
-                    + "引数１～４：詳細不明",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトをローカル座標基準、X軸に回転する" + newLine
+                    + "引数１：オブジェクトインデックス" + newLine
+                    + "引数２：回転角度" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "LS_comic": [
             "COMIC318.BIN"
         ]
     },
     "N_L_ANGLE_Y": {
         "num": 147,
-        "description": "詳細不明" + newLine
-                    + "引数１～４：詳細不明",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトをローカル座標基準、Y軸に回転する" + newLine
+                    + "引数１：オブジェクトインデックス" + newLine
+                    + "引数２：回転角度" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "LS_comic": [
             "COMIC318.BIN"
         ]
     },
     "N_L_ANGLE_Z": {
         "num": 148,
-        "description": "詳細不明" + newLine
-                    + "引数１～４：詳細不明",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "オブジェクトをローカル座標基準、Z軸に回転する" + newLine
+                    + "引数１：オブジェクトインデックス" + newLine
+                    + "引数２：回転角度" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "LS_comic": [
             "COMIC318.BIN",
             "COMIC999.BIN"
@@ -16080,8 +16096,10 @@ const CMD = {
     },
     "Comic_Glay": {
         "num": 149,
-        "description": "詳細不明" + newLine
-                    + "引数１～２：詳細不明",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "コミックの画像をグレーに設定する" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：詳細不明。未使用と思われる（１）",
         "LS_comic": [
             "COMIC999.BIN"
         ],
@@ -16091,19 +16109,20 @@ const CMD = {
     },
     "N_MoveMesh_X": {
         "num": 150,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "N_MoveMesh_Y": {
         "num": 151,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "N_MoveMesh_Z": {
         "num": 152,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SetComic_Blur": {
         "num": 153,
-        "description": "コミックにぼかしを適用する（SetComic_Blur_Speedで発動）" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "コミックにぼかしを適用する（SetComic_Blur_Speedで発動）" + newLine
                     + "引数１：コマの番号（SSでは使わない）" + newLine
                     + "引数２：ぼかし数値（SSでは使わない）",
         "LS_comic": [
@@ -16570,7 +16589,8 @@ const CMD = {
     },
     "SetComic_Blur_Speed": {
         "num": 154,
-        "description": "コミックに「ぼかしとスピード線」を入れる" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "コミックに「ぼかしとスピード線」を入れる" + newLine
                     + "引数１：コマの番号（SSでは使わない）" + newLine
                     + "引数１：ぼかし数値" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
@@ -16915,7 +16935,12 @@ const CMD = {
     },
     "TRACK_BOMB": {
         "num": 155,
-        "description": "指定車両の台車が爆発する" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両の台車が爆発する" + newLine
+                    + "※旧作の仕様" + newLine
+                    + "LS：SCENE3DOBJ.BINの[0-66]" + newLine
+                    + "BS：レールデータで読み込んだベースBINの[0-25]" + newLine
+                    + "CS以後：自走不能になるだけで爆発エフェクトなし" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：【SSから】1（True）、0（False）",
         "LS_comic": [
@@ -16940,15 +16965,19 @@ const CMD = {
     },
     "Hide_Sky_Doom": {
         "num": 156,
-        "description": "",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "空を表示しない" + newLine
+                    + "ただし、BS以後では、このコマンドを実行すると" + newLine
+                    + "「作りこみ中です」とエラーが出てゲームが落ちる",
         "LS_comic": [
             "COMIC999.BIN"
         ]
     },
     "ADD_POINT": {
         "num": 157,
-        "description": "バトルポイントを加算する" + newLine
-                    + "引数１：配列のインデックス" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "バトルポイントを加算する" + newLine
+                    + "引数１：配列のインデックス（0～2）" + newLine
                     + "引数２：ポイント",
         "LS_comic": [
             "COMIC003.BIN",
@@ -17082,10 +17111,11 @@ const CMD = {
     },
     "CHK_POINT": {
         "num": 158,
-        "description": "バトルポイントをチェックする" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "バトルポイントをチェックする" + newLine
                     + "指定ポイントより以上なら次のコマンドへ行く" + newLine
                     + "そうではない場合、次のポイントチェックコマンド行まで飛ぶ" + newLine
-                    + "引数１：配列のインデックス" + newLine
+                    + "引数１：配列のインデックス（0～2）" + newLine
                     + "引数２：ポイント",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17201,10 +17231,11 @@ const CMD = {
     },
     "ELSE_CHK_POINT": {
         "num": 159,
-        "description": "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
                     + "指定のポイントより少なく、最近チェックした" + newLine
                     + "インデックスと同じ場合、ここで止める" + newLine
-                    + "引数１：配列のインデックス",
+                    + "引数１：配列のインデックス（0～2）",
         "LS_comic": [
             "COMIC121.BIN",
             "COMIC706.BIN"
@@ -17215,11 +17246,12 @@ const CMD = {
     },
     "ELSE_IF_CHK_POINT": {
         "num": 160,
-        "description": "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
                     + "指定のポイントより少なく、最近チェックした" + newLine
                     + "インデックスと同じ場合 " + newLine
                     + "ここで止めて、またポイントをチェックする" + newLine
-                    + "引数１：配列のインデックス" + newLine
+                    + "引数１：配列のインデックス（0～2）" + newLine
                     + "引数２：ポイント",
         "LS_comic": [
             "COMIC121.BIN",
@@ -17231,10 +17263,11 @@ const CMD = {
     },
     "END_CHK_POINT": {
         "num": 161,
-        "description": "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
                     + "指定のポイントより少なく、最近チェックした" + newLine
                     + "インデックスと同じ場合、ここで止める" + newLine
-                    + "引数１：配列のインデックス",
+                    + "引数１：配列のインデックス（0～2）",
         "LS_comic": [
             "COMIC012.BIN",
             "COMIC207.BIN",
@@ -17348,7 +17381,8 @@ const CMD = {
     },
     "GOTO_SCRIPT": {
         "num": 162,
-        "description": "指定のスクリプトを並列処理で実行し" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定のスクリプトを並列処理で実行し" + newLine
                     + "次のコマンドへ行く" + newLine
                     + "引数１：スクリプト番号",
         "LS_comic": [
@@ -17669,7 +17703,8 @@ const CMD = {
     },
     "SHEAK_COMIC": {
         "num": 163,
-        "description": "指定のコマを揺らす" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定のコマを揺らす" + newLine
                     + "引数１：コマの番号" + newLine
                     + "引数２：1（True）、0（False）",
         "LS_comic": [
@@ -17833,7 +17868,8 @@ const CMD = {
     },
     "STORY_OPEN": {
         "num": 164,
-        "description": "ストーリーを開放する" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "ストーリーを開放する" + newLine
                     + "引数１：ストーリーインデックス",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17878,7 +17914,8 @@ const CMD = {
     },
     "STORY_CLEAR": {
         "num": 165,
-        "description": "ストーリーをクリア処理する" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "ストーリーをクリア処理する" + newLine
                     + "引数１：ストーリーインデックス",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17930,7 +17967,8 @@ const CMD = {
     },
     "CHAR_OPEN": {
         "num": 166,
-        "description": "車両を開放する" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "車両を開放する" + newLine
                     + "引数１：車両インデックス",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17974,7 +18012,8 @@ const CMD = {
     },
     "SAVE_GAME": {
         "num": 167,
-        "description": "ゲーム情報をセーブする",
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "ゲーム情報をセーブする",
         "LS_comic": [
             "COMIC012.BIN",
             "COMIC209.BIN",
@@ -18025,7 +18064,10 @@ const CMD = {
     },
     "KEISUKE_COUNT": {
         "num": 168,
-        "description": "啓介がカウントする",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "啓介がカウントする" + newLine
+                    + "（COUNT.BINの2-0を使う。" + newLine
+                    + "CS以後はヘッダー情報が足りないので、改造しない限りエラーになる）",
         "LS_comic": [
             "COMIC400.BIN"
         ],
@@ -18035,7 +18077,8 @@ const CMD = {
     },
     "RandPlayComicSE": {
         "num": 169,
-        "description": "スクリプト内のSE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "スクリプト内のSE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
                     + "引数１：範囲start（SEグループインデックス）" + newLine
                     + "引数２：範囲end（SEグループインデックス）" + newLine
                     + "引数３：SEグループ内のインデックス",
@@ -18053,7 +18096,8 @@ const CMD = {
     },
     "TITLE_MODE": {
         "num": 170,
-        "description": "タイトル画面へ",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "タイトル画面へ",
         "LS_comic": [
             "COMIC998.BIN",
             "COMIC999.BIN"
@@ -18070,7 +18114,8 @@ const CMD = {
     },
     "GOING": {
         "num": 171,
-        "description": "指定車両を運転できるようにする" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両を運転できるようにする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
         "LS_comic": [
