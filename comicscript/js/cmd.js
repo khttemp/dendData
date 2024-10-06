@@ -4,7 +4,7 @@ const CMD = {
     "Tx": {
         "num": 0,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "画像をロードする" + newLine
                     + "引数１：画像サイズ情報のインデックス",
         "LS_bin": [
@@ -29,7 +29,7 @@ const CMD = {
     "TxSize": {
         "num": 1,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のサイズを変える" + newLine
                     + "引数１：from横の倍率" + newLine
                     + "引数２：from縦の倍率" + newLine
@@ -58,7 +58,7 @@ const CMD = {
     "Alpha": {
         "num": 2,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のAlphaを変える" + newLine
                     + "引数１：from_Alphaの値" + newLine
                     + "引数２：to_Alphaの値" + newLine
@@ -88,7 +88,7 @@ const CMD = {
     "End": {
         "num": 3,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "コマンドを終了する",
         "LS_bin": [
             "COUNT.BIN",
@@ -111,7 +111,7 @@ const CMD = {
     "Pos": {
         "num": 4,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "画面中央を基準に画像を移動させる" + newLine
                     + "引数１：移動させるx座標" + newLine
                     + "引数２：移動させるy座標" + newLine
@@ -139,7 +139,7 @@ const CMD = {
     "ColorALL": {
         "num": 5,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のカラーを変える" + newLine
                     + "引数１：R(0~255)" + newLine
                     + "引数２：G(0~255)" + newLine
@@ -164,7 +164,7 @@ const CMD = {
     "Move": {
         "num": 6,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を現在位置から移動させる" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
@@ -217,7 +217,7 @@ const CMD = {
     "SetCamDir": {
         "num": 10,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルを見えるようにする",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -243,13 +243,13 @@ const CMD = {
     "DisCamDir": {
         "num": 11,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルを見えないようにする",
     },
     "Set3DObj": {
         "num": 12,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "SMFを置く" + newLine
                     + "引数１：SMF情報インデックス",
         "LS_bin": [
@@ -314,7 +314,7 @@ const CMD = {
     "SetWAngleX": {
         "num": 13,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準のX軸で回転する" + newLine
                     + "引数１：X軸の角度(from)" + newLine
                     + "引数２：X軸の角度(to)" + newLine
@@ -324,7 +324,7 @@ const CMD = {
     "SetWAngleY": {
         "num": 14,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準のY軸で回転する" + newLine
                     + "引数１：Y軸の角度(from)" + newLine
                     + "引数２：Y軸の角度(to)" + newLine
@@ -337,7 +337,7 @@ const CMD = {
     "SetWAngleZ": {
         "num": 15,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準のZ軸で回転する" + newLine
                     + "引数１：Z軸の角度(from)" + newLine
                     + "引数２：Z軸の角度(to)" + newLine
@@ -351,7 +351,7 @@ const CMD = {
     "SetLAngleX": {
         "num": 16,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準のX軸で回転する" + newLine
                     + "引数１：X軸の角度(from)" + newLine
                     + "引数２：X軸の角度(to)" + newLine
@@ -361,7 +361,7 @@ const CMD = {
     "SetLAngleY": {
         "num": 17,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準のY軸で回転する" + newLine
                     + "引数１：Y軸の角度(from)" + newLine
                     + "引数２：Y軸の角度(to)" + newLine
@@ -371,7 +371,7 @@ const CMD = {
     "SetLAngleZ": {
         "num": 18,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準のZ軸で回転する" + newLine
                     + "引数１：Z軸の角度(from)" + newLine
                     + "引数２：Z軸の角度(to)" + newLine
@@ -408,7 +408,7 @@ const CMD = {
     "ShowMesh": {
         "num": 25,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "メッシュを表示する" + newLine
                     + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
@@ -469,7 +469,7 @@ const CMD = {
     "HideMesh": {
         "num": 26,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "メッシュを非表示する" + newLine
                     + "引数１：モデルのメッシュインデックス",
         "LS_bin": [
@@ -546,7 +546,7 @@ const CMD = {
     "PlayAnime": {
         "num": 27,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS】" + newLine
                     + "アニメが定義されているモデルのアニメを実行する" + newLine
                     + "引数１：モデルのアニメインデックス" + newLine
                     + "引数２：繰り返す回数。-1を指定すると無限に繰り返す",
@@ -557,7 +557,7 @@ const CMD = {
     "Length_End": {
         "num": 28,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルの描画距離を設定する" + newLine
                     + "引数１：描画距離",
         "LS_bin": [
@@ -588,7 +588,7 @@ const CMD = {
     "SetScall": {
         "num": 29,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルのScaleを変える" + newLine
                     + "引数１：あるセクションでSet3DObjを実行した際、生成されるインデックス" + newLine
                     + "引数２：X方向のScale(from)" + newLine
@@ -805,7 +805,7 @@ const CMD = {
     "LPos": {
         "num": 34,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準ですぐ移動させる" + newLine
                     + "引数１：移動させるx座標" + newLine
                     + "引数２：移動させるy座標" + newLine
@@ -827,7 +827,7 @@ const CMD = {
     "LLoopX": {
         "num": 36,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のX方向へのループ移動を設定する" + newLine
                     + "引数１：X座標(from)" + newLine
                     + "引数２：X座標(to)" + newLine
@@ -840,7 +840,7 @@ const CMD = {
     "LLoopY": {
         "num": 37,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のY方向へのループ移動を設定する" + newLine
                     + "引数１：Y座標(from)" + newLine
                     + "引数２：Y座標(to)" + newLine
@@ -853,7 +853,7 @@ const CMD = {
     "LLoopZ": {
         "num": 38,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のZ方向へのループ移動を設定する" + newLine
                     + "引数１：Z座標(from)" + newLine
                     + "引数２：Z座標(to)" + newLine
@@ -866,7 +866,7 @@ const CMD = {
     "Angle": {
         "num": 39,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を回転させる" + newLine
                     + "引数１：回転角度(from)" + newLine
                     + "引数２：回転角度(to)" + newLine
@@ -878,7 +878,7 @@ const CMD = {
     "AngleLoop": {
         "num": 40,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像に設定した回転をループさせる" + newLine
                     + "引数１：回転角度(from)" + newLine
                     + "引数２：回転角度(to)" + newLine
@@ -890,7 +890,7 @@ const CMD = {
     "Move2": {
         "num": 41,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を現在位置から移動させる" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
@@ -904,14 +904,14 @@ const CMD = {
     "PosX": {
         "num": 42,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐX方向へ移動させる" + newLine
                     + "引数１：X座標",
     },
     "PosY": {
         "num": 43,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐY方向へ移動させる" + newLine
                     + "引数１：Y座標",
         "LS_bin": [
@@ -921,14 +921,14 @@ const CMD = {
     "PosZ": {
         "num": 44,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐZ方向へ移動させる（効果なしと思われる）" + newLine
                     + "引数１：Z座標",
     },
     "PlaySE": {
         "num": 45,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "SEを再生する" + newLine
                     + "引数１：SE情報インデックス" + newLine
                     + "引数２：SEグループ内のインデックス番号（使われてないと思われる）",
@@ -953,7 +953,7 @@ const CMD = {
     "SET_MT_NONE": {
         "num": 46,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準で回転情報を初期化する" + newLine
                     + "（まっすぐに立つ効果になる）",
         "LS_bin": [
@@ -3519,7 +3519,7 @@ const CMD = {
     "SKY_DOME": {
         "num": 55,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "空を表示する",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -14220,8 +14220,9 @@ const CMD = {
     "Set2P": {
         "num": 91,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
-                    + "2P設定",
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "Txで表示した画像を2Pのところへ移す。" + newLine
+                    + "BSでは効果がなく、CS以後ではエラーになる",
         "LS_bin": [
             "CHARSEL.BIN"
         ]
@@ -14229,8 +14230,8 @@ const CMD = {
     "CharChk_and_Tx": {
         "num": 92,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
-                    + "車両の開放によって、アイコンの設定" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "車両の開放状態を判断して、画像を設定する" + newLine
                     + "引数１：車両インデックス" + newLine
                     + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
                     + "引数３：未開放の場合、imgサイズ情報のインデックス",
@@ -14241,7 +14242,7 @@ const CMD = {
     "ChangeR": {
         "num": 93,
         "description": "モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のR要素を変える" + newLine
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
                     + "引数２：fromのR(0~255)" + newLine
@@ -14251,7 +14252,7 @@ const CMD = {
     "ChangeG": {
         "num": 94,
         "description": "モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のG要素を変える" + newLine
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
                     + "引数２：fromのG(0~255)" + newLine
@@ -14261,7 +14262,7 @@ const CMD = {
     "ChangeB": {
         "num": 95,
         "description": "モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のB要素を変える" + newLine
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
                     + "引数２：fromのB(0~255)" + newLine
@@ -14271,7 +14272,7 @@ const CMD = {
     "ChangeColor": {
         "num": 96,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のG, R, B要素を変える" + newLine
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
                     + "引数２：fromのG(0~255)" + newLine
@@ -14288,8 +14289,9 @@ const CMD = {
     "SetGray": {
         "num": 97,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をグレーに変える" + newLine
+                    + "CS以後ではエラーになる" + newLine
                     + "引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
