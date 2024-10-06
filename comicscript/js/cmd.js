@@ -7019,7 +7019,8 @@ const CMD = {
         "num": 65,
         "description": "【LS、BS、CS、RS】" + newLine
                     + "5秒カウントを数える" + newLine
-                    + "（COUNT.BINの0-0を使う。CS以後のゲームにも使えるが、カウントはcomic2900.BINを使っている）",
+                    + "（COUNT.BINの0-0を使う。" + newLine
+                    + "CS以後のゲームにも使えるが、カウントはcomic2900.BINを使っている）",
         "LS_comic": [
             "COMIC000.BIN",
             "COMIC100.BIN",
@@ -18097,7 +18098,7 @@ const CMD = {
     "TITLE_MODE": {
         "num": 170,
         "description": "【LS、BS、CS、RS】" + newLine
-                    + "タイトル画面へ",
+                    + "タイトル画面へ行く。オープニング専用",
         "LS_comic": [
             "COMIC998.BIN",
             "COMIC999.BIN"
@@ -18159,7 +18160,8 @@ const CMD = {
     },
     "RAND_IF": {
         "num": 172,
-        "description": "次の行へ行くか（Trueとする）、ELSE_RAND_IFまで飛ぶ。（Falseとする）" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "次の行へ行くか（Trueとする）、ELSE_RAND_IFまで飛ぶ。（Falseとする）" + newLine
                     + "Trueの場合、ELSE_RAND_IFの行があればEND_RAND_IFまで飛ぶ" + newLine
                     + "引数１：指定ラベル",
         "LS_comic": [
@@ -18168,7 +18170,8 @@ const CMD = {
     },
     "ELSE_RAND_IF": {
         "num": 173,
-        "description": "RAND_IFのFalse判定で、指定ラベルまで飛ぶ場合、この行で止める。" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "RAND_IFのFalse判定で、指定ラベルまで飛ぶ場合、この行で止める。" + newLine
                     + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC304.BIN"
@@ -18176,7 +18179,8 @@ const CMD = {
     },
     "END_RAND_IF": {
         "num": 174,
-        "description": "RAND_IFのTrue判定で、ELSE_RAND_IFによって" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "RAND_IFがTrue判定になり、ELSE_RAND_IFに到達して" + newLine
                     + "指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
         "LS_comic": [
@@ -18185,7 +18189,8 @@ const CMD = {
     },
     "CHK_SP_BREAK": {
         "num": 175,
-        "description": "指定車両が、指定時間内に非常ブレーキを使った場合、次の行へ行く。" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "指定車両が、指定時間内に非常ブレーキを使った場合、次の行へ行く。" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ。" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
@@ -18196,7 +18201,8 @@ const CMD = {
     },
     "END_CHK_SP_BREAK": {
         "num": 176,
-        "description": "CHK_SP_BREAKで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHK_SP_BREAKで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC401.BIN"
@@ -18204,7 +18210,8 @@ const CMD = {
     },
     "CHK_DRIFT": {
         "num": 177,
-        "description": "指定車両が、指定時間内にドリフトした場合、次の行へ行く。" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "指定車両が、指定時間内にドリフトした場合、次の行へ行く。" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ。" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
@@ -18234,7 +18241,8 @@ const CMD = {
     },
     "END_CHK_DRIFT": {
         "num": 178,
-        "description": "CHK_DRIFTで指定ラベルまで飛ぶ場合、この行で止める" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHK_DRIFTで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
         "LS_comic": [
             "COMIC404.BIN"
@@ -18261,7 +18269,10 @@ const CMD = {
     },
     "ENDING_MODE": {
         "num": 179,
-        "description": "エンディングモードにする",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "LSのエンディングモードのようになる。" + newLine
+                    + "車両のアイコン・速度計・効果音を消して、" + newLine
+                    + "実行した時点以後のコミックスクリプトを全部無視する",
         "LS_comic": [
             "COMIC500.BIN",
             "COMIC902.BIN",
@@ -18270,7 +18281,9 @@ const CMD = {
     },
     "ChkCause_and_Tx": {
         "num": 180,
-        "description": "【モデルバイナリ】コースの開放によって、画像の設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "コースの開放状態を判断して、画像を設定する" + newLine
                     + "引数１：二人バトル、または沿線コースのインデックス" + newLine
                     + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
                     + "引数３：未開放の場合、imgサイズ情報のインデックス",
@@ -18280,7 +18293,17 @@ const CMD = {
     },
     "SET_DRAW_TYPE": {
         "num": 181,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示する画像の描画タイプを設定する" + newLine
+                    + "引数１" + newLine
+                    + "　0（NORMAL）：全体が透明を無視したデフォルト状態" + newLine
+                    + "　1（BLEND）：わずか透明な描画（ゲームのデフォルト）" + newLine
+                    + "　2（ADD）：画像も透明" + newLine
+                    + "　3（ADD_NOALPHA）：画像も透明だが、外側の透明を無視する" + newLine
+                    + "　4（SUB）：画像を透明にし、色判定" + newLine
+                    + "　5（SUB_NOALPHA）：画像を透明にし、色反転するが、外側の透明を無視する" + newLine
+                    + "　6（MULTIPLE）：複合的（半透明・画像の縁まで透明）",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -18296,7 +18319,12 @@ const CMD = {
     },
     "To_TxSize": {
         "num": 182,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【LS】" + newLine
+                    + "Txで表示した画像の倍率を変える" + newLine
+                    + "引数１：横の倍率" + newLine
+                    + "引数２：縦の倍率" + newLine
+                    + "引数３：変化時間（フレーム）",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -18312,7 +18340,8 @@ const CMD = {
     },
     "OPEN_CAUSE": {
         "num": 183,
-        "description": "コースを開放する" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "コースを開放する。BS以後からは効果なし" + newLine
                     + "引数１：コースのインデックス",
         "LS_comic": [
             "COMIC200.BIN",
@@ -18321,7 +18350,8 @@ const CMD = {
     },
     "DIS_TRAIN_SPEED": {
         "num": 184,
-        "description": "スクリプトでスピード設定処理を止める" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "スクリプトでスピード設定処理を止める" + newLine
                     + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC200.BIN",
@@ -18433,7 +18463,8 @@ const CMD = {
     },
     "CHK_RACE_TIME": {
         "num": 185,
-        "description": "RACE_STARTから経過した時間をチェックする" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "RACE_STARTから経過した時間をチェックする" + newLine
                     + "チェックした時間が指定時間より少ない場合" + newLine
                     + "次のコマンドへ行く、そうではない場合、END_CHK_RACE_TIMEまで飛ぶ" + newLine
                     + "引数１：指定時間",
@@ -18445,7 +18476,8 @@ const CMD = {
     },
     "END_CHK_RACE_TIME": {
         "num": 186,
-        "description": "CHK_RACE_TIMEで飛ぶ場合、この行で止める",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "CHK_RACE_TIMEで飛ぶ場合、この行で止める",
         "LS_comic": [
             "COMIC201.BIN",
             "COMIC203.BIN",
@@ -18454,7 +18486,8 @@ const CMD = {
     },
     "End_Comic": {
         "num": 187,
-        "description": "スクリプトを終了する" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "スクリプトを終了する" + newLine
                     + "引数１：スクリプト番号",
         "LS_comic": [
             "COMIC209.BIN",
@@ -18527,7 +18560,8 @@ const CMD = {
     },
     "WAIT_RAIL": {
         "num": 188,
-        "description": "指定時間内に、指定したレールを通過するまで待つ" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定時間内に、指定したレールとボーンを通過するまで待つ" + newLine
                     + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：レール番号" + newLine
@@ -18563,7 +18597,8 @@ const CMD = {
     },
     "END_WAIT_RAIL": {
         "num": 189,
-        "description": "WAIT_RAILで飛ぶ場合、この行で止める" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "WAIT_RAILで飛ぶ場合、この行で止める" + newLine
                     + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC205.BIN",
@@ -18879,12 +18914,13 @@ const CMD = {
     },
     "COMIC_SCALE": {
         "num": 190,
-        "description": "指定したコマのスケールを設定する" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定したコマのスケールを設定する" + newLine
                     + "引数１：コマの番号" + newLine
                     + "引数２：x倍率" + newLine
                     + "引数３：y倍率" + newLine
-                    + "引数４：変化するフレーム" + newLine
-                    + "引数５：変化効果",
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "LS_comic": [
             "COMIC208.BIN",
             "COMIC601.BIN",
@@ -18950,15 +18986,19 @@ const CMD = {
     },
     "USO_COUNT": {
         "num": 191,
-        "description": "１からカウントを数える" + newLine
-                    + "（H7001　VS　KQ21XXのバトルのみ使われたコマンド。）",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "１からカウントを数える" + newLine
+                    + "BSの10話のみ使われたコマンド。" + newLine
+                    + "（COUNT.BINの4-0を使う。LSは普通のカウントと同じ。" + newLine
+                    + "CS以後は、ヘッダー情報が足りないので、改造しない限りエラーになる）",
         "BS_comic": [
             "COMIC1500.BIN"
         ]
     },
     "WaitRandPlaySE": {
         "num": 192,
-        "description": "RandPlayComicSEから再生されたSEを待つ",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "RandPlayComicSEから再生されたSEを待つ",
         "LS_comic": [
             "COMIC009.BIN",
             "COMIC121.BIN",
@@ -18972,7 +19012,8 @@ const CMD = {
     },
     "FROM": {
         "num": 193,
-        "description": "あるコマンドでFROMに飛ばした時、引数が一致する場合、この行で止める" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "あるコマンドでFROMに飛ばした時、引数が一致する場合、この行で止める" + newLine
                     + "引数１：数字",
         "LS_comic": [
             "COMIC000.BIN",
@@ -19334,7 +19375,8 @@ const CMD = {
     },
     "GOTO": {
         "num": 194,
-        "description": "引数と一致する一番最初のFROMまで飛ばす" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "引数と一致する一番最初のFROMまで飛ばす" + newLine
                     + "引数１：FROMの数字",
         "LS_comic": [
             "COMIC002.BIN",
@@ -19470,7 +19512,8 @@ const CMD = {
     },
     "CHK_TRAIN_TYPE": {
         "num": 195,
-        "description": "指定車両が車両インデックスと同じ場合、引数３のFROMへ" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定車両が車両インデックスと同じ場合、引数３のFROMへ" + newLine
                     + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
                     + "SSでは、引数２を東急300系にした場合" + newLine
                     + "実車両が【京阪80型、AE86、デキ3】でも同じ扱いにする" + newLine
@@ -19630,7 +19673,8 @@ const CMD = {
     },
     "RAND_IF_AVG": {
         "num": 196,
-        "description": "引数の数字分、0から始まるランダムな整数を作り" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "引数の数字分、0から始まるランダムな整数を作り" + newLine
                     + "FROMの数字として飛ばす" + newLine
                     + "引数１：数字",
         "LS_comic": [
@@ -19644,7 +19688,8 @@ const CMD = {
     },
     "CHK_NOTCH": {
         "num": 197,
-        "description": "指定車両が指定時間分、ノッチを維持した場合、引数３のFROMへ" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "指定車両が指定時間分、ノッチを維持した場合、引数３のFROMへ" + newLine
                     + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
@@ -19661,7 +19706,8 @@ const CMD = {
     },
     "WAIT_RAIL_ONLY": {
         "num": 198,
-        "description": "指定時間内に、指定したレールを通過するまで待つ" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "指定時間内に、指定したレールを通過するまで待つ" + newLine
                     + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：レール番号" + newLine
@@ -19973,7 +20019,10 @@ const CMD = {
     },
     "ONE_TRACK_DRIFT": {
         "num": 199,
-        "description": "【LS】指定車両を単線ドリフトさせる" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
+                    + "LSで、指定車両を単線ドリフトさせる" + newLine
+                    + "BS以後では、このコマンドを実行すると" + newLine
+                    + "「作りこみ中です」とエラーが出てゲームが落ちる" + newLine
                     + "【SSから】指定車両を単線ドリフトさせる。それが出来ない車両の場合、普通にドリフトさせる。" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：" + newLine
@@ -19988,14 +20037,18 @@ const CMD = {
     },
     "LAST_STATION": {
         "num": 200,
-        "description": "詳細不明",
+        "description": "【LS、BS、CS、RS】" + newLine
+                    + "途中から割り込んでも、ゴール判定できるようにする" + newLine
+                    + "ゴール判定は、駅名位置情報の駅フラグが「2」のもので" + newLine
+                    + "複数定義した場合、最後のものを使う",
         "LS_comic": [
             "COMIC207.BIN"
         ]
     },
     "OSSAN": {
         "num": 201,
-        "description": "指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine
+        "description": "【LS、BS】" + newLine
+                    + "指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "1（True）、0（False）",
         "LS_comic": [
@@ -20010,10 +20063,12 @@ const CMD = {
     },
     "SET_TAIL_SCALE": {
         "num": 202,
-        "description": "デキ3のテールランプを付ける" + newLine
+        "description": "【LS、BS】" + newLine
+                    + "デキ3のテールランプのスケールを変更する" + newLine
+                    + "ただし、BSではエラーでゲームが落ちる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：詳細不明" + newLine
-                    + "引数３：詳細不明" + newLine
+                    + "引数３：テールランプのスケール" + newLine
                     + "引数４：変化時間（フレーム）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -20035,7 +20090,9 @@ const CMD = {
     },
     "OPEN_HUTA": {
         "num": 203,
-        "description": "デキ3の蓋をオープンする" + newLine
+        "description": "【LS、BS】" + newLine
+                    + "デキ3の蓋をオープンする" + newLine
+                    + "ただし、BSではエラーでゲームが落ちる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC009.BIN",
@@ -20050,7 +20107,9 @@ const CMD = {
     },
     "SET_GN": {
         "num": 204,
-        "description": "デキ3のGN起動" + newLine
+        "description": "【LS、BS】" + newLine
+                    + "デキ3のGN起動。" + newLine
+                    + "ただし、BSではエラーでゲームが落ちる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC009.BIN",
