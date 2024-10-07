@@ -14300,8 +14300,10 @@ const CMD = {
     "MoveX": {
         "num": 98,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
-                    + "Set3DObjで配置したモデルをワールド座標基準、X方向へ移動する" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "Txで表示した画像をX方向へ移動する" + newLine
+                    + "LSのキャラクター選択では、Set3DObjにも適用できるコマンドで" + newLine
+                    + "ワールド座標基準で移動する" + newLine
                     + "引数１：X方向への距離" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -14313,8 +14315,10 @@ const CMD = {
     "MoveY": {
         "num": 99,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
-                    + "Set3DObjで配置したモデルをワールド座標基準、Y方向へ移動する" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "Txで表示した画像をY方向へ移動する" + newLine
+                    + "LSのキャラクター選択では、Set3DObjにも適用できるコマンドで" + newLine
+                    + "ワールド座標基準で移動する" + newLine
                     + "引数１：Y方向への距離" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -14326,8 +14330,10 @@ const CMD = {
     "MoveZ": {
         "num": 100,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
-                    + "Set3DObjで配置したモデルをワールド座標基準、Z方向へ移動する" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "Txで表示した画像をZ方向へ移動する" + newLine
+                    + "LSのキャラクター選択では、Set3DObjにも適用できるコマンドで" + newLine
+                    + "ワールド座標基準で移動する" + newLine
                     + "引数１：Z方向への距離" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -14338,8 +14344,9 @@ const CMD = {
     "SetUV_X": {
         "num": 101,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を左右反転させる" + newLine
+                    + "CS以後ではエラーになる" + newLine
                     + "引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -14362,7 +14369,7 @@ const CMD = {
     "IsStart": {
         "num": 103,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "バトルが始まるとANIMEを適用する" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３",
@@ -15692,7 +15699,7 @@ const CMD = {
     "RandWAngle": {
         "num": 127,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置した動くモデルを、ワールド座標基準でランダムに回転させる",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15702,7 +15709,7 @@ const CMD = {
     "RandMove": {
         "num": 128,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルを、ランダムな方向へ移動させる" + newLine
                     + "引数１：x軸のランダム範囲(1)" + newLine
                     + "引数２：x軸のランダム範囲(2)" + newLine
@@ -15719,13 +15726,15 @@ const CMD = {
     "ADD_OBJ": {
         "num": 129,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
-                    + "モデルのスクリプトから呼ぶスクリプトを追加する。コミックスクリプトでも使える。" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "一番最初のベースBINから（ほぼBASE_OBJ.BIN。LSはSCENE3DOBJ.BIN）" + newLine
+                    + "モデルのスクリプトを呼ぶ。コミックスクリプトでも使える。" + newLine
+                    + "ただし、タイプ６で呼ぶと効果なし" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３" + newLine
-                    + "引数３：呼び出し元からずらすx座標。BS以後からは効果なし" + newLine
-                    + "引数４：呼び出し元からずらすy座標。BS以後からは効果なし" + newLine
-                    + "引数５：呼び出し元からずらすz座標。BS以後からは効果なし" + newLine
+                    + "引数３：呼び出し元からずらすx座標" + newLine
+                    + "引数４：呼び出し元からずらすy座標" + newLine
+                    + "引数５：呼び出し元からずらすz座標" + newLine
                     + "引数６：詳細不明",
         "LS_comic": [
             "COMIC999.BIN"
@@ -15737,7 +15746,7 @@ const CMD = {
     "START_COMIC": {
         "num": 130,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "コミックスクリプトを実行する" + newLine
                     + "引数１：コミックスクリプト番号",
         "LS_bin": [
@@ -15751,7 +15760,7 @@ const CMD = {
     "SetRand3DObj": {
         "num": 131,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "指定範囲内のオブジェクトインデックスをランダム1個選んで、Set3DObjを実行する" + newLine
                     + "引数１：範囲Start（オブジェクトインデックス）" + newLine
                     + "引数２：範囲End（オブジェクトインデックス）",
@@ -15762,7 +15771,7 @@ const CMD = {
     "Offset3DObj": {
         "num": 132,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルの元インデックスから" + newLine
                     + "指定数分ずらしたインデックスで再配置する" + newLine
                     + "引数１：offsetする数値",
@@ -15773,7 +15782,7 @@ const CMD = {
     "RandPos": {
         "num": 133,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをランダムな位置に配置する" + newLine
                     + "引数１：x軸のランダム範囲(1)" + newLine
                     + "引数２：x軸のランダム範囲(2)" + newLine
@@ -15788,7 +15797,7 @@ const CMD = {
     "RandPlaySE": {
         "num": 134,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
                     + "引数１：範囲Start（SEグループインデックス）" + newLine
                     + "引数２：範囲End（SEグループインデックス）" + newLine
@@ -15800,7 +15809,7 @@ const CMD = {
     "RandAngleX": {
         "num": 135,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のX軸基準で、ランダムな数値で回転する" + newLine
                     + "引数１：x軸のランダム範囲(1)" + newLine
                     + "引数２：x軸のランダム範囲(2)",
@@ -15808,7 +15817,7 @@ const CMD = {
     "RandAngleY": {
         "num": 136,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のY軸基準で、ランダムな数値で回転する" + newLine
                     + "引数１：y軸のランダム範囲(1)" + newLine
                     + "引数２：y軸のランダム範囲(2)",
@@ -15819,7 +15828,7 @@ const CMD = {
     "RandAngleZ": {
         "num": 137,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のZ軸基準で、ランダムな数値で回転する" + newLine
                     + "引数１：z軸のランダム範囲(1)" + newLine
                     + "引数２：z軸のランダム範囲(2)",
@@ -16039,7 +16048,7 @@ const CMD = {
     "ChkStory_and_Tx": {
         "num": 144,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "ストーリーの開放状態を判断して、画像を設定する" + newLine
                     + "引数１：ストーリーインデックス" + newLine
                     + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
@@ -16051,7 +16060,7 @@ const CMD = {
     "ClearStory_and_Tx": {
         "num": 145,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "ストーリーのクリア状態を判断して、画像を設定する" + newLine
                     + "引数１：ストーリーインデックス" + newLine
                     + "引数２：クリアの場合、imgサイズ情報のインデックス" + newLine
@@ -18284,8 +18293,9 @@ const CMD = {
     "ChkCause_and_Tx": {
         "num": 180,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "コースの開放状態を判断して、画像を設定する" + newLine
+                    + "ただし、BS以後ではエラーになる" + newLine
                     + "引数１：二人バトル、または沿線コースのインデックス" + newLine
                     + "引数２：開放の場合、imgサイズ情報のインデックス" + newLine
                     + "引数３：未開放の場合、imgサイズ情報のインデックス",
@@ -18296,7 +18306,7 @@ const CMD = {
     "SET_DRAW_TYPE": {
         "num": 181,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示する画像の描画タイプを設定する" + newLine
                     + "引数１" + newLine
                     + "　0（NORMAL）：全体が透明を無視したデフォルト状態" + newLine
@@ -18322,7 +18332,7 @@ const CMD = {
     "To_TxSize": {
         "num": 182,
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS】" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像の倍率を変える" + newLine
                     + "引数１：横の倍率" + newLine
                     + "引数２：縦の倍率" + newLine
@@ -19379,6 +19389,7 @@ const CMD = {
         "num": 194,
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "引数と一致する一番最初のFROMまで飛ばす" + newLine
+                    + "モデルバイナリではCS以後から使える" + newLine
                     + "引数１：FROMの数字",
         "LS_comic": [
             "COMIC002.BIN",
