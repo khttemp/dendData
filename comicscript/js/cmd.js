@@ -14241,7 +14241,7 @@ const CMD = {
     },
     "ChangeR": {
         "num": 93,
-        "description": "モデルバイナリ】" + newLine
+        "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のR要素を変える" + newLine
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
@@ -14251,7 +14251,7 @@ const CMD = {
     },
     "ChangeG": {
         "num": 94,
-        "description": "モデルバイナリ】" + newLine
+        "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のG要素を変える" + newLine
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
@@ -14261,7 +14261,7 @@ const CMD = {
     },
     "ChangeB": {
         "num": 95,
-        "description": "モデルバイナリ】" + newLine
+        "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のB要素を変える" + newLine
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
