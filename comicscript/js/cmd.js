@@ -21595,9 +21595,11 @@ const CMD = {
     },
     "CREATE_LENSFLEAR": {
         "num": 245,
-        "description": "【モデルバイナリ】レンズフレアを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "レンズフレアインデックスを生成する" + newLine
                     + "引数１：生成する個数" + newLine
-                    + "引数２～：ヘッダーの「tga情報」インデックス",
+                    + "引数２～：ヘッダーの「tga情報」インデックス（引数１の数値分）",
         "BS_bin": [
             "BASE_OBJ.BIN",
             "HK_OBJ.BIN",
@@ -21641,11 +21643,13 @@ const CMD = {
     },
     "SET_LENSFLEAR_PARAM": {
         "num": 246,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SET_LENSFLEAR_MT": {
         "num": 247,
-        "description": "【モデルバイナリ】生成したレンズフレアにマテリアルに設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "生成したレンズフレアにマテリアルに設定する" + newLine
                     + "引数１：レンズフレアインデックス" + newLine
                     + "引数２：MT名称",
         "BS_bin": [
@@ -21687,7 +21691,8 @@ const CMD = {
     },
     "RAIL_POS_TO_BUFF": {
         "num": 248,
-        "description": "指定したレールにBUFFを設置する" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "指定したレールにBUFFを設置する" + newLine
                     + "引数１：レール番号" + newLine
                     + "引数２：ボーン番号" + newLine
                     + "引数３：BUFFのインデックス",
@@ -21934,7 +21939,8 @@ const CMD = {
     },
     "BUFF_TO_CAM_POS": {
         "num": 249,
-        "description": "BUFFの位置を基準に、固定視点用のカメラの位置を決める" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "BUFFの位置を基準に、固定視点用のカメラの位置を決める" + newLine
                     + "引数１：BUFFのインデックス" + newLine
                     + "引数２：ずらすx座標" + newLine
                     + "引数３：ずらすy座標" + newLine
@@ -21960,7 +21966,8 @@ const CMD = {
     },
     "BUFF_TO_TARGET_POS": {
         "num": 250,
-        "description": "BUFFの位置を基準に、固定視点用の注視点の位置を決める" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "BUFFの位置を基準に、固定視点用の注視点の位置を決める" + newLine
                     + "引数１：BUFFのインデックス" + newLine
                     + "引数２：ずらすx座標" + newLine
                     + "引数３：ずらすy座標" + newLine
@@ -22008,11 +22015,15 @@ const CMD = {
     },
     "FTV_BASE_PROC": {
         "num": 251,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "既存の「FTV_Play」「FTV_Wait」「FTV_End」の3つのコマンドを" + newLine
+                    + "全部順番に実行した効果と同じ" + newLine
+                    + "引数１：FVT番号"
     },
     "FTV_NEXT_PROC": {
         "num": 252,
-        "description": "同じ画像を使うFVTの場合" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "同じ画像を使うFVTの場合" + newLine
                     + "引数２に続いて引数１のFVTを出す" + newLine
                     + "引数１：FVT番号" + newLine
                     + "引数２：FVT番号（prev）",
