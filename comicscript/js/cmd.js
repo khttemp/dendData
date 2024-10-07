@@ -14355,7 +14355,7 @@ const CMD = {
     "RePlay": {
         "num": 102,
         "description": "【LS、BS】" + newLine
-                    + "詳細不明" + newLine
+                    + "詳細不明。リプレイモードのためのものと思われる" + newLine
                     + "引数１：1（True）、0（False）（１）",
         "LS_comic": [
             "COMIC000.BIN",
