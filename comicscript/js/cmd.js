@@ -21100,8 +21100,10 @@ const CMD = {
         "num": 222,
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
-                    + "呼び出し元から参照して、指定したスクリプトを呼ぶ" + newLine
-                    + "ただし、タイプ６で呼ぶと効果なし" + newLine
+                    + "一番最初のベースBINではないスクリプトから参照して、" + newLine
+                    + "指定したスクリプトを呼ぶ" + newLine
+                    + "ただし、タイプ６で呼ぶと効果がなく" + newLine
+                    + "また、一番最初のベースBINのスクリプトで実行しても効果はない" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３" + newLine
                     + "引数３：呼び出し元からずらすx座標" + newLine
@@ -21555,15 +21557,27 @@ const CMD = {
     },
     "RELEASE_ALL_IB_LIST": {
         "num": 239,
-        "description": "詳細不明"
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "あるセクションで生成したListInterを全部消す"
     },
     "ADD_MY_OBJ_INDEX": {
         "num": 240,
-        "description": "詳細不明"
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "呼び出し元から参照して、指定したスクリプトを" + newLine
+                    + "指定したモデルインデックスの位置から呼ぶ" + newLine
+                    + "ただし、タイプ６で呼ぶと効果がなく" + newLine
+                    + "また、一番最初のベースBINのスクリプトで実行しても効果はない" + newLine
+                    + "引数１：ANIME要素２" + newLine
+                    + "引数２：ANIME要素３" + newLine
+                    + "引数３：モデルインデックス"
     },
     "TO_TAGET_POS": {
         "num": 241,
-        "description": "詳細不明"
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "詳細不明"
     },
     "ATK_HIT": {
         "num": 242,
@@ -21575,7 +21589,9 @@ const CMD = {
     },
     "SET_RELEASE_PARAM": {
         "num": 244,
-        "description": "詳細不明"
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "詳細不明"
     },
     "CREATE_LENSFLEAR": {
         "num": 245,
