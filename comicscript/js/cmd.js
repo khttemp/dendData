@@ -20137,7 +20137,10 @@ const CMD = {
     },
     "MDL_GETINDEX": {
         "num": 205,
-        "description": "【モデルバイナリ】オブジェクトのフレームを取得する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "CREATE_INDEXで作成したインデックスに" + newLine
+                    + "オブジェクトのフレームを登録する" + newLine
                     + "引数１：新たに扱うモデルインデックス" + newLine
                     + "引数２：オブジェクトのフレーム名称",
         "BS_bin": [
@@ -20274,15 +20277,27 @@ const CMD = {
     },
     "INDEX_BONE_ROT_X": {
         "num": 206,
-        "description": "詳細不明" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "効果なし。" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをワールド座標基準で、X軸で回転するものと思われる" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明"
+                    + "引数２：回転数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法"
     },
     "INDEX_BONE_ROT_Y": {
         "num": 207,
-        "description": "詳細不明" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "効果なし。" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをワールド座標基準で、Y軸で回転するものと思われる" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：回転数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "BS_bin": [
             "MENU_OBJ.BIN"
         ],
@@ -20295,18 +20310,29 @@ const CMD = {
     },
     "INDEX_BONE_ROT_Z": {
         "num": 208,
-        "description": "詳細不明" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "効果なし。" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをワールド座標基準で、Z軸で回転するものと思われる" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：回転数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "CS_bin": [
             "VERUP_SCENE.BIN"
         ]
     },
     "INDEX_BONE_L_ROT_X": {
         "num": 209,
-        "description": "【モデルバイナリ】モデルのROT_Xを設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、X軸で回転する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：回転数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "CS_bin": [
             "H2800_00.BIN",
             "KIN_NARA.BIN"
@@ -20319,9 +20345,14 @@ const CMD = {
     },
     "INDEX_BONE_L_ROT_Y": {
         "num": 210,
-        "description": "【モデルバイナリ】モデルのROT_Yを設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、Y軸で回転する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：回転数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -20388,9 +20419,14 @@ const CMD = {
     },
     "INDEX_BONE_L_ROT_Z": {
         "num": 211,
-        "description": "【モデルバイナリ】モデルのROT_Zを設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、Z軸で回転する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：回転数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -20417,7 +20453,9 @@ const CMD = {
     },
     "CREATE_INDEX": {
         "num": 212,
-        "description": "【モデルバイナリ】モデルインデックスを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXを使えるように、モデルインデックスを生成する" + newLine
                     + "引数１：生成するインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20553,9 +20591,11 @@ const CMD = {
     },
     "IB_LI_CREATE_ROT_X": {
         "num": 213,
-        "description": "【モデルバイナリ】ROT_XのLIインデックスを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "X軸に回転する変化を格納する、ListInterのインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数",
+                    + "引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
             "HK_OBJ.BIN",
@@ -20579,9 +20619,11 @@ const CMD = {
     },
     "IB_LI_CREATE_ROT_Y": {
         "num": 214,
-        "description": "【モデルバイナリ】ROT_YのLIインデックスを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Y軸に回転する変化を格納する、ListInterのインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数",
+                    + "引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
             "BOOKSEL_OBJ.BIN",
@@ -20643,9 +20685,11 @@ const CMD = {
     },
     "IB_LI_CREATE_ROT_Z": {
         "num": 215,
-        "description": "【モデルバイナリ】ROT_ZのLIインデックスを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Z軸に回転する変化を格納する、ListInterのインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数",
+                    + "引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
             "HK_OBJ.BIN",
@@ -20713,10 +20757,12 @@ const CMD = {
     },
     "IB_LI_SET_ROT_X": {
         "num": 216,
-        "description": "【モデルバイナリ】ROT_XのLIインデックスに値を設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "X軸回転のListInterのインデックスに値を設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：LIインデックス" + newLine
-                    + "引数３：ROT_X値" + newLine
+                    + "引数２：ListInterインデックス" + newLine
+                    + "引数３：回転数値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "BS_bin": [
@@ -20742,10 +20788,12 @@ const CMD = {
     },
     "IB_LI_SET_ROT_Y": {
         "num": 217,
-        "description": "【モデルバイナリ】ROT_YのLIインデックスに値を設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Y軸回転のListInterのインデックスに値を設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：LIインデックス" + newLine
-                    + "引数３：ROT_Y値" + newLine
+                    + "引数２：ListInterインデックス" + newLine
+                    + "引数３：回転数値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "BS_bin": [
@@ -20809,10 +20857,12 @@ const CMD = {
     },
     "IB_LI_SET_ROT_Z": {
         "num": 218,
-        "description": "【モデルバイナリ】ROT_ZのLIインデックスに値を設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Z軸回転のListInterのインデックスに値を設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：LIインデックス" + newLine
-                    + "引数３：ROT_Z値" + newLine
+                    + "引数２：ListInterインデックス" + newLine
+                    + "引数３：回転数値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "BS_bin": [
@@ -20882,7 +20932,9 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_X": {
         "num": 219,
-        "description": "【モデルバイナリ】モデルインデックスのROT_Xに関するLI設定をループさせる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "モデルインデックスのX軸回転のListInterにループを設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_bin": [
@@ -20908,7 +20960,9 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_Y": {
         "num": 220,
-        "description": "【モデルバイナリ】モデルインデックスのROT_Yに関するLI設定をループさせる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "モデルインデックスのY軸回転のListInterにループを設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_bin": [
@@ -20972,7 +21026,9 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_Z": {
         "num": 221,
-        "description": "【モデルバイナリ】モデルインデックスのROT_Zに関するLI設定をループさせる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "モデルインデックスのZ軸回転のListInterにループを設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_bin": [
@@ -21042,19 +21098,29 @@ const CMD = {
     },
     "ADD_MY_OBJ": {
         "num": 222,
-        "description": "【モデルバイナリ】オブジェクトのANIMEを追加で実行する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "呼び出し元から参照して、指定したスクリプトを呼ぶ" + newLine
+                    + "ただし、タイプ６で呼ぶと効果なし" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３" + newLine
-                    + "引数３～５：詳細不明",
+                    + "引数３：呼び出し元からずらすx座標" + newLine
+                    + "引数４：呼び出し元からずらすy座標" + newLine
+                    + "引数５：呼び出し元からずらすz座標",
         "RS_bin": [
             "TOBU.BIN"
         ]
     },
     "INDEX_BONE_L_POS_X": {
         "num": 223,
-        "description": "【モデルバイナリ】モデルのPOS_Xを設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、X軸で移動する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：移動数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "PAD_SET_OBJ.BIN"
@@ -21074,9 +21140,14 @@ const CMD = {
     },
     "INDEX_BONE_L_POS_Y": {
         "num": 224,
-        "description": "【モデルバイナリ】モデルのPOS_Yを設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、Y軸で移動する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：移動数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "HK_OBJ.BIN",
@@ -21113,9 +21184,14 @@ const CMD = {
     },
     "INDEX_BONE_L_POS_Z": {
         "num": 225,
-        "description": "詳【モデルバイナリ】モデルのPOS_Zを設定" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、Z軸で移動する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：移動数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -21188,9 +21264,11 @@ const CMD = {
     },
     "IB_LI_CREATE_L_POS_X": {
         "num": 226,
-        "description": "【モデルバイナリ】POS_XのLIインデックスを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "X軸に移動する変化を格納する、ListInterのインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数",
+                    + "引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
             "HK_OBJ.BIN",
@@ -21207,9 +21285,11 @@ const CMD = {
     },
     "IB_LI_CREATE_L_POS_Y": {
         "num": 227,
-        "description": "【モデルバイナリ】POS_YのLIインデックスを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Y軸に移動する変化を格納する、ListInterのインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数",
+                    + "引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
             "BOOKSEL_OBJ.BIN",
@@ -21247,9 +21327,11 @@ const CMD = {
     },
     "IB_LI_CREATE_L_POS_Z": {
         "num": 228,
-        "description": "【モデルバイナリ】POS_ZのLIインデックスを生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Z軸に移動する変化を格納する、ListInterのインデックスを生成する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：生成するLIインデックス個数",
+                    + "引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "MENU_OBJ.BIN",
@@ -21264,10 +21346,12 @@ const CMD = {
     },
     "IB_LI_SET_L_POS_X": {
         "num": 229,
-        "description": "【モデルバイナリ】POS_XのLIインデックスに値を設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "X軸移動のListInterのインデックスに値を設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：LIインデックス" + newLine
-                    + "引数３：POS_X値" + newLine
+                    + "引数３：移動数値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "BS_bin": [
@@ -21286,10 +21370,12 @@ const CMD = {
     },
     "IB_LI_SET_L_POS_Y": {
         "num": 230,
-        "description": "【モデルバイナリ】POS_YのLIインデックスに値を設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Y軸移動のListInterのインデックスに値を設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：LIインデックス" + newLine
-                    + "引数３：POS_Y値" + newLine
+                    + "引数３：移動数値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "BS_bin": [
@@ -21329,10 +21415,12 @@ const CMD = {
     },
     "IB_LI_SET_L_POS_Z": {
         "num": 231,
-        "description": "【モデルバイナリ】POS_ZのLIインデックスに値を設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Z軸移動のListInterのインデックスに値を設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：LIインデックス" + newLine
-                    + "引数３：POS_Z値" + newLine
+                    + "引数３：移動数値" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "BS_bin": [
@@ -21349,19 +21437,23 @@ const CMD = {
     },
     "FROM_ADDMT": {
         "num": 232,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "詳細不明"
     },
     "MOVE_UV_X": {
         "num": 233,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "MOVE_UV_Y": {
         "num": 234,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "CREATE_UV_MOVE_X": {
         "num": 235,
-        "description": "【モデルバイナリ】メッシュのMOVE_Xに関するインデックス生成する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "メッシュのX軸に移動する変化を格納する、UVのインデックスを生成する" + newLine
                     + "引数１：メッシュインデックス" + newLine
                     + "引数２：生成するインデックス個数",
         "BS_bin": [
@@ -21383,7 +21475,9 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_LPOSX": {
         "num": 236,
-        "description": "【モデルバイナリ】モデルインデックスのPOS_Xに関するLI設定をループさせる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "モデルインデックスのX軸移動のListInterにループを設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_bin": [
@@ -21401,7 +21495,9 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_LPOSY": {
         "num": 237,
-        "description": "【モデルバイナリ】モデルインデックスのPOS_Yに関するLI設定をループさせる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "モデルインデックスのY軸移動のListInterにループを設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_bin": [
@@ -21441,7 +21537,9 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_LPOSZ": {
         "num": 238,
-        "description": "【モデルバイナリ】モデルインデックスのPOS_Zに関するLI設定をループさせる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "モデルインデックスのZ軸移動のListInterにループを設定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_bin": [
@@ -21457,27 +21555,27 @@ const CMD = {
     },
     "RELEASE_ALL_IB_LIST": {
         "num": 239,
-        "description": ""
+        "description": "詳細不明"
     },
     "ADD_MY_OBJ_INDEX": {
         "num": 240,
-        "description": ""
+        "description": "詳細不明"
     },
     "TO_TAGET_POS": {
         "num": 241,
-        "description": ""
+        "description": "詳細不明"
     },
     "ATK_HIT": {
         "num": 242,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "ATK_END": {
         "num": 243,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SET_RELEASE_PARAM": {
         "num": 244,
-        "description": ""
+        "description": "詳細不明"
     },
     "CREATE_LENSFLEAR": {
         "num": 245,
