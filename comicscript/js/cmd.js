@@ -21565,8 +21565,8 @@ const CMD = {
         "num": 240,
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
-                    + "呼び出し元から参照して、指定したスクリプトを" + newLine
-                    + "指定したモデルインデックスの位置から呼ぶ" + newLine
+                    + "一番最初のベースBINではないスクリプトから参照して、" + newLine
+                    + "指定したスクリプトを、指定したモデルインデックスの位置から呼ぶ" + newLine
                     + "ただし、タイプ６で呼ぶと効果がなく" + newLine
                     + "また、一番最初のベースBINのスクリプトで実行しても効果はない" + newLine
                     + "引数１：ANIME要素２" + newLine
@@ -22509,7 +22509,12 @@ const CMD = {
     },
     "MDL_INDEX_TO_VIEW": {
         "num": 253,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "カメラと注視点を、SMFのフレームインデックスで決める" + newLine
+                    + "ほぼメニューを見るカメラで使う" + newLine
+                    + "引数１：SMFフレームインデックス（カメラ位置）" + newLine
+                    + "引数２：SMFフレームインデックス（注視点）",
         "BS_bin": [
             "MENU_OBJ.BIN"
         ],
@@ -22523,13 +22528,16 @@ const CMD = {
     },
     "SET_FOG_LENGTH": {
         "num": 254,
-        "description": "FOGの設定" + newLine
-                    + "引数１：インデックス" + newLine
-                    + "引数２～４：詳細不明" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "FOGの設定。モデルバイナリでも使える" + newLine
+                    + "引数１：FOGインデックス（0～3）" + newLine
+                    + "引数２：カラーR（0.0～1.0）" + newLine
+                    + "引数３：カラーG（0.0～1.0）" + newLine
+                    + "引数４：カラーB（0.0～1.0）" + newLine
                     + "引数５：FOG値１" + newLine
                     + "引数６：FOG値２" + newLine
-                    + "引数７：変化時間（フレーム）（CSから追加）" + newLine
-                    + "引数８：変化方法（CSから追加）",
+                    + "引数７：変化時間（フレーム）【CSから】" + newLine
+                    + "引数８：変化方法【CSから】",
         "BS_comic": [
             "COMIC1300.BIN"
         ],
@@ -22559,10 +22567,14 @@ const CMD = {
     },
     "SET_UV_MOVE_X": {
         "num": 255,
-        "description": "【モデルバイナリ】メッシュにMOVE_X値を設定する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "メッシュのX軸移動のUVに値を設定する" + newLine
                     + "引数１：メッシュインデックス" + newLine
                     + "引数２：UVインデックス" + newLine
-                    + "引数３～５：詳細不明",
+                    + "引数３：変化方法" + newLine
+                    + "引数４：X軸移動の目標位置。メッシュの最後の位置を1.0とする。" + newLine
+                    + "引数５：変化時間（フレーム）",
         "BS_bin": [
             "MENU_OBJ.BIN",
             "MUSIUM_OBJ.BIN"
@@ -22582,9 +22594,11 @@ const CMD = {
     },
     "SET_UV_LOOP_X": {
         "num": 256,
-        "description": "【モデルバイナリ】メッシュに設定したMOVE_Xをループさせる" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "メッシュのX軸移動のUVにループを設定する" + newLine
                     + "引数１：メッシュインデックス" + newLine
-                    + "引数２：1（True）、0（False）",
+                    + "引数２：1（True）、0（False）【CSから】",
         "BS_bin": [
             "MENU_OBJ.BIN",
             "MUSIUM_OBJ.BIN"
@@ -22604,8 +22618,10 @@ const CMD = {
     },
     "CREATE_MESH_INDEX": {
         "num": 257,
-        "description": "【モデルバイナリ】メッシュインデックスを生成する" + newLine
-                    + "引数１：生成するインデックス個数",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "メッシュインデックスを生成する" + newLine
+                    + "引数１：生成するメッシュインデックス個数",
         "BS_bin": [
             "MENU_OBJ.BIN",
             "MUSIUM_OBJ.BIN"
@@ -22645,10 +22661,12 @@ const CMD = {
     },
     "SET_MESH_INDEX": {
         "num": 258,
-        "description": "【モデルバイナリ】オブジェクトのメッシュのインデックスを取得する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "オブジェクトのメッシュのインデックスを取得する" + newLine
                     + "引数１：新たに扱うメッシュインデックス" + newLine
-                    + "引数２：オブジェクトの元のメッシュインデックス１" + newLine
-                    + "引数３：オブジェクトの元のメッシュインデックス２",
+                    + "引数２：オブジェクトの元のメッシュインデックス" + newLine
+                    + "引数３：引数２のマテリアルインデックス",
         "BS_bin": [
             "MENU_OBJ.BIN",
             "MUSIUM_OBJ.BIN"
@@ -22688,9 +22706,12 @@ const CMD = {
     },
     "INDEX_BONE_L_ADD_ROT_X": {
         "num": 259,
-        "description": "【モデルバイナリ】モデルのROT_Xに値を加える" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、X軸に回転値を加算する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：加える値" + newLine
+                    + "引数２：加算値" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
                     + "引数４：変化方法",
         "BS_bin": [
@@ -22702,9 +22723,12 @@ const CMD = {
     },
     "INDEX_BONE_L_ADD_ROT_Y": {
         "num": 260,
-        "description": "【モデルバイナリ】モデルのROT_Yに値を加える" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、Y軸に回転値を加算する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：加える値" + newLine
+                    + "引数２：加算値" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
                     + "引数４：変化方法",
         "BS_bin": [
@@ -22727,16 +22751,23 @@ const CMD = {
     },
     "INDEX_BONE_L_ADD_ROT_Z": {
         "num": 261,
-        "description": "【モデルバイナリ】モデルのROT_Zに値を加える" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "MDL_GETINDEXのインデックスで、" + newLine
+                    + "モデルのボーンをローカル座標基準で、Z軸に回転値を加算する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２：加える値" + newLine
+                    + "引数２：加算値" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
                     + "引数４：変化方法"
     },
     "CHANGE_SCALL": {
         "num": 262,
-        "description": "【モデルバイナリ】スケールを調整する" + newLine
-                    + "引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "スケールを調整する" + newLine
+                    + "引数１：変化方法" + newLine
+                    + "引数２：スケール値" + newLine
+                    + "引数３：変化時間（フレーム）",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -22761,23 +22792,36 @@ const CMD = {
     },
     "CHK_CLEAR_STORY": {
         "num": 263,
-        "description": "【モデルバイナリ】ストーリーをクリアしたかチェック" + newLine
-                    + "引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "ストーリーのクリア状態をチェックし、クリアしてない場合のみ適用する" + newLine
+                    + "引数１：ストーリーインデックス" + newLine
+                    + "引数２：消すメッシュインデックス１" + newLine
+                    + "引数３：消すメッシュインデックス２",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN"
         ]
     },
     "CHK_OPEN_STORY": {
         "num": 264,
-        "description": "【モデルバイナリ】ストーリーが開放されたかチェック" + newLine
-                    + "引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "ストーリーの開放状態をチェックし、開放されてない場合のみ適用する" + newLine
+                    + "引数１：ストーリーインデックス" + newLine
+                    + "引数２：消すメッシュインデックス１" + newLine
+                    + "引数３：消すメッシュインデックス２" + newLine
+                    + "引数４：消すメッシュインデックス３" + newLine
+                    + "引数５：消すメッシュインデックス４",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN"
         ]
     },
     "SET_LENSFLEAR_ALL_FLG": {
         "num": 265,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "点滅できるモデルの場合、レンズフレアの点滅を設定する" + newLine
+                    + "引数１：1（True）、0（False）",
         "BS_bin": [
             "HK_OBJ.BIN",
             "OP_OBJ.BIN"
@@ -22793,15 +22837,22 @@ const CMD = {
     },
     "CHK_USE_CHAR": {
         "num": 266,
-        "description": "【モデルバイナリ】車両を使えるかチェックする" + newLine
-                    + "引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "車両を使えるかチェックし、開放されてない場合のみ適用する" + newLine
+                    + "引数１：車両インデックス" + newLine
+                    + "引数２：消すメッシュインデックス１" + newLine
+                    + "引数３：消すメッシュインデックス２",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN"
         ]
     },
     "SET_OBJ_FOG_NO": {
         "num": 267,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "Set3DObjで配置したモデルにFOG設定を適用する" + newLine
+                    + "引数１：FOGインデックス（0～3）",
         "CS_bin": [
             "HQ_KB.BIN",
             "HQ_TK.BIN",
@@ -22832,7 +22883,10 @@ const CMD = {
     },
     "SET_OBJ_RENDER_ID": {
         "num": 268,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "【推測】Set3DObjで配置したモデルにレンダリングモードを設定する" + newLine
+                    + "引数１：レンダリングID",
         "BS_bin": [
             "OP_OBJ.BIN"
         ],
@@ -22853,7 +22907,8 @@ const CMD = {
     },
     "PLAY_STAGE_BGM": {
         "num": 269,
-        "description": "ステージBGMを再生する" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "ステージBGMを再生する" + newLine
                     + "引数１：ステージBGMのインデックス",
         "BS_comic": [
             "COMIC1010.BIN",
@@ -22932,9 +22987,10 @@ const CMD = {
     },
     "CHANGE_TRAIN_FOG": {
         "num": 270,
-        "description": "車両のFOG値を変更する" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "車両にFOG設定を適用する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：FOGインデックス",
+                    + "引数２：FOGインデックス（0～3）",
         "BS_comic": [
             "COMIC1201.BIN"
         ],
@@ -22944,8 +23000,9 @@ const CMD = {
     },
     "FIRST_OBJ_SET_ANIME": {
         "num": 271,
-        "description": "ANIMEを実行する" + newLine
-                    + "引数１：ANIME要素１（binファイルインデックス）" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "レールデータで定義しているANIMEを続けて実行する" + newLine
+                    + "引数１：レールデータのベースBIN ANIMEのインデックス" + newLine
                     + "引数２：ANIME要素２" + newLine
                     + "引数３：ANIME要素３",
         "BS_comic": [
@@ -22968,7 +23025,8 @@ const CMD = {
     },
     "SET_CAMPOINT_2P2C": {
         "num": 272,
-        "description": "0番カメラの状態を、引数１〜５に" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "0番カメラの状態を、引数１〜５に" + newLine
                     + "1番カメラの状態を、引数６〜１０の状態に変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：距離" + newLine
@@ -23285,11 +23343,12 @@ const CMD = {
     },
     "SET_CAMPOINT_1P2C": {
         "num": 273,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "CAM_POINT_PER": {
         "num": 274,
-        "description": "SET_CAMPOINT_2P2Cのコマンドで決めた" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "SET_CAMPOINT_2P2Cのコマンドで決めた" + newLine
                     + "0番カメラを始点に、1番カメラを終点にして" + newLine
                     + "引数１で決めた大きさ（PER）で決まる位置をカメラの位置とする" + newLine
                     + "引数１：PER" + newLine
@@ -23623,7 +23682,8 @@ const CMD = {
     },
     "CAM_TARGET_PER": {
         "num": 275,
-        "description": "SET_CAMPOINT_2P2C、またはSET_CAMPOINT_1P2Tのコマンドで決めた" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "SET_CAMPOINT_2P2C、またはSET_CAMPOINT_1P2Tのコマンドで決めた" + newLine
                     + "0番カメラの注視点を始点に、1番カメラの注視点を終点にして" + newLine
                     + "引数１で決めた大きさ（PER）で決まる位置を注視点の位置とする" + newLine
                     + "引数１：PER" + newLine
@@ -24053,7 +24113,8 @@ const CMD = {
     },
     "SET_CAM_POINT_LENGTH": {
         "num": 276,
-        "description": "カメラの距離を設定する" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "カメラの距離を設定する" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：距離" + newLine
                     + "引数３：変化方法" + newLine
@@ -24331,7 +24392,8 @@ const CMD = {
     },
     "SET_CAM_OFFSET": {
         "num": 277,
-        "description": "カメラ位置のoffsetを設定する" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "カメラ位置のoffsetを設定する" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：x座標" + newLine
                     + "引数３：y座標" + newLine
@@ -24617,7 +24679,8 @@ const CMD = {
     },
     "START_WIPER": {
         "num": 278,
-        "description": "ワイパーを動かす" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "ワイパーを動かす" + newLine
                     + "引数１：0（1P）、1（2P）",
         "BS_comic": [
             "COMIC1107.BIN",
@@ -24631,10 +24694,11 @@ const CMD = {
     },
     "CREATE_TRAIN_ORG": {
         "num": 279,
-        "description": "車両モデルを作成する" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "車両のモデルを、引数３の編成数だけ作成する" + newLine
                     + "引数１：作成インデックス" + newLine
                     + "引数２：車両インデックス" + newLine
-                    + "引数３：詳細不明",
+                    + "引数３：作成する編成数",
         "BS_comic": [
             "COMIC1300.BIN",
             "COMIC1999.BIN"
@@ -24645,11 +24709,11 @@ const CMD = {
     },
     "ORG_SET_RAIL": {
         "num": 280,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "ORG_ADD": {
         "num": 281,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "SET_CAMPOINT_K": {
         "num": 282,
