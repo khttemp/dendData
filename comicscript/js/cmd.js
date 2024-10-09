@@ -10393,7 +10393,7 @@ const CMD = {
         "num": 74,
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "SEを再生する" + newLine
-                    + "引数１：スクリプト内のSEグループ番号" + newLine
+                    + "引数１：スクリプト内のSE情報インデックス" + newLine
                     + "引数２：SEグループ内のインデックス番号（SSでは使わない。）" + newLine
                     + "引数３：ループ設定[1（True）、0（False）]（SSでは使わない。）" + newLine
                     + "引数４：再生が終わるまで待つ[1（True）、0（False）]" + newLine
@@ -10902,7 +10902,7 @@ const CMD = {
         "num": 75,
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "SEの再生を停止する" + newLine
-                    + "引数１：スクリプト内のSE番号" + newLine
+                    + "引数１：スクリプト内のSE情報インデックス" + newLine
                     + "引数２：SEグループ内のインデックス番号（０）（SSでは使わない。）",
         "BS_comic": [
             "COMIC1000.BIN",
@@ -15799,8 +15799,8 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
-                    + "引数１：範囲Start（SEグループインデックス）" + newLine
-                    + "引数２：範囲End（SEグループインデックス）" + newLine
+                    + "引数１：範囲Start（SE情報インデックス）" + newLine
+                    + "引数２：範囲End（SE情報インデックス）" + newLine
                     + "引数３：SEグループ内のインデックス",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -18091,8 +18091,8 @@ const CMD = {
         "num": 169,
         "description": "【LS、BS、CS、RS】" + newLine
                     + "スクリプト内のSE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
-                    + "引数１：範囲start（SEグループインデックス）" + newLine
-                    + "引数２：範囲end（SEグループインデックス）" + newLine
+                    + "引数１：範囲start（SE情報インデックス）" + newLine
+                    + "引数２：範囲end（SE情報インデックス）" + newLine
                     + "引数３：SEグループ内のインデックス",
         "LS_comic": [
             "COMIC009.BIN",
@@ -20060,8 +20060,9 @@ const CMD = {
     },
     "OSSAN": {
         "num": 201,
-        "description": "【LS、BS】" + newLine
+        "description": "【LS、BS、CS、RS】" + newLine
                     + "指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine
+                    + "BS以後からは効果なし" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "1（True）、0（False）",
         "LS_comic": [
@@ -24717,7 +24718,8 @@ const CMD = {
     },
     "SET_CAMPOINT_K": {
         "num": 282,
-        "description": "固定カメラの座標設定" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "固定カメラの絶対座標設定" + newLine
                     + "【BS～RSまで】" + newLine
                     + "引数１：カメラのx座標" + newLine
                     + "引数２：カメラのy座標" + newLine
@@ -24772,10 +24774,11 @@ const CMD = {
     },
     "ORG_SET_POS": {
         "num": 283,
-        "description": "CREATE_TRAIN_ORGから" + newLine
-                    + "作成したモデルの位置を設定する" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの位置を絶対座標で設定する" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：モデルインデックス" + newLine
+                    + "引数２：編成インデックス" + newLine
                     + "引数３：from x座標" + newLine
                     + "引数４：from y座標" + newLine
                     + "引数５：from z座標" + newLine
@@ -24790,12 +24793,17 @@ const CMD = {
     },
     "ORG_SET_FOG": {
         "num": 284,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルにFOG設定を適用する" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２：FOGインデックス（0～3）"
     },
     "ORG_RELEASE": {
         "num": 285,
-        "description": "CREATE_TRAIN_ORGから" + newLine
-                    + "作成したモデルを解放する" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルを解放する（消す）" + newLine
                     + "引数１：作成インデックス",
         "BS_comic": [
             "COMIC1300.BIN"
@@ -24803,7 +24811,8 @@ const CMD = {
     },
     "PLAY_FTV_END": {
         "num": 286,
-        "description": "現在再生中のFVTを全部止める",
+        "description": "【BS、CS、RS】" + newLine
+                    + "現在再生中のFVTを終了する",
         "BS_comic": [
             "COMIC1300.BIN"
         ],
@@ -24814,12 +24823,13 @@ const CMD = {
     },
     "CNG_TRAIN_MAT_COL": {
         "num": 287,
-        "description": "指定車両のカラーを変える" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "指定車両の全体的なマテリアルカラーを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：カラーA" + newLine
-                    + "引数３：カラーR" + newLine
-                    + "引数４：カラーG" + newLine
-                    + "引数５：カラーB",
+                    + "引数２：1（True）、0（False）" + newLine
+                    + "引数３：カラーR（0.0～1.0）" + newLine
+                    + "引数４：カラーG（0.0～1.0）" + newLine
+                    + "引数５：カラーB（0.0～1.0）",
         "BS_comic": [
             "COMIC1207.BIN",
             "COMIC1201.BIN",
@@ -24828,13 +24838,14 @@ const CMD = {
     },
     "CNG_ORG_MAT_COL": {
         "num": 288,
-        "description": "CREATE_TRAIN_ORGから" + newLine
-                    + "作成したモデルのカラーを変える" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの全体的なマテリアルカラーを変える" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：カラーA" + newLine
-                    + "引数３：カラーR" + newLine
-                    + "引数４：カラーG" + newLine
-                    + "引数５：カラーB",
+                    + "引数２：1（True）、0（False）" + newLine
+                    + "引数３：カラーR（0.0～1.0）" + newLine
+                    + "引数４：カラーG（0.0～1.0）" + newLine
+                    + "引数５：カラーB（0.0～1.0）",
         "BS_comic": [
             "COMIC1300.BIN",
             "COMIC1999.BIN"
@@ -24842,7 +24853,9 @@ const CMD = {
     },
     "IS_CAUTION": {
         "num": 289,
-        "description": "詳細不明",
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。おことわり表示中に処理中止と推測するが" + newLine
+                    + "未実装と思われる",
         "BS_comic": [
             "COMIC1999.BIN"
         ],
@@ -24855,7 +24868,8 @@ const CMD = {
     },
     "ENDWAIT_COMIC": {
         "num": 290,
-        "description": "GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine
                     + "引数１：スクリプト番号",
         "BS_comic": [
             "COMIC1121.BIN",
@@ -24986,7 +25000,8 @@ const CMD = {
     },
     "SET_COMIC_BG_COLOR": {
         "num": 291,
-        "description": "BGの色を変える" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "BGの色を変える" + newLine
                     + "引数１：カラーR" + newLine
                     + "引数２：カラーG" + newLine
                     + "引数３：カラーB",
@@ -25012,8 +25027,13 @@ const CMD = {
     },
     "TX_2_TRAIN": {
         "num": 292,
-        "description": "詳細不明" + newLine
-                    + "引数１～５：詳細不明",
+        "description": "【BS、CS、RS】" + newLine
+                    + "車両のテクスチャを設定する" + newLine
+                    + "引数１：imgサイズ情報のインデックス" + newLine
+                    + "引数２：0（1P）、1（2P）" + newLine
+                    + "引数３：編成インデックス" + newLine
+                    + "引数４：メッシュインデックス" + newLine
+                    + "引数５：引数４のマテリアルインデックス",
         "BS_comic": [
             "COMIC1991.BIN",
             "COMIC1992.BIN",
@@ -25030,17 +25050,19 @@ const CMD = {
     },
     "CHANGE_MT_COL_TRAIN": {
         "num": 293,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "CNG_MT_COL": {
         "num": 294,
-        "description": "【モデルバイナリ】モデルのカラーを変える" + newLine
-                    + "引数１：メッシュインデックス１" + newLine
-                    + "引数２：メッシュインデックス２" + newLine
-                    + "引数３：カラーA" + newLine
-                    + "引数４：カラーR" + newLine
-                    + "引数５：カラーG" + newLine
-                    + "引数６：カラーB",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "モデルのメッシュのマテリアルのカラーを変える" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：引数１のマテリアルインデックス" + newLine
+                    + "引数３：カラーR（0.0～1.0）" + newLine
+                    + "引数４：カラーG（0.0～1.0）" + newLine
+                    + "引数５：カラーB（0.0～1.0）" + newLine
+                    + "引数６：カラーA（0.0～1.0）",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "OP_OBJ.BIN"
@@ -25110,7 +25132,8 @@ const CMD = {
     },
     "RETURN": {
         "num": 295,
-        "description": "このコマンドから一番近い上のFROMまで飛ぶ" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "このコマンドが実行された行を基準に、一番近い上のFROMまで飛ぶ" + newLine
                     + "引数１：FROMの数字",
         "BS_comic": [
             "COMIC1999.BIN"
@@ -25159,8 +25182,9 @@ const CMD = {
     },
     "ReLoadSE": {
         "num": 296,
-        "description": "SEグループの中でランダムに１個ロードする" + newLine
-                    + "引数１：SEグループインデックス",
+        "description": "【BS、CS、RS】" + newLine
+                    + "SE情報を再度ロードする" + newLine
+                    + "引数１：SE情報インデックス",
         "BS_comic": [
             "COMIC1998.BIN",
             "COMIC1997.BIN"
@@ -25176,7 +25200,10 @@ const CMD = {
     },
     "BASE_POINT_CAM": {
         "num": 297,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【BS、CS、RS】" + newLine
+                    + "ベースポイントのカメラを活性化する" + newLine
+                    + "引数１：1（True）、0（False）",
         "BS_bin": [
             "OP_OBJ.BIN"
         ],
@@ -25186,7 +25213,8 @@ const CMD = {
     },
     "STOP_3D": {
         "num": 298,
-        "description": "3Dシーンの動きを止める" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "3Dシーンの動きを止める" + newLine
                     + "引数１：1（True）、0（False）",
         "BS_comic": [
             "COMIC1009.BIN",
@@ -25306,7 +25334,8 @@ const CMD = {
     },
     "STOP_STAGE_BGM": {
         "num": 299,
-        "description": "ステージのBGMを止める" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "ステージのBGMを止める" + newLine
                     + "引数１：ステージBGMのインデックス（-1の場合、全て）" + newLine
                     + "引数２：fade時間（フレーム）",
         "BS_comic": [
@@ -25394,7 +25423,8 @@ const CMD = {
     },
     "TRAIN_UD": {
         "num": 300,
-        "description": "車両をアップダウンさせる" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "車両をアップダウンさせる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：アップダウンする程度（PER）",
         "BS_comic": [
@@ -25410,7 +25440,8 @@ const CMD = {
     },
     "SET_CAM_TARGET_OFFSET": {
         "num": 301,
-        "description": "注視点位置のoffsetを設定する" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "注視点位置のoffsetを設定する" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：x座標" + newLine
                     + "引数３：y座標" + newLine
