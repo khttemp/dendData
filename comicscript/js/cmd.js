@@ -26288,11 +26288,15 @@ const CMD = {
     },
     "ORG_SET_STYLE_POS": {
         "num": 313,
-        "description": ""
+        "description": NOT_DEFINED
     },
     "RECREATE_TRAIN": {
         "num": 314,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "指定車両の電車を改めて生成して上書きする" + newLine
+                    + "初期位置は、レールデータの位置になる" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：車両インデックス"
     },
     "SET_CAMPOINT_1P2T": {
         "num": 315,
