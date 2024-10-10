@@ -26294,13 +26294,14 @@ const CMD = {
         "num": 314,
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両の電車を改めて生成して上書きする" + newLine
-                    + "初期位置は、レールデータの位置になる" + newLine
+                    + "初期位置は、レールデータで定義した初期位置になる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：車両インデックス"
     },
     "SET_CAMPOINT_1P2T": {
         "num": 315,
-        "description": "0番カメラの注視点を引数１に、1番カメラの注視点を引数２にする" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "0番カメラの注視点を引数１に、1番カメラの注視点を引数２にする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
                     + "引数３：スクリーン番号【SSで引数で渡す場合】",
@@ -26530,7 +26531,9 @@ const CMD = {
     },
     "BUFF_TO_SC_CAM_POS": {
         "num": 316,
-        "description": "BUFFの位置を基準に、SET_CAMPOINT_1P2Tで決めた注視点を見るカメラの位置を変える" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "BUFFの位置を基準に、SET_CAMPOINT_1P2Tで決めた注視点を見るカメラの位置を変える" + newLine
+                    + "SSでは固定視点用のカメラにも適用できる" + newLine
                     + "引数１：BUFFのインデックス" + newLine
                     + "引数２：x座標" + newLine
                     + "引数３：y座標" + newLine
@@ -26775,8 +26778,9 @@ const CMD = {
     },
     "SC_ORG_MODE_CHANGE": {
         "num": 317,
-        "description": "CREATE_TRAIN_ORGから" + newLine
-                    + "作成したモデルのカラー変更設定" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの方向をワールド座標基準にする" + newLine
                     + "引数１：作成インデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_comic": [
@@ -26788,8 +26792,9 @@ const CMD = {
     },
     "SC_ORG_INIT_POS": {
         "num": 318,
-        "description": "CREATE_TRAIN_ORGから" + newLine
-                    + "作成したモデルの初期位置を設定する" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの初期位置を絶対座標で設定する" + newLine
                     + "引数１：作成インデックス" + newLine
                     + "引数２：x座標" + newLine
                     + "引数３：y座標" + newLine
@@ -26803,35 +26808,77 @@ const CMD = {
     },
     "SC_ORG_SET_POS": {
         "num": 319,
-        "description": "",
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの位置を絶対座標で設定する" + newLine
+                    + "ただし、SC_ORG_MODE_CHANGEを活性化しないと" + newLine
+                    + "回転数値が異常な値になる" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２：編成インデックス" + newLine
+                    + "引数３：x座標" + newLine
+                    + "引数４：y座標" + newLine
+                    + "引数５：z座標" + newLine
+                    + "引数６：変化方法" + newLine
+                    + "引数７：変化時間（フレーム）",
         "BS_comic": [
             "COMIC1999.BIN"
         ]
     },
     "SC_ORG_SET_ROT": {
         "num": 320,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルを回転する" + newLine
+                    + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２：編成インデックス" + newLine
+                    + "引数３：x軸の回転数値" + newLine
+                    + "引数４：y軸の回転数値" + newLine
+                    + "引数５：z軸の回転数値" + newLine
+                    + "引数６：変化方法" + newLine
+                    + "引数７：変化時間（フレーム）",
     },
     "SC_ORG_SET_X_ROT": {
         "num": 321,
-        "description": "引数１：作成インデックス" + newLine
-                    + "引数２～５：詳細不明",
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの位置をX軸で回転する" + newLine
+                    + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２：編成インデックス" + newLine
+                    + "引数３：回転数値"
+                    + "引数４：変化方法" + newLine
+                    + "引数５：変化時間（フレーム）",
         "BS_comic": [
             "COMIC1999.BIN"
         ]
     },
     "SC_ORG_SET_Y_ROT": {
         "num": 322,
-        "description": "引数１：作成インデックス" + newLine
-                    + "引数２～５：詳細不明",
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの位置をY軸で回転する" + newLine
+                    + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２：編成インデックス" + newLine
+                    + "引数３：回転数値"
+                    + "引数４：変化方法" + newLine
+                    + "引数５：変化時間（フレーム）",
         "BS_comic": [
             "COMIC1999.BIN"
         ]
     },
     "SC_ORG_SET_Z_ROT": {
         "num": 323,
-        "description": "引数１：作成インデックス" + newLine
-                    + "引数２～５：詳細不明",
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルの位置をZ軸で回転する" + newLine
+                    + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
+                    + "引数１：作成インデックス" + newLine
+                    + "引数２：編成インデックス" + newLine
+                    + "引数３：回転数値"
+                    + "引数４：変化方法" + newLine
+                    + "引数５：変化時間（フレーム）",
         "BS_comic": [
             "COMIC1999.BIN"
         ]
