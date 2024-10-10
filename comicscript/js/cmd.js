@@ -25719,27 +25719,40 @@ const CMD = {
     },
     "SET_CAM_POINT_1T_ROT": {
         "num": 302,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "引数１を注視点とするカメラ位置を設定する" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：x座標" + newLine
+                    + "引数３：y座標" + newLine
+                    + "引数４：z座標" + newLine
+                    + "引数５：距離" + newLine
+                    + "引数６：x軸の回転" + newLine
+                    + "引数７：y軸の回転"
     },
     "SET_CAM_T_LENGHT": {
         "num": 303,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。未完成のままと思われる"
     },
     "SET_CAM_T_ROT_X": {
         "num": 304,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。未完成のままと思われる"
     },
     "SET_CAM_T_ROT_Y": {
         "num": 305,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。未完成のままと思われる"
     },
     "SET_CAM_T_OFFSET": {
         "num": 306,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。未完成のままと思われる"
     },
     "NO_OUTRUN": {
         "num": 307,
-        "description": "指定車両を脱線しないようにする" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "指定車両を脱線しないようにする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
         "BS_comic": [
@@ -26163,7 +26176,8 @@ const CMD = {
     },
     "SET_WHEEL_FIRE": {
         "num": 308,
-        "description": "車輪に火花を散らす" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "車輪に火花を散らす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：散らす時間（フレーム）",
         "BS_comic": [
@@ -26183,7 +26197,8 @@ const CMD = {
     },
     "RELOAD_OP_TRAIN": {
         "num": 309,
-        "description": "オープニングで読み込む車両をリロードする",
+        "description": "【BS、CS、RS】" + newLine
+                    + "オープニングで読み込む車両をリロードする",
         "BS_comic": [
             "COMIC1999.BIN"
         ],
@@ -26196,7 +26211,8 @@ const CMD = {
     },
     "BackR_Drift": {
         "num": 310,
-        "description": "指定車両を右後輪ドリフトさせる" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "指定車両を右後輪ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2226.BIN"
@@ -26207,7 +26223,8 @@ const CMD = {
     },
     "BackL_Drift": {
         "num": 311,
-        "description": "指定車両を左後輪ドリフトさせる" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "指定車両を左後輪ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "BS_comic": [
             "COMIC1999.BIN"
@@ -26218,13 +26235,14 @@ const CMD = {
     },
     "CHK_MOTION": {
         "num": 312,
-        "description": "指定の車両が指定時間内に、指定の動きをした場合、引数４のFROMまで飛ぶ" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "指定の車両が指定時間内に、指定の動きをした場合、引数４のFROMまで飛ぶ" + newLine
                     + "そうではない場合、引数５のFROMまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：【推定(RSまで)】" + newLine
+                    + "※BS：0～5まで、ただし3は判定できない" + newLine
                     + "※CS：0～6まで、ただし3は判定できない" + newLine
                     + "※RS：0～10まで、ただし3は判定できない" + newLine
-                    + "引数１【推定】" + newLine
+                    + "引数２【推定】" + newLine
                     + "　0（複線ドリフト、後輪含む）" + newLine
                     + "　1（右ドリフト、後輪含む）" + newLine
                     + "　2（左ドリフト、後輪含む）" + newLine
