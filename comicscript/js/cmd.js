@@ -26996,7 +26996,8 @@ const CMD = {
     },
     "IS_NO_DRAMA": {
         "num": 332,
-        "description": "ドラマチックモードではない場合、引数１のFROMへ" + newLine
+        "description": "【BS、CS、RS、SS】" + newLine
+                    + "ドラマチックモードではない場合、引数１のFROMへ" + newLine
                     + "合う場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROMの数字" + newLine
                     + "引数２：FROMの数字",
@@ -27039,20 +27040,30 @@ const CMD = {
     },
     "CNG_TRAIN_NO_MAT_RGBA": {
         "num": 333,
-        "description": "詳細不明" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "指定車両の0番目のメッシュの中、引数のマテリアルのDIFFを変える" + newLine
+                    + "引数２を0にすると、デフォルト状態に変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～８：詳細不明",
+                    + "引数２：1（True）、0（False）" + newLine
+                    + "引数３：編成インデックス" + newLine
+                    + "引数４：マテリアルインデックス" + newLine
+                    + "引数５：R（0.0～1.0）" + newLine
+                    + "引数６：G（0.0～1.0）" + newLine
+                    + "引数７：B（0.0～1.0）" + newLine
+                    + "引数８：A（0.0～1.0）",
         "BS_comic": [
             "COMIC1996.BIN"
         ]
     },
     "SHOW_RECORD": {
         "num": 334,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。未完成のままと思われる"
     },
     "WAIT_RECORD_END": {
         "num": 335,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。未完成のままと思われる"
     },
     "IB_LI_SET_UPDATE_FLG": {
         "num": 336,
