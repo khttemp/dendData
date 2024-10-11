@@ -26885,7 +26885,8 @@ const CMD = {
     },
     "SET_SC_KOTEI_CAM_POS": {
         "num": 324,
-        "description": "固定カメラのカメラ位置を設定する" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "固定カメラのカメラ位置を設定する" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
                     + "引数３：z座標" + newLine
@@ -26915,7 +26916,8 @@ const CMD = {
     },
     "SET_SC_KOTEI_CAM_T_POS": {
         "num": 325,
-        "description": "固定カメラの注視点位置を設定する" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "固定カメラの注視点位置を設定する" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
                     + "引数３：z座標" + newLine
@@ -26934,37 +26936,54 @@ const CMD = {
     },
     "START_SC_WIPER": {
         "num": 326,
-        "description": "CREATE_TRAIN_ORGから" + newLine
-                    + "作成したモデルのワイパーを動かせる" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "CREATE_TRAIN_ORGから作成した" + newLine
+                    + "モデルのワイパーを動かせる" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：1（True）、0（False）",
+                    + "引数２：詳細不明。未使用と思われる",
         "BS_comic": [
             "COMIC1999.BIN"
         ]
     },
     "SUPER_DRIFT": {
         "num": 327,
-        "description": "詳細不明",
+        "description": "【BS、CS、RS】" + newLine
+                    + "プレイヤーの車両を5秒間火花を散らし、" + newLine
+                    + "ドリフト加速できる区間で実行すると、すごく加速する",
         "BS_comic": [
             "COMIC1312.BIN"
         ]
     },
     "CNG_TRAIN_NO_MAT_COL": {
         "num": 328,
-        "description": "詳細不明" + newLine
+        "description": "【BS、CS、RS】" + newLine
+                    + "指定車両の0番目のメッシュの中、引数のマテリアルのDIFFを変える" + newLine
+                    + "引数２を0にすると、デフォルト状態に変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～７：詳細不明",
+                    + "引数２：1（True）、0（False）" + newLine
+                    + "引数３：編成インデックス" + newLine
+                    + "引数４：マテリアルインデックス" + newLine
+                    + "引数５：R（0.0～1.0）" + newLine
+                    + "引数６：G（0.0～1.0）" + newLine
+                    + "引数７：B（0.0～1.0）",
         "BS_comic": [
             "COMIC1401.BIN"
         ]
     },
     "ERR_CMD": {
         "num": 329,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "「スクリプト (実行した行数) 確認」とエラーメッセージが出る" + newLine
+                    + "ゲームが落ちたりせず、そのまま次の行へ行く"
     },
     "K_HN": {
         "num": 330,
-        "description": "詳細不明",
+        "description": "【BS、CS、RS】" + newLine
+                    + "BS：指定車両を、京阪8000系が守口市でぶつけるような動作をする" + newLine
+                    + "　発動すると取り消しはできず、複々線区間では安定する" + newLine
+                    + "CS以後：定義はあるが、ぶつける演出はしない" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：1（True）、0（False）",
         "BS_comic": [
             "COMIC1009.BIN",
             "COMIC1020.BIN"
@@ -26972,7 +26991,8 @@ const CMD = {
     },
     "TO_TRACK_RAIL": {
         "num": 331,
-        "description": ""
+        "description": "【BS、CS、RS】" + newLine
+                    + "詳細不明。未完成のままと思われる"
     },
     "IS_NO_DRAMA": {
         "num": 332,
