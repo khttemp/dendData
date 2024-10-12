@@ -26974,7 +26974,8 @@ const CMD = {
         "num": 329,
         "description": "【BS、CS、RS】" + newLine
                     + "「スクリプト (実行した行数) 確認」とエラーメッセージが出る" + newLine
-                    + "ゲームが落ちたりせず、そのまま次の行へ行く"
+                    + "ゲームが落ちたりせず、そのまま次の行へ行く" + newLine
+                    + "モデルバイナリでも使える"
     },
     "K_HN": {
         "num": 330,
@@ -27067,7 +27068,10 @@ const CMD = {
     },
     "IB_LI_SET_UPDATE_FLG": {
         "num": 336,
-        "description": "【モデルバイナリ】モデルインデックスのLI設定のフラグを変更する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルインデックスの変化を格納したListInterの" + newLine
+                    + "Updateのフラグを設定する。デフォルトはTrue状態" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：1（True）、0（False）",
         "CS_bin": [
@@ -27115,27 +27119,41 @@ const CMD = {
     },
     "PTCL_SCALL": {
         "num": 337,
-        "description": ""
+        "description": "【PTCLコマンド】" + newLine
+                    + ""
     },
     "PTCL_COLOR": {
         "num": 338,
-        "description": ""
+        "description": "【PTCLコマンド】" + newLine
+                    + ""
     },
     "PTCL_ALPHA": {
         "num": 339,
-        "description": ""
+        "description": "【PTCLコマンド】" + newLine
+                    + ""
     },
     "PTCL_DRAWTYPE": {
         "num": 340,
-        "description": ""
+        "description": "【PTCLコマンド】" + newLine
+                    + ""
     },
     "PTCL_ANGLE": {
         "num": 341,
-        "description": ""
+        "description": "【PTCLコマンド】" + newLine
+                    + ""
     },
     "PTCL_RAND_ANGLE": {
         "num": 342,
-        "description": "【モデルバイナリ】引数１～８：詳細不明",
+        "description": "【PTCLコマンド】" + newLine
+                    + "PTCLをランダムに回転する" + newLine
+                    + "引数１：startのランダム範囲(1)" + newLine
+                    + "引数２：startのランダム範囲(2)" + newLine
+                    + "引数３：endのランダム範囲(1)" + newLine
+                    + "引数４：endのランダム範囲(2)" + newLine
+                    + "引数５：変化方法" + newLine
+                    + "引数６：変化時間（フレーム）のランダム範囲(1)" + newLine
+                    + "引数７：変化時間（フレーム）のランダム範囲(2)" + newLine
+                    + "引数８：ループ設定[1（True）、0（False）]",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27152,11 +27170,13 @@ const CMD = {
     },
     "PTCL_RAND_COLOR": {
         "num": 343,
-        "description": ""
+        "description": "【PTCLコマンド】" + newLine
+                    + ""
     },
     "PTCL_RAND_ALPHA": {
         "num": 344,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【PTCLコマンド】" + newLine
+                    + "引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27173,7 +27193,8 @@ const CMD = {
     },
     "PTCL_RAND_SCALL": {
         "num": 345,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【PTCLコマンド】" + newLine
+                    + "",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27190,11 +27211,16 @@ const CMD = {
     },
     "IB_ADD_PTCL": {
         "num": 346,
-        "description": "【モデルバイナリ】詳細不明" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルにパーティクルを追加する。" + newLine
+                    + "引数２と３は画像情報を一致する必要がある。" + newLine
+                    + "引数４と５はPTCLコマンドが定義されたANIMEを指定する" + newLine
                     + "引数１：モデルインデックス" + newLine
-                    + "引数２～３：詳細不明" + newLine
-                    + "引数４：ANIME要素２" + newLine
-                    + "引数５：ANIME要素３",
+                    + "引数２：画像情報のインデックス（要素１が【1】で定義されているもの）" + newLine
+                    + "引数３：画像サイズ情報のインデックス" + newLine
+                    + "引数４：ANIME要素２（PTCLが定義されたセクション）" + newLine
+                    + "引数５：ANIME要素３（PTCLが定義されたセクション）",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27211,7 +27237,7 @@ const CMD = {
     },
     "PTCL_RAND_TONE_COLOR": {
         "num": 347,
-        "description": "【モデルバイナリ】引数１～４：詳細不明",
+        "description": "【PTCLコマンド】引数１～４：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27228,7 +27254,7 @@ const CMD = {
     },
     "IS_ALPHA_END": {
         "num": 348,
-        "description": "【モデルバイナリ】引数１：詳細不明",
+        "description": "【PTCLコマンド】引数１：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27245,7 +27271,7 @@ const CMD = {
     },
     "PTCL_L_POS": {
         "num": 349,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【PTCLコマンド】引数１～５：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27262,7 +27288,7 @@ const CMD = {
     },
     "PTCL_RAND_L_POS": {
         "num": 350,
-        "description": "【モデルバイナリ】引数１～９：詳細不明",
+        "description": "【PTCLコマンド】引数１～９：詳細不明",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
