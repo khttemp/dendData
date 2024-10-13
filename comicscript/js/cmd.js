@@ -18313,7 +18313,7 @@ const CMD = {
                     + "　1（BLEND）：わずか透明な描画（ゲームのデフォルト）" + newLine
                     + "　2（ADD）：画像も透明" + newLine
                     + "　3（ADD_NOALPHA）：画像も透明だが、外側の透明を無視する" + newLine
-                    + "　4（SUB）：画像を透明にし、色判定" + newLine
+                    + "　4（SUB）：画像を透明にし、色反転" + newLine
                     + "　5（SUB_NOALPHA）：画像を透明にし、色反転するが、外側の透明を無視する" + newLine
                     + "　6（MULTIPLE）：複合的（半透明・画像の縁まで透明）",
         "LS_bin": [
@@ -27119,37 +27119,52 @@ const CMD = {
     },
     "PTCL_SCALL": {
         "num": 337,
-        "description": "【PTCLコマンド】" + newLine
-                    + ""
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルのスケールを設定する" + newLine
+                    + "引数１：スケールの倍率" + newLine
+                    + "引数２：変化方法" + newLine
+                    + "引数３：変化時間（フレーム）"
     },
     "PTCL_COLOR": {
         "num": 338,
-        "description": "【PTCLコマンド】" + newLine
-                    + ""
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルのカラーを設定する" + newLine
+                    + "引数１：R値" + newLine
+                    + "引数２：G値" + newLine
+                    + "引数３：B値" + newLine
+                    + "引数４：変化方法" + newLine
+                    + "引数５：変化時間（フレーム）"
     },
     "PTCL_ALPHA": {
         "num": 339,
-        "description": "【PTCLコマンド】" + newLine
-                    + ""
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルのAlpha値を設定する" + newLine
+                    + "引数１：Alpha値" + newLine
+                    + "引数２：変化方法" + newLine
+                    + "引数３：変化時間（フレーム）"
     },
     "PTCL_DRAWTYPE": {
         "num": 340,
-        "description": "【PTCLコマンド】" + newLine
-                    + ""
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "詳細不明。モデルのパーティクルの描画タイプの設定と思われる"
     },
     "PTCL_ANGLE": {
         "num": 341,
-        "description": "【PTCLコマンド】" + newLine
-                    + ""
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルを回転させる" + newLine
+                    + "引数１：回転数値" + newLine
+                    + "引数２：変化方法" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：ループ設定[1（True）、0（False）]"
     },
     "PTCL_RAND_ANGLE": {
         "num": 342,
-        "description": "【PTCLコマンド】" + newLine
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "PTCLをランダムに回転する" + newLine
-                    + "引数１：startのランダム範囲(1)" + newLine
-                    + "引数２：startのランダム範囲(2)" + newLine
-                    + "引数３：endのランダム範囲(1)" + newLine
-                    + "引数４：endのランダム範囲(2)" + newLine
+                    + "引数１：回転startのランダム範囲(1)" + newLine
+                    + "引数２：回転startのランダム範囲(2)" + newLine
+                    + "引数３：回転endのランダム範囲(1)" + newLine
+                    + "引数４：回転endのランダム範囲(2)" + newLine
                     + "引数５：変化方法" + newLine
                     + "引数６：変化時間（フレーム）のランダム範囲(1)" + newLine
                     + "引数７：変化時間（フレーム）のランダム範囲(2)" + newLine
@@ -27170,13 +27185,26 @@ const CMD = {
     },
     "PTCL_RAND_COLOR": {
         "num": 343,
-        "description": "【PTCLコマンド】" + newLine
-                    + ""
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルのカラーを設定する" + newLine
+                    + "引数１：Rのランダム範囲(1)" + newLine
+                    + "引数２：Rのランダム範囲(2)" + newLine
+                    + "引数３：Gのランダム範囲(1)" + newLine
+                    + "引数４：Gのランダム範囲(2)" + newLine
+                    + "引数５：Bのランダム範囲(1)" + newLine
+                    + "引数６：Bのランダム範囲(2)" + newLine
+                    + "引数７：変化方法" + newLine
+                    + "引数８：変化時間（フレーム）"
     },
     "PTCL_RAND_ALPHA": {
         "num": 344,
-        "description": "【PTCLコマンド】" + newLine
-                    + "引数１～５：詳細不明",
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルのAlpha値をランダムに決める" + newLine
+                    + "引数１：Alpha値のランダム範囲(1)" + newLine
+                    + "引数２：Alpha値のランダム範囲(2)" + newLine
+                    + "引数３：変化方法" + newLine
+                    + "引数４：変化時間（フレーム）のランダム範囲(1)" + newLine
+                    + "引数５：変化時間（フレーム）のランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27193,8 +27221,13 @@ const CMD = {
     },
     "PTCL_RAND_SCALL": {
         "num": 345,
-        "description": "【PTCLコマンド】" + newLine
-                    + "",
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルのスケール変化をランダムに決める" + newLine
+                    + "引数１：スケールの倍率のランダム範囲(1)" + newLine
+                    + "引数２：スケールの倍率のランダム範囲(2)" + newLine
+                    + "引数３：変化方法" + newLine
+                    + "引数４：変化時間（フレーム）のランダム範囲(1)" + newLine
+                    + "引数５：変化時間（フレーム）のランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27214,8 +27247,9 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルにパーティクルを追加する。" + newLine
-                    + "引数２と３は画像情報を一致する必要がある。" + newLine
-                    + "引数４と５はPTCLコマンドが定義されたANIMEを指定する" + newLine
+                    + "まず事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し" + newLine
+                    + "引数２と３は画像情報を一致させて" + newLine
+                    + "引数４と５はPTCLコマンドとして定義されたANIMEを指定する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：画像情報のインデックス（要素１が【1】で定義されているもの）" + newLine
                     + "引数３：画像サイズ情報のインデックス" + newLine
@@ -27237,7 +27271,12 @@ const CMD = {
     },
     "PTCL_RAND_TONE_COLOR": {
         "num": 347,
-        "description": "【PTCLコマンド】引数１～４：詳細不明",
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "トーンのカラーをランダムに設定する" + newLine
+                    + "引数１：カラーのランダム範囲(1)" + newLine
+                    + "引数２：カラーのランダム範囲(2)" + newLine
+                    + "引数３：変化方法" + newLine
+                    + "引数４：変化時間（フレーム）",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27254,7 +27293,10 @@ const CMD = {
     },
     "IS_ALPHA_END": {
         "num": 348,
-        "description": "【PTCLコマンド】引数１：詳細不明",
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルのAlpha値が全部0になったか判断する" + newLine
+                    + "そうなった場合、改めてパーティクルを生成する" + newLine
+                    + "引数１：0。初期化するための数値と思われる",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27271,7 +27313,13 @@ const CMD = {
     },
     "PTCL_L_POS": {
         "num": 349,
-        "description": "【PTCLコマンド】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "モデルのパーティクルをローカル座標基準で移動する" + newLine
+                    + "引数１：x座標" + newLine
+                    + "引数２：y座標" + newLine
+                    + "引数３：z座標" + newLine
+                    + "引数４：変化方法" + newLine
+                    + "引数５：変化時間（フレーム）",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27288,7 +27336,17 @@ const CMD = {
     },
     "PTCL_RAND_L_POS": {
         "num": 350,
-        "description": "【PTCLコマンド】引数１～９：詳細不明",
+        "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "" + newLine
+                    + "引数１：x座標のランダム範囲(1)" + newLine
+                    + "引数２：x座標のランダム範囲(2)" + newLine
+                    + "引数３：y座標のランダム範囲(1)" + newLine
+                    + "引数４：y座標のランダム範囲(2)" + newLine
+                    + "引数５：z座標のランダム範囲(1)" + newLine
+                    + "引数６：z座標のランダム範囲(2)" + newLine
+                    + "引数７：変化方法" + newLine
+                    + "引数８：変化時間（フレーム）のランダム範囲(1)" + newLine
+                    + "引数９：変化時間（フレーム）のランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
