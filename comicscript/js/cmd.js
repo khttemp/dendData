@@ -27120,6 +27120,7 @@ const CMD = {
     "PTCL_SCALL": {
         "num": 337,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルのスケールを設定する" + newLine
                     + "引数１：スケールの倍率" + newLine
                     + "引数２：変化方法" + newLine
@@ -27128,6 +27129,7 @@ const CMD = {
     "PTCL_COLOR": {
         "num": 338,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルのカラーを設定する" + newLine
                     + "引数１：R値" + newLine
                     + "引数２：G値" + newLine
@@ -27138,6 +27140,7 @@ const CMD = {
     "PTCL_ALPHA": {
         "num": 339,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルのAlpha値を設定する" + newLine
                     + "引数１：Alpha値" + newLine
                     + "引数２：変化方法" + newLine
@@ -27146,11 +27149,13 @@ const CMD = {
     "PTCL_DRAWTYPE": {
         "num": 340,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "詳細不明。モデルのパーティクルの描画タイプの設定と思われる"
     },
     "PTCL_ANGLE": {
         "num": 341,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルを回転させる" + newLine
                     + "引数１：回転数値" + newLine
                     + "引数２：変化方法" + newLine
@@ -27160,6 +27165,7 @@ const CMD = {
     "PTCL_RAND_ANGLE": {
         "num": 342,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "PTCLをランダムに回転する" + newLine
                     + "引数１：回転startのランダム範囲(1)" + newLine
                     + "引数２：回転startのランダム範囲(2)" + newLine
@@ -27186,6 +27192,7 @@ const CMD = {
     "PTCL_RAND_COLOR": {
         "num": 343,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルのカラーを設定する" + newLine
                     + "引数１：Rのランダム範囲(1)" + newLine
                     + "引数２：Rのランダム範囲(2)" + newLine
@@ -27199,6 +27206,7 @@ const CMD = {
     "PTCL_RAND_ALPHA": {
         "num": 344,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルのAlpha値をランダムに決める" + newLine
                     + "引数１：Alpha値のランダム範囲(1)" + newLine
                     + "引数２：Alpha値のランダム範囲(2)" + newLine
@@ -27222,6 +27230,7 @@ const CMD = {
     "PTCL_RAND_SCALL": {
         "num": 345,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルのスケール変化をランダムに決める" + newLine
                     + "引数１：スケールの倍率のランダム範囲(1)" + newLine
                     + "引数２：スケールの倍率のランダム範囲(2)" + newLine
@@ -27272,6 +27281,7 @@ const CMD = {
     "PTCL_RAND_TONE_COLOR": {
         "num": 347,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "トーンのカラーをランダムに設定する" + newLine
                     + "引数１：カラーのランダム範囲(1)" + newLine
                     + "引数２：カラーのランダム範囲(2)" + newLine
@@ -27294,6 +27304,7 @@ const CMD = {
     "IS_ALPHA_END": {
         "num": 348,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
+                    + "【CS、RS】" + newLine
                     + "モデルのパーティクルのAlpha値が全部0になったか判断する" + newLine
                     + "そうなった場合、改めてパーティクルを生成する" + newLine
                     + "引数１：0。初期化するための数値と思われる",
@@ -27314,7 +27325,8 @@ const CMD = {
     "PTCL_L_POS": {
         "num": 349,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
-                    + "モデルのパーティクルをローカル座標基準で移動する" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのパーティクルをローカル座標基準で移動させる" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
                     + "引数３：z座標" + newLine
@@ -27337,7 +27349,8 @@ const CMD = {
     "PTCL_RAND_L_POS": {
         "num": 350,
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
-                    + "" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのパーティクルをローカル座標基準でランダムに移動させる" + newLine
                     + "引数１：x座標のランダム範囲(1)" + newLine
                     + "引数２：x座標のランダム範囲(2)" + newLine
                     + "引数３：y座標のランダム範囲(1)" + newLine
