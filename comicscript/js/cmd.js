@@ -410,7 +410,7 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "メッシュを表示する" + newLine
-                    + "引数１：モデルのメッシュインデックス",
+                    + "引数１：モデルの元のメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
             "BTL_03.BIN",
@@ -471,7 +471,7 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "メッシュを非表示する" + newLine
-                    + "引数１：モデルのメッシュインデックス",
+                    + "引数１：モデルの元のメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
             "BTL_03.BIN",
@@ -27376,7 +27376,11 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_R_INTERLIST": {
         "num": 351,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに、カラーRの変化を格納するListInterを作成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -27390,7 +27394,11 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_R_INTERLIST": {
         "num": 352,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに、自己発光カラーRの変化を格納するListInterを作成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -27400,7 +27408,15 @@ const CMD = {
     },
     "SET_MAT_COLOR_R": {
         "num": 353,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "カラーRを格納するListInterのインデックスに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：カラーRの値（0.0～1.0）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -27414,7 +27430,15 @@ const CMD = {
     },
     "SET_MAT_COLOR_G": {
         "num": 354,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "カラーGを格納するListInterのインデックスに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：カラーGの値（0.0～1.0）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -27428,7 +27452,15 @@ const CMD = {
     },
     "SET_MAT_COLOR_B": {
         "num": 355,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "カラーBを格納するListInterのインデックスに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：カラーBの値（0.0～1.0）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "KOUSATEN.BIN"
@@ -27440,14 +27472,28 @@ const CMD = {
     },
     "SET_MAT_COLOR_LOOP": {
         "num": 356,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "カラー情報のListInterにループを生成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：カラーインデックス（0=R、1=G、2=B）" + newLine
+                    + "引数３：1（True）、0（False）",
         "CS_bin": [
             "KOUSATEN.BIN"
         ]
     },
     "SET_MAT_EMISSIVE_R": {
         "num": 357,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "自己発光カラーRを格納するListInterのインデックスに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：自己発光カラーRの値（0.0～1.0）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -27457,7 +27503,15 @@ const CMD = {
     },
     "SET_MAT_EMISSIVE_G": {
         "num": 358,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "自己発光カラーGを格納するListInterのインデックスに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：自己発光カラーGの値（0.0～1.0）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -27467,15 +27521,33 @@ const CMD = {
     },
     "SET_MAT_EMISSIVE_B": {
         "num": 359,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "自己発光カラーBを格納するListInterのインデックスに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：自己発光カラーBの値（0.0～1.0）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
     },
     "SET_MAT_EMISSIVE_LOOP": {
         "num": 360,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "自己発光カラー情報のListInterにループを生成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：自己発光カラーインデックス（0=R、1=G、2=B）" + newLine
+                    + "引数３：1（True）、0（False）"
     },
     "CREATE_MAT_COLOR_G_INTERLIST": {
         "num": 361,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに、カラーGの変化を格納するListInterを作成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -27489,7 +27561,11 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_G_INTERLIST": {
         "num": 362,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに、自己発光カラーGの変化を格納するListInterを作成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -27499,7 +27575,11 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_B_INTERLIST": {
         "num": 363,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに、カラーBの変化を格納するListInterを作成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN",
             "CHAR_SEL_OBJ.BIN",
@@ -27513,7 +27593,11 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_B_INTERLIST": {
         "num": 364,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに、自己発光カラーBの変化を格納するListInterを作成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN"
         ],
@@ -27523,7 +27607,11 @@ const CMD = {
     },
     "CREATE_UV_MOVE_Y": {
         "num": 365,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのY軸に移動する変化を格納する、UVのインデックスを生成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するインデックス個数",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -27549,7 +27637,14 @@ const CMD = {
     },
     "SET_UV_MOVE_Y": {
         "num": 366,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのY軸移動のUVに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：UVインデックス" + newLine
+                    + "引数３：変化方法" + newLine
+                    + "引数４：Y軸移動の目標位置。メッシュの最後の位置を1.0とする。" + newLine
+                    + "引数５：変化時間（フレーム）",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -27575,7 +27670,11 @@ const CMD = {
     },
     "SET_UV_LOOP_Y": {
         "num": 367,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのY軸移動のUVにループを設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：1（True）、0（False）",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -27600,10 +27699,12 @@ const CMD = {
     },
     "INDEX_RAND_ROT_X": {
         "num": 368,
-        "description": "【モデルバイナリ】ランダムにX軸に回転する" + newLine
-                    + "引数１：INDEX番号" + newLine
-                    + "引数２：ランダムの数字範囲（START）" + newLine
-                    + "引数３：ランダムの数字範囲（END）" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのボーンをX軸でランダムに回転させる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：回転のランダム範囲(1)" + newLine
+                    + "引数３：回転のランダム範囲(2)" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "CS_bin": [
@@ -27620,10 +27721,12 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Y": {
         "num": 369,
-        "description": "【モデルバイナリ】ランダムにY軸に回転する" + newLine
-                    + "引数１：INDEX番号" + newLine
-                    + "引数２：ランダムの数字範囲（START）" + newLine
-                    + "引数３：ランダムの数字範囲（END）" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのボーンをY軸でランダムに回転させる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：回転のランダム範囲(1)" + newLine
+                    + "引数３：回転のランダム範囲(2)" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "CS_bin": [
@@ -27644,10 +27747,12 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Z": {
         "num": 370,
-        "description": "【モデルバイナリ】ランダムにZ軸に回転する" + newLine
-                    + "引数１：INDEX番号" + newLine
-                    + "引数２：ランダムの数字範囲（START）" + newLine
-                    + "引数３：ランダムの数字範囲（END）" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのボーンをZ軸でランダムに回転させる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：回転のランダム範囲(1)" + newLine
+                    + "引数３：回転のランダム範囲(2)" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "CS_bin": [
@@ -27664,10 +27769,12 @@ const CMD = {
     },
     "INDEX_RAND_POS_X": {
         "num": 371,
-        "description": "【モデルバイナリ】ランダムにX軸に移動する" + newLine
-                    + "引数１：INDEX番号" + newLine
-                    + "引数２：ランダムの数字範囲（START）" + newLine
-                    + "引数３：ランダムの数字範囲（END）" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのボーンをX軸でランダムに移動させる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：移動のランダム範囲(1)" + newLine
+                    + "引数３：移動のランダム範囲(2)" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "RS_bin": [
@@ -27680,10 +27787,12 @@ const CMD = {
     },
     "INDEX_RAND_POS_Y": {
         "num": 372,
-        "description": "【モデルバイナリ】ランダムにY軸に移動する" + newLine
-                    + "引数１：INDEX番号" + newLine
-                    + "引数２：ランダムの数字範囲（START）" + newLine
-                    + "引数３：ランダムの数字範囲（END）" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのボーンをY軸でランダムに移動させる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：移動のランダム範囲(1)" + newLine
+                    + "引数３：移動のランダム範囲(2)" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "CS_bin": [
@@ -27700,10 +27809,12 @@ const CMD = {
     },
     "INDEX_RAND_POS_Z": {
         "num": 373,
-        "description": "【モデルバイナリ】ランダムにZ軸に移動する" + newLine
-                    + "引数１：INDEX番号" + newLine
-                    + "引数２：ランダムの数字範囲（START）" + newLine
-                    + "引数３：ランダムの数字範囲（END）" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのボーンをZ軸でランダムに移動させる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：移動のランダム範囲(1)" + newLine
+                    + "引数３：移動のランダム範囲(2)" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
                     + "引数５：変化方法",
         "RS_bin": [
@@ -27716,7 +27827,11 @@ const CMD = {
     },
     "RAND_SHOW_MESH": {
         "num": 374,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルの元のメッシュをランダムに表示させる" + newLine
+                    + "引数１：ランダム範囲(1)" + newLine
+                    + "引数２：ランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_02.BIN",
@@ -27726,7 +27841,14 @@ const CMD = {
     },
     "INDEX_RAND_SCALL": {
         "num": 375,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルのボーンのスケールをランダムで設定する" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：スケール倍率のランダム範囲(1)" + newLine
+                    + "引数３：スケール倍率のランダム範囲(2)" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "D3_1BOOK.BIN",
@@ -27743,7 +27865,14 @@ const CMD = {
     },
     "ADD_CHILD_OBJ": {
         "num": 376,
-        "description": "【モデルバイナリ】引数１～４：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "あるモデルにANIMEオブジェクトを追加する" + newLine
+                    + "ただし、引数１が-1以外で使われる場合は、未実装と思われる" + newLine
+                    + "引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）" + newLine
+                    + "引数２：Child番号（0～3）" + newLine
+                    + "引数３：ANIME要素２" + newLine
+                    + "引数４：ANIME要素３",
         "CS_bin": [
             "JR2000.BIN",
             "JR2000_01.BIN",
@@ -27759,7 +27888,16 @@ const CMD = {
     },
     "ADD_OBJ_INDEX": {
         "num": 377,
-        "description": "【モデルバイナリ】引数１～５：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し" + newLine
+                    + "そのマテリアルにANIMEオブジェクトを追加する" + newLine
+                    + "ただし、引数１が-1以外で使われる場合は、未実装と思われる" + newLine
+                    + "引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）" + newLine
+                    + "引数２：マテリアルインデックス" + newLine
+                    + "引数３：モデルインデックス" + newLine
+                    + "引数４：ANIME要素２" + newLine
+                    + "引数５：ANIME要素３",
         "CS_bin": [
             "AMB_LIGHT.BIN",
             "JR2000_02.BIN",
