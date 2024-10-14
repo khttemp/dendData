@@ -19388,7 +19388,7 @@ const CMD = {
     "GOTO": {
         "num": 194,
         "description": "【LS、BS、CS、RS、SS】" + newLine
-                    + "引数と一致する一番最初のFROMまで飛ばす" + newLine
+                    + "このコマンドが実行された行を基準に、一番近い下のFROMまで飛ぶ" + newLine
                     + "モデルバイナリではCS以後から使える" + newLine
                     + "引数１：FROMの数字",
         "LS_comic": [
@@ -25056,8 +25056,8 @@ const CMD = {
         "num": 294,
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
-                    + "モデルのメッシュのマテリアルのカラーを変える" + newLine
-                    + "引数１：メッシュインデックス" + newLine
+                    + "モデルの元メッシュのマテリアルのカラーを変える" + newLine
+                    + "引数１：元メッシュインデックス" + newLine
                     + "引数２：引数１のマテリアルインデックス" + newLine
                     + "引数３：カラーR（0.0～1.0）" + newLine
                     + "引数４：カラーG（0.0～1.0）" + newLine
@@ -27256,7 +27256,7 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルにパーティクルを追加する。" + newLine
-                    + "まず事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し" + newLine
+                    + "事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し" + newLine
                     + "引数２と３は画像情報を一致させて" + newLine
                     + "引数４と５はPTCLコマンドとして定義されたANIMEを指定する" + newLine
                     + "引数１：モデルインデックス" + newLine
@@ -27868,7 +27868,6 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "あるモデルにANIMEオブジェクトを追加する" + newLine
-                    + "ただし、引数１が-1以外で使われる場合は、未実装と思われる" + newLine
                     + "引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）" + newLine
                     + "引数２：Child番号（0～3）" + newLine
                     + "引数３：ANIME要素２" + newLine
@@ -27911,8 +27910,9 @@ const CMD = {
     },
     "GAS_TARBIN": {
         "num": 378,
-        "description": "車両にガスタービンがある場合、動かす" + newLine
-                    + "SSで車両がデキ3の場合、GNを動かす" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "車両にガスタービンがある場合、動かす" + newLine
+                    + "SSでは車両がデキ3の場合、GNを動かす" + newLine
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -27942,7 +27942,8 @@ const CMD = {
     },
     "ENGINE_START": {
         "num": 379,
-        "description": "車両が気動車の場合、エンジンを動かす" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "車両が気動車の場合、エンジンを動かす" + newLine
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -27997,9 +27998,14 @@ const CMD = {
     },
     "CHANGE_CHILDOBJ_ANIME": {
         "num": 380,
-        "description": "車両の子オブジェクトのANIMEを変える" + newLine
-                    + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～５：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "モデルにADD_CHILD_OBJで追加してたANIMEを変える" + newLine
+                    + "モデルバイナリでも使えるし、その場合引数１と２は-1になる" + newLine
+                    + "引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）" + newLine
+                    + "引数２：-1（あるセクションでのモデル）、その他（編成インデックス）" + newLine
+                    + "引数３：Child番号（0～3）" + newLine
+                    + "引数４：ANIME要素２" + newLine
+                    + "引数５：ANIME要素３",
         "CS_comic": [
             "COMIC2997.BIN",
             "COMIC2998.BIN"
@@ -28021,7 +28027,9 @@ const CMD = {
     },
     "IB_SET_W_MT": {
         "num": 381,
-        "description": "【モデルバイナリ】MDL_GETINDEXで取得した、モデルインデックスにマテリアル要素を追加する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "MDL_GETINDEXで取得した、モデルインデックスにマテリアル要素を追加する" + newLine
                     + "引数１：モデルインデックス" + newLine
                     + "引数２：追加するマテリアル要素数",
         "CS_bin": [
@@ -28049,12 +28057,14 @@ const CMD = {
     },
     "CHK_OBJ_PARAM": {
         "num": 382,
-        "description": "【モデルバイナリ】車両の状態によって条件が合えば、引数３のFROMへ" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "車両の状態によって条件が合えば、引数３のFROMへ" + newLine
                     + "条件が合わなければ、引数４のFROMへ飛ぶ" + newLine
-                    + "引数１" + newLine
-                    + "　0（指定車両モデルのインデックス位置）" + newLine
+                    + "引数１：判定要素" + newLine
+                    + "　0（指定車両モデルのインデックス位置。CHAR_SEL_OBJの場合、開放された車両数）" + newLine
                     + "　1（車両カラーインデックス位置）" + newLine
-                    + "引数２：インデックス値" + newLine
+                    + "引数２：インデックス値。CHAR_SEL_OBJの場合、開放された車両数の値" + newLine
                     + "引数３：FROM数字" + newLine
                     + "引数４：FROM数字",
         "CS_bin": [
@@ -28117,21 +28127,32 @@ const CMD = {
     },
     "SET_OBJ_PARAM": {
         "num": 383,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "判定要素の値をスクリプトで設定する" + newLine
+                    + "引数１：判定要素" + newLine
+                    + "　0（指定車両モデルのインデックス位置。CHAR_SEL_OBJの場合、開放された車両数）" + newLine
+                    + "　1（車両カラーインデックス位置）" + newLine
+                    + "引数２：設定値" + newLine
     },
     "INDEX_DIR_CAM": {
         "num": 384,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "詳細不明。メニューで使うものと思われる" + newLine
+                    + "引数１：モデルインデックス" + newLine
+                    + "引数２：1（True）、0（False）【推定】"
     },
     "CNG_MT_LIGHT": {
         "num": 385,
-        "description": "【モデルバイナリ】メッシュのマテリアルのDIFFを変える" + newLine
-                    + "引数１：メッシュNo" + newLine
-                    + "引数２：そのメッシュのマテリアルNo" + newLine
-                    + "引数３：DIFF_R" + newLine
-                    + "引数４：DIFF_G" + newLine
-                    + "引数５：DIFF_B" + newLine
-                    + "引数６：DIFF_A",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルの元メッシュのマテリアルのEMISを変える" + newLine
+                    + "引数１：元メッシュインデックス" + newLine
+                    + "引数２：引数１のマテリアルインデックス" + newLine
+                    + "引数３：EMIS_R" + newLine
+                    + "引数４：EMIS_G" + newLine
+                    + "引数５：EMIS_B",
         "CS_bin": [
             "H2000_00.BIN",
             "H2800_00.BIN",
@@ -28189,8 +28210,11 @@ const CMD = {
     },
     "ADD_OBJ_INDEX2": {
         "num": 386,
-        "description": "【モデルバイナリ】マテリアル要素にANIMEを追加で実行する" + newLine
-                    + "引数１：マテリアル要素インデックス" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し" + newLine
+                    + "そのマテリアルにANIMEを追加する" + newLine
+                    + "引数１：マテリアルインデックス" + newLine
                     + "引数２：ANIME要素２" + newLine
                     + "引数３：ANIME要素３",
         "CS_bin": [
@@ -28205,11 +28229,20 @@ const CMD = {
     },
     "CNG_MT_ALPHA": {
         "num": 387,
-        "description": ""
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "モデルの元メッシュのマテリアルのAlphaを変える" + newLine
+                    + "引数１：元メッシュインデックス" + newLine
+                    + "引数２：引数１のマテリアルインデックス" + newLine
+                    + "引数３：Alpha値"
     },
     "CREATE_MAT_ALPHA_INTERLIST": {
         "num": 388,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに、Alphaの変化を格納するListInterを作成する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
@@ -28227,7 +28260,15 @@ const CMD = {
     },
     "SET_MAT_ALPHA": {
         "num": 389,
-        "description": "【モデルバイナリ】引数１～３：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに生成した" + newLine
+                    + "Alphaを格納するListInterのインデックスに値を設定する" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：LIインデックス" + newLine
+                    + "引数３：Alphaの値（0.0～1.0）" + newLine
+                    + "引数４：変化時間（フレーム）" + newLine
+                    + "引数５：変化方法",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
@@ -28245,7 +28286,15 @@ const CMD = {
     },
     "RESTART_MESH_LIST": {
         "num": 390,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに定義したListInterを改めて動かす" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：ListInterのタイプ" + newLine
+                    + "　0：カラーRのListInter" + newLine
+                    + "　1：カラーGのListInter" + newLine
+                    + "　2：カラーBのListInter" + newLine
+                    + "　3：AlphaのListInter",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "HQ_KB.BIN",
@@ -28263,8 +28312,12 @@ const CMD = {
     },
     "RAIL_ANIME_CHANGE": {
         "num": 391,
-        "description": "詳細不明" + newLine
-                    + "引数１～３：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "レールモデルのバイナリに定義されたANIMEを実行する" + newLine
+                    + "ストーリーモードのみ適用すると思われる" + newLine
+                    + "引数１：レール番号" + newLine
+                    + "引数２：ANIME要素２" + newLine
+                    + "引数３：ANIME要素３",
         "CS_comic": [
             "COMIC2300.BIN"
         ]
