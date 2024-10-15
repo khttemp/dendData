@@ -29031,7 +29031,8 @@ const CMD = {
     "WAIT_DOSAN_LENGTH": {
         "num": 404,
         "description": "【CS、RS】" + newLine
-                    + "土讃線をした場合、指定時間内に指定の高さ以下になるまで待つ" + newLine
+                    + "土讃線をした場合、指定時間内にジャンプの高さが" + newLine
+                    + "引数２の数値以下になると、次の行へ行く" + newLine
                     + "指定時間を過ぎて条件を満たしてない場合、END_DOSAN_LENGTHまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：ジャンプの高さ" + newLine
