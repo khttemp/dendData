@@ -23003,7 +23003,7 @@ const CMD = {
         "num": 271,
         "description": "【BS、CS、RS】" + newLine
                     + "レールデータで定義しているANIMEを続けて実行する" + newLine
-                    + "引数１：レールデータのベースBIN ANIMEのインデックス" + newLine
+                    + "引数１：レールデータのベースBIN　ANIMEのインデックス" + newLine
                     + "引数２：ANIME要素２" + newLine
                     + "引数３：ANIME要素３",
         "BS_comic": [
@@ -24681,7 +24681,8 @@ const CMD = {
     "START_WIPER": {
         "num": 278,
         "description": "【BS、CS、RS】" + newLine
-                    + "ワイパーを動かす" + newLine
+                    + "指定車両のワイパーを動かす" + newLine
+                    + "※SSでは使えない" + newLine
                     + "引数１：0（1P）、1（2P）",
         "BS_comic": [
             "COMIC1107.BIN",
@@ -29176,7 +29177,10 @@ const CMD = {
     },
     "QUICK_SAVE_EVENT": {
         "num": 411,
-        "description": "引数１：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "効果なし" + newLine
+                    + "途中で始められるQuickSaveのフラグ設定と思われる" + newLine
+                    + "引数１：1（True）、0（False）",
         "CS_comic": [
             "COMIC2011.BIN",
             "COMIC2303.BIN",
@@ -29196,7 +29200,11 @@ const CMD = {
     },
     "NONE_GOAL": {
         "num": 412,
-        "description": "NONE_GOALのフラグを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "NONE_GOALのフラグを設定する" + newLine
+                    + "これを活性化すると、イベントタイプ３で設定したゴール用のコミックスクリプトを" + newLine
+                    + "ゴール判定にせず、そのまま次のコミックスクリプトへ行く" + newLine
+                    + "※CS・RSでは未定義のコマンドである" + newLine
                     + "引数：1（True）、0（False）",
         "SS_comic": [
             "COMIC41044.BIN"
@@ -29204,7 +29212,9 @@ const CMD = {
     },
     "ENGINE_STOP": {
         "num": 413,
-        "description": "車両が気動車の場合、エンジンを止める" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "車両が気動車の場合、エンジンを止める" + newLine
+                    + "SSではデキ３でも適用できる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2333.BIN"
@@ -29215,7 +29225,8 @@ const CMD = {
     },
     "IS_BTL_MODE": {
         "num": 414,
-        "description": "バトルモードの場合、引数１のFROMへ" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "バトルモード（二人バトル）の場合、引数１のFROMへ" + newLine
                     + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROMの数字" + newLine
                     + "引数２：FROMの数字",
@@ -29243,7 +29254,8 @@ const CMD = {
     },
     "IS_FREE_MODE": {
         "num": 415,
-        "description": "試運転モードの場合、引数１のFROMへ" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "試運転モードの場合、引数１のFROMへ" + newLine
                     + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
                     + "引数１：FROMの数字" + newLine
                     + "引数２：FROMの数字",
@@ -29260,9 +29272,13 @@ const CMD = {
     },
     "FIRST_OBJ_SET_ANIME_SCENE": {
         "num": 416,
-        "description": "詳細不明" + newLine
-                    + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～４：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "引数１で指定しているシーンに、" + newLine
+                    + "レールデータで定義しているANIMEを続けて実行する" + newLine
+                    + "引数１：0（1Pのシーン）、1（2Pのシーン）" + newLine
+                    + "引数２：レールデータのベースBIN　ANIMEのインデックス" + newLine
+                    + "引数３：ANIME要素２" + newLine
+                    + "引数４：ANIME要素３",
         "CS_comic": [
             "COMIC2011.BIN",
             "COMIC2336.BIN"
@@ -29270,7 +29286,12 @@ const CMD = {
     },
     "G_HIDE_MESH": {
         "num": 417,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "引数１から引数２までの連続した" + newLine
+                    + "グループ単位でメッシュを非表示する" + newLine
+                    + "引数１：モデルの元メッシュインデックス（Start）" + newLine
+                    + "引数２：モデルの元メッシュインデックス（End）",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
         ],
@@ -29280,7 +29301,12 @@ const CMD = {
     },
     "G_SHOW_MESH": {
         "num": 418,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "引数１から引数２までの連続した" + newLine
+                    + "グループ単位でメッシュを表示する" + newLine
+                    + "引数１：モデルの元メッシュインデックス（Start）" + newLine
+                    + "引数２：モデルの元メッシュインデックス（End）",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
         ],
@@ -29290,7 +29316,8 @@ const CMD = {
     },
     "STOP_WIPER": {
         "num": 419,
-        "description": "ワイパーを止める" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "指定車両のワイパーを止める" + newLine
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2429.BIN",
@@ -29304,9 +29331,10 @@ const CMD = {
     },
     "TRAIN_ANIME_CHANGE": {
         "num": 420,
-        "description": "車両のANIMEを変える" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "車両に定義されているANIMEを実行する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
+                    + "引数２：編成インデックス" + newLine
                     + "引数３：ANIME要素２" + newLine
                     + "引数４：ANIME要素３",
         "CS_comic": [
@@ -29315,7 +29343,13 @@ const CMD = {
     },
     "MESH_INDEX_UV_RESTRT": {
         "num": 421,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュのマテリアルに定義したUVを改めて動かす" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：UVのタイプ" + newLine
+                    + "　０：X軸のUV" + newLine
+                    + "　１：Y軸のUV",
         "CS_bin": [
             "H8200_00.BIN",
             "JR2000.BIN"
