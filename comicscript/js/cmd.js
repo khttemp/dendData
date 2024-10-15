@@ -13742,7 +13742,7 @@ const CMD = {
                     + "　3（振り子）" + newLine
                     + "　4（後輪ドリフト、普通のドリフトも含む）" + newLine
                     + "　5（後輪ドリフト戻し、片輪ドリフト戻し）" + newLine
-                    + "　6（詳細不明。未使用と思われる）" + newLine
+                    + "　6（土讃線）" + newLine
                     + "　7（左片輪ドリフト）" + newLine
                     + "　8（右片輪ドリフト）" + newLine
                     + "　9（後輪ドリフト）" + newLine
@@ -26249,7 +26249,7 @@ const CMD = {
                     + "　3（振り子）" + newLine
                     + "　4（後輪ドリフト、普通のドリフトも含む）" + newLine
                     + "　5（後輪ドリフト戻し、片輪ドリフト戻し）" + newLine
-                    + "　6（詳細不明。未使用と思われる）" + newLine
+                    + "　6（土讃線）" + newLine
                     + "　7（左片輪ドリフト）" + newLine
                     + "　8（右片輪ドリフト）" + newLine
                     + "　9（後輪ドリフト）" + newLine
@@ -28324,7 +28324,8 @@ const CMD = {
     },
     "STOP_COMIC_SE_ALL": {
         "num": 392,
-        "description": "全てのSEを消す" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "全てのSEを消す" + newLine
                     + "引数１：フェードアウトするフレーム時間（SSでは使わない）",
         "CS_comic": [
             "COMIC2001.BIN",
@@ -28501,9 +28502,13 @@ const CMD = {
     },
     "HURIKO": {
         "num": 393,
-        "description": "指定車両の振り子機能を操作する" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "指定車両の振り子機能を操作する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：マイナス（左）、普通（0）、プラス（右）",
+                    + "引数２：振り子操作" + newLine
+                    + "　マイナス値：左に傾く" + newLine
+                    + "　0：デフォルト状態" + newLine
+                    + "　プラス値：右に傾く",
         "CS_comic": [
             "COMIC2308.BIN",
             "COMIC2326.BIN",
@@ -28514,7 +28519,9 @@ const CMD = {
     },
     "FTV_PLAY_AND_PREV": {
         "num": 394,
-        "description": "引数２に続いて引数１のFVTを再生する" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "FTV_END_INHERITをした引数２のFVTに続いて、引数１のFVTを再生する" + newLine
+                    + "互いのFVTは、同じ画像を使わないといけない" + newLine
                     + "引数１：FVT番号" + newLine
                     + "引数２：FVT番号",
         "CS_comic": [
@@ -28523,7 +28530,8 @@ const CMD = {
     },
     "FTV_END_INHERIT": {
         "num": 395,
-        "description": "【推定】FTV_PLAY_AND_PREVをするためのコマンド" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "FTVを終了するが、FTV_PLAY_AND_PREVで引き継げるようにする" + newLine
                     + "引数１：FVT番号",
         "CS_comic": [
             "COMIC2309.BIN"
@@ -28534,7 +28542,9 @@ const CMD = {
     },
     "STATION_NAME_PRIORITY": {
         "num": 396,
-        "description": "駅名表示のフラグを操作する" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "駅名表示のフラグを操作する" + newLine
+                    + "ただし、SSでは何もせず次の行へ行く" + newLine
                     + "引数１：1（True）、0（False）(SSでは使わない)",
         "CS_comic": [
             "COMIC2200.BIN",
@@ -28562,7 +28572,8 @@ const CMD = {
     },
     "ALL_FIT": {
         "num": 397,
-        "description": "指定車両を傾かないようにする" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "指定車両を傾かないようにする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
         "CS_comic": [
@@ -28630,7 +28641,9 @@ const CMD = {
     },
     "SWAP_TX": {
         "num": 398,
-        "description": "【モデルバイナリ】テクスチャーを変えるインデックスを用意する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "テクスチャーを用意する" + newLine
                     + "引数１：用意するインデックス" + newLine
                     + "引数２：テクスチャーファイル",
         "CS_bin": [
@@ -28707,10 +28720,12 @@ const CMD = {
     },
     "CNG_TX": {
         "num": 399,
-        "description": "【モデルバイナリ】SWAP_TXでマテリアルのテクスチャーを変える" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "SWAP_TXで用意したテクスチャーで、マテリアルのテクスチャーを変える" + newLine
                     + "引数１：SWAP_TXのインデックス" + newLine
-                    + "引数２：メッシュNo" + newLine
-                    + "引数３：そのメッシュのマテリアルNo",
+                    + "引数２：モデルの元のメッシュインデックス" + newLine
+                    + "引数３：引数２のマテリアルインデックス",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
             "D3_1BOOK.BIN",
@@ -28785,9 +28800,11 @@ const CMD = {
     },
     "CHK_CAUSE": {
         "num": 400,
-        "description": "【モデルバイナリ】選択したコースが引数１と一致する場合、引数２のFROMへ" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "選択したコースが引数１と一致する場合、引数２のFROMへ" + newLine
                     + "一致しない場合、引数３のFROMへ飛ぶ" + newLine
-                    + "引数１：コース番号" + newLine
+                    + "引数１：コース番号（200、201・・・）" + newLine
                     + "引数２：FROM数字" + newLine
                     + "引数３：FROM数字",
         "CS_bin": [
@@ -28863,7 +28880,10 @@ const CMD = {
     },
     "CNG_ANIME": {
         "num": 401,
-        "description": "【モデルバイナリ】ANIMEを実行する" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "ANIMEを実行する。" + newLine
+                    + "またこのコマンドを基準に、次の行以降は実行されない" + newLine
                     + "引数１：ANIME要素２" + newLine
                     + "引数２：ANIME要素３",
         "CS_bin": [
@@ -28950,8 +28970,13 @@ const CMD = {
     },
     "CHK_OUHUKU": {
         "num": 402,
-        "description": "【モデルバイナリ】往復状態の場合引数１のFROMへ" + newLine
-                    + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "未完成。" + newLine
+                    + "CSではどのステージを選んでも引数１のFROMへ行く。" + newLine
+                    + "往復状態を判断し、通常方向の場合、引数１のFROMへ" + newLine
+                    + "折り返し方向の場合、引数２のFROMへ飛ぶものと思われる" + newLine
+                    + "RSでは「未使用コマンド」とエラーメッセージ後、次の行へ行く" + newLine
                     + "引数１：FROM数字" + newLine
                     + "引数２：FROM数字",
         "CS_bin": [
@@ -28990,9 +29015,12 @@ const CMD = {
     },
     "SET_TRAIN_PTCL_AREA": {
         "num": 403,
-        "description": "詳細不明" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "効果がない。未実装と思われる。" + newLine
+                    + "【推定】引数２の周りのパーティクルを操作するものと思われる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～３：詳細不明",
+                    + "引数２：車両インデックス" + newLine
+                    + "引数３：1（True）、0（False）",
         "CS_comic": [
             "COMIC2300.BIN",
             "COMIC2301.BIN",
@@ -29002,9 +29030,12 @@ const CMD = {
     },
     "WAIT_DOSAN_LENGTH": {
         "num": 404,
-        "description": "土讃線を待つコマンド" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "土讃線をした場合、指定時間内に指定の高さ以下になるまで待つ" + newLine
+                    + "指定時間を過ぎて条件を満たしてない場合、END_DOSAN_LENGTHまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～３：詳細不明",
+                    + "引数２：ジャンプの高さ" + newLine
+                    + "引数３：指定時間（フレーム）",
         "CS_comic": [
             "COMIC2318.BIN",
             "COMIC2320.BIN",
@@ -29016,7 +29047,8 @@ const CMD = {
     },
     "END_DOSAN_LENGTH": {
         "num": 405,
-        "description": "WAIT_DOSAN_LENGTHの待ち時間が終わった場合、この行で止める" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "WAIT_DOSAN_LENGTHで飛ぶ場合、この行で止める" + newLine
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2318.BIN",
@@ -29026,9 +29058,10 @@ const CMD = {
     },
     "DOSANSEN": {
         "num": 406,
-        "description": "土讃線する" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "指定時間内に土讃線出来る区間まで来た場合、土讃線する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：詳細不明",
+                    + "引数２：指定時間（フレーム）",
         "CS_comic": [
             "COMIC2318.BIN",
             "COMIC2319.BIN",
@@ -29039,7 +29072,12 @@ const CMD = {
     },
     "MESH_INDEX_SE_UV_ANIME_FLG": {
         "num": 407,
-        "description": "【モデルバイナリ】引数１～２：詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "メッシュの移動変化を格納したUVの" + newLine
+                    + "Updateのフラグを設定する。デフォルトはTrue状態" + newLine
+                    + "引数１：メッシュインデックス" + newLine
+                    + "引数２：1（True）、0（False）",
         "CS_bin": [
             "H8008_00.BIN",
             "H8200_00.BIN",
@@ -29053,15 +29091,18 @@ const CMD = {
     },
     "WEATHER": {
         "num": 408,
-        "description": "【モデルバイナリ】詳細不明",
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "雪のオブジェクトを生成する",
         "CS_bin": [
             "HQ_TK.BIN"
         ]
     },
     "TRAIN_DIR": {
         "num": 409,
-        "description": "【CS、RS】指定車両を推進運転するように方向を変える" + newLine
-                    + "【SS】指定車両を折り返し運転するように方向を変える" + newLine
+        "description": "【CS、RS、SS】" + newLine
+                    + "CS・RSでは、指定車両を推進運転するように方向を変える" + newLine
+                    + "SSでは、指定車両を折り返し運転するように方向を変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（デフォルト方向）、-1（逆方向）",
         "CS_comic": [
@@ -29118,7 +29159,9 @@ const CMD = {
     },
     "IS_USE_CHAR": {
         "num": 410,
-        "description": "【モデルバイナリ】引数１の車両を使える場合、引数２のFROM数字へ" + newLine
+        "description": "【モデルバイナリ】" + newLine
+                    + "【CS、RS】" + newLine
+                    + "引数１の車両を使える場合、引数２のFROM数字へ" + newLine
                     + "使えない場合、引数３のFROM数字へ飛ぶ" + newLine
                     + "引数１：車両インデックス" + newLine
                     + "引数２：FROM数字" + newLine
