@@ -29513,7 +29513,7 @@ const CMD = {
         "num": 428,
         "description": "【CS、RS】" + newLine
                     + "引数１で取得したCPUモードのmaxSpeedが" + newLine
-                    + "引数２より低い場合、その速度で変更する" + newLine
+                    + "引数２より低い場合、maxSpeedを引数２の補正速度で変更する" + newLine
                     + "引数１：0（1P）、1（2P）【デフォルトは1】" + newLine
                     + "引数２：補正速度",
         "CS_comic": [
