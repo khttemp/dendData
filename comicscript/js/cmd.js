@@ -29599,12 +29599,17 @@ const CMD = {
     },
     "CHK_LENGTH_DIR": {
         "num": 435,
-        "description": "推進運転対応の距離測定コマンド【RSにはバグあり】" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "CSの推進運転専用の距離測定コマンド" + newLine
+                    + "引数３、４同士の距離を比較する" + newLine
+                    + "ただし、RSでは引数３、４に何を入れても" + newLine
+                    + "CHK_LENGTHのコマンドと同じ動作をする" + newLine
                     + "引数１：指定距離" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
-                    + "引数３～４：詳細不明" + newLine
-                    + "引数５：指定時間内に指定距離を満たした場合、飛ぶFROM数字" + newLine
-                    + "引数６：指定時間内に指定距離を満たせなかった場合、飛ぶFROM数字",
+                    + "引数３：0（正方向基準で1Pの先頭車）、-1（正方向基準で1Pの後尾車）" + newLine
+                    + "引数４：0（正方向基準で2Pの先頭車）、-1（正方向基準で2Pの後尾車）" + newLine
+                    + "引数５：指定時間内に条件を満たした場合、飛ぶFROM数字" + newLine
+                    + "引数６：指定時間内に条件を満たせなかった場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2436.BIN",
             "COMIC2439.BIN",
@@ -29614,12 +29619,19 @@ const CMD = {
     },
     "CHK_POS_DIR": {
         "num": 436,
-        "description": "推進運転対応の位置測定コマンド【RSにはバグあり】" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "CSの推進運転専用の位置測定コマンド" + newLine
+                    + "引数３、４同士の位置を比較する" + newLine
+                    + "ただし、このコマンドが単独で使われることはなく" + newLine
+                    + "CHK_LENGTH_DIRを実行した後ではないと、不具合が出る可能性が高い" + newLine
+                    + "ただし、RSでは引数３、４に何を入れても" + newLine
+                    + "CHK_POSTIONのコマンドと同じ動作をする" + newLine
                     + "引数１：0（CPUが後ろにいる）、１（CPUが前にいる）" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
-                    + "引数３～４：詳細不明" + newLine
-                    + "引数５：指定時間内に指定距離を満たした場合、飛ぶFROM数字" + newLine
-                    + "引数６：指定時間内に指定距離を満たせなかった場合、飛ぶFROM数字",
+                    + "引数３：0（正方向基準で1Pの先頭車）、-1（正方向基準で1Pの後尾車）" + newLine
+                    + "引数４：0（正方向基準でCPUの先頭車）、-1（正方向基準でCPUの後尾車）" + newLine
+                    + "引数５：指定時間内に条件を満たした場合、飛ぶFROM数字" + newLine
+                    + "引数６：指定時間内に条件を満たせなかった場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2439.BIN",
             "COMIC2441.BIN"
@@ -29627,7 +29639,8 @@ const CMD = {
     },
     "TRUE_CLASH": {
         "num": 437,
-        "description": "CPUが脱線しやすく、回復し難くなる" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "CPUが脱線しやすく、回復し難くなる" + newLine
                     + "引数１：1（True）、0（False）",
         "CS_comic": [
             "COMIC2441.BIN",
