@@ -29360,8 +29360,14 @@ const CMD = {
     },
     "SET_COMIC_COLOR": {
         "num": 422,
-        "description": "詳細不明" + newLine
-                    + "引数１～６：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "コマにカラーを設定する" + newLine
+                    + "引数１：コマの番号" + newLine
+                    + "引数２：R（0～255）" + newLine
+                    + "引数３：G（0～255）" + newLine
+                    + "引数４：B（0～255）" + newLine
+                    + "引数５：詳細不明。未使用と思われる" + newLine
+                    + "引数６：詳細不明。未使用と思われる",
         "CS_comic": [
             "COMIC2999.BIN",
             "COMIC2901.BIN",
@@ -29413,7 +29419,8 @@ const CMD = {
     },
     "CHK_OUTRUN_CNT": {
         "num": 423,
-        "description": "指定車両の今まで脱線した数を数えて" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "バトル開始後、指定車両が今まで脱線した数を数えて" + newLine
                     + "指定数より以下の場合、引数３のFROMへ" + newLine
                     + "超える場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -29428,12 +29435,28 @@ const CMD = {
     },
     "CHK_D_AND_NOTCH": {
         "num": 424,
-        "description": ""
+        "description": "【CS、RS】" + newLine
+                    + "バトル開始後、指定車両が今まで" + newLine
+                    + "ブレーキして、すぐノッチを入れる動作（パカパカ）が" + newLine
+                    + "引数２の数値より以下の場合、引数３のFROMへ" + newLine
+                    + "超える場合、引数４のFROMへ飛ぶ" + newLine
+                    + "ただし、中途半端な仕様なのかは不明だが、阪急2000系でしか出来ない" + newLine
+                    + "引数１：0（1P）、1（2P）" + newLine
+                    + "引数２：回数" + newLine
+                    + "引数３：FROM数字" + newLine
+                    + "引数４：FROM数字"
     },
     "ADD_CPU_LEN_OUTRUN": {
         "num": 425,
-        "description": "詳細不明" + newLine
-                    + "引数１～３：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "引数２で取得したCPUモードのminLenを引数３の数値を足して調整する" + newLine
+                    + "ただし、引数３を取得できない不具合があると思われる" + newLine
+                    + "また、調整したminLenがmaxLenより小さい場合" + newLine
+                    + "minLenはmaxLenに20を足した数値になる" + newLine
+                    + "※誤字ではない。最低距離を調整している" + newLine
+                    + "引数１：0（1P）、1（2P）【デフォルトは0】" + newLine
+                    + "引数２：0（1P）、1（2P）【デフォルトは1】" + newLine
+                    + "引数３：調整数値",
         "CS_comic": [
             "COMIC2008.BIN",
             "COMIC2009.BIN",
@@ -29450,8 +29473,14 @@ const CMD = {
     },
     "ADD_CPU_SPEED_D_AND_NOTCH": {
         "num": 426,
-        "description": "詳細不明" + newLine
-                    + "引数１～３：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "引数２で取得したCPUモードのmaxSpeedを引数３の数値を足して調整する" + newLine
+                    + "ただし、引数３を取得できない不具合があると思われる" + newLine
+                    + "また、調整したmaxSpeedがminSpeedより小さい場合" + newLine
+                    + "maxSpeedはminSpeedに5を足した数値になる" + newLine
+                    + "引数１：0（1P）、1（2P）【デフォルトは0】" + newLine
+                    + "引数２：0（1P）、1（2P）【デフォルトは1】" + newLine
+                    + "引数３：調整数値",
         "CS_comic": [
             "COMIC2008.BIN",
             "COMIC2009.BIN",
@@ -29468,8 +29497,9 @@ const CMD = {
     },
     "CHK_HIT_CNT": {
         "num": 427,
-        "description": "指定車両の今までHITした数を数えて" + newLine
-                    + "指定数より以下の場合、引数３のFROMへ" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "バトル開始後、指定車両が今までHIT（衝突など）した数を数えて" + newLine
+                    + "引数２の数値より以下の場合、引数３のFROMへ" + newLine
                     + "超える場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：HIT数" + newLine
@@ -29481,9 +29511,11 @@ const CMD = {
     },
     "TOP_SPEED_HOSYO": {
         "num": 428,
-        "description": "CPUのmaxSpeed要素を指定速度に変更する" + newLine
-                    + "引数１：CPU(1)" + newLine
-                    + "引数２：指定速度",
+        "description": "【CS、RS】" + newLine
+                    + "引数１で取得したCPUモードのmaxSpeedが" + newLine
+                    + "引数２より低い場合、その速度で変更する" + newLine
+                    + "引数１：0（1P）、1（2P）【デフォルトは1】" + newLine
+                    + "引数２：補正速度",
         "CS_comic": [
             "COMIC2008.BIN",
             "COMIC2009.BIN",
@@ -29500,7 +29532,8 @@ const CMD = {
     },
     "SET_ROOT_BLOCK": {
         "num": 429,
-        "description": "詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "詳細不明。レールのblock要素と何か関係あるかと思われる",
         "CS_comic": [
             "COMIC2200.BIN",
             "COMIC2400.BIN"
@@ -29508,7 +29541,9 @@ const CMD = {
     },
     "RIFT": {
         "num": 430,
-        "description": "指定車両をパワーリフトする" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "指定車両をパワーリフトする" + newLine
+                    + "（前方の台車をちょっと持ち上げて、落とす）" + newLine
                     + "引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2403.BIN"
@@ -29516,8 +29551,8 @@ const CMD = {
     },
     "COLLISION": {
         "num": 431,
-        "description": "詳細不明" + newLine
-                    + "引数１～２：詳細不明",
+        "description": "【CS、RS】" + newLine
+                    + "未実装。衝突すると自走不能にするものと思われる",
         "CS_comic": [
             "COMIC2410.BIN",
             "COMIC2411.BIN"
@@ -29525,7 +29560,9 @@ const CMD = {
     },
     "DIR_VIEW_CHANGE": {
         "num": 432,
-        "description": "指定車両の先頭車番と後尾車番を入れ替える" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "指定車両の先頭車番と後尾車番を入れ替える" + newLine
+                    + "※モデルバイナリの9-0、9-1を使う" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（デフォルト）、-1（入れ替え）",
         "CS_comic": [
@@ -29537,7 +29574,8 @@ const CMD = {
     },
     "CHK_RAIL_NO": {
         "num": 433,
-        "description": "指定車両がどのレールにいるかによって、FROM分岐処理する" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "指定車両がどのレールにいるかによって、FROMの分岐処理をする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：現在0レールの場合、飛ぶFROM数字" + newLine
                     + "引数３：現在100レールの場合、飛ぶFROM数字" + newLine
@@ -29549,7 +29587,8 @@ const CMD = {
     },
     "TRACK_CHANGE": {
         "num": 434,
-        "description": "指定車両の台車を変える" + newLine
+        "description": "【CS、RS】" + newLine
+                    + "指定車両の台車を変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（標準軌）、1（狭軌）",
         "CS_comic": [
