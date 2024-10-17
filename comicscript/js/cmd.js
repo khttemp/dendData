@@ -29622,7 +29622,7 @@ const CMD = {
         "description": "【CS、RS】" + newLine
                     + "CSの推進運転専用の位置測定コマンド" + newLine
                     + "引数３、４同士の位置を比較する" + newLine
-                    + "ただし、このコマンドが単独で使われることはなく" + newLine
+                    + "このコマンドが単独で使われることはなく" + newLine
                     + "CHK_LENGTH_DIRを実行した後ではないと、不具合が出る可能性が高い" + newLine
                     + "ただし、RSでは引数３、４に何を入れても" + newLine
                     + "CHK_POSTIONのコマンドと同じ動作をする" + newLine
