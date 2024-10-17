@@ -109,37 +109,8 @@ angular.module('myApp', [])
 
         function setProperty(cmdList, cmd, idx){
             if (idx == 1) {
-                let addComicDescription = "【";
-                let usedFlag = false;
-                if (CMD[cmd]["LS_bin"] != undefined) {
-                    addComicDescription += "LS";
-                    usedFlag = true;
-                }
-                if (CMD[cmd]["BS_bin"] != undefined) {
-                    if (usedFlag) {
-                        addComicDescription += "、";
-                    }
-                    addComicDescription += "BS"
-                    usedFlag = true;
-                }
-                if (CMD[cmd]["CS_bin"] != undefined) {
-                    if (usedFlag) {
-                        addComicDescription += "、";
-                    }
-                    addComicDescription += "CS"
-                    usedFlag = true;
-                }
-                if (CMD[cmd]["RS_bin"] != undefined) {
-                    if (usedFlag) {
-                        addComicDescription += "、";
-                    }
-                    addComicDescription += "RS"
-                    usedFlag = true;
-                }
-                addComicDescription += "】<br>";
-
                 if (CMD[cmd].description != "") {
-                    return addComicDescription + CMD[cmd].description.replaceAll(' ', '');
+                    return CMD[cmd].description.replaceAll(' ', '');
                 }
             }
             let index = Number(cmdList[idx]);
