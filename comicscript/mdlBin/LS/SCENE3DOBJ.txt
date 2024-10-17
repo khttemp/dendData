@@ -1,0 +1,364 @@
+imgList
+smfList	humi_ani_l.smf	humi_ani_l_short.smf	signal_yokoku.smf	signal_blue.smf	car_stop.smf	signal_chu.smf	sky.smf	mount.smf	k_gomi.smf	k_gomi01.smf	k_gomi02.smf	k_gomi03.smf	k_gomi04.smf	k_gomi05.smf	k_gomi06.smf	k_gomi07.smf	k_gomi08.smf	k_gomi09.smf	k_gomi10.smf	k_gomi11.smf	bomb.smf	smoke.smf	mine00.smf	mine01.smf	mine02.smf	mine03.smf	mine04.smf	koui00.smf	koui01.smf	koui02.smf	koui03.smf	koui04.smf	koui05.smf	koui06.smf	koui07.smf	koui08.smf	to_kigyo.smf	to_higashi.smf	k_joshi.smf	ota_n_00.smf	ota_n_01.smf	ota_n_02.smf	ota_n_03.smf	ota_n_04.smf	ota_n_05.smf	ota_n_06.smf	ota_n_07.smf	ota_n_08.smf	ota_n_09.smf	ota_n_10.smf	ota_d_00.smf	ota_d_01.smf	ota_d_02.smf	ota_d_03.smf	ota_d_04.smf	ota_d_05.smf	ota_d_06.smf	ota_d_07.smf	ota_d_08.smf	ota_d_09.smf	ota_d_10.smf
+wavList	clash00.wav	BOMB.wav	HIMEI01.wav	gumo00.wav	gumo01.wav	gumo02.wav	gumo03.wav	gumo04.wav	gumo05.wav	gumo06.wav	gumo07.wav	gumo08.wav	gumo09.wav	gumo10.wav	gumo11.wav	gumo12.wav	gumo13.wav	gumo14.wav	HIT.WAV
+-	---#0, 0#---	1,0,6
+-	---#0, 1#---	1,0,3
+0	Set3DObj	0.0
+0	PlayAnime	0.0	-1.0
+-	---#0, 2#---	1,0,4
+0	Set3DObj	1.0
+0	PlayAnime	0.0	-1.0
+-	---#0, 3#---	60,0,3
+0	ShowMesh	4.0
+0	HideMesh	5.0
+30	ShowMesh	5.0
+30	HideMesh	4.0
+60	Length_End	800.0
+-	---#0, 4#---	60,0,4
+0	ShowMesh	4.0
+0	HideMesh	5.0
+30	ShowMesh	5.0
+30	HideMesh	4.0
+60	Length_End	800.0
+-	---#0, 5#---	1,0,8
+0	Set3DObj	2.0
+0	HideMesh	1.0
+-	---#0, 6#---	60,0,6
+60	Length_End	1200.0
+-	---#0, 7#---	1,0,8
+0	Set3DObj	2.0
+-	---#0, 8#---	40,0,8
+0	ShowMesh	2.0
+20	HideMesh	2.0
+40	Length_End	800.0
+-	---#0, 9#---	1,0,12
+0	Set3DObj	3.0
+-	---#0, 10#---	1,0,4
+-	---#0, 11#---	1,0,12
+0	Set3DObj	5.0
+0	ShowMesh	1.0
+0	HideMesh	2.0
+0	ShowMesh	3.0
+0	ShowMesh	4.0
+0	HideMesh	5.0
+0	ShowMesh	6.0
+0	ShowMesh	7.0
+0	HideMesh	8.0
+0	HideMesh	9.0
+0	HideMesh	10.0
+0	ShowMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 12#---	60,0,12
+60	Length_End	800.0
+-	---#0, 13#---	1,0,12
+0	Set3DObj	5.0
+0	ShowMesh	1.0
+0	HideMesh	2.0
+0	HideMesh	3.0
+0	HideMesh	4.0
+0	HideMesh	5.0
+0	HideMesh	6.0
+0	ShowMesh	7.0
+0	HideMesh	8.0
+0	HideMesh	9.0
+0	HideMesh	10.0
+0	HideMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 14#---	1,0,12
+0	Set3DObj	5.0
+0	ShowMesh	1.0
+0	HideMesh	2.0
+0	HideMesh	3.0
+0	ShowMesh	4.0
+0	HideMesh	5.0
+0	HideMesh	6.0
+0	ShowMesh	7.0
+0	HideMesh	8.0
+0	HideMesh	9.0
+0	HideMesh	10.0
+0	HideMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 15#---	1,0,12
+0	Set3DObj	5.0
+0	ShowMesh	1.0
+0	HideMesh	2.0
+0	HideMesh	3.0
+0	HideMesh	4.0
+0	ShowMesh	5.0
+0	HideMesh	6.0
+0	ShowMesh	7.0
+0	HideMesh	8.0
+0	HideMesh	9.0
+0	HideMesh	10.0
+0	HideMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 16#---	1,0,12
+0	Set3DObj	5.0
+0	ShowMesh	1.0
+0	HideMesh	2.0
+0	ShowMesh	3.0
+0	HideMesh	4.0
+0	HideMesh	5.0
+0	HideMesh	6.0
+0	ShowMesh	7.0
+0	HideMesh	8.0
+0	HideMesh	9.0
+0	HideMesh	10.0
+0	ShowMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 17#---	1,0,12
+0	Set3DObj	5.0
+0	HideMesh	1.0
+0	ShowMesh	2.0
+0	HideMesh	3.0
+0	HideMesh	4.0
+0	ShowMesh	5.0
+0	HideMesh	6.0
+0	HideMesh	7.0
+0	HideMesh	8.0
+0	HideMesh	9.0
+0	ShowMesh	10.0
+0	HideMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 18#---	1,0,19
+0	Set3DObj	6.0
+0	SKY_DOME	
+-	---#0, 19#---	600,0,19
+-	---#0, 20#---	1,0,6
+0	Set3DObj	5.0
+0	ShowMesh	1.0
+0	HideMesh	2.0
+0	HideMesh	3.0
+0	HideMesh	4.0
+0	HideMesh	5.0
+0	ShowMesh	6.0
+0	ShowMesh	7.0
+0	HideMesh	8.0
+0	HideMesh	9.0
+0	HideMesh	10.0
+0	HideMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 21#---	1,0,22
+0	Set3DObj	5.0
+0	ShowMesh	1.0
+0	HideMesh	2.0
+0	ShowMesh	3.0
+0	HideMesh	4.0
+0	HideMesh	5.0
+0	ShowMesh	6.0
+0	HideMesh	7.0
+0	HideMesh	8.0
+0	ShowMesh	9.0
+0	HideMesh	10.0
+0	ShowMesh	11.0
+0	SET_MT_NONE	
+-	---#0, 22#---	1,0,22
+0	IsStart	0.0	23.0
+-	---#0, 23#---	1,0,12
+0	ShowMesh	7.0
+0	HideMesh	9.0
+-	---#0, 24#---	1,0,12
+0	Set3DObj	4.0
+-	---#0, 25#---	1,0,26
+0	Set3DObj	8.0
+-	---#0, 26#---	1,0,26
+0	IS_TRAIN_HIT	3.0	5.0	3.0	0.0	27.0	2.0
+0	Length_End	800.0
+-	---#0, 27#---	260,0,27
+0	PlaySE	0.0	0.0
+0	ADD_OBJ	0.0	28.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	29.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	30.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	31.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	32.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	33.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	34.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	35.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	36.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	37.0	0.0	0.0	0.0	1.0
+0	ADD_OBJ	0.0	38.0	0.0	0.0	0.0	1.0
+0	Set3DObj	9.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+90	START_COMIC	305.0
+180	Set3DObj	-1.0
+180	End	
+-	---#0, 28#---	1,0,29
+0	Set3DObj	10.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 29#---	180,0,29
+0	Alpha	255.0	0.0	180.0
+180	End	
+-	---#0, 30#---	1,0,29
+0	Set3DObj	11.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 31#---	1,0,29
+0	Set3DObj	12.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 32#---	1,0,29
+0	Set3DObj	13.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 33#---	1,0,29
+0	Set3DObj	14.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 34#---	1,0,29
+0	Set3DObj	15.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 35#---	1,0,29
+0	Set3DObj	16.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 36#---	1,0,29
+0	Set3DObj	17.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 37#---	1,0,29
+0	Set3DObj	18.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 38#---	1,0,29
+0	Set3DObj	19.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 39#---	60,0,39
+0	Set3DObj	20.0
+0	SetCamDir	
+0	SetScall	2.0	2.0	3.0	60.0	2.0	2.0	3.0	60.0	2.0	2.0	3.0	60.0
+30	Alpha	255.0	0.0	30.0
+60	End	
+-	---#0, 40#---	120,0,40
+0	Set3DObj	21.0
+0	SetCamDir	
+0	SetScall	2.0	1.0	1.5	120.0	2.0	1.0	1.5	120.0	2.0	1.0	1.5	120.0
+60	Alpha	255.0	0.0	60.0
+120	End	
+-	---#0, 41#---	1,0,41
+0	IS_TRAIN_HIT	3.0	5.0	3.0	0.0	42.0	3.0
+0	Length_End	800.0
+-	---#0, 42#---	5,0,42
+0	PlaySE	1.0	0.0
+0	ADD_OBJ	0.0	39.0	0.0	5.0	8.0	1.0
+0	ADD_OBJ	0.0	39.0	5.0	1.0	0.0	1.0
+0	ADD_OBJ	0.0	39.0	-5.0	3.0	5.0	1.0
+0	ADD_OBJ	0.0	40.0	5.0	3.0	2.0	1.0
+0	ADD_OBJ	0.0	40.0	-5.0	2.0	3.0	1.0
+0	ADD_OBJ	0.0	40.0	1.0	1.0	1.0	1.0
+0	Set3DObj	-1.0
+5	End	
+-	---#0, 43#---	1,0,64
+0	Set3DObj	22.0
+-	---#0, 44#---	1,0,41
+0	Set3DObj	23.0
+-	---#0, 45#---	1,0,41
+0	Set3DObj	24.0
+-	---#0, 46#---	1,0,41
+0	Set3DObj	25.0
+-	---#0, 47#---	1,0,41
+0	Set3DObj	26.0
+-	---#0, 48#---	1,0,49
+0	Set3DObj	38.0
+-	---#0, 49#---	1,0,48
+0	IS_TRAIN_HIT	6.0	5.0	5.0	0.0	50.0	3.0
+0	Length_End	800.0
+-	---#0, 50#---	180,0,50
+0	Set3DObj	27.0
+0	PlaySE	0.0	0.0
+0	PlaySE	2.0	0.0
+0	ADD_OBJ	0.0	51.0	0.0	5.0	5.0	1.0
+0	ADD_OBJ	0.0	52.0	0.0	15.0	5.0	1.0
+0	ADD_OBJ	0.0	53.0	5.0	5.0	0.0	1.0
+0	ADD_OBJ	0.0	54.0	-5.0	5.0	0.0	1.0
+0	ADD_OBJ	0.0	55.0	8.0	5.0	5.0	1.0
+0	ADD_OBJ	0.0	56.0	-8.0	5.0	5.0	1.0
+0	ADD_OBJ	0.0	57.0	0.0	8.0	10.0	1.0
+0	ADD_OBJ	0.0	58.0	0.0	8.0	0.0	1.0
+0	ADD_OBJ	0.0	59.0	5.0	5.0	0.0	1.0
+0	ADD_OBJ	0.0	60.0	-5.0	5.0	0.0	1.0
+0	ADD_OBJ	0.0	40.0	-10.0	8.0	4.0	1.0
+0	ADD_OBJ	0.0	40.0	7.0	3.0	9.0	1.0
+0	ADD_OBJ	0.0	40.0	13.0	5.0	3.0	1.0
+0	ADD_OBJ	0.0	40.0	-13.0	7.0	8.0	1.0
+0	ADD_OBJ	0.0	40.0	0.0	5.0	0.0	1.0
+0	START_COMIC	307.0
+180	End	
+-	---#0, 51#---	1,0,29
+0	Set3DObj	28.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+-	---#0, 52#---	1,0,29
+0	Set3DObj	29.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	2.0	3.0	0.2	0.4	1.0
+-	---#0, 53#---	1,0,29
+0	Set3DObj	30.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	1.0	2.0	0.1	0.2	1.0
+-	---#0, 54#---	1,0,29
+0	Set3DObj	31.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	1.0	2.0	0.2	0.3	1.0
+-	---#0, 55#---	1,0,29
+0	Set3DObj	32.0
+0	RandWAngle	
+0	RandMove	100.0	110.0	0.5	1.0	0.1	0.2	1.0
+-	---#0, 56#---	1,0,29
+0	Set3DObj	33.0
+0	RandWAngle	
+0	RandMove	80.0	90.0	0.5	1.0	0.1	0.2	1.0
+-	---#0, 57#---	1,0,29
+0	Set3DObj	34.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	2.0	3.0	0.1	0.5	1.0
+-	---#0, 58#---	1,0,29
+0	Set3DObj	35.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	2.0	3.0	0.2	0.5	1.0
+-	---#0, 59#---	1,0,29
+0	Set3DObj	36.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	1.0	2.0	0.1	0.2	1.0
+-	---#0, 60#---	1,0,29
+0	Set3DObj	37.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	1.0	2.0	0.1	0.2	1.0
+-	---#0, 61#---	1,0,62
+0	SetRand3DObj	39.0	49.0
+0	RandPos	-6.0	6.0	0.0	0.0	-6.0	6.0
+0	RandAngleY	0.0	360.0
+-	---#0, 62#---	1,0,62
+0	IS_TRAIN_HIT	3.0	5.0	3.0	0.0	63.0	0.0
+0	Length_End	800.0
+-	---#0, 63#---	1,0,29
+0	Offset3DObj	11.0
+0	RandPlaySE	3.0	17.0	0.0
+0	PlaySE	18.0	0.0
+0	RandWAngle	
+0	RandMove	110.0	130.0	3.0	4.0	0.2	0.3	1.0
+-	---#0, 64#---	1,0,64
+0	IS_TRAIN_HIT	3.0	5.0	3.0	0.0	65.0	3.0
+0	Length_End	800.0
+-	---#0, 65#---	5,0,42
+0	START_COMIC	306.0
+0	PlaySE	1.0	0.0
+0	ADD_OBJ	0.0	39.0	0.0	5.0	8.0	1.0
+0	ADD_OBJ	0.0	39.0	5.0	1.0	0.0	1.0
+0	ADD_OBJ	0.0	39.0	-5.0	3.0	5.0	1.0
+0	ADD_OBJ	0.0	40.0	5.0	3.0	2.0	1.0
+0	ADD_OBJ	0.0	40.0	-5.0	2.0	3.0	1.0
+0	ADD_OBJ	0.0	40.0	1.0	1.0	1.0	1.0
+0	Set3DObj	-1.0
+5	End	
+-	---#0, 66#---	60,0,66
+0	PlaySE	0.0	0.0
+0	PlaySE	1.0	0.0
+0	Set3DObj	20.0
+0	SetCamDir	
+0	SetScall	2.0	2.0	3.0	60.0	2.0	2.0	3.0	60.0	2.0	2.0	3.0	60.0
+30	Alpha	255.0	0.0	30.0
+60	End	

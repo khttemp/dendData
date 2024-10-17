@@ -20,9 +20,15 @@ angular.module('myApp', [])
                             if (rows[i] == "") {
                                 continue;
                             }
-                            let filename = rows[i].split(".txt")[0]
-                            let info = {"name":filename + ".bin", "path":"./mdlBin/" + rows[i]};
-                            $scope.mdlBinFileList.push(info);
+                            rows[i] = rows[i].replaceAll("\r", "");
+                            if (rows[i] == "-") {
+                                let info = {"name":"---", "path":rows[i], "disabled":true};
+                                $scope.mdlBinFileList.push(info);
+                            } else {
+                                let filename = rows[i].split(".txt")[0]
+                                let info = {"name":filename + ".bin", "path":"./mdlBin/" + rows[i], "disabled":false};
+                                $scope.mdlBinFileList.push(info);
+                            }
                         }
                     }
                 }

@@ -64,7 +64,7 @@
             </table>
         </div>
         <div style="position: fixed; right: 10px; top: 10px;">
-            <select id="select" ng-model="obj" ng-options="mdlBin.name for mdlBin in mdlBinFileList track by mdlBin.path" ng-change="updateFile(obj.path)">
+            <select id="select" ng-model="obj" ng-options="mdlBin.name disable when mdlBin.disabled for mdlBin in mdlBinFileList" ng-change="updateFile(obj.path)">
                 <option value="" disabled>モデルバイナリのファイルを選択</option>
             </select>
         </div>

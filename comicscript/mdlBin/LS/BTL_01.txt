@@ -1,0 +1,12 @@
+imgList
+smfList	223_led.smf
+wavList
+-	---#0, 0#---	600,0,0
+-	---#0, 1#---	120,0,2
+0	Set3DObj	0.0
+0	HideMesh	2.0
+-	---#0, 2#---	240,0,2
+0	HideMesh	1.0
+0	ShowMesh	2.0
+120	ShowMesh	1.0
+120	HideMesh	2.0

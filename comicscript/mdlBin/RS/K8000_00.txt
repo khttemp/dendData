@@ -166,7 +166,7 @@ wavList
 0	CNG_TX	1.0	4.0	1.0
 -	---#8, 14#---	1,0,1
 0	SWAP_TX	0.0	TX_K8000_DUEL.bmp
-0	SWAP_TX	1.0	TX_K8000_KYOBASHI.BMP
+0	SWAP_TX	1.0	K8000_For_Toyo.png
 0	CNG_TX	0.0	4.0	0.0
 0	CNG_TX	1.0	4.0	1.0
 -	---#8, 15#---	1,0,1

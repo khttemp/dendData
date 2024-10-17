@@ -1,0 +1,45 @@
+imgList
+smfList	OP_800_1.smf	keihan800_2.smf	OP_2000_1.smf	meron_car2010.smf	k_kaiten_cross.smf	k_kaiten_cross_b.smf
+wavList	Aoto_clash00.wav	Closs_Open.wav	Closs_Stop.wav
+-	---#0, 0#---	600,0,0
+-	---#0, 1#---	1,0,0
+0	Set3DObj	0.0
+-	---#0, 2#---	1,0,0
+0	Set3DObj	1.0
+-	---#0, 3#---	1,0,0
+0	Set3DObj	2.0
+-	---#0, 4#---	1,0,5
+0	Set3DObj	3.0
+-	---#0, 5#---	1,0,5
+0	IS_TRAIN_HIT	4.3	3.0	5.0	0.0	6.0	4.0
+0	Length_End	800.0
+-	---#0, 6#---	60,0,7
+0	PlaySE	0.0	0.0
+0	RandWAngle	
+0	RandMove	90.0	100.0	3.0	5.0	0.1	0.2	1.0
+0	START_COMIC	310.0
+-	---#0, 7#---	1,0,7
+0	Length_End	800.0
+-	---#1, 0#---	600,1,0
+-	---#1, 1#---	1,1,0
+0	Set3DObj	4.0
+-	---#1, 2#---	1,1,0
+0	Set3DObj	5.0
+0	HideMesh	1.0
+-	---#1, 3#---	600,1,0
+0	PlaySE	1.0	0.0
+0	SetWAngleZ	0.0	180.0	300.0	0.0
+300	ShowMesh	1.0
+300	HideMesh	0.0
+300	SetWAngleZ	180.0	360.0	300.0	0.0
+600	PlaySE	2.0	0.0
+-	---#1, 4#---	1,1,0
+0	Set3DObj	5.0
+0	HideMesh	1.0
+0	HideMesh	3.0
+-	---#1, 5#---	600,1,0
+0	SetWAngleZ	0.0	180.0	300.0	0.0
+300	ShowMesh	1.0
+300	HideMesh	0.0
+300	SetWAngleZ	180.0	360.0	300.0	0.0
+600	PlaySE	2.0	0.0
