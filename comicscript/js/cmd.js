@@ -24697,10 +24697,10 @@ const CMD = {
     "CREATE_TRAIN_ORG": {
         "num": 279,
         "description": "【BS、CS、RS】" + newLine
-                    + "車両のモデルを、引数３の編成数だけ作成する" + newLine
+                    + "車両のモデルを、引数３の号車数だけ作成する" + newLine
                     + "引数１：作成インデックス" + newLine
                     + "引数２：車両インデックス" + newLine
-                    + "引数３：作成する編成数",
+                    + "引数３：作成する号車数",
         "BS_comic": [
             "COMIC1300.BIN",
             "COMIC1999.BIN"
@@ -24779,7 +24779,7 @@ const CMD = {
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの位置を絶対座標で設定する" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：編成インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：from x座標" + newLine
                     + "引数４：from y座標" + newLine
                     + "引数５：from z座標" + newLine
@@ -25032,7 +25032,7 @@ const CMD = {
                     + "車両のテクスチャを設定する" + newLine
                     + "引数１：imgサイズ情報のインデックス" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
-                    + "引数３：編成インデックス" + newLine
+                    + "引数３：号車インデックス" + newLine
                     + "引数４：メッシュインデックス" + newLine
                     + "引数５：引数４のマテリアルインデックス",
         "BS_comic": [
@@ -26815,7 +26815,7 @@ const CMD = {
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと" + newLine
                     + "回転数値が異常な値になる" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：編成インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：x座標" + newLine
                     + "引数４：y座標" + newLine
                     + "引数５：z座標" + newLine
@@ -26832,7 +26832,7 @@ const CMD = {
                     + "モデルを回転する" + newLine
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：編成インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：x軸の回転数値" + newLine
                     + "引数４：y軸の回転数値" + newLine
                     + "引数５：z軸の回転数値" + newLine
@@ -26846,7 +26846,7 @@ const CMD = {
                     + "モデルの位置をX軸で回転する" + newLine
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：編成インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：回転数値"
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
@@ -26861,7 +26861,7 @@ const CMD = {
                     + "モデルの位置をY軸で回転する" + newLine
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：編成インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：回転数値"
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
@@ -26876,7 +26876,7 @@ const CMD = {
                     + "モデルの位置をZ軸で回転する" + newLine
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
                     + "引数１：作成インデックス" + newLine
-                    + "引数２：編成インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：回転数値"
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
@@ -26962,7 +26962,7 @@ const CMD = {
                     + "引数２を0にすると、デフォルト状態に変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）" + newLine
-                    + "引数３：編成インデックス" + newLine
+                    + "引数３：号車インデックス" + newLine
                     + "引数４：マテリアルインデックス" + newLine
                     + "引数５：R（0.0～1.0）" + newLine
                     + "引数６：G（0.0～1.0）" + newLine
@@ -27047,7 +27047,7 @@ const CMD = {
                     + "引数２を0にすると、デフォルト状態に変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）" + newLine
-                    + "引数３：編成インデックス" + newLine
+                    + "引数３：号車インデックス" + newLine
                     + "引数４：マテリアルインデックス" + newLine
                     + "引数５：R（0.0～1.0）" + newLine
                     + "引数６：G（0.0～1.0）" + newLine
@@ -28003,7 +28003,7 @@ const CMD = {
                     + "モデルにADD_CHILD_OBJで追加してたANIMEを変える" + newLine
                     + "モデルバイナリでも使えるし、その場合引数１と２は-1になる" + newLine
                     + "引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）" + newLine
-                    + "引数２：-1（あるセクションでのモデル）、その他（編成インデックス）" + newLine
+                    + "引数２：-1（あるセクションでのモデル）、その他（号車インデックス）" + newLine
                     + "引数３：Child番号（0～3）" + newLine
                     + "引数４：ANIME要素２" + newLine
                     + "引数５：ANIME要素３",
@@ -29018,9 +29018,9 @@ const CMD = {
         "num": 403,
         "description": "【CS、RS】" + newLine
                     + "効果がない。未実装と思われる。" + newLine
-                    + "【推定】引数２の周りのパーティクルを操作するものと思われる" + newLine
+                    + "引数２の周りのパーティクルを操作するものと思われる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：1（True）、0（False）",
         "CS_comic": [
             "COMIC2300.BIN",
@@ -29334,7 +29334,7 @@ const CMD = {
         "description": "【CS、RS】" + newLine
                     + "車両に定義されているANIMEを実行する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：編成インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：ANIME要素２" + newLine
                     + "引数４：ANIME要素３",
         "CS_comic": [
@@ -29649,9 +29649,12 @@ const CMD = {
     },
     "KATARIN_RUN": {
         "num": 438,
-        "description": "指定車両を指定角度で右片輪走行させる" + newLine
+        "description": "【RS、SS】" + newLine
+                    + "指定車両を指定角度で片輪走行させる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：指定角度。【プラス（上）、マイナス（下）】" + newLine
+                    + "引数２：指定角度" + newLine
+                    + "　RS【マイナス値（左側）、プラス値（右側）】" + newLine
+                    + "　SS【プラス値（左側）、マイナス値（右側）】" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
                     + "引数４：変化方法",
         "RS_comic": [
@@ -29668,7 +29671,9 @@ const CMD = {
     },
     "DRAW_UI": {
         "num": 439,
-        "description": "UIを設定する" + newLine
+        "description": "【RS、SS】" + newLine
+                    + "速度計やノッチなどのUIを設定する" + newLine
+                    + "ただし、RSでは未実装であるため効果がなく、次の行へ行く" + newLine
                     + "引数１：0（隠す）、1（表示）" + newLine
                     + "引数２：変化時間【SSのみ】",
         "RS_comic": [
@@ -29697,7 +29702,8 @@ const CMD = {
     },
     "STOP_SCRIPT_BGM": {
         "num": 440,
-        "description": "指定スクリプトで再生しているBGMを止める" + newLine
+        "description": "【RS、SS】" + newLine
+                    + "指定スクリプトで再生しているBGMを止める" + newLine
                     + "引数１：スクリプト番号" + newLine
                     + "引数２：そのスクリプトのBGM番号" + newLine
                     + "引数３：fade時間（フレーム）",
@@ -29744,7 +29750,8 @@ const CMD = {
     },
     "SET_STATION_NO": {
         "num": 441,
-        "description": "初期に表示させる駅を決める" + newLine
+        "description": "【RS、SS】" + newLine
+                    + "初期に表示させる駅を決める" + newLine
                     + "引数１：0（1P）、1（2P）【SSでは読み込まない】" + newLine
                     + "引数２：駅インデックス",
         "RS_comic": [
@@ -29760,7 +29767,9 @@ const CMD = {
     },
     "SET_CPU_BREAKE": {
         "num": 442,
-        "description": "CPUブレーキを設定する" + newLine
+        "description": "【RS、SS】" + newLine
+                    + "CPUブレーキを設定する。CPUに指定したスピードまで落とす" + newLine
+                    + "引数１に0を入れると効果はなく、1を指定するべき" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：スピード",
         "SS_comic": [
@@ -29769,16 +29778,23 @@ const CMD = {
     },
     "AMB_ANIME": {
         "num": 443,
-        "description": "詳細不明" + newLine
-                    + "引数１～４：詳細不明",
+        "description": "【RS】" + newLine
+                    + "AMBモデルのANIMEを実行する" + newLine
+                    + "引数１：ステージのAMB番号" + newLine
+                    + "引数２：AMBの詳細番号（-1：親、その他：子番号）" + newLine
+                    + "引数３：モデルで定義されたANIME要素２" + newLine
+                    + "引数４：モデルで定義されたANIME要素３",
         "RS_comic": [
             "COMIC3029.BIN"
         ]
     },
     "ONE_DRIFT_FALSE": {
         "num": 444,
-        "description": "詳細不明" + newLine
-                    + "引数１：詳細不明",
+        "description": "【RS】" + newLine
+                    + "指定車両に火花を散らし" + newLine
+                    + "ドリフトするたびにドリフト中の車両と、その次の車両の間が開く" + newLine
+                    + "コマンドを実行すると取り消しできない" + newLine
+                    + "引数１：0（1P）、1（2P）",
         "RS_comic": [
             "COMIC3058.BIN",
             "COMIC3058_.BIN"
@@ -29786,7 +29802,9 @@ const CMD = {
     },
     "L_One_Drift": {
         "num": 445,
-        "description": "指定車両を左片輪ドリフトさせる" + newLine
+        "description": "【RS】" + newLine
+                    + "指定車両を左片輪ドリフトさせる" + newLine
+                    + "すでに片輪ドリフト状態の場合、解除する動作になる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "RS_comic": [
             "COMIC3057.BIN",
@@ -29795,23 +29813,28 @@ const CMD = {
     },
     "R_One_Drift": {
         "num": 446,
-        "description": "指定車両を右片輪ドリフトさせる" + newLine
+        "description": "【RS】" + newLine
+                    + "指定車両を右片輪ドリフトさせる" + newLine
+                    + "すでに片輪ドリフト状態の場合、解除する動作になる" + newLine
                     + "引数１：0（1P）、1（2P）"
     },
     "Ret_One_Drift": {
         "num": 447,
-        "description": "指定車両を片輪ドリフト解除する" + newLine
+        "description": "【RS】" + newLine
+                    + "指定車両の片輪ドリフト状態を解除する" + newLine
                     + "引数１：0（1P）、1（2P）"
     },
     "FRONT_JUMP": {
         "num": 448,
-        "description": "車両の前の部分を上げる" + newLine
+        "description": "【RS】" + newLine
+                    + "車両の前の部分を、上げてから戻す動作をする" + newLine
+                    + "具体的には引数３で始まり、引数４まで動かしてから、引数５まで動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
-                    + "引数３：ずらすx座標" + newLine
-                    + "引数４：ずらすy座標" + newLine
-                    + "引数５：z軸に傾ける数値" + newLine
-                    + "引数６：ずらす変化時間（フレーム）" + newLine
+                    + "引数２：号車インデックス" + newLine
+                    + "引数３：上げる際、スタート位置" + newLine
+                    + "引数４：上げる際、ゴール位置" + newLine
+                    + "引数５：戻す際、ゴール位置" + newLine
+                    + "引数６：上げる変化時間（フレーム）" + newLine
                     + "引数７：戻す変化時間（フレーム）",
         "RS_comic": [
             "COMIC3059.BIN",
@@ -29820,13 +29843,15 @@ const CMD = {
     },
     "REAR_JUMP": {
         "num": 449,
-        "description": "車両の後ろの部分を上げる" + newLine
+        "description": "【RS】" + newLine
+                    + "車両の後ろの部分を、上げてから戻す動作をする" + newLine
+                    + "具体的には引数３で始まり、引数４まで動かしてから、引数５まで動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
-                    + "引数３：ずらすx座標" + newLine
-                    + "引数４：ずらすy座標" + newLine
-                    + "引数５：z軸に傾ける数値" + newLine
-                    + "引数６：ずらす変化時間（フレーム）" + newLine
+                    + "引数２：号車インデックス" + newLine
+                    + "引数３：上げる際、スタート位置" + newLine
+                    + "引数４：上げる際、ゴール位置" + newLine
+                    + "引数５：戻す際、ゴール位置" + newLine
+                    + "引数６：上げる変化時間（フレーム）" + newLine
                     + "引数７：戻す変化時間（フレーム）",
         "RS_comic": [
             "COMIC3059.BIN",
@@ -29835,9 +29860,13 @@ const CMD = {
     },
     "FRONT_MOVE_X": {
         "num": 450,
-        "description": "車両の前の部分を動かす" + newLine
+        "description": "【RS】" + newLine
+                    + "台車をずらした状態（片輪ドリフトなど）の場合" + newLine
+                    + "前の部分をX軸にさらに動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～４：詳細不明",
+                    + "引数２：ずらす数値" + newLine
+                    + "引数３：変化時間（フレーム）" + newLine
+                    + "引数４：変化方法",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3470.BIN"
@@ -29845,15 +29874,16 @@ const CMD = {
     },
     "TRACK_MOVE": {
         "num": 451,
-        "description": "車両の台車を動かす" + newLine
+        "description": "【RS】" + newLine
+                    + "車両の台車を動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
-                    + "引数３：台車インデックス" + newLine
-                    + "引数３：ずらすx座標" + newLine
-                    + "引数４：ずらすy座標" + newLine
-                    + "引数５：z軸に傾ける数値" + newLine
-                    + "引数６：変化時間（フレーム）" + newLine
-                    + "引数７：変化方法",
+                    + "引数２：号車インデックス" + newLine
+                    + "引数３：引数２の台車インデックス" + newLine
+                    + "引数４：ずらすx座標" + newLine
+                    + "引数５：ずらすy座標" + newLine
+                    + "引数６：ずらすz座標" + newLine
+                    + "引数７：変化時間（フレーム）" + newLine
+                    + "引数８：変化方法",
         "RS_comic": [
             "COMIC3059.BIN",
             "COMIC3060.BIN",
@@ -29862,10 +29892,16 @@ const CMD = {
     },
     "TRAIN_JUMP": {
         "num": 452,
-        "description": "車両をジャンプさせる" + newLine
+        "description": "【RS、SS】" + newLine
+                    + "車両をジャンプさせる" + newLine
                     + "【RSの場合】" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２～７：詳細不明" + newLine
+                    + "引数２：号車インデックス" + newLine
+                    + "引数３：前の台車のジャンプ高さ" + newLine
+                    + "引数４：後ろ台車のジャンプ高さ" + newLine
+                    + "引数５：ジャンプさせる時間（フレーム）" + newLine
+                    + "引数６：ジャンプから落ちる時間（フレーム）" + newLine
+                    + "引数７：ジャンプ中、回転角度" + newLine
                     + "【SSの場合】" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：ジャンプ高さ" + newLine
@@ -29879,7 +29915,9 @@ const CMD = {
     },
     "SET_LIGHT": {
         "num": 453,
-        "description": "指定車両のライト設定する" + newLine
+        "description": "【RS、SS】" + newLine
+                    + "指定車両のライト設定する" + newLine
+                    + "RSの場合、全てのライトを消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２【SSのみ】" + newLine
                     + "　0（全てのライトを消す）" + newLine
@@ -29896,7 +29934,9 @@ const CMD = {
     },
     "SET_COL_KASENCHU": {
         "num": 454,
-        "description": "ぶつけられる架線柱を設定する" + newLine
+        "description": "【RS】" + newLine
+                    + "ONE_DRIFT_FALSEと一緒に使うことで、ぶつけられる架線柱を設定する" + newLine
+                    + "ただし、ぶつけたモデルが一定数を超えると、判定が消える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：SMFリストNo",
         "RS_comic": [
@@ -30077,7 +30117,7 @@ const CMD = {
         "num": 464,
         "description": "指定車両を強制脱線させる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３～４：詳細不明",
         "RS_comic": [
             "COMIC3323.BIN",
@@ -30457,7 +30497,7 @@ const CMD = {
         "num": 483,
         "description": "カメラの注視点を指定車両の指定台車に変える" + newLine
                     + "引数１：カメラ番号" + newLine
-                    + "引数２：車両インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：台車インデックス" + newLine
                     + "引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
@@ -31158,7 +31198,7 @@ const CMD = {
         "num": 533,
         "description": "指定車両のインデックスにエフェクトをつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス。-1の場合、全ての車両",
+                    + "引数２：号車インデックス。-1の場合、全ての車両",
         "SS_comic": [
             "COMIC36999.BIN"
         ],
@@ -31237,7 +31277,7 @@ const CMD = {
         "num": 537,
         "description": "カメラを注視点を、指定車両のインデックスに変える" + newLine
                     + "引数１：カメラ番号" + newLine
-                    + "引数２：車両インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -31358,7 +31398,7 @@ const CMD = {
         "num": 548,
         "description": "スクリプトで脱線させる。またライトも消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：ずらすx座標" + newLine
                     + "引数４：ずらすy座標" + newLine
                     + "引数５：z軸に傾ける数値",
@@ -31451,7 +31491,7 @@ const CMD = {
         "description": "指定車両のインデックスが、指定時間内にAMBにぶつけた場合、指定のFROMに飛ばす" + newLine
                     + "指定時間内にぶつけなかったり、指定レールを通過した場合、引数９のFROMに飛ばす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス" + newLine
+                    + "引数２：号車インデックス" + newLine
                     + "引数３：指定時間（フレーム）" + newLine
                     + "引数４：レール番号" + newLine
                     + "引数５：Topでぶつけた場合、飛ばすFROM数字" + newLine
