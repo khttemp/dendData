@@ -30203,9 +30203,10 @@ const CMD = {
     },
     "PLAY_STAGEBGM_BLOCK": {
         "num": 470,
-        "description": "指定BGMの番号を、指定時間からスタートする" + newLine
-                    + "引数１：BGM番号" + newLine
-                    + "引数２：スタート時間",
+        "description": "【RS、SS】" + newLine
+                    + "指定したBGMを、指定時間からスタートする" + newLine
+                    + "引数１：ステージのBGM番号" + newLine
+                    + "引数２：スタート時間（秒）",
         "SS_comic": [
             "COMIC3500.BIN",
             "COMIC3600.BIN"
@@ -30213,7 +30214,10 @@ const CMD = {
     },
     "SET_BTL_POINT": {
         "num": 471,
-        "description": ""
+        "description": "【RS】" + newLine
+                    + "バトルポイントを指定したポイントに変更する" + newLine
+                    + "引数１：配列のインデックス（0～2）" + newLine
+                    + "引数２：ポイント"
     },
     "CAM_TRAIN": {
         "num": 472,
