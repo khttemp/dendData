@@ -29938,7 +29938,7 @@ const CMD = {
                     + "ONE_DRIFT_FALSEと一緒に使うことで、ぶつけられる架線柱を設定する" + newLine
                     + "ただし、ぶつけたモデルが一定数を超えると、判定が消える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：SMFリストNo",
+                    + "引数２：SMFリストのインデックス",
         "RS_comic": [
             "COMIC3059.BIN"
         ]
