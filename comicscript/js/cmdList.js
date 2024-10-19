@@ -2,7 +2,7 @@ angular.module('myApp', [])
     .controller('myCtrl', ['$scope', function($scope) {
         $scope.cmdInfoList = [];
         $scope.modelCheck = true;
-        $scope.allNotUsed = true;
+        $scope.allNotUsed = false;
         $scope.notDefined = true;
 
         $scope.isMatch = function(str, regax) {
@@ -15,6 +15,7 @@ angular.module('myApp', [])
             let cmdKey = cmdKeys[i];
             let cmdObj = CMD[cmdKey];
             let cmdInfo = {};
+            let cmdUsableList = [];
             let cmdUsedList = [];
             let cmdSeries = "comic";
             if (CMD[cmdKey]["description"] == NOT_DEFINED) {
@@ -24,30 +25,46 @@ angular.module('myApp', [])
                 cmdSeries = "model";
             }
 
-            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*LS.*】")) {
+            if (CMD[cmdKey]["LS_comic"] != undefined || CMD[cmdKey]["LS_bin"] != undefined) {
                 cmdUsedList.push("LS");
             } else {
                 cmdUsedList.push("");
             }
-            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*BS.*】")) {
+            if (CMD[cmdKey]["BS_comic"] != undefined || CMD[cmdKey]["BS_bin"] != undefined) {
                 cmdUsedList.push("BS");
             } else {
                 cmdUsedList.push("");
             }
-            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*CS.*】")) {
+            if (CMD[cmdKey]["CS_comic"] != undefined || CMD[cmdKey]["CS_bin"] != undefined) {
                 cmdUsedList.push("CS");
             } else {
                 cmdUsedList.push("");
             }
-            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*RS.*】")) {
+            if (CMD[cmdKey]["RS_comic"] != undefined || CMD[cmdKey]["RS_bin"] != undefined) {
                 cmdUsedList.push("RS");
             } else {
                 cmdUsedList.push("");
             }
-            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*SS.*】")) {
+            if (CMD[cmdKey]["SS_comic"] != undefined || CMD[cmdKey]["SS_cmn"] != undefined) {
                 cmdUsedList.push("SS");
             } else {
                 cmdUsedList.push("");
+            }
+
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*LS.*】")) {
+                cmdUsableList.push("LS");
+            }
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*BS.*】")) {
+                cmdUsableList.push("BS");
+            }
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*CS.*】")) {
+                cmdUsableList.push("CS");
+            }
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*RS.*】")) {
+                cmdUsableList.push("RS");
+            }
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*SS.*】")) {
+                cmdUsableList.push("SS");
             }
 
             cmdInfo = {
@@ -55,6 +72,7 @@ angular.module('myApp', [])
                 "name": cmdKey,
                 "description": cmdObj["description"].split("<br>"),
                 "cmdUsedList": cmdUsedList,
+                "cmdUsableList": cmdUsableList,
                 "cmdSeries": cmdSeries
             };
 
@@ -99,27 +117,27 @@ angular.module('myApp', [])
             }
 
             if ($scope.LSCheck) {
-                if (item.cmdUsedList.indexOf("LS") == -1) {
+                if (item.cmdUsableList.indexOf("LS") == -1) {
                     lsFlag = false;
                 }
             }
             if ($scope.BSCheck) {
-                if (item.cmdUsedList.indexOf("BS") == -1) {
+                if (item.cmdUsableList.indexOf("BS") == -1) {
                     bsFlag = false;
                 }
             }
             if ($scope.CSCheck) {
-                if (item.cmdUsedList.indexOf("CS") == -1) {
+                if (item.cmdUsableList.indexOf("CS") == -1) {
                     csFlag = false;
                 }
             }
             if ($scope.RSCheck) {
-                if (item.cmdUsedList.indexOf("RS") == -1) {
+                if (item.cmdUsableList.indexOf("RS") == -1) {
                     rsFlag = false;
                 }
             }
             if ($scope.SSCheck) {
-                if (item.cmdUsedList.indexOf("SS") == -1) {
+                if (item.cmdUsableList.indexOf("SS") == -1) {
                     ssFlag = false;
                 }
             }
