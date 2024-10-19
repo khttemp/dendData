@@ -30364,7 +30364,8 @@ const CMD = {
         "num": 475,
         "description": "【SS】" + newLine
                     + "指定車両の現在レールをチェックして" + newLine
-                    + "レール表示基準のblockを、現在レールのblockに変える" + newLine
+                    + "0にすると、レール表示基準のblockを-1に" + newLine
+                    + "1にすると、レール表示基準のblockを、現在レールのblockに変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（初期化）、1（blockを現在レールに）",
         "SS_comic": [
