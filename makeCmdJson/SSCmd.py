@@ -121,4 +121,24 @@ def callSSCmd(cmdJson):
                     if file.upper() not in d["SS_cmn"]:
                         d["SS_cmn"].append(file.upper())
 
+        opPath = "{0}/SS/ver{1}/comic_op".format(binPath, ver)
+        if not os.path.exists(opPath):
+            continue
+
+        for file in os.listdir(opPath):
+            path = os.path.join(opPath, file.upper())
+            
+            decryptFile = ComicDecrypt(path, cmdList)
+            if not decryptFile.open():
+                print(decryptFile.printError())
+                sys.exit()
+
+            for comicData in decryptFile.comicDataList:
+                d = cmdJson[comicData[0]]
+                if "SS_comic" not in d or file.upper() not in d["SS_comic"]:
+                    if "SS_cmn" not in d:
+                        d["SS_cmn"] = []
+                    if file.upper() not in d["SS_cmn"]:
+                        d["SS_cmn"].append(file.upper())
+
     return cmdJson
