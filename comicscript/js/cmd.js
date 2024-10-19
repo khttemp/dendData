@@ -30363,9 +30363,10 @@ const CMD = {
     "SET_RAILBLOCK_CHECKER": {
         "num": 475,
         "description": "【SS】" + newLine
-                    + "指定車両のレールブロックをチェックする" + newLine
+                    + "指定車両の現在レールをチェックして" + newLine
+                    + "レール表示基準のblockを、現在レールのblockに変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：0（初期化）、1（ブロックチェック）",
+                    + "引数２：0（初期化）、1（blockを現在レールに）",
         "SS_comic": [
             "COMIC3599.BIN",
             "COMIC46000.BIN",
@@ -31421,7 +31422,7 @@ const CMD = {
     "SC_ADD_POINT": {
         "num": 538,
         "description": "【SS】" + newLine
-                    + "スクリプト内のポイントを加算する" + newLine
+                    + "実行しているスクリプトの内部ポイントに加算する" + newLine
                     + "引数１：ポイント",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -31435,7 +31436,7 @@ const CMD = {
     "CHK_SC_POINT": {
         "num": 539,
         "description": "【SS】" + newLine
-                    + "指定のスクリプト内のポイントが" + newLine
+                    + "指定したスクリプトの内部ポイントが" + newLine
                     + "指定ポイントより以上の場合、引数３のFROMへ" + newLine
                     + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：スクリプト番号" + newLine
