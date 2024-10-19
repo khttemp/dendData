@@ -32103,7 +32103,8 @@ const CMD = {
     "RESET_BLOCK": {
         "num": 586,
         "description": "【SS】" + newLine
-                    + "指定車両の現在位置からブロックをチェックする" + newLine
+                    + "指定車両の現在レールをチェックして" + newLine
+                    + "レール表示基準のblockを、現在レールのblockに変える" + newLine
                     + "引数１：0（1P）、1（2P）"
     },
     "IS_BTLMODE_END_CHK": {
