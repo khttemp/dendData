@@ -244,7 +244,7 @@ const CMD = {
         "num": 11,
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
-                    + "Set3DObjで配置したモデルを見えないようにする",
+                    + "Set3DObjで配置したモデルを見えないようにする"
     },
     "Set3DObj": {
         "num": 12,
@@ -319,7 +319,7 @@ const CMD = {
                     + "引数１：X軸の角度(from)" + newLine
                     + "引数２：X軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
-                    + "引数４：変化方法",
+                    + "引数４：変化方法"
     },
     "SetWAngleY": {
         "num": 14,
@@ -356,7 +356,7 @@ const CMD = {
                     + "引数１：X軸の角度(from)" + newLine
                     + "引数２：X軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
-                    + "引数４：変化方法",
+                    + "引数４：変化方法"
     },
     "SetLAngleY": {
         "num": 17,
@@ -366,7 +366,7 @@ const CMD = {
                     + "引数１：Y軸の角度(from)" + newLine
                     + "引数２：Y軸の角度(to)" + newLine
                     + "引数３：変化時間（フレーム）" + newLine
-                    + "引数４：変化方法",
+                    + "引数４：変化方法"
     },
     "SetLAngleZ": {
         "num": 18,
@@ -822,7 +822,7 @@ const CMD = {
     },
     "LMove": {
         "num": 35,
-        "description": NOT_DEFINED,
+        "description": NOT_DEFINED
     },
     "LLoopX": {
         "num": 36,
@@ -906,7 +906,7 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐX方向へ移動させる" + newLine
-                    + "引数１：X座標",
+                    + "引数１：X座標"
     },
     "PosY": {
         "num": 43,
@@ -923,7 +923,7 @@ const CMD = {
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐZ方向へ移動させる（効果なしと思われる）" + newLine
-                    + "引数１：Z座標",
+                    + "引数１：Z座標"
     },
     "PlaySE": {
         "num": 45,
@@ -2206,7 +2206,8 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "ComicAlpha": {
@@ -2992,7 +2993,8 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "ComicWait": {
@@ -3513,7 +3515,8 @@ const CMD = {
             "COMIC37022.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "SKY_DOME": {
@@ -5033,7 +5036,11 @@ const CMD = {
             "COMIC21991.BIN",
             "COMIC21992.BIN",
             "COMIC21993.BIN",
-            "COMIC36996.BIN"
+            "COMIC36996.BIN",
+            "COMIC4000.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN",
+            "COMIC4003.BIN"
         ]
     },
     "CamComtroll": {
@@ -5548,7 +5555,8 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4003.BIN"
         ]
     },
     "ComicSceneStop": {
@@ -14132,7 +14140,8 @@ const CMD = {
             "COMIC21001.BIN",
             "COMIC21011.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "CHANGE_CAM_TYPE": {
@@ -14247,7 +14256,7 @@ const CMD = {
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
                     + "引数２：fromのR(0~255)" + newLine
                     + "引数３：toのR(0~255)" + newLine
-                    + "引数４：変化時間（フレーム）",
+                    + "引数４：変化時間（フレーム）"
     },
     "ChangeG": {
         "num": 94,
@@ -14257,7 +14266,7 @@ const CMD = {
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
                     + "引数２：fromのG(0~255)" + newLine
                     + "引数３：toのG(0~255)" + newLine
-                    + "引数４：変化時間（フレーム）",
+                    + "引数４：変化時間（フレーム）"
     },
     "ChangeB": {
         "num": 95,
@@ -14267,7 +14276,7 @@ const CMD = {
                     + "引数１：あるセクションでTxを実行した際、生成されるインデックス" + newLine
                     + "引数２：fromのB(0~255)" + newLine
                     + "引数３：toのB(0~255)" + newLine
-                    + "引数４：変化時間（フレーム）",
+                    + "引数４：変化時間（フレーム）"
     },
     "ChangeColor": {
         "num": 96,
@@ -15153,7 +15162,11 @@ const CMD = {
             "COMIC46041.BIN",
             "COMIC49997.BIN",
             "COMIC21001.BIN",
-            "COMIC21011.BIN"
+            "COMIC21011.BIN",
+            "COMIC4000.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN",
+            "COMIC4003.BIN"
         ]
     },
     "TRAIN_FLG": {
@@ -15325,7 +15338,7 @@ const CMD = {
                     + "CHANGE_CAM_TYPEのカメラをz軸に回転する。BS以後は効果なし" + newLine
                     + "引数１：回転角度" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
-                    + "引数３：変化方法",
+                    + "引数３：変化方法"
     },
     "R_Drift": {
         "num": 122,
@@ -15522,7 +15535,9 @@ const CMD = {
             "COMIC4398.BIN",
             "COMIC44998.BIN",
             "COMIC45998.BIN",
-            "COMIC49997.BIN"
+            "COMIC49997.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "SLEEP_TRAIN": {
@@ -15693,7 +15708,11 @@ const CMD = {
             "COMIC44998.BIN",
             "COMIC45998.BIN",
             "COMIC49997.BIN",
-            "COMIC3997.BIN"
+            "COMIC3997.BIN",
+            "COMIC4000.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN",
+            "COMIC4003.BIN"
         ]
     },
     "RandWAngle": {
@@ -15812,7 +15831,7 @@ const CMD = {
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のX軸基準で、ランダムな数値で回転する" + newLine
                     + "引数１：x軸のランダム範囲(1)" + newLine
-                    + "引数２：x軸のランダム範囲(2)",
+                    + "引数２：x軸のランダム範囲(2)"
     },
     "RandAngleY": {
         "num": 136,
@@ -15831,7 +15850,7 @@ const CMD = {
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のZ軸基準で、ランダムな数値で回転する" + newLine
                     + "引数１：z軸のランダム範囲(1)" + newLine
-                    + "引数２：z軸のランダム範囲(2)",
+                    + "引数２：z軸のランダム範囲(2)"
     },
     "CHK_TRAIN_STATE": {
         "num": 138,
@@ -21935,7 +21954,9 @@ const CMD = {
             "COMIC39970.BIN",
             "COMIC39971.BIN",
             "COMIC46020.BIN",
-            "COMIC46021.BIN"
+            "COMIC46021.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "BUFF_TO_CAM_POS": {
@@ -22011,7 +22032,8 @@ const CMD = {
             "COMIC39970.BIN",
             "COMIC39971.BIN",
             "COMIC46020.BIN",
-            "COMIC46021.BIN"
+            "COMIC46021.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "FTV_BASE_PROC": {
@@ -23339,7 +23361,8 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "SET_CAMPOINT_1P2C": {
@@ -23678,7 +23701,9 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "CAM_TARGET_PER": {
@@ -24109,7 +24134,9 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "SET_CAM_POINT_LENGTH": {
@@ -24388,7 +24415,8 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "SET_CAM_OFFSET": {
@@ -24675,7 +24703,8 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "START_WIPER": {
@@ -24770,7 +24799,8 @@ const CMD = {
             "COMIC39970.BIN",
             "COMIC39971.BIN",
             "COMIC46020.BIN",
-            "COMIC46021.BIN"
+            "COMIC46021.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "ORG_SET_POS": {
@@ -25715,7 +25745,9 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "SET_CAM_POINT_1T_ROT": {
@@ -26172,7 +26204,8 @@ const CMD = {
             "COMIC21011.BIN",
             "COMIC36995.BIN",
             "COMIC21990.BIN",
-            "COMIC21992.BIN"
+            "COMIC21992.BIN",
+            "COMIC4000.BIN"
         ]
     },
     "SET_WHEEL_FIRE": {
@@ -26528,6 +26561,10 @@ const CMD = {
             "COMIC42048.BIN",
             "COMIC42056.BIN",
             "COMIC42008.BIN"
+        ],
+        "SS_cmn": [
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "BUFF_TO_SC_CAM_POS": {
@@ -26774,7 +26811,9 @@ const CMD = {
             "COMIC39970.BIN",
             "COMIC39971.BIN",
             "COMIC46020.BIN",
-            "COMIC46021.BIN"
+            "COMIC46021.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "SC_ORG_MODE_CHANGE": {
@@ -26837,7 +26876,7 @@ const CMD = {
                     + "引数４：y軸の回転数値" + newLine
                     + "引数５：z軸の回転数値" + newLine
                     + "引数６：変化方法" + newLine
-                    + "引数７：変化時間（フレーム）",
+                    + "引数７：変化時間（フレーム）"
     },
     "SC_ORG_SET_X_ROT": {
         "num": 321,
@@ -26847,7 +26886,7 @@ const CMD = {
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
                     + "引数１：作成インデックス" + newLine
                     + "引数２：号車インデックス" + newLine
-                    + "引数３：回転数値"
+                    + "引数３：回転数値" + newLine
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
         "BS_comic": [
@@ -26862,7 +26901,7 @@ const CMD = {
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
                     + "引数１：作成インデックス" + newLine
                     + "引数２：号車インデックス" + newLine
-                    + "引数３：回転数値"
+                    + "引数３：回転数値" + newLine
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
         "BS_comic": [
@@ -26877,7 +26916,7 @@ const CMD = {
                     + "ただし、SC_ORG_MODE_CHANGEを活性化しないと効果がない" + newLine
                     + "引数１：作成インデックス" + newLine
                     + "引数２：号車インデックス" + newLine
-                    + "引数３：回転数値"
+                    + "引数３：回転数値" + newLine
                     + "引数４：変化方法" + newLine
                     + "引数５：変化時間（フレーム）",
         "BS_comic": [
@@ -27530,7 +27569,7 @@ const CMD = {
                     + "引数２：LIインデックス" + newLine
                     + "引数３：自己発光カラーBの値（0.0～1.0）" + newLine
                     + "引数４：変化時間（フレーム）" + newLine
-                    + "引数５：変化方法",
+                    + "引数５：変化方法"
     },
     "SET_MAT_EMISSIVE_LOOP": {
         "num": 360,
@@ -28134,7 +28173,7 @@ const CMD = {
                     + "引数１：判定要素" + newLine
                     + "　0（指定車両モデルのインデックス位置。CHAR_SEL_OBJの場合、開放された車両数）" + newLine
                     + "　1（車両カラーインデックス位置）" + newLine
-                    + "引数２：設定値" + newLine
+                    + "引数２：設定値"
     },
     "INDEX_DIR_CAM": {
         "num": 384,
@@ -28637,7 +28676,8 @@ const CMD = {
             "COMIC4398.BIN",
             "COMIC44998.BIN",
             "COMIC45998.BIN",
-            "COMIC49997.BIN"
+            "COMIC49997.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "SWAP_TX": {
@@ -29156,7 +29196,9 @@ const CMD = {
             "COMIC4398.BIN",
             "COMIC44998.BIN",
             "COMIC45998.BIN",
-            "COMIC49997.BIN"
+            "COMIC49997.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "IS_USE_CHAR": {
@@ -30221,7 +30263,8 @@ const CMD = {
     },
     "CAM_TRAIN": {
         "num": 472,
-        "description": "車両カメラモードに設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "車両カメラモードに設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（先頭車視点）、1（ドライバー視点）" + newLine
                     + "引数３：スクリーン番号【SSで引数で渡す場合】",
@@ -30240,7 +30283,8 @@ const CMD = {
     },
     "PLAY_SCRIPT_BGM": {
         "num": 473,
-        "description": "指定スクリプトで再生しているBGMを再生する" + newLine
+        "description": "【SS】" + newLine
+                    + "指定スクリプトで再生しているBGMを再生する" + newLine
                     + "引数１：スクリプト番号" + newLine
                     + "引数２：そのスクリプトのBGM番号" + newLine
                     + "引数３：ループする[-1（True）、1（False）]" + newLine
@@ -30283,7 +30327,8 @@ const CMD = {
     },
     "CNG_FOR": {
         "num": 474,
-        "description": "車両の方向幕を変える" + newLine
+        "description": "【SS】" + newLine
+                    + "車両の方向幕を変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：方向幕インデックス",
         "SS_comic": [
@@ -30322,12 +30367,14 @@ const CMD = {
             "COMIC4398.BIN",
             "COMIC44998.BIN",
             "COMIC45998.BIN",
-            "COMIC49997.BIN"
+            "COMIC49997.BIN",
+            "COMIC4000.BIN"
         ]
     },
     "SET_RAILBLOCK_CHECKER": {
         "num": 475,
-        "description": "指定車両のレールブロックをチェックする" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両のレールブロックをチェックする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（初期化）、1（ブロックチェック）",
         "SS_comic": [
@@ -30366,12 +30413,15 @@ const CMD = {
             "COMIC4398.BIN",
             "COMIC44998.BIN",
             "COMIC45998.BIN",
-            "COMIC49997.BIN"
+            "COMIC49997.BIN",
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "RAIN_SE": {
         "num": 476,
-        "description": "指定車両の雨SEを変える" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両の雨SEを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：Volume" + newLine
                     + "引数３：変化時間（フレーム）",
@@ -30381,7 +30431,8 @@ const CMD = {
     },
     "TRAIN_STOP": {
         "num": 477,
-        "description": "車両を止める" + newLine
+        "description": "【SS】" + newLine
+                    + "車両を止める。速度を維持したままゲーム画面が止まる効果になる" + newLine
                     + "引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -30412,7 +30463,8 @@ const CMD = {
     },
     "KOTEICAM_BLEND": {
         "num": 478,
-        "description": "固定カメラモードから、SET_CAMPOINT_2P2Cで変わるときのアニメーションを与える" + newLine
+        "description": "【SS】" + newLine
+                    + "固定カメラモードから、SET_CAMPOINT_2P2Cで変わるときのアニメーションを与える" + newLine
                     + "引数１：固定カメラ位置と、SET_CAMPOINT_2P2Cで決めたカメラ位置のPER" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -30425,7 +30477,8 @@ const CMD = {
     },
     "SCRIPT_RAIN": {
         "num": 479,
-        "description": "スクリプトで雨を調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "スクリプトで雨を調整する" + newLine
                     + "引数１" + newLine
                     + "　-1（スクリプト調整をやめる）" + newLine
                     + "　0（雨を止める）" + newLine
@@ -30462,7 +30515,8 @@ const CMD = {
     },
     "LINE_CHANGE": {
         "num": 480,
-        "description": "指定車両を転線させる" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両を転線させる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：-1（左に転線）、0（デフォルト設定）、1（右に転線）",
         "SS_comic": [
@@ -30481,7 +30535,8 @@ const CMD = {
     },
     "WAIT_RAIL_MORE_ONLY": {
         "num": 481,
-        "description": "指定車両が最大４つのレール番号の中、どれか通過するまでずっと待つ。" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両が最大４つのレール番号の中、どれか通過するまでずっと待つ。" + newLine
                     + "どれか通過した場合、次の行へ行く" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：レール番号" + newLine
@@ -30498,7 +30553,8 @@ const CMD = {
     },
     "SET_SE_VOL": {
         "num": 482,
-        "description": "全般的なSEのVolumeを変える" + newLine
+        "description": "【SS】" + newLine
+                    + "全般的なSEのVolumeを変える" + newLine
                     + "引数１：Volume" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -30522,7 +30578,8 @@ const CMD = {
     },
     "CAM_TARGET_TRACK": {
         "num": 483,
-        "description": "カメラの注視点を指定車両の指定台車に変える" + newLine
+        "description": "【SS】" + newLine
+                    + "カメラの注視点を指定車両の指定台車に変える" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：号車インデックス" + newLine
                     + "引数３：台車インデックス" + newLine
@@ -30533,7 +30590,8 @@ const CMD = {
     },
     "DECAL_D37": {
         "num": 484,
-        "description": "指定車両にD37の白楽でぶつけた傷をつける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にD37の白楽でぶつけた傷をつける" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC40052.BIN",
@@ -30542,7 +30600,8 @@ const CMD = {
     },
     "DECAL_D39": {
         "num": 485,
-        "description": "指定車両にD39のトンネルでぶつけた傷をつける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にD39のトンネルでぶつけた傷をつける" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC4280.BIN"
@@ -30550,7 +30609,8 @@ const CMD = {
     },
     "DECAL_SMOKE": {
         "num": 486,
-        "description": "指定車両にDECALが付いた場合、煙をつける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にDECALが付いた場合、煙をつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）【SSでは使わない】",
         "SS_comic": [
@@ -30560,7 +30620,8 @@ const CMD = {
     },
     "RAIL_PRIORITY": {
         "num": 487,
-        "description": "レールのpriorityを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "レールのpriorityを設定する" + newLine
                     + "引数１：レールindex" + newLine
                     + "引数２：レールindex",
         "SS_comic": [
@@ -30569,9 +30630,10 @@ const CMD = {
     },
     "GET_KEY": {
         "num": 488,
-        "description": "【推測】引数１が0より小さく、キーのx軸が左の場合、引数３のFROMへ" + newLine
-                    + "引数１が0より大きく、キーのx軸が右の場合、引数３のFROMへ" + newLine
-                    + "また、指定時間内に、上記の条件ではない場合、引数４のFROMへ飛ぶ" + newLine
+        "description": "【SS】" + newLine
+                    + "【推測】引数１が0より小さく、キーのx軸が左の場合、引数３のFROMへ" + newLine
+                    + "または引数１が0より大きく、キーのx軸が右の場合、引数３のFROMへ飛ぶ" + newLine
+                    + "指定時間内に、上記の条件ではない場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：キー条件" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
                     + "引数３：FROM数字" + newLine
@@ -30582,7 +30644,8 @@ const CMD = {
     },
     "SHOW_LIGHT": {
         "num": 489,
-        "description": "指定車両にライトを付ける。同時にブラインドアタックも終わる" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にライトを付ける。同時にブラインドアタックも終わる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_comic": [
@@ -30591,7 +30654,8 @@ const CMD = {
     },
     "SHOW_IN_LIGHT": {
         "num": 490,
-        "description": "指定車両に内側のライトを付ける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両に内側のライトを付ける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_comic": [
@@ -30600,7 +30664,11 @@ const CMD = {
     },
     "FOG_POW": {
         "num": 491,
-        "description": "ブラインドアタック時、車両自体のfogフィルターを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "ブラインドアタック時、車両自体のfogフィルターを調整する" + newLine
+                    + "fog値が大きいほど、かなりカメラを近づけないと見えない" + newLine
+                    + "ただし、引数１が0より小さい場合、0.08で調整される" + newLine
+                    + "ブラインドアタックしてない状況では効果はない" + newLine
                     + "引数１：fogの程度" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：スクリーン番号【SSで引数で渡す場合】",
@@ -30611,7 +30679,8 @@ const CMD = {
     },
     "STORY_WIN": {
         "num": 492,
-        "description": "ストーリーモードの場合、" + newLine
+        "description": "【SS】" + newLine
+                    + "ストーリーモードの場合、" + newLine
                     + "ゴール時のスクリプト（タイプ4）を実行する",
         "SS_comic": [
             "COMIC2990.BIN"
@@ -30619,7 +30688,8 @@ const CMD = {
     },
     "RAIN_PARTICLE": {
         "num": 493,
-        "description": "雨の効果を設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "窓の水滴効果とか、雨のAMBモデルをつけたり消したりする" + newLine
                     + "引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC3599.BIN",
@@ -30654,7 +30724,8 @@ const CMD = {
     },
     "D39_FIRE": {
         "num": 494,
-        "description": "指定車両にD39のトンネルでぶつける際の火花をつける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にD39のトンネルでぶつける際の火花をつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
         "SS_comic": [
@@ -30663,7 +30734,8 @@ const CMD = {
     },
     "SET_CPU_SPEED": {
         "num": 495,
-        "description": "CPUの急加速補正を引数１の分、増やす" + newLine
+        "description": "【SS】" + newLine
+                    + "CPUの急加速補正を引数１の分、増やす" + newLine
                     + "引数１：増やすスピード" + newLine
                     + "引数２：変化時間",
         "SS_comic": [
@@ -30715,7 +30787,8 @@ const CMD = {
     },
     "BODY_AUDIO_PLAY": {
         "num": 496,
-        "description": "指定車両から出ている、SEを再生する" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両から出ている、スクリプトのSEを再生する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：スクリプト内のSE番号",
         "SS_comic": [
@@ -30725,7 +30798,8 @@ const CMD = {
     },
     "BODY_AUDIO_STOP": {
         "num": 497,
-        "description": "指定車両から出ている、SEを止める",
+        "description": "【SS】" + newLine
+                    + "指定車両から出ている、スクリプトのSEを止める",
         "SS_comic": [
             "COMIC40052.BIN",
             "COMIC4280.BIN"
@@ -30733,7 +30807,8 @@ const CMD = {
     },
     "CNG_FADE_SPRITE": {
         "num": 498,
-        "description": "フェードする際、指定の画像を使う" + newLine
+        "description": "【SS】" + newLine
+                    + "フェードする際、指定の画像を使う" + newLine
                     + "引数が-1の場合、黒い画像を使う" + newLine
                     + "引数１：フェードする画像No",
         "SS_comic": [
@@ -30748,26 +30823,34 @@ const CMD = {
     },
     "RAIL_DRIFT_CHK": {
         "num": 499,
-        "description": "ドリフトできるかチェックするフラグを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "CPUのレールデータによるドリフトの設定をする" + newLine
+                    + "0に設定すると、CPUはレールによるドリフトをしない" + newLine
                     + "引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC4220.BIN"
+        ],
+        "SS_cmn": [
+            "COMIC4001.BIN"
         ]
     },
     "INQ_WAIT": {
         "num": 500,
-        "description": "レコード記録を閉じるまで待つ",
+        "description": "【SS】" + newLine
+                    + "レコード記録を閉じるまで待つ",
         "SS_comic": [
             "COMIC2990.BIN"
         ],
         "SS_cmn": [
             "COMIC2993.BIN",
-            "COMIC2994.BIN"
+            "COMIC2994.BIN",
+            "COMIC4001.BIN"
         ]
     },
     "CNG_SCCAM_TRAIN": {
         "num": 501,
-        "description": "カメラを変える" + newLine
+        "description": "【SS】" + newLine
+                    + "カメラを変える" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
                     + "引数３：スクリーン番号【SSで引数で渡す場合】",
@@ -30777,7 +30860,8 @@ const CMD = {
     },
     "STOP_TRAIN_SE": {
         "num": 502,
-        "description": "車両から出ているSEを止める" + newLine
+        "description": "【SS】" + newLine
+                    + "車両から出るSE（ドリフトジャンプ音、衝突音、クラッシュ音など）を止める" + newLine
                     + "引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC3599.BIN",
@@ -30813,7 +30897,9 @@ const CMD = {
     },
     "PLAY_SCRIPT_BGM_TIME": {
         "num": 503,
-        "description": "指定スクリプトで再生しているBGMを再生する" + newLine
+        "description": "【SS】" + newLine
+                    + "指定スクリプトで再生しているBGMを再生する" + newLine
+                    + "PLAY_SCRIPT_BGMと似ているが、このコマンドは開始する時間まで設定できる" + newLine
                     + "引数１：スクリプト番号" + newLine
                     + "引数２：そのスクリプトのBGM番号" + newLine
                     + "引数３：ループする[-1（True）、1（False）]" + newLine
@@ -30826,7 +30912,8 @@ const CMD = {
     },
     "CNG_BODY_COLOR": {
         "num": 504,
-        "description": "指定車両のカラーバリエーションを変える" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両のカラーバリエーションを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：カラーインデックス",
         "SS_comic": [
@@ -30835,7 +30922,8 @@ const CMD = {
     },
     "LOAD_TRAIN": {
         "num": 505,
-        "description": "指定車両を車両インデックスで改めてロードする。" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両を車両インデックスで改めてロードする。" + newLine
                     + "ロードした車両は必ずSLEEP_TRAIN状態になる。" + newLine
                     + "そのままロードするとレールの外側に置かれる確率が高いため、" + newLine
                     + "速度を与えて、ちょっと進める必要がある。" + newLine
@@ -30847,27 +30935,37 @@ const CMD = {
     },
     "SHOW_BLOCK": {
         "num": 506,
-        "description": "ブロックのフラグを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "あるブロックに含まれた、レールモデルの表示設定する" + newLine
                     + "引数１：ブロックNo。-1の場合、全てのブロック" + newLine
                     + "引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC4049.BIN",
             "COMIC42013.BIN"
+        ],
+        "SS_cmn": [
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "UPDATE_LIGHT_FRARE": {
         "num": 507,
-        "description": "ライトフレアを更新する",
+        "description": "【SS】" + newLine
+                    + "ライトフレアを更新する",
         "SS_comic": [
             "COMIC4046.BIN",
             "COMIC40001.BIN",
             "COMIC41001.BIN",
             "COMIC42001.BIN"
+        ],
+        "SS_cmn": [
+            "COMIC4001.BIN"
         ]
     },
     "WAIT_RAIL_MORE_GOTO": {
         "num": 508,
-        "description": "指定車両が、指定時間内にレールを通過するとFROMへ飛ばす。" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両が、指定時間内にレールを通過するとFROMへ飛ばす。" + newLine
                     + "通過できなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：レール番号" + newLine
@@ -30902,7 +31000,8 @@ const CMD = {
     },
     "CREATE_AURA": {
         "num": 509,
-        "description": "指定車両にオーラをつけられるようにする" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にオーラを生成する" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -30911,7 +31010,8 @@ const CMD = {
     },
     "AURA_ALPHA": {
         "num": 510,
-        "description": "オーラのAlphaを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "オーラのAlphaを調整する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：Alpha値" + newLine
                     + "引数３：変化時間（フレーム）",
@@ -30923,7 +31023,8 @@ const CMD = {
     },
     "SET_LV_JUMP": {
         "num": 511,
-        "description": "高くジャンプするイベントで、指定車両のジャンプの高さを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "高くジャンプするイベントで、指定車両のジャンプの高さを調整する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：ジャンプの高さ（PER）",
         "SS_comic": [
@@ -30933,7 +31034,8 @@ const CMD = {
     },
     "CREATE_EFFECT_CAM": {
         "num": 512,
-        "description": "エフェクトをつけられるようにする",
+        "description": "【SS】" + newLine
+                    + "エフェクトを生成する",
         "SS_comic": [
             "COMIC36999.BIN",
             "COMIC4041.BIN",
@@ -30947,7 +31049,8 @@ const CMD = {
     },
     "TO_EFFECT_CAM": {
         "num": 513,
-        "description": "指定車両にエフェクトをつける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にエフェクトをつける" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC4095.BIN",
@@ -30956,7 +31059,8 @@ const CMD = {
     },
     "EFFECT_CAM_POW": {
         "num": 514,
-        "description": "エフェクトのフォグの濃さを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "エフェクトのfogの濃さを調整する" + newLine
                     + "引数１：濃さ" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：変化方法" + newLine
@@ -30973,7 +31077,8 @@ const CMD = {
     },
     "EFFECT_CAM_COLOR": {
         "num": 515,
-        "description": "エフェクトのフォグの色を調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "エフェクトのfogの色を調整する" + newLine
                     + "引数１：R" + newLine
                     + "引数２：G" + newLine
                     + "引数３：B" + newLine
@@ -30990,7 +31095,8 @@ const CMD = {
     },
     "EFFECT_CAM_ALPHA": {
         "num": 516,
-        "description": "エフェクトのAlpha値を調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "エフェクトのAlpha値を調整する" + newLine
                     + "引数１：Alpha値" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：変化方法" + newLine
@@ -31015,7 +31121,8 @@ const CMD = {
     },
     "HIDE_LIGHT": {
         "num": 517,
-        "description": "指定車両の外側のライトを消す" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両の外側のライトを消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_comic": [
@@ -31025,7 +31132,8 @@ const CMD = {
     },
     "USE_EFFECT_CAM": {
         "num": 518,
-        "description": "エフェクト効果の使用フラグを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "カメラに、適用したエフェクト効果を見れるように設定する" + newLine
                     + "引数１：1（True）、0（False）" + newLine
                     + "引数２：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
@@ -31034,7 +31142,9 @@ const CMD = {
     },
     "USE_EFFECT_CAM_RGB": {
         "num": 519,
-        "description": "エフェクト効果の使用フラグと、RGB分解の使用フラグを同時に設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "カメラに、適用したエフェクト効果を見れるようにし" + newLine
+                    + "同時にfogをRGBに分解された効果も見れるように設定する" + newLine
                     + "引数１：1（True）、0（False）" + newLine
                     + "引数２：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
@@ -31050,7 +31160,8 @@ const CMD = {
     },
     "EFFECT_CAM_RGB": {
         "num": 520,
-        "description": "エフェクトのフォグの色を、RGBに分解して表示する" + newLine
+        "description": "【SS】" + newLine
+                    + "エフェクトのfogの色を、RGBに分解して表示する" + newLine
                     + "引数１：分解程度" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：変化方法" + newLine
@@ -31061,7 +31172,8 @@ const CMD = {
     },
     "COPY_TRAIN_POS": {
         "num": 521,
-        "description": "指定車両の現在レール位置をコピーして" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両の現在レール位置をコピーして" + newLine
                     + "別の指定車両にTO_RAILを適用する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（1P）、1（2P）",
@@ -31076,7 +31188,8 @@ const CMD = {
     },
     "COL_SET": {
         "num": 522,
-        "description": "指定車両にぶつけ判定を設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にぶつけ判定を設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
         "SS_comic": [
@@ -31089,7 +31202,8 @@ const CMD = {
     },
     "CNG_CPU_TRAIN": {
         "num": 523,
-        "description": "CPU操作を指定車両に変える" + newLine
+        "description": "【SS】" + newLine
+                    + "CPU操作を指定車両に変える" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -31097,7 +31211,8 @@ const CMD = {
     },
     "BTN_GOTO": {
         "num": 524,
-        "description": "ボタンを押すと、GOTOコマンドのように実行する" + newLine
+        "description": "【SS】" + newLine
+                    + "ボタンを押すと、GOTOコマンドのように実行する" + newLine
                     + "引数１：FROM数字",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -31111,7 +31226,8 @@ const CMD = {
     },
     "NO_TIMESCALE_KOMA": {
         "num": 525,
-        "description": "ゲームのFPS速度に合わせてコマの効果を適用する" + newLine
+        "description": "【SS】" + newLine
+                    + "ゲームのFPS速度に合わせてコマの効果を適用する" + newLine
                     + "引数１：コマの番号" + newLine
                     + "引数２：1（True）、0（False）",
         "SS_comic": [
@@ -31148,7 +31264,8 @@ const CMD = {
     },
     "EFFCAM_NOIZE": {
         "num": 526,
-        "description": "エフェクトのノイズを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "エフェクトのノイズを調整する" + newLine
                     + "引数１：ノイズ値" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：変化方法" + newLine
@@ -31159,7 +31276,8 @@ const CMD = {
     },
     "EFFCAM_GRI": {
         "num": 527,
-        "description": "エフェクトのグリッチを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "エフェクトのグリッチを調整する" + newLine
                     + "引数１：グリッチ値" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：変化方法" + newLine
@@ -31170,7 +31288,8 @@ const CMD = {
     },
     "EFFCAM_BLOCKNOISE": {
         "num": 528,
-        "description": "エフェクトのブロックノイズを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "エフェクトのブロックノイズを調整する" + newLine
                     + "引数１：ブロックノイズ値" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：変化方法" + newLine
@@ -31181,14 +31300,16 @@ const CMD = {
     },
     "CREATE_TQ5000_FLAGMENT": {
         "num": 529,
-        "description": "東急5000系の破片の効果を使えるようにする",
+        "description": "【SS】" + newLine
+                    + "東急5000系の破片の効果を生成する",
         "SS_comic": [
             "COMIC29000.BIN"
         ]
     },
     "USE_TQ5000_FLAGMENT": {
         "num": 530,
-        "description": "指定車両に東急5000系の破片の効果を適用する" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両に東急5000系の破片の効果を適用する" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -31196,7 +31317,8 @@ const CMD = {
     },
     "TQ5000_FLAGPOS": {
         "num": 531,
-        "description": "東急5000系の破片の位置を調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "東急5000系の破片の位置を調整する" + newLine
                     + "引数１：位置" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -31206,7 +31328,8 @@ const CMD = {
     },
     "HUMIKIRI_VOL": {
         "num": 532,
-        "description": "踏切のVolumeを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "踏切のVolumeを調整する" + newLine
                     + "引数１：踏切のVolume" + newLine
                     + "引数２：変化時間（フレーム）" + newLine
                     + "引数３：変化方法",
@@ -31223,7 +31346,8 @@ const CMD = {
     },
     "TO_EFFECT_CAM_BODY": {
         "num": 533,
-        "description": "指定車両のインデックスにエフェクトをつける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両のインデックスにエフェクトをつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：号車インデックス。-1の場合、全ての車両",
         "SS_comic": [
@@ -31236,7 +31360,8 @@ const CMD = {
     },
     "TO_NORM_CAM": {
         "num": 534,
-        "description": "指定車両のエフェクトをノーマルに変える" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両のエフェクトをノーマルに変える" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -31249,7 +31374,8 @@ const CMD = {
     },
     "TO_920": {
         "num": 535,
-        "description": "指定車両が4050系の場合、920系にする" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両が4050系の場合、920系にする" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -31262,7 +31388,8 @@ const CMD = {
     },
     "NO_TIMESCALE_FVT": {
         "num": 536,
-        "description": "ゲームのFPS速度に合わせてFVT効果を適用する" + newLine
+        "description": "【SS】" + newLine
+                    + "ゲームのFPS速度に合わせてFVT効果を適用する" + newLine
                     + "引数１：FVTの番号",
         "SS_comic": [
             "COMIC36999.BIN"
@@ -31302,7 +31429,8 @@ const CMD = {
     },
     "CNG_TARGET_BODY": {
         "num": 537,
-        "description": "カメラを注視点を、指定車両のインデックスに変える" + newLine
+        "description": "【SS】" + newLine
+                    + "カメラを注視点を、指定号車のインデックスに変える" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：号車インデックス" + newLine
                     + "引数３：スクリーン番号【SSで引数で渡す場合】",
@@ -31321,7 +31449,8 @@ const CMD = {
     },
     "SC_ADD_POINT": {
         "num": 538,
-        "description": "スクリプト内のポイントを加算する" + newLine
+        "description": "【SS】" + newLine
+                    + "スクリプト内のポイントを加算する" + newLine
                     + "引数１：ポイント",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -31334,7 +31463,8 @@ const CMD = {
     },
     "CHK_SC_POINT": {
         "num": 539,
-        "description": "指定のスクリプト内のポイントが" + newLine
+        "description": "【SS】" + newLine
+                    + "指定のスクリプト内のポイントが" + newLine
                     + "指定ポイントより以上の場合、引数３のFROMへ" + newLine
                     + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
                     + "引数１：スクリプト番号" + newLine
@@ -31348,7 +31478,8 @@ const CMD = {
     },
     "KAISO_TO_DUEL": {
         "num": 540,
-        "description": "指定車両の方向幕を回送から競技に変える" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両の方向幕を回送から競技に変える" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3611.BIN"
@@ -31356,7 +31487,8 @@ const CMD = {
     },
     "SHOW_ST": {
         "num": 541,
-        "description": "指定した駅インデックスで、駅名を表示する" + newLine
+        "description": "【SS】" + newLine
+                    + "指定した駅インデックスで、駅名を表示する" + newLine
                     + "引数１：駅インデックス",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -31366,29 +31498,33 @@ const CMD = {
     },
     "ORG_UPDATE": {
         "num": 542,
-        "description": "【推測】車両位置をアップデート" + newLine
+        "description": "【SS】" + newLine
+                    + "OPのみ使われる。車両の位置をUpdateする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
-        "SS_comic": [
-
+        "SS_cmn": [
+            "COMIC4001.BIN"
         ]
     },
     "SET_RAILBLOCK_POS": {
         "num": 543,
-        "description": "【推測】レールブロックを移す" + newLine
+        "description": "【SS】" + newLine
+                    + "OPのみ使われる。レールブロックを移す" + newLine
                     + "引数１：ブロック番号" + newLine
                     + "引数２：変化方法" + newLine
                     + "引数３：x座標" + newLine
                     + "引数４：y座標" + newLine
                     + "引数５：z座標" + newLine
                     + "引数６：変化時間（フレーム）",
-        "SS_comic": [
-
+        "SS_cmn": [
+            "COMIC4001.BIN",
+            "COMIC4002.BIN"
         ]
     },
     "SET_LIGHT_OVER": {
         "num": 544,
-        "description": "指定のコマを光らせる" + newLine
+        "description": "【SS】" + newLine
+                    + "指定のコマを光らせる" + newLine
                     + "引数１：コマの番号" + newLine
                     + "引数２：1（True）、0（False）" + newLine
                     + "引数３：0の場合、Light適用。1の場合、LightOverを適用",
@@ -31401,14 +31537,16 @@ const CMD = {
     },
     "CREATE_STAFFROLL": {
         "num": 545,
-        "description": "スタッフロールを作成する",
+        "description": "【SS】" + newLine
+                    + "スタッフロールを生成する",
         "SS_comic": [
             "COMIC42013.BIN"
         ]
     },
     "STAFFROLL_START": {
         "num": 546,
-        "description": "スタッフロールを流す" + newLine
+        "description": "【SS】" + newLine
+                    + "スタッフロールを流す" + newLine
                     + "引数１：0（作成）、1（見せる）、2（ロゴを見せる）",
         "SS_comic": [
             "COMIC42013.BIN"
@@ -31416,14 +31554,16 @@ const CMD = {
     },
     "WAIT_STAFFROLL": {
         "num": 547,
-        "description": "作成したスタッフロールが終わるまで待つ",
+        "description": "【SS】" + newLine
+                    + "作成したスタッフロールが終わるまで待つ",
         "SS_comic": [
             "COMIC42013.BIN"
         ]
     },
     "SC_OUTRUN": {
         "num": 548,
-        "description": "スクリプトで脱線させる。またライトも消す" + newLine
+        "description": "【SS】" + newLine
+                    + "スクリプトで脱線させる。またライトも消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：号車インデックス" + newLine
                     + "引数３：ずらすx座標" + newLine
@@ -31436,14 +31576,16 @@ const CMD = {
     },
     "CREATE_TAKMIS": {
         "num": 549,
-        "description": "タクミサイルを作成する",
+        "description": "【SS】" + newLine
+                    + "タクミサイルを生成する",
         "SS_comic": [
             "COMIC3600.BIN"
         ]
     },
     "SET_TAKMIS_POS": {
         "num": 550,
-        "description": "タクミサイルの位置を調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "タクミサイルの位置を調整する" + newLine
                     + "引数１：x座標" + newLine
                     + "引数２：y座標" + newLine
                     + "引数３：z座標" + newLine
@@ -31455,7 +31597,8 @@ const CMD = {
     },
     "SET_TAKMIS_ALPHA": {
         "num": 551,
-        "description": "タクミサイルのAlphaを調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "タクミサイルのAlphaを調整する" + newLine
                     + "引数１：Alpha値" + newLine
                     + "引数２：変化時間" + newLine
                     + "引数３：変化方法",
@@ -31465,7 +31608,8 @@ const CMD = {
     },
     "FRONT_DOOR": {
         "num": 552,
-        "description": "先頭車のドアを開く" + newLine
+        "description": "【SS】" + newLine
+                    + "先頭車のドアを開く" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）" + newLine
                     + "引数３：変化時間" + newLine
@@ -31488,7 +31632,8 @@ const CMD = {
     },
     "SET_KOMA_DEPTH": {
         "num": 553,
-        "description": "コマのDepthを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "コマのDepthを設定する" + newLine
                     + "引数１：Depth値",
         "SS_comic": [
             "COMIC3506.BIN",
@@ -31505,7 +31650,8 @@ const CMD = {
     },
     "D37_FIRE": {
         "num": 554,
-        "description": "指定車両にD37の白楽でぶつけた際の火花をつける" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にD37の白楽でぶつけた際の火花をつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（True）、0（False）",
         "SS_comic": [
@@ -31515,7 +31661,8 @@ const CMD = {
     },
     "AMB_HIT_WAIT": {
         "num": 555,
-        "description": "指定車両のインデックスが、指定時間内にAMBにぶつけた場合、指定のFROMに飛ばす" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両の指定号車が、指定時間内にAMBにぶつけた場合、指定のFROMに飛ばす" + newLine
                     + "指定時間内にぶつけなかったり、指定レールを通過した場合、引数９のFROMに飛ばす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：号車インデックス" + newLine
@@ -31532,14 +31679,16 @@ const CMD = {
     },
     "ShowRecord": {
         "num": 556,
-        "description": "レコードを見せる",
+        "description": "【SS】" + newLine
+                    + "レコードを見せる",
         "SS_comic": [
             "COMIC2990.BIN"
         ]
     },
     "FIT_PER": {
         "num": 557,
-        "description": "指定車両の片輪走行時、傾むく程度（PER）を調整する" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両の片輪走行時、傾むく程度（PER）を調整する" + newLine
                     + "カーブの強さは変わらない" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：PER",
@@ -31559,7 +31708,8 @@ const CMD = {
     },
     "CREATE_COMIC_PC": {
         "num": 558,
-        "description": "ComicParticleを作成する",
+        "description": "【SS】" + newLine
+                    + "ComicParticleを生成する",
         "SS_comic": [
             "COMIC3500.BIN",
             "COMIC42006.BIN",
@@ -31568,7 +31718,8 @@ const CMD = {
     },
     "SET_COMIC_PC": {
         "num": 559,
-        "description": "ComicParticleを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "ComicParticleを設定する" + newLine
                     + "引数１：コマの番号" + newLine
                     + "引数２：1（True）、0（False）" + newLine
                     + "引数３～４：詳細不明【SSでは使わない】",
@@ -31580,7 +31731,8 @@ const CMD = {
     },
     "PAUSE_STAGE_BGM": {
         "num": 560,
-        "description": "ステージBGMを一時停止する" + newLine
+        "description": "【SS】" + newLine
+                    + "ステージBGMを一時停止する" + newLine
                     + "引数１：ステージBGMの番号" + newLine
                     + "引数２：1（True）、0（False）",
         "SS_comic": [
@@ -31590,7 +31742,8 @@ const CMD = {
     },
     "SET_KAKAPO": {
         "num": 561,
-        "description": "KAKAPO動きを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "KAKAPO動きを設定する" + newLine
                     + "引数１：長さ" + newLine
                     + "引数２：引数１の変化時間" + newLine
                     + "引数３：引数１の変化方法" + newLine
@@ -31603,7 +31756,8 @@ const CMD = {
     },
     "KOMA_KAKAPO": {
         "num": 562,
-        "description": "コマをKAKAPO動きにする" + newLine
+        "description": "【SS】" + newLine
+                    + "コマをKAKAPO動きにする" + newLine
                     + "引数１：コマの番号" + newLine
                     + "引数２：1（True）、0（False）",
         "SS_comic": [
@@ -31612,7 +31766,8 @@ const CMD = {
     },
     "START_TARBINE": {
         "num": 563,
-        "description": "タービンを動かすアニメが始まる" + newLine
+        "description": "【SS】" + newLine
+                    + "タービンを動かすアニメが始まる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3997.BIN"
@@ -31626,7 +31781,8 @@ const CMD = {
     },
     "END_TARBINE": {
         "num": 564,
-        "description": "タービンを動かすアニメが終わる" + newLine
+        "description": "【SS】" + newLine
+                    + "タービンを動かすアニメが終わる" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3997.BIN"
@@ -31640,7 +31796,8 @@ const CMD = {
     },
     "TARBINE_FTV_START": {
         "num": 565,
-        "description": "タービンを動かすとき、再生するFVTを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "タービンを動かすとき、再生するFVTを設定する" + newLine
                     + "試運転やバトルモードは、必ず引数３を再生する" + newLine
                     + "ストーリーモードの場合、乗り手によって引数１や２を再生する" + newLine
                     + "引数１：FVT番号（拓海）" + newLine
@@ -31658,7 +31815,8 @@ const CMD = {
     },
     "TARBINE_FTV_END": {
         "num": 566,
-        "description": "TARBINE_FTV_STARTで再生しているFVTを終了する",
+        "description": "【SS】" + newLine
+                    + "TARBINE_FTV_STARTで再生しているFVTを終了する",
         "SS_comic": [
             "COMIC3997.BIN"
         ],
@@ -31671,7 +31829,8 @@ const CMD = {
     },
     "STORY_ENGINE": {
         "num": 567,
-        "description": "ストーリーモードで、エンジンを発動する",
+        "description": "【SS】" + newLine
+                    + "ストーリーモードで、エンジンを発動する",
         "SS_comic": [
             "COMIC4046.BIN",
             "COMIC40001.BIN",
@@ -31681,7 +31840,8 @@ const CMD = {
     },
     "RAND_GOTO": {
         "num": 568,
-        "description": "最大４つのFROM数字の中で、ランダムに選んで飛ばす" + newLine
+        "description": "【SS】" + newLine
+                    + "最大４つのFROM数字の中で、ランダムに選んで飛ばす" + newLine
                     + "-1のFROM数字は、ランダム対象から無視される" + newLine
                     + "引数１：FROM数字" + newLine
                     + "引数２：FROM数字" + newLine
@@ -31698,7 +31858,8 @@ const CMD = {
     },
     "KQ_SOUND": {
         "num": 569,
-        "description": "京急過給時のコマンド" + newLine
+        "description": "【SS】" + newLine
+                    + "京急過給時のコマンド" + newLine
                     + "引数１：オプションで過給時BGM変更をONにした場合" + newLine
                     + "　0（現在再生しているBGMを止める）" + newLine
                     + "　1（Tokyo NightのBGMを流す）" + newLine
@@ -31713,7 +31874,8 @@ const CMD = {
     },
     "STORY_GOTO": {
         "num": 570,
-        "description": "ストーリーモードではない場合、必ず引数３のFROMへ飛ばす" + newLine
+        "description": "【SS】" + newLine
+                    + "ストーリーモードではない場合、必ず引数３のFROMへ飛ばす" + newLine
                     + "ストーリーモードの場合、乗り手によって引数１や２のFROMへ飛ばす" + newLine
                     + "引数１：FROM数字（拓海）" + newLine
                     + "引数２：FROM数字（啓介）" + newLine
@@ -31731,7 +31893,8 @@ const CMD = {
     },
     "PLAY223HONE": {
         "num": 571,
-        "description": "指定車両にミュージックホーンを鳴らす" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にミュージックホーンを鳴らす" + newLine
                     + "【JR223系、ミュースカイ、パノスパ" + newLine
                     + "京阪800系、京阪80型、阪急2300系のみ】" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31745,7 +31908,8 @@ const CMD = {
     },
     "RB26": {
         "num": 572,
-        "description": "指定車両にRB26のコマンド" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両にRB26のコマンド" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：1（RB26発動）、2（RB26クーリング）" + newLine
                     + "引数３：詳細不明【SSでは使わない】",
@@ -31774,7 +31938,8 @@ const CMD = {
     },
     "PLAYORGSE": {
         "num": 573,
-        "description": "指定車両に固有なSEがある場合、そのSEを鳴らす" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両に固有なSEがある場合、そのSEを鳴らす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：固有SEインデックス" + newLine
                     + "引数３：プレイモード",
@@ -31800,14 +31965,16 @@ const CMD = {
     },
     "H2300_GOAL": {
         "num": 574,
-        "description": "阪急2300系やAE86が勝った場合、固有のSEを鳴らす",
+        "description": "【SS】" + newLine
+                    + "阪急2300系やAE86が勝った場合、固有のSEを鳴らす",
         "SS_comic": [
             "COMIC2990.BIN"
         ]
     },
     "DEKI_BACK_OPEN": {
         "num": 575,
-        "description": "デキ３の後ろを開ける" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３の後ろを開ける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_cmn": [
@@ -31821,7 +31988,8 @@ const CMD = {
     },
     "DEKI_GN_MOVE": {
         "num": 576,
-        "description": "デキ３のGNを動かす" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３のGNを動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_cmn": [
@@ -31835,7 +32003,8 @@ const CMD = {
     },
     "DEKI_TAMIYA_START": {
         "num": 577,
-        "description": "デキ３のTAMIYAマークを動かす" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３のTAMIYAマークを動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_cmn": [
@@ -31849,7 +32018,8 @@ const CMD = {
     },
     "DEKI_GN_START": {
         "num": 578,
-        "description": "デキ３の上り調子を発動する" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３の上り調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_cmn": [
@@ -31866,7 +32036,8 @@ const CMD = {
     },
     "DEKI_SOUND": {
         "num": 579,
-        "description": "デキ３の本調子時のコマンド" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３の本調子時のコマンド" + newLine
                     + "引数１：オプションで上り調子時BGM変更をONにした場合" + newLine
                     + "　0（現在再生しているステージBGMを止める）" + newLine
                     + "　1（本調子のBGMを流す）" + newLine
@@ -31887,7 +32058,8 @@ const CMD = {
     },
     "DEKI_USE_TRANSAM": {
         "num": 580,
-        "description": "デキ３の本調子を発動する" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３の本調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_cmn": [
@@ -31903,7 +32075,8 @@ const CMD = {
     },
     "DEKI_FRONT_OPEN": {
         "num": 581,
-        "description": "デキ３の本調子を発動時、前の部分を開く" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３の本調子を発動時、前の部分を開く" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_cmn": [
@@ -31920,7 +32093,8 @@ const CMD = {
     },
     "DEKI_GN_STOP": {
         "num": 583,
-        "description": "デキ３の上り調子を止める" + newLine
+        "description": "【SS】" + newLine
+                    + "デキ３の上り調子を止める" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：変化時間",
         "SS_cmn": [
@@ -31936,7 +32110,8 @@ const CMD = {
     },
     "STORY_GN": {
         "num": 584,
-        "description": "ストーリーモードで上り調子を発動する" + newLine
+        "description": "【SS】" + newLine
+                    + "ストーリーモードで上り調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）",
         "SS_comic": [
@@ -31945,7 +32120,8 @@ const CMD = {
     },
     "IS_ONE_TRACK_DRIFT": {
         "num": 585,
-        "description": "指定車両が、単線ドリフト出来る場合、引数２のFROMへ" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両が、単線ドリフト出来る場合、引数２のFROMへ" + newLine
                     + "出来ない場合、引数３のFROMへ飛ばす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：FROM数字" + newLine
@@ -31956,7 +32132,8 @@ const CMD = {
     },
     "RESET_BLOCK": {
         "num": 586,
-        "description": "指定車両の現在位置からブロックをチェックする" + newLine
+        "description": "【SS】" + newLine
+                    + "指定車両の現在位置からブロックをチェックする" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_comic": [
 
@@ -31964,7 +32141,8 @@ const CMD = {
     },
     "IS_BTLMODE_END_CHK": {
         "num": 587,
-        "description": "バトルモードの場合、1Pが自走不能になった場合、引数１のスクリプトを" + newLine
+        "description": "【SS】" + newLine
+                    + "バトルモードの場合、1Pが自走不能になった場合、引数１のスクリプトを" + newLine
                     + "2Pが自走不能に場合、引数２のスクリプトを読み込む" + newLine
                     + "引数１：スクリプト番号" + newLine
                     + "引数２：スクリプト番号",
@@ -31974,7 +32152,8 @@ const CMD = {
     },
     "SHOW_WIN_TRAIN": {
         "num": 588,
-        "description": "バトルモードで、どの車両が勝利したか見せる",
+        "description": "【SS】" + newLine
+                    + "バトルモードで、どの車両が勝利したか見せる",
         "SS_cmn": [
             "COMIC2993.BIN",
             "COMIC2994.BIN"
@@ -31982,7 +32161,8 @@ const CMD = {
     },
     "NO_RUN": {
         "num": 589,
-        "description": "バトルモードで、指定車両を自走不能とみなす" + newLine
+        "description": "【SS】" + newLine
+                    + "バトルモードで、指定車両を自走不能とみなす" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_cmn": [
             "COMIC46040.BIN",
@@ -31991,7 +32171,8 @@ const CMD = {
     },
     "COMIC_TO_BTL": {
         "num": 590,
-        "description": "コミックのコマをバトルモードに適用する" + newLine
+        "description": "【SS】" + newLine
+                    + "コミックのコマをバトルモードに適用する" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_cmn": [
             "COMIC46030.BIN",
@@ -32004,7 +32185,8 @@ const CMD = {
     },
     "SET_MSGWND_INDEX": {
         "num": 591,
-        "description": "メッセージ枠のインデックスを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "メッセージ枠のインデックスを設定する" + newLine
                     + "引数１：0（1P）、1（2P）",
         "SS_cmn": [
             "COMIC46011.BIN",
@@ -32025,7 +32207,8 @@ const CMD = {
     },
     "SET_AMB_BOX": {
         "num": 592,
-        "description": "AMB_BOXのAlphaを設定する" + newLine
+        "description": "【SS】" + newLine
+                    + "AMB_BOXのAlphaを設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：Alpha値" + newLine
                     + "引数３：変化時間",
