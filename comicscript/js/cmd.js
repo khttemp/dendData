@@ -17270,9 +17270,6 @@ const CMD = {
         "LS_comic": [
             "COMIC121.BIN",
             "COMIC706.BIN"
-        ],
-        "SS_comic": [
-
         ]
     },
     "ELSE_IF_CHK_POINT": {
@@ -17287,9 +17284,6 @@ const CMD = {
         "LS_comic": [
             "COMIC121.BIN",
             "COMIC706.BIN"
-        ],
-        "SS_comic": [
-
         ]
     },
     "END_CHK_POINT": {
@@ -20055,16 +20049,14 @@ const CMD = {
                     + "LSで、指定車両を単線ドリフトさせる" + newLine
                     + "BS以後では、このコマンドを実行すると" + newLine
                     + "「作りこみ中です」とエラーが出てゲームが落ちる" + newLine
-                    + "【SSから】指定車両を単線ドリフトさせる。それが出来ない車両の場合、普通にドリフトさせる。" + newLine
+                    + "【SSから】" + newLine
+                    + "指定車両を単線ドリフトさせる。それが出来ない車両の場合、普通にドリフトさせる。" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：" + newLine
                     + "　【LS】-1(左）、0（戻し）、1（右）" + newLine
                     + "　【SSから】-1(左）、1（右）",
         "LS_comic": [
             "COMIC714.BIN"
-        ],
-        "SS_comic": [
-
         ]
     },
     "LAST_STATION": {
@@ -29813,10 +29805,7 @@ const CMD = {
                     + "CPUブレーキを設定する。CPUに指定したスピードまで落とす" + newLine
                     + "引数１に0を入れると効果はなく、1を指定するべき" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：スピード",
-        "SS_comic": [
-
-        ]
+                    + "引数２：スピード"
     },
     "AMB_ANIME": {
         "num": 443,
@@ -30424,10 +30413,7 @@ const CMD = {
                     + "指定車両の雨SEを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
                     + "引数２：Volume" + newLine
-                    + "引数３：変化時間（フレーム）",
-        "SS_comic": [
-
-        ]
+                    + "引数３：変化時間（フレーム）"
     },
     "TRAIN_STOP": {
         "num": 477,
@@ -30623,10 +30609,7 @@ const CMD = {
         "description": "【SS】" + newLine
                     + "レールのpriorityを設定する" + newLine
                     + "引数１：レールindex" + newLine
-                    + "引数２：レールindex",
-        "SS_comic": [
-
-        ]
+                    + "引数２：レールindex"
     },
     "GET_KEY": {
         "num": 488,
@@ -30637,10 +30620,7 @@ const CMD = {
                     + "引数１：キー条件" + newLine
                     + "引数２：指定時間（フレーム）" + newLine
                     + "引数３：FROM数字" + newLine
-                    + "引数４：FROM数字",
-        "SS_comic": [
-
-        ]
+                    + "引数４：FROM数字"
     },
     "SHOW_LIGHT": {
         "num": 489,
@@ -30853,10 +30833,7 @@ const CMD = {
                     + "カメラを変える" + newLine
                     + "引数１：カメラ番号" + newLine
                     + "引数２：0（1P）、1（2P）" + newLine
-                    + "引数３：スクリーン番号【SSで引数で渡す場合】",
-        "SS_comic": [
-
-        ]
+                    + "引数３：スクリーン番号【SSで引数で渡す場合】"
     },
     "STOP_TRAIN_SE": {
         "num": 502,
@@ -30915,10 +30892,7 @@ const CMD = {
         "description": "【SS】" + newLine
                     + "指定車両のカラーバリエーションを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：カラーインデックス",
-        "SS_comic": [
-
-        ]
+                    + "引数２：カラーインデックス"
     },
     "LOAD_TRAIN": {
         "num": 505,
@@ -30928,10 +30902,7 @@ const CMD = {
                     + "そのままロードするとレールの外側に置かれる確率が高いため、" + newLine
                     + "速度を与えて、ちょっと進める必要がある。" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：車両インデックス",
-        "SS_comic": [
-
-        ]
+                    + "引数２：車両インデックス"
     },
     "SHOW_BLOCK": {
         "num": 506,
@@ -32089,7 +32060,8 @@ const CMD = {
     },
     "REV_DRIFT": {
         "num": 582,
-        "description": ""
+        "description": "【SS】" + newLine
+                    + "何もせず次の行へ行く。未実装のように見える"
     },
     "DEKI_GN_STOP": {
         "num": 583,
@@ -32113,10 +32085,7 @@ const CMD = {
         "description": "【SS】" + newLine
                     + "ストーリーモードで上り調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
-                    + "引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）",
-        "SS_comic": [
-
-        ]
+                    + "引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）"
     },
     "IS_ONE_TRACK_DRIFT": {
         "num": 585,
@@ -32134,10 +32103,7 @@ const CMD = {
         "num": 586,
         "description": "【SS】" + newLine
                     + "指定車両の現在位置からブロックをチェックする" + newLine
-                    + "引数１：0（1P）、1（2P）",
-        "SS_comic": [
-
-        ]
+                    + "引数１：0（1P）、1（2P）"
     },
     "IS_BTLMODE_END_CHK": {
         "num": 587,

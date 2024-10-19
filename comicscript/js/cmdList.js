@@ -5,6 +5,11 @@ angular.module('myApp', [])
         $scope.allNotUsed = true;
         $scope.notDefined = true;
 
+        $scope.isMatch = function(str, regax) {
+            const regex = new RegExp(regax);
+            return regex.test(str);
+        }
+
         let cmdKeys = Object.keys(CMD);
         for (let i = 0; i < cmdKeys.length; i++) {
             let cmdKey = cmdKeys[i];
@@ -19,27 +24,27 @@ angular.module('myApp', [])
                 cmdSeries = "model";
             }
 
-            if (CMD[cmdKey]["LS_comic"] != undefined || CMD[cmdKey]["LS_bin"] != undefined) {
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*LS.*】")) {
                 cmdUsedList.push("LS");
             } else {
                 cmdUsedList.push("");
             }
-            if (CMD[cmdKey]["BS_comic"] != undefined || CMD[cmdKey]["BS_bin"] != undefined) {
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*BS.*】")) {
                 cmdUsedList.push("BS");
             } else {
                 cmdUsedList.push("");
             }
-            if (CMD[cmdKey]["CS_comic"] != undefined || CMD[cmdKey]["CS_bin"] != undefined) {
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*CS.*】")) {
                 cmdUsedList.push("CS");
             } else {
                 cmdUsedList.push("");
             }
-            if (CMD[cmdKey]["RS_comic"] != undefined || CMD[cmdKey]["RS_bin"] != undefined) {
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*RS.*】")) {
                 cmdUsedList.push("RS");
             } else {
                 cmdUsedList.push("");
             }
-            if (CMD[cmdKey]["SS_comic"] != undefined || CMD[cmdKey]["SS_cmn"] != undefined) {
+            if ($scope.isMatch(CMD[cmdKey]["description"], "^【.*SS.*】")) {
                 cmdUsedList.push("SS");
             } else {
                 cmdUsedList.push("");
