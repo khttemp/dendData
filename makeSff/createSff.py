@@ -123,6 +123,7 @@ def convertStructData(fontSheetData):
 args = sys.argv
 if len(args) != 5:
     print("createSff.py [fontSize] [sheetSize] [txtFile] [fontLocation]")
+    print("使うフォントは、truetypeフォントの、等幅フォントを使うこと")
     sys.exit()
 
 fontSize = int(args[1])
@@ -163,7 +164,8 @@ initPosY = 1
 posX = initPosX
 posY = initPosY
 maxPosY = 0
-offsetY = 2
+offsetX = 1
+offsetY = 1
 testCropFlag = False
 
 font = ImageFont.truetype(fontLocation, size=fontSize)
@@ -175,9 +177,9 @@ for i in inputTable:
     text = allTextList[inputTable[i]]
     bbox = draw.multiline_textbbox([posX, posY], text, font=font)
 
-    if bbox[2] + 1 >= sheetSize:
+    if bbox[2] + offsetX >= sheetSize:
         posX = initPosX
-        posY = maxPosY + 1
+        posY = maxPosY + 3
         bbox = draw.multiline_textbbox([posX, posY], text, font=font)
 
     if bbox[3] + offsetY >= sheetSize:
@@ -197,13 +199,14 @@ for i in inputTable:
         fill = 'white',
         stroke_width=1,
         stroke_fill='black')
+
     fontSheetDataList.append([
         sheetNo,
         0,
         0,
-        bbox[0] - 1,
-        bbox[1] - offsetY,
-        bbox[2] + 1,
+        bbox[0] - offsetX,
+        posY - offsetY,
+        bbox[2] + offsetX,
         bbox[3] + offsetY
     ])
 
