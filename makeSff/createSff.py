@@ -158,9 +158,13 @@ byteArr[fontMaxIndex+1] = hFontMax[1]
 
 fontSheetDataList = []
 sheetNo = 0
-posX = 1
-posY = 1
+initPosX = 2
+initPosY = 1
+posX = initPosX
+posY = initPosY
 maxPosY = 0
+offsetY = 2
+testCropFlag = False
 
 font = ImageFont.truetype(fontLocation, size=fontSize)
 img = Image.new("RGBA", (sheetSize, sheetSize), (0, 0, 0, 0))
@@ -169,25 +173,23 @@ for i in inputTable:
     if inputTable[i] == -1:
         continue
     text = allTextList[inputTable[i]]
-    #print("start pos:", posX, posY)
     bbox = draw.multiline_textbbox([posX, posY], text, font=font)
 
     if bbox[2] + 1 >= sheetSize:
-        posX = 1
+        posX = initPosX
         posY = maxPosY + 1
         bbox = draw.multiline_textbbox([posX, posY], text, font=font)
 
-    if bbox[3] + 1 >= sheetSize:
+    if bbox[3] + offsetY >= sheetSize:
         img.save("{0}_{1:02d}.png".format(fontFileName, sheetNo))
         sheetNo += 1
-        posX = 1
-        posY = 1
+        posX = initPosX
+        posY = initPosY
         maxPosY = 0
         img = Image.new("RGBA", (sheetSize, sheetSize), (0, 0, 0, 0))
         draw = ImageDraw.Draw(img)
         bbox = draw.multiline_textbbox([posX, posY], text, font=font)
 
-    #print("Draw:", text)
     draw.text(
         (posX, posY),
         text,
@@ -199,13 +201,13 @@ for i in inputTable:
         sheetNo,
         0,
         0,
-        posX,
-        posY,
-        bbox[2],
-        bbox[3]
+        bbox[0] - 1,
+        bbox[1] - offsetY,
+        bbox[2] + 1,
+        bbox[3] + offsetY
     ])
 
-    posX = (bbox[2] + 1)
+    posX = (bbox[2] + 3)
     if bbox[3] > maxPosY:
         maxPosY = bbox[3]
 
@@ -215,8 +217,12 @@ byteArr[sheetMaxIndex] = sheetNo + 1
 for i in range(sheetNo + 1):
     byteArr.extend(setName("{0}_{1:02d}".format(fontFileName, i), 32))
 
-for fontSheetData in fontSheetDataList:
+for idx, fontSheetData in enumerate(fontSheetDataList):
     byteArr.extend(convertStructData(fontSheetData))
+    if testCropFlag:
+        img = Image.open("{0}_{1:02d}.png".format(fontFileName, fontSheetData[0]))
+        img_crop = img.crop((fontSheetData[3], fontSheetData[4], fontSheetData[5], fontSheetData[6]))
+        img_crop.save("{0:04d}.png".format(idx))
 
 w.write(byteArr)
 w.close()
