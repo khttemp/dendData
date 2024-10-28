@@ -129,8 +129,9 @@ fontSize = int(args[1])
 sheetSize = int(args[2])
 txtLocation = args[3]
 fontLocation = args[4]
+fontFileName = "FONT_4TH"
 
-w = open("FONT_4TH.SFF", "wb")
+w = open(fontFileName + ".SFF", "wb")
 byteArr = setName("SFF", 4, False)
 byteArr.extend(fontSize.to_bytes(1, "little"))
 byteArr.append(0)
@@ -177,7 +178,7 @@ for i in inputTable:
         bbox = draw.multiline_textbbox([posX, posY], text, font=font)
 
     if bbox[3] + 1 >= sheetSize:
-        img.save("FONT_4TH_{0:02d}.png".format(sheetNo))
+        img.save("{0}_{1:02d}.png".format(fontFileName, sheetNo))
         sheetNo += 1
         posX = 1
         posY = 1
@@ -208,40 +209,14 @@ for i in inputTable:
     if bbox[3] > maxPosY:
         maxPosY = bbox[3]
 
-img.save("FONT_4TH_{0:02d}.png".format(sheetNo))
+img.save("{0}_{1:02d}.png".format(fontFileName, sheetNo))
 byteArr[sheetMaxIndex] = sheetNo + 1
 
 for i in range(sheetNo + 1):
-    byteArr.extend(setName("FONT_4TH_{0:02d}".format(i), 32))
+    byteArr.extend(setName("{0}_{1:02d}".format(fontFileName, i), 32))
 
 for fontSheetData in fontSheetDataList:
     byteArr.extend(convertStructData(fontSheetData))
 
 w.write(byteArr)
 w.close()
-
-"""
-for i in range(sheetMax):
-    sheetName = struct.unpack("<32s", line[index:index + 32])[0]
-    sheetName = sheetName.decode("shift-jis")
-    index += 32
-
-    print("SheetName:", sheetName)
-
-dataIndex = index
-w = codecs.open("fontResult.txt", "w", "utf-8", "strict")
-for i in range(fontMax):
-    fontSheetData = convertFontSheetData(line[index:index+8])
-    w.write("【{0}】 ".format(textList[indexTable[i]]))
-    sheetNo = line[index]
-    w.write("sheetNo.{0}|".format(fontSheetData[0]))
-    w.write("{0}, ".format(fontSheetData[1]))
-    w.write("{0}, ".format(fontSheetData[2]))
-    w.write("{0}, ".format(fontSheetData[3]))
-    w.write("{0}, ".format(fontSheetData[4]))
-    w.write("{0}, ".format(fontSheetData[5]))
-    w.write("{0}, ".format(fontSheetData[6]))
-    index += 8
-
-    w.write("\n")
-"""
