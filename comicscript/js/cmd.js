@@ -28575,7 +28575,8 @@ const CMD = {
     "STATION_NAME_PRIORITY": {
         "num": 396,
         "description": "【CS、RS、SS】" + newLine
-                    + "駅名表示のフラグを操作する" + newLine
+                    + "駅名表示を最前面に表示する" + newLine
+                    + "（デフォルト状態は車両番号アイコンより下）" + newLine
                     + "ただし、SSでは何もせず次の行へ行く" + newLine
                     + "引数１：1（True）、0（False）(SSでは使わない)",
         "CS_comic": [
