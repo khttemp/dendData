@@ -10,5 +10,5 @@ makeGraph/*/*.ini
 makeMdlBin/*.ini
 makeSff/*.tga
 makeSff/*.png
-makeSff/*.sff
+makeSff/*.SFF
 *.bat
