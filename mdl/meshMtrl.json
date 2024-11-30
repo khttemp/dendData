@@ -1,0 +1,177 @@
+{
+    "H2000": {
+        "H2000_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"ワイパー",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "H2000_UMEDA.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転台",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": ["maroon.bmp", "H2000_Blue.png", "H2000_green.png"],
+                            "description":"阪急2000系の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": ["Maroon_Iron.png", "blue_iron.png", "green_iron.png"],
+                            "description":"Iron",
+                            "texture": "Maroon_Iron.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の内側",
+                            "texture": "maroon_uti.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"中央のヘッドライト固定器具",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"左右の標識灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"中央のヘッドライト",
+                            "texture": "H2000_Light.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"阪急2000系の看板",
+                            "texture": "2000_Kanban.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"阪急2000系の看板の行先の部分（普段は隠れている）",
+                            "texture": "2000_Kanban_black.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"阪急2000系の看板の「競技」の文字",
+                            "texture": "DUEL.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"阪急2000系の看板の行先の文字（普段は梅田行になるように置き換えしている）",
+                            "texture": "H2000_KYOBASHI.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"阪急2000系の車番",
+                            "texture": "H2000_NO.tga"
+                        },
+                        {
+                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_Blue.tga", "H2000_WndFrame_Green.tga"],
+                            "description":"外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"内側の窓枠",
+                            "texture": "H2000_WndFrame_In.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"チェイン",
+                            "texture": "Chane2.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"回送看板の下の部分",
+                            "texture": "H2000_KANBAN_KAISO.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"回送看板の下の文字",
+                            "texture": "H2000_KAISO.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"回送看板の上の裏側",
+                            "texture": "2000_Kanban.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"回送看板の上の部分",
+                            "texture": "H2000_KANBAN_KAISO.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"回送看板の上の文字",
+                            "texture": "H2000_KAISO.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"回送看板の裏側の「競技」の文字",
+                            "texture": "DUEL.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"回送看板の裏側の行先の文字",
+                            "texture": "H2000_KYOBASHI.tga"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "H8200": {
+
+    }
+}
