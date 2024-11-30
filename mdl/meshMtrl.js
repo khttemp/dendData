@@ -22,7 +22,7 @@ function makeTr(mtrl, key, model, meshNum, mtrlNum) {
     if (mtrl["texture"] != "") {
         let array = mtrl["texture"].split(".");
         if (array[array.length - 1].toLowerCase() == "tga") {
-            let img = mtrl["texture"].toLowerCase().replace(".tga", ".png");
+            let img = array[0] + ".png";
             textureSrc = `./meshMtrl/texture/${img}`;
         } else {
             textureSrc = `./meshMtrl/texture/${mtrl["texture"]}`;
