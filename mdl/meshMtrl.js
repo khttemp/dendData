@@ -2,12 +2,12 @@ function makeModelTable() {
     let table = $("<table>", {border:1});
     let thead = $("<thead>");
     let tr = $("<tr>");
-    tr.append($("<th>", {text: "メッシュ番号"}));
-    tr.append($("<th>", {text: "マテリアル番号"}));
-    tr.append($("<th>", {text: "画像"}));
+    tr.append($("<th>", {text: "メッシュ番号", style: "width:55px"}));
+    tr.append($("<th>", {text: "マテリアル番号", style: "width:72px"}));
+    tr.append($("<th>", {text: "画像", style: "width:420px"}));
     tr.append($("<th>", {class:"colorList", text: "カラーバリエーション"}));
     tr.append($("<th>", {class:"description", text: "説明"}));
-    tr.append($("<th>", {text: "デフォルトのテクスチャ画像"}));
+    tr.append($("<th>", {text: "デフォルトのテクスチャ画像", style: "width:180px"}));
     thead.append(tr);
     table.append(thead);
     let tbody = $("<tbody>");
@@ -30,7 +30,7 @@ function makeTr(mtrl, key, model, meshNum, mtrlNum) {
     }
     tr.append($("<td>", {text: meshNum, style: "text-align: center; font-size:200%;"}));
     tr.append($("<td>", {text: mtrlNum, style: "text-align: center; font-size:200%;"}));
-    tr.append($("<td>").append($("<img>", {src: imageSrc, width:"400px", border:1})));
+    tr.append($("<td>", {style: "text-align: center; width:420px"}).append($("<img>", {src: imageSrc, width:"400px", border:1})));
     if (mtrl["colorList"].length > 0) {
         let td = $("<td>")
         for (let i = 0; i < mtrl["colorList"].length; i++) {
