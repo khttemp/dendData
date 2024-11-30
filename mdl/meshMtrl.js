@@ -35,7 +35,7 @@ function makeTr(mtrl, key, model, meshNum, mtrlNum) {
         let td = $("<td>")
         for (let i = 0; i < mtrl["colorList"].length; i++) {
             let color = mtrl["colorList"][i];
-            td.append($("<div>", {class:"colorList", text: color}));
+            td.append($("<div>", {class:"colorList", text: "・" + color}));
         }
         tr.append(td);
     } else {
