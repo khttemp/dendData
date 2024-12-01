@@ -165,6 +165,54 @@
                             "colorList": [],
                             "description":"回送看板の裏側の行先の文字",
                             "texture": "H2000_KYOBASHI.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_Blue.tga", "H2000_WndFrame_Green.tga"],
+                            "description":"外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "H2000_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "H2000_UMEDA.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": ["maroon.bmp", "H2000_Blue.png", "H2000_green.png"],
+                            "description":"阪急2000系の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
                         }
                     ]
                 }
