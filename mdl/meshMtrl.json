@@ -165,26 +165,6 @@
                             "colorList": [],
                             "description":"回送看板の裏側の行先の文字",
                             "texture": "H2000_KYOBASHI.tga"
-                        },
-                        {
-                            "colorList": [],
-                            "description":"灰色の部分",
-                            "texture": "gray.bmp"
-                        },
-                        {
-                            "colorList": [],
-                            "description":"銀色の部分",
-                            "texture": "silver.bmp"
-                        },
-                        {
-                            "colorList": [],
-                            "description":"客室の灯",
-                            "texture": ""
-                        },
-                        {
-                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_Blue.tga", "H2000_WndFrame_Green.tga"],
-                            "description":"外側の窓枠",
-                            "texture": "H2000_WndFrame.tga"
                         }
                     ]
                 }
@@ -213,6 +193,26 @@
                             "colorList": [],
                             "description":"鉄色の部分",
                             "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_Blue.tga", "H2000_WndFrame_Green.tga"],
+                            "description":"外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
                         }
                     ]
                 }
