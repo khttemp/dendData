@@ -1688,10 +1688,15 @@ async function setRailCnt(index, tableBody, railList) {
                     td.innerHTML = railList[i][j];
                     break;
             }
+        }
 
+        for (let j = 0; j < railList[i].length; j++) {
+            let td = tr.childNodes[j];
             if (j > 16) {
                 let idx = (j - 17) % 4 + 17;
-                td.style.backgroundColor = railHeaderColorList[idx];
+                if (["red"].indexOf(td.style.backgroundColor) == -1) {
+                    td.style.backgroundColor = railHeaderColorList[idx];
+                }
             } else {
                 if (["lightgray", "gold"].indexOf(td.style.backgroundColor) == -1) {
                     td.style.backgroundColor = railHeaderColorList[j];
@@ -1711,6 +1716,7 @@ async function setRailCnt(index, tableBody, railList) {
                     if (currentRailDataCnt != railModelList[currentRailModelName]) {
                         printError(`レール No.${i}の進み方の定義が違います【モデル：${railCntToName[Number(railModelList[currentRailModelName])]}】【書き方：${railCntToName[Number(currentRailDataCnt)]}】`);
                     } else {
+                        // お互い単線と複線の場合
                         if (currentRailDataCnt != railModelList[prevRailModelName]) {
                             if (currentRailDataCnt == 2) {
                                 currentRailLeftPrevRailNo = Number(railList[i][19]);
