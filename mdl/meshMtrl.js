@@ -52,49 +52,65 @@ function makeTr(mtrl, key, model, meshNum, mtrlNum) {
     return tr;
 }
 
+function showInfo() {
+    $("#modelTable").html("");
+    let key = $("#select").val();
+    let modelData = allData[key];
+    if (Object.keys(modelData).length == 0) {
+        return;
+    }
+    let modelKeyList = Object.keys(modelData);
+    for (let model of modelKeyList) {
+        let meshNum = 0;
+        let modelDiv = $("<div>");
+        let modelTitle = $("<h2>", {text: model});
+        modelDiv.append(modelTitle);
+        $("#modelTable").append(modelDiv);
+
+        let tableAndTbody = makeModelTable();
+        let table = tableAndTbody[0];
+        let tbody = tableAndTbody[1];
+        modelDiv.append(table);
+        let meshData = modelData[model];
+        if (Object.keys(meshData).length == 0) {
+            continue;
+        }
+        let mtrlDataList = meshData[Object.keys(meshData)[0]];
+        let mtrlNum;
+        for (let mtrlData of mtrlDataList) {
+            mtrlNum = 0;
+            if (Object.keys(mtrlData).length == 0) {
+                continue;
+            }
+            let mtrlInfo = mtrlData[Object.keys(mtrlData)[0]];
+            for (let mtrl of mtrlInfo) {
+                tbody.append(makeTr(mtrl, key, model, meshNum, mtrlNum));
+                mtrlNum++;
+            }
+            meshNum++;
+        }
+    }
+}
+
+var allData;
+
 $(document).ready(function() {
     $.ajax({
         url: "./meshMtrl.json",
         type: "GET",
         dataType: "json",
     }).done(function(data) {
-        let keyList = Object.keys(data);
+        allData = data;
+        let keyList = Object.keys(allData);
+        let select = $("#select");
         for (let key of keyList) {
-            let modelData = data[key];
+            let modelData = allData[key];
             if (Object.keys(modelData).length == 0) {
                 continue;
             }
-            let modelKeyList = Object.keys(modelData);
-            for (let model of modelKeyList) {
-                let meshNum = 0;
-                let modelDiv = $("<div>");
-                let modelTitle = $("<h2>", {text: model});
-                modelDiv.append(modelTitle);
-                $("#modelTable").append(modelDiv);
-
-                let tableAndTbody = makeModelTable();
-                let table = tableAndTbody[0];
-                let tbody = tableAndTbody[1];
-                modelDiv.append(table);
-                let meshData = modelData[model];
-                if (Object.keys(meshData).length == 0) {
-                    continue;
-                }
-                let mtrlDataList = meshData[Object.keys(meshData)[0]];
-                let mtrlNum;
-                for (let mtrlData of mtrlDataList) {
-                    mtrlNum = 0;
-                    if (Object.keys(mtrlData).length == 0) {
-                        continue;
-                    }
-                    let mtrlInfo = mtrlData[Object.keys(mtrlData)[0]];
-                    for (let mtrl of mtrlInfo) {
-                        tbody.append(makeTr(mtrl, key, model, meshNum, mtrlNum));
-                        mtrlNum++;
-                    }
-                    meshNum++;
-                }
-            }
+            let option = $("<option>", {value: key, text: key});
+            select.append(option);
         }
+        select.prop("selectedIndex", 0);
     });
 });
