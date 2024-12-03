@@ -775,11 +775,6 @@
                         },
                         {
                             "colorList": [],
-                            "description":"運転室の内側の窓枠",
-                            "texture": "H2000_WndFrame_In.tga"
-                        },
-                        {
-                            "colorList": [],
                             "description":"阪急8200系の車番",
                             "texture": "tx_h8200_01.tga"
                         },
