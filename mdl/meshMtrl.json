@@ -65,7 +65,7 @@
                         },
                         {
                             "colorList": [],
-                            "description":"中央のヘッドライト固定器具",
+                            "description":"中央の前照灯のフレーム",
                             "texture": "white.bmp"
                         },
                         {
@@ -75,7 +75,7 @@
                         },
                         {
                             "colorList": [],
-                            "description":"中央のヘッドライト",
+                            "description":"中央の前照灯",
                             "texture": "H2000_Light.tga"
                         },
                         {
@@ -219,7 +219,444 @@
             ]
         }
     },
+    "Pano": {
+        "PANO_0": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "description":"ウィングの左の部分",
+                            "texture": "Red_Pano.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ウィングの左のロゴ",
+                            "texture": "Logo_Meitetsu.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "description":"ウィングの右の部分",
+                            "texture": "Red_Pano.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ウィングの右のロゴ",
+                            "texture": "Logo_Meitetsu.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"先頭の黒いフレーム部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"パノスパの白い部分",
+                            "texture": "Pano_White.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"パノスパのベージュ色の部分",
+                            "texture": "Pano_Beagu.png"
+                        },
+                        {
+                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "description":"パノスパの赤い色の部分",
+                            "texture": "Red_Pano.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀白色の部分",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": ["Pano_Logo.png", "Pano_Logo_Blue.png", "Pano_Logo_Orange.png", "Pano_Logo_Black.png"],
+                            "description":"前面のパノスパのロゴ",
+                            "texture": "Pano_Logo.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕",
+                            "texture": "Duel_Pano_Toyohashi.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯",
+                            "texture": "HeadLight.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯（赤色の部分）",
+                            "texture": "HeadLight_Red.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯（黄色の部分）",
+                            "texture": "HeadLight.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯のフレーム",
+                            "texture": "HeadLight_Frame.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"JOINTの色",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"JOINTの色",
+                            "texture": "Pano_Logo_Side.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ductの穴",
+                            "texture": "duct_holl2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の窓枠",
+                            "texture": "Pano_WndFrame1.tga"
+                        },
+                        {
+                            "colorList": ["Pano_WndFrame2.tga", "Pano_WndFrame3.tga", "Pano_WndFrame4.tga", "Pano_WndFrame5.tga"],
+                            "description":"客室の窓枠（赤色）",
+                            "texture": "Pano_WndFrame2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯の灯（黄色の部分）",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室のドアの内側の色",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯の全体領域の灯",
+                            "texture": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "PANO_1": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕の枠",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"パノスパの白い部分",
+                            "texture": "Pano_White.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"パノスパのベージュ色の部分",
+                            "texture": "Pano_Beagu.png"
+                        },
+                        {
+                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "description":"パノスパの赤い色の部分",
+                            "texture": "Red_Pano.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕",
+                            "texture": "Duel_Pano_Toyohashi.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"JOINTの色（普段は隠れている）",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の窓枠",
+                            "texture": "Pano_WndFrame1.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "PANO_2": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕の枠",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"パノスパの白い部分",
+                            "texture": "Pano_White.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"パノスパのベージュ色の部分",
+                            "texture": "Pano_Beagu.png"
+                        },
+                        {
+                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "description":"パノスパの赤い色の部分",
+                            "texture": "Red_Pano.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕",
+                            "texture": "Duel_Pano_Toyohashi.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"JOINTの色（普段は隠れている）",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の窓枠",
+                            "texture": "Pano_WndFrame1.tga"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "H8200": {
+
+    },
+    "Mu2000": {
+
+    },
+    "T50000": {
+
+    },
+    "T200": {
+
+    },
+    "DRC": {
+
+    },
+    "X200": {
+
+    },
+    "H4050": {
+
+    },
+    "H7011": {
+
+    },
+    "E233": {
+
+    },
+    "H2800": {
+
+    },
+    "HS9000": {
+
+    },
+    "KQ21XX": {
+
+    },
+    "JR2000": {
+
+    },
+    "Rapit": {
+
+    },
+    "Arban21000R": {
+
+    },
+    "K800": {
+
+    },
+    "H7001": {
+
+    },
+    "K8000": {
+
+    },
+    "H8000": {
+
+    },
+    "KQ2199": {
+
+    },
+    "JR223": {
+
+    },
+    "H2300": {
+
+    },
+    "AE86": {
+
+    },
+    "Deki3": {
+
+    },
+    "K80": {
 
     }
 }
