@@ -585,7 +585,213 @@
         }
     },
     "H8200": {
-
+        "H8200_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"ワイパーのフレーム",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"ワイパーのアーム",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "8200_LED1.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕（英語）。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "8200_LED2.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前方の方向幕の右。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前方の方向幕の左。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_duel.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "texture": "8200_LED1.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕（英語）。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "texture": "8200_LED2.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前方の方向幕の右。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前方の方向幕の左。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "texture": "H8200_FOR_EVENT.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"スカートの色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"スカートの色（奥）",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"左右反転したスカートの色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"左右反転したスカートの左右の色",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["maroon.bmp", "H8200_Y.png", "black.bmp"],
+                            "description":"阪急8200系の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": ["Maroon_Iron.png", "8200_Iron_Y.png", "8200_Iron_BK.png"],
+                            "description":"渡り板",
+                            "texture": "Maroon_Iron.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕の枠",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "JOINT_SILVER.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の内側",
+                            "texture": "maroon_uti.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"後ろの渡り板",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯のケース",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"標識灯の白の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"標識灯の赤の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯の色",
+                            "texture": "tx_h2000_08.tga"
+                        },
+                        {
+                            "colorList": ["H2000_WndFrame.tga", "H8200_Wnd_Y.tga", "H8200_Wnd_BK.tga"],
+                            "description":"外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の内側の窓枠",
+                            "texture": "H2000_WndFrame_In.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の内側の窓枠",
+                            "texture": "H2000_WndFrame_In.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"阪急8200系の車番",
+                            "texture": "tx_h8200_01.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の灯",
+                            "texture": ""
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "Mu2000": {
 
