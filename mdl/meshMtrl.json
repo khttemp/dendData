@@ -671,12 +671,12 @@
                     "mtrl": [
                         {
                             "colorList": [],
-                            "description":"左右反転したスカートの色",
+                            "description":"左右反転したスカートの色。普段は隠れている",
                             "texture": "white.bmp"
                         },
                         {
                             "colorList": [],
-                            "description":"左右反転したスカートの左右の色",
+                            "description":"左右反転したスカートの左右の色。普段は隠れている",
                             "texture": "silver.bmp"
                         }
                     ]
@@ -715,7 +715,7 @@
                         },
                         {
                             "colorList": [],
-                            "description":"幌",
+                            "description":"JOINTの色",
                             "texture": "JOINT_SILVER.png"
                         },
                         {
@@ -789,7 +789,7 @@
         }
     },
     "Mu2000": {
-
+        
     },
     "T50000": {
 
