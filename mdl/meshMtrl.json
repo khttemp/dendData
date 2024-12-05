@@ -1065,12 +1065,12 @@
                         {
                             "colorList": ["colorless.tga", "colorless.tga", "Kuro11.png"],
                             "description":"左の黒ひつじ（最後飛車専用）",
-                            "texture": "kuro11.png"
+                            "texture": "Kuro11.png"
                         },
                         {
                             "colorList": ["colorless.tga", "colorless.tga", "Kuro13.png"],
                             "description":"右の黒ひつじ（最後飛車専用）",
-                            "texture": "kuro13.png"
+                            "texture": "Kuro13.png"
                         },
                         {
                             "colorList": [],
