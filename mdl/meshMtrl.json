@@ -633,22 +633,22 @@
                     "mtrl": [
                         {
                             "colorList": [],
-                            "description":"側面の方向幕。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "description":"側面の方向幕。CSの幕の切替専用。普段は隠れている",
                             "texture": "8200_LED1.bmp"
                         },
                         {
                             "colorList": [],
-                            "description":"側面の方向幕（英語）。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "description":"側面の方向幕（英語）。CSの幕の切替専用。普段は隠れている",
                             "texture": "8200_LED2.bmp"
                         },
                         {
                             "colorList": [],
-                            "description":"前方の方向幕の右。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "description":"前方の方向幕の右。CSの幕の切替専用。普段は隠れている",
                             "texture": "tx_h8200_umeda.bmp"
                         },
                         {
                             "colorList": [],
-                            "description":"前方の方向幕の左。CSの渉戦の幕の切替専用。普段は隠れている",
+                            "description":"前方の方向幕の左。CSの幕の切替専用。普段は隠れている",
                             "texture": "H8200_FOR_EVENT.png"
                         }
                     ]
@@ -789,7 +789,645 @@
         }
     },
     "Mu2000": {
-        
+        "Mu2000_0": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"リベット",
+                            "texture": "223_Ribet.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ミュースカイの黒色の部分",
+                            "texture": "Mu_BodyBlack.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ミュースカイの白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ミュースカイの銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "Red_Mue.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": ["white.bmp", "Red_Mue.bmp", "white.bmp"],
+                            "description":"ミュースカイの白色の部分2",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["white.bmp", "gray.bmp", "white.bmp"],
+                            "description":"ミュースカイの白色の部分3",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "white.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分2",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "gray.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分3",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"屋根の灰色の部分",
+                            "texture": "2000GT_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"屋根の波状の部分",
+                            "texture": "2000GT_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前方の方向幕。一部ステージで置き換えが行われる",
+                            "texture": "Mu_Gifu.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕。一部ステージで置き換えが行われる",
+                            "texture": "Mu_Duel_Gifu.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ミュースカイの車番",
+                            "texture": "Mu_Duel_Gifu.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"JOINTの色",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯の色（下）",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯の色（黄色）",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯の色（オレンジ色）",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前照灯の色（白色）",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の窓枠",
+                            "texture": "Mu_WndFrame00.tga"
+                        },
+                        {
+                            "colorList": ["Mu_WndFrame01.tga", "Mu_WndFrame00.tga", "Mu_WndFrame01.tga"],
+                            "description":"ドアの窓枠",
+                            "texture": "Mu_WndFrame01.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"前方の方向幕と車番の枠",
+                            "texture": "Mu_BK_Frame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕の枠",
+                            "texture": "Mu_Frame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ミュースカイのロゴ",
+                            "texture": "Logo_Mei_Color.tga"
+                        },
+                        {
+                            "colorList": ["Logo_Centrair.png", "colorless.tga", "Logo_Centrair.png"],
+                            "description":"側面のセントレアのロゴ",
+                            "texture": "Logo_Centrair.png"
+                        },
+                        {
+                            "colorList": ["Logo_Centrair.png", "Logo_Centrair_Red.png", "colorless.tga"],
+                            "description":"前方のセントレアのロゴ",
+                            "texture": "Logo_Centrair.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "Red_Mue.bmp", "colorless.tga"],
+                            "description":"スカートの中央。名鉄2200系専用",
+                            "texture": "colorless.tga"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro0.png"],
+                            "description":"前方の黒ひつじ",
+                            "texture": "Kuro0.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro1.png"],
+                            "description":"前方の黒ひつじの文字",
+                            "texture": "Kuro1.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro2.png"],
+                            "description":"前方の黒ひつじの模様",
+                            "texture": "Kuro2.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro3.png"],
+                            "description":"右の黒ひつじ",
+                            "texture": "Kuro3.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro4.png"],
+                            "description":"左の黒ひつじ",
+                            "texture": "Kuro4.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro5.png"],
+                            "description":"前方の黒ひつじ（最後飛車専用）",
+                            "texture": "Kuro5.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro11.png"],
+                            "description":"左の黒ひつじ（最後飛車専用）",
+                            "texture": "kuro11.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro13.png"],
+                            "description":"右の黒ひつじ（最後飛車専用）",
+                            "texture": "kuro13.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"運転室の灯",
+                            "texture": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "Mu2000_1": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"リベット",
+                            "texture": "223_Ribet.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ミュースカイの白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "Red_Mue.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": ["white.bmp", "Red_Mue.bmp", "white.bmp"],
+                            "description":"ミュースカイの白色の部分2",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["white.bmp", "gray.bmp", "white.bmp"],
+                            "description":"ミュースカイの白色の部分3",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "white.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分2",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "gray.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分3",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"屋根の灰色の部分",
+                            "texture": "2000GT_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"屋根の波状の部分",
+                            "texture": "2000GT_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕。一部ステージで置き換えが行われる",
+                            "texture": "Mu_Duel_Gifu.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の窓枠",
+                            "texture": "Mu_WndFrame00.tga"
+                        },
+                        {
+                            "colorList": ["Mu_WndFrame01.tga", "Mu_WndFrame00.tga", "Mu_WndFrame01.tga"],
+                            "description":"ドアの窓枠",
+                            "texture": "Mu_WndFrame01.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕の枠",
+                            "texture": "Mu_Frame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro1.png"],
+                            "description":"側面の黒ひつじの文字",
+                            "texture": "Kuro1.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro10.png"],
+                            "description":"右の黒ひつじ",
+                            "texture": "Kuro10.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro7.png"],
+                            "description":"左の黒ひつじ",
+                            "texture": "Kuro7.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro9.png"],
+                            "description":"左の黒ひつじ",
+                            "texture": "Kuro9.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro8.png"],
+                            "description":"右の黒ひつじ",
+                            "texture": "Kuro8.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        "Mu2000_2": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description":"客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description":"リベット",
+                            "texture": "223_Ribet.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ミュースカイの白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "Red_Mue.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": ["white.bmp", "Red_Mue.bmp", "white.bmp"],
+                            "description":"ミュースカイの白色の部分2",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["white.bmp", "gray.bmp", "white.bmp"],
+                            "description":"ミュースカイの白色の部分3",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "white.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分2",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": ["Mu_Blue.png", "gray.bmp", "Mu_Blue.png"],
+                            "description":"ミュースカイの青色の部分3",
+                            "texture": "Mu_Blue.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"屋根の灰色の部分",
+                            "texture": "2000GT_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"屋根の波状の部分",
+                            "texture": "2000GT_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕。一部ステージで置き換えが行われる",
+                            "texture": "Mu_Duel_Gifu.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"客室の窓枠",
+                            "texture": "Mu_WndFrame00.tga"
+                        },
+                        {
+                            "colorList": ["Mu_WndFrame01.tga", "Mu_WndFrame00.tga", "Mu_WndFrame01.tga"],
+                            "description":"ドアの窓枠",
+                            "texture": "Mu_WndFrame01.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"側面の方向幕の枠",
+                            "texture": "Mu_Frame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description":"ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro11.png"],
+                            "description":"右の黒ひつじ",
+                            "texture": "Kuro11.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro12.png"],
+                            "description":"右の黒ひつじ",
+                            "texture": "Kuro12.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro13.png"],
+                            "description":"左の黒ひつじ",
+                            "texture": "Kuro13.png"
+                        },
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Kuro6.png"],
+                            "description":"左の黒ひつじ",
+                            "texture": "Kuro6.png"
+                        },
+                        {
+                            "colorList": ["Mu_2000_Logo.png", "Mu_2000_Logo.png", "colorless.tga"],
+                            "description":"名鉄2000系のロゴ",
+                            "texture": "Mu_2000_Logo.png"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "T50000": {
 
