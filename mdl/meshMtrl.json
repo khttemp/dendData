@@ -1430,7 +1430,453 @@
         }
     },
     "T50000": {
-
+        "TOBU50K_0": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["Tobu50000_No51901.png", "Tobu50000_No51901.png", "colorless.tga"],
+                            "description": "東武50000系の車番",
+                            "texture": "Tobu50000_No51901.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Tobu50000_No51901.png"],
+                            "description": "TJライナー風専用の車番",
+                            "texture": "Tobu50000_No51901.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Logo_Todo.png"],
+                            "description": "TJライナー風専用の東堂塾ロゴ",
+                            "texture": "Logo_Todo.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "white_silver.png"],
+                            "description": "TJライナー風専用の東堂塾ロゴの背景",
+                            "texture": "Tobu_Orange.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀白色の部分",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "東武50000系の銀白色の部分",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": ["black.bmp", "white_silver.png", "white_silver.png"],
+                            "description": "東武50000系の扉の色",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "description": "扉の帯の色",
+                            "texture": "Tobu_Orange.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "先頭車の踏み台",
+                            "texture": "Gray_Iron.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分2",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "description": "東武50000系の帯の色",
+                            "texture": "Tobu_Orange.png"
+                        },
+                        {
+                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "Tobu50000_Purple.png"],
+                            "description": "東武50000系の帯の色2",
+                            "texture": "Tobu_Orange.png"
+                        },
+                        {
+                            "colorList": ["black.bmp", "Tobu_Orange.png", "Tobu_Orange.png"],
+                            "description": "黒色の部分3",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white.bmp"],
+                            "description": "前方の帯の色",
+                            "texture": "Tobu_Orange.png"
+                        },
+                        {
+                            "colorList": ["white_silver.png", "Tobu_Orange.png", "Tobu_Orange.png"],
+                            "description": "銀白色の部分2",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の方向幕の右。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "Duel_Tobu50K_Asakusa.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "HeadLight.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色（赤色）",
+                            "texture": "HeadLight.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の枠",
+                            "texture": "HeadLight_Frame.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の「乗務員室」の文字",
+                            "texture": "JOUMU_T.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "Tobu50000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": ["Tobu50000_WndFrame_BK.tga", "Tobu50000_WndFrame.tga", "Tobu50000_WndFrame.tga"],
+                            "description": "扉の窓枠",
+                            "texture": "Tobu50000_WndFrame_BK.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の枠",
+                            "texture": "Tobu50000_WndFrame_SL.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "",
+                            "texture": "JOUMU_T.tga"
+                        },
+                        {
+                            "colorList": ["Tobu50000_No51901.png", "Tobu50000_No51901.png", "Tobu50000_No51901.png"],
+                            "description": "側面の車番",
+                            "texture": "Tobu50000_No51901.png"
+                        },
+                        {
+                            "colorList": ["Logo_Todo_BK.png", "Logo_Todo.png", "Logo_Todo.png"],
+                            "description": "側面のロゴ",
+                            "texture": "Logo_Todo.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        "TOBU50K_1": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀白色の部分",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀白色の部分",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": ["black.bmp", "white_silver.png", "white_silver.png"],
+                            "description": "東武50000系の扉の色",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "description": "扉の帯の色",
+                            "texture": "Tobu_Orange.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分2",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "description": "東武50000系の帯の色",
+                            "texture": "Tobu_Orange.png"
+                        },
+                        {
+                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "Tobu50000_Purple.png"],
+                            "description": "東武50000系の帯の色2",
+                            "texture": "Tobu_Orange.png"
+                        },
+                        {
+                            "colorList": ["white_silver.png", "Tobu_Orange.png", "Tobu_Orange.png"],
+                            "description": "銀白色の部分2",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "Duel_Tobu50K_Asakusa.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "Tobu50000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": ["Tobu50000_WndFrame_BK.tga", "Tobu50000_WndFrame.tga", "Tobu50000_WndFrame.tga"],
+                            "description": "扉の窓枠",
+                            "texture": "Tobu50000_WndFrame_BK.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の枠",
+                            "texture": "Tobu50000_WndFrame_SL.tga"
+                        },
+                        {
+                            "colorList": ["Tobu50000_No51901.png", "Tobu50000_No51901.png", "Tobu50000_No51901.png"],
+                            "description": "側面の車番",
+                            "texture": "Tobu50000_No51901.png"
+                        },
+                        {
+                            "colorList": ["Logo_Todo_BK.png", "Logo_Todo.png", "Logo_Todo.png"],
+                            "description": "側面のロゴ",
+                            "texture": "Logo_Todo.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "white_silver.png"],
+                            "description": "TJライナー風専用の東堂塾ロゴの背景",
+                            "texture": "Tobu_Orange.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": ["colorless.tga", "colorless.tga", "Logo_Todo.png"],
+                            "description": "TJライナー風専用の東堂塾ロゴ",
+                            "texture": "Logo_Todo.png"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "T200": {
 
