@@ -1436,24 +1436,6 @@
                     "mtrl": [
                         {
                             "colorList": [],
-                            "description": "右ワイパーのフレーム",
-                            "texture": "black.bmp"
-                        }
-                    ]
-                },
-                {
-                    "mtrl": [
-                        {
-                            "colorList": [],
-                            "description": "右ワイパーのアーム",
-                            "texture": "black.bmp"
-                        }
-                    ]
-                },
-                {
-                    "mtrl": [
-                        {
-                            "colorList": [],
                             "description": "左ワイパーのフレーム",
                             "texture": "black.bmp"
                         }
@@ -1464,6 +1446,24 @@
                         {
                             "colorList": [],
                             "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
                             "texture": "black.bmp"
                         }
                     ]
@@ -1696,7 +1696,7 @@
                         },
                         {
                             "colorList": [],
-                            "description": "",
+                            "description": "「乗務員室」の文字",
                             "texture": "JOUMU_T.tga"
                         },
                         {
@@ -1879,7 +1879,287 @@
         }
     },
     "T200": {
-
+        "T200_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "1番目のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "2番目のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "3番目のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "4番目のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "5番目のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "6番目のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "T200_For_Toyohashi.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "東武200系の白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "東武200系の黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分3",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": ["red_high.bmp", "Rapid_Ple.png", "Rapid_Black.png"],
+                            "description": "東武200系の赤色の部分",
+                            "texture": "red_high.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の「乗務員室」の文字",
+                            "texture": "JOUMU_T.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分（普段は隠れている）",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "T200_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の枠",
+                            "texture": "T200_WndFrame_Red.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "東堂塾ロゴ",
+                            "texture": "Logo_Todo.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色（下）",
+                            "texture": "T200_FrontLED.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「乗務員室」の文字",
+                            "texture": "JOUMU_T.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "T200_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "T200_For_Toyohashi.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "東武200系の白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "東武200系の黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": ["red_high.bmp", "Rapid_Ple.png", "Rapid_Black.png"],
+                            "description": "東武200系の赤色の部分",
+                            "texture": "red_high.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "T200_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の枠",
+                            "texture": "T200_WndFrame_Red.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "DRC": {
 
