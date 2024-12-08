@@ -2162,7 +2162,205 @@
         }
     },
     "DRC": {
-
+        "DRC_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパー",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパー",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["DRC_BODY_BEAGE.png", "DRC_BODY_BEAGE.png", "white_silver.png"],
+                            "description": "DRCのベージュ色の部分",
+                            "texture": "DRC_BODY_BEAGE.png"
+                        },
+                        {
+                            "colorList": ["DRC_Red.bmp", "green1.bmp", "blue.bmp"],
+                            "description": "DRCの赤色の部分",
+                            "texture": "DRC_Red.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "DRCのオレンジの帯",
+                            "texture": "DRC_Orange.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "DRCの看板の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色（普段は隠れている）",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "オレンジ部分の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["DRC_WndFrame0.tga", "DRC_WndFrame3.tga", "DRC_WndFrame2.tga"],
+                            "description": "DRCの窓枠",
+                            "texture": "DRC_WndFrame0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "東堂塾ロゴ",
+                            "texture": "Logo_Todo.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の枠",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色（下）",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "オレンジ部分の枠",
+                            "texture": "Mu_Light.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "DRCの看板の文字",
+                            "texture": "DRC_DUEL.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        "DRC_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["DRC_BODY_BEAGE.png", "DRC_BODY_BEAGE.png", "white_silver.png"],
+                            "description": "DRCのベージュ色の部分",
+                            "texture": "DRC_BODY_BEAGE.png"
+                        },
+                        {
+                            "colorList": ["DRC_Red.bmp", "green1.bmp", "blue.bmp"],
+                            "description": "DRCの赤色の部分",
+                            "texture": "DRC_Red.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "DRCのオレンジの帯",
+                            "texture": "DRC_Orange.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色（普段は隠れている）",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": ["DRC_WndFrame0.tga", "DRC_WndFrame3.tga", "DRC_WndFrame2.tga"],
+                            "description": "DRCの窓枠",
+                            "texture": "DRC_WndFrame0.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "X200": {
 
