@@ -2676,7 +2676,422 @@
         }
     },
     "HS9000": {
-
+        "HS9000_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "中央のワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "中央のワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "H9000_to_Umeda.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "右の方向幕",
+                            "texture": "H9000_DUEL.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "H9000_to_KAISO.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "右の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "H9000_KAISO.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "H9000_to_Umeda_Side.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": ["HS9000_BODY.png", "HS9000_BODY.png", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の淡い銀色の部分",
+                            "texture": "HS9000_BODY.png"
+                        },
+                        {
+                            "colorList": ["HS9000_BODY.png", "HS9000_Y.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "description": "阪神9000系の淡い銀色の部分2",
+                            "texture": "HS9000_BODY.png"
+                        },
+                        {
+                            "colorList": ["HS9000_BODY.png", "HS9000_BODY.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "description": "阪神9000系の淡い銀色の部分3",
+                            "texture": "HS9000_BODY.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分2",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": ["silver.bmp", "silver.bmp", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "description": "阪神9000系の銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": ["silver.bmp", "silver.bmp", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の銀色の部分2",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の枠",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["white.bmp", "black.bmp", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": ["black.bmp", "black.bmp", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪神9000系の黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": ["black.bmp", "HS9000_Y.png", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の黒色の部分3",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": ["black.bmp", "black.bmp", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "description": "阪神9000系の黒色の部分4",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "波状の部分",
+                            "texture": "H9000_Wave.png"
+                        },
+                        {
+                            "colorList": ["red.bmp", "HS9000_Y.png", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の赤色の部分",
+                            "texture": "red.bmp"
+                        },
+                        {
+                            "colorList": ["red.bmp", "black.bmp", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の赤色の部分2",
+                            "texture": "red.bmp"
+                        },
+                        {
+                            "colorList": ["red.bmp", "HS9000_Y.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "description": "阪神9000系の赤色の部分3",
+                            "texture": "red.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": ["HS9000_WndFrame.tga", "HS9000_WndFrame.tga", "HS9000_WndFrame_Blue.tga", "HS9000_WndFrame_Orange.tga"],
+                            "description": "中央の窓枠",
+                            "texture": "HS9000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": ["HS9000_WndFrame2.tga", "HS9000_WndFrame2.tga", "HS9000_WndFrame2_Blue.tga", "HS9000_WndFrame2_Orange.tga"],
+                            "description": "客室の窓枠",
+                            "texture": "HS9000_WndFrame2.tga"
+                        },
+                        {
+                            "colorList": ["HS9000_WndFrame3.tga", "HS9000_WndFrame3.tga", "HS9000_WndFrame3_Blue.tga", "HS9000_WndFrame3_Orange.tga"],
+                            "description": "側面の方向幕の枠",
+                            "texture": "HS9000_WndFrame3.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の方向幕の枠",
+                            "texture": "Black_WndFrame2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "H2000_Light.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪神9000系の屋根の色",
+                            "texture": "223_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴2",
+                            "texture": "duct_holl2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪神9000系の車番",
+                            "texture": "HS9201.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後ろの窓枠",
+                            "texture": "HS9000_WndFrame2.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "HS9000_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "H9000_to_Umeda_Side.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分2",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": ["silver.bmp", "silver.bmp", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "description": "阪神9000系の銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": ["silver.bmp", "silver.bmp", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の銀色の部分2",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "波状の部分",
+                            "texture": "H9000_Wave.png"
+                        },
+                        {
+                            "colorList": ["red.bmp", "HS9000_Y.png", "white.bmp", "white.bmp"],
+                            "description": "阪神9000系の赤色の部分",
+                            "texture": "red.bmp"
+                        },
+                        {
+                            "colorList": ["red.bmp", "HS9000_Y.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "description": "阪神9000系の赤色の部分2",
+                            "texture": "red.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": ["HS9000_WndFrame2.tga", "HS9000_WndFrame2.tga", "HS9000_WndFrame2_Blue.tga", "HS9000_WndFrame2_Orange.tga"],
+                            "description": "客室の窓枠",
+                            "texture": "HS9000_WndFrame2.tga"
+                        },
+                        {
+                            "colorList": ["HS9000_WndFrame3.tga", "HS9000_WndFrame3.tga", "HS9000_WndFrame3_Blue.tga", "HS9000_WndFrame3_Orange.tga"],
+                            "description": "側面の方向幕の枠",
+                            "texture": "HS9000_WndFrame3.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪神9000系の屋根の色",
+                            "texture": "223_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴2",
+                            "texture": "duct_holl2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "両端の窓枠",
+                            "texture": "HS9000_WndFrame2.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "KQ21XX": {
 
