@@ -29,12 +29,20 @@
                             "texture": "spring.bmp"
                         },
                         {
-                            "colorList": ["maroon.bmp", "H2000_Blue.png", "H2000_green.png"],
+                            "colorList": [
+                                "maroon.bmp",
+                                "H2000_Blue.png",
+                                "H2000_green.png"
+                            ],
                             "description":"阪急2000系の全体的な色",
                             "texture": "maroon.bmp"
                         },
                         {
-                            "colorList": ["Maroon_Iron.png", "blue_iron.png", "green_iron.png"],
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "blue_iron.png",
+                                "green_iron.png"
+                            ],
                             "description":"渡り板",
                             "texture": "Maroon_Iron.png"
                         },
@@ -104,7 +112,11 @@
                             "texture": "H2000_NO.tga"
                         },
                         {
-                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_Blue.tga", "H2000_WndFrame_Green.tga"],
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H2000_WndFrame_Blue.tga",
+                                "H2000_WndFrame_Green.tga"
+                            ],
                             "description":"外側の窓枠",
                             "texture": "H2000_WndFrame.tga"
                         },
@@ -185,7 +197,11 @@
                             "texture": "spring.bmp"
                         },
                         {
-                            "colorList": ["maroon.bmp", "H2000_Blue.png", "H2000_green.png"],
+                            "colorList": [
+                                "maroon.bmp",
+                                "H2000_Blue.png",
+                                "H2000_green.png"
+                            ],
                             "description":"阪急2000系の全体的な色",
                             "texture": "maroon.bmp"
                         },
@@ -210,7 +226,11 @@
                             "texture": ""
                         },
                         {
-                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_Blue.tga", "H2000_WndFrame_Green.tga"],
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H2000_WndFrame_Blue.tga",
+                                "H2000_WndFrame_Green.tga"
+                            ],
                             "description":"外側の窓枠",
                             "texture": "H2000_WndFrame.tga"
                         }
@@ -261,7 +281,12 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "colorList": [
+                                "Red_Pano.bmp",
+                                "Mu_Blue.png",
+                                "Pano_Orange.png",
+                                "black.bmp"
+                            ],
                             "description":"ウィングの左の部分",
                             "texture": "Red_Pano.bmp"
                         },
@@ -275,7 +300,12 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "colorList": [
+                                "Red_Pano.bmp",
+                                "Mu_Blue.png",
+                                "Pano_Orange.png",
+                                "black.bmp"
+                            ],
                             "description":"ウィングの右の部分",
                             "texture": "Red_Pano.bmp"
                         },
@@ -309,7 +339,12 @@
                             "texture": "Pano_Beagu.png"
                         },
                         {
-                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "colorList": [
+                                "Red_Pano.bmp",
+                                "Mu_Blue.png",
+                                "Pano_Orange.png",
+                                "black.bmp"
+                            ],
                             "description":"パノスパの赤い色の部分",
                             "texture": "Red_Pano.bmp"
                         },
@@ -334,7 +369,12 @@
                             "texture": "gray.bmp"
                         },
                         {
-                            "colorList": ["Pano_Logo.png", "Pano_Logo_Blue.png", "Pano_Logo_Orange.png", "Pano_Logo_Black.png"],
+                            "colorList": [
+                                "Pano_Logo.png",
+                                "Pano_Logo_Blue.png",
+                                "Pano_Logo_Orange.png",
+                                "Pano_Logo_Black.png"
+                            ],
                             "description":"前面のパノスパのロゴ",
                             "texture": "Pano_Logo.png"
                         },
@@ -399,7 +439,12 @@
                             "texture": "Pano_WndFrame1.tga"
                         },
                         {
-                            "colorList": ["Pano_WndFrame2.tga", "Pano_WndFrame3.tga", "Pano_WndFrame4.tga", "Pano_WndFrame5.tga"],
+                            "colorList": [
+                                "Pano_WndFrame2.tga",
+                                "Pano_WndFrame3.tga",
+                                "Pano_WndFrame4.tga",
+                                "Pano_WndFrame5.tga"
+                            ],
                             "description":"客室の窓枠（赤色）",
                             "texture": "Pano_WndFrame2.tga"
                         },
@@ -452,7 +497,12 @@
                             "texture": "Pano_Beagu.png"
                         },
                         {
-                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "colorList": [
+                                "Red_Pano.bmp",
+                                "Mu_Blue.png",
+                                "Pano_Orange.png",
+                                "black.bmp"
+                            ],
                             "description":"パノスパの赤い色の部分",
                             "texture": "Red_Pano.bmp"
                         },
@@ -530,7 +580,12 @@
                             "texture": "Pano_Beagu.png"
                         },
                         {
-                            "colorList": ["Red_Pano.bmp", "Mu_Blue.png", "Pano_Orange.png", "black.bmp"],
+                            "colorList": [
+                                "Red_Pano.bmp",
+                                "Mu_Blue.png",
+                                "Pano_Orange.png",
+                                "black.bmp"
+                            ],
                             "description":"パノスパの赤い色の部分",
                             "texture": "Red_Pano.bmp"
                         },
@@ -684,12 +739,20 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["maroon.bmp", "H8200_Y.png", "black.bmp"],
+                            "colorList": [
+                                "maroon.bmp",
+                                "H8200_Y.png",
+                                "black.bmp"
+                            ],
                             "description":"阪急8200系の全体的な色",
                             "texture": "maroon.bmp"
                         },
                         {
-                            "colorList": ["Maroon_Iron.png", "8200_Iron_Y.png", "8200_Iron_BK.png"],
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "8200_Iron_Y.png",
+                                "8200_Iron_BK.png"
+                            ],
                             "description":"渡り板",
                             "texture": "Maroon_Iron.png"
                         },
@@ -764,7 +827,11 @@
                             "texture": "tx_h2000_08.tga"
                         },
                         {
-                            "colorList": ["H2000_WndFrame.tga", "H8200_Wnd_Y.tga", "H8200_Wnd_BK.tga"],
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H8200_Wnd_Y.tga",
+                                "H8200_Wnd_BK.tga"
+                            ],
                             "description":"外側の窓枠",
                             "texture": "H2000_WndFrame.tga"
                         },
@@ -883,27 +950,47 @@
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "Red_Mue.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "Red_Mue.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分",
                             "texture": "Mu_Blue.png"
                         },
                         {
-                            "colorList": ["white.bmp", "Red_Mue.bmp", "white.bmp"],
+                            "colorList": [
+                                "white.bmp",
+                                "Red_Mue.bmp",
+                                "white.bmp"
+                            ],
                             "description":"ミュースカイの白色の部分2",
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["white.bmp", "gray.bmp", "white.bmp"],
+                            "colorList": [
+                                "white.bmp",
+                                "gray.bmp",
+                                "white.bmp"
+                            ],
                             "description":"ミュースカイの白色の部分3",
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "white.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "white.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分2",
                             "texture": "Mu_Blue.png"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "gray.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "gray.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分3",
                             "texture": "Mu_Blue.png"
                         },
@@ -993,7 +1080,11 @@
                             "texture": "Mu_WndFrame00.tga"
                         },
                         {
-                            "colorList": ["Mu_WndFrame01.tga", "Mu_WndFrame00.tga", "Mu_WndFrame01.tga"],
+                            "colorList": [
+                                "Mu_WndFrame01.tga",
+                                "Mu_WndFrame00.tga",
+                                "Mu_WndFrame01.tga"
+                            ],
                             "description":"ドアの窓枠",
                             "texture": "Mu_WndFrame01.tga"
                         },
@@ -1013,12 +1104,20 @@
                             "texture": "Logo_Mei_Color.tga"
                         },
                         {
-                            "colorList": ["Logo_Centrair.png", "colorless.tga", "Logo_Centrair.png"],
+                            "colorList": [
+                                "Logo_Centrair.png",
+                                "colorless.tga",
+                                "Logo_Centrair.png"
+                            ],
                             "description":"側面のセントレアのロゴ",
                             "texture": "Logo_Centrair.png"
                         },
                         {
-                            "colorList": ["Logo_Centrair.png", "Logo_Centrair_Red.png", "colorless.tga"],
+                            "colorList": [
+                                "Logo_Centrair.png",
+                                "Logo_Centrair_Red.png",
+                                "colorless.tga"
+                            ],
                             "description":"前方のセントレアのロゴ",
                             "texture": "Logo_Centrair.png"
                         },
@@ -1028,47 +1127,83 @@
                             "texture": "DactHoll_Tobu.tga"
                         },
                         {
-                            "colorList": ["colorless.tga", "Red_Mue.bmp", "colorless.tga"],
+                            "colorList": [
+                                "colorless.tga",
+                                "Red_Mue.bmp",
+                                "colorless.tga"
+                            ],
                             "description":"スカートの中央。名鉄2200系専用",
                             "texture": "colorless.tga"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro0.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro0.png"
+                            ],
                             "description":"前方の黒ひつじ",
                             "texture": "Kuro0.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro1.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro1.png"
+                            ],
                             "description":"前方の黒ひつじの文字",
                             "texture": "Kuro1.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro2.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro2.png"
+                            ],
                             "description":"前方の黒ひつじの模様",
                             "texture": "Kuro2.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro3.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro3.png"
+                            ],
                             "description":"右の黒ひつじ",
                             "texture": "Kuro3.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro4.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro4.png"
+                            ],
                             "description":"左の黒ひつじ",
                             "texture": "Kuro4.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro5.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro5.png"
+                            ],
                             "description":"前方の黒ひつじ（最後飛車専用）",
                             "texture": "Kuro5.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro11.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro11.png"
+                            ],
                             "description":"左の黒ひつじ（最後飛車専用）",
                             "texture": "Kuro11.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro13.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro13.png"
+                            ],
                             "description":"右の黒ひつじ（最後飛車専用）",
                             "texture": "Kuro13.png"
                         },
@@ -1139,27 +1274,47 @@
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "Red_Mue.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "Red_Mue.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分",
                             "texture": "Mu_Blue.png"
                         },
                         {
-                            "colorList": ["white.bmp", "Red_Mue.bmp", "white.bmp"],
+                            "colorList": [
+                                "white.bmp",
+                                "Red_Mue.bmp",
+                                "white.bmp"
+                            ],
                             "description":"ミュースカイの白色の部分2",
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["white.bmp", "gray.bmp", "white.bmp"],
+                            "colorList": [
+                                "white.bmp",
+                                "gray.bmp",
+                                "white.bmp"
+                            ],
                             "description":"ミュースカイの白色の部分3",
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "white.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "white.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分2",
                             "texture": "Mu_Blue.png"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "gray.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "gray.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分3",
                             "texture": "Mu_Blue.png"
                         },
@@ -1214,7 +1369,11 @@
                             "texture": "Mu_WndFrame00.tga"
                         },
                         {
-                            "colorList": ["Mu_WndFrame01.tga", "Mu_WndFrame00.tga", "Mu_WndFrame01.tga"],
+                            "colorList": [
+                                "Mu_WndFrame01.tga",
+                                "Mu_WndFrame00.tga",
+                                "Mu_WndFrame01.tga"
+                            ],
                             "description":"ドアの窓枠",
                             "texture": "Mu_WndFrame01.tga"
                         },
@@ -1229,27 +1388,47 @@
                             "texture": "DactHoll_Tobu.tga"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro1.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro1.png"
+                            ],
                             "description":"側面の黒ひつじの文字",
                             "texture": "Kuro1.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro10.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro10.png"
+                            ],
                             "description":"右の黒ひつじ",
                             "texture": "Kuro10.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro7.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro7.png"
+                            ],
                             "description":"左の黒ひつじ",
                             "texture": "Kuro7.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro9.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro9.png"
+                            ],
                             "description":"左の黒ひつじ",
                             "texture": "Kuro9.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro8.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro8.png"
+                            ],
                             "description":"右の黒ひつじ",
                             "texture": "Kuro8.png"
                         }
@@ -1310,27 +1489,47 @@
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "Red_Mue.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "Red_Mue.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分",
                             "texture": "Mu_Blue.png"
                         },
                         {
-                            "colorList": ["white.bmp", "Red_Mue.bmp", "white.bmp"],
+                            "colorList": [
+                                "white.bmp",
+                                "Red_Mue.bmp",
+                                "white.bmp"
+                            ],
                             "description":"ミュースカイの白色の部分2",
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["white.bmp", "gray.bmp", "white.bmp"],
+                            "colorList": [
+                                "white.bmp",
+                                "gray.bmp",
+                                "white.bmp"
+                            ],
                             "description":"ミュースカイの白色の部分3",
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "white.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "white.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分2",
                             "texture": "Mu_Blue.png"
                         },
                         {
-                            "colorList": ["Mu_Blue.png", "gray.bmp", "Mu_Blue.png"],
+                            "colorList": [
+                                "Mu_Blue.png",
+                                "gray.bmp",
+                                "Mu_Blue.png"
+                            ],
                             "description":"ミュースカイの青色の部分3",
                             "texture": "Mu_Blue.png"
                         },
@@ -1385,7 +1584,11 @@
                             "texture": "Mu_WndFrame00.tga"
                         },
                         {
-                            "colorList": ["Mu_WndFrame01.tga", "Mu_WndFrame00.tga", "Mu_WndFrame01.tga"],
+                            "colorList": [
+                                "Mu_WndFrame01.tga",
+                                "Mu_WndFrame00.tga",
+                                "Mu_WndFrame01.tga"
+                            ],
                             "description":"ドアの窓枠",
                             "texture": "Mu_WndFrame01.tga"
                         },
@@ -1400,27 +1603,47 @@
                             "texture": "DactHoll_Tobu.tga"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro11.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro11.png"
+                            ],
                             "description":"右の黒ひつじ",
                             "texture": "Kuro11.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro12.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro12.png"
+                            ],
                             "description":"右の黒ひつじ",
                             "texture": "Kuro12.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro13.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro13.png"
+                            ],
                             "description":"左の黒ひつじ",
                             "texture": "Kuro13.png"
                         },
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Kuro6.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Kuro6.png"
+                            ],
                             "description":"左の黒ひつじ",
                             "texture": "Kuro6.png"
                         },
                         {
-                            "colorList": ["Mu_2000_Logo.png", "Mu_2000_Logo.png", "colorless.tga"],
+                            "colorList": [
+                                "Mu_2000_Logo.png",
+                                "Mu_2000_Logo.png",
+                                "colorless.tga"
+                            ],
                             "description":"名鉄2000系のロゴ",
                             "texture": "Mu_2000_Logo.png"
                         }
@@ -1489,7 +1712,11 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["Tobu50000_No51901.png", "Tobu50000_No51901.png", "colorless.tga"],
+                            "colorList": [
+                                "Tobu50000_No51901.png",
+                                "Tobu50000_No51901.png",
+                                "colorless.tga"
+                            ],
                             "description": "東武50000系の車番",
                             "texture": "Tobu50000_No51901.png"
                         }
@@ -1498,7 +1725,11 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Tobu50000_No51901.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Tobu50000_No51901.png"
+                            ],
                             "description": "TJライナー風専用の車番",
                             "texture": "Tobu50000_No51901.png"
                         }
@@ -1507,7 +1738,11 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Logo_Todo.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Logo_Todo.png"
+                            ],
                             "description": "TJライナー風専用の東堂塾ロゴ",
                             "texture": "Logo_Todo.png"
                         }
@@ -1516,7 +1751,11 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "white_silver.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "white_silver.png"
+                            ],
                             "description": "TJライナー風専用の東堂塾ロゴの背景",
                             "texture": "Tobu_Orange.png"
                         }
@@ -1565,12 +1804,20 @@
                             "texture": "black.bmp"
                         },
                         {
-                            "colorList": ["black.bmp", "white_silver.png", "white_silver.png"],
+                            "colorList": [
+                                "black.bmp",
+                                "white_silver.png",
+                                "white_silver.png"
+                            ],
                             "description": "東武50000系の扉の色",
                             "texture": "black.bmp"
                         },
                         {
-                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "colorList": [
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png",
+                                "white_silver.png"
+                            ],
                             "description": "扉の帯の色",
                             "texture": "Tobu_Orange.png"
                         },
@@ -1600,27 +1847,47 @@
                             "texture": "JOINT.bmp"
                         },
                         {
-                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "colorList": [
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png",
+                                "white_silver.png"
+                            ],
                             "description": "東武50000系の帯の色",
                             "texture": "Tobu_Orange.png"
                         },
                         {
-                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "Tobu50000_Purple.png"],
+                            "colorList": [
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png",
+                                "Tobu50000_Purple.png"
+                            ],
                             "description": "東武50000系の帯の色2",
                             "texture": "Tobu_Orange.png"
                         },
                         {
-                            "colorList": ["black.bmp", "Tobu_Orange.png", "Tobu_Orange.png"],
+                            "colorList": [
+                                "black.bmp",
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png"
+                            ],
                             "description": "黒色の部分3",
                             "texture": "black.bmp"
                         },
                         {
-                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white.bmp"],
+                            "colorList": [
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png",
+                                "white.bmp"
+                            ],
                             "description": "前方の帯の色",
                             "texture": "Tobu_Orange.png"
                         },
                         {
-                            "colorList": ["white_silver.png", "Tobu_Orange.png", "Tobu_Orange.png"],
+                            "colorList": [
+                                "white_silver.png",
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png"
+                            ],
                             "description": "銀白色の部分2",
                             "texture": "white_silver.png"
                         },
@@ -1685,7 +1952,11 @@
                             "texture": "Tobu50000_WndFrame.tga"
                         },
                         {
-                            "colorList": ["Tobu50000_WndFrame_BK.tga", "Tobu50000_WndFrame.tga", "Tobu50000_WndFrame.tga"],
+                            "colorList": [
+                                "Tobu50000_WndFrame_BK.tga",
+                                "Tobu50000_WndFrame.tga",
+                                "Tobu50000_WndFrame.tga"
+                            ],
                             "description": "扉の窓枠",
                             "texture": "Tobu50000_WndFrame_BK.tga"
                         },
@@ -1700,12 +1971,20 @@
                             "texture": "JOUMU_T.tga"
                         },
                         {
-                            "colorList": ["Tobu50000_No51901.png", "Tobu50000_No51901.png", "Tobu50000_No51901.png"],
+                            "colorList": [
+                                "Tobu50000_No51901.png",
+                                "Tobu50000_No51901.png",
+                                "Tobu50000_No51901.png"
+                            ],
                             "description": "側面の車番",
                             "texture": "Tobu50000_No51901.png"
                         },
                         {
-                            "colorList": ["Logo_Todo_BK.png", "Logo_Todo.png", "Logo_Todo.png"],
+                            "colorList": [
+                                "Logo_Todo_BK.png",
+                                "Logo_Todo.png",
+                                "Logo_Todo.png"
+                            ],
                             "description": "側面のロゴ",
                             "texture": "Logo_Todo.png"
                         }
@@ -1766,12 +2045,20 @@
                             "texture": "black.bmp"
                         },
                         {
-                            "colorList": ["black.bmp", "white_silver.png", "white_silver.png"],
+                            "colorList": [
+                                "black.bmp",
+                                "white_silver.png",
+                                "white_silver.png"
+                            ],
                             "description": "東武50000系の扉の色",
                             "texture": "black.bmp"
                         },
                         {
-                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "colorList": [
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png",
+                                "white_silver.png"
+                            ],
                             "description": "扉の帯の色",
                             "texture": "Tobu_Orange.png"
                         },
@@ -1786,17 +2073,29 @@
                             "texture": "gray.bmp"
                         },
                         {
-                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "white_silver.png"],
+                            "colorList": [
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png",
+                                "white_silver.png"
+                            ],
                             "description": "東武50000系の帯の色",
                             "texture": "Tobu_Orange.png"
                         },
                         {
-                            "colorList": ["Tobu_Orange.png", "Tobu_Orange.png", "Tobu50000_Purple.png"],
+                            "colorList": [
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png",
+                                "Tobu50000_Purple.png"
+                            ],
                             "description": "東武50000系の帯の色2",
                             "texture": "Tobu_Orange.png"
                         },
                         {
-                            "colorList": ["white_silver.png", "Tobu_Orange.png", "Tobu_Orange.png"],
+                            "colorList": [
+                                "white_silver.png",
+                                "Tobu_Orange.png",
+                                "Tobu_Orange.png"
+                            ],
                             "description": "銀白色の部分2",
                             "texture": "white_silver.png"
                         },
@@ -1836,7 +2135,11 @@
                             "texture": "Tobu50000_WndFrame.tga"
                         },
                         {
-                            "colorList": ["Tobu50000_WndFrame_BK.tga", "Tobu50000_WndFrame.tga", "Tobu50000_WndFrame.tga"],
+                            "colorList": [
+                                "Tobu50000_WndFrame_BK.tga",
+                                "Tobu50000_WndFrame.tga",
+                                "Tobu50000_WndFrame.tga"
+                            ],
                             "description": "扉の窓枠",
                             "texture": "Tobu50000_WndFrame_BK.tga"
                         },
@@ -1846,12 +2149,20 @@
                             "texture": "Tobu50000_WndFrame_SL.tga"
                         },
                         {
-                            "colorList": ["Tobu50000_No51901.png", "Tobu50000_No51901.png", "Tobu50000_No51901.png"],
+                            "colorList": [
+                                "Tobu50000_No51901.png",
+                                "Tobu50000_No51901.png",
+                                "Tobu50000_No51901.png"
+                            ],
                             "description": "側面の車番",
                             "texture": "Tobu50000_No51901.png"
                         },
                         {
-                            "colorList": ["Logo_Todo_BK.png", "Logo_Todo.png", "Logo_Todo.png"],
+                            "colorList": [
+                                "Logo_Todo_BK.png",
+                                "Logo_Todo.png",
+                                "Logo_Todo.png"
+                            ],
                             "description": "側面のロゴ",
                             "texture": "Logo_Todo.png"
                         }
@@ -1860,7 +2171,11 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "white_silver.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "white_silver.png"
+                            ],
                             "description": "TJライナー風専用の東堂塾ロゴの背景",
                             "texture": "Tobu_Orange.png"
                         }
@@ -1869,7 +2184,11 @@
                 {
                     "mtrl": [
                         {
-                            "colorList": ["colorless.tga", "colorless.tga", "Logo_Todo.png"],
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "Logo_Todo.png"
+                            ],
                             "description": "TJライナー風専用の東堂塾ロゴ",
                             "texture": "Logo_Todo.png"
                         }
@@ -2019,7 +2338,11 @@
                             "texture": "duct_bg.bmp"
                         },
                         {
-                            "colorList": ["red_high.bmp", "Rapid_Ple.png", "Rapid_Black.png"],
+                            "colorList": [
+                                "red_high.bmp",
+                                "Rapid_Ple.png",
+                                "Rapid_Black.png"
+                            ],
                             "description": "東武200系の赤色の部分",
                             "texture": "red_high.bmp"
                         },
@@ -2132,7 +2455,11 @@
                             "texture": "JOINT.bmp"
                         },
                         {
-                            "colorList": ["red_high.bmp", "Rapid_Ple.png", "Rapid_Black.png"],
+                            "colorList": [
+                                "red_high.bmp",
+                                "Rapid_Ple.png",
+                                "Rapid_Black.png"
+                            ],
                             "description": "東武200系の赤色の部分",
                             "texture": "red_high.bmp"
                         },
@@ -2195,12 +2522,20 @@
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["DRC_BODY_BEAGE.png", "DRC_BODY_BEAGE.png", "white_silver.png"],
+                            "colorList": [
+                                "DRC_BODY_BEAGE.png",
+                                "DRC_BODY_BEAGE.png",
+                                "white_silver.png"
+                            ],
                             "description": "DRCのベージュ色の部分",
                             "texture": "DRC_BODY_BEAGE.png"
                         },
                         {
-                            "colorList": ["DRC_Red.bmp", "green1.bmp", "blue.bmp"],
+                            "colorList": [
+                                "DRC_Red.bmp",
+                                "green1.bmp",
+                                "blue.bmp"
+                            ],
                             "description": "DRCの赤色の部分",
                             "texture": "DRC_Red.bmp"
                         },
@@ -2265,7 +2600,11 @@
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["DRC_WndFrame0.tga", "DRC_WndFrame3.tga", "DRC_WndFrame2.tga"],
+                            "colorList": [
+                                "DRC_WndFrame0.tga",
+                                "DRC_WndFrame3.tga",
+                                "DRC_WndFrame2.tga"
+                            ],
                             "description": "DRCの窓枠",
                             "texture": "DRC_WndFrame0.tga"
                         },
@@ -2313,12 +2652,20 @@
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["DRC_BODY_BEAGE.png", "DRC_BODY_BEAGE.png", "white_silver.png"],
+                            "colorList": [
+                                "DRC_BODY_BEAGE.png",
+                                "DRC_BODY_BEAGE.png",
+                                "white_silver.png"
+                            ],
                             "description": "DRCのベージュ色の部分",
                             "texture": "DRC_BODY_BEAGE.png"
                         },
                         {
-                            "colorList": ["DRC_Red.bmp", "green1.bmp", "blue.bmp"],
+                            "colorList": [
+                                "DRC_Red.bmp",
+                                "green1.bmp",
+                                "blue.bmp"
+                            ],
                             "description": "DRCの赤色の部分",
                             "texture": "DRC_Red.bmp"
                         },
@@ -2353,7 +2700,11 @@
                             "texture": "spring.bmp"
                         },
                         {
-                            "colorList": ["DRC_WndFrame0.tga", "DRC_WndFrame3.tga", "DRC_WndFrame2.tga"],
+                            "colorList": [
+                                "DRC_WndFrame0.tga",
+                                "DRC_WndFrame3.tga",
+                                "DRC_WndFrame2.tga"
+                            ],
                             "description": "DRCの窓枠",
                             "texture": "DRC_WndFrame0.tga"
                         }
@@ -2404,12 +2755,20 @@
                             "texture": "spring.bmp"
                         },
                         {
-                            "colorList": ["maroon.bmp", "l_blue.png", "d_huji.png"],
+                            "colorList": [
+                                "maroon.bmp",
+                                "l_blue.png",
+                                "d_huji.png"
+                            ],
                             "description": "阪急2800系の全体的な色",
                             "texture": "maroon.bmp"
                         },
                         {
-                            "colorList": ["Maroon_Iron.png", "l_blue_iron.png", "d_huji_iron.png"],
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "l_blue_iron.png",
+                                "d_huji_iron.png"
+                            ],
                             "description": "渡り板",
                             "texture": "Maroon_Iron.png"
                         },
@@ -2459,7 +2818,11 @@
                             "texture": "H2801.tga"
                         },
                         {
-                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_L_Blue.tga", "H2000_WndFrame_d_huji.tga"],
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H2000_WndFrame_L_Blue.tga",
+                                "H2000_WndFrame_d_huji.tga"
+                            ],
                             "description": "外側の窓枠",
                             "texture": "H2000_WndFrame.tga"
                         },
@@ -2641,7 +3004,11 @@
                             "texture": "spring.bmp"
                         },
                         {
-                            "colorList": ["maroon.bmp", "l_blue.png", "d_huji.png"],
+                            "colorList": [
+                                "maroon.bmp",
+                                "l_blue.png",
+                                "d_huji.png"
+                            ],
                             "description": "阪急2800系の全体的な色",
                             "texture": "maroon.bmp"
                         },
@@ -2666,7 +3033,11 @@
                             "texture": ""
                         },
                         {
-                            "colorList": ["H2000_WndFrame.tga", "H2000_WndFrame_L_Blue.tga", "H2000_WndFrame_d_huji.tga"],
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H2000_WndFrame_L_Blue.tga",
+                                "H2000_WndFrame_d_huji.tga"
+                            ],
                             "description": "外側の窓枠",
                             "texture": "H2000_WndFrame.tga"
                         }
@@ -2788,17 +3159,32 @@
                             "texture": "spring.bmp"
                         },
                         {
-                            "colorList": ["HS9000_BODY.png", "HS9000_BODY.png", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "HS9000_BODY.png",
+                                "HS9000_BODY.png",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の淡い銀色の部分",
                             "texture": "HS9000_BODY.png"
                         },
                         {
-                            "colorList": ["HS9000_BODY.png", "HS9000_Y.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "colorList": [
+                                "HS9000_BODY.png",
+                                "HS9000_Y.png",
+                                "HS9000_BLUE.png",
+                                "HS9000_Orange.png"
+                            ],
                             "description": "阪神9000系の淡い銀色の部分2",
                             "texture": "HS9000_BODY.png"
                         },
                         {
-                            "colorList": ["HS9000_BODY.png", "HS9000_BODY.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "colorList": [
+                                "HS9000_BODY.png",
+                                "HS9000_BODY.png",
+                                "HS9000_BLUE.png",
+                                "HS9000_Orange.png"
+                            ],
                             "description": "阪神9000系の淡い銀色の部分3",
                             "texture": "HS9000_BODY.png"
                         },
@@ -2813,12 +3199,22 @@
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["silver.bmp", "silver.bmp", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "colorList": [
+                                "silver.bmp",
+                                "silver.bmp",
+                                "HS9000_BLUE.png",
+                                "HS9000_Orange.png"
+                            ],
                             "description": "阪神9000系の銀色の部分",
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["silver.bmp", "silver.bmp", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "silver.bmp",
+                                "silver.bmp",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の銀色の部分2",
                             "texture": "silver.bmp"
                         },
@@ -2833,12 +3229,22 @@
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["white.bmp", "black.bmp", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "white.bmp",
+                                "black.bmp",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の白色の部分",
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["black.bmp", "black.bmp", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "black.bmp",
+                                "black.bmp",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の黒色の部分",
                             "texture": "black.bmp"
                         },
@@ -2848,12 +3254,22 @@
                             "texture": "black.bmp"
                         },
                         {
-                            "colorList": ["black.bmp", "HS9000_Y.png", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "black.bmp",
+                                "HS9000_Y.png",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の黒色の部分3",
                             "texture": "black.bmp"
                         },
                         {
-                            "colorList": ["black.bmp", "black.bmp", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "colorList": [
+                                "black.bmp",
+                                "black.bmp",
+                                "HS9000_BLUE.png",
+                                "HS9000_Orange.png"
+                            ],
                             "description": "阪神9000系の黒色の部分4",
                             "texture": "black.bmp"
                         },
@@ -2873,17 +3289,32 @@
                             "texture": "H9000_Wave.png"
                         },
                         {
-                            "colorList": ["red.bmp", "HS9000_Y.png", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "red.bmp",
+                                "HS9000_Y.png",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の赤色の部分",
                             "texture": "red.bmp"
                         },
                         {
-                            "colorList": ["red.bmp", "black.bmp", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "red.bmp",
+                                "black.bmp",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の赤色の部分2",
                             "texture": "red.bmp"
                         },
                         {
-                            "colorList": ["red.bmp", "HS9000_Y.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "colorList": [
+                                "red.bmp",
+                                "HS9000_Y.png",
+                                "HS9000_BLUE.png",
+                                "HS9000_Orange.png"
+                            ],
                             "description": "阪神9000系の赤色の部分3",
                             "texture": "red.bmp"
                         },
@@ -2903,17 +3334,32 @@
                             "texture": "JOINT.bmp"
                         },
                         {
-                            "colorList": ["HS9000_WndFrame.tga", "HS9000_WndFrame.tga", "HS9000_WndFrame_Blue.tga", "HS9000_WndFrame_Orange.tga"],
+                            "colorList": [
+                                "HS9000_WndFrame.tga",
+                                "HS9000_WndFrame.tga",
+                                "HS9000_WndFrame_Blue.tga",
+                                "HS9000_WndFrame_Orange.tga"
+                            ],
                             "description": "中央の窓枠",
                             "texture": "HS9000_WndFrame.tga"
                         },
                         {
-                            "colorList": ["HS9000_WndFrame2.tga", "HS9000_WndFrame2.tga", "HS9000_WndFrame2_Blue.tga", "HS9000_WndFrame2_Orange.tga"],
+                            "colorList": [
+                                "HS9000_WndFrame2.tga",
+                                "HS9000_WndFrame2.tga",
+                                "HS9000_WndFrame2_Blue.tga",
+                                "HS9000_WndFrame2_Orange.tga"
+                            ],
                             "description": "客室の窓枠",
                             "texture": "HS9000_WndFrame2.tga"
                         },
                         {
-                            "colorList": ["HS9000_WndFrame3.tga", "HS9000_WndFrame3.tga", "HS9000_WndFrame3_Blue.tga", "HS9000_WndFrame3_Orange.tga"],
+                            "colorList": [
+                                "HS9000_WndFrame3.tga",
+                                "HS9000_WndFrame3.tga",
+                                "HS9000_WndFrame3_Blue.tga",
+                                "HS9000_WndFrame3_Orange.tga"
+                            ],
                             "description": "側面の方向幕の枠",
                             "texture": "HS9000_WndFrame3.tga"
                         },
@@ -3014,12 +3460,22 @@
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["silver.bmp", "silver.bmp", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "colorList": [
+                                "silver.bmp",
+                                "silver.bmp",
+                                "HS9000_BLUE.png",
+                                "HS9000_Orange.png"
+                            ],
                             "description": "阪神9000系の銀色の部分",
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["silver.bmp", "silver.bmp", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "silver.bmp",
+                                "silver.bmp",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の銀色の部分2",
                             "texture": "silver.bmp"
                         },
@@ -3039,12 +3495,22 @@
                             "texture": "H9000_Wave.png"
                         },
                         {
-                            "colorList": ["red.bmp", "HS9000_Y.png", "white.bmp", "white.bmp"],
+                            "colorList": [
+                                "red.bmp",
+                                "HS9000_Y.png",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
                             "description": "阪神9000系の赤色の部分",
                             "texture": "red.bmp"
                         },
                         {
-                            "colorList": ["red.bmp", "HS9000_Y.png", "HS9000_BLUE.png", "HS9000_Orange.png"],
+                            "colorList": [
+                                "red.bmp",
+                                "HS9000_Y.png",
+                                "HS9000_BLUE.png",
+                                "HS9000_Orange.png"
+                            ],
                             "description": "阪神9000系の赤色の部分2",
                             "texture": "red.bmp"
                         },
@@ -3054,12 +3520,22 @@
                             "texture": "d_gray.bmp"
                         },
                         {
-                            "colorList": ["HS9000_WndFrame2.tga", "HS9000_WndFrame2.tga", "HS9000_WndFrame2_Blue.tga", "HS9000_WndFrame2_Orange.tga"],
+                            "colorList": [
+                                "HS9000_WndFrame2.tga",
+                                "HS9000_WndFrame2.tga",
+                                "HS9000_WndFrame2_Blue.tga",
+                                "HS9000_WndFrame2_Orange.tga"
+                            ],
                             "description": "客室の窓枠",
                             "texture": "HS9000_WndFrame2.tga"
                         },
                         {
-                            "colorList": ["HS9000_WndFrame3.tga", "HS9000_WndFrame3.tga", "HS9000_WndFrame3_Blue.tga", "HS9000_WndFrame3_Orange.tga"],
+                            "colorList": [
+                                "HS9000_WndFrame3.tga",
+                                "HS9000_WndFrame3.tga",
+                                "HS9000_WndFrame3_Blue.tga",
+                                "HS9000_WndFrame3_Orange.tga"
+                            ],
                             "description": "側面の方向幕の枠",
                             "texture": "HS9000_WndFrame3.tga"
                         },
@@ -3157,12 +3633,22 @@
                             "texture": "KQ_WHITE.bmp"
                         },
                         {
-                            "colorList": ["KQ_WHITE.bmp", "KQ_BLUE.bmp", "KQ_BLACK.bmp", "KQ_WHITE.bmp"],
+                            "colorList": [
+                                "KQ_WHITE.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_BLACK.bmp",
+                                "KQ_WHITE.bmp"
+                            ],
                             "description": "京急21XXの白色の部分",
                             "texture": "KQ_WHITE.bmp"
                         },
                         {
-                            "colorList": ["keikyu_red.bmp", "KQ_BLUE.bmp", "KQ_BLACK.bmp", "yellow.bmp"],
+                            "colorList": [
+                                "keikyu_red.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_BLACK.bmp",
+                                "yellow.bmp"
+                            ],
                             "description": "京急21XXの赤色の部分",
                             "texture": "keikyu_red.bmp"
                         },
@@ -3207,12 +3693,22 @@
                             "texture": "KX.tga"
                         },
                         {
-                            "colorList": ["K2100_WndFrame.tga", "K2100_WndFrame2P.tga", "K2100_WndBK.tga", "K2100_WndFrame.tga"],
+                            "colorList": [
+                                "K2100_WndFrame.tga",
+                                "K2100_WndFrame2P.tga",
+                                "K2100_WndBK.tga",
+                                "K2100_WndFrame.tga"
+                            ],
                             "description": "京急21XXの客室の窓枠",
                             "texture": "K2100_WndFrame.tga"
                         },
                         {
-                            "colorList": ["K2100_Wnd_Red.tga", "K2100_WndFrame2P.tga", "K2100_WndBK.tga", "K2100_Wnd_Ye.tga"],
+                            "colorList": [
+                                "K2100_Wnd_Red.tga",
+                                "K2100_WndFrame2P.tga",
+                                "K2100_WndBK.tga",
+                                "K2100_Wnd_Ye.tga"
+                            ],
                             "description": "京急21XXの乗務員室の窓枠",
                             "texture": "K2100_Wnd_Red.tga"
                         },
@@ -3306,12 +3802,22 @@
                             "texture": "white.bmp"
                         },
                         {
-                            "colorList": ["KQ_WHITE.bmp", "KQ_BLUE.bmp", "KQ_BLACK.bmp", "KQ_WHITE.bmp"],
+                            "colorList": [
+                                "KQ_WHITE.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_BLACK.bmp",
+                                "KQ_WHITE.bmp"
+                            ],
                             "description": "京急21XXの白色の部分",
                             "texture": "KQ_WHITE.bmp"
                         },
                         {
-                            "colorList": ["keikyu_red.bmp", "KQ_BLUE.bmp", "KQ_BLACK.bmp", "yellow.bmp"],
+                            "colorList": [
+                                "keikyu_red.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_BLACK.bmp",
+                                "yellow.bmp"
+                            ],
                             "description": "京急21XXの赤色の部分",
                             "texture": "keikyu_red.bmp"
                         },
@@ -3341,7 +3847,12 @@
                             "texture": "silver.bmp"
                         },
                         {
-                            "colorList": ["K2100_WndFrame.tga", "K2100_WndFrame2P.tga", "K2100_WndBK.tga", "K2100_WndFrame.tga"],
+                            "colorList": [
+                                "K2100_WndFrame.tga",
+                                "K2100_WndFrame2P.tga",
+                                "K2100_WndBK.tga",
+                                "K2100_WndFrame.tga"
+                            ],
                             "description": "客室の窓枠",
                             "texture": "K2100_WndFrame.tga"
                         }
@@ -3389,7 +3900,1057 @@
         }
     },
     "JR2000": {
-
+        "JR2000_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の「競技」の方向幕",
+                            "texture": "JR2000_DUEL.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue.bmp",
+                                "JR2000_Red.bmp",
+                                "JR2000_Green.bmp"
+                            ],
+                            "description": "四国2000系の青色の部分",
+                            "texture": "JR2000_Blue.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Yellow.bmp",
+                                "JR2000_Yellow.bmp",
+                                "white.bmp",
+                                "JR2000_Yellow.bmp"
+                            ],
+                            "description": "四国2000系の黄色の部分",
+                            "texture": "JR2000_Yellow.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の方向幕の枠",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の屋根の色",
+                            "texture": "2000GT_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の波状の部分",
+                            "texture": "2000GT_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴",
+                            "texture": "DactHoll_Rect1.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「試運転」の方向幕",
+                            "texture": "JR2000_LED_TEST.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕",
+                            "texture": "JR2000_LED_NANBA.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Rect0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の車番",
+                            "texture": "2000GT_NO00.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "フロントガラスの青色の部分",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室と方向幕の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue_WndFrame.tga",
+                                "JR2000_Red_WndFrame.tga",
+                                "JR2000_Green_WndFrame.tga",
+                                "JR2000_Purple_WndFrame.tga"
+                            ],
+                            "description": "ドアの窓枠",
+                            "texture": "JR2000_Blue_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "2000GTのロゴ",
+                            "texture": "2000GT_LOGO.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "JR2000_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後ろの方向幕（普段は隠れている）",
+                            "texture": "JR2000_DUEL.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue.bmp",
+                                "JR2000_Red.bmp",
+                                "JR2000_Green.bmp",
+                                "JR2000_Purple.bmp"
+                            ],
+                            "description": "四国2000系の青色の部分",
+                            "texture": "JR2000_Blue.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Yellow.bmp",
+                                "JR2000_Yellow.bmp",
+                                "white.bmp",
+                                "JR2000_Yellow.bmp"
+                            ],
+                            "description": "四国2000系の黄色の部分",
+                            "texture": "JR2000_Yellow.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の方向幕の枠",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の屋根の色",
+                            "texture": "2000GT_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の波状の部分",
+                            "texture": "2000GT_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴",
+                            "texture": "DactHoll_Rect1.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色（普段は隠れている）",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「試運転」の方向幕",
+                            "texture": "JR2000_LED_TEST.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕",
+                            "texture": "JR2000_LED_NANBA.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Rect0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の車番",
+                            "texture": "2000GT_NO01.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室と方向幕の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue_WndFrame.tga",
+                                "JR2000_Red_WndFrame.tga",
+                                "JR2000_Green_WndFrame.tga",
+                                "JR2000_Purple_WndFrame.tga"
+                            ],
+                            "description": "ドアの窓枠",
+                            "texture": "JR2000_Blue_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "JR2000_02": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "室内の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の「競技」の方向幕",
+                            "texture": "JR2000_DUEL.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue.bmp",
+                                "JR2000_Red.bmp",
+                                "JR2000_Green.bmp",
+                                "JR2000_Purple.bmp"
+                            ],
+                            "description": "四国2000系の青色の部分",
+                            "texture": "JR2000_Blue.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い青色の部分",
+                            "texture": "JR2000_Dark_Blue.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い赤色の部分",
+                            "texture": "JR2000_Dark_Red.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の方向幕の枠",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_BODYCOLOR.png",
+                                "JR2000_BODYCOLOR.png",
+                                "JR2000_BODYCOLOR02.png",
+                                "JR2000_BODYCOLOR.png"
+                            ],
+                            "description": "ガスタービンの帯",
+                            "texture": "JR2000_BODYCOLOR.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の屋根の色",
+                            "texture": "2000GT_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の波状の部分",
+                            "texture": "2000GT_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴",
+                            "texture": "DactHoll_Rect1.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色（普段は隠れている）",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「試運転」の方向幕",
+                            "texture": "JR2000_LED_TEST.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕",
+                            "texture": "JR2000_LED_NANBA.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Rect0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の車番",
+                            "texture": "2000GT_NO01.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室と方向幕の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue_WndFrame.tga",
+                                "JR2000_Red_WndFrame.tga",
+                                "JR2000_Green_WndFrame.tga",
+                                "JR2000_Purple_WndFrame.tga"
+                            ],
+                            "description": "前方の内側の窓枠",
+                            "texture": "JR2000_Blue_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の外側の窓枠",
+                            "texture": "JR2000_Silver_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ドアのロゴ",
+                            "texture": "2000GT_DoorLogo.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "2000GTのロゴ",
+                            "texture": "2000GT_LOGO.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国のロゴ",
+                            "texture": "SHIKOKU_LOGO.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "「1」の番号",
+                            "texture": "white.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "「3」の番号",
+                            "texture": "white.bmp"
+                        }
+                    ]
+                }
+            ]
+        },
+        "JR2000_03": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン1",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン2",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン3",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン4",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "室内の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の「競技」の方向幕",
+                            "texture": "JR2000_DUEL.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue.bmp",
+                                "JR2000_Red.bmp",
+                                "JR2000_Green.bmp",
+                                "JR2000_Purple.bmp"
+                            ],
+                            "description": "後ろの窓の周り",
+                            "texture": "JR2000_Blue.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い青色の部分",
+                            "texture": "JR2000_Dark_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "red_high.bmp",
+                                "red_high.bmp",
+                                "JR2000_Purple_B.bmp",
+                                "red_high.bmp"
+                            ],
+                            "description": "四国2000系の赤色の部分",
+                            "texture": "red_high.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い赤色の部分",
+                            "texture": "JR2000_Dark_Red.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の方向幕の枠",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_BODYCOLOR.png",
+                                "JR2000_BODYCOLOR.png",
+                                "JR2000_BODYCOLOR02.png",
+                                "JR2000_BODYCOLOR.png"
+                            ],
+                            "description": "ガスタービンの帯",
+                            "texture": "JR2000_BODYCOLOR.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の屋根の色",
+                            "texture": "2000GT_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の波状の部分",
+                            "texture": "2000GT_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴",
+                            "texture": "DactHoll_Rect1.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色（普段は隠れている）",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「試運転」の方向幕",
+                            "texture": "JR2000_LED_TEST.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕",
+                            "texture": "JR2000_LED_NANBA.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Rect0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国2000系の車番",
+                            "texture": "2000GT_NO01.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室と方向幕の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "JR2000_Blue_WndFrame.tga",
+                                "JR2000_Red_WndFrame.tga",
+                                "JR2000_Green_WndFrame.tga",
+                                "JR2000_Purple_WndFrame.tga"
+                            ],
+                            "description": "後ろの内側の窓枠",
+                            "texture": "JR2000_Blue_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後ろの外側の窓枠",
+                            "texture": "JR2000_Silver_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ドアのロゴ",
+                            "texture": "2000GT_DoorLogo.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "2000GTのロゴ",
+                            "texture": "2000GT_LOGO.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「乗務員室」の文字",
+                            "texture": "JOUMU.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "四国のロゴ",
+                            "texture": "SHIKOKU_LOGO.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "「2」の番号",
+                            "texture": "white.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "「4」の番号",
+                            "texture": "white.bmp"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "Rapit": {
 
