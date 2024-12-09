@@ -4041,7 +4041,8 @@
                             "colorList": [
                                 "JR2000_Blue.bmp",
                                 "JR2000_Red.bmp",
-                                "JR2000_Green.bmp"
+                                "JR2000_Green.bmp",
+                                "JR2000_Purple.bmp"
                             ],
                             "description": "四国2000系の青色の部分",
                             "texture": "JR2000_Blue.bmp"
