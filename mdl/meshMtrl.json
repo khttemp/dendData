@@ -5346,7 +5346,223 @@
         }
     },
     "K800": {
-
+        "K800_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "tx_k800_04.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "tx_k800_04.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "tx_k800_04.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "tx_k800_04.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_k800_06.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k800_06.bmp",
+                                "K800_LED_G.bmp",
+                                "K800_LED_P.bmp",
+                                "K800_LED_B.bmp"
+                            ],
+                            "description": "下のLEDの部分",
+                            "texture": "tx_k800_06.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k800_00.bmp",
+                                "green0.bmp",
+                                "kh_orange.bmp",
+                                "kh_red.bmp"
+                            ],
+                            "description": "京阪800系の青色の部分",
+                            "texture": "tx_k800_00.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "tx_k800_01.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k800_03.bmp",
+                                "tx_k800_03.bmp",
+                                "kh_red.bmp",
+                                "kh_orange.bmp"
+                            ],
+                            "description": "京阪800系の帯",
+                            "texture": "tx_k800_03.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "tx_k800_04.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の床",
+                            "texture": "tx_k800_05.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色（上）",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "京阪800系の車番",
+                            "texture": "801.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の行先の方向幕",
+                            "texture": "tx_k800_led.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "tx_k800_w00.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "K800_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k800_00.bmp",
+                                "green0.bmp",
+                                "kh_orange.bmp",
+                                "kh_red.bmp"
+                            ],
+                            "description": "京阪800系の青色の部分",
+                            "texture": "tx_k800_00.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "tx_k800_01.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "tx_k800_02.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k800_03.bmp",
+                                "tx_k800_03.bmp",
+                                "kh_red.bmp",
+                                "kh_orange.bmp"
+                            ],
+                            "description": "京阪800系の帯",
+                            "texture": "tx_k800_03.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "tx_k800_04.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕",
+                            "texture": "tx_k800_led.tga"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k800_06.bmp",
+                                "K800_LED_G.bmp",
+                                "K800_LED_P.bmp",
+                                "K800_LED_B.bmp"
+                            ],
+                            "description": "下のLEDの部分",
+                            "texture": "tx_k800_06.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "tx_k800_w00.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "H7001": {
 
