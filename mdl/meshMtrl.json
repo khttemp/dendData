@@ -6473,7 +6473,219 @@
         }
     },
     "H8000": {
-
+        "H8008_00_D3": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前方の「競技」の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "H8200_FOR_EVENT.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の行先の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "tx_h8200_umeda.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の「競技」の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_duel.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "8200_orange.bmp"
+                            ],
+                            "description": "阪急8008の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_ten.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側",
+                            "texture": "maroon_uti.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT_SILVER.png"
+                        },
+                        {
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "8008_Iron.png"
+                            ],
+                            "description": "渡り板",
+                            "texture": "Maroon_Iron.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯のフレーム",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯の色",
+                            "texture": "tx_h2000_08.tga"
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "tx_h2000_00_Ora.tga"
+                            ],
+                            "description": "外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の窓枠",
+                            "texture": "H2000_WndFrame_In.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪急8008の車番",
+                            "texture": "8008.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "H8008_01_D3": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の「競技」の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_duel.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "8200_orange.bmp"
+                            ],
+                            "description": "阪急8008の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の後ろ",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_ten.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "tx_h2000_00_Ora.tga"
+                            ],
+                            "description": "",
+                            "texture": "H2000_WndFrame.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "KQ2199": {
 
