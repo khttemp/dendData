@@ -6121,7 +6121,356 @@
         }
     },
     "K8000": {
-
+        "K8000_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の「競技」の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "TX_K8000_DUEL.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "TX_K8000_KYOBASHI.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "green0.bmp",
+                                "kh_orange.bmp",
+                                "kh_red2.bmp",
+                                "kh_blue.bmp"
+                            ],
+                            "description": "京阪8000系の上の部分",
+                            "texture": "green0.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "kh_yellow.bmp",
+                                "kh_white.bmp"
+                            ],
+                            "description": "京阪8000系の下の部分",
+                            "texture": "green1.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分2",
+                            "texture": "han_ten.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_24.bmp",
+                                "tx_k8000_HATO.bmp",
+                                "tx_k8000_HATO.bmp",
+                                "tx_k8000_HATO.bmp"
+                            ],
+                            "description": "鷹のマーク",
+                            "texture": "tx_k8000_24.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の窓枠",
+                            "texture": "tx_k8000_wnd_frame_in.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "京阪8000系の車番",
+                            "texture": "8000.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯兼後尾灯の色",
+                            "texture": "yellow.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室と客室の窓の色",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方のガラスの部分",
+                            "texture": "tx_k8000_glass.tga"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_wnd_frame.tga",
+                                "tx_k8000_wnd_frame_2P.tga",
+                                "tx_k8000_wnd_frame_3P.tga",
+                                "tx_k8000_wnd_frame_4P.tga"
+                            ],
+                            "description": "客室の窓枠",
+                            "texture": "tx_k8000_wnd_frame2.tga"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_wnd_frame2.tga",
+                                "tx_k8000_wnd_frame2_2P.tga",
+                                "tx_k8000_wnd_frame2_3P.tga",
+                                "tx_k8000_wnd_frame2_4P.tga"
+                            ],
+                            "description": "ドアの窓枠",
+                            "texture": "tx_k8000_wnd_frame.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "K8000_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の「競技」の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "TX_K8000_DUEL.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "TX_K8000_KYOBASHI.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "green0.bmp",
+                                "kh_orange.bmp",
+                                "kh_red2.bmp",
+                                "kh_blue.bmp"
+                            ],
+                            "description": "京阪8000系の上の部分",
+                            "texture": "green0.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "kh_yellow.bmp",
+                                "kh_white.bmp"
+                            ],
+                            "description": "京阪8000系の下の部分",
+                            "texture": "green1.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分2",
+                            "texture": "han_ten.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の窓枠",
+                            "texture": "tx_k8000_wnd_frame_in.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "窓の色",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_wnd_frame.tga",
+                                "tx_k8000_wnd_frame_2P.tga",
+                                "tx_k8000_wnd_frame_3P.tga",
+                                "tx_k8000_wnd_frame_4P.tga"
+                            ],
+                            "description": "ドアの窓枠",
+                            "texture": "tx_k8000_wnd_frame.tga"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_wnd_frame2.tga",
+                                "tx_k8000_wnd_frame2_2P.tga",
+                                "tx_k8000_wnd_frame2_3P.tga",
+                                "tx_k8000_wnd_frame2_4P.tga"
+                            ],
+                            "description": "客室の窓枠",
+                            "texture": "tx_k8000_wnd_frame2.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "K8000_02": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の「競技」の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "TX_K8000_DUEL.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "TX_K8000_KYOBASHI.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "green0.bmp",
+                                "kh_orange.bmp",
+                                "kh_red2.bmp",
+                                "kh_blue.bmp"
+                            ],
+                            "description": "京阪8000系の上の部分",
+                            "texture": "green0.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "kh_yellow.bmp",
+                                "kh_white.bmp"
+                            ],
+                            "description": "京阪8000系の下の部分",
+                            "texture": "green1.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_ten.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "京阪8000系の屋根の部分",
+                            "texture": "tx_k8000_27.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_wnd_frame.tga",
+                                "tx_k8000_wnd_frame_2P.tga",
+                                "tx_k8000_wnd_frame_3P.tga",
+                                "tx_k8000_wnd_frame_4P.tga"
+                            ],
+                            "description": "ドアの窓枠",
+                            "texture": "tx_k8000_wnd_frame.tga"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_wnd_frame2.tga",
+                                "tx_k8000_wnd_frame2_2P.tga",
+                                "tx_k8000_wnd_frame2_3P.tga",
+                                "tx_k8000_wnd_frame2_4P.tga"
+                            ],
+                            "description": "客室の窓枠",
+                            "texture": "tx_k8000_wnd_frame2.tga"
+                        },
+                        {
+                            "colorList": [
+                                "tx_k8000_wnd_frame_green2.tga",
+                                "tx_k8000_wnd_frame_green2_2P.tga",
+                                "tx_k8000_wnd_frame_green2_3P.tga",
+                                "tx_k8000_wnd_frame_green2_4P.tga"
+                            ],
+                            "description": "1階の客室の窓枠",
+                            "texture": "tx_k8000_wnd_frame_green2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の窓枠",
+                            "texture": "tx_k8000_wnd_frame_in.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "窓の色",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "時代祭行列絵図",
+                            "texture": "tx_k8000_29.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "H8000": {
 
