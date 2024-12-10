@@ -5102,7 +5102,248 @@
         }
     },
     "Arban21000R": {
-
+        "UV_D3_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver2.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "black.bmp",
+                                "uv_white.bmp",
+                                "uv_orange2.bmp",
+                                "maroon_p.bmp"
+                            ],
+                            "description": "アーバンの全体的な色",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "black.bmp",
+                                "uv_white2.bmp",
+                                "uv_orange2.bmp",
+                                "maroon_p.bmp"
+                            ],
+                            "description": "アーバンの下の色",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "uv_orange.bmp",
+                                "uv_orange.bmp",
+                                "uv_blue.bmp",
+                                "uv_orange.bmp"
+                            ],
+                            "description": "アーバンのオレンジの色",
+                            "texture": "uv_orange.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "uv_win_line.tga",
+                                "uv_win_line_2P.tga",
+                                "uv_win_line_3P.tga",
+                                "uv_win_line_4P.tga"
+                            ],
+                            "description": "客室の窓枠",
+                            "texture": "uv_win_line.tga"
+                        },
+                        {
+                            "colorList": [
+                                "uv_win_frame.tga",
+                                "uv_win_frame_2P.tga",
+                                "uv_win_frame_3P.tga",
+                                "uv_win_frame_4P.tga"
+                            ],
+                            "description": "ドアの窓枠",
+                            "texture": "uv_win_frame.tga"
+                        },
+                        {
+                            "colorList": [
+                                "uv_b_o.bmp",
+                                "uv_b_o_2P.bmp",
+                                "uv_b_o_3P.bmp",
+                                "uv_b_o_4P.bmp"
+                            ],
+                            "description": "窓周りのオレンジの線",
+                            "texture": "uv_b_o.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯兼後尾灯の色",
+                            "texture": "tx_k800_06.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "UV_D3_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver2.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "black.bmp",
+                                "uv_white.bmp",
+                                "uv_orange2.bmp",
+                                "maroon_p.bmp"
+                            ],
+                            "description": "アーバンの全体的な色",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "black.bmp",
+                                "uv_white2.bmp",
+                                "uv_orange2.bmp",
+                                "maroon_p.bmp"
+                            ],
+                            "description": "アーバンの下の色",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "uv_orange.bmp",
+                                "uv_orange.bmp",
+                                "uv_blue.bmp",
+                                "uv_orange.bmp"
+                            ],
+                            "description": "アーバンのオレンジの色",
+                            "texture": "uv_orange.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "uv_b_o.bmp",
+                                "uv_b_o_2P.bmp",
+                                "uv_b_o_3P.bmp",
+                                "uv_b_o_4P.bmp"
+                            ],
+                            "description": "窓周りのオレンジの線",
+                            "texture": "uv_b_o.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "uv_win_frame.tga",
+                                "uv_win_frame_2P.tga",
+                                "uv_win_frame_3P.tga",
+                                "uv_win_frame_4P.tga"
+                            ],
+                            "description": "ドアの窓枠",
+                            "texture": "uv_win_frame.tga"
+                        },
+                        {
+                            "colorList": [
+                                "uv_win_line.tga",
+                                "uv_win_line_2P.tga",
+                                "uv_win_line_3P.tga",
+                                "uv_win_line_4P.tga"
+                            ],
+                            "description": "太いオレンジの線",
+                            "texture": "uv_win_line.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "K800": {
 
