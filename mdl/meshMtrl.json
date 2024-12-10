@@ -5403,7 +5403,7 @@
                         },
                         {
                             "colorList": [],
-                            "description": "前照灯の色",
+                            "description": "後尾灯の色",
                             "texture": "tx_k800_06.bmp"
                         },
                         {
@@ -5458,7 +5458,7 @@
                         },
                         {
                             "colorList": [],
-                            "description": "前照灯の色（上）",
+                            "description": "前照灯の色",
                             "texture": "tx_k8000_headlight.tga"
                         },
                         {
