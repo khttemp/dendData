@@ -4954,7 +4954,152 @@
         }
     },
     "Rapit": {
-
+        "RAPID_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパー",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパー",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "Rapid_Blue.png",
+                                "Rapid_Red.png",
+                                "Rapid_Ple.png",
+                                "Rapid_Black.png",
+                                "Rapid_Red2.png",
+                                "Rapid_Ye.png",
+                                "Rapid_Blue2.png"
+                            ],
+                            "description": "ラピートの全体的な色",
+                            "texture": "Rapid_Blue.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色（中央）",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "Rapid_Wnd.tga",
+                                "Rapid_WndRed.tga",
+                                "Rapid_WndPle.tga",
+                                "Rapid_WndBlack.tga",
+                                "Rapid_WndRed2.tga",
+                                "Rapid_WndYe.tga",
+                                "Rapid_WndBlue2.tga"
+                            ],
+                            "description": "窓枠",
+                            "texture": "Rapid_Wnd.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "RAPID_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "Rapid_Blue.png",
+                                "Rapid_Red.png",
+                                "Rapid_Ple.png",
+                                "Rapid_Black.png",
+                                "Rapid_Red2.png",
+                                "Rapid_Ye.png",
+                                "Rapid_Blue2.png"
+                            ],
+                            "description": "ラピートの全体的な色",
+                            "texture": "Rapid_Blue.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "Rapid_Wnd.tga",
+                                "Rapid_WndRed.tga",
+                                "Rapid_WndPle.tga",
+                                "Rapid_WndBlack.tga",
+                                "Rapid_WndRed2.tga",
+                                "Rapid_WndYe.tga",
+                                "Rapid_WndBlue2.tga"
+                            ],
+                            "description": "窓枠",
+                            "texture": "Rapid_Wnd.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "Arban21000R": {
 
