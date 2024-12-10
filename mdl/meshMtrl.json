@@ -5468,7 +5468,7 @@
                         },
                         {
                             "colorList": [],
-                            "description": "前方と側面の行先の方向幕",
+                            "description": "前方と側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
                             "texture": "tx_k800_led.tga"
                         },
                         {
@@ -5541,7 +5541,7 @@
                         },
                         {
                             "colorList": [],
-                            "description": "側面の方向幕",
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
                             "texture": "tx_k800_led.tga"
                         },
                         {
@@ -5565,7 +5565,560 @@
         }
     },
     "H7001": {
-
+        "H7001_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパー",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯のフレーム",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の行先の方向幕",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "red.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の「競技」の方向幕",
+                            "texture": "tx_h8200_duel.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_H0.png",
+                                "H7001_H0.png",
+                                "green0.bmp",
+                                "kh_orange.bmp",
+                                "H7001_K0.png"
+                            ],
+                            "description": "阪急7001の上のマルーン色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "silver.bmp",
+                                "green1.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_Pink.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "H7001_K1.png"
+                            ],
+                            "description": "銀色の帯",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green1.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_Pink.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "H7001_K1.png"
+                            ],
+                            "description": "前方のマルーン色の線",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "blue.bmp",
+                                "red.bmp",
+                                "silver.bmp",
+                                "red.bmp",
+                                "KO_White.png",
+                                "ODAQ_Blue.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "blue.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "red.bmp",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "前方のマルーン色の線2",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "blue.bmp",
+                                "white.bmp",
+                                "silver.bmp",
+                                "red.bmp",
+                                "KO_Blue.png",
+                                "ODAQ_Blue.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線2",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "blue.bmp",
+                                "white.bmp",
+                                "HS9000_Orange.png",
+                                "red.bmp",
+                                "KO_Blue.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "前方のマルーン色の線3",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "white.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線3",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "HS9000_Orange.png",
+                                "white.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線4",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "white.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線5",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green1.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_Pink.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "H7001_K1.png"
+                            ],
+                            "description": "取っ手の一部のマルーン色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "H7001_Iron_1.png",
+                                "H7001_Iron_2.png",
+                                "H7001_Iron_3.png",
+                                "H7001_Iron_4.png",
+                                "H7001_Iron_5.png",
+                                "H7001_Iron_6.png",
+                                "H7001_Iron_7.png",
+                                "H7001_Iron_8.png",
+                                "H7001_Iron_9.png",
+                                "green_iron.png",
+                                "H7001_Iron_10.png",
+                                "H7001_Iron_W.png"
+                            ],
+                            "description": "渡り板",
+                            "texture": "Maroon_Iron.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "スカートの色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側",
+                            "texture": "maroon_uti.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転台の黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯の色",
+                            "texture": "H2000_Light.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪急7001の車番",
+                            "texture": "tx_h7001_00.tga"
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H7001_WndFrame_1.tga",
+                                "H7001_WndFrame_2.tga",
+                                "H7001_WndFrame_3.tga",
+                                "H7001_WndFrame_4.tga",
+                                "H7001_WndFrame_5.tga",
+                                "H7001_WndFrame_6.tga",
+                                "H7001_WndFrame_7.tga",
+                                "H7001_WndFrame_8.tga",
+                                "H7001_WndFrame_8.tga",
+                                "H7001_WndFrame_9.tga",
+                                "H7001_WndFrame_10.tga",
+                                "H7001_WndFrame_K.tga"
+                            ],
+                            "description": "窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の窓枠",
+                            "texture": "H2000_WndFrame_In.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_h2000_08.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "H7001_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「競技」の方向幕",
+                            "texture": "tx_h8200_duel.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_H0.png",
+                                "H7001_H0.png",
+                                "green0.bmp",
+                                "kh_orange.bmp",
+                                "H7001_K0.png"
+                            ],
+                            "description": "阪急7001の上のマルーン色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "silver.bmp",
+                                "green1.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_Pink.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "H7001_K1.png"
+                            ],
+                            "description": "銀色の帯",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "blue.bmp",
+                                "red.bmp",
+                                "silver.bmp",
+                                "red.bmp",
+                                "KO_White.png",
+                                "ODAQ_Blue.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "blue.bmp",
+                                "white.bmp",
+                                "silver.bmp",
+                                "red.bmp",
+                                "KO_Blue.png",
+                                "ODAQ_Blue.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線2",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "white.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線3",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "HS9000_Orange.png",
+                                "white.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線4",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "white.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png",
+                                "H7001_Blue.png",
+                                "H7001_H1.png",
+                                "green1.bmp",
+                                "kh_red.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "マルーン色の線5",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H7001_WndFrame_1.tga",
+                                "H7001_WndFrame_2.tga",
+                                "H7001_WndFrame_3.tga",
+                                "H7001_WndFrame_4.tga",
+                                "H7001_WndFrame_5.tga",
+                                "H7001_WndFrame_6.tga",
+                                "H7001_WndFrame_7.tga",
+                                "H7001_WndFrame_8.tga",
+                                "H7001_WndFrame_8.tga",
+                                "H7001_WndFrame_9.tga",
+                                "H7001_WndFrame_10.tga",
+                                "H7001_WndFrame_K.tga"
+                            ],
+                            "description": "窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "K8000": {
 
