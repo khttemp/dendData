@@ -6688,7 +6688,334 @@
         }
     },
     "KQ2199": {
-
+        "KQ2199_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の間",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の「競技」の方向幕",
+                            "texture": "K2100_DUEL.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "K2100_For_Umeda.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「EVO4」の方向幕",
+                            "texture": "EVO4.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の間。幕の切替専用。普段は隠れている",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の行先の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "KQ_FOR_EVENT.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の「競技」の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "KQ_DUEL_EVENT.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「EVO4」の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "EVO4.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "KQ_WHITE.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "KQ_WHITE.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_WHITE.bmp",
+                                "KQ_WHITE.bmp"
+                            ],
+                            "description": "京急2199の白色の部分",
+                            "texture": "KQ_WHITE.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "keikyu_red.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_WHITE.bmp",
+                                "yellow.bmp"
+                            ],
+                            "description": "京急2199の赤色の部分",
+                            "texture": "keikyu_red.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側",
+                            "texture": "KQ_WHITE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT_SILVER.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "京急2100形の「2100」の文字",
+                            "texture": "K2100.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "京急2100形の車番",
+                            "texture": "K9.tga"
+                        },
+                        {
+                            "colorList": [
+                                "K2100_WndFrame.tga",
+                                "K2100_WndFrame2P.tga",
+                                "K2100_WndFrame.tga",
+                                "K2100_WndFrame.tga"
+                            ],
+                            "description": "京急2199の客室の窓枠",
+                            "texture": "K2100_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [
+                                "K2100_Wnd_Red.tga",
+                                "K2100_WndFrame2P.tga",
+                                "K2100_WndFrame.tga",
+                                "K2100_Wnd_Ye.tga"
+                            ],
+                            "description": "京急2199の乗務員室の窓枠",
+                            "texture": "K2100_Wnd_Red.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側の窓枠",
+                            "texture": "K2100_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "tx_k8000_headlight.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色（下）",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の「乗務員室」の文字",
+                            "texture": "JOUMU_T.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "「乗務員室」の文字",
+                            "texture": "JOUMU_T.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                }
+            ]
+        },
+        "KQ2199_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "KQ_WHITE.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_WHITE.bmp",
+                                "KQ_WHITE.bmp"
+                            ],
+                            "description": "京急2199の白色の部分",
+                            "texture": "KQ_WHITE.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "keikyu_red.bmp",
+                                "KQ_BLUE.bmp",
+                                "KQ_WHITE.bmp",
+                                "yellow.bmp"
+                            ],
+                            "description": "京急2199の赤色の部分",
+                            "texture": "keikyu_red.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "K2100_WndFrame.tga",
+                                "K2100_WndFrame2P.tga",
+                                "K2100_WndFrame.tga",
+                                "K2100_WndFrame.tga"
+                            ],
+                            "description": "客室の窓枠",
+                            "texture": "K2100_WndFrame.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の間",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の「競技」の文字",
+                            "texture": "K2100_DUEL.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の行先の文字。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "K2100_For_Umeda.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の間。幕の切替専用。普段は隠れている",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "KQ_FOR_EVENT.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「競技」の方向幕。幕の切替専用。普段は隠れている",
+                            "texture": "KQ_DUEL_EVENT.png"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "JR223": {
 
