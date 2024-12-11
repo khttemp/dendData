@@ -7995,7 +7995,7 @@
                         },
                         {
                             "colorList": [],
-                            "description": "",
+                            "description": "方向幕。ステージによってテスクチャの置き換えが行われる",
                             "texture": "K80_SANDA.png"
                         }
                     ]
