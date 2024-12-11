@@ -7018,7 +7018,512 @@
         }
     },
     "JR223": {
-
+        "JR223_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "リベット",
+                            "texture": "223_Ribet.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JR223の前の銀色の部分",
+                            "texture": "223_FrontSilver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の帯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ベージュ色の帯",
+                            "texture": "223_beage.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "茶色の帯",
+                            "texture": "223_brawn.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "青色の帯",
+                            "texture": "223_blue.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "white.bmp",
+                                "colorless.tga",
+                                "colorless.tga",
+                                "colorless.tga",
+                                "colorless.tga"
+                            ],
+                            "description": "白い紐",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "223_mask01.bmp",
+                                "223_mask01.bmp",
+                                "mask_macya.bmp",
+                                "maroon.bmp",
+                                "colorless.tga"
+                            ],
+                            "description": "覆面の上と下の部分",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "223_mask01.bmp",
+                                "d_orange.bmp",
+                                "mask_macya.bmp",
+                                "maroon.bmp",
+                                "colorless.tga"
+                            ],
+                            "description": "覆面の中央の部分",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JR223の屋根の色",
+                            "texture": "223_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JR223の波状の部分",
+                            "texture": "223_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "すっぴん専用の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "223_SANNOMIYA.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "223_SANNOMIYA_SIDE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「号車」の部分",
+                            "texture": "223_GOUSYA.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の号車番号の部分",
+                            "texture": "223_LED_1.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "223_rapid.bmp",
+                                "223_local.bmp",
+                                "223_kosei.bmp",
+                                "223_hankyu.bmp",
+                                "223_rapid.bmp"
+                            ],
+                            "description": "中央と側面の方向幕",
+                            "texture": "223_hankyu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "すっぴん専用の「競技」の方向幕",
+                            "texture": "223_LED_DUEL.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "tx_h2000_08.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "tx_h2000_08.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ドアの窓枠",
+                            "texture": "223_WndFrame_S.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "223_WndFrame_B.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の後ろの窓枠",
+                            "texture": "223_WndFrame_DS.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の色",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "223_3001.tga",
+                                "223_3001.tga",
+                                "223_3001.tga",
+                                "223_H2000.tga",
+                                "223_3001.tga"
+                            ],
+                            "description": "JR223の車番",
+                            "texture": "223_3001.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "duct_holl2.tga"
+                        },
+                        {
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "colorless.tga",
+                                "tx_h2000_03.tga",
+                                "colorless.tga"
+                            ],
+                            "description": "阪急2000系風覆面の車番",
+                            "texture": "tx_h2000_03.tga"
+                        },
+                        {
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "colorless.tga",
+                                "2000_Kanban.tga",
+                                "colorless.tga"
+                            ],
+                            "description": "阪急2000系風覆面の看板",
+                            "texture": "2000_Kanban.tga"
+                        },
+                        {
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "colorless.tga",
+                                "223_DUEL.tga",
+                                "colorless.tga"
+                            ],
+                            "description": "阪急2000系風覆面の「競技」の文字",
+                            "texture": "223_DUEL.tga"
+                        },
+                        {
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "colorless.tga",
+                                "223_hujiwara.tga",
+                                "colorless.tga"
+                            ],
+                            "description": "阪急2000系風覆面の「藤原模型店」の文字",
+                            "texture": "223_hujiwara.tga"
+                        },
+                        {
+                            "colorList": [
+                                "colorless.tga",
+                                "colorless.tga",
+                                "colorless.tga",
+                                "han_tetu.bmp",
+                                "colorless.tga"
+                            ],
+                            "description": "阪急2000系風覆面の鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JR223の前方の小さい丸の部分",
+                            "texture": "2000_Kanban.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "JR223_01": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "d_gray.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "リベット",
+                            "texture": "223_Ribet.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分2",
+                            "texture": "223_FrontSilver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の帯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ベージュ色の帯",
+                            "texture": "223_beage.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "茶色の帯",
+                            "texture": "223_brawn.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "青色の帯",
+                            "texture": "223_blue.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "223_mask01.bmp",
+                                "223_mask01.bmp",
+                                "mask_macya.bmp",
+                                "maroon.bmp",
+                                "colorless.tga"
+                            ],
+                            "description": "覆面の上と下の部分",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "223_mask01.bmp",
+                                "d_orange.bmp",
+                                "mask_macya.bmp",
+                                "maroon.bmp",
+                                "colorless.tga"
+                            ],
+                            "description": "覆面の中央の部分",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JR223の屋根の色",
+                            "texture": "223_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JR223の波状の部分",
+                            "texture": "223_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "223_SANNOMIYA_SIDE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「号車」の部分",
+                            "texture": "223_GOUSYA.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の号車番号の部分",
+                            "texture": "223_LED_1.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "223_rapid.bmp",
+                                "223_local.bmp",
+                                "223_kosei.bmp",
+                                "223_hankyu.bmp",
+                                "223_rapid.bmp"
+                            ],
+                            "description": "側面の方向幕",
+                            "texture": "223_hankyu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ドアの窓枠",
+                            "texture": "223_WndFrame_S.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "223_WndFrame_B.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の色",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "duct_holl2.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "H2300": {
 
