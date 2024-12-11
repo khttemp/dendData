@@ -808,7 +808,7 @@
                         },
                         {
                             "colorList": [],
-                            "description":"前照灯のケース",
+                            "description":"前照灯のフレーム",
                             "texture": "white.bmp"
                         },
                         {
@@ -7526,7 +7526,342 @@
         }
     },
     "H2300": {
-
+        "H2300_0": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパー",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "H2300_FOR_SIDE.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転台",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "H2000_Blue.png",
+                                "H2000_green.png"
+                            ],
+                            "description": "阪急2300系の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "blue_iron.png",
+                                "green_iron.png"
+                            ],
+                            "description": "渡り板",
+                            "texture": "Maroon_Iron.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側",
+                            "texture": "maroon_uti.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯のフレーム",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "左右の標識灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯",
+                            "texture": "H2000_Light.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪急2300系の車番",
+                            "texture": "H2300_NO.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "チェイン",
+                            "texture": "Chane2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客の影",
+                            "texture": "H2300_In_Shadow.png"
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H2000_WndFrame_Blue.tga",
+                                "H2000_WndFrame_Green.tga"
+                            ],
+                            "description": "外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の窓枠",
+                            "texture": "H2000_WndFrame_In.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪急2300系の看板",
+                            "texture": "H2300_FOR_NORM.png"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "乗客1（左）",
+                            "texture": "in03.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客2（左）",
+                            "texture": "in04.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客3（左）",
+                            "texture": "in05.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客4（左）",
+                            "texture": "in06.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客5（左）",
+                            "texture": "in07.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客6（左）",
+                            "texture": "in08.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客7（左）",
+                            "texture": "in09.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客8（左）",
+                            "texture": "in10.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客スタ平さん（左）",
+                            "texture": "suta.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客中野さん（左）",
+                            "texture": "nakano.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客モブ（左）",
+                            "texture": "in_mob00.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客おっさん（左）",
+                            "texture": "o3.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "乗客1（右）",
+                            "texture": "in03.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客2（右）",
+                            "texture": "in04.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客3（右）",
+                            "texture": "in05.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客4（右）",
+                            "texture": "in06.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客5（右）",
+                            "texture": "in07.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客6（右）",
+                            "texture": "in08.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客7（右）",
+                            "texture": "in09.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客8（右）",
+                            "texture": "in10.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客スタ平さん（右）",
+                            "texture": "suta.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客中野さん（右）",
+                            "texture": "nakano.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客モブ（右）",
+                            "texture": "in_mob00.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客おっさん（右）",
+                            "texture": "o3.tga"
+                        }
+                    ]
+                }
+            ]
+        },
+        "H2300_1": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "H2300_FOR_SIDE.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "l_blue.png",
+                                "d_huji.png"
+                            ],
+                            "description": "阪急2300系の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "乗客の影",
+                            "texture": "H2300_In_Shadow.png"
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H2000_WndFrame_L_Blue.tga",
+                                "H2000_WndFrame_d_huji.tga"
+                            ],
+                            "description": "外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "乗客モブ（左）",
+                            "texture": "in_mob00.tga"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "乗客モブ（右）",
+                            "texture": "in_mob00.tga"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "AE86": {
 
