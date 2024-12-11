@@ -7863,13 +7863,144 @@
             ]
         }
     },
-    "AE86": {
-
-    },
-    "Deki3": {
-
-    },
     "K80": {
-
+        "K80_00": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "han_tetu.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "han_tetu.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのフレーム",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのアーム",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "80_green_0.bmp",
+                                "kh_orange.bmp"
+                            ],
+                            "description": "京阪80系の淡い緑色の部分",
+                            "texture": "80_green_0.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "80_green_1.bmp",
+                                "kh_red.bmp"
+                            ],
+                            "description": "京阪80系の濃い緑色の部分",
+                            "texture": "80_green_1.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側",
+                            "texture": "maroon_uti.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分2",
+                            "texture": "han_ten.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "オレンジ色のLED",
+                            "texture": "orange.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [
+                                "80_Wnd_FrameBK.tga",
+                                "80_Wnd_FrameBK_Red.tga"
+                            ],
+                            "description": "窓枠",
+                            "texture": "80_Wnd_FrameBK.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Rect0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "京阪80系の車番",
+                            "texture": "No81.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "",
+                            "texture": "K80_SANDA.png"
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }
