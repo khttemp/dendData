@@ -2720,7 +2720,264 @@
 
     },
     "H7011": {
-
+        "H7011_0": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのアーム",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "ワイパーのフレーム",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の「競技」の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_duel.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方と側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の色",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯のフレーム",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png"
+                            ],
+                            "description": "阪急7011の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪急7011のクリーム色",
+                            "texture": "H7011_Cleam.png"
+                        },
+                        {
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "H7001_Iron_1.png",
+                                "H7001_Iron_2.png",
+                                "H7001_Iron_3.png",
+                                "H7001_Iron_4.png",
+                                "H7001_Iron_5.png",
+                                "H7001_Iron_6.png",
+                                "H7001_Iron_7.png"
+                            ],
+                            "description": "渡り板",
+                            "texture": "Maroon_Iron.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側",
+                            "texture": "maroon_uti.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転台の黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "中央の前照灯の色",
+                            "texture": "H2000_Light.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪急7011の車番",
+                            "texture": "7011.png"
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H7001_WndFrame_1.tga",
+                                "H7001_WndFrame_2.tga",
+                                "H7001_WndFrame_3.tga",
+                                "H7001_WndFrame_4.tga",
+                                "H7001_WndFrame_5.tga",
+                                "H7001_WndFrame_6.tga",
+                                "H7001_WndFrame_7.tga"
+                            ],
+                            "description": "外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "内側の窓枠",
+                            "texture": "H2000_WndFrame_In.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT_SILVER.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "スピードスターズのロゴ",
+                            "texture": "SPEED_STARS.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        "H7011_1": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": ""
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の「競技」の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_duel.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の行先の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "tx_h8200_umeda.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "maroon.bmp",
+                                "green0.bmp",
+                                "gray.bmp",
+                                "red.bmp",
+                                "HS9000_Orange.png",
+                                "Ice_Green.png",
+                                "KO_White.png",
+                                "ODAQ_White.png"
+                            ],
+                            "description": "阪急7011の全体的な色",
+                            "texture": "maroon.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "阪急7011のクリーム色",
+                            "texture": "H7011_Cleam.png"
+                        },
+                        {
+                            "colorList": [
+                                "Maroon_Iron.png",
+                                "H7001_Iron_1.png",
+                                "H7001_Iron_2.png",
+                                "H7001_Iron_3.png",
+                                "H7001_Iron_4.png",
+                                "H7001_Iron_5.png",
+                                "H7001_Iron_6.png",
+                                "H7001_Iron_7.png"
+                            ],
+                            "description": "渡り板",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀色の部分",
+                            "texture": "silver.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "H2000_WndFrame.tga",
+                                "H7001_WndFrame_1.tga",
+                                "H7001_WndFrame_2.tga",
+                                "H7001_WndFrame_3.tga",
+                                "H7001_WndFrame_4.tga",
+                                "H7001_WndFrame_5.tga",
+                                "H7001_WndFrame_6.tga",
+                                "H7001_WndFrame_7.tga"
+                            ],
+                            "description": "外側の窓枠",
+                            "texture": "H2000_WndFrame.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色（普段は隠れている）",
+                            "texture": "JOINT_SILVER.png"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "E233": {
         "E233_0": {
