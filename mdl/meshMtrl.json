@@ -2723,7 +2723,593 @@
 
     },
     "E233": {
-
+        "E233_0": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "左ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのフレーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "右ワイパーのアーム",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "予備ワイパー",
+                            "texture": "black.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分2",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の後ろの部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Green.png",
+                                "E233_Green.png",
+                                "E233_RinkaiBlue.png"
+                            ],
+                            "description": "E233系の側面の下の青い帯",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Orange.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiGreen.png"
+                            ],
+                            "description": "E233系の側面の下の青い帯2",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiCian.png"
+                            ],
+                            "description": "E233系の側面の下の青い帯3",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiBlue.png"
+                            ],
+                            "description": "E233系の側面の上と下の青い帯",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "white.bmp",
+                                "white.bmp",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Green.png",
+                                "E233_Green.png",
+                                "E233_RinkaiBlue.png"
+                            ],
+                            "description": "E233系の前方の青色の部分",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "white.bmp",
+                                "white.bmp",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Orange.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiGreen.png"
+                            ],
+                            "description": "E233系の前方の青色の部分2",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "white.bmp",
+                                "white.bmp",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiCian.png"
+                            ],
+                            "description": "E233系の前方の青色の部分3",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "white.bmp",
+                                "white.bmp",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiBlue.png"
+                            ],
+                            "description": "E233系の前方の青色の部分4",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "white.bmp",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "white.bmp",
+                                "white.bmp",
+                                "white.bmp",
+                                "white.bmp",
+                                "white.bmp",
+                                "white.bmp"
+                            ],
+                            "description": "E233系の前方の白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分2",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀白色の部分",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "リベット",
+                            "texture": "223_Ribet.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分2",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前方の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "E233_Norm.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "E233_NormSide.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "後尾灯の色",
+                            "texture": "E233_RedLed.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "白色の部分2",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "E233_WndFrame0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の側面の窓枠",
+                            "texture": "E233_WndFrame1.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ドアの窓枠",
+                            "texture": "E233_WndFrame2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の窓枠",
+                            "texture": "E233_WndFrame3.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の内側の窓枠",
+                            "texture": "E233_WndFrame_BK.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "前照灯の枠",
+                            "texture": "E233_LightFrame.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の号車番号",
+                            "texture": "E233_1.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系のスピーカー",
+                            "texture": "E233_Sp.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色",
+                            "texture": "JOINT_SILVER.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の屋根の色",
+                            "texture": "223_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の波状の部分",
+                            "texture": "223_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系のJRロゴ",
+                            "texture": "JR_LOGO.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の「東日本」のロゴ",
+                            "texture": "E233_EAST.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の「233E」の部分",
+                            "texture": "E233_BodyNo.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "りんかい線風専用の前方のロゴ",
+                            "texture": "TWR_Logo_B.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "りんかい線風専用の側面のロゴ",
+                            "texture": "TWR_Logo_B.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "運転室の前方の窓の色",
+                            "texture": "white.bmp"
+                        }
+                    ]
+                }
+            ]
+        },
+        "E233_1": {
+            "mesh": [
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "前のファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "後ろのファン",
+                            "texture": "silver.bmp"
+                        }
+                    ]
+                },
+                {
+                    "mtrl": [
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の枠",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "黒色の部分",
+                            "texture": "black.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の灯",
+                            "texture": "white.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "幌",
+                            "texture": "spring.bmp"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Green.png",
+                                "E233_Green.png",
+                                "E233_RinkaiBlue.png"
+                            ],
+                            "description": "E233系の側面の下の青い帯",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Orange.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiGreen.png"
+                            ],
+                            "description": "E233系の側面の下の青い帯2",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiCian.png"
+                            ],
+                            "description": "E233系の側面の下の青い帯3",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [
+                                "E233_Blue.png",
+                                "E233_ChuO_Orange.png",
+                                "E233_Ye.png",
+                                "E233_Yama.png",
+                                "E233_Red.png",
+                                "E233_Green.png",
+                                "E233_Yama.png",
+                                "E233_Green.png",
+                                "E233_RinkaiBlue.png"
+                            ],
+                            "description": "E233系の側面の上と下の青い帯",
+                            "texture": "E233_Blue.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "灰色の部分",
+                            "texture": "gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "鉄色の部分",
+                            "texture": "han_tetu.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "銀白色の部分",
+                            "texture": "white_silver.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "リベット",
+                            "texture": "223_Ribet.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "濃い灰色の部分",
+                            "texture": "d_gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕。ステージによってテスクチャの置き換えが行われる",
+                            "texture": "E233_NormSide.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "客室の窓枠",
+                            "texture": "E233_WndFrame0.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ドアの窓枠",
+                            "texture": "E233_WndFrame2.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "側面の方向幕の窓枠",
+                            "texture": "E233_WndFrame3.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の号車番号",
+                            "texture": "E233_1.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系のスピーカー",
+                            "texture": "E233_Sp.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "JOINTの色（普段は隠れている）",
+                            "texture": "JOINT_SILVER.png"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の屋根の色",
+                            "texture": "223_Mount_Gray.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "E233系の波状の部分",
+                            "texture": "223_MOUNT_WAVE.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの色",
+                            "texture": "duct_bg.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ductの穴",
+                            "texture": "duct_holl.bmp"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "ダクトの穴（ファン）",
+                            "texture": "DactHoll_Tobu.tga"
+                        },
+                        {
+                            "colorList": [],
+                            "description": "りんかい線風専用の側面のロゴｓ",
+                            "texture": "TWR_Logo_B.png"
+                        }
+                    ]
+                }
+            ]
+        }
     },
     "H2800": {
         "H2800_00": {
