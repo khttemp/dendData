@@ -229,43 +229,8 @@ angular.module('myApp', [])
 
         function setProperty(comicNum, cmdList, cmd, idx){
             if (idx == 0) {
-                let addComicDescription = "【";
-                let usedFlag = false;
-                if (CMD[cmd]["LS_comic"] != undefined) {
-                    addComicDescription += "LS";
-                    usedFlag = true;
-                }
-                if (CMD[cmd]["BS_comic"] != undefined) {
-                    if (usedFlag) {
-                        addComicDescription += "、";
-                    }
-                    addComicDescription += "BS"
-                    usedFlag = true;
-                }
-                if (CMD[cmd]["CS_comic"] != undefined) {
-                    if (usedFlag) {
-                        addComicDescription += "、";
-                    }
-                    addComicDescription += "CS"
-                    usedFlag = true;
-                }
-                if (CMD[cmd]["RS_comic"] != undefined) {
-                    if (usedFlag) {
-                        addComicDescription += "、";
-                    }
-                    addComicDescription += "RS"
-                    usedFlag = true;
-                }
-                if (CMD[cmd]["SS_comic"] != undefined) {
-                    if (usedFlag) {
-                        addComicDescription += "、";
-                    }
-                    addComicDescription += "SS"
-                }
-                addComicDescription += "】<br>";
-
                 if (CMD[cmd].description != "") {
-                    return addComicDescription + CMD[cmd].description.replaceAll(' ', '');
+                    return CMD[cmd].description.replaceAll(' ', '');
                 }
             }
             let index = Number(cmdList[idx]);
