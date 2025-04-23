@@ -9846,7 +9846,7 @@ const CMD = {
     },
     "SkipEventPoint": {
         "num": 72,
-        "description": "【LS、BS、CS、RS、RS】" + newLine
+        "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "スキップをした場合、スキップをこの行で止める",
         "LS_comic": [
             "COMIC000.BIN",
