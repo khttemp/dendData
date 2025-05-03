@@ -589,6 +589,7 @@ function readTbl(str) {
 }
 async function readStageData() {
     try {
+        document.getElementById("readEndDiv").innerHTML = "";
         initTable();
 
         for (let i = 0; i < searchTextList.length; i++) {
@@ -1067,6 +1068,7 @@ async function readStageData() {
         }
         setProgress(1);
         checkTexInfo(texInfoList, modelList, ambList);
+        document.getElementById("readEndDiv").innerHTML = "読込完了";
     } catch (error) {
         let errorDiv = document.getElementById("errorDiv");
         let stackList = error.stack.split("\n");
@@ -1691,6 +1693,11 @@ async function setRailCnt(index, tableBody, railList) {
         }
 
         for (let j = 0; j < railList[i].length; j++) {
+            if (railDataCnt > 0) {
+                if (j > 16 + 4 * railDataCnt) {
+                    break;
+                }
+            }
             let td = tr.childNodes[j];
             if (j > 16) {
                 let idx = (j - 17) % 4 + 17;
@@ -1712,59 +1719,72 @@ async function setRailCnt(index, tableBody, railList) {
                     currentRailModelName = modelList[Number(railList[i][9])][1]
                     prevRailDataCnt = Number(railList[prevRail][16]);
                     prevRailModelName = modelList[Number(railList[prevRail][9])][1];
-                    // ちゃんとモデル通り書いたかの検査
-                    if (currentRailDataCnt != railModelList[currentRailModelName]) {
-                        printError(`レール No.${i}の進み方の定義が違います【モデル：${railCntToName[Number(railModelList[currentRailModelName])]}】【書き方：${railCntToName[Number(currentRailDataCnt)]}】`);
-                    } else {
-                        // お互い単線と複線の場合
-                        if (currentRailDataCnt != railModelList[prevRailModelName]) {
-                            if (currentRailDataCnt == 2) {
-                                currentRailLeftPrevRailNo = Number(railList[i][19]);
-                                currentRailRightPrevRailNo = Number(railList[i][23]);
-                                if (currentRailLeftPrevRailNo == prevRail || currentRailRightPrevRailNo == prevRail) {
-                                    if (currentRailLeftPrevRailNo == prevRail) {
-                                        baseX = Number(railList[i][3]);
-                                        if (baseX != 6.5) {
-                                            baseTd = tr.childNodes[3];
-                                            baseTd.style.backgroundColor = "red";
-                                            printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                    // 現在レールと、prevRailは使えるレール
+                    if (railModelNameList.includes(currentRailModelName.toLowerCase()) && railModelNameList.includes(prevRailModelName.toLowerCase())) {
+                        if (currentRailDataCnt != railModelList[currentRailModelName]) {
+                            printError(`レール No.${i}の進み方の定義が違います【モデル：${railCntToName[Number(railModelList[currentRailModelName])]}】【書き方：${railCntToName[Number(currentRailDataCnt)]}】`);
+                        } else {
+                            // お互い単線と複線の場合
+                            if (currentRailDataCnt != railModelList[prevRailModelName]) {
+                                // 現在のレールが複線の場合
+                                if (currentRailDataCnt == 2) {
+                                    currentRailLeftPrevRailNo = Number(railList[i][19]);
+                                    currentRailRightPrevRailNo = Number(railList[i][23]);
+                                    // 現在レールのprevRailが、進み方のprevと一致
+                                    if (currentRailLeftPrevRailNo == prevRail || currentRailRightPrevRailNo == prevRail) {
+                                        // 左が一致
+                                        if (currentRailLeftPrevRailNo == prevRail) {
+                                            baseX = Number(railList[i][3]);
+                                            if (baseX != 6.5) {
+                                                baseTd = tr.childNodes[3];
+                                                baseTd.style.backgroundColor = "red";
+                                                printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                            }
                                         }
-                                    } else if (currentRailRightPrevRailNo == prevRail) {
-                                        baseX = Number(railList[i][3]);
-                                        if (baseX != -6.5) {
-                                            baseTd = tr.childNodes[3];
-                                            baseTd.style.backgroundColor = "red";
-                                            printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                        // 右が一致
+                                        else if (currentRailRightPrevRailNo == prevRail) {
+                                            baseX = Number(railList[i][3]);
+                                            if (baseX != -6.5) {
+                                                baseTd = tr.childNodes[3];
+                                                baseTd.style.backgroundColor = "red";
+                                                printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            else if (currentRailDataCnt == 1) {
-                                currentRailPrevRailNo = Number(railList[i][19]);
-                                if (currentRailPrevRailNo == prevRail) {
-                                    prevRailNextLeftRailNo = Number(railList[prevRail][17]);
-                                    prevRailNextRightRailNo = Number(railList[prevRail][21]);
-                                    if (prevRailNextLeftRailNo == i || prevRailNextRightRailNo == i) {
-                                        if (prevRailNextLeftRailNo == i) {
-                                            baseX = Number(railList[i][3]);
-                                            if (baseX != -6.5) {
-                                                if (baseX == 6.5) {
-                                                    console.log(`レール No.${prevRail}のNextを自動補正しました`);
-                                                } else {
-                                                    baseTd = tr.childNodes[3];
-                                                    baseTd.style.backgroundColor = "red";
-                                                    printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                // 現在のレールが単線の場合
+                                else if (currentRailDataCnt == 1) {
+                                    currentRailPrevRailNo = Number(railList[i][19]);
+                                    // 現在レールの進み方のprevが、prevRailと一致
+                                    if (currentRailPrevRailNo == prevRail) {
+                                        prevRailNextLeftRailNo = Number(railList[prevRail][17]);
+                                        prevRailNextRightRailNo = Number(railList[prevRail][21]);
+                                        // 現在レールが、prevRailの進み方のnextと一致
+                                        if (prevRailNextLeftRailNo == i || prevRailNextRightRailNo == i) {
+                                            // 左と一致
+                                            if (prevRailNextLeftRailNo == i) {
+                                                baseX = Number(railList[i][3]);
+                                                if (baseX != -6.5) {
+                                                    if (baseX == 6.5) {
+                                                        console.log(`レール No.${prevRail}のNextを自動補正しました`);
+                                                    } else {
+                                                        baseTd = tr.childNodes[3];
+                                                        baseTd.style.backgroundColor = "red";
+                                                        printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                                    }
                                                 }
                                             }
-                                        } else if (prevRailNextRightRailNo == i) {
-                                            baseX = Number(railList[i][3]);
-                                            if (baseX != 6.5) {
-                                                if (baseX == -6.5) {
-                                                    console.log(`レール No.${prevRail}のNextを自動補正しました`);
-                                                } else {
-                                                    baseTd = tr.childNodes[3];
-                                                    baseTd.style.backgroundColor = "red";
-                                                    printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                            // 右と一致
+                                            else if (prevRailNextRightRailNo == i) {
+                                                baseX = Number(railList[i][3]);
+                                                if (baseX != 6.5) {
+                                                    if (baseX == -6.5) {
+                                                        console.log(`レール No.${prevRail}のNextを自動補正しました`);
+                                                    } else {
+                                                        baseTd = tr.childNodes[3];
+                                                        baseTd.style.backgroundColor = "red";
+                                                        printError(`レール No.${i}のX移動数値(${baseX})が異常です`);
+                                                    }
                                                 }
                                             }
                                         }
@@ -1787,7 +1807,7 @@ async function setRailCnt(index, tableBody, railList) {
                         if (nextRailNo >= railList.length) {
                             nextRailTd = tr.childNodes[17 + cnt*4];
                             nextRailTd.style.backgroundColor = "red";
-                            printError(`レール No.${i}のNextレール(${nextRailNo})が異常です`);
+                            printError(`レール No.${i}のNext[${cnt}]レール(${nextRailNo})は、存在しない番号です`);
                         }
                     }
                 }
