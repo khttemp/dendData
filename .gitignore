@@ -11,4 +11,6 @@ makeMdlBin/*.ini
 makeSff/*.tga
 makeSff/*.png
 makeSff/*.SFF
+makeFvtToCsv/*.ini
+makeFvtToCsv/*.csv
 *.bat
