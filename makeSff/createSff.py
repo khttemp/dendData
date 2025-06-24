@@ -2,43 +2,19 @@ import struct
 from PIL import Image, ImageDraw, ImageFont
 import sys
 
-index = 0
-allTextList = []
-def inputText(mode):
-    global start
-    global end
-    
-    while start <= end:
-        try:
-            if mode == 1:
-                text = struct.pack(">B", start).decode("cp932")
-            elif mode == 2:
-                text = struct.pack(">H", start).decode("cp932")
-                if len(text) != 1:
-                    start += 1
-                    continue
-            #重複文字は除く
-            if text not in allTextList:
-                allTextList.append(text)
-        except:
-            pass
-        finally:
-            start += 1
+allHexTextList = []
 
-#ASCII文字
-start = 0x21
-end = 0x7E
-inputText(1)
+f = open("KeyCodeTable.inc", encoding="cp932")
+lines = f.readlines()
+f.close()
 
-#半角
-start = 0xA1
-end = 0xDF
-inputText(1)
-
-#全角
-start = 0x8141
-end = 0xFFFF
-inputText(2)
+for idx, line in enumerate(lines):
+    if line.find("//") == 0 or "//" in line:
+        continue
+    arr = line.strip().split("\t")
+    textIndex = int(arr[0].strip(","), 16)
+    if textIndex != 0xFFFF:
+        allHexTextList.append(idx)
 
 def setName(string, length, flag=True):
     strArray = bytearray()
@@ -141,17 +117,20 @@ byteArr.extend([0, 0])
 fontMaxIndex = 6
 
 readTextTable = readText(txtLocation)
-#print(readTextTable)
 cnt = 0
-inputTable = []
-for idx, text in enumerate(allTextList):
+inputTextTable = []
+for idx, hexText in enumerate(allHexTextList):
+    if hexText <= 0xDF:
+        text = struct.pack(">B", hexText).decode("cp932")
+    else:
+        text = struct.pack(">H", hexText).decode("cp932")
     if text in readTextTable:
         byteArr.extend(struct.pack("<h", cnt))
-        inputTable.append(cnt)
+        inputTextTable.append(text)
         cnt += 1
     else:
         byteArr.extend(struct.pack("<h", -1))
-        inputTable.append(-1)
+
 fontMax = cnt
 hFontMax = struct.pack("<h", fontMax)
 byteArr[fontMaxIndex] = hFontMax[0]
@@ -171,10 +150,7 @@ testCropFlag = False
 font = ImageFont.truetype(fontLocation, size=fontSize)
 img = Image.new("RGBA", (sheetSize, sheetSize), (0, 0, 0, 0))
 draw = ImageDraw.Draw(img)
-for i in inputTable:
-    if inputTable[i] == -1:
-        continue
-    text = allTextList[inputTable[i]]
+for text in inputTextTable:
     bbox = draw.multiline_textbbox([posX, posY], text, font=font)
 
     if bbox[2] + offsetX >= sheetSize:
