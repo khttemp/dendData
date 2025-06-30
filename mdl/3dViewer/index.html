@@ -1,0 +1,24 @@
+<html lang="ja">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3D Model Loader</title>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "./threejs/three.module.js",
+                    "OrbitControls":"./threejs/OrbitControls.js",
+                    "GLTFLoader":"./threejs/GLTFLoader.js",
+                    "RGBELoader":"./threejs/RGBELoader.js"
+                }
+            }
+        </script>
+        <script type="module" src="index.js"></script>
+    </head>
+    <body>
+        <div id="main_canvas">
+            <canvas id="canvas" width="100%" height="100%"></canvas>
+        </div>
+    </body>
+</html>
