@@ -5,7 +5,23 @@ function createTd(table, data, imageDir) {
         let imageFlag = true;
         let td = document.createElement("td");
         tr.appendChild(td);
-        if (i == 2) {
+        if (i == 0) {
+            let name = "";
+            if (data[i].includes(".smf")) {
+                name = data[i].split(".smf")[0];
+            } else if (data[i].includes(".SMF")) {
+                name = data[i].split(".SMF")[0];
+            }
+            let modelFolder = "";
+            if (imageDir == "./imageLS/") {
+                modelFolder = "LS";
+            } else if (imageDir == "./imageBS/") {
+                modelFolder = "BS";
+            } else {
+                modelFolder = "CSRS";
+            }
+            td.innerHTML = `<a href="./3dViewer/?model=${modelFolder}/${name}" target="_blank" rel="noopener noreferrer">${data[i]}</a>`;
+        } else if (i == 2) {
             td.innerHTML = data[i].replaceAll("|", "<br>");
         } else {
             td.innerHTML = data[i];
