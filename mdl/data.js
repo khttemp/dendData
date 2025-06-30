@@ -6,11 +6,9 @@ function createTd(table, data, imageDir) {
         let td = document.createElement("td");
         tr.appendChild(td);
         if (i == 0) {
-            let name = "";
-            if (data[i].includes(".smf")) {
-                name = data[i].split(".smf")[0];
-            } else if (data[i].includes(".SMF")) {
-                name = data[i].split(".SMF")[0];
+            let name = data[i].toUpperCase();
+            if (name.includes(".SMF")) {
+                name = name.split(".SMF")[0];
             }
             let modelFolder = "";
             if (imageDir == "./imageLS/") {
