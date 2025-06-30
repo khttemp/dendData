@@ -24,6 +24,7 @@ function load() {
     renderer.setSize(windowWidth, windowHeight)
 
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color('#cccccc');
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(60, windowWidth / windowHeight, 0.1, 10000);
@@ -43,6 +44,11 @@ function load() {
     loader.load(modelPath, function (gltf) {
         const model = gltf.scene;
         model.scale.set(0.15, 0.15, 0.15);
+        model.traverse((object) => { //モデルの構成要素をforEach的に走査
+            if(object.isMesh) { //その構成要素がメッシュだったら
+                object.material.transparent = true;
+            }
+        });
         scene.add(model);
     });
 
