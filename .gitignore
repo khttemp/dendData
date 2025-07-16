@@ -1,5 +1,6 @@
 __pycache__
 bin/
+smf/
 makeCmdJson/*.json
 makeCmdJson/*.ini
 makeComicTxt/*/*_comic.txt
