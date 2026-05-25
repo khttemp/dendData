@@ -26549,6 +26549,7 @@
     },
     "GAS_TARBIN": {
         "num": 378,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>車両にガスタービンがある場合、動かす<br>SSでは車両がデキ3の場合、GNを動かす<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -26578,6 +26579,7 @@
     },
     "ENGINE_START": {
         "num": 379,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>車両が気動車の場合、エンジンを動かす<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -26633,6 +26635,7 @@
     "CHANGE_CHILDOBJ_ANIME": {
         "num": 380,
         "mdlBin": ["CS", "RS"],
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>モデルにADD_CHILD_OBJで追加してたANIMEを変える<br>モデルバイナリでも使えるし、その場合引数１と２は-1になる<br>引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）<br>引数２：-1（あるセクションでのモデル）、その他（号車インデックス）<br>引数３：Child番号（0～3）<br>引数４：ANIME要素２<br>引数５：ANIME要素３",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -26882,6 +26885,7 @@
     },
     "RAIL_ANIME_CHANGE": {
         "num": 391,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>レールモデルのバイナリに定義されたANIMEを実行する<br>ストーリーモードのみ適用すると思われる<br>引数１：レール番号<br>引数２：ANIME要素２<br>引数３：ANIME要素３",
         "CS_comic": [
             "COMIC2300.BIN"
@@ -26889,6 +26893,7 @@
     },
     "STOP_COMIC_SE_ALL": {
         "num": 392,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>全てのSEを消す<br>引数１：フェードアウトするフレーム時間（SSでは使わない）",
         "CS_comic": [
             "COMIC2001.BIN",
@@ -27065,6 +27070,7 @@
     },
     "HURIKO": {
         "num": 393,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>指定車両の振り子機能を操作する<br>引数１：0（1P）、1（2P）<br>引数２：振り子操作<br>　マイナス値：左に傾く<br>　0：デフォルト状態<br>　プラス値：右に傾く",
         "CS_comic": [
             "COMIC2308.BIN",
@@ -27076,6 +27082,7 @@
     },
     "FTV_PLAY_AND_PREV": {
         "num": 394,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>FTV_END_INHERITをした引数２のFVTに続いて、引数１のFVTを再生する<br>互いのFVTは、同じ画像を使わないといけない<br>引数１：FVT番号<br>引数２：FVT番号",
         "CS_comic": [
             "COMIC2309.BIN"
@@ -27083,6 +27090,7 @@
     },
     "FTV_END_INHERIT": {
         "num": 395,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>FTVを終了するが、FTV_PLAY_AND_PREVで引き継げるようにする<br>引数１：FVT番号",
         "CS_comic": [
             "COMIC2309.BIN"
@@ -27093,6 +27101,7 @@
     },
     "STATION_NAME_PRIORITY": {
         "num": 396,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>駅名表示を最前面に表示する<br>（デフォルト状態は車両番号アイコンより下）<br>ただし、SSでは何もせず次の行へ行く<br>引数１：1（True）、0（False）(SSでは使わない)",
         "CS_comic": [
             "COMIC2200.BIN",
@@ -27120,6 +27129,7 @@
     },
     "ALL_FIT": {
         "num": 397,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>指定車両を傾かないようにする<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "CS_comic": [
             "COMIC2100.BIN",
@@ -27538,6 +27548,7 @@
     },
     "SET_TRAIN_PTCL_AREA": {
         "num": 403,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>効果がない。未実装と思われる。<br>引数２の周りのパーティクルを操作するものと思われる<br>引数１：0（1P）、1（2P）<br>引数２：号車インデックス<br>引数３：1（True）、0（False）",
         "CS_comic": [
             "COMIC2300.BIN",
@@ -27548,6 +27559,7 @@
     },
     "WAIT_DOSAN_LENGTH": {
         "num": 404,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>土讃線をした場合、指定時間内にジャンプの高さが<br>引数２の数値以下になると、次の行へ行く<br>指定時間を過ぎて条件を満たしてない場合、END_DOSAN_LENGTHまで飛ぶ<br>引数１：0（1P）、1（2P）<br>引数２：ジャンプの高さ<br>引数３：指定時間（フレーム）",
         "CS_comic": [
             "COMIC2318.BIN",
@@ -27560,6 +27572,7 @@
     },
     "END_DOSAN_LENGTH": {
         "num": 405,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>WAIT_DOSAN_LENGTHで飛ぶ場合、この行で止める<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2318.BIN",
@@ -27569,6 +27582,7 @@
     },
     "DOSANSEN": {
         "num": 406,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>指定時間内に土讃線出来る区間まで来た場合、土讃線する<br>引数１：0（1P）、1（2P）<br>引数２：指定時間（フレーム）",
         "CS_comic": [
             "COMIC2318.BIN",
@@ -27603,6 +27617,7 @@
     },
     "TRAIN_DIR": {
         "num": 409,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>CS・RSでは、指定車両を推進運転するように方向を変える<br>SSでは、指定車両を折り返し運転するように方向を変える<br>引数１：0（1P）、1（2P）<br>引数２：1（デフォルト方向）、-1（逆方向）",
         "CS_comic": [
             "COMIC2400.BIN",
@@ -27671,6 +27686,7 @@
     },
     "QUICK_SAVE_EVENT": {
         "num": 411,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>効果なし<br>途中で始められるQuickSaveのフラグ設定と思われる<br>引数１：1（True）、0（False）",
         "CS_comic": [
             "COMIC2011.BIN",
@@ -27698,6 +27714,7 @@
     },
     "ENGINE_STOP": {
         "num": 413,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>車両が気動車の場合、エンジンを止める<br>SSではデキ３でも適用できる<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2333.BIN"
@@ -27708,6 +27725,7 @@
     },
     "IS_BTL_MODE": {
         "num": 414,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>バトルモード（二人バトル）の場合、引数１のFROMへ<br>そうではない場合、引数２のFROMへ飛ぶ<br>引数１：FROMの数字<br>引数２：FROMの数字",
         "CS_comic": [
             "COMIC2990.BIN",
@@ -27733,6 +27751,7 @@
     },
     "IS_FREE_MODE": {
         "num": 415,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>試運転モードの場合、引数１のFROMへ<br>そうではない場合、引数２のFROMへ飛ぶ<br>引数１：FROMの数字<br>引数２：FROMの数字",
         "CS_comic": [
             "COMIC2990.BIN"
@@ -27747,6 +27766,7 @@
     },
     "FIRST_OBJ_SET_ANIME_SCENE": {
         "num": 416,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>引数１で指定しているシーンに、<br>レールデータで定義しているANIMEを続けて実行する<br>引数１：0（1Pのシーン）、1（2Pのシーン）<br>引数２：レールデータのベースBIN　ANIMEのインデックス<br>引数３：ANIME要素２<br>引数４：ANIME要素３",
         "CS_comic": [
             "COMIC2011.BIN",
@@ -27777,6 +27797,7 @@
     },
     "STOP_WIPER": {
         "num": 419,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS、SS】<br>指定車両のワイパーを止める<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2429.BIN",
@@ -27790,6 +27811,7 @@
     },
     "TRAIN_ANIME_CHANGE": {
         "num": 420,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>車両に定義されているANIMEを実行する<br>引数１：0（1P）、1（2P）<br>引数２：号車インデックス<br>引数３：ANIME要素２<br>引数４：ANIME要素３",
         "CS_comic": [
             "COMIC2100.BIN"
@@ -27809,6 +27831,7 @@
     },
     "SET_COMIC_COLOR": {
         "num": 422,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>コマにカラーを設定する<br>引数１：コマの番号<br>引数２：R（0～255）<br>引数３：G（0～255）<br>引数４：B（0～255）<br>引数５：詳細不明。未使用と思われる<br>引数６：詳細不明。未使用と思われる",
         "CS_comic": [
             "COMIC2999.BIN",
@@ -27861,6 +27884,7 @@
     },
     "CHK_OUTRUN_CNT": {
         "num": 423,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>バトル開始後、指定車両が今まで脱線した数を数えて<br>指定数より以下の場合、引数３のFROMへ<br>超える場合、引数４のFROMへ飛ぶ<br>引数１：0（1P）、1（2P）<br>引数２：脱線数<br>引数３：FROM数字<br>引数４：FROM数字",
         "CS_comic": [
             "COMIC2010.BIN",
@@ -27870,10 +27894,12 @@
     },
     "CHK_D_AND_NOTCH": {
         "num": 424,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>バトル開始後、指定車両が今まで<br>ブレーキして、すぐノッチを入れる動作（パカパカ）が<br>引数２の数値より以下の場合、引数３のFROMへ<br>超える場合、引数４のFROMへ飛ぶ<br>ただし、中途半端な仕様なのかは不明だが、阪急2000系でしか出来ない<br>引数１：0（1P）、1（2P）<br>引数２：回数<br>引数３：FROM数字<br>引数４：FROM数字"
     },
     "ADD_CPU_LEN_OUTRUN": {
         "num": 425,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>引数２で取得したCPUモードのminLenを引数３の数値を足して調整する<br>ただし、引数３を取得できない不具合があると思われる<br>また、調整したminLenがmaxLenより小さい場合<br>minLenはmaxLenに20を足した数値になる<br>※誤字ではない。最低距離を調整している<br>引数１：0（1P）、1（2P）【デフォルトは0】<br>引数２：0（1P）、1（2P）【デフォルトは1】<br>引数３：調整数値",
         "CS_comic": [
             "COMIC2008.BIN",
@@ -27891,6 +27917,7 @@
     },
     "ADD_CPU_SPEED_D_AND_NOTCH": {
         "num": 426,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>引数２で取得したCPUモードのmaxSpeedを引数３の数値を足して調整する<br>ただし、引数３を取得できない不具合があると思われる<br>また、調整したmaxSpeedがminSpeedより小さい場合<br>maxSpeedはminSpeedに5を足した数値になる<br>引数１：0（1P）、1（2P）【デフォルトは0】<br>引数２：0（1P）、1（2P）【デフォルトは1】<br>引数３：調整数値",
         "CS_comic": [
             "COMIC2008.BIN",
@@ -27908,6 +27935,7 @@
     },
     "CHK_HIT_CNT": {
         "num": 427,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>バトル開始後、指定車両が今までHIT（衝突など）した数を数えて<br>引数２の数値より以下の場合、引数３のFROMへ<br>超える場合、引数４のFROMへ飛ぶ<br>引数１：0（1P）、1（2P）<br>引数２：HIT数<br>引数３：FROM数字<br>引数４：FROM数字",
         "CS_comic": [
             "COMIC2103.BIN"
@@ -27915,6 +27943,7 @@
     },
     "TOP_SPEED_HOSYO": {
         "num": 428,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>引数１で取得したCPUモードのmaxSpeedが<br>引数２より低い場合、maxSpeedを引数２の補正速度で変更する<br>引数１：0（1P）、1（2P）【デフォルトは1】<br>引数２：補正速度",
         "CS_comic": [
             "COMIC2008.BIN",
@@ -27932,6 +27961,7 @@
     },
     "SET_ROOT_BLOCK": {
         "num": 429,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>詳細不明。レールのblock要素と何か関係あるかと思われる",
         "CS_comic": [
             "COMIC2200.BIN",
@@ -27940,6 +27970,7 @@
     },
     "RIFT": {
         "num": 430,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>指定車両をパワーリフトする<br>（前方の台車をちょっと持ち上げて、落とす）<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2403.BIN"
@@ -27947,6 +27978,7 @@
     },
     "COLLISION": {
         "num": 431,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>未実装。衝突すると自走不能にするものと思われる",
         "CS_comic": [
             "COMIC2410.BIN",
@@ -27955,6 +27987,7 @@
     },
     "DIR_VIEW_CHANGE": {
         "num": 432,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>指定車両の先頭車番と後尾車番を入れ替える<br>※モデルバイナリの9-0、9-1を使う<br>引数１：0（1P）、1（2P）<br>引数２：1（デフォルト）、-1（入れ替え）",
         "CS_comic": [
             "COMIC2410.BIN",
@@ -27965,6 +27998,7 @@
     },
     "CHK_RAIL_NO": {
         "num": 433,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>指定車両がどのレールにいるかによって、FROMの分岐処理をする<br>引数１：0（1P）、1（2P）<br>引数２：現在0レールの場合、飛ぶFROM数字<br>引数３：現在100レールの場合、飛ぶFROM数字<br>引数４：現在200レールの場合、飛ぶFROM数字<br>引数５：現在300レールの場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2411.BIN"
@@ -27972,6 +28006,7 @@
     },
     "TRACK_CHANGE": {
         "num": 434,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>指定車両の台車を変える<br>引数１：0（1P）、1（2P）<br>引数２：0（標準軌）、1（狭軌）",
         "CS_comic": [
             "COMIC2412.BIN",
@@ -27981,6 +28016,7 @@
     },
     "CHK_LENGTH_DIR": {
         "num": 435,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>CSの推進運転専用の距離測定コマンド<br>引数３、４同士の距離を比較する<br>ただし、RSでは引数３、４に何を入れても<br>CHK_LENGTHのコマンドと同じ動作をする<br>引数１：指定距離<br>引数２：指定時間（フレーム）<br>引数３：0（正方向基準で1Pの先頭車）、-1（正方向基準で1Pの後尾車）<br>引数４：0（正方向基準でCPUの先頭車）、-1（正方向基準でCPUの後尾車）<br>引数５：指定時間内に条件を満たした場合、飛ぶFROM数字<br>引数６：指定時間内に条件を満たせなかった場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2436.BIN",
@@ -27991,6 +28027,7 @@
     },
     "CHK_POS_DIR": {
         "num": 436,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>CSの推進運転専用の位置測定コマンド<br>引数３、４同士の位置を比較する<br>このコマンドが単独で使われることはなく<br>CHK_LENGTH_DIRを実行した後ではないと、不具合が出る可能性が高い<br>ただし、RSでは引数３、４に何を入れても<br>CHK_POSTIONのコマンドと同じ動作をする<br>引数１：0（CPUが後ろにいる）、１（CPUが前にいる）<br>引数２：指定時間（フレーム）<br>引数３：0（正方向基準で1Pの先頭車）、-1（正方向基準で1Pの後尾車）<br>引数４：0（正方向基準でCPUの先頭車）、-1（正方向基準でCPUの後尾車）<br>引数５：指定時間内に条件を満たした場合、飛ぶFROM数字<br>引数６：指定時間内に条件を満たせなかった場合、飛ぶFROM数字",
         "CS_comic": [
             "COMIC2439.BIN",
@@ -27999,6 +28036,7 @@
     },
     "TRUE_CLASH": {
         "num": 437,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】<br>CPUが脱線しやすく、回復し難くなる<br>引数１：1（True）、0（False）",
         "CS_comic": [
             "COMIC2441.BIN",
@@ -28007,6 +28045,7 @@
     },
     "KATARIN_RUN": {
         "num": 438,
+        "comicscript": ["RS"],
         "description": "【RS、SS】<br>指定車両を指定角度で片輪走行させる<br>引数１：0（1P）、1（2P）<br>引数２：指定角度<br>　RS【マイナス値（左側）、プラス値（右側）】<br>　SS【プラス値（左側）、マイナス値（右側）】<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "RS_comic": [
             "COMIC3059.BIN",
