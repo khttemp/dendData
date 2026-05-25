@@ -717,7 +717,8 @@ const CMD = {
     "FADE_STAGE_BGM": {
         "num": 32,
         "mdlBin": ["LS", "BS", "CS", "RS"],
-        "description": "未実装のコマンド",
+        "description": "【モデルバイナリ】" + newLine
+                    + "未実装のコマンド",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -854,7 +855,8 @@ const CMD = {
     "LMove": {
         "num": 35,
         "mdlBin": ["LS", "BS", "CS", "RS"],
-        "description": "未実装のコマンド"
+        "description": "【モデルバイナリ】" + newLine
+                    + "未実装のコマンド"
     },
     "LLoopX": {
         "num": 36,

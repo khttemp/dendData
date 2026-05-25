@@ -607,7 +607,7 @@
     "FADE_STAGE_BGM": {
         "num": 32,
         "mdlBin": ["LS", "BS", "CS", "RS"],
-        "description": "未実装のコマンド",
+        "description": "【モデルバイナリ】<br>未実装のコマンド",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -737,7 +737,7 @@
     "LMove": {
         "num": 35,
         "mdlBin": ["LS", "BS", "CS", "RS"],
-        "description": "未実装のコマンド"
+        "description": "【モデルバイナリ】<br>未実装のコマンド"
     },
     "LLoopX": {
         "num": 36,
