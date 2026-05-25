@@ -537,7 +537,7 @@
     "RACE_START": {
         "num": 30,
         "mdlBin": ["LS", "BS", "CS", "RS"],
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルを始める",
         "LS_comic": [
             "COMIC200.BIN",
@@ -586,6 +586,7 @@
     "RACE_END": {
         "num": 31,
         "mdlBin": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["SS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルが終わる<br>※RSまでの旧作は、モデルバイナリ専用コマンド",
         "LS_bin": [
             "COUNT.BIN"
@@ -623,7 +624,7 @@
     "CHANGE_SCENE": {
         "num": 33,
         "mdlBin": ["LS", "BS", "CS", "RS"],
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>フェードアウトしてシーンを変える（メニューに戻るなど）<br>引数１：詳細不明。未使用と思われる",
         "LS_comic": [
             "COMIC012.BIN",
@@ -898,7 +899,7 @@
     },
     "SetComic": {
         "num": 50,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックをセットする。<br>引数１：コマの番号<br>引数２：スクリプト内のイメージ番号",
         "LS_comic": [
             "COMIC000.BIN",
@@ -1290,7 +1291,7 @@
     },
     "ComicPos": {
         "num": 51,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックの位置を設定する<br>引数１：コマの番号<br>引数２：x座標<br>引数３：y座標<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
@@ -2071,7 +2072,7 @@
     },
     "ComicAlpha": {
         "num": 52,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックのAlphaを設定する<br>引数１：コマの番号<br>引数２：from Alpha<br>引数３：to Alpha<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
@@ -2853,7 +2854,7 @@
     },
     "ComicWait": {
         "num": 53,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックを待つ<br>引数１：コマの番号<br>引数２：詳細不明。未使用と思われる（１）（SSでは使わない。）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -2872,7 +2873,7 @@
     },
     "Scene_to_Comic": {
         "num": 54,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>3Dシーンをコミック化する<br>引数１：コマの番号<br>引数２：width<br>引数３：height<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "LS_comic": [
             "COMIC000.BIN",
@@ -3400,7 +3401,7 @@
     },
     "Fill_BG": {
         "num": 56,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>画面をBGで埋める<br>引数１：1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -3575,7 +3576,7 @@
     },
     "ComicEnd": {
         "num": 57,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>スクリプトを終了する",
         "LS_comic": [
             "COMIC000.BIN",
@@ -4891,7 +4892,7 @@
     },
     "CamComtroll": {
         "num": 58,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>スクリプトのカメラを設定できるようにする。<br>引数１：1（True）、0（False）<br>引数２：スクリーン番号【SSで引数で渡す場合】",
         "LS_comic": [
             "COMIC000.BIN",
@@ -5405,7 +5406,7 @@
     },
     "ComicSceneStop": {
         "num": 59,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>Scene_to_Comicのコマの動きを止める<br>引数１：コマの番号",
         "LS_comic": [
             "COMIC000.BIN",
@@ -5869,7 +5870,7 @@
     },
     "BtnWait": {
         "num": 60,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>ボタンを押すまでスクリプトの中で待機する",
         "LS_comic": [
             "COMIC000.BIN",
@@ -6105,7 +6106,7 @@
     },
     "EyeMove": {
         "num": 61,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>視点を動かす<br>引数１：x座標<br>引数２：y座標<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
@@ -6478,7 +6479,7 @@
     },
     "SetZoom": {
         "num": 62,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>Zoomを設定する。<br>引数１：zoom倍率<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "LS_comic": [
             "COMIC000.BIN",
@@ -6728,7 +6729,7 @@
     },
     "BG_Alpha": {
         "num": 63,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>BGのAlphaを設定する<br>引数１：BGのAlpha設定<br>引数２：変化時間（フレーム）<br>引数３：変化方法<br>引数４：（SSで追加。未使用）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -6821,7 +6822,7 @@
     },
     "BG_Wait": {
         "num": 64,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>BGの設定が終わるまで待つ",
         "LS_comic": [
             "COMIC000.BIN",
@@ -6913,7 +6914,7 @@
     },
     "WaitFrame": {
         "num": 67,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定のフレームだけ待つ<br>引数１：フレーム",
         "LS_comic": [
             "COMIC000.BIN",
@@ -8124,7 +8125,7 @@
     },
     "FTV_Play": {
         "num": 68,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>FVTを再生する<br>引数１：FVT番号",
         "LS_comic": [
             "COMIC001.BIN",
@@ -8295,7 +8296,7 @@
     },
     "FTV_Wait": {
         "num": 69,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>FVTが終わるまで待つ<br>引数１：FVT番号",
         "LS_comic": [
             "COMIC001.BIN",
@@ -8449,7 +8450,7 @@
     },
     "HideMsgWnd": {
         "num": 70,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>FVTのメッセージボックスを隠す",
         "LS_comic": [
             "COMIC001.BIN",
@@ -9045,7 +9046,7 @@
     },
     "FTV_End": {
         "num": 71,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>FVTを終了する<br>引数１：FVT番号",
         "LS_comic": [
             "COMIC001.BIN",
@@ -9671,7 +9672,7 @@
     },
     "SkipEventPoint": {
         "num": 72,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>スキップをした場合、スキップをこの行で止める",
         "LS_comic": [
             "COMIC000.BIN",
@@ -9945,7 +9946,7 @@
     },
     "SkipEventFlg": {
         "num": 73,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>スキップできるようにする<br>引数１：1（True）、0（False）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -10223,7 +10224,7 @@
     },
     "PlayComicSE": {
         "num": 74,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>SEを再生する<br>引数１：スクリプト内のSE情報インデックス<br>引数２：SEグループ内のインデックス番号（SSでは使わない。）<br>引数３：ループ設定[1（True）、0（False）]（SSでは使わない。）<br>引数４：再生が終わるまで待つ[1（True）、0（False）]<br>引数５：ボタンでスキップさせない[1（True）、0（False）]",
         "LS_comic": [
             "COMIC000.BIN",
@@ -10727,7 +10728,7 @@
     },
     "StopComicSE": {
         "num": 75,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>SEの再生を停止する<br>引数１：スクリプト内のSE情報インデックス<br>引数２：SEグループ内のインデックス番号（０）（SSでは使わない。）",
         "BS_comic": [
             "COMIC1000.BIN",
@@ -10750,7 +10751,7 @@
     },
     "PlayComicBGM": {
         "num": 76,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックBGMを再生する<br>引数１：スクリプト内のコミックBGM番号<br>引数２：ループする[-1（True）、1（False）]<br>引数３：BGMのVolume",
         "LS_comic": [
             "COMIC000.BIN",
@@ -10861,7 +10862,7 @@
     },
     "StopComicBGM": {
         "num": 77,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックBGMを停止する<br>引数１：スクリプト内のコミックBGM番号<br>引数２：fadeの時間（フレーム）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -10968,7 +10969,7 @@
     },
     "VolComicBGM": {
         "num": 78,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックBGMのVolumeを変える<br>引数１：スクリプト内のコミックBGM番号<br>引数２：Volume<br>引数３：変化時間（フレーム）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -11044,7 +11045,7 @@
     },
     "HideALLComic": {
         "num": 79,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>すべてのコミックを隠す",
         "LS_comic": [
             "COMIC000.BIN",
@@ -11404,7 +11405,7 @@
     },
     "Stage_BGM_Vol": {
         "num": 80,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>現在のステージBGMのVolumeを変える<br>引数１：Volume<br>引数２：変化時間（フレーム）<br>引数３：BGMインデックス。-1の場合、全てのBGM（BSから追加）",
         "LS_comic": [
             "COMIC001.BIN",
@@ -12108,7 +12109,7 @@
     },
     "SET_CPU_MODE": {
         "num": 82,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CPUのモードを設定する<br>引数１：CPU車両（１）（SSでは使わない）<br>引数２：走るモード（詳しくは、上記のリンクを参照）<br>引数３：minLen<br>引数４：maxLen<br>引数５：maxSpeed<br>引数６：minSpeed<br>引数７：【RSまで】デフォルト速度。【SSから】ブレーキ時間<br>引数８：詳細不明（０）（SSでは使わない）<br>引数９：詳細不明（０）（SSでは使わない）",
         "LS_comic": [
             "COMIC000.BIN",
@@ -12321,7 +12322,7 @@
     },
     "CHK_LENGTH": {
         "num": 83,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CPUとの距離を測定し<br>指定時間内に指定距離より少ない場合、次のコマンド行へ行く<br>指定距離より以上なら、指定ラベルのEND_CHK_LENGTHまで飛ぶ<br>引数１：指定距離<br>引数２：指定ラベル<br>引数３：指定時間（フレーム）",
         "LS_comic": [
             "COMIC003.BIN",
@@ -12786,7 +12787,7 @@
     },
     "END_CHK_LENGTH": {
         "num": 84,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CHK_LENGTHで指定ラベルまで飛ぶ場合、この行で止める<br>引数１：指定ラベル",
         "LS_comic": [
             "COMIC003.BIN",
@@ -13251,7 +13252,7 @@
     },
     "CHK_POSTION": {
         "num": 85,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定時間内に、引数１の条件を満たす場合、次のコマンドへ行く<br>そうではない場合、指定ラベルまで飛ぶ<br>引数１：0（CPUが後ろにいる）、１（CPUが前にいる）<br>　【BSのみ】0（CPUが前にいる）、１（CPUが後ろにいる）<br>引数２：指定ラベル<br>引数３：指定時間（フレーム）",
         "LS_comic": [
             "COMIC402.BIN",
@@ -13385,7 +13386,7 @@
     },
     "END_CHK_POSTION": {
         "num": 86,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CHK_POSTIONで指定ラベルまで飛ぶ場合、この行で止める<br>引数１：指定ラベル",
         "LS_comic": [
             "COMIC402.BIN",
@@ -13591,7 +13592,7 @@
     },
     "CHANGE_SPEED": {
         "num": 89,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>ゲームの速度を変える<br>引数１：速度倍率<br>引数２：変化する時間（フレーム）<br>引数３：通常に戻す時間（フレーム）。0以下の場合、解除するまで",
         "LS_comic": [
             "COMIC009.BIN",
@@ -14095,7 +14096,7 @@
     },
     "CHK_WIN_TRAIN": {
         "num": 105,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両が勝利したかチェックする<br>勝った場合、次のコマンドへ行く<br>負けた場合、指定のラベルまで飛ぶ<br>引数１：0（1P）、1（2P）<br>引数２：指定のラベル（SSでは使わない）",
         "LS_comic": [
             "COMIC012.BIN",
@@ -14132,7 +14133,7 @@
     },
     "END_CHK_WINTRAIN": {
         "num": 106,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める<br>引数１：指定ラベル（SSでは使わない）",
         "LS_comic": [
             "COMIC012.BIN",
@@ -14213,7 +14214,7 @@
     },
     "START_TIME_LINE": {
         "num": 109,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>ゲーム内でタイム測定を始める",
         "LS_comic": [
             "COMIC999.BIN",
@@ -14393,7 +14394,7 @@
     },
     "WAIT_TIME_LINE": {
         "num": 111,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>START_TIME_LINEが始まってから、指定時間まで待つ<br>引数１：指定時間",
         "LS_comic": [
             "COMIC999.BIN",
@@ -14563,7 +14564,7 @@
     },
     "SCREEN_FADE": {
         "num": 113,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定の色でFade効果を出す<br>引数１：0（FadeIn）、1（FadeOut）<br>引数２：カラーR<br>引数３：カラーG<br>引数４：カラーB<br>引数５：変化時間（フレーム）",
         "LS_comic": [
             "COMIC413.BIN",
@@ -14625,7 +14626,7 @@
     },
     "TRAIN_SPEED": {
         "num": 115,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両のスピードを設定する<br>引数１：0（1P）、1（2P）<br>引数２：スピード<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_comic": [
             "COMIC200.BIN",
@@ -14941,7 +14942,7 @@
     },
     "R_Drift": {
         "num": 122,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両を右ドリフトさせる<br>引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC404.BIN",
@@ -14972,7 +14973,7 @@
     },
     "L_Drift": {
         "num": 123,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両を左ドリフトさせる<br>引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC404.BIN",
@@ -15015,7 +15016,7 @@
     },
     "TO_RAIL": {
         "num": 125,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両を指定レールに置く。置く位置は次のレールに繋がっている必要がある<br>引数１：0（1P）、1（2P）<br>引数２：レール番号<br>引数３：ボーン番号<br>引数４：ボーンから細かい位置調整【SSで引数で渡す場合】",
         "LS_comic": [
             "COMIC200.BIN",
@@ -15126,7 +15127,7 @@
     },
     "SLEEP_TRAIN": {
         "num": 126,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両を消す<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "LS_comic": [
             "COMIC200.BIN",
@@ -15423,7 +15424,7 @@
     },
     "CHK_TRAIN_SPEED_U": {
         "num": 140,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両が指定時間内に、指定スピードより大きい場合、次のコマンドへ行く<br>そうではない場合、指定ラベルまで飛ぶ<br>引数１：指定ラベル<br>引数２：0（1P）、1（2P）<br>引数３：指定スピード<br>引数４：指定時間",
         "LS_comic": [
             "COMIC009.BIN",
@@ -15489,6 +15490,7 @@
     },
     "CHK_TRAIN_SPEED_D": {
         "num": 141,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両が指定時間内に、指定スピードより小さい場合、次のコマンドへ行く<br>そうではない場合、指定ラベルまで飛ぶ<br>引数１：指定ラベル<br>引数２：0（1P）、1（2P）<br>引数３：指定スピード<br>引数４：指定時間",
         "SS_cmn": [
             "COMIC46030.BIN",
@@ -15503,7 +15505,7 @@
     },
     "END_CHK_TRAIN_SPEED_U": {
         "num": 142,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める<br>引数１：指定ラベル",
         "LS_comic": [
             "COMIC009.BIN",
@@ -15569,6 +15571,7 @@
     },
     "END_CHK_TRAIN_SPEED_D": {
         "num": 143,
+        "comicscript": ["SS"],
         "description": "【SS】<br>CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める<br>引数１：指定ラベル",
         "SS_cmn": [
             "COMIC46030.BIN",
@@ -15647,7 +15650,7 @@
     },
     "SetComic_Blur": {
         "num": 153,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックにぼかしを適用する（SetComic_Blur_Speedで発動）<br>引数１：コマの番号（SSでは使わない）<br>引数２：ぼかし数値（SSでは使わない）",
         "LS_comic": [
             "COMIC200.BIN",
@@ -16113,7 +16116,7 @@
     },
     "SetComic_Blur_Speed": {
         "num": 154,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>コミックに「ぼかしとスピード線」を入れる<br>引数１：コマの番号（SSでは使わない）<br>引数１：ぼかし数値<br>引数２：変化時間（フレーム）<br>引数３：変化効果",
         "LS_comic": [
             "COMIC200.BIN",
@@ -16455,7 +16458,7 @@
     },
     "TRACK_BOMB": {
         "num": 155,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両の台車が爆発する<br>※旧作の仕様<br>LS：SCENE3DOBJ.BINの[0-66]<br>BS：レールデータで読み込んだベースBINの[0-25]<br>CS以後：自走不能になるだけで爆発エフェクトなし<br>引数１：0（1P）、1（2P）<br>引数２：【SSから】1（True）、0（False）",
         "LS_comic": [
             "COMIC120.BIN",
@@ -16487,7 +16490,7 @@
     },
     "ADD_POINT": {
         "num": 157,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルポイントを加算する<br>引数１：配列のインデックス（0～2）<br>引数２：ポイント",
         "LS_comic": [
             "COMIC003.BIN",
@@ -16621,7 +16624,7 @@
     },
     "CHK_POINT": {
         "num": 158,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルポイントをチェックする<br>指定ポイントより以上なら次のコマンドへ行く<br>そうではない場合、次のポイントチェックコマンド行まで飛ぶ<br>引数１：配列のインデックス（0～2）<br>引数２：ポイント",
         "LS_comic": [
             "COMIC012.BIN",
@@ -16737,7 +16740,7 @@
     },
     "ELSE_CHK_POINT": {
         "num": 159,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CHK_POINT、またはELSE_IF_CHK_POINTで<br>指定のポイントより少なく、最近チェックした<br>インデックスと同じ場合、ここで止める。<br>ただし、BS以後では「未使用コマンド」とエラーが出てゲームが落ちる<br>引数１：配列のインデックス（0～2）",
         "LS_comic": [
             "COMIC121.BIN",
@@ -16746,7 +16749,7 @@
     },
     "ELSE_IF_CHK_POINT": {
         "num": 160,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CHK_POINT、またはELSE_IF_CHK_POINTで<br>指定のポイントより少なく、最近チェックした<br>インデックスと同じ場合 <br>ここで止めて、またポイントをチェックする<br>引数１：配列のインデックス（0～2）<br>引数２：ポイント",
         "LS_comic": [
             "COMIC121.BIN",
@@ -16755,7 +16758,7 @@
     },
     "END_CHK_POINT": {
         "num": 161,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>CHK_POINT、またはELSE_IF_CHK_POINTで<br>指定のポイントより少なく、最近チェックした<br>インデックスと同じ場合、ここで止める<br>引数１：配列のインデックス（0～2）",
         "LS_comic": [
             "COMIC012.BIN",
@@ -16870,7 +16873,7 @@
     },
     "GOTO_SCRIPT": {
         "num": 162,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定のスクリプトを並列処理で実行し<br>次のコマンドへ行く<br>引数１：スクリプト番号",
         "LS_comic": [
             "COMIC105.BIN",
@@ -17190,7 +17193,7 @@
     },
     "SHEAK_COMIC": {
         "num": 163,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定のコマを揺らす<br>引数１：コマの番号<br>引数２：1（True）、0（False）",
         "LS_comic": [
             "COMIC200.BIN",
@@ -17353,7 +17356,7 @@
     },
     "STORY_OPEN": {
         "num": 164,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>ストーリーを開放する<br>引数１：ストーリーインデックス",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17398,7 +17401,7 @@
     },
     "STORY_CLEAR": {
         "num": 165,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>ストーリーをクリア処理する<br>引数１：ストーリーインデックス",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17450,7 +17453,7 @@
     },
     "CHAR_OPEN": {
         "num": 166,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>車両を開放する<br>引数１：車両インデックス",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17494,7 +17497,7 @@
     },
     "SAVE_GAME": {
         "num": 167,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>ゲーム情報をセーブする",
         "LS_comic": [
             "COMIC012.BIN",
@@ -17591,7 +17594,7 @@
     },
     "GOING": {
         "num": 171,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両を運転できるようにする<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "LS_comic": [
             "COMIC302.BIN",
@@ -17789,7 +17792,7 @@
     },
     "DIS_TRAIN_SPEED": {
         "num": 184,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>スクリプトでスピード設定処理を止める<br>引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC200.BIN",
@@ -17921,7 +17924,7 @@
     },
     "End_Comic": {
         "num": 187,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>スクリプトを終了する<br>引数１：スクリプト番号",
         "LS_comic": [
             "COMIC209.BIN",
@@ -17994,7 +17997,7 @@
     },
     "WAIT_RAIL": {
         "num": 188,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定時間内に、指定したレールとボーンを通過するまで待つ<br>指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ<br>引数１：0（1P）、1（2P）<br>引数２：レール番号<br>引数３：ボーン番号<br>引数４：指定時間（フレーム）",
         "LS_comic": [
             "COMIC205.BIN",
@@ -18026,7 +18029,7 @@
     },
     "END_WAIT_RAIL": {
         "num": 189,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>WAIT_RAILで飛ぶ場合、この行で止める<br>引数１：0（1P）、1（2P）",
         "LS_comic": [
             "COMIC205.BIN",
@@ -18342,7 +18345,7 @@
     },
     "COMIC_SCALE": {
         "num": 190,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定したコマのスケールを設定する<br>引数１：コマの番号<br>引数２：x倍率<br>引数３：y倍率<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "LS_comic": [
             "COMIC208.BIN",
@@ -18433,7 +18436,7 @@
     "FROM": {
         "num": 193,
         "mdlBin": ["CS", "RS"],
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>あるコマンドでFROMに飛ばした時、引数が一致する場合、この行で止める<br>引数１：数字",
         "LS_comic": [
             "COMIC000.BIN",
@@ -18796,7 +18799,7 @@
     "GOTO": {
         "num": 194,
         "mdlBin": ["CS", "RS"],
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>このコマンドが実行された行を基準に、一番近い下のFROMまで飛ぶ<br>モデルバイナリではCS以後から使える<br>引数１：FROMの数字",
         "LS_comic": [
             "COMIC002.BIN",
@@ -18932,7 +18935,7 @@
     },
     "CHK_TRAIN_TYPE": {
         "num": 195,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定車両が車両インデックスと同じ場合、引数３のFROMへ<br>そうではない場合、引数４のFROMへ飛ぶ<br>SSでは、引数２を東急300系にした場合<br>実車両が【京阪80型、AE86、デキ3】でも同じ扱いにする<br>引数１：0（1P）、1（2P）<br>引数２：車両インデックス<br>引数３：FROMの数字<br>引数４：FROMの数字",
         "LS_comic": [
             "COMIC000.BIN",
@@ -19112,7 +19115,7 @@
     },
     "WAIT_RAIL_ONLY": {
         "num": 198,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>指定時間内に、指定したレールを通過するまで待つ<br>指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ<br>引数１：0（1P）、1（2P）<br>引数２：レール番号<br>引数３：指定時間（フレーム）",
         "LS_comic": [
             "COMIC701.BIN",
@@ -19421,7 +19424,7 @@
     },
     "ONE_TRACK_DRIFT": {
         "num": 199,
-        "comicscript": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】<br>LSで、指定車両を単線ドリフトさせる<br>BS以後では、このコマンドを実行すると<br>「作りこみ中です」とエラーが出てゲームが落ちる<br>【SSから】<br>指定車両を単線ドリフトさせる。それが出来ない車両の場合、普通にドリフトさせる。<br>引数１：0（1P）、1（2P）<br>引数２：<br>　【LS】-1(左）、0（戻し）、1（右）<br>　【SSから】-1(左）、1（右）",
         "LS_comic": [
             "COMIC714.BIN"
@@ -20893,7 +20896,7 @@
     },
     "RAIL_POS_TO_BUFF": {
         "num": 248,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>指定したレールにBUFFを設置する<br>引数１：レール番号<br>引数２：ボーン番号<br>引数３：BUFFのインデックス",
         "BS_comic": [
             "COMIC1000.BIN",
@@ -21161,7 +21164,7 @@
     },
     "BUFF_TO_TARGET_POS": {
         "num": 250,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>BUFFの位置を基準に、固定視点用の注視点の位置を決める<br>引数１：BUFFのインデックス<br>引数２：ずらすx座標<br>引数３：ずらすy座標<br>引数４：ずらすz座標<br>引数５：変化時間（フレーム）<br>引数６：変化方法<br>引数７：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1000.BIN",
@@ -21209,7 +21212,7 @@
     },
     "FTV_NEXT_PROC": {
         "num": 252,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>同じ画像を使うFVTの場合<br>引数２に続いて引数１のFVTを出す<br>引数１：FVT番号<br>引数２：FVT番号（prev）",
         "BS_comic": [
             "COMIC1001.BIN",
@@ -22022,7 +22025,7 @@
     },
     "PLAY_STAGE_BGM": {
         "num": 269,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>ステージBGMを再生する<br>引数１：ステージBGMのインデックス",
         "BS_comic": [
             "COMIC1010.BIN",
@@ -22134,7 +22137,7 @@
     },
     "SET_CAMPOINT_2P2C": {
         "num": 272,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>0番カメラの状態を、引数１〜５に<br>1番カメラの状態を、引数６〜１０の状態に変える<br>引数１：0（1P）、1（2P）<br>引数２：距離<br>引数３：x座標<br>引数４：y座標<br>引数５：z座標<br>引数６：0（1P）、1（2P）<br>引数７：距離<br>引数８：x座標<br>引数９：y座標<br>引数１０：z座標<br>引数１１：PER【SSでは読み込みしない】<br>引数１２：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1005.BIN",
@@ -22444,7 +22447,7 @@
     },
     "CAM_POINT_PER": {
         "num": 274,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>SET_CAMPOINT_2P2Cのコマンドで決めた<br>0番カメラを始点に、1番カメラを終点にして<br>引数１で決めた大きさ（PER）で決まる位置をカメラの位置とする<br>引数１：PER<br>引数２：変化方法<br>引数３：変化時間（フレーム）<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1005.BIN",
@@ -22775,7 +22778,7 @@
     },
     "CAM_TARGET_PER": {
         "num": 275,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>SET_CAMPOINT_2P2C、またはSET_CAMPOINT_1P2Tのコマンドで決めた<br>0番カメラの注視点を始点に、1番カメラの注視点を終点にして<br>引数１で決めた大きさ（PER）で決まる位置を注視点の位置とする<br>引数１：PER<br>引数２：変化方法<br>引数３：変化時間（フレーム）<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1005.BIN",
@@ -23202,7 +23205,7 @@
     },
     "SET_CAM_POINT_LENGTH": {
         "num": 276,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>カメラの距離を設定する<br>引数１：カメラ番号<br>引数２：距離<br>引数３：変化方法<br>引数４：変化時間（フレーム）<br>引数５：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1005.BIN",
@@ -23477,7 +23480,7 @@
     },
     "SET_CAM_OFFSET": {
         "num": 277,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>カメラ位置のoffsetを設定する<br>引数１：カメラ番号<br>引数２：x座標<br>引数３：y座標<br>引数４：z座標<br>引数５：変化方法<br>引数６：変化時間（フレーム）<br>引数７：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1005.BIN",
@@ -23792,7 +23795,7 @@
     },
     "SET_CAMPOINT_K": {
         "num": 282,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>固定カメラの絶対座標設定<br>【BS～RSまで】<br>引数１：カメラのx座標<br>引数２：カメラのy座標<br>引数３：カメラのz座標<br>引数４：注視点のx座標<br>引数５：注視点のy座標<br>引数６：注視点のz座標<br>引数７：変化方法<br>引数８：変化時間（フレーム）<br>【SSから】<br>引数１：スクリーン番号",
         "BS_comic": [
             "COMIC1300.BIN",
@@ -23904,7 +23907,7 @@
     },
     "ENDWAIT_COMIC": {
         "num": 290,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ<br>引数１：スクリプト番号",
         "BS_comic": [
             "COMIC1121.BIN",
@@ -24035,7 +24038,7 @@
     },
     "SET_COMIC_BG_COLOR": {
         "num": 291,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>BGの色を変える<br>引数１：カラーR<br>引数２：カラーG<br>引数３：カラーB",
         "BS_comic": [
             "COMIC1999.BIN",
@@ -24152,7 +24155,7 @@
     },
     "RETURN": {
         "num": 295,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>このコマンドが実行された行を基準に、一番近い上のFROMまで飛ぶ<br>引数１：FROMの数字",
         "BS_comic": [
             "COMIC1999.BIN"
@@ -24229,7 +24232,7 @@
     },
     "STOP_3D": {
         "num": 298,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>3Dシーンの動きを止める<br>引数１：1（True）、0（False）",
         "BS_comic": [
             "COMIC1009.BIN",
@@ -24349,7 +24352,7 @@
     },
     "STOP_STAGE_BGM": {
         "num": 299,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>ステージのBGMを止める<br>引数１：ステージBGMのインデックス（-1の場合、全て）<br>引数２：fade時間（フレーム）",
         "BS_comic": [
             "COMIC1010.BIN"
@@ -24436,7 +24439,7 @@
     },
     "TRAIN_UD": {
         "num": 300,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>車両をアップダウンさせる<br>引数１：0（1P）、1（2P）<br>引数２：アップダウンする程度（PER）",
         "BS_comic": [
             "COMIC1404.BIN",
@@ -24451,7 +24454,7 @@
     },
     "SET_CAM_TARGET_OFFSET": {
         "num": 301,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>注視点位置のoffsetを設定する<br>引数１：カメラ番号<br>引数２：x座標<br>引数３：y座標<br>引数４：z座標<br>引数５：変化方法<br>引数６：変化時間（フレーム）<br>引数７：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1007.BIN",
@@ -24750,7 +24753,7 @@
     },
     "NO_OUTRUN": {
         "num": 307,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>指定車両を脱線しないようにする<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "BS_comic": [
             "COMIC1005.BIN",
@@ -25174,7 +25177,7 @@
     },
     "SET_WHEEL_FIRE": {
         "num": 308,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>車輪に火花を散らす<br>引数１：0（1P）、1（2P）<br>引数２：散らす時間（フレーム）",
         "BS_comic": [
             "COMIC1999.BIN"
@@ -25229,7 +25232,7 @@
     },
     "CHK_MOTION": {
         "num": 312,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>指定の車両が指定時間内に、指定の動きをした場合、引数４のFROMまで飛ぶ<br>そうではない場合、引数５のFROMまで飛ぶ<br>引数１：0（1P）、1（2P）<br>※BS：0～5まで、ただし3は判定できない<br>※CS：0～6まで、ただし3は判定できない<br>※RS：0～10まで、ただし3は判定できない<br>引数２【推定】<br>　0（複線ドリフト、後輪含む）<br>　1（右ドリフト、後輪含む）<br>　2（左ドリフト、後輪含む）<br>　3（振り子）<br>　4（後輪ドリフト、普通のドリフトも含む）<br>　5（後輪ドリフト戻し、片輪ドリフト戻し）<br>　6（土讃線）<br>　7（左片輪ドリフト）<br>　8（右片輪ドリフト）<br>　9（後輪ドリフト）<br>　10（片輪ドリフト戻し、片輪含む）<br>【SSから】<br>　3（振り子）<br>　4（転線、ドリフト、後輪、単線）<br>　8（右片輪ドリフト）<br>　9（車両がジャンプしてない）<br>引数３：指定時間（フレーム）<br>引数４：FROM数字<br>引数５：FROM数字",
         "CS_comic": [
             "COMIC2318.BIN",
@@ -25266,7 +25269,7 @@
     },
     "SET_CAMPOINT_1P2T": {
         "num": 315,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>0番カメラの注視点を引数１に、1番カメラの注視点を引数２にする<br>引数１：0（1P）、1（2P）<br>引数２：0（1P）、1（2P）<br>引数３：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1106.BIN",
@@ -25498,7 +25501,7 @@
     },
     "BUFF_TO_SC_CAM_POS": {
         "num": 316,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>BUFFの位置を基準に、SET_CAMPOINT_1P2Tで決めた注視点を見るカメラの位置を変える<br>SSでは固定視点用のカメラにも適用できる<br>引数１：BUFFのインデックス<br>引数２：x座標<br>引数３：y座標<br>引数４：z座標<br>引数５：変化時間（フレーム）<br>引数６：変化方法<br>引数７：スクリーン番号【SSで引数で渡す場合】",
         "BS_comic": [
             "COMIC1106.BIN",
@@ -25876,7 +25879,7 @@
     },
     "IS_NO_DRAMA": {
         "num": 332,
-        "comicscript": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】<br>ドラマチックモードではない場合、引数１のFROMへ<br>合う場合、引数２のFROMへ飛ぶ<br>引数１：FROMの数字<br>引数２：FROMの数字",
         "BS_comic": [
             "COMIC1000.BIN",
@@ -26549,7 +26552,7 @@
     },
     "GAS_TARBIN": {
         "num": 378,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>車両にガスタービンがある場合、動かす<br>SSでは車両がデキ3の場合、GNを動かす<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -26579,7 +26582,7 @@
     },
     "ENGINE_START": {
         "num": 379,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>車両が気動車の場合、エンジンを動かす<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -26893,7 +26896,7 @@
     },
     "STOP_COMIC_SE_ALL": {
         "num": 392,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>全てのSEを消す<br>引数１：フェードアウトするフレーム時間（SSでは使わない）",
         "CS_comic": [
             "COMIC2001.BIN",
@@ -27090,7 +27093,7 @@
     },
     "FTV_END_INHERIT": {
         "num": 395,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>FTVを終了するが、FTV_PLAY_AND_PREVで引き継げるようにする<br>引数１：FVT番号",
         "CS_comic": [
             "COMIC2309.BIN"
@@ -27101,7 +27104,7 @@
     },
     "STATION_NAME_PRIORITY": {
         "num": 396,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>駅名表示を最前面に表示する<br>（デフォルト状態は車両番号アイコンより下）<br>ただし、SSでは何もせず次の行へ行く<br>引数１：1（True）、0（False）(SSでは使わない)",
         "CS_comic": [
             "COMIC2200.BIN",
@@ -27129,7 +27132,7 @@
     },
     "ALL_FIT": {
         "num": 397,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>指定車両を傾かないようにする<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "CS_comic": [
             "COMIC2100.BIN",
@@ -27617,7 +27620,7 @@
     },
     "TRAIN_DIR": {
         "num": 409,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>CS・RSでは、指定車両を推進運転するように方向を変える<br>SSでは、指定車両を折り返し運転するように方向を変える<br>引数１：0（1P）、1（2P）<br>引数２：1（デフォルト方向）、-1（逆方向）",
         "CS_comic": [
             "COMIC2400.BIN",
@@ -27707,6 +27710,7 @@
     },
     "NONE_GOAL": {
         "num": 412,
+        "comicscript": ["SS"],
         "description": "【SS】<br>NONE_GOALのフラグを設定する<br>これを活性化すると、イベントタイプ３で設定したゴール用のコミックスクリプトを<br>ゴール判定にせず、そのまま次のコミックスクリプトへ行く<br>※CS・RSでは未定義のコマンドである<br>引数：1（True）、0（False）",
         "SS_comic": [
             "COMIC41044.BIN"
@@ -27714,7 +27718,7 @@
     },
     "ENGINE_STOP": {
         "num": 413,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>車両が気動車の場合、エンジンを止める<br>SSではデキ３でも適用できる<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2333.BIN"
@@ -27725,7 +27729,7 @@
     },
     "IS_BTL_MODE": {
         "num": 414,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>バトルモード（二人バトル）の場合、引数１のFROMへ<br>そうではない場合、引数２のFROMへ飛ぶ<br>引数１：FROMの数字<br>引数２：FROMの数字",
         "CS_comic": [
             "COMIC2990.BIN",
@@ -27751,7 +27755,7 @@
     },
     "IS_FREE_MODE": {
         "num": 415,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>試運転モードの場合、引数１のFROMへ<br>そうではない場合、引数２のFROMへ飛ぶ<br>引数１：FROMの数字<br>引数２：FROMの数字",
         "CS_comic": [
             "COMIC2990.BIN"
@@ -27797,7 +27801,7 @@
     },
     "STOP_WIPER": {
         "num": 419,
-        "comicscript": ["CS", "RS"],
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】<br>指定車両のワイパーを止める<br>引数１：0（1P）、1（2P）",
         "CS_comic": [
             "COMIC2429.BIN",
@@ -28045,7 +28049,7 @@
     },
     "KATARIN_RUN": {
         "num": 438,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>指定車両を指定角度で片輪走行させる<br>引数１：0（1P）、1（2P）<br>引数２：指定角度<br>　RS【マイナス値（左側）、プラス値（右側）】<br>　SS【プラス値（左側）、マイナス値（右側）】<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "RS_comic": [
             "COMIC3059.BIN",
@@ -28061,7 +28065,7 @@
     },
     "DRAW_UI": {
         "num": 439,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>速度計やノッチなどのUIを設定する<br>ただし、RSでは未実装であるため効果がなく、次の行へ行く<br>引数１：0（隠す）、1（表示）<br>引数２：変化時間【SSのみ】",
         "RS_comic": [
             "COMIC3900.BIN"
@@ -28089,7 +28093,7 @@
     },
     "STOP_SCRIPT_BGM": {
         "num": 440,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>指定スクリプトで再生しているBGMを止める<br>引数１：スクリプト番号<br>引数２：そのスクリプトのBGM番号<br>引数３：fade時間（フレーム）",
         "RS_comic": [
             "COMIC3010.BIN",
@@ -28134,7 +28138,7 @@
     },
     "SET_STATION_NO": {
         "num": 441,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>初期に表示させる駅を決める<br>引数１：0（1P）、1（2P）【SSでは読み込まない】<br>引数２：駅インデックス",
         "RS_comic": [
             "COMIC3000.BIN",
@@ -28149,7 +28153,7 @@
     },
     "SET_CPU_BREAKE": {
         "num": 442,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>CPUブレーキを設定する。CPUに指定したスピードまで落とす<br>引数１に0を入れると効果はなく、1を指定するべき<br>引数１：0（1P）、1（2P）<br>引数２：スピード"
     },
     "AMB_ANIME": {
@@ -28227,7 +28231,7 @@
     },
     "TRAIN_JUMP": {
         "num": 452,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>車両をジャンプさせる<br>【RSの場合】<br>引数１：0（1P）、1（2P）<br>引数２：号車インデックス<br>引数３：前の台車のジャンプ高さ<br>引数４：後ろ台車のジャンプ高さ<br>引数５：ジャンプさせる時間（フレーム）<br>引数６：ジャンプから落ちる時間（フレーム）<br>引数７：ジャンプ中、回転角度<br>【SSの場合】<br>引数１：0（1P）、1（2P）<br>引数２：ジャンプ高さ<br>引数３：ジャンプさせる時間（秒）",
         "RS_comic": [
             "COMIC3060.BIN"
@@ -28238,7 +28242,7 @@
     },
     "SET_LIGHT": {
         "num": 453,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>指定車両のライト設定する<br>RSの場合、全てのライトを消す<br>引数１：0（1P）、1（2P）<br>引数２【SSのみ】<br>　0（全てのライトを消す）<br>　1（ライトを消し、内側のライトは付ける）<br>　2（全てのライトを付ける）<br>引数３：変化時間【SSのみ】",
         "RS_comic": [
             "COMIC3059.BIN"
@@ -28258,7 +28262,7 @@
     },
     "SET_KAISO": {
         "num": 455,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>指定車両に回送幕を設定する<br>※車両に定義されているモデルバイナリの9-4、9-5を使う<br>ただし、SSでは何もせず次の行へ行く<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "RS_comic": [
             "COMIC3008.BIN"
@@ -28286,7 +28290,7 @@
     },
     "VOL_SCRIPT_BGM": {
         "num": 458,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>指定スクリプトで再生しているBGMのVolumeを変える<br>引数１：スクリプト番号<br>引数２：そのスクリプトのBGM番号<br>引数３：Volume<br>引数４：変化時間（フレーム）",
         "RS_comic": [
             "COMIC3103.BIN",
@@ -28369,6 +28373,7 @@
     },
     "SET_BRIND_SW": {
         "num": 460,
+        "comicscript": ["SS"],
         "description": "【SS】<br>カメラをデフォルトに戻す<br>※RSでは未定義のコマンドである<br>引数１：1（デフォルト）【SSで読み込みしない】",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -28446,7 +28451,7 @@
     },
     "BRIND_ATK": {
         "num": 468,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>ブラインドアタックする<br>※RSでは、車両に定義されているモデルバイナリの9-2、9-3を使う<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）<br>引数３：変化時間（フレーム）【SSのみ】",
         "RS_comic": [
             "COMIC3429.BIN",
@@ -28470,7 +28475,7 @@
     },
     "PLAY_STAGEBGM_BLOCK": {
         "num": 470,
-        "comicscript": ["RS"],
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】<br>指定したBGMを、指定時間からスタートする<br>引数１：ステージのBGM番号<br>引数２：スタート時間（秒）",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -28484,6 +28489,7 @@
     },
     "CAM_TRAIN": {
         "num": 472,
+        "comicscript": ["SS"],
         "description": "【SS】<br>車両カメラモードに設定する<br>引数１：0（1P）、1（2P）<br>引数２：0（先頭車視点）、1（ドライバー視点）<br>引数３：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -28500,6 +28506,7 @@
     },
     "PLAY_SCRIPT_BGM": {
         "num": 473,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定スクリプトで再生しているBGMを再生する<br>引数１：スクリプト番号<br>引数２：そのスクリプトのBGM番号<br>引数３：ループする[-1（True）、1（False）]<br>引数４：Volume",
         "SS_comic": [
             "COMIC3502.BIN",
@@ -28539,6 +28546,7 @@
     },
     "CNG_FOR": {
         "num": 474,
+        "comicscript": ["SS"],
         "description": "【SS】<br>車両の方向幕を変える<br>引数１：0（1P）、1（2P）<br>引数２：方向幕インデックス",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -28582,6 +28590,7 @@
     },
     "SET_RAILBLOCK_CHECKER": {
         "num": 475,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の現在レールをチェックして<br>0にすると、レール表示基準のblockを-1に<br>1にすると、レール表示基準のblockを、現在レールのblockに変える<br>引数１：0（1P）、1（2P）<br>引数２：0（初期化）、1（blockを現在レールに）",
         "SS_comic": [
             "COMIC3599.BIN",
@@ -28626,10 +28635,12 @@
     },
     "RAIN_SE": {
         "num": 476,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の雨SEを変える<br>引数１：0（1P）、1（2P）<br>引数２：Volume<br>引数３：変化時間（フレーム）"
     },
     "TRAIN_STOP": {
         "num": 477,
+        "comicscript": ["SS"],
         "description": "【SS】<br>車両を止める。速度を維持したままゲーム画面が止まる効果になる<br>引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -28660,6 +28671,7 @@
     },
     "KOTEICAM_BLEND": {
         "num": 478,
+        "comicscript": ["SS"],
         "description": "【SS】<br>固定カメラモードから、SET_CAMPOINT_2P2Cで変わるときのアニメーションを与える<br>引数１：固定カメラ位置と、SET_CAMPOINT_2P2Cで決めたカメラ位置のPER<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "SS_comic": [
             "COMIC4104.BIN",
@@ -28670,6 +28682,7 @@
     },
     "SCRIPT_RAIN": {
         "num": 479,
+        "comicscript": ["SS"],
         "description": "【SS】<br>スクリプトで雨を調整する<br>引数１<br>　-1（スクリプト調整をやめる）<br>　0（雨を止める）<br>　1（雨を降らせる）",
         "SS_comic": [
             "COMIC4252.BIN",
@@ -28703,6 +28716,7 @@
     },
     "LINE_CHANGE": {
         "num": 480,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両を転線させる<br>引数１：0（1P）、1（2P）<br>引数２：-1（左に転線）、0（デフォルト設定）、1（右に転線）",
         "SS_comic": [
             "COMIC3616.BIN",
@@ -28720,6 +28734,7 @@
     },
     "WAIT_RAIL_MORE_ONLY": {
         "num": 481,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両が最大４つのレール番号の中、どれか通過するまでずっと待つ。<br>どれか通過した場合、次の行へ行く<br>引数１：0（1P）、1（2P）<br>引数２：レール番号<br>引数３：レール番号<br>引数４：レール番号<br>引数５：レール番号<br>引数６：指定時間（フレーム）【SSでは使わない】",
         "SS_comic": [
             "COMIC4230.BIN",
@@ -28730,6 +28745,7 @@
     },
     "SET_SE_VOL": {
         "num": 482,
+        "comicscript": ["SS"],
         "description": "【SS】<br>全般的なSEのVolumeを変える<br>引数１：Volume<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -28751,6 +28767,7 @@
     },
     "CAM_TARGET_TRACK": {
         "num": 483,
+        "comicscript": ["SS"],
         "description": "【SS】<br>カメラの注視点を指定車両の指定台車に変える<br>引数１：カメラ番号<br>引数２：号車インデックス<br>引数３：台車インデックス<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC4280.BIN"
@@ -28758,6 +28775,7 @@
     },
     "DECAL_D37": {
         "num": 484,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にD37の白楽でぶつけた傷をつける<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC40052.BIN",
@@ -28766,6 +28784,7 @@
     },
     "DECAL_D39": {
         "num": 485,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にD39のトンネルでぶつけた傷をつける<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC4280.BIN"
@@ -28773,6 +28792,7 @@
     },
     "DECAL_SMOKE": {
         "num": 486,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にDECALが付いた場合、煙をつける<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）【SSでは使わない】",
         "SS_comic": [
             "COMIC40052.BIN",
@@ -28781,14 +28801,17 @@
     },
     "RAIL_PRIORITY": {
         "num": 487,
+        "comicscript": ["SS"],
         "description": "【SS】<br>レールのpriorityを設定する<br>引数１：レールindex<br>引数２：レールindex"
     },
     "GET_KEY": {
         "num": 488,
+        "comicscript": ["SS"],
         "description": "【SS】<br>【推測】引数１が0より小さく、キーのx軸が左の場合、引数３のFROMへ<br>または引数１が0より大きく、キーのx軸が右の場合、引数３のFROMへ飛ぶ<br>指定時間内に、上記の条件ではない場合、引数４のFROMへ飛ぶ<br>引数１：キー条件<br>引数２：指定時間（フレーム）<br>引数３：FROM数字<br>引数４：FROM数字"
     },
     "SHOW_LIGHT": {
         "num": 489,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にライトを付ける。同時にブラインドアタックも終わる<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_comic": [
             "COMIC4285.BIN"
@@ -28796,6 +28819,7 @@
     },
     "SHOW_IN_LIGHT": {
         "num": 490,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両に内側のライトを付ける<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_comic": [
             "COMIC4285.BIN"
@@ -28803,6 +28827,7 @@
     },
     "FOG_POW": {
         "num": 491,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ブラインドアタック時、車両自体のfogフィルターを調整する<br>fog値が大きいほど、かなりカメラを近づけないと見えない<br>ただし、引数１が0より小さい場合、0.08で調整される<br>ブラインドアタックしてない状況では効果はない<br>引数１：fogの程度<br>引数２：変化時間<br>引数３：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC4292.BIN",
@@ -28811,6 +28836,7 @@
     },
     "STORY_WIN": {
         "num": 492,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ストーリーモードの場合、<br>ゴール時のスクリプト（タイプ4）を実行する",
         "SS_comic": [
             "COMIC2990.BIN"
@@ -28818,6 +28844,7 @@
     },
     "RAIN_PARTICLE": {
         "num": 493,
+        "comicscript": ["SS"],
         "description": "【SS】<br>窓の水滴効果とか、雨のAMBモデルをつけたり消したりする<br>引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC3599.BIN",
@@ -28852,6 +28879,7 @@
     },
     "D39_FIRE": {
         "num": 494,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にD39のトンネルでぶつける際の火花をつける<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC4280.BIN"
@@ -28859,6 +28887,7 @@
     },
     "SET_CPU_SPEED": {
         "num": 495,
+        "comicscript": ["SS"],
         "description": "【SS】<br>CPUの急加速補正を引数１の分、増やす<br>引数１：増やすスピード<br>引数２：変化時間",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -28909,6 +28938,7 @@
     },
     "BODY_AUDIO_PLAY": {
         "num": 496,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両から出ている、スクリプトのSEを再生する<br>引数１：0（1P）、1（2P）<br>引数２：スクリプト内のSE番号",
         "SS_comic": [
             "COMIC40052.BIN",
@@ -28917,6 +28947,7 @@
     },
     "BODY_AUDIO_STOP": {
         "num": 497,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両から出ている、スクリプトのSEを止める",
         "SS_comic": [
             "COMIC40052.BIN",
@@ -28925,6 +28956,7 @@
     },
     "CNG_FADE_SPRITE": {
         "num": 498,
+        "comicscript": ["SS"],
         "description": "【SS】<br>フェードする際、指定の画像を使う<br>引数が-1の場合、黒い画像を使う<br>引数１：フェードする画像No",
         "SS_comic": [
             "COMIC3536.BIN",
@@ -28938,6 +28970,7 @@
     },
     "RAIL_DRIFT_CHK": {
         "num": 499,
+        "comicscript": ["SS"],
         "description": "【SS】<br>CPUのレールデータによるドリフトの設定をする<br>0に設定すると、CPUはレールによるドリフトをしない<br>引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC4220.BIN"
@@ -28948,6 +28981,7 @@
     },
     "INQ_WAIT": {
         "num": 500,
+        "comicscript": ["SS"],
         "description": "【SS】<br>レコード記録を閉じるまで待つ",
         "SS_comic": [
             "COMIC2990.BIN"
@@ -28960,10 +28994,12 @@
     },
     "CNG_SCCAM_TRAIN": {
         "num": 501,
+        "comicscript": ["SS"],
         "description": "【SS】<br>カメラを変える<br>引数１：カメラ番号<br>引数２：0（1P）、1（2P）<br>引数３：スクリーン番号【SSで引数で渡す場合】"
     },
     "STOP_TRAIN_SE": {
         "num": 502,
+        "comicscript": ["SS"],
         "description": "【SS】<br>車両から出るSE（ドリフトジャンプ音、衝突音、クラッシュ音など）を止める<br>引数１：1（True）、0（False）",
         "SS_comic": [
             "COMIC3599.BIN",
@@ -28999,6 +29035,7 @@
     },
     "PLAY_SCRIPT_BGM_TIME": {
         "num": 503,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定スクリプトで再生しているBGMを再生する<br>PLAY_SCRIPT_BGMと似ているが、このコマンドは開始する時間まで設定できる<br>引数１：スクリプト番号<br>引数２：そのスクリプトのBGM番号<br>引数３：ループする[-1（True）、1（False）]<br>引数４：Volume<br>引数５：開始する時間",
         "SS_comic": [
             "COMIC4014.BIN",
@@ -29007,14 +29044,17 @@
     },
     "CNG_BODY_COLOR": {
         "num": 504,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両のカラーバリエーションを変える<br>引数１：0（1P）、1（2P）<br>引数２：カラーインデックス"
     },
     "LOAD_TRAIN": {
         "num": 505,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両を車両インデックスで改めてロードする。<br>ロードした車両は必ずSLEEP_TRAIN状態になる。<br>そのままロードするとレールの外側に置かれる確率が高いため、<br>速度を与えて、ちょっと進める必要がある。<br>引数１：0（1P）、1（2P）<br>引数２：車両インデックス"
     },
     "SHOW_BLOCK": {
         "num": 506,
+        "comicscript": ["SS"],
         "description": "【SS】<br>あるブロックに含まれた、レールモデルの表示設定する<br>引数１：ブロックNo。-1の場合、全てのブロック<br>引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC4049.BIN",
@@ -29027,6 +29067,7 @@
     },
     "UPDATE_LIGHT_FRARE": {
         "num": 507,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ライトフレアを更新する",
         "SS_comic": [
             "COMIC4046.BIN",
@@ -29040,6 +29081,7 @@
     },
     "WAIT_RAIL_MORE_GOTO": {
         "num": 508,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両が、指定時間内にレールを通過するとFROMへ飛ばす。<br>通過できなかった場合、END_WAIT_RAILまで飛ぶ<br>引数１：0（1P）、1（2P）<br>引数２：レール番号<br>引数３：引数２のレール通過時、飛ばすFROM数字<br>引数４：レール番号<br>引数５：引数４のレール通過時、飛ばすFROM数字<br>引数６：レール番号<br>引数７：引数６のレール通過時、飛ばすFROM数字<br>引数８：レール番号<br>引数９：引数８のレール通過時、飛ばすFROM数字<br>引数１０：レール番号<br>引数１１：引数１０のレール通過時、飛ばすFROM数字<br>引数１２：レール番号<br>引数１３：引数１２のレール通過時、飛ばすFROM数字<br>引数１４：指定時間（フレーム）",
         "SS_comic": [
             "COMIC4083.BIN",
@@ -29060,6 +29102,7 @@
     },
     "CREATE_AURA": {
         "num": 509,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にオーラを生成する<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -29068,6 +29111,7 @@
     },
     "AURA_ALPHA": {
         "num": 510,
+        "comicscript": ["SS"],
         "description": "【SS】<br>オーラのAlphaを調整する<br>引数１：0（1P）、1（2P）<br>引数２：Alpha値<br>引数３：変化時間（フレーム）",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -29077,6 +29121,7 @@
     },
     "SET_LV_JUMP": {
         "num": 511,
+        "comicscript": ["SS"],
         "description": "【SS】<br>高くジャンプするイベントで、指定車両のジャンプの高さを調整する<br>引数１：0（1P）、1（2P）<br>引数２：ジャンプの高さ（PER）",
         "SS_comic": [
             "COMIC4082.BIN",
@@ -29085,6 +29130,7 @@
     },
     "CREATE_EFFECT_CAM": {
         "num": 512,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトを生成する",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29099,6 +29145,7 @@
     },
     "TO_EFFECT_CAM": {
         "num": 513,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にエフェクトをつける<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC4095.BIN",
@@ -29107,6 +29154,7 @@
     },
     "EFFECT_CAM_POW": {
         "num": 514,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトのfogの濃さを調整する<br>引数１：濃さ<br>引数２：変化時間<br>引数３：変化方法<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29120,6 +29168,7 @@
     },
     "EFFECT_CAM_COLOR": {
         "num": 515,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトのfogの色を調整する<br>引数１：R<br>引数２：G<br>引数３：B<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29133,6 +29182,7 @@
     },
     "EFFECT_CAM_ALPHA": {
         "num": 516,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトのAlpha値を調整する<br>引数１：Alpha値<br>引数２：変化時間<br>引数３：変化方法<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29154,6 +29204,7 @@
     },
     "HIDE_LIGHT": {
         "num": 517,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の外側のライトを消す<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_comic": [
             "COMIC4095.BIN",
@@ -29162,6 +29213,7 @@
     },
     "USE_EFFECT_CAM": {
         "num": 518,
+        "comicscript": ["SS"],
         "description": "【SS】<br>カメラに、適用したエフェクト効果を見れるように設定する<br>引数１：1（True）、0（False）<br>引数２：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC4095.BIN"
@@ -29169,6 +29221,7 @@
     },
     "USE_EFFECT_CAM_RGB": {
         "num": 519,
+        "comicscript": ["SS"],
         "description": "【SS】<br>カメラに、適用したエフェクト効果を見れるようにし<br>同時にfogをRGBに分解された効果も見れるように設定する<br>引数１：1（True）、0（False）<br>引数２：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29183,6 +29236,7 @@
     },
     "EFFECT_CAM_RGB": {
         "num": 520,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトのfogの色を、RGBに分解して表示する<br>引数１：分解程度<br>引数２：変化時間<br>引数３：変化方法<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -29190,6 +29244,7 @@
     },
     "COPY_TRAIN_POS": {
         "num": 521,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の現在レール位置をコピーして<br>別の指定車両にTO_RAILを適用する<br>引数１：0（1P）、1（2P）<br>引数２：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29202,6 +29257,7 @@
     },
     "COL_SET": {
         "num": 522,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にぶつけ判定を設定する<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -29213,6 +29269,7 @@
     },
     "CNG_CPU_TRAIN": {
         "num": 523,
+        "comicscript": ["SS"],
         "description": "【SS】<br>CPU操作を指定車両に変える<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -29220,6 +29277,7 @@
     },
     "BTN_GOTO": {
         "num": 524,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ボタンを押すと、GOTOコマンドのように実行する<br>引数１：FROM数字",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -29233,6 +29291,7 @@
     },
     "NO_TIMESCALE_KOMA": {
         "num": 525,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ゲームのFPS速度に合わせてコマの効果を適用する<br>引数１：コマの番号<br>引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC3506.BIN",
@@ -29268,6 +29327,7 @@
     },
     "EFFCAM_NOIZE": {
         "num": 526,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトのノイズを調整する<br>引数１：ノイズ値<br>引数２：変化時間<br>引数３：変化方法<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -29275,6 +29335,7 @@
     },
     "EFFCAM_GRI": {
         "num": 527,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトのグリッチを調整する<br>引数１：グリッチ値<br>引数２：変化時間<br>引数３：変化方法<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -29282,6 +29343,7 @@
     },
     "EFFCAM_BLOCKNOISE": {
         "num": 528,
+        "comicscript": ["SS"],
         "description": "【SS】<br>エフェクトのブロックノイズを調整する<br>引数１：ブロックノイズ値<br>引数２：変化時間<br>引数３：変化方法<br>引数４：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -29289,6 +29351,7 @@
     },
     "CREATE_TQ5000_FLAGMENT": {
         "num": 529,
+        "comicscript": ["SS"],
         "description": "【SS】<br>東急5000系の破片の効果を生成する",
         "SS_comic": [
             "COMIC29000.BIN"
@@ -29296,6 +29359,7 @@
     },
     "USE_TQ5000_FLAGMENT": {
         "num": 530,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両に東急5000系の破片の効果を適用する<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -29303,6 +29367,7 @@
     },
     "TQ5000_FLAGPOS": {
         "num": 531,
+        "comicscript": ["SS"],
         "description": "【SS】<br>東急5000系の破片の位置を調整する<br>引数１：位置<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "SS_comic": [
             "COMIC40055.BIN"
@@ -29310,6 +29375,7 @@
     },
     "HUMIKIRI_VOL": {
         "num": 532,
+        "comicscript": ["SS"],
         "description": "【SS】<br>踏切のVolumeを調整する<br>引数１：踏切のVolume<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -29324,6 +29390,7 @@
     },
     "TO_EFFECT_CAM_BODY": {
         "num": 533,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両のインデックスにエフェクトをつける<br>引数１：0（1P）、1（2P）<br>引数２：号車インデックス。-1の場合、全ての車両",
         "SS_comic": [
             "COMIC36999.BIN"
@@ -29335,6 +29402,7 @@
     },
     "TO_NORM_CAM": {
         "num": 534,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両のエフェクトをノーマルに変える<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29347,6 +29415,7 @@
     },
     "TO_920": {
         "num": 535,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両が4050系の場合、920系にする<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -29359,6 +29428,7 @@
     },
     "NO_TIMESCALE_FVT": {
         "num": 536,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ゲームのFPS速度に合わせてFVT効果を適用する<br>引数１：FVTの番号",
         "SS_comic": [
             "COMIC36999.BIN"
@@ -29398,6 +29468,7 @@
     },
     "CNG_TARGET_BODY": {
         "num": 537,
+        "comicscript": ["SS"],
         "description": "【SS】<br>カメラを注視点を、指定号車のインデックスに変える<br>引数１：カメラ番号<br>引数２：号車インデックス<br>引数３：スクリーン番号【SSで引数で渡す場合】",
         "SS_comic": [
             "COMIC36999.BIN",
@@ -29414,6 +29485,7 @@
     },
     "SC_ADD_POINT": {
         "num": 538,
+        "comicscript": ["SS"],
         "description": "【SS】<br>実行しているスクリプトの内部ポイントに加算する<br>引数１：ポイント",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -29426,6 +29498,7 @@
     },
     "CHK_SC_POINT": {
         "num": 539,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定したスクリプトの内部ポイントが<br>指定ポイントより以上の場合、引数３のFROMへ<br>そうではない場合、引数４のFROMへ飛ぶ<br>引数１：スクリプト番号<br>引数２：指定ポイント<br>引数３：FROM番号<br>引数４：FROM番号",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -29434,6 +29507,7 @@
     },
     "KAISO_TO_DUEL": {
         "num": 540,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の方向幕を回送から競技に変える<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3611.BIN"
@@ -29441,6 +29515,7 @@
     },
     "SHOW_ST": {
         "num": 541,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定した駅インデックスで、駅名を表示する<br>引数１：駅インデックス",
         "SS_comic": [
             "COMIC3600.BIN",
@@ -29450,6 +29525,7 @@
     },
     "ORG_UPDATE": {
         "num": 542,
+        "comicscript": ["SS"],
         "description": "【SS】<br>OPのみ使われる。車両の位置をUpdateする<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "SS_cmn": [
             "COMIC4001.BIN"
@@ -29457,6 +29533,7 @@
     },
     "SET_RAILBLOCK_POS": {
         "num": 543,
+        "comicscript": ["SS"],
         "description": "【SS】<br>OPのみ使われる。レールブロックを移す<br>引数１：ブロック番号<br>引数２：変化方法<br>引数３：x座標<br>引数４：y座標<br>引数５：z座標<br>引数６：変化時間（フレーム）",
         "SS_cmn": [
             "COMIC4001.BIN",
@@ -29465,6 +29542,7 @@
     },
     "SET_LIGHT_OVER": {
         "num": 544,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定のコマを光らせる<br>引数１：コマの番号<br>引数２：1（True）、0（False）<br>引数３：0の場合、Light適用。1の場合、LightOverを適用",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -29475,6 +29553,7 @@
     },
     "CREATE_STAFFROLL": {
         "num": 545,
+        "comicscript": ["SS"],
         "description": "【SS】<br>スタッフロールを生成する",
         "SS_comic": [
             "COMIC42013.BIN"
@@ -29482,6 +29561,7 @@
     },
     "STAFFROLL_START": {
         "num": 546,
+        "comicscript": ["SS"],
         "description": "【SS】<br>スタッフロールを流す<br>引数１：0（作成）、1（見せる）、2（ロゴを見せる）",
         "SS_comic": [
             "COMIC42013.BIN"
@@ -29489,6 +29569,7 @@
     },
     "WAIT_STAFFROLL": {
         "num": 547,
+        "comicscript": ["SS"],
         "description": "【SS】<br>作成したスタッフロールが終わるまで待つ",
         "SS_comic": [
             "COMIC42013.BIN"
@@ -29496,6 +29577,7 @@
     },
     "SC_OUTRUN": {
         "num": 548,
+        "comicscript": ["SS"],
         "description": "【SS】<br>スクリプトで脱線させる。またライトも消す<br>引数１：0（1P）、1（2P）<br>引数２：号車インデックス<br>引数３：ずらすx座標<br>引数４：ずらすy座標<br>引数５：z軸に傾ける数値",
         "SS_comic": [
             "COMIC42007.BIN",
@@ -29504,6 +29586,7 @@
     },
     "CREATE_TAKMIS": {
         "num": 549,
+        "comicscript": ["SS"],
         "description": "【SS】<br>タクミサイルを生成する",
         "SS_comic": [
             "COMIC3600.BIN"
@@ -29511,6 +29594,7 @@
     },
     "SET_TAKMIS_POS": {
         "num": 550,
+        "comicscript": ["SS"],
         "description": "【SS】<br>タクミサイルの位置を調整する<br>引数１：x座標<br>引数２：y座標<br>引数３：z座標<br>引数４：変化時間<br>引数５：変化方法",
         "SS_comic": [
             "COMIC3627.BIN"
@@ -29518,6 +29602,7 @@
     },
     "SET_TAKMIS_ALPHA": {
         "num": 551,
+        "comicscript": ["SS"],
         "description": "【SS】<br>タクミサイルのAlphaを調整する<br>引数１：Alpha値<br>引数２：変化時間<br>引数３：変化方法",
         "SS_comic": [
             "COMIC3627.BIN"
@@ -29525,6 +29610,7 @@
     },
     "FRONT_DOOR": {
         "num": 552,
+        "comicscript": ["SS"],
         "description": "【SS】<br>先頭車のドアを開く<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）<br>引数３：変化時間<br>引数４：変化方法",
         "SS_comic": [
             "COMIC3627.BIN"
@@ -29544,6 +29630,7 @@
     },
     "SET_KOMA_DEPTH": {
         "num": 553,
+        "comicscript": ["SS"],
         "description": "【SS】<br>コマのDepthを設定する<br>引数１：Depth値",
         "SS_comic": [
             "COMIC3506.BIN",
@@ -29560,6 +29647,7 @@
     },
     "D37_FIRE": {
         "num": 554,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にD37の白楽でぶつけた際の火花をつける<br>引数１：0（1P）、1（2P）<br>引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC40052.BIN",
@@ -29568,6 +29656,7 @@
     },
     "AMB_HIT_WAIT": {
         "num": 555,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の指定号車が、指定時間内にAMBにぶつけた場合、指定のFROMに飛ばす<br>指定時間内にぶつけなかったり、指定レールを通過した場合、引数９のFROMに飛ばす<br>引数１：0（1P）、1（2P）<br>引数２：号車インデックス<br>引数３：指定時間（フレーム）<br>引数４：レール番号<br>引数５：Topでぶつけた場合、飛ばすFROM数字<br>引数６：Leftでぶつけた場合、飛ばすFROM数字<br>引数７：Rightでぶつけた場合、飛ばすFROM数字<br>引数８：Backでぶつけた場合、飛ばすFROM数字<br>引数９：FROM数字",
         "SS_comic": [
             "COMIC40052.BIN"
@@ -29575,6 +29664,7 @@
     },
     "ShowRecord": {
         "num": 556,
+        "comicscript": ["SS"],
         "description": "【SS】<br>レコードを見せる",
         "SS_comic": [
             "COMIC2990.BIN"
@@ -29582,6 +29672,7 @@
     },
     "FIT_PER": {
         "num": 557,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の片輪走行時、傾むく程度（PER）を調整する<br>カーブの強さは変わらない<br>引数１：0（1P）、1（2P）<br>引数２：PER",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -29599,6 +29690,7 @@
     },
     "CREATE_COMIC_PC": {
         "num": 558,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ComicParticleを生成する",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -29608,6 +29700,7 @@
     },
     "SET_COMIC_PC": {
         "num": 559,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ComicParticleを設定する<br>引数１：コマの番号<br>引数２：1（True）、0（False）<br>引数３～４：詳細不明【SSでは使わない】",
         "SS_comic": [
             "COMIC3506.BIN",
@@ -29617,6 +29710,7 @@
     },
     "PAUSE_STAGE_BGM": {
         "num": 560,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ステージBGMを一時停止する<br>引数１：ステージBGMの番号<br>引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC3508.BIN",
@@ -29625,6 +29719,7 @@
     },
     "SET_KAKAPO": {
         "num": 561,
+        "comicscript": ["SS"],
         "description": "【SS】<br>KAKAPO動きを設定する<br>引数１：長さ<br>引数２：引数１の変化時間<br>引数３：引数１の変化方法<br>引数４：回す角度<br>引数５：引数４の変化時間<br>引数６：引数４の変化方法",
         "SS_comic": [
             "COMIC3506.BIN"
@@ -29632,6 +29727,7 @@
     },
     "KOMA_KAKAPO": {
         "num": 562,
+        "comicscript": ["SS"],
         "description": "【SS】<br>コマをKAKAPO動きにする<br>引数１：コマの番号<br>引数２：1（True）、0（False）",
         "SS_comic": [
             "COMIC3506.BIN"
@@ -29639,6 +29735,7 @@
     },
     "START_TARBINE": {
         "num": 563,
+        "comicscript": ["SS"],
         "description": "【SS】<br>タービンを動かすアニメが始まる<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3997.BIN"
@@ -29652,6 +29749,7 @@
     },
     "END_TARBINE": {
         "num": 564,
+        "comicscript": ["SS"],
         "description": "【SS】<br>タービンを動かすアニメが終わる<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3997.BIN"
@@ -29665,6 +29763,7 @@
     },
     "TARBINE_FTV_START": {
         "num": 565,
+        "comicscript": ["SS"],
         "description": "【SS】<br>タービンを動かすとき、再生するFVTを設定する<br>試運転やバトルモードは、必ず引数３を再生する<br>ストーリーモードの場合、乗り手によって引数１や２を再生する<br>引数１：FVT番号（拓海）<br>引数２：FVT番号（啓介）<br>引数３：FVT番号",
         "SS_comic": [
             "COMIC3997.BIN"
@@ -29678,6 +29777,7 @@
     },
     "TARBINE_FTV_END": {
         "num": 566,
+        "comicscript": ["SS"],
         "description": "【SS】<br>TARBINE_FTV_STARTで再生しているFVTを終了する",
         "SS_comic": [
             "COMIC3997.BIN"
@@ -29691,6 +29791,7 @@
     },
     "STORY_ENGINE": {
         "num": 567,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ストーリーモードで、エンジンを発動する",
         "SS_comic": [
             "COMIC4046.BIN",
@@ -29701,6 +29802,7 @@
     },
     "RAND_GOTO": {
         "num": 568,
+        "comicscript": ["SS"],
         "description": "【SS】<br>最大４つのFROM数字の中で、ランダムに選んで飛ばす<br>-1のFROM数字は、ランダム対象から無視される<br>引数１：FROM数字<br>引数２：FROM数字<br>引数３：FROM数字<br>引数４：FROM数字",
         "SS_cmn": [
             "COMIC46040.BIN",
@@ -29713,6 +29815,7 @@
     },
     "KQ_SOUND": {
         "num": 569,
+        "comicscript": ["SS"],
         "description": "【SS】<br>京急過給時のコマンド<br>引数１：オプションで過給時BGM変更をONにした場合<br>　0（現在再生しているBGMを止める）<br>　1（Tokyo NightのBGMを流す）<br>　2（BGMを変更しない）<br>引数２：0（1P）、1（2P）",
         "SS_cmn": [
             "COMIC46050.BIN",
@@ -29723,6 +29826,7 @@
     },
     "STORY_GOTO": {
         "num": 570,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ストーリーモードではない場合、必ず引数３のFROMへ飛ばす<br>ストーリーモードの場合、乗り手によって引数１や２のFROMへ飛ばす<br>引数１：FROM数字（拓海）<br>引数２：FROM数字（啓介）<br>引数３：FROM数字",
         "SS_cmn": [
             "COMIC21006.BIN",
@@ -29737,6 +29841,7 @@
     },
     "PLAY223HONE": {
         "num": 571,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にミュージックホーンを鳴らす<br>【JR223系、ミュースカイ、パノスパ<br>京阪800系、京阪80型、阪急2300系のみ】<br>引数１：0（1P）、1（2P）",
         "SS_comic": [
             "COMIC3503.BIN",
@@ -29748,6 +29853,7 @@
     },
     "RB26": {
         "num": 572,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両にRB26のコマンド<br>引数１：0（1P）、1（2P）<br>引数２：1（RB26発動）、2（RB26クーリング）<br>引数３：詳細不明【SSでは使わない】",
         "SS_cmn": [
             "COMIC46030.BIN",
@@ -29774,6 +29880,7 @@
     },
     "PLAYORGSE": {
         "num": 573,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両に固有なSEがある場合、そのSEを鳴らす<br>引数１：0（1P）、1（2P）<br>引数２：固有SEインデックス<br>引数３：プレイモード",
         "SS_comic": [
             "COMIC3500.BIN",
@@ -29797,6 +29904,7 @@
     },
     "H2300_GOAL": {
         "num": 574,
+        "comicscript": ["SS"],
         "description": "【SS】<br>阪急2300系やAE86が勝った場合、固有のSEを鳴らす",
         "SS_comic": [
             "COMIC2990.BIN"
@@ -29804,6 +29912,7 @@
     },
     "DEKI_BACK_OPEN": {
         "num": 575,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３の後ろを開ける<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_cmn": [
             "COMIC46060.BIN",
@@ -29816,6 +29925,7 @@
     },
     "DEKI_GN_MOVE": {
         "num": 576,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３のGNを動かす<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_cmn": [
             "COMIC46060.BIN",
@@ -29828,6 +29938,7 @@
     },
     "DEKI_TAMIYA_START": {
         "num": 577,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３のTAMIYAマークを動かす<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_cmn": [
             "COMIC46060.BIN",
@@ -29840,6 +29951,7 @@
     },
     "DEKI_GN_START": {
         "num": 578,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３の上り調子を発動する<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_cmn": [
             "COMIC46060.BIN",
@@ -29855,6 +29967,7 @@
     },
     "DEKI_SOUND": {
         "num": 579,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３の本調子時のコマンド<br>引数１：オプションで上り調子時BGM変更をONにした場合<br>　0（現在再生しているステージBGMを止める）<br>　1（本調子のBGMを流す）<br>　2（本調子のBGMを止める）<br>　3（止められたステージBGMを改めて再生する）",
         "SS_cmn": [
             "COMIC46062.BIN",
@@ -29871,6 +29984,7 @@
     },
     "DEKI_USE_TRANSAM": {
         "num": 580,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３の本調子を発動する<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_cmn": [
             "COMIC46062.BIN",
@@ -29885,6 +29999,7 @@
     },
     "DEKI_FRONT_OPEN": {
         "num": 581,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３の本調子を発動時、前の部分を開く<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_cmn": [
             "COMIC46062.BIN",
@@ -29896,10 +30011,12 @@
     },
     "REV_DRIFT": {
         "num": 582,
+        "comicscript": ["SS"],
         "description": "【SS】<br>何もせず次の行へ行く。未実装のように見える"
     },
     "DEKI_GN_STOP": {
         "num": 583,
+        "comicscript": ["SS"],
         "description": "【SS】<br>デキ３の上り調子を止める<br>引数１：0（1P）、1（2P）<br>引数２：変化時間",
         "SS_cmn": [
             "COMIC46066.BIN",
@@ -29914,10 +30031,12 @@
     },
     "STORY_GN": {
         "num": 584,
+        "comicscript": ["SS"],
         "description": "【SS】<br>ストーリーモードで上り調子を発動する<br>引数１：0（1P）、1（2P）<br>引数２：0（GN発動）、1（コミックスクリプト37003を読み込む）"
     },
     "IS_ONE_TRACK_DRIFT": {
         "num": 585,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両が、単線ドリフト出来る場合、引数２のFROMへ<br>出来ない場合、引数３のFROMへ飛ばす<br>引数１：0（1P）、1（2P）<br>引数２：FROM数字<br>引数３：FROM数字",
         "SS_comic": [
             "COMIC4234.BIN"
@@ -29925,10 +30044,12 @@
     },
     "RESET_BLOCK": {
         "num": 586,
+        "comicscript": ["SS"],
         "description": "【SS】<br>指定車両の現在レールをチェックして<br>レール表示基準のblockを、現在レールのblockに変える<br>引数１：0（1P）、1（2P）"
     },
     "IS_BTLMODE_END_CHK": {
         "num": 587,
+        "comicscript": ["SS"],
         "description": "【SS】<br>バトルモードの場合、1Pが自走不能になった場合、引数１のスクリプトを<br>2Pが自走不能に場合、引数２のスクリプトを読み込む<br>引数１：スクリプト番号<br>引数２：スクリプト番号",
         "SS_cmn": [
             "COMIC2992.BIN"
@@ -29936,6 +30057,7 @@
     },
     "SHOW_WIN_TRAIN": {
         "num": 588,
+        "comicscript": ["SS"],
         "description": "【SS】<br>バトルモードで、どの車両が勝利したか見せる",
         "SS_cmn": [
             "COMIC2993.BIN",
@@ -29944,6 +30066,7 @@
     },
     "NO_RUN": {
         "num": 589,
+        "comicscript": ["SS"],
         "description": "【SS】<br>バトルモードで、指定車両を自走不能とみなす<br>引数１：0（1P）、1（2P）",
         "SS_cmn": [
             "COMIC46040.BIN",
@@ -29952,6 +30075,7 @@
     },
     "COMIC_TO_BTL": {
         "num": 590,
+        "comicscript": ["SS"],
         "description": "【SS】<br>コミックのコマをバトルモードに適用する<br>引数１：0（1P）、1（2P）",
         "SS_cmn": [
             "COMIC46030.BIN",
@@ -29964,6 +30088,7 @@
     },
     "SET_MSGWND_INDEX": {
         "num": 591,
+        "comicscript": ["SS"],
         "description": "【SS】<br>メッセージ枠のインデックスを設定する<br>引数１：0（1P）、1（2P）",
         "SS_cmn": [
             "COMIC46011.BIN",
@@ -29984,6 +30109,7 @@
     },
     "SET_AMB_BOX": {
         "num": 592,
+        "comicscript": ["SS"],
         "description": "【SS】<br>AMB_BOXのAlphaを設定する<br>引数１：0（1P）、1（2P）<br>引数２：Alpha値<br>引数３：変化時間",
         "SS_comic": [
             "COMIC40999.BIN",
