@@ -1,7 +1,7 @@
 {
     "Tx": {
         "num": 0,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>画像をロードする<br>引数１：画像サイズ情報のインデックス",
         "LS_bin": [
             "BTL_04.BIN",
@@ -24,7 +24,7 @@
     },
     "TxSize": {
         "num": 1,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のサイズを変える<br>引数１：from横の倍率<br>引数２：from縦の倍率<br>引数３：to横の倍率<br>引数４：to縦の倍率<br>引数５：引数１、２から　引数３、４まで変化する時間（フレーム）",
         "LS_bin": [
             "BTL_04.BIN",
@@ -47,7 +47,7 @@
     },
     "Alpha": {
         "num": 2,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のAlphaを変える<br>引数１：from_Alphaの値<br>引数２：to_Alphaの値<br>引数３：引数１から　引数２まで変化する時間（フレーム）",
         "LS_bin": [
             "BTL_04.BIN",
@@ -73,7 +73,7 @@
     },
     "End": {
         "num": 3,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>コマンドを終了する",
         "LS_bin": [
             "COUNT.BIN",
@@ -95,7 +95,7 @@
     },
     "Pos": {
         "num": 4,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>画面中央を基準に画像を移動させる<br>引数１：移動させるx座標<br>引数２：移動させるy座標<br>引数３：詳細不明。z座標と思われるが効果なし（０）",
         "LS_bin": [
             "BTL_04.BIN",
@@ -119,7 +119,7 @@
     },
     "ColorALL": {
         "num": 5,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のカラーを変える<br>引数１：R(0~255)<br>引数２：G(0~255)<br>引数３：B(0~255)<br>引数４：変化方法（０）",
         "LS_bin": [
             "CHARSEL.BIN",
@@ -139,7 +139,7 @@
     },
     "Move": {
         "num": 6,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を現在位置から移動させる<br>引数１：x座標<br>引数２：y座標<br>引数３：詳細不明。z座標と思われるが効果なし（０）<br>引数４：移動するまで変化する時間（フレーム）",
         "LS_bin": [
             "TITLE_LOGO.BIN"
@@ -147,7 +147,7 @@
     },
     "STAGE_BGM": {
         "num": 7,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS】<br>ステージBGMの1番目を再生する",
         "LS_comic": [
@@ -188,7 +188,7 @@
     },
     "SetCamDir": {
         "num": 10,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルを見えるようにする",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -213,12 +213,12 @@
     },
     "DisCamDir": {
         "num": 11,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルを見えないようにする"
     },
     "Set3DObj": {
         "num": 12,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>SMFを置く<br>引数１：SMF情報インデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -281,12 +281,12 @@
     },
     "SetWAngleX": {
         "num": 13,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準のX軸で回転する<br>引数１：X軸の角度(from)<br>引数２：X軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
     },
     "SetWAngleY": {
         "num": 14,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準のY軸で回転する<br>引数１：Y軸の角度(from)<br>引数２：Y軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
@@ -294,7 +294,7 @@
     },
     "SetWAngleZ": {
         "num": 15,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準のZ軸で回転する<br>引数１：Z軸の角度(from)<br>引数２：Z軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_bin": [
             "BTL_03.BIN",
@@ -303,17 +303,17 @@
     },
     "SetLAngleX": {
         "num": 16,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準のX軸で回転する<br>引数１：X軸の角度(from)<br>引数２：X軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
     },
     "SetLAngleY": {
         "num": 17,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準のY軸で回転する<br>引数１：Y軸の角度(from)<br>引数２：Y軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
     },
     "SetLAngleZ": {
         "num": 18,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準のZ軸で回転する<br>引数１：Z軸の角度(from)<br>引数２：Z軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
@@ -345,7 +345,7 @@
     },
     "ShowMesh": {
         "num": 25,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>メッシュを表示する<br>引数１：モデルの元のメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -404,7 +404,7 @@
     },
     "HideMesh": {
         "num": 26,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>メッシュを非表示する<br>引数１：モデルの元のメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -479,7 +479,7 @@
     },
     "PlayAnime": {
         "num": 27,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>アニメが定義されているモデルのアニメを実行する。CS以後からは動作しない<br>引数１：モデルのアニメインデックス<br>引数２：繰り返す回数。-1を指定すると無限に繰り返す",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -487,7 +487,7 @@
     },
     "Length_End": {
         "num": 28,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルの描画距離を設定する<br>引数１：描画距離",
         "LS_bin": [
             "BTL_03.BIN",
@@ -516,7 +516,7 @@
     },
     "SetScall": {
         "num": 29,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルのScaleを変える<br>引数１：あるセクションでSet3DObjを実行した際、生成されるインデックス<br>引数２：X方向のScale(from)<br>引数３：X方向のScale(to)<br>引数４：X方向の変化時間（フレーム）<br>引数５：あるセクションでSet3DObjを実行した際、生成されるインデックス<br>引数６：Y方向のScale(from)<br>引数７：Y方向のScale(to)<br>引数８：Y方向の変化時間（フレーム）<br>引数９：あるセクションでSet3DObjを実行した際、生成されるインデックス<br>引数１０：Z方向のScale(from)<br>引数１１：Z方向のScale(to)<br>引数１２：Z方向の変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -536,7 +536,7 @@
     },
     "RACE_START": {
         "num": 30,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルを始める",
         "LS_comic": [
@@ -585,7 +585,7 @@
     },
     "RACE_END": {
         "num": 31,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルが終わる<br>※RSまでの旧作は、モデルバイナリ専用コマンド",
         "LS_bin": [
             "COUNT.BIN"
@@ -605,7 +605,7 @@
     },
     "FADE_STAGE_BGM": {
         "num": 32,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "未実装のコマンド",
         "LS_bin": [
             "COUNT.BIN"
@@ -622,7 +622,7 @@
     },
     "CHANGE_SCENE": {
         "num": 33,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>フェードアウトしてシーンを変える（メニューに戻るなど）<br>引数１：詳細不明。未使用と思われる",
         "LS_comic": [
@@ -721,7 +721,7 @@
     },
     "LPos": {
         "num": 34,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準ですぐ移動させる<br>引数１：移動させるx座標<br>引数２：移動させるy座標<br>引数３：移動させるz座標",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -735,12 +735,12 @@
     },
     "LMove": {
         "num": 35,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "未実装のコマンド"
     },
     "LLoopX": {
         "num": 36,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のX方向へのループ移動を設定する<br>引数１：X座標(from)<br>引数２：X座標(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "SELECTSCENE.BIN",
@@ -749,7 +749,7 @@
     },
     "LLoopY": {
         "num": 37,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のY方向へのループ移動を設定する<br>引数１：Y座標(from)<br>引数２：Y座標(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -758,7 +758,7 @@
     },
     "LLoopZ": {
         "num": 38,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のZ方向へのループ移動を設定する<br>引数１：Z座標(from)<br>引数２：Z座標(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -767,7 +767,7 @@
     },
     "Angle": {
         "num": 39,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を回転させる<br>引数１：回転角度(from)<br>引数２：回転角度(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -775,7 +775,7 @@
     },
     "AngleLoop": {
         "num": 40,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像に設定した回転をループさせる<br>引数１：回転角度(from)<br>引数２：回転角度(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "TITLE_MENU.BIN"
@@ -783,7 +783,7 @@
     },
     "Move2": {
         "num": 41,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を現在位置から移動させる<br>引数１：x座標<br>引数２：y座標<br>引数３：詳細不明。z座標と思われるが効果なし（０）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -791,12 +791,12 @@
     },
     "PosX": {
         "num": 42,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をすぐX方向へ移動させる<br>引数１：X座標"
     },
     "PosY": {
         "num": 43,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をすぐY方向へ移動させる<br>引数１：Y座標",
         "LS_bin": [
             "TITLE_MENU.BIN"
@@ -804,12 +804,12 @@
     },
     "PosZ": {
         "num": 44,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をすぐZ方向へ移動させる（効果なしと思われる）<br>引数１：Z座標"
     },
     "PlaySE": {
         "num": 45,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>SEを再生する<br>引数１：SE情報インデックス<br>引数２：SEグループ内のインデックス番号（使われてないと思われる）",
         "LS_bin": [
             "BTL_03.BIN",
@@ -831,7 +831,7 @@
     },
     "SET_MT_NONE": {
         "num": 46,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準で回転情報を初期化する<br>（まっすぐに立つ効果になる）",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -3369,7 +3369,7 @@
     },
     "SKY_DOME": {
         "num": 55,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>空を表示する",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -13951,7 +13951,7 @@
     },
     "Set2P": {
         "num": 91,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を2Pのところへ移す。<br>BSでは効果がなく、CS以後ではエラーになる",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13959,7 +13959,7 @@
     },
     "CharChk_and_Tx": {
         "num": 92,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>車両の開放状態を判断して、画像を設定する<br>引数１：車両インデックス<br>引数２：開放の場合、画像サイズ情報のインデックス<br>引数３：未開放の場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13967,22 +13967,22 @@
     },
     "ChangeR": {
         "num": 93,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のR要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのR(0~255)<br>引数３：toのR(0~255)<br>引数４：変化時間（フレーム）"
     },
     "ChangeG": {
         "num": 94,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のG要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのG(0~255)<br>引数３：toのG(0~255)<br>引数４：変化時間（フレーム）"
     },
     "ChangeB": {
         "num": 95,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のB要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのB(0~255)<br>引数３：toのB(0~255)<br>引数４：変化時間（フレーム）"
     },
     "ChangeColor": {
         "num": 96,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のG, R, B要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのG(0~255)<br>引数３：toのG(0~255)<br>引数４：fromのR(0~255)<br>引数５：toのR(0~255)<br>引数６：fromのB(0~255)<br>引数７：toのB(0~255)<br>引数８：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13990,7 +13990,7 @@
     },
     "SetGray": {
         "num": 97,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をグレーに変える<br>CS以後ではエラーになる<br>引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13998,7 +13998,7 @@
     },
     "MoveX": {
         "num": 98,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をX方向へ移動する<br>LSのキャラクター選択では、Set3DObjにも適用できるコマンドで<br>ワールド座標基準で移動する<br>引数１：X方向への距離<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "LS_bin": [
             "CHARSEL.BIN",
@@ -14007,7 +14007,7 @@
     },
     "MoveY": {
         "num": 99,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をY方向へ移動する<br>LSのキャラクター選択では、Set3DObjにも適用できるコマンドで<br>ワールド座標基準で移動する<br>引数１：Y方向への距離<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -14016,7 +14016,7 @@
     },
     "MoveZ": {
         "num": 100,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をZ方向へ移動する<br>LSのキャラクター選択では、Set3DObjにも適用できるコマンドで<br>ワールド座標基準で移動する<br>引数１：Z方向への距離<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
@@ -14024,7 +14024,7 @@
     },
     "SetUV_X": {
         "num": 101,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を左右反転させる<br>CS以後ではエラーになる<br>引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -14032,7 +14032,7 @@
     },
     "RePlay": {
         "num": 102,
-        "mdlBin":["LS", "BS"],
+        "mdlBin": ["LS", "BS"],
         "comicscript":["LS"],
         "description": "【LS、BS】<br>詳細不明。未実装のリプレイモードのためのものと思われる<br>引数１：1（True）、0（False）（１）",
         "LS_comic": [
@@ -14046,7 +14046,7 @@
     },
     "IsStart": {
         "num": 103,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>バトルが始まるとANIMEを適用する<br>引数１：ANIME要素２<br>引数２：ANIME要素３",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15000,7 +15000,7 @@
     },
     "IS_TRAIN_HIT": {
         "num": 124,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>車両でオブジェクトをヒットした場合。ただしBSでは効果がない<br>引数１：x範囲<br>引数２：y範囲<br>引数３：z範囲<br>引数４：ANIME要素２<br>引数５：ANIME要素３<br>引数６：ぶつけ判定<br>　LS：3（車両が飛ぶ）、4（ぶつけてドリフト）、その他（何もしない）<br>　CS以後：3（車両が飛んで自走不能になる）、その他（何もしない）",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15299,7 +15299,7 @@
     },
     "RandWAngle": {
         "num": 127,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置した動くモデルを、ワールド座標基準でランダムに回転させる",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15308,7 +15308,7 @@
     },
     "RandMove": {
         "num": 128,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルを、ランダムな方向へ移動させる<br>引数１：x軸のランダム範囲(1)<br>引数２：x軸のランダム範囲(2)<br>引数３：z軸のランダム範囲(1)<br>引数４：z軸のランダム範囲(2)<br>引数５：y軸のランダム範囲(1)<br>引数６：y軸のランダム範囲(2)<br>引数７：重力の影響度",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15317,7 +15317,7 @@
     },
     "ADD_OBJ": {
         "num": 129,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>一番最初のベースBINから（ほぼBASE_OBJ.BIN。LSはSCENE3DOBJ.BIN）<br>モデルのスクリプトを呼ぶ。コミックスクリプトでも使える。<br>ただし、タイプ６で呼ぶと効果なし<br>引数１：ANIME要素２<br>引数２：ANIME要素３<br>引数３：呼び出し元からずらすx座標<br>引数４：呼び出し元からずらすy座標<br>引数５：呼び出し元からずらすz座標<br>引数６：詳細不明",
         "LS_comic": [
@@ -15329,7 +15329,7 @@
     },
     "START_COMIC": {
         "num": 130,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>コミックスクリプトを実行する<br>引数１：コミックスクリプト番号",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15341,7 +15341,7 @@
     },
     "SetRand3DObj": {
         "num": 131,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>指定範囲内のオブジェクトインデックスをランダム1個選んで、Set3DObjを実行する<br>引数１：範囲Start（オブジェクトインデックス）<br>引数２：範囲End（オブジェクトインデックス）",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15349,7 +15349,7 @@
     },
     "Offset3DObj": {
         "num": 132,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルの元インデックスから<br>指定数分ずらしたインデックスで再配置する<br>引数１：offsetする数値",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15357,7 +15357,7 @@
     },
     "RandPos": {
         "num": 133,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをランダムな位置に配置する<br>引数１：x軸のランダム範囲(1)<br>引数２：x軸のランダム範囲(2)<br>引数３：y軸のランダム範囲(1)<br>引数４：y軸のランダム範囲(2)<br>引数５：z軸のランダム範囲(1)<br>引数６：z軸のランダム範囲(2)",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15365,7 +15365,7 @@
     },
     "RandPlaySE": {
         "num": 134,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する<br>引数１：範囲Start（SE情報インデックス）<br>引数２：範囲End（SE情報インデックス）<br>引数３：SEグループ内のインデックス",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15373,12 +15373,12 @@
     },
     "RandAngleX": {
         "num": 135,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のX軸基準で、ランダムな数値で回転する<br>引数１：x軸のランダム範囲(1)<br>引数２：x軸のランダム範囲(2)"
     },
     "RandAngleY": {
         "num": 136,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のY軸基準で、ランダムな数値で回転する<br>引数１：y軸のランダム範囲(1)<br>引数２：y軸のランダム範囲(2)",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15386,7 +15386,7 @@
     },
     "RandAngleZ": {
         "num": 137,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のZ軸基準で、ランダムな数値で回転する<br>引数１：z軸のランダム範囲(1)<br>引数２：z軸のランダム範囲(2)"
     },
     "CHK_TRAIN_STATE": {
@@ -15583,7 +15583,7 @@
     },
     "ChkStory_and_Tx": {
         "num": 144,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>ストーリーの開放状態を判断して、画像を設定する<br>引数１：ストーリーインデックス<br>引数２：開放の場合、画像サイズ情報のインデックス<br>引数３：未開放の場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "STORYSEL.BIN"
@@ -15591,7 +15591,7 @@
     },
     "ClearStory_and_Tx": {
         "num": 145,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>ストーリーのクリア状態を判断して、画像を設定する<br>引数１：ストーリーインデックス<br>引数２：クリアの場合、画像サイズ情報のインデックス<br>引数３：クリアではない場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "STORYSEL.BIN"
@@ -17738,7 +17738,7 @@
     },
     "ChkCause_and_Tx": {
         "num": 180,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>コースの開放状態を判断して、画像を設定する<br>ただし、BS以後ではエラーになる<br>引数１：二人バトル、または沿線コースのインデックス<br>引数２：開放の場合、画像サイズ情報のインデックス<br>引数３：未開放の場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "CAUSESEL.BIN"
@@ -17746,7 +17746,7 @@
     },
     "SET_DRAW_TYPE": {
         "num": 181,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示する画像の描画タイプを設定する<br>引数１<br>　0（NORMAL）：全体が透明を無視したデフォルト状態<br>　1（BLEND）：わずか透明な描画（ゲームのデフォルト）<br>　2（ADD）：画像も透明<br>　3（ADD_NOALPHA）：画像も透明だが、外側の透明を無視する<br>　4（SUB）：画像を透明にし、色反転<br>　5（SUB_NOALPHA）：画像を透明にし、色反転するが、外側の透明を無視する<br>　6（MULTIPLE）：複合的（半透明・画像の縁まで透明）",
         "LS_bin": [
             "COUNT.BIN"
@@ -17763,7 +17763,7 @@
     },
     "To_TxSize": {
         "num": 182,
-        "mdlBin":["LS", "BS", "CS", "RS"],
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像の倍率を変える<br>引数１：横の倍率<br>引数２：縦の倍率<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "COUNT.BIN"
@@ -18432,7 +18432,7 @@
     },
     "FROM": {
         "num": 193,
-        "mdlBin":["CS", "RS"],
+        "mdlBin": ["CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>あるコマンドでFROMに飛ばした時、引数が一致する場合、この行で止める<br>引数１：数字",
         "LS_comic": [
@@ -18795,7 +18795,7 @@
     },
     "GOTO": {
         "num": 194,
-        "mdlBin":["CS", "RS"],
+        "mdlBin": ["CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>このコマンドが実行された行を基準に、一番近い下のFROMまで飛ぶ<br>モデルバイナリではCS以後から使える<br>引数１：FROMの数字",
         "LS_comic": [
@@ -25916,26 +25916,32 @@
     },
     "PTCL_SCALL": {
         "num": 337,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルのスケールを設定する<br>引数１：スケールの倍率<br>引数２：変化方法<br>引数３：変化時間（フレーム）"
     },
     "PTCL_COLOR": {
         "num": 338,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルのカラーを設定する<br>引数１：R値<br>引数２：G値<br>引数３：B値<br>引数４：変化方法<br>引数５：変化時間（フレーム）"
     },
     "PTCL_ALPHA": {
         "num": 339,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルのAlpha値を設定する<br>引数１：Alpha値<br>引数２：変化方法<br>引数３：変化時間（フレーム）"
     },
     "PTCL_DRAWTYPE": {
         "num": 340,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>詳細不明。モデルのパーティクルの描画タイプの設定と思われる"
     },
     "PTCL_ANGLE": {
         "num": 341,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルを回転させる<br>引数１：回転数値<br>引数２：変化方法<br>引数３：変化時間（フレーム）<br>引数４：ループ設定[1（True）、0（False）]"
     },
     "PTCL_RAND_ANGLE": {
         "num": 342,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>PTCLをランダムに回転する<br>引数１：回転startのランダム範囲(1)<br>引数２：回転startのランダム範囲(2)<br>引数３：回転endのランダム範囲(1)<br>引数４：回転endのランダム範囲(2)<br>引数５：変化方法<br>引数６：変化時間（フレーム）のランダム範囲(1)<br>引数７：変化時間（フレーム）のランダム範囲(2)<br>引数８：ループ設定[1（True）、0（False）]",
         "CS_bin": [
             "JR2000.BIN",
@@ -25953,10 +25959,12 @@
     },
     "PTCL_RAND_COLOR": {
         "num": 343,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルのカラーを設定する<br>引数１：Rのランダム範囲(1)<br>引数２：Rのランダム範囲(2)<br>引数３：Gのランダム範囲(1)<br>引数４：Gのランダム範囲(2)<br>引数５：Bのランダム範囲(1)<br>引数６：Bのランダム範囲(2)<br>引数７：変化方法<br>引数８：変化時間（フレーム）"
     },
     "PTCL_RAND_ALPHA": {
         "num": 344,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルのAlpha値をランダムに決める<br>引数１：Alpha値のランダム範囲(1)<br>引数２：Alpha値のランダム範囲(2)<br>引数３：変化方法<br>引数４：変化時間（フレーム）のランダム範囲(1)<br>引数５：変化時間（フレーム）のランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
@@ -25974,6 +25982,7 @@
     },
     "PTCL_RAND_SCALL": {
         "num": 345,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルのスケール変化をランダムに決める<br>引数１：スケールの倍率のランダム範囲(1)<br>引数２：スケールの倍率のランダム範囲(2)<br>引数３：変化方法<br>引数４：変化時間（フレーム）のランダム範囲(1)<br>引数５：変化時間（フレーム）のランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
@@ -26009,6 +26018,7 @@
     },
     "PTCL_RAND_TONE_COLOR": {
         "num": 347,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>トーンのカラーをランダムに設定する<br>引数１：カラーのランダム範囲(1)<br>引数２：カラーのランダム範囲(2)<br>引数３：変化方法<br>引数４：変化時間（フレーム）",
         "CS_bin": [
             "JR2000.BIN",
@@ -26026,6 +26036,7 @@
     },
     "IS_ALPHA_END": {
         "num": 348,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルのAlpha値が全部0になったか判断する<br>そうなった場合、改めてパーティクルを生成する<br>引数１：0。初期化するための数値と思われる",
         "CS_bin": [
             "JR2000.BIN",
@@ -26043,6 +26054,7 @@
     },
     "PTCL_L_POS": {
         "num": 349,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルをローカル座標基準で移動させる<br>引数１：x座標<br>引数２：y座標<br>引数３：z座標<br>引数４：変化方法<br>引数５：変化時間（フレーム）",
         "CS_bin": [
             "JR2000.BIN",
@@ -26060,6 +26072,7 @@
     },
     "PTCL_RAND_L_POS": {
         "num": 350,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】<br>【CS、RS】<br>モデルのパーティクルをローカル座標基準でランダムに移動させる<br>引数１：x座標のランダム範囲(1)<br>引数２：x座標のランダム範囲(2)<br>引数３：y座標のランダム範囲(1)<br>引数４：y座標のランダム範囲(2)<br>引数５：z座標のランダム範囲(1)<br>引数６：z座標のランダム範囲(2)<br>引数７：変化方法<br>引数８：変化時間（フレーム）のランダム範囲(1)<br>引数９：変化時間（フレーム）のランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
