@@ -18432,6 +18432,7 @@
     },
     "FROM": {
         "num": 193,
+        "mdlBin":["CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>あるコマンドでFROMに飛ばした時、引数が一致する場合、この行で止める<br>引数１：数字",
         "LS_comic": [
@@ -18794,6 +18795,7 @@
     },
     "GOTO": {
         "num": 194,
+        "mdlBin":["CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>このコマンドが実行された行を基準に、一番近い下のFROMまで飛ぶ<br>モデルバイナリではCS以後から使える<br>引数１：FROMの数字",
         "LS_comic": [
@@ -25795,6 +25797,7 @@
     },
     "ERR_CMD": {
         "num": 329,
+        "mdlBin": ["CS", "RS"],
         "description": "【BS、CS、RS】<br>「スクリプト (実行した行数) 確認」とエラーメッセージが出る<br>ゲームが落ちたりせず、そのまま次の行へ行く<br>モデルバイナリでも使える"
     },
     "K_HN": {
@@ -25866,6 +25869,7 @@
     },
     "IB_LI_SET_UPDATE_FLG": {
         "num": 336,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルインデックスの変化を格納したListInterの<br>Updateのフラグを設定する。デフォルトはTrue状態<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）",
         "CS_bin": [
             "H2000_00.BIN",
@@ -25987,6 +25991,7 @@
     },
     "IB_ADD_PTCL": {
         "num": 346,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルにパーティクルを追加する。<br>事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し<br>引数２と３は画像情報を一致させて<br>引数４と５はPTCLコマンドとして定義されたANIMEを指定する<br>引数１：モデルインデックス<br>引数２：画像情報のインデックス（要素１が【1】で定義されているもの）<br>引数３：画像サイズ情報のインデックス<br>引数４：ANIME要素２（PTCLが定義されたセクション）<br>引数５：ANIME要素３（PTCLが定義されたセクション）",
         "CS_bin": [
             "JR2000.BIN",
@@ -26072,6 +26077,7 @@
     },
     "CREATE_MAT_COLOR_R_INTERLIST": {
         "num": 351,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに、カラーRの変化を格納するListInterを作成する<br>引数１：メッシュインデックス<br>引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN",
@@ -26086,6 +26092,7 @@
     },
     "CREATE_MAT_EMISSIVE_R_INTERLIST": {
         "num": 352,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに、自己発光カラーRの変化を格納するListInterを作成する<br>引数１：メッシュインデックス<br>引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN"
@@ -26096,6 +26103,7 @@
     },
     "SET_MAT_COLOR_R": {
         "num": 353,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>カラーRを格納するListInterのインデックスに値を設定する<br>引数１：メッシュインデックス<br>引数２：LIインデックス<br>引数３：カラーRの値（0.0～1.0）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN",
@@ -26110,6 +26118,7 @@
     },
     "SET_MAT_COLOR_G": {
         "num": 354,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>カラーGを格納するListInterのインデックスに値を設定する<br>引数１：メッシュインデックス<br>引数２：LIインデックス<br>引数３：カラーGの値（0.0～1.0）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN",
@@ -26124,6 +26133,7 @@
     },
     "SET_MAT_COLOR_B": {
         "num": 355,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>カラーBを格納するListInterのインデックスに値を設定する<br>引数１：メッシュインデックス<br>引数２：LIインデックス<br>引数３：カラーBの値（0.0～1.0）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -26136,6 +26146,7 @@
     },
     "SET_MAT_COLOR_LOOP": {
         "num": 356,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>カラー情報のListInterにループを生成する<br>引数１：メッシュインデックス<br>引数２：カラーインデックス（0=R、1=G、2=B）<br>引数３：1（True）、0（False）",
         "CS_bin": [
             "KOUSATEN.BIN"
@@ -26143,6 +26154,7 @@
     },
     "SET_MAT_EMISSIVE_R": {
         "num": 357,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>自己発光カラーRを格納するListInterのインデックスに値を設定する<br>引数１：メッシュインデックス<br>引数２：LIインデックス<br>引数３：自己発光カラーRの値（0.0～1.0）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN"
@@ -26153,6 +26165,7 @@
     },
     "SET_MAT_EMISSIVE_G": {
         "num": 358,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>自己発光カラーGを格納するListInterのインデックスに値を設定する<br>引数１：メッシュインデックス<br>引数２：LIインデックス<br>引数３：自己発光カラーGの値（0.0～1.0）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "BASE_OBJ.BIN"
@@ -26163,14 +26176,16 @@
     },
     "SET_MAT_EMISSIVE_B": {
         "num": 359,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>自己発光カラーBを格納するListInterのインデックスに値を設定する<br>引数１：メッシュインデックス<br>引数２：LIインデックス<br>引数３：自己発光カラーBの値（0.0～1.0）<br>引数４：変化時間（フレーム）<br>引数５：変化方法"
     },
     "SET_MAT_EMISSIVE_LOOP": {
         "num": 360,
-        "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>自己発光カラー情報のListInterにループを生成する<br>引数１：メッシュインデックス<br>引数２：自己発光カラーインデックス（0=R、1=G、2=B）<br>引数３：1（True）、0（False）"
+        "description": "未定義のコマンド"
     },
     "CREATE_MAT_COLOR_G_INTERLIST": {
         "num": 361,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに、カラーGの変化を格納するListInterを作成する<br>引数１：メッシュインデックス<br>引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN",
@@ -26185,6 +26200,7 @@
     },
     "CREATE_MAT_EMISSIVE_G_INTERLIST": {
         "num": 362,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに、自己発光カラーGの変化を格納するListInterを作成する<br>引数１：メッシュインデックス<br>引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN"
@@ -26195,6 +26211,7 @@
     },
     "CREATE_MAT_COLOR_B_INTERLIST": {
         "num": 363,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに、カラーBの変化を格納するListInterを作成する<br>引数１：メッシュインデックス<br>引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN",
@@ -26209,6 +26226,7 @@
     },
     "CREATE_MAT_EMISSIVE_B_INTERLIST": {
         "num": 364,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに、自己発光カラーBの変化を格納するListInterを作成する<br>引数１：メッシュインデックス<br>引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "BASE_OBJ.BIN"
@@ -26219,6 +26237,7 @@
     },
     "CREATE_UV_MOVE_Y": {
         "num": 365,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのY軸に移動する変化を格納する、UVのインデックスを生成する<br>引数１：メッシュインデックス<br>引数２：生成するインデックス個数",
         "CS_bin": [
             "H8008_00.BIN",
@@ -26245,6 +26264,7 @@
     },
     "SET_UV_MOVE_Y": {
         "num": 366,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのY軸移動のUVに値を設定する<br>引数１：メッシュインデックス<br>引数２：UVインデックス<br>引数３：変化方法<br>引数４：Y軸移動の目標位置。メッシュの最後の位置を1.0とする。<br>引数５：変化時間（フレーム）",
         "CS_bin": [
             "H8008_00.BIN",
@@ -26271,6 +26291,7 @@
     },
     "SET_UV_LOOP_Y": {
         "num": 367,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのY軸移動のUVにループを設定する<br>引数１：メッシュインデックス<br>引数２：1（True）、0（False）",
         "CS_bin": [
             "H8008_00.BIN",
@@ -26296,6 +26317,7 @@
     },
     "INDEX_RAND_ROT_X": {
         "num": 368,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルのボーンをX軸でランダムに回転させる<br>引数１：モデルインデックス<br>引数２：回転のランダム範囲(1)<br>引数３：回転のランダム範囲(2)<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
@@ -26311,6 +26333,7 @@
     },
     "INDEX_RAND_ROT_Y": {
         "num": 369,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルのボーンをY軸でランダムに回転させる<br>引数１：モデルインデックス<br>引数２：回転のランダム範囲(1)<br>引数３：回転のランダム範囲(2)<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
@@ -26330,6 +26353,7 @@
     },
     "INDEX_RAND_ROT_Z": {
         "num": 370,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルのボーンをZ軸でランダムに回転させる<br>引数１：モデルインデックス<br>引数２：回転のランダム範囲(1)<br>引数３：回転のランダム範囲(2)<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
@@ -26345,6 +26369,7 @@
     },
     "INDEX_RAND_POS_X": {
         "num": 371,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルのボーンをX軸でランダムに移動させる<br>引数１：モデルインデックス<br>引数２：移動のランダム範囲(1)<br>引数３：移動のランダム範囲(2)<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "RS_bin": [
             "CLASH_MEI_KASENCHU.BIN",
@@ -26356,6 +26381,7 @@
     },
     "INDEX_RAND_POS_Y": {
         "num": 372,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルのボーンをY軸でランダムに移動させる<br>引数１：モデルインデックス<br>引数２：移動のランダム範囲(1)<br>引数３：移動のランダム範囲(2)<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "JR2000.BIN",
@@ -26371,6 +26397,7 @@
     },
     "INDEX_RAND_POS_Z": {
         "num": 373,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルのボーンをZ軸でランダムに移動させる<br>引数１：モデルインデックス<br>引数２：移動のランダム範囲(1)<br>引数３：移動のランダム範囲(2)<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "RS_bin": [
             "CLASH_MEI_KASENCHU.BIN",
@@ -26382,6 +26409,7 @@
     },
     "RAND_SHOW_MESH": {
         "num": 374,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルの元のメッシュをランダムに表示させる<br>引数１：ランダム範囲(1)<br>引数２：ランダム範囲(2)",
         "CS_bin": [
             "JR2000.BIN",
@@ -26392,6 +26420,7 @@
     },
     "INDEX_RAND_SCALL": {
         "num": 375,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルのボーンのスケールをランダムで設定する<br>引数１：モデルインデックス<br>引数２：スケール倍率のランダム範囲(1)<br>引数３：スケール倍率のランダム範囲(2)<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -26409,6 +26438,7 @@
     },
     "ADD_CHILD_OBJ": {
         "num": 376,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>あるモデルにANIMEオブジェクトを追加する<br>引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）<br>引数２：Child番号（0～3）<br>引数３：ANIME要素２<br>引数４：ANIME要素３",
         "CS_bin": [
             "JR2000.BIN",
@@ -26425,6 +26455,7 @@
     },
     "ADD_OBJ_INDEX": {
         "num": 377,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し<br>そのマテリアルにANIMEオブジェクトを追加する<br>ただし、引数１が-1以外で使われる場合は、未実装と思われる<br>引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）<br>引数２：マテリアルインデックス<br>引数３：モデルインデックス<br>引数４：ANIME要素２<br>引数５：ANIME要素３",
         "CS_bin": [
             "AMB_LIGHT.BIN",
@@ -26522,6 +26553,7 @@
     },
     "CHANGE_CHILDOBJ_ANIME": {
         "num": 380,
+        "mdlBin": ["CS", "RS"],
         "description": "【CS、RS】<br>モデルにADD_CHILD_OBJで追加してたANIMEを変える<br>モデルバイナリでも使えるし、その場合引数１と２は-1になる<br>引数１：-1（あるセクションでのモデル）、0（1P）、1（2P）<br>引数２：-1（あるセクションでのモデル）、その他（号車インデックス）<br>引数３：Child番号（0～3）<br>引数４：ANIME要素２<br>引数５：ANIME要素３",
         "CS_comic": [
             "COMIC2997.BIN",
@@ -26537,6 +26569,7 @@
     },
     "IB_SET_W_MT": {
         "num": 381,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>MDL_GETINDEXで取得した、モデルインデックスにマテリアル要素を追加する<br>引数１：モデルインデックス<br>引数２：追加するマテリアル要素数",
         "CS_bin": [
             "AMB_LANDBRIDGH.BIN",
@@ -26563,6 +26596,7 @@
     },
     "CHK_OBJ_PARAM": {
         "num": 382,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>車両の状態によって条件が合えば、引数３のFROMへ<br>条件が合わなければ、引数４のFROMへ飛ぶ<br>引数１：判定要素<br>　0（指定車両モデルのインデックス位置。CHAR_SEL_OBJの場合、開放された車両数）<br>　1（車両カラーインデックス位置）<br>引数２：インデックス値。CHAR_SEL_OBJの場合、開放された車両数の値<br>引数３：FROM数字<br>引数４：FROM数字",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -26624,14 +26658,17 @@
     },
     "SET_OBJ_PARAM": {
         "num": 383,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>判定要素の値をスクリプトで設定する<br>引数１：判定要素<br>　0（指定車両モデルのインデックス位置。CHAR_SEL_OBJの場合、開放された車両数）<br>　1（車両カラーインデックス位置）<br>引数２：設定値"
     },
     "INDEX_DIR_CAM": {
         "num": 384,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>詳細不明。メニューで使うものと思われる<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）【推定】"
     },
     "CNG_MT_LIGHT": {
         "num": 385,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルの元メッシュのマテリアルのEMISを変える<br>引数１：元メッシュインデックス<br>引数２：引数１のマテリアルインデックス<br>引数３：EMIS_R<br>引数４：EMIS_G<br>引数５：EMIS_B",
         "CS_bin": [
             "H2000_00.BIN",
@@ -26690,6 +26727,7 @@
     },
     "ADD_OBJ_INDEX2": {
         "num": 386,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し<br>そのマテリアルにANIMEを追加する<br>引数１：マテリアルインデックス<br>引数２：ANIME要素２<br>引数３：ANIME要素３",
         "CS_bin": [
             "AMB_LANDBRIDGH.BIN",
@@ -26703,10 +26741,12 @@
     },
     "CNG_MT_ALPHA": {
         "num": 387,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>モデルの元メッシュのマテリアルのAlphaを変える<br>引数１：元メッシュインデックス<br>引数２：引数１のマテリアルインデックス<br>引数３：Alpha値"
     },
     "CREATE_MAT_ALPHA_INTERLIST": {
         "num": 388,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに、Alphaの変化を格納するListInterを作成する<br>引数１：メッシュインデックス<br>引数２：生成するListInterインデックス個数",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -26725,6 +26765,7 @@
     },
     "SET_MAT_ALPHA": {
         "num": 389,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに生成した<br>Alphaを格納するListInterのインデックスに値を設定する<br>引数１：メッシュインデックス<br>引数２：LIインデックス<br>引数３：Alphaの値（0.0～1.0）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -26743,6 +26784,7 @@
     },
     "RESTART_MESH_LIST": {
         "num": 390,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに定義したListInterを改めて動かす<br>引数１：メッシュインデックス<br>引数２：ListInterのタイプ<br>　0：カラーRのListInter<br>　1：カラーGのListInter<br>　2：カラーBのListInter<br>　3：AlphaのListInter",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -27066,6 +27108,7 @@
     },
     "SWAP_TX": {
         "num": 398,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>テクスチャーを用意する<br>引数１：画像サイズ情報のインデックス<br>引数２：テクスチャーファイル",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -27141,6 +27184,7 @@
     },
     "CNG_TX": {
         "num": 399,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>マテリアルのテクスチャーを変える。SWAP_TXで変えたテクスチャーを適用する際に使う<br>引数１：画像サイズ情報のインデックス<br>引数２：モデルの元のメッシュインデックス<br>引数３：引数２のマテリアルインデックス",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -27216,6 +27260,7 @@
     },
     "CHK_CAUSE": {
         "num": 400,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>選択したコースが引数１と一致する場合、引数２のFROMへ<br>一致しない場合、引数３のFROMへ飛ぶ<br>引数１：コース番号（200、201・・・）<br>引数２：FROM数字<br>引数３：FROM数字",
         "CS_bin": [
             "H2000_00.BIN",
@@ -27290,6 +27335,7 @@
     },
     "CNG_ANIME": {
         "num": 401,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>ANIMEを実行する。<br>またこのコマンドを基準に、次の行以降は実行されない<br>引数１：ANIME要素２<br>引数２：ANIME要素３",
         "CS_bin": [
             "H2000_00.BIN",
@@ -27375,6 +27421,7 @@
     },
     "CHK_OUHUKU": {
         "num": 402,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>未完成。<br>CSではどのステージを選んでも引数１のFROMへ行く。<br>往復状態を判断し、通常方向の場合、引数１のFROMへ<br>折り返し方向の場合、引数２のFROMへ飛ぶものと思われる<br>RSでは「未使用コマンド」とエラーメッセージ後、次の行へ行く<br>引数１：FROM数字<br>引数２：FROM数字",
         "CS_bin": [
             "H2000_00.BIN",
@@ -27454,6 +27501,7 @@
     },
     "MESH_INDEX_SE_UV_ANIME_FLG": {
         "num": 407,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュの移動変化を格納したUVの<br>Updateのフラグを設定する。デフォルトはTrue状態<br>引数１：メッシュインデックス<br>引数２：1（True）、0（False）",
         "CS_bin": [
             "H8008_00.BIN",
@@ -27468,6 +27516,7 @@
     },
     "WEATHER": {
         "num": 408,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>雪のオブジェクトを生成する",
         "CS_bin": [
             "HQ_TK.BIN"
@@ -27532,6 +27581,7 @@
     },
     "IS_USE_CHAR": {
         "num": 410,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>引数１の車両を使える場合、引数２のFROM数字へ<br>使えない場合、引数３のFROM数字へ飛ぶ<br>引数１：車両インデックス<br>引数２：FROM数字<br>引数３：FROM数字",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
@@ -27626,6 +27676,7 @@
     },
     "G_HIDE_MESH": {
         "num": 417,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>引数１から引数２までの連続した<br>グループ単位でメッシュを非表示する<br>引数１：モデルの元メッシュインデックス（Start）<br>引数２：モデルの元メッシュインデックス（End）",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
@@ -27636,6 +27687,7 @@
     },
     "G_SHOW_MESH": {
         "num": 418,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>引数１から引数２までの連続した<br>グループ単位でメッシュを表示する<br>引数１：モデルの元メッシュインデックス（Start）<br>引数２：モデルの元メッシュインデックス（End）",
         "CS_bin": [
             "CHAR_SEL_OBJ.BIN"
@@ -27666,6 +27718,7 @@
     },
     "MESH_INDEX_UV_RESTRT": {
         "num": 421,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】<br>【CS、RS】<br>メッシュのマテリアルに定義したUVを改めて動かす<br>引数１：メッシュインデックス<br>引数２：UVのタイプ<br>　０：X軸のUV<br>　１：Y軸のUV",
         "CS_bin": [
             "H8200_00.BIN",
