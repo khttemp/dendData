@@ -1,7 +1,7 @@
 {
     "Tx": {
         "num": 0,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>画像をロードする<br>引数１：画像サイズ情報のインデックス",
         "LS_bin": [
             "BTL_04.BIN",
@@ -24,7 +24,7 @@
     },
     "TxSize": {
         "num": 1,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のサイズを変える<br>引数１：from横の倍率<br>引数２：from縦の倍率<br>引数３：to横の倍率<br>引数４：to縦の倍率<br>引数５：引数１、２から　引数３、４まで変化する時間（フレーム）",
         "LS_bin": [
             "BTL_04.BIN",
@@ -47,7 +47,7 @@
     },
     "Alpha": {
         "num": 2,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のAlphaを変える<br>引数１：from_Alphaの値<br>引数２：to_Alphaの値<br>引数３：引数１から　引数２まで変化する時間（フレーム）",
         "LS_bin": [
             "BTL_04.BIN",
@@ -73,7 +73,7 @@
     },
     "End": {
         "num": 3,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>コマンドを終了する",
         "LS_bin": [
             "COUNT.BIN",
@@ -95,7 +95,7 @@
     },
     "Pos": {
         "num": 4,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>画面中央を基準に画像を移動させる<br>引数１：移動させるx座標<br>引数２：移動させるy座標<br>引数３：詳細不明。z座標と思われるが効果なし（０）",
         "LS_bin": [
             "BTL_04.BIN",
@@ -119,7 +119,7 @@
     },
     "ColorALL": {
         "num": 5,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のカラーを変える<br>引数１：R(0~255)<br>引数２：G(0~255)<br>引数３：B(0~255)<br>引数４：変化方法（０）",
         "LS_bin": [
             "CHARSEL.BIN",
@@ -139,7 +139,7 @@
     },
     "Move": {
         "num": 6,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を現在位置から移動させる<br>引数１：x座標<br>引数２：y座標<br>引数３：詳細不明。z座標と思われるが効果なし（０）<br>引数４：移動するまで変化する時間（フレーム）",
         "LS_bin": [
             "TITLE_LOGO.BIN"
@@ -147,7 +147,7 @@
     },
     "STAGE_BGM": {
         "num": 7,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS】<br>ステージBGMの1番目を再生する",
         "LS_comic": [
@@ -188,7 +188,7 @@
     },
     "SetCamDir": {
         "num": 10,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルを見えるようにする",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -213,12 +213,12 @@
     },
     "DisCamDir": {
         "num": 11,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルを見えないようにする"
     },
     "Set3DObj": {
         "num": 12,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>SMFを置く<br>引数１：SMF情報インデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -281,12 +281,12 @@
     },
     "SetWAngleX": {
         "num": 13,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準のX軸で回転する<br>引数１：X軸の角度(from)<br>引数２：X軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
     },
     "SetWAngleY": {
         "num": 14,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準のY軸で回転する<br>引数１：Y軸の角度(from)<br>引数２：Y軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
@@ -294,7 +294,7 @@
     },
     "SetWAngleZ": {
         "num": 15,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準のZ軸で回転する<br>引数１：Z軸の角度(from)<br>引数２：Z軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_bin": [
             "BTL_03.BIN",
@@ -303,17 +303,17 @@
     },
     "SetLAngleX": {
         "num": 16,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準のX軸で回転する<br>引数１：X軸の角度(from)<br>引数２：X軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
     },
     "SetLAngleY": {
         "num": 17,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準のY軸で回転する<br>引数１：Y軸の角度(from)<br>引数２：Y軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
     },
     "SetLAngleZ": {
         "num": 18,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準のZ軸で回転する<br>引数１：Z軸の角度(from)<br>引数２：Z軸の角度(to)<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
@@ -345,7 +345,7 @@
     },
     "ShowMesh": {
         "num": 25,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>メッシュを表示する<br>引数１：モデルの元のメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -404,7 +404,7 @@
     },
     "HideMesh": {
         "num": 26,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>メッシュを非表示する<br>引数１：モデルの元のメッシュインデックス",
         "LS_bin": [
             "BTL_01.BIN",
@@ -479,15 +479,15 @@
     },
     "PlayAnime": {
         "num": 27,
-        "mdlBin":["LS"],
-        "description": "【モデルバイナリ】<br>【LS、BS】<br>アニメが定義されているモデルのアニメを実行する<br>引数１：モデルのアニメインデックス<br>引数２：繰り返す回数。-1を指定すると無限に繰り返す",
+        "mdlBin":["LS", "BS", "CS", "RS"],
+        "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>アニメが定義されているモデルのアニメを実行する。CS以後からは動作しない<br>引数１：モデルのアニメインデックス<br>引数２：繰り返す回数。-1を指定すると無限に繰り返す",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
         ]
     },
     "Length_End": {
         "num": 28,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルの描画距離を設定する<br>引数１：描画距離",
         "LS_bin": [
             "BTL_03.BIN",
@@ -516,7 +516,7 @@
     },
     "SetScall": {
         "num": 29,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルのScaleを変える<br>引数１：あるセクションでSet3DObjを実行した際、生成されるインデックス<br>引数２：X方向のScale(from)<br>引数３：X方向のScale(to)<br>引数４：X方向の変化時間（フレーム）<br>引数５：あるセクションでSet3DObjを実行した際、生成されるインデックス<br>引数６：Y方向のScale(from)<br>引数７：Y方向のScale(to)<br>引数８：Y方向の変化時間（フレーム）<br>引数９：あるセクションでSet3DObjを実行した際、生成されるインデックス<br>引数１０：Z方向のScale(from)<br>引数１１：Z方向のScale(to)<br>引数１２：Z方向の変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -536,7 +536,7 @@
     },
     "RACE_START": {
         "num": 30,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルを始める",
         "LS_comic": [
@@ -585,7 +585,7 @@
     },
     "RACE_END": {
         "num": 31,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS、SS】<br>バトルが終わる<br>※RSまでの旧作は、モデルバイナリ専用コマンド",
         "LS_bin": [
             "COUNT.BIN"
@@ -605,7 +605,7 @@
     },
     "FADE_STAGE_BGM": {
         "num": 32,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "未実装のコマンド",
         "LS_bin": [
             "COUNT.BIN"
@@ -622,7 +622,7 @@
     },
     "CHANGE_SCENE": {
         "num": 33,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【LS、BS、CS、RS、SS】<br>フェードアウトしてシーンを変える（メニューに戻るなど）<br>引数１：詳細不明。未使用と思われる",
         "LS_comic": [
@@ -721,7 +721,7 @@
     },
     "LPos": {
         "num": 34,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標基準ですぐ移動させる<br>引数１：移動させるx座標<br>引数２：移動させるy座標<br>引数３：移動させるz座標",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -735,12 +735,12 @@
     },
     "LMove": {
         "num": 35,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "未実装のコマンド"
     },
     "LLoopX": {
         "num": 36,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のX方向へのループ移動を設定する<br>引数１：X座標(from)<br>引数２：X座標(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "SELECTSCENE.BIN",
@@ -749,7 +749,7 @@
     },
     "LLoopY": {
         "num": 37,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のY方向へのループ移動を設定する<br>引数１：Y座標(from)<br>引数２：Y座標(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -758,7 +758,7 @@
     },
     "LLoopZ": {
         "num": 38,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のZ方向へのループ移動を設定する<br>引数１：Z座標(from)<br>引数２：Z座標(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -767,7 +767,7 @@
     },
     "Angle": {
         "num": 39,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を回転させる<br>引数１：回転角度(from)<br>引数２：回転角度(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -775,7 +775,7 @@
     },
     "AngleLoop": {
         "num": 40,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像に設定した回転をループさせる<br>引数１：回転角度(from)<br>引数２：回転角度(to)<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "TITLE_MENU.BIN"
@@ -783,7 +783,7 @@
     },
     "Move2": {
         "num": 41,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を現在位置から移動させる<br>引数１：x座標<br>引数２：y座標<br>引数３：詳細不明。z座標と思われるが効果なし（０）<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -791,12 +791,12 @@
     },
     "PosX": {
         "num": 42,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をすぐX方向へ移動させる<br>引数１：X座標"
     },
     "PosY": {
         "num": 43,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をすぐY方向へ移動させる<br>引数１：Y座標",
         "LS_bin": [
             "TITLE_MENU.BIN"
@@ -804,12 +804,12 @@
     },
     "PosZ": {
         "num": 44,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をすぐZ方向へ移動させる（効果なしと思われる）<br>引数１：Z座標"
     },
     "PlaySE": {
         "num": 45,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>SEを再生する<br>引数１：SE情報インデックス<br>引数２：SEグループ内のインデックス番号（使われてないと思われる）",
         "LS_bin": [
             "BTL_03.BIN",
@@ -831,7 +831,7 @@
     },
     "SET_MT_NONE": {
         "num": 46,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをワールド座標基準で回転情報を初期化する<br>（まっすぐに立つ効果になる）",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -3369,7 +3369,7 @@
     },
     "SKY_DOME": {
         "num": 55,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>空を表示する",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -13951,7 +13951,7 @@
     },
     "Set2P": {
         "num": 91,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を2Pのところへ移す。<br>BSでは効果がなく、CS以後ではエラーになる",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13959,7 +13959,7 @@
     },
     "CharChk_and_Tx": {
         "num": 92,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>車両の開放状態を判断して、画像を設定する<br>引数１：車両インデックス<br>引数２：開放の場合、画像サイズ情報のインデックス<br>引数３：未開放の場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13967,22 +13967,22 @@
     },
     "ChangeR": {
         "num": 93,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のR要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのR(0~255)<br>引数３：toのR(0~255)<br>引数４：変化時間（フレーム）"
     },
     "ChangeG": {
         "num": 94,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のG要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのG(0~255)<br>引数３：toのG(0~255)<br>引数４：変化時間（フレーム）"
     },
     "ChangeB": {
         "num": 95,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のB要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのB(0~255)<br>引数３：toのB(0~255)<br>引数４：変化時間（フレーム）"
     },
     "ChangeColor": {
         "num": 96,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像のG, R, B要素を変える<br>引数１：あるセクションでTxを実行した際、生成されるインデックス<br>引数２：fromのG(0~255)<br>引数３：toのG(0~255)<br>引数４：fromのR(0~255)<br>引数５：toのR(0~255)<br>引数６：fromのB(0~255)<br>引数７：toのB(0~255)<br>引数８：変化時間（フレーム）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13990,7 +13990,7 @@
     },
     "SetGray": {
         "num": 97,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をグレーに変える<br>CS以後ではエラーになる<br>引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -13998,7 +13998,7 @@
     },
     "MoveX": {
         "num": 98,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をX方向へ移動する<br>LSのキャラクター選択では、Set3DObjにも適用できるコマンドで<br>ワールド座標基準で移動する<br>引数１：X方向への距離<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "LS_bin": [
             "CHARSEL.BIN",
@@ -14007,7 +14007,7 @@
     },
     "MoveY": {
         "num": 99,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をY方向へ移動する<br>LSのキャラクター選択では、Set3DObjにも適用できるコマンドで<br>ワールド座標基準で移動する<br>引数１：Y方向への距離<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN",
@@ -14016,7 +14016,7 @@
     },
     "MoveZ": {
         "num": 100,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像をZ方向へ移動する<br>LSのキャラクター選択では、Set3DObjにも適用できるコマンドで<br>ワールド座標基準で移動する<br>引数１：Z方向への距離<br>引数２：変化時間（フレーム）<br>引数３：変化方法",
         "LS_bin": [
             "CHARSEL3D.BIN"
@@ -14024,7 +14024,7 @@
     },
     "SetUV_X": {
         "num": 101,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像を左右反転させる<br>CS以後ではエラーになる<br>引数１：1（True）、0（False）",
         "LS_bin": [
             "CHARSEL.BIN"
@@ -14032,7 +14032,7 @@
     },
     "RePlay": {
         "num": 102,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS"],
         "comicscript":["LS"],
         "description": "【LS、BS】<br>詳細不明。未実装のリプレイモードのためのものと思われる<br>引数１：1（True）、0（False）（１）",
         "LS_comic": [
@@ -14046,7 +14046,7 @@
     },
     "IsStart": {
         "num": 103,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>バトルが始まるとANIMEを適用する<br>引数１：ANIME要素２<br>引数２：ANIME要素３",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15000,7 +15000,7 @@
     },
     "IS_TRAIN_HIT": {
         "num": 124,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>車両でオブジェクトをヒットした場合。ただしBSでは効果がない<br>引数１：x範囲<br>引数２：y範囲<br>引数３：z範囲<br>引数４：ANIME要素２<br>引数５：ANIME要素３<br>引数６：ぶつけ判定<br>　LS：3（車両が飛ぶ）、4（ぶつけてドリフト）、その他（何もしない）<br>　CS以後：3（車両が飛んで自走不能になる）、その他（何もしない）",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15299,7 +15299,7 @@
     },
     "RandWAngle": {
         "num": 127,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置した動くモデルを、ワールド座標基準でランダムに回転させる",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15308,7 +15308,7 @@
     },
     "RandMove": {
         "num": 128,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルを、ランダムな方向へ移動させる<br>引数１：x軸のランダム範囲(1)<br>引数２：x軸のランダム範囲(2)<br>引数３：z軸のランダム範囲(1)<br>引数４：z軸のランダム範囲(2)<br>引数５：y軸のランダム範囲(1)<br>引数６：y軸のランダム範囲(2)<br>引数７：重力の影響度",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15317,7 +15317,7 @@
     },
     "ADD_OBJ": {
         "num": 129,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "comicscript":["LS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>一番最初のベースBINから（ほぼBASE_OBJ.BIN。LSはSCENE3DOBJ.BIN）<br>モデルのスクリプトを呼ぶ。コミックスクリプトでも使える。<br>ただし、タイプ６で呼ぶと効果なし<br>引数１：ANIME要素２<br>引数２：ANIME要素３<br>引数３：呼び出し元からずらすx座標<br>引数４：呼び出し元からずらすy座標<br>引数５：呼び出し元からずらすz座標<br>引数６：詳細不明",
         "LS_comic": [
@@ -15329,7 +15329,7 @@
     },
     "START_COMIC": {
         "num": 130,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>コミックスクリプトを実行する<br>引数１：コミックスクリプト番号",
         "LS_bin": [
             "BTL_03.BIN",
@@ -15341,7 +15341,7 @@
     },
     "SetRand3DObj": {
         "num": 131,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>指定範囲内のオブジェクトインデックスをランダム1個選んで、Set3DObjを実行する<br>引数１：範囲Start（オブジェクトインデックス）<br>引数２：範囲End（オブジェクトインデックス）",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15349,7 +15349,7 @@
     },
     "Offset3DObj": {
         "num": 132,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルの元インデックスから<br>指定数分ずらしたインデックスで再配置する<br>引数１：offsetする数値",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15357,7 +15357,7 @@
     },
     "RandPos": {
         "num": 133,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをランダムな位置に配置する<br>引数１：x軸のランダム範囲(1)<br>引数２：x軸のランダム範囲(2)<br>引数３：y軸のランダム範囲(1)<br>引数４：y軸のランダム範囲(2)<br>引数５：z軸のランダム範囲(1)<br>引数６：z軸のランダム範囲(2)",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15365,7 +15365,7 @@
     },
     "RandPlaySE": {
         "num": 134,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する<br>引数１：範囲Start（SE情報インデックス）<br>引数２：範囲End（SE情報インデックス）<br>引数３：SEグループ内のインデックス",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15373,12 +15373,12 @@
     },
     "RandAngleX": {
         "num": 135,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のX軸基準で、ランダムな数値で回転する<br>引数１：x軸のランダム範囲(1)<br>引数２：x軸のランダム範囲(2)"
     },
     "RandAngleY": {
         "num": 136,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のY軸基準で、ランダムな数値で回転する<br>引数１：y軸のランダム範囲(1)<br>引数２：y軸のランダム範囲(2)",
         "LS_bin": [
             "SCENE3DOBJ.BIN"
@@ -15386,7 +15386,7 @@
     },
     "RandAngleZ": {
         "num": 137,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Set3DObjで配置したモデルをローカル座標のZ軸基準で、ランダムな数値で回転する<br>引数１：z軸のランダム範囲(1)<br>引数２：z軸のランダム範囲(2)"
     },
     "CHK_TRAIN_STATE": {
@@ -15583,7 +15583,7 @@
     },
     "ChkStory_and_Tx": {
         "num": 144,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>ストーリーの開放状態を判断して、画像を設定する<br>引数１：ストーリーインデックス<br>引数２：開放の場合、画像サイズ情報のインデックス<br>引数３：未開放の場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "STORYSEL.BIN"
@@ -15591,7 +15591,7 @@
     },
     "ClearStory_and_Tx": {
         "num": 145,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>ストーリーのクリア状態を判断して、画像を設定する<br>引数１：ストーリーインデックス<br>引数２：クリアの場合、画像サイズ情報のインデックス<br>引数３：クリアではない場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "STORYSEL.BIN"
@@ -17738,7 +17738,7 @@
     },
     "ChkCause_and_Tx": {
         "num": 180,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>コースの開放状態を判断して、画像を設定する<br>ただし、BS以後ではエラーになる<br>引数１：二人バトル、または沿線コースのインデックス<br>引数２：開放の場合、画像サイズ情報のインデックス<br>引数３：未開放の場合、画像サイズ情報のインデックス",
         "LS_bin": [
             "CAUSESEL.BIN"
@@ -17746,7 +17746,7 @@
     },
     "SET_DRAW_TYPE": {
         "num": 181,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示する画像の描画タイプを設定する<br>引数１<br>　0（NORMAL）：全体が透明を無視したデフォルト状態<br>　1（BLEND）：わずか透明な描画（ゲームのデフォルト）<br>　2（ADD）：画像も透明<br>　3（ADD_NOALPHA）：画像も透明だが、外側の透明を無視する<br>　4（SUB）：画像を透明にし、色反転<br>　5（SUB_NOALPHA）：画像を透明にし、色反転するが、外側の透明を無視する<br>　6（MULTIPLE）：複合的（半透明・画像の縁まで透明）",
         "LS_bin": [
             "COUNT.BIN"
@@ -17763,7 +17763,7 @@
     },
     "To_TxSize": {
         "num": 182,
-        "mdlBin":["LS"],
+        "mdlBin":["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【LS、BS、CS、RS】<br>Txで表示した画像の倍率を変える<br>引数１：横の倍率<br>引数２：縦の倍率<br>引数３：変化時間（フレーム）",
         "LS_bin": [
             "COUNT.BIN"
@@ -19501,6 +19501,7 @@
     },
     "MDL_GETINDEX": {
         "num": 205,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>CREATE_INDEXで作成したインデックスに<br>オブジェクトのフレームを登録する<br>引数１：新たに扱うモデルインデックス<br>引数２：オブジェクトのフレーム名称",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -19636,10 +19637,12 @@
     },
     "INDEX_BONE_ROT_X": {
         "num": 206,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>効果なし。<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをワールド座標基準で、X軸で回転するものと思われる<br>引数１：モデルインデックス<br>引数２：回転数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
     },
     "INDEX_BONE_ROT_Y": {
         "num": 207,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>効果なし。<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをワールド座標基準で、Y軸で回転するものと思われる<br>引数１：モデルインデックス<br>引数２：回転数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "MENU_OBJ.BIN"
@@ -19653,6 +19656,7 @@
     },
     "INDEX_BONE_ROT_Z": {
         "num": 208,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>効果なし。<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをワールド座標基準で、Z軸で回転するものと思われる<br>引数１：モデルインデックス<br>引数２：回転数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "CS_bin": [
             "VERUP_SCENE.BIN"
@@ -19660,6 +19664,7 @@
     },
     "INDEX_BONE_L_ROT_X": {
         "num": 209,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、X軸で回転する<br>引数１：モデルインデックス<br>引数２：回転数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "CS_bin": [
             "H2800_00.BIN",
@@ -19673,6 +19678,7 @@
     },
     "INDEX_BONE_L_ROT_Y": {
         "num": 210,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、Y軸で回転する<br>引数１：モデルインデックス<br>引数２：回転数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
@@ -19740,6 +19746,7 @@
     },
     "INDEX_BONE_L_ROT_Z": {
         "num": 211,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、Z軸で回転する<br>引数１：モデルインデックス<br>引数２：回転数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
@@ -19767,6 +19774,7 @@
     },
     "CREATE_INDEX": {
         "num": 212,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXを使えるように、モデルインデックスを生成する<br>引数１：生成するインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -19902,6 +19910,7 @@
     },
     "IB_LI_CREATE_ROT_X": {
         "num": 213,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>X軸に回転する変化を格納する、ListInterのインデックスを生成する<br>引数１：モデルインデックス<br>引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -19926,6 +19935,7 @@
     },
     "IB_LI_CREATE_ROT_Y": {
         "num": 214,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Y軸に回転する変化を格納する、ListInterのインデックスを生成する<br>引数１：モデルインデックス<br>引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -19988,6 +19998,7 @@
     },
     "IB_LI_CREATE_ROT_Z": {
         "num": 215,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Z軸に回転する変化を格納する、ListInterのインデックスを生成する<br>引数１：モデルインデックス<br>引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20056,6 +20067,7 @@
     },
     "IB_LI_SET_ROT_X": {
         "num": 216,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>X軸回転のListInterのインデックスに値を設定する<br>引数１：モデルインデックス<br>引数２：ListInterインデックス<br>引数３：回転数値<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20080,6 +20092,7 @@
     },
     "IB_LI_SET_ROT_Y": {
         "num": 217,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Y軸回転のListInterのインデックスに値を設定する<br>引数１：モデルインデックス<br>引数２：ListInterインデックス<br>引数３：回転数値<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20142,6 +20155,7 @@
     },
     "IB_LI_SET_ROT_Z": {
         "num": 218,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Z軸回転のListInterのインデックスに値を設定する<br>引数１：モデルインデックス<br>引数２：ListInterインデックス<br>引数３：回転数値<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20210,6 +20224,7 @@
     },
     "IB_LI_SET_LOOP_X": {
         "num": 219,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>モデルインデックスのX軸回転のListInterにループを設定する<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20234,6 +20249,7 @@
     },
     "IB_LI_SET_LOOP_Y": {
         "num": 220,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>モデルインデックスのY軸回転のListInterにループを設定する<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20296,6 +20312,7 @@
     },
     "IB_LI_SET_LOOP_Z": {
         "num": 221,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>モデルインデックスのZ軸回転のListInterにループを設定する<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20364,6 +20381,7 @@
     },
     "ADD_MY_OBJ": {
         "num": 222,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>一番最初のベースBINではないスクリプトから参照して、<br>指定したスクリプトを呼ぶ<br>ただし、タイプ６で呼ぶと効果がなく<br>また、一番最初のベースBINのスクリプトで実行しても効果はない<br>引数１：ANIME要素２<br>引数２：ANIME要素３<br>引数３：呼び出し元からずらすx座標<br>引数４：呼び出し元からずらすy座標<br>引数５：呼び出し元からずらすz座標",
         "RS_bin": [
             "TOBU.BIN"
@@ -20371,6 +20389,7 @@
     },
     "INDEX_BONE_L_POS_X": {
         "num": 223,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、X軸で移動する<br>引数１：モデルインデックス<br>引数２：移動数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -20391,6 +20410,7 @@
     },
     "INDEX_BONE_L_POS_Y": {
         "num": 224,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、Y軸で移動する<br>引数１：モデルインデックス<br>引数２：移動数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -20428,6 +20448,7 @@
     },
     "INDEX_BONE_L_POS_Z": {
         "num": 225,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、Z軸で移動する<br>引数１：モデルインデックス<br>引数２：移動数値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
@@ -20501,6 +20522,7 @@
     },
     "IB_LI_CREATE_L_POS_X": {
         "num": 226,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>X軸に移動する変化を格納する、ListInterのインデックスを生成する<br>引数１：モデルインデックス<br>引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20518,6 +20540,7 @@
     },
     "IB_LI_CREATE_L_POS_Y": {
         "num": 227,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Y軸に移動する変化を格納する、ListInterのインデックスを生成する<br>引数１：モデルインデックス<br>引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20556,6 +20579,7 @@
     },
     "IB_LI_CREATE_L_POS_Z": {
         "num": 228,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Z軸に移動する変化を格納する、ListInterのインデックスを生成する<br>引数１：モデルインデックス<br>引数２：生成するListInterインデックス個数",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -20571,6 +20595,7 @@
     },
     "IB_LI_SET_L_POS_X": {
         "num": 229,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>X軸移動のListInterのインデックスに値を設定する<br>引数１：モデルインデックス<br>引数２：LIインデックス<br>引数３：移動数値<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20588,6 +20613,7 @@
     },
     "IB_LI_SET_L_POS_Y": {
         "num": 230,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Y軸移動のListInterのインデックスに値を設定する<br>引数１：モデルインデックス<br>引数２：LIインデックス<br>引数３：移動数値<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20626,6 +20652,7 @@
     },
     "IB_LI_SET_L_POS_Z": {
         "num": 231,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Z軸移動のListInterのインデックスに値を設定する<br>引数１：モデルインデックス<br>引数２：LIインデックス<br>引数３：移動数値<br>引数４：変化時間（フレーム）<br>引数５：変化方法",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -20641,6 +20668,7 @@
     },
     "FROM_ADDMT": {
         "num": 232,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>詳細不明"
     },
     "MOVE_UV_X": {
@@ -20653,6 +20681,7 @@
     },
     "CREATE_UV_MOVE_X": {
         "num": 235,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>メッシュのX軸に移動する変化を格納する、UVのインデックスを生成する<br>引数１：メッシュインデックス<br>引数２：生成するインデックス個数",
         "BS_bin": [
             "MENU_OBJ.BIN",
@@ -20673,6 +20702,7 @@
     },
     "IB_LI_SET_LOOP_LPOSX": {
         "num": 236,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>モデルインデックスのX軸移動のListInterにループを設定する<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20689,6 +20719,7 @@
     },
     "IB_LI_SET_LOOP_LPOSY": {
         "num": 237,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>モデルインデックスのY軸移動のListInterにループを設定する<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20727,6 +20758,7 @@
     },
     "IB_LI_SET_LOOP_LPOSZ": {
         "num": 238,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>モデルインデックスのZ軸移動のListInterにループを設定する<br>引数１：モデルインデックス<br>引数２：1（True）、0（False）",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -20741,14 +20773,17 @@
     },
     "RELEASE_ALL_IB_LIST": {
         "num": 239,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>あるセクションで生成したListInterを全部消す"
     },
     "ADD_MY_OBJ_INDEX": {
         "num": 240,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>一番最初のベースBINではないスクリプトから参照して、<br>指定したスクリプトを、指定したモデルインデックスの位置から呼ぶ<br>ただし、タイプ６で呼ぶと効果がなく<br>また、一番最初のベースBINのスクリプトで実行しても効果はない<br>引数１：ANIME要素２<br>引数２：ANIME要素３<br>引数３：モデルインデックス"
     },
     "TO_TAGET_POS": {
         "num": 241,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>詳細不明"
     },
     "ATK_HIT": {
@@ -20761,10 +20796,12 @@
     },
     "SET_RELEASE_PARAM": {
         "num": 244,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>詳細不明"
     },
     "CREATE_LENSFLEAR": {
         "num": 245,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>レンズフレアインデックスを生成する<br>引数１：生成する個数<br>引数２～：ヘッダーの「tga情報」インデックス（引数１の数値分）",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -20813,6 +20850,7 @@
     },
     "SET_LENSFLEAR_MT": {
         "num": 247,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>生成したレンズフレアにマテリアルに設定する<br>引数１：レンズフレアインデックス<br>引数２：MT名称",
         "BS_bin": [
             "BASE_OBJ.BIN",
@@ -21648,6 +21686,7 @@
     },
     "MDL_INDEX_TO_VIEW": {
         "num": 253,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>カメラと注視点を、SMFのフレームインデックスで決める<br>ほぼメニューを見るカメラで使う<br>引数１：SMFフレームインデックス（カメラ位置）<br>引数２：SMFフレームインデックス（注視点）",
         "BS_bin": [
             "MENU_OBJ.BIN"
@@ -21662,6 +21701,7 @@
     },
     "SET_FOG_LENGTH": {
         "num": 254,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】<br>FOGの設定。モデルバイナリでも使える<br>引数１：FOGインデックス（0～3）<br>引数２：カラーR（0.0～1.0）<br>引数３：カラーG（0.0～1.0）<br>引数４：カラーB（0.0～1.0）<br>引数５：FOG値１<br>引数６：FOG値２<br>引数７：変化時間（フレーム）【CSから】<br>引数８：変化方法【CSから】",
         "BS_comic": [
             "COMIC1300.BIN"
@@ -21692,6 +21732,7 @@
     },
     "SET_UV_MOVE_X": {
         "num": 255,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>メッシュのX軸移動のUVに値を設定する<br>引数１：メッシュインデックス<br>引数２：UVインデックス<br>引数３：変化方法<br>引数４：X軸移動の目標位置。メッシュの最後の位置を1.0とする。<br>引数５：変化時間（フレーム）",
         "BS_bin": [
             "MENU_OBJ.BIN",
@@ -21712,6 +21753,7 @@
     },
     "SET_UV_LOOP_X": {
         "num": 256,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>メッシュのX軸移動のUVにループを設定する<br>引数１：メッシュインデックス<br>引数２：1（True）、0（False）【CSから】",
         "BS_bin": [
             "MENU_OBJ.BIN",
@@ -21732,6 +21774,7 @@
     },
     "CREATE_MESH_INDEX": {
         "num": 257,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>メッシュインデックスを生成する<br>引数１：生成するメッシュインデックス個数",
         "BS_bin": [
             "MENU_OBJ.BIN",
@@ -21772,6 +21815,7 @@
     },
     "SET_MESH_INDEX": {
         "num": 258,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>オブジェクトのメッシュのインデックスを取得する<br>引数１：新たに扱うメッシュインデックス<br>引数２：オブジェクトの元のメッシュインデックス<br>引数３：引数２のマテリアルインデックス",
         "BS_bin": [
             "MENU_OBJ.BIN",
@@ -21812,6 +21856,7 @@
     },
     "INDEX_BONE_L_ADD_ROT_X": {
         "num": 259,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、X軸に回転値を加算する<br>引数１：モデルインデックス<br>引数２：加算値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "MUSIC_LIST_OBJ.BIN"
@@ -21822,6 +21867,7 @@
     },
     "INDEX_BONE_L_ADD_ROT_Y": {
         "num": 260,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、Y軸に回転値を加算する<br>引数１：モデルインデックス<br>引数２：加算値<br>引数３：変化時間（フレーム）<br>引数４：変化方法",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
@@ -21843,10 +21889,11 @@
     },
     "INDEX_BONE_L_ADD_ROT_Z": {
         "num": 261,
-        "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>MDL_GETINDEXのインデックスで、<br>モデルのボーンをローカル座標基準で、Z軸に回転値を加算する<br>引数１：モデルインデックス<br>引数２：加算値<br>引数３：変化時間（フレーム）<br>引数４：変化方法"
+        "description": "未定義のコマンド"
     },
     "CHANGE_SCALL": {
         "num": 262,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>スケールを調整する<br>引数１：変化方法<br>引数２：スケール値<br>引数３：変化時間（フレーム）",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN",
@@ -21872,6 +21919,7 @@
     },
     "CHK_CLEAR_STORY": {
         "num": 263,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>ストーリーのクリア状態をチェックし、クリアしてない場合のみ適用する<br>引数１：ストーリーインデックス<br>引数２：消すメッシュインデックス１<br>引数３：消すメッシュインデックス２",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN"
@@ -21879,6 +21927,7 @@
     },
     "CHK_OPEN_STORY": {
         "num": 264,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>ストーリーの開放状態をチェックし、開放されてない場合のみ適用する<br>引数１：ストーリーインデックス<br>引数２：消すメッシュインデックス１<br>引数３：消すメッシュインデックス２<br>引数４：消すメッシュインデックス３<br>引数５：消すメッシュインデックス４",
         "BS_bin": [
             "BOOKSEL_OBJ.BIN"
@@ -21886,6 +21935,7 @@
     },
     "SET_LENSFLEAR_ALL_FLG": {
         "num": 265,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>点滅できるモデルの場合、レンズフレアの点滅を設定する<br>引数１：1（True）、0（False）",
         "BS_bin": [
             "HK_OBJ.BIN",
@@ -21902,6 +21952,7 @@
     },
     "CHK_USE_CHAR": {
         "num": 266,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>車両を使えるかチェックし、開放されてない場合のみ適用する<br>引数１：車両インデックス<br>引数２：消すメッシュインデックス１<br>引数３：消すメッシュインデックス２",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN"
@@ -21909,6 +21960,7 @@
     },
     "SET_OBJ_FOG_NO": {
         "num": 267,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>Set3DObjで配置したモデルにFOG設定を適用する<br>引数１：FOGインデックス（0～3）",
         "CS_bin": [
             "HQ_KB.BIN",
@@ -21940,6 +21992,7 @@
     },
     "SET_OBJ_RENDER_ID": {
         "num": 268,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>【推測】Set3DObjで配置したモデルにレンダリングモードを設定する<br>引数１：レンダリングID",
         "BS_bin": [
             "OP_OBJ.BIN"
@@ -23999,6 +24052,7 @@
     },
     "CNG_MT_COL": {
         "num": 294,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>モデルの元メッシュのマテリアルのカラーを変える<br>引数１：元メッシュインデックス<br>引数２：引数１のマテリアルインデックス<br>引数３：カラーR（0.0～1.0）<br>引数４：カラーG（0.0～1.0）<br>引数５：カラーB（0.0～1.0）<br>引数６：カラーA（0.0～1.0）",
         "BS_bin": [
             "CHAR_SEL_OBJ.BIN",
@@ -24133,6 +24187,7 @@
     },
     "BASE_POINT_CAM": {
         "num": 297,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】<br>【BS、CS、RS】<br>ベースポイントのカメラを活性化する<br>引数１：1（True）、0（False）",
         "BS_bin": [
             "OP_OBJ.BIN"
