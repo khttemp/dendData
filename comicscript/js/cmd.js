@@ -3,6 +3,7 @@ const newLine = "<br>";
 const CMD = {
     "Tx": {
         "num": 0,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "画像をロードする" + newLine
@@ -28,6 +29,7 @@ const CMD = {
     },
     "TxSize": {
         "num": 1,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のサイズを変える" + newLine
@@ -57,6 +59,7 @@ const CMD = {
     },
     "Alpha": {
         "num": 2,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のAlphaを変える" + newLine
@@ -87,6 +90,7 @@ const CMD = {
     },
     "End": {
         "num": 3,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "コマンドを終了する",
@@ -110,6 +114,7 @@ const CMD = {
     },
     "Pos": {
         "num": 4,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "画面中央を基準に画像を移動させる" + newLine
@@ -138,6 +143,7 @@ const CMD = {
     },
     "ColorALL": {
         "num": 5,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のカラーを変える" + newLine
@@ -163,6 +169,7 @@ const CMD = {
     },
     "Move": {
         "num": 6,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を現在位置から移動させる" + newLine
@@ -176,6 +183,8 @@ const CMD = {
     },
     "STAGE_BGM": {
         "num": 7,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "ステージBGMの1番目を再生する",
         "LS_comic": [
@@ -216,6 +225,7 @@ const CMD = {
     },
     "SetCamDir": {
         "num": 10,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルを見えるようにする",
@@ -242,12 +252,14 @@ const CMD = {
     },
     "DisCamDir": {
         "num": 11,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルを見えないようにする"
     },
     "Set3DObj": {
         "num": 12,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "SMFを置く" + newLine
@@ -313,6 +325,7 @@ const CMD = {
     },
     "SetWAngleX": {
         "num": 13,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準のX軸で回転する" + newLine
@@ -323,6 +336,7 @@ const CMD = {
     },
     "SetWAngleY": {
         "num": 14,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準のY軸で回転する" + newLine
@@ -336,6 +350,7 @@ const CMD = {
     },
     "SetWAngleZ": {
         "num": 15,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準のZ軸で回転する" + newLine
@@ -350,6 +365,7 @@ const CMD = {
     },
     "SetLAngleX": {
         "num": 16,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準のX軸で回転する" + newLine
@@ -360,6 +376,7 @@ const CMD = {
     },
     "SetLAngleY": {
         "num": 17,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準のY軸で回転する" + newLine
@@ -370,6 +387,7 @@ const CMD = {
     },
     "SetLAngleZ": {
         "num": 18,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準のZ軸で回転する" + newLine
@@ -407,6 +425,7 @@ const CMD = {
     },
     "ShowMesh": {
         "num": 25,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "メッシュを表示する" + newLine
@@ -468,6 +487,7 @@ const CMD = {
     },
     "HideMesh": {
         "num": 26,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "メッシュを非表示する" + newLine
@@ -545,9 +565,10 @@ const CMD = {
     },
     "PlayAnime": {
         "num": 27,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
-                    + "【LS、BS】" + newLine
-                    + "アニメが定義されているモデルのアニメを実行する" + newLine
+                    + "【LS、BS、CS、RS】" + newLine
+                    + "アニメが定義されているモデルのアニメを実行する。CS以後からは動作しない" + newLine
                     + "引数１：モデルのアニメインデックス" + newLine
                     + "引数２：繰り返す回数。-1を指定すると無限に繰り返す",
         "LS_bin": [
@@ -556,6 +577,7 @@ const CMD = {
     },
     "Length_End": {
         "num": 28,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルの描画距離を設定する" + newLine
@@ -587,6 +609,7 @@ const CMD = {
     },
     "SetScall": {
         "num": 29,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルのScaleを変える" + newLine
@@ -620,6 +643,8 @@ const CMD = {
     },
     "RACE_START": {
         "num": 30,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "バトルを始める",
         "LS_comic": [
@@ -668,6 +693,8 @@ const CMD = {
     },
     "RACE_END": {
         "num": 31,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "バトルが終わる" + newLine
                     + "※RSまでの旧作は、モデルバイナリ専用コマンド",
@@ -689,7 +716,8 @@ const CMD = {
     },
     "FADE_STAGE_BGM": {
         "num": 32,
-        "description": NOT_DEFINED,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
+        "description": "未実装のコマンド",
         "LS_bin": [
             "COUNT.BIN"
         ],
@@ -705,6 +733,8 @@ const CMD = {
     },
     "CHANGE_SCENE": {
         "num": 33,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "フェードアウトしてシーンを変える（メニューに戻るなど）" + newLine
                     + "引数１：詳細不明。未使用と思われる",
@@ -804,6 +834,7 @@ const CMD = {
     },
     "LPos": {
         "num": 34,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標基準ですぐ移動させる" + newLine
@@ -822,10 +853,12 @@ const CMD = {
     },
     "LMove": {
         "num": 35,
-        "description": NOT_DEFINED
+        "mdlBin": ["LS", "BS", "CS", "RS"],
+        "description": "未実装のコマンド"
     },
     "LLoopX": {
         "num": 36,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のX方向へのループ移動を設定する" + newLine
@@ -839,6 +872,7 @@ const CMD = {
     },
     "LLoopY": {
         "num": 37,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のY方向へのループ移動を設定する" + newLine
@@ -852,6 +886,7 @@ const CMD = {
     },
     "LLoopZ": {
         "num": 38,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のZ方向へのループ移動を設定する" + newLine
@@ -865,6 +900,7 @@ const CMD = {
     },
     "Angle": {
         "num": 39,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を回転させる" + newLine
@@ -877,6 +913,7 @@ const CMD = {
     },
     "AngleLoop": {
         "num": 40,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像に設定した回転をループさせる" + newLine
@@ -889,6 +926,7 @@ const CMD = {
     },
     "Move2": {
         "num": 41,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を現在位置から移動させる" + newLine
@@ -903,6 +941,7 @@ const CMD = {
     },
     "PosX": {
         "num": 42,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐX方向へ移動させる" + newLine
@@ -910,6 +949,7 @@ const CMD = {
     },
     "PosY": {
         "num": 43,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐY方向へ移動させる" + newLine
@@ -920,6 +960,7 @@ const CMD = {
     },
     "PosZ": {
         "num": 44,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をすぐZ方向へ移動させる（効果なしと思われる）" + newLine
@@ -927,6 +968,7 @@ const CMD = {
     },
     "PlaySE": {
         "num": 45,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "SEを再生する" + newLine
@@ -952,6 +994,7 @@ const CMD = {
     },
     "SET_MT_NONE": {
         "num": 46,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをワールド座標基準で回転情報を初期化する" + newLine
@@ -962,6 +1005,7 @@ const CMD = {
     },
     "SetCamPos": {
         "num": 47,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "カメラ位置を絶対座標で設定" + newLine
                     + "引数１：x座標" + newLine
@@ -996,6 +1040,7 @@ const CMD = {
     },
     "SetCamTarget": {
         "num": 48,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "注視点位置を絶対座標で設定" + newLine
                     + "引数１：x座標" + newLine
@@ -1019,6 +1064,7 @@ const CMD = {
     },
     "CamMoveWait": {
         "num": 49,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "カメラの動きが終わるまで待つ" + newLine
                     + "引数１：詳細不明。未使用と思われる",
@@ -1032,6 +1078,7 @@ const CMD = {
     },
     "SetComic": {
         "num": 50,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックをセットする。" + newLine
                     + "引数１：コマの番号" + newLine
@@ -1426,6 +1473,7 @@ const CMD = {
     },
     "ComicPos": {
         "num": 51,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックの位置を設定する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -2212,6 +2260,7 @@ const CMD = {
     },
     "ComicAlpha": {
         "num": 52,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックのAlphaを設定する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -2999,6 +3048,7 @@ const CMD = {
     },
     "ComicWait": {
         "num": 53,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックを待つ" + newLine
                     + "引数１：コマの番号" + newLine
@@ -3020,6 +3070,7 @@ const CMD = {
     },
     "Scene_to_Comic": {
         "num": 54,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "3Dシーンをコミック化する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -3521,6 +3572,7 @@ const CMD = {
     },
     "SKY_DOME": {
         "num": 55,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "空を表示する",
@@ -3553,6 +3605,7 @@ const CMD = {
     },
     "Fill_BG": {
         "num": 56,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "画面をBGで埋める" + newLine
                     + "引数１：1（True）、0（False）",
@@ -3729,6 +3782,7 @@ const CMD = {
     },
     "ComicEnd": {
         "num": 57,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "スクリプトを終了する",
         "LS_comic": [
@@ -5045,6 +5099,7 @@ const CMD = {
     },
     "CamComtroll": {
         "num": 58,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "スクリプトのカメラを設定できるようにする。" + newLine
                     + "引数１：1（True）、0（False）" + newLine
@@ -5561,6 +5616,7 @@ const CMD = {
     },
     "ComicSceneStop": {
         "num": 59,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "Scene_to_Comicのコマの動きを止める" + newLine
                     + "引数１：コマの番号",
@@ -6026,6 +6082,7 @@ const CMD = {
     },
     "BtnWait": {
         "num": 60,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "ボタンを押すまでスクリプトの中で待機する",
         "LS_comic": [
@@ -6262,6 +6319,7 @@ const CMD = {
     },
     "EyeMove": {
         "num": 61,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "視点を動かす" + newLine
                     + "引数１：x座標" + newLine
@@ -6639,6 +6697,7 @@ const CMD = {
     },
     "SetZoom": {
         "num": 62,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "Zoomを設定する。" + newLine
                     + "引数１：zoom倍率" + newLine
@@ -6892,6 +6951,7 @@ const CMD = {
     },
     "BG_Alpha": {
         "num": 63,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "BGのAlphaを設定する" + newLine
                     + "引数１：BGのAlpha設定" + newLine
@@ -6989,6 +7049,7 @@ const CMD = {
     },
     "BG_Wait": {
         "num": 64,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "BGの設定が終わるまで待つ",
         "LS_comic": [
@@ -7025,6 +7086,7 @@ const CMD = {
     },
     "StartCount": {
         "num": 65,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "5秒カウントを数える" + newLine
                     + "（COUNT.BINの0-0を使う。" + newLine
@@ -7038,6 +7100,7 @@ const CMD = {
     },
     "WaitMoveEye": {
         "num": 66,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "EyeMoveが終わるまで待つ" + newLine
                     + "引数１：詳細不明。未使用と思われる",
@@ -7084,6 +7147,7 @@ const CMD = {
     },
     "WaitFrame": {
         "num": 67,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定のフレームだけ待つ" + newLine
                     + "引数１：フレーム",
@@ -8296,6 +8360,7 @@ const CMD = {
     },
     "FTV_Play": {
         "num": 68,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "FVTを再生する" + newLine
                     + "引数１：FVT番号",
@@ -8468,6 +8533,7 @@ const CMD = {
     },
     "FTV_Wait": {
         "num": 69,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "FVTが終わるまで待つ" + newLine
                     + "引数１：FVT番号",
@@ -8623,6 +8689,7 @@ const CMD = {
     },
     "HideMsgWnd": {
         "num": 70,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "FVTのメッセージボックスを隠す",
         "LS_comic": [
@@ -9219,6 +9286,7 @@ const CMD = {
     },
     "FTV_End": {
         "num": 71,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "FVTを終了する" + newLine
                     + "引数１：FVT番号",
@@ -9846,6 +9914,7 @@ const CMD = {
     },
     "SkipEventPoint": {
         "num": 72,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "スキップをした場合、スキップをこの行で止める",
         "LS_comic": [
@@ -10120,6 +10189,7 @@ const CMD = {
     },
     "SkipEventFlg": {
         "num": 73,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "スキップできるようにする" + newLine
                     + "引数１：1（True）、0（False）",
@@ -10399,6 +10469,7 @@ const CMD = {
     },
     "PlayComicSE": {
         "num": 74,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "SEを再生する" + newLine
                     + "引数１：スクリプト内のSE情報インデックス" + newLine
@@ -10908,6 +10979,7 @@ const CMD = {
     },
     "StopComicSE": {
         "num": 75,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "SEの再生を停止する" + newLine
                     + "引数１：スクリプト内のSE情報インデックス" + newLine
@@ -10933,6 +11005,7 @@ const CMD = {
     },
     "PlayComicBGM": {
         "num": 76,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックBGMを再生する" + newLine
                     + "引数１：スクリプト内のコミックBGM番号" + newLine
@@ -11047,6 +11120,7 @@ const CMD = {
     },
     "StopComicBGM": {
         "num": 77,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックBGMを停止する" + newLine
                     + "引数１：スクリプト内のコミックBGM番号" + newLine
@@ -11156,6 +11230,7 @@ const CMD = {
     },
     "VolComicBGM": {
         "num": 78,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックBGMのVolumeを変える" + newLine
                     + "引数１：スクリプト内のコミックBGM番号" + newLine
@@ -11235,6 +11310,7 @@ const CMD = {
     },
     "HideALLComic": {
         "num": 79,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "すべてのコミックを隠す",
         "LS_comic": [
@@ -11595,6 +11671,7 @@ const CMD = {
     },
     "Stage_BGM_Vol": {
         "num": 80,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "現在のステージBGMのVolumeを変える" + newLine
                     + "引数１：Volume" + newLine
@@ -12259,6 +12336,7 @@ const CMD = {
     },
     "SET_CPU_FLG": {
         "num": 81,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "詳細不明。CPUのBOOSTと推測" + newLine
                     + "引数１：CPU車両（１）" + newLine
@@ -12304,6 +12382,7 @@ const CMD = {
     },
     "SET_CPU_MODE": {
         "num": 82,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CPUのモードを設定する" + newLine
                     + "引数１：CPU車両（１）（SSでは使わない）" + newLine
@@ -12526,6 +12605,7 @@ const CMD = {
     },
     "CHK_LENGTH": {
         "num": 83,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CPUとの距離を測定し" + newLine
                     + "指定時間内に指定距離より少ない場合、次のコマンド行へ行く" + newLine
@@ -12996,6 +13076,7 @@ const CMD = {
     },
     "END_CHK_LENGTH": {
         "num": 84,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CHK_LENGTHで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -13462,6 +13543,7 @@ const CMD = {
     },
     "CHK_POSTION": {
         "num": 85,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定時間内に、引数１の条件を満たす場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
@@ -13601,6 +13683,7 @@ const CMD = {
     },
     "END_CHK_POSTION": {
         "num": 86,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CHK_POSTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -13736,6 +13819,7 @@ const CMD = {
     },
     "WAIT_MOTION": {
         "num": 87,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "指定の動きをした場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
@@ -13787,14 +13871,11 @@ const CMD = {
             "COMIC3326.BIN",
             "COMIC3331.BIN",
             "COMIC3337.BIN"
-        ],
-        // 動作しない
-        // "SS_comic": [
-        //     "COMIC42043.BIN"
-        // ]
+        ]
     },
     "END_WAIT_MOTION": {
         "num": 88,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "WAIT_MOTIONで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -13828,14 +13909,11 @@ const CMD = {
             "COMIC3326.BIN",
             "COMIC3331.BIN",
             "COMIC3337.BIN"
-        ],
-        // 動作しない
-        // "SS_comic": [
-        //     "COMIC42043.BIN"
-        // ]
+        ]
     },
     "CHANGE_SPEED": {
         "num": 89,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "ゲームの速度を変える" + newLine
                     + "引数１：速度倍率" + newLine
@@ -14146,6 +14224,7 @@ const CMD = {
     },
     "CHANGE_CAM_TYPE": {
         "num": 90,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "カメラタイプを変える" + newLine
                     + "引数１：0（1P）、1（2P）、-1（デフォルト）" + newLine
@@ -14228,6 +14307,7 @@ const CMD = {
     },
     "Set2P": {
         "num": 91,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を2Pのところへ移す。" + newLine
@@ -14238,6 +14318,7 @@ const CMD = {
     },
     "CharChk_and_Tx": {
         "num": 92,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "車両の開放状態を判断して、画像を設定する" + newLine
@@ -14250,6 +14331,7 @@ const CMD = {
     },
     "ChangeR": {
         "num": 93,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のR要素を変える" + newLine
@@ -14260,6 +14342,7 @@ const CMD = {
     },
     "ChangeG": {
         "num": 94,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のG要素を変える" + newLine
@@ -14270,6 +14353,7 @@ const CMD = {
     },
     "ChangeB": {
         "num": 95,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のB要素を変える" + newLine
@@ -14280,6 +14364,7 @@ const CMD = {
     },
     "ChangeColor": {
         "num": 96,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像のG, R, B要素を変える" + newLine
@@ -14297,6 +14382,7 @@ const CMD = {
     },
     "SetGray": {
         "num": 97,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をグレーに変える" + newLine
@@ -14308,6 +14394,7 @@ const CMD = {
     },
     "MoveX": {
         "num": 98,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をX方向へ移動する" + newLine
@@ -14323,6 +14410,7 @@ const CMD = {
     },
     "MoveY": {
         "num": 99,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をY方向へ移動する" + newLine
@@ -14338,6 +14426,7 @@ const CMD = {
     },
     "MoveZ": {
         "num": 100,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像をZ方向へ移動する" + newLine
@@ -14352,6 +14441,7 @@ const CMD = {
     },
     "SetUV_X": {
         "num": 101,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像を左右反転させる" + newLine
@@ -14363,6 +14453,8 @@ const CMD = {
     },
     "RePlay": {
         "num": 102,
+        "mdlBin": ["LS", "BS"],
+        "comicscript": ["LS", "BS"],
         "description": "【LS、BS】" + newLine
                     + "詳細不明。未実装のリプレイモードのためのものと思われる" + newLine
                     + "引数１：1（True）、0（False）（１）",
@@ -14377,6 +14469,7 @@ const CMD = {
     },
     "IsStart": {
         "num": 103,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "バトルが始まるとANIMEを適用する" + newLine
@@ -14395,6 +14488,7 @@ const CMD = {
     },
     "ShowGoal": {
         "num": 104,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "ゴールの文字（FINISH）を見せる",
         "LS_comic": [
@@ -14429,6 +14523,7 @@ const CMD = {
     },
     "CHK_WIN_TRAIN": {
         "num": 105,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両が勝利したかチェックする" + newLine
                     + "勝った場合、次のコマンドへ行く" + newLine
@@ -14470,6 +14565,7 @@ const CMD = {
     },
     "END_CHK_WINTRAIN": {
         "num": 106,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CHK_WIN_TRAINで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル（SSでは使わない）",
@@ -14508,6 +14604,7 @@ const CMD = {
     },
     "N_ADD_OBJ": {
         "num": 107,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトを追加する" + newLine
                     + "引数１：オブジェクトindex" + newLine
@@ -14537,17 +14634,11 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ],
-        // コマンド無し
-        // "SS_comic": [
-        //     "COMIC3998.BIN"
-        // ],
-        // "SS_cmn": [
-        //     "COMIC3997.BIN"
-        // ]
+        ]
     },
     "N_POS": {
         "num": 108,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトを絶対座標に配置する" + newLine
                     + "引数１：オブジェクトindex" + newLine
@@ -14567,6 +14658,7 @@ const CMD = {
     },
     "START_TIME_LINE": {
         "num": 109,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "ゲーム内でタイム測定を始める",
         "LS_comic": [
@@ -14722,6 +14814,7 @@ const CMD = {
     },
     "N_MOVE": {
         "num": 110,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトを指定した絶対座標へ動かす" + newLine
                     + "引数１：オブジェクトindex" + newLine
@@ -14749,17 +14842,11 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ],
-        // コマンド無し
-        // "SS_comic": [
-        //     "COMIC3998.BIN"
-        // ],
-        // "SS_cmn": [
-        //     "COMIC3997.BIN"
-        // ]
+        ]
     },
     "WAIT_TIME_LINE": {
         "num": 111,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "START_TIME_LINEが始まってから、指定時間まで待つ" + newLine
                     + "引数１：指定時間",
@@ -14915,6 +15002,7 @@ const CMD = {
     },
     "N_DEL_OBJ": {
         "num": 112,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトを削除する" + newLine
                     + "引数１：オブジェクトインデックス",
@@ -14932,6 +15020,7 @@ const CMD = {
     },
     "SCREEN_FADE": {
         "num": 113,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定の色でFade効果を出す" + newLine
                     + "引数１：0（FadeIn）、1（FadeOut）" + newLine
@@ -14982,6 +15071,7 @@ const CMD = {
     },
     "N_CHANGE_ANIME": {
         "num": 114,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトにANIMEを適用する" + newLine
                     + "引数１：オブジェクトインデックス" + newLine
@@ -15002,6 +15092,7 @@ const CMD = {
     },
     "TRAIN_SPEED": {
         "num": 115,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両のスピードを設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -15171,6 +15262,7 @@ const CMD = {
     },
     "TRAIN_FLG": {
         "num": 116,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "車輪に火花を散らす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -15204,6 +15296,7 @@ const CMD = {
     },
     "SCENE_LIGHT": {
         "num": 117,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "ゲームシーンのライトを調整する" + newLine
                     + "引数１：シーン番号（０）" + newLine
@@ -15217,6 +15310,7 @@ const CMD = {
     },
     "CHANGE_CAM_LENGTH": {
         "num": 118,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHANGE_CAM_TYPEのカメラの距離を変える。BS以後は効果なし" + newLine
                     + "引数１：距離" + newLine
@@ -15256,6 +15350,7 @@ const CMD = {
     },
     "CHANGE_CAM_DIRX": {
         "num": 119,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHANGE_CAM_TYPEのカメラをx軸に回転する。BS以後は効果なし" + newLine
                     + "引数１：回転角度" + newLine
@@ -15295,6 +15390,7 @@ const CMD = {
     },
     "CHANGE_CAM_DIRY": {
         "num": 120,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHANGE_CAM_TYPEのカメラをy軸に回転する。BS以後は効果なし" + newLine
                     + "引数１：回転角度" + newLine
@@ -15334,6 +15430,7 @@ const CMD = {
     },
     "CHANGE_CAM_DIRZ": {
         "num": 121,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHANGE_CAM_TYPEのカメラをz軸に回転する。BS以後は効果なし" + newLine
                     + "引数１：回転角度" + newLine
@@ -15342,6 +15439,7 @@ const CMD = {
     },
     "R_Drift": {
         "num": 122,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両を右ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -15374,6 +15472,7 @@ const CMD = {
     },
     "L_Drift": {
         "num": 123,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両を左ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -15403,6 +15502,7 @@ const CMD = {
     },
     "IS_TRAIN_HIT": {
         "num": 124,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "車両でオブジェクトをヒットした場合。ただしBSでは効果がない" + newLine
@@ -15427,6 +15527,7 @@ const CMD = {
     },
     "TO_RAIL": {
         "num": 125,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両を指定レールに置く。置く位置は次のレールに繋がっている必要がある" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -15542,6 +15643,7 @@ const CMD = {
     },
     "SLEEP_TRAIN": {
         "num": 126,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両を消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -15717,6 +15819,7 @@ const CMD = {
     },
     "RandWAngle": {
         "num": 127,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置した動くモデルを、ワールド座標基準でランダムに回転させる",
@@ -15727,6 +15830,7 @@ const CMD = {
     },
     "RandMove": {
         "num": 128,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルを、ランダムな方向へ移動させる" + newLine
@@ -15744,6 +15848,8 @@ const CMD = {
     },
     "ADD_OBJ": {
         "num": 129,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "一番最初のベースBINから（ほぼBASE_OBJ.BIN。LSはSCENE3DOBJ.BIN）" + newLine
@@ -15764,6 +15870,7 @@ const CMD = {
     },
     "START_COMIC": {
         "num": 130,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "コミックスクリプトを実行する" + newLine
@@ -15778,6 +15885,7 @@ const CMD = {
     },
     "SetRand3DObj": {
         "num": 131,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "指定範囲内のオブジェクトインデックスをランダム1個選んで、Set3DObjを実行する" + newLine
@@ -15789,6 +15897,7 @@ const CMD = {
     },
     "Offset3DObj": {
         "num": 132,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルの元インデックスから" + newLine
@@ -15800,6 +15909,7 @@ const CMD = {
     },
     "RandPos": {
         "num": 133,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをランダムな位置に配置する" + newLine
@@ -15815,6 +15925,7 @@ const CMD = {
     },
     "RandPlaySE": {
         "num": 134,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "SE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
@@ -15827,6 +15938,7 @@ const CMD = {
     },
     "RandAngleX": {
         "num": 135,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のX軸基準で、ランダムな数値で回転する" + newLine
@@ -15835,6 +15947,7 @@ const CMD = {
     },
     "RandAngleY": {
         "num": 136,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のY軸基準で、ランダムな数値で回転する" + newLine
@@ -15846,6 +15959,7 @@ const CMD = {
     },
     "RandAngleZ": {
         "num": 137,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルをローカル座標のZ軸基準で、ランダムな数値で回転する" + newLine
@@ -15854,6 +15968,7 @@ const CMD = {
     },
     "CHK_TRAIN_STATE": {
         "num": 138,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "指定車両が指定時間内に、車両状態が引数３の条件を満たす場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
@@ -15875,6 +15990,7 @@ const CMD = {
     },
     "END_CHK_TRAIN_STATE": {
         "num": 139,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHK_TRAIN_STATEで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -15892,6 +16008,7 @@ const CMD = {
     },
     "CHK_TRAIN_SPEED_U": {
         "num": 140,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両が指定時間内に、指定スピードより大きい場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
@@ -15963,6 +16080,7 @@ const CMD = {
     },
     "CHK_TRAIN_SPEED_D": {
         "num": 141,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両が指定時間内に、指定スピードより小さい場合、次のコマンドへ行く" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ" + newLine
@@ -15983,6 +16101,7 @@ const CMD = {
     },
     "END_CHK_TRAIN_SPEED_U": {
         "num": 142,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CHK_TRAIN_SPEED_Uで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -16050,6 +16169,7 @@ const CMD = {
     },
     "END_CHK_TRAIN_SPEED_D": {
         "num": 143,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "CHK_TRAIN_SPEED_Dで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -16066,6 +16186,7 @@ const CMD = {
     },
     "ChkStory_and_Tx": {
         "num": 144,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "ストーリーの開放状態を判断して、画像を設定する" + newLine
@@ -16078,6 +16199,7 @@ const CMD = {
     },
     "ClearStory_and_Tx": {
         "num": 145,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "ストーリーのクリア状態を判断して、画像を設定する" + newLine
@@ -16090,6 +16212,7 @@ const CMD = {
     },
     "N_L_ANGLE_X": {
         "num": 146,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトをローカル座標基準、X軸に回転する" + newLine
                     + "引数１：オブジェクトインデックス" + newLine
@@ -16102,6 +16225,7 @@ const CMD = {
     },
     "N_L_ANGLE_Y": {
         "num": 147,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトをローカル座標基準、Y軸に回転する" + newLine
                     + "引数１：オブジェクトインデックス" + newLine
@@ -16114,6 +16238,7 @@ const CMD = {
     },
     "N_L_ANGLE_Z": {
         "num": 148,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "オブジェクトをローカル座標基準、Z軸に回転する" + newLine
                     + "引数１：オブジェクトインデックス" + newLine
@@ -16127,6 +16252,7 @@ const CMD = {
     },
     "Comic_Glay": {
         "num": 149,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "コミックの画像をグレーに設定する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -16152,6 +16278,7 @@ const CMD = {
     },
     "SetComic_Blur": {
         "num": 153,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックにぼかしを適用する（SetComic_Blur_Speedで発動）" + newLine
                     + "引数１：コマの番号（SSでは使わない）" + newLine
@@ -16620,6 +16747,7 @@ const CMD = {
     },
     "SetComic_Blur_Speed": {
         "num": 154,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "コミックに「ぼかしとスピード線」を入れる" + newLine
                     + "引数１：コマの番号（SSでは使わない）" + newLine
@@ -16966,6 +17094,7 @@ const CMD = {
     },
     "TRACK_BOMB": {
         "num": 155,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両の台車が爆発する" + newLine
                     + "※旧作の仕様" + newLine
@@ -16996,6 +17125,7 @@ const CMD = {
     },
     "Hide_Sky_Doom": {
         "num": 156,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "空を表示しない" + newLine
                     + "ただし、BS以後では、このコマンドを実行すると" + newLine
@@ -17006,6 +17136,7 @@ const CMD = {
     },
     "ADD_POINT": {
         "num": 157,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "バトルポイントを加算する" + newLine
                     + "引数１：配列のインデックス（0～2）" + newLine
@@ -17142,6 +17273,7 @@ const CMD = {
     },
     "CHK_POINT": {
         "num": 158,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "バトルポイントをチェックする" + newLine
                     + "指定ポイントより以上なら次のコマンドへ行く" + newLine
@@ -17262,10 +17394,12 @@ const CMD = {
     },
     "ELSE_CHK_POINT": {
         "num": 159,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
                     + "指定のポイントより少なく、最近チェックした" + newLine
-                    + "インデックスと同じ場合、ここで止める" + newLine
+                    + "インデックスと同じ場合、ここで止める。" + newLine
+                    + "ただし、BS以後では「未使用コマンド」とエラーが出てゲームが落ちる" + newLine
                     + "引数１：配列のインデックス（0～2）",
         "LS_comic": [
             "COMIC121.BIN",
@@ -17274,6 +17408,7 @@ const CMD = {
     },
     "ELSE_IF_CHK_POINT": {
         "num": 160,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
                     + "指定のポイントより少なく、最近チェックした" + newLine
@@ -17288,6 +17423,7 @@ const CMD = {
     },
     "END_CHK_POINT": {
         "num": 161,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "CHK_POINT、またはELSE_IF_CHK_POINTで" + newLine
                     + "指定のポイントより少なく、最近チェックした" + newLine
@@ -17406,6 +17542,7 @@ const CMD = {
     },
     "GOTO_SCRIPT": {
         "num": 162,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定のスクリプトを並列処理で実行し" + newLine
                     + "次のコマンドへ行く" + newLine
@@ -17728,6 +17865,7 @@ const CMD = {
     },
     "SHEAK_COMIC": {
         "num": 163,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定のコマを揺らす" + newLine
                     + "引数１：コマの番号" + newLine
@@ -17893,6 +18031,7 @@ const CMD = {
     },
     "STORY_OPEN": {
         "num": 164,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "ストーリーを開放する" + newLine
                     + "引数１：ストーリーインデックス",
@@ -17939,6 +18078,7 @@ const CMD = {
     },
     "STORY_CLEAR": {
         "num": 165,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "ストーリーをクリア処理する" + newLine
                     + "引数１：ストーリーインデックス",
@@ -17992,6 +18132,7 @@ const CMD = {
     },
     "CHAR_OPEN": {
         "num": 166,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "車両を開放する" + newLine
                     + "引数１：車両インデックス",
@@ -18037,6 +18178,7 @@ const CMD = {
     },
     "SAVE_GAME": {
         "num": 167,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "ゲーム情報をセーブする",
         "LS_comic": [
@@ -18089,6 +18231,7 @@ const CMD = {
     },
     "KEISUKE_COUNT": {
         "num": 168,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "啓介がカウントする" + newLine
                     + "（COUNT.BINの2-0を使う。" + newLine
@@ -18102,6 +18245,7 @@ const CMD = {
     },
     "RandPlayComicSE": {
         "num": 169,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "スクリプト内のSE情報から指定範囲内のインデックスをランダムに1個選んで、再生する" + newLine
                     + "引数１：範囲start（SE情報インデックス）" + newLine
@@ -18121,6 +18265,7 @@ const CMD = {
     },
     "TITLE_MODE": {
         "num": 170,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "タイトル画面へ行く。オープニング専用",
         "LS_comic": [
@@ -18139,6 +18284,7 @@ const CMD = {
     },
     "GOING": {
         "num": 171,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両を運転できるようにする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -18184,6 +18330,7 @@ const CMD = {
     },
     "RAND_IF": {
         "num": 172,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "次の行へ行くか（Trueとする）、ELSE_RAND_IFまで飛ぶ。（Falseとする）" + newLine
                     + "Trueの場合、ELSE_RAND_IFの行があればEND_RAND_IFまで飛ぶ" + newLine
@@ -18194,6 +18341,7 @@ const CMD = {
     },
     "ELSE_RAND_IF": {
         "num": 173,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "RAND_IFのFalse判定で、指定ラベルまで飛ぶ場合、この行で止める。" + newLine
                     + "引数１：指定ラベル",
@@ -18203,6 +18351,7 @@ const CMD = {
     },
     "END_RAND_IF": {
         "num": 174,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "RAND_IFがTrue判定になり、ELSE_RAND_IFに到達して" + newLine
                     + "指定ラベルまで飛ぶ場合、この行で止める" + newLine
@@ -18213,6 +18362,7 @@ const CMD = {
     },
     "CHK_SP_BREAK": {
         "num": 175,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "指定車両が、指定時間内に非常ブレーキを使った場合、次の行へ行く。" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ。" + newLine
@@ -18225,6 +18375,7 @@ const CMD = {
     },
     "END_CHK_SP_BREAK": {
         "num": 176,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHK_SP_BREAKで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -18234,6 +18385,7 @@ const CMD = {
     },
     "CHK_DRIFT": {
         "num": 177,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "指定車両が、指定時間内にドリフトした場合、次の行へ行く。" + newLine
                     + "そうではない場合、指定ラベルまで飛ぶ。" + newLine
@@ -18265,6 +18417,7 @@ const CMD = {
     },
     "END_CHK_DRIFT": {
         "num": 178,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHK_DRIFTで指定ラベルまで飛ぶ場合、この行で止める" + newLine
                     + "引数１：指定ラベル",
@@ -18293,6 +18446,7 @@ const CMD = {
     },
     "ENDING_MODE": {
         "num": 179,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "LSのエンディングモードのようになる。" + newLine
                     + "車両のアイコン・速度計・効果音を消して、" + newLine
@@ -18305,6 +18459,7 @@ const CMD = {
     },
     "ChkCause_and_Tx": {
         "num": 180,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "コースの開放状態を判断して、画像を設定する" + newLine
@@ -18318,6 +18473,7 @@ const CMD = {
     },
     "SET_DRAW_TYPE": {
         "num": 181,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示する画像の描画タイプを設定する" + newLine
@@ -18344,6 +18500,7 @@ const CMD = {
     },
     "To_TxSize": {
         "num": 182,
+        "mdlBin": ["LS", "BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【LS、BS、CS、RS】" + newLine
                     + "Txで表示した画像の倍率を変える" + newLine
@@ -18365,6 +18522,7 @@ const CMD = {
     },
     "OPEN_CAUSE": {
         "num": 183,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "コースを開放する。BS以後からは効果なし" + newLine
                     + "引数１：コースのインデックス",
@@ -18375,6 +18533,7 @@ const CMD = {
     },
     "DIS_TRAIN_SPEED": {
         "num": 184,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "スクリプトでスピード設定処理を止める" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -18488,6 +18647,7 @@ const CMD = {
     },
     "CHK_RACE_TIME": {
         "num": 185,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "RACE_STARTから経過した時間をチェックする" + newLine
                     + "チェックした時間が指定時間より少ない場合" + newLine
@@ -18501,6 +18661,7 @@ const CMD = {
     },
     "END_CHK_RACE_TIME": {
         "num": 186,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "CHK_RACE_TIMEで飛ぶ場合、この行で止める",
         "LS_comic": [
@@ -18511,6 +18672,7 @@ const CMD = {
     },
     "End_Comic": {
         "num": 187,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "スクリプトを終了する" + newLine
                     + "引数１：スクリプト番号",
@@ -18585,6 +18747,7 @@ const CMD = {
     },
     "WAIT_RAIL": {
         "num": 188,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定時間内に、指定したレールとボーンを通過するまで待つ" + newLine
                     + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
@@ -18622,6 +18785,7 @@ const CMD = {
     },
     "END_WAIT_RAIL": {
         "num": 189,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "WAIT_RAILで飛ぶ場合、この行で止める" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -18939,6 +19103,7 @@ const CMD = {
     },
     "COMIC_SCALE": {
         "num": 190,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定したコマのスケールを設定する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -19011,6 +19176,7 @@ const CMD = {
     },
     "USO_COUNT": {
         "num": 191,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "１からカウントを数える" + newLine
                     + "BSの10話のみ使われたコマンド。" + newLine
@@ -19022,6 +19188,7 @@ const CMD = {
     },
     "WaitRandPlaySE": {
         "num": 192,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "RandPlayComicSEから再生されたSEを待つ",
         "LS_comic": [
@@ -19037,6 +19204,8 @@ const CMD = {
     },
     "FROM": {
         "num": 193,
+        "mdlBin": ["CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "あるコマンドでFROMに飛ばした時、引数が一致する場合、この行で止める" + newLine
                     + "引数１：数字",
@@ -19400,6 +19569,8 @@ const CMD = {
     },
     "GOTO": {
         "num": 194,
+        "mdlBin": ["CS", "RS"],
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "このコマンドが実行された行を基準に、一番近い下のFROMまで飛ぶ" + newLine
                     + "モデルバイナリではCS以後から使える" + newLine
@@ -19538,6 +19709,7 @@ const CMD = {
     },
     "CHK_TRAIN_TYPE": {
         "num": 195,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定車両が車両インデックスと同じ場合、引数３のFROMへ" + newLine
                     + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
@@ -19699,6 +19871,7 @@ const CMD = {
     },
     "RAND_IF_AVG": {
         "num": 196,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "引数の数字分、0から始まるランダムな整数を作り" + newLine
                     + "FROMの数字として飛ばす" + newLine
@@ -19714,6 +19887,7 @@ const CMD = {
     },
     "CHK_NOTCH": {
         "num": 197,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "指定車両が指定時間分、ノッチを維持した場合、引数３のFROMへ" + newLine
                     + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
@@ -19732,6 +19906,7 @@ const CMD = {
     },
     "WAIT_RAIL_ONLY": {
         "num": 198,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "指定時間内に、指定したレールを通過するまで待つ" + newLine
                     + "指定時間内にできなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
@@ -20045,6 +20220,7 @@ const CMD = {
     },
     "ONE_TRACK_DRIFT": {
         "num": 199,
+        "comicscript": ["LS", "BS", "CS", "RS", "SS"],
         "description": "【LS、BS、CS、RS、SS】" + newLine
                     + "LSで、指定車両を単線ドリフトさせる" + newLine
                     + "BS以後では、このコマンドを実行すると" + newLine
@@ -20061,6 +20237,7 @@ const CMD = {
     },
     "LAST_STATION": {
         "num": 200,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "途中から割り込んでも、ゴール判定できるようにする" + newLine
                     + "ゴール判定は、駅名位置情報の駅フラグが「2」のもので" + newLine
@@ -20071,6 +20248,7 @@ const CMD = {
     },
     "OSSAN": {
         "num": 201,
+        "comicscript": ["LS", "BS", "CS", "RS"],
         "description": "【LS、BS、CS、RS】" + newLine
                     + "指定車両がH2300の場合、オッサンが窓から顔を出す" + newLine
                     + "BS以後からは効果なし" + newLine
@@ -20088,6 +20266,7 @@ const CMD = {
     },
     "SET_TAIL_SCALE": {
         "num": 202,
+        "comicscript": ["LS", "BS"],
         "description": "【LS、BS】" + newLine
                     + "デキ3のテールランプのスケールを変更する" + newLine
                     + "ただし、BSではエラーでゲームが落ちる" + newLine
@@ -20115,6 +20294,7 @@ const CMD = {
     },
     "OPEN_HUTA": {
         "num": 203,
+        "comicscript": ["LS", "BS"],
         "description": "【LS、BS】" + newLine
                     + "デキ3の蓋をオープンする" + newLine
                     + "ただし、BSではエラーでゲームが落ちる" + newLine
@@ -20132,6 +20312,7 @@ const CMD = {
     },
     "SET_GN": {
         "num": 204,
+        "comicscript": ["LS", "BS"],
         "description": "【LS、BS】" + newLine
                     + "デキ3のGN起動。" + newLine
                     + "ただし、BSではエラーでゲームが落ちる" + newLine
@@ -20149,6 +20330,7 @@ const CMD = {
     },
     "MDL_GETINDEX": {
         "num": 205,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "CREATE_INDEXで作成したインデックスに" + newLine
@@ -20289,6 +20471,7 @@ const CMD = {
     },
     "INDEX_BONE_ROT_X": {
         "num": 206,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "効果なし。" + newLine
@@ -20301,6 +20484,7 @@ const CMD = {
     },
     "INDEX_BONE_ROT_Y": {
         "num": 207,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "効果なし。" + newLine
@@ -20322,6 +20506,7 @@ const CMD = {
     },
     "INDEX_BONE_ROT_Z": {
         "num": 208,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "効果なし。" + newLine
@@ -20337,6 +20522,7 @@ const CMD = {
     },
     "INDEX_BONE_L_ROT_X": {
         "num": 209,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -20357,6 +20543,7 @@ const CMD = {
     },
     "INDEX_BONE_L_ROT_Y": {
         "num": 210,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -20431,6 +20618,7 @@ const CMD = {
     },
     "INDEX_BONE_L_ROT_Z": {
         "num": 211,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -20465,6 +20653,7 @@ const CMD = {
     },
     "CREATE_INDEX": {
         "num": 212,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXを使えるように、モデルインデックスを生成する" + newLine
@@ -20603,6 +20792,7 @@ const CMD = {
     },
     "IB_LI_CREATE_ROT_X": {
         "num": 213,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "X軸に回転する変化を格納する、ListInterのインデックスを生成する" + newLine
@@ -20631,6 +20821,7 @@ const CMD = {
     },
     "IB_LI_CREATE_ROT_Y": {
         "num": 214,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Y軸に回転する変化を格納する、ListInterのインデックスを生成する" + newLine
@@ -20697,6 +20888,7 @@ const CMD = {
     },
     "IB_LI_CREATE_ROT_Z": {
         "num": 215,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Z軸に回転する変化を格納する、ListInterのインデックスを生成する" + newLine
@@ -20769,6 +20961,7 @@ const CMD = {
     },
     "IB_LI_SET_ROT_X": {
         "num": 216,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "X軸回転のListInterのインデックスに値を設定する" + newLine
@@ -20800,6 +20993,7 @@ const CMD = {
     },
     "IB_LI_SET_ROT_Y": {
         "num": 217,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Y軸回転のListInterのインデックスに値を設定する" + newLine
@@ -20869,6 +21063,7 @@ const CMD = {
     },
     "IB_LI_SET_ROT_Z": {
         "num": 218,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Z軸回転のListInterのインデックスに値を設定する" + newLine
@@ -20944,6 +21139,7 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_X": {
         "num": 219,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "モデルインデックスのX軸回転のListInterにループを設定する" + newLine
@@ -20972,6 +21168,7 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_Y": {
         "num": 220,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "モデルインデックスのY軸回転のListInterにループを設定する" + newLine
@@ -21038,6 +21235,7 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_Z": {
         "num": 221,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "モデルインデックスのZ軸回転のListInterにループを設定する" + newLine
@@ -21110,6 +21308,7 @@ const CMD = {
     },
     "ADD_MY_OBJ": {
         "num": 222,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "一番最初のベースBINではないスクリプトから参照して、" + newLine
@@ -21127,6 +21326,7 @@ const CMD = {
     },
     "INDEX_BONE_L_POS_X": {
         "num": 223,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -21154,6 +21354,7 @@ const CMD = {
     },
     "INDEX_BONE_L_POS_Y": {
         "num": 224,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -21198,6 +21399,7 @@ const CMD = {
     },
     "INDEX_BONE_L_POS_Z": {
         "num": 225,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -21278,6 +21480,7 @@ const CMD = {
     },
     "IB_LI_CREATE_L_POS_X": {
         "num": 226,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "X軸に移動する変化を格納する、ListInterのインデックスを生成する" + newLine
@@ -21299,6 +21502,7 @@ const CMD = {
     },
     "IB_LI_CREATE_L_POS_Y": {
         "num": 227,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Y軸に移動する変化を格納する、ListInterのインデックスを生成する" + newLine
@@ -21341,6 +21545,7 @@ const CMD = {
     },
     "IB_LI_CREATE_L_POS_Z": {
         "num": 228,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Z軸に移動する変化を格納する、ListInterのインデックスを生成する" + newLine
@@ -21360,6 +21565,7 @@ const CMD = {
     },
     "IB_LI_SET_L_POS_X": {
         "num": 229,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "X軸移動のListInterのインデックスに値を設定する" + newLine
@@ -21384,6 +21590,7 @@ const CMD = {
     },
     "IB_LI_SET_L_POS_Y": {
         "num": 230,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Y軸移動のListInterのインデックスに値を設定する" + newLine
@@ -21429,6 +21636,7 @@ const CMD = {
     },
     "IB_LI_SET_L_POS_Z": {
         "num": 231,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Z軸移動のListInterのインデックスに値を設定する" + newLine
@@ -21451,6 +21659,7 @@ const CMD = {
     },
     "FROM_ADDMT": {
         "num": 232,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "詳細不明"
@@ -21465,6 +21674,7 @@ const CMD = {
     },
     "CREATE_UV_MOVE_X": {
         "num": 235,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "メッシュのX軸に移動する変化を格納する、UVのインデックスを生成する" + newLine
@@ -21489,6 +21699,7 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_LPOSX": {
         "num": 236,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "モデルインデックスのX軸移動のListInterにループを設定する" + newLine
@@ -21509,6 +21720,7 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_LPOSY": {
         "num": 237,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "モデルインデックスのY軸移動のListInterにループを設定する" + newLine
@@ -21551,6 +21763,7 @@ const CMD = {
     },
     "IB_LI_SET_LOOP_LPOSZ": {
         "num": 238,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "モデルインデックスのZ軸移動のListInterにループを設定する" + newLine
@@ -21569,12 +21782,14 @@ const CMD = {
     },
     "RELEASE_ALL_IB_LIST": {
         "num": 239,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "あるセクションで生成したListInterを全部消す"
     },
     "ADD_MY_OBJ_INDEX": {
         "num": 240,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "一番最初のベースBINではないスクリプトから参照して、" + newLine
@@ -21587,6 +21802,7 @@ const CMD = {
     },
     "TO_TAGET_POS": {
         "num": 241,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "詳細不明"
@@ -21601,12 +21817,14 @@ const CMD = {
     },
     "SET_RELEASE_PARAM": {
         "num": 244,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "詳細不明"
     },
     "CREATE_LENSFLEAR": {
         "num": 245,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "レンズフレアインデックスを生成する" + newLine
@@ -21659,6 +21877,7 @@ const CMD = {
     },
     "SET_LENSFLEAR_MT": {
         "num": 247,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "生成したレンズフレアにマテリアルに設定する" + newLine
@@ -21703,6 +21922,7 @@ const CMD = {
     },
     "RAIL_POS_TO_BUFF": {
         "num": 248,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "指定したレールにBUFFを設置する" + newLine
                     + "引数１：レール番号" + newLine
@@ -21953,6 +22173,7 @@ const CMD = {
     },
     "BUFF_TO_CAM_POS": {
         "num": 249,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "BUFFの位置を基準に、固定視点用のカメラの位置を決める" + newLine
                     + "引数１：BUFFのインデックス" + newLine
@@ -21980,6 +22201,7 @@ const CMD = {
     },
     "BUFF_TO_TARGET_POS": {
         "num": 250,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "BUFFの位置を基準に、固定視点用の注視点の位置を決める" + newLine
                     + "引数１：BUFFのインデックス" + newLine
@@ -22030,6 +22252,7 @@ const CMD = {
     },
     "FTV_BASE_PROC": {
         "num": 251,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "既存の「FTV_Play」「FTV_Wait」「FTV_End」の3つのコマンドを" + newLine
                     + "全部順番に実行した効果と同じ" + newLine
@@ -22037,6 +22260,7 @@ const CMD = {
     },
     "FTV_NEXT_PROC": {
         "num": 252,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "同じ画像を使うFVTの場合" + newLine
                     + "引数２に続いて引数１のFVTを出す" + newLine
@@ -22524,6 +22748,7 @@ const CMD = {
     },
     "MDL_INDEX_TO_VIEW": {
         "num": 253,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "カメラと注視点を、SMFのフレームインデックスで決める" + newLine
@@ -22543,6 +22768,8 @@ const CMD = {
     },
     "SET_FOG_LENGTH": {
         "num": 254,
+        "mdlBin": ["BS", "CS", "RS"],
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "FOGの設定。モデルバイナリでも使える" + newLine
                     + "引数１：FOGインデックス（0～3）" + newLine
@@ -22582,6 +22809,7 @@ const CMD = {
     },
     "SET_UV_MOVE_X": {
         "num": 255,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "メッシュのX軸移動のUVに値を設定する" + newLine
@@ -22609,6 +22837,7 @@ const CMD = {
     },
     "SET_UV_LOOP_X": {
         "num": 256,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "メッシュのX軸移動のUVにループを設定する" + newLine
@@ -22633,6 +22862,7 @@ const CMD = {
     },
     "CREATE_MESH_INDEX": {
         "num": 257,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "メッシュインデックスを生成する" + newLine
@@ -22676,6 +22906,7 @@ const CMD = {
     },
     "SET_MESH_INDEX": {
         "num": 258,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "オブジェクトのメッシュのインデックスを取得する" + newLine
@@ -22721,6 +22952,7 @@ const CMD = {
     },
     "INDEX_BONE_L_ADD_ROT_X": {
         "num": 259,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -22738,6 +22970,7 @@ const CMD = {
     },
     "INDEX_BONE_L_ADD_ROT_Y": {
         "num": 260,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "MDL_GETINDEXのインデックスで、" + newLine
@@ -22766,17 +22999,11 @@ const CMD = {
     },
     "INDEX_BONE_L_ADD_ROT_Z": {
         "num": 261,
-        "description": "【モデルバイナリ】" + newLine
-                    + "【BS、CS、RS】" + newLine
-                    + "MDL_GETINDEXのインデックスで、" + newLine
-                    + "モデルのボーンをローカル座標基準で、Z軸に回転値を加算する" + newLine
-                    + "引数１：モデルインデックス" + newLine
-                    + "引数２：加算値" + newLine
-                    + "引数３：変化時間（フレーム）" + newLine
-                    + "引数４：変化方法"
+        "description": NOT_DEFINED
     },
     "CHANGE_SCALL": {
         "num": 262,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "スケールを調整する" + newLine
@@ -22807,6 +23034,7 @@ const CMD = {
     },
     "CHK_CLEAR_STORY": {
         "num": 263,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "ストーリーのクリア状態をチェックし、クリアしてない場合のみ適用する" + newLine
@@ -22819,6 +23047,7 @@ const CMD = {
     },
     "CHK_OPEN_STORY": {
         "num": 264,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "ストーリーの開放状態をチェックし、開放されてない場合のみ適用する" + newLine
@@ -22833,6 +23062,7 @@ const CMD = {
     },
     "SET_LENSFLEAR_ALL_FLG": {
         "num": 265,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "点滅できるモデルの場合、レンズフレアの点滅を設定する" + newLine
@@ -22852,6 +23082,7 @@ const CMD = {
     },
     "CHK_USE_CHAR": {
         "num": 266,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "車両を使えるかチェックし、開放されてない場合のみ適用する" + newLine
@@ -22864,6 +23095,7 @@ const CMD = {
     },
     "SET_OBJ_FOG_NO": {
         "num": 267,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "Set3DObjで配置したモデルにFOG設定を適用する" + newLine
@@ -22898,6 +23130,7 @@ const CMD = {
     },
     "SET_OBJ_RENDER_ID": {
         "num": 268,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "【推測】Set3DObjで配置したモデルにレンダリングモードを設定する" + newLine
@@ -22922,6 +23155,7 @@ const CMD = {
     },
     "PLAY_STAGE_BGM": {
         "num": 269,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "ステージBGMを再生する" + newLine
                     + "引数１：ステージBGMのインデックス",
@@ -23002,6 +23236,7 @@ const CMD = {
     },
     "CHANGE_TRAIN_FOG": {
         "num": 270,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "車両にFOG設定を適用する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -23015,6 +23250,7 @@ const CMD = {
     },
     "FIRST_OBJ_SET_ANIME": {
         "num": 271,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "レールデータで定義しているANIMEを続けて実行する" + newLine
                     + "引数１：レールデータのベースBIN　ANIMEのインデックス" + newLine
@@ -23040,6 +23276,7 @@ const CMD = {
     },
     "SET_CAMPOINT_2P2C": {
         "num": 272,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "0番カメラの状態を、引数１〜５に" + newLine
                     + "1番カメラの状態を、引数６〜１０の状態に変える" + newLine
@@ -23363,6 +23600,7 @@ const CMD = {
     },
     "CAM_POINT_PER": {
         "num": 274,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "SET_CAMPOINT_2P2Cのコマンドで決めた" + newLine
                     + "0番カメラを始点に、1番カメラを終点にして" + newLine
@@ -23700,6 +23938,7 @@ const CMD = {
     },
     "CAM_TARGET_PER": {
         "num": 275,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "SET_CAMPOINT_2P2C、またはSET_CAMPOINT_1P2Tのコマンドで決めた" + newLine
                     + "0番カメラの注視点を始点に、1番カメラの注視点を終点にして" + newLine
@@ -24133,6 +24372,7 @@ const CMD = {
     },
     "SET_CAM_POINT_LENGTH": {
         "num": 276,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "カメラの距離を設定する" + newLine
                     + "引数１：カメラ番号" + newLine
@@ -24413,6 +24653,7 @@ const CMD = {
     },
     "SET_CAM_OFFSET": {
         "num": 277,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "カメラ位置のoffsetを設定する" + newLine
                     + "引数１：カメラ番号" + newLine
@@ -24701,6 +24942,7 @@ const CMD = {
     },
     "START_WIPER": {
         "num": 278,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両のワイパーを動かす" + newLine
                     + "※SSでは使えない" + newLine
@@ -24717,6 +24959,7 @@ const CMD = {
     },
     "CREATE_TRAIN_ORG": {
         "num": 279,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "車両のモデルを、引数３の号車数だけ作成する" + newLine
                     + "引数１：作成インデックス" + newLine
@@ -24740,6 +24983,7 @@ const CMD = {
     },
     "SET_CAMPOINT_K": {
         "num": 282,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "固定カメラの絶対座標設定" + newLine
                     + "【BS～RSまで】" + newLine
@@ -24797,6 +25041,7 @@ const CMD = {
     },
     "ORG_SET_POS": {
         "num": 283,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの位置を絶対座標で設定する" + newLine
@@ -24816,6 +25061,7 @@ const CMD = {
     },
     "ORG_SET_FOG": {
         "num": 284,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルにFOG設定を適用する" + newLine
@@ -24824,6 +25070,7 @@ const CMD = {
     },
     "ORG_RELEASE": {
         "num": 285,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルを解放する（消す）" + newLine
@@ -24834,6 +25081,7 @@ const CMD = {
     },
     "PLAY_FTV_END": {
         "num": 286,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "現在再生中のFVTを終了する",
         "BS_comic": [
@@ -24846,6 +25094,7 @@ const CMD = {
     },
     "CNG_TRAIN_MAT_COL": {
         "num": 287,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両の全体的なマテリアルカラーを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -24861,6 +25110,7 @@ const CMD = {
     },
     "CNG_ORG_MAT_COL": {
         "num": 288,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの全体的なマテリアルカラーを変える" + newLine
@@ -24876,6 +25126,7 @@ const CMD = {
     },
     "IS_CAUTION": {
         "num": 289,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。おことわり表示中に処理中止と推測するが" + newLine
                     + "未実装と思われる",
@@ -24891,6 +25142,7 @@ const CMD = {
     },
     "ENDWAIT_COMIC": {
         "num": 290,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "GOTO_SCRIPTで並列処理したスクリプトが終わるまで待つ" + newLine
                     + "引数１：スクリプト番号",
@@ -25023,6 +25275,7 @@ const CMD = {
     },
     "SET_COMIC_BG_COLOR": {
         "num": 291,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "BGの色を変える" + newLine
                     + "引数１：カラーR" + newLine
@@ -25050,6 +25303,7 @@ const CMD = {
     },
     "TX_2_TRAIN": {
         "num": 292,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "車両のテクスチャを設定する" + newLine
                     + "引数１：画像サイズ情報のインデックス" + newLine
@@ -25077,6 +25331,7 @@ const CMD = {
     },
     "CNG_MT_COL": {
         "num": 294,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "モデルの元メッシュのマテリアルのカラーを変える" + newLine
@@ -25155,6 +25410,7 @@ const CMD = {
     },
     "RETURN": {
         "num": 295,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "このコマンドが実行された行を基準に、一番近い上のFROMまで飛ぶ" + newLine
                     + "引数１：FROMの数字",
@@ -25205,6 +25461,7 @@ const CMD = {
     },
     "ReLoadSE": {
         "num": 296,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "SE情報を再度ロードする" + newLine
                     + "引数１：SE情報インデックス",
@@ -25223,6 +25480,7 @@ const CMD = {
     },
     "BASE_POINT_CAM": {
         "num": 297,
+        "mdlBin": ["BS", "CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【BS、CS、RS】" + newLine
                     + "ベースポイントのカメラを活性化する" + newLine
@@ -25236,6 +25494,7 @@ const CMD = {
     },
     "STOP_3D": {
         "num": 298,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "3Dシーンの動きを止める" + newLine
                     + "引数１：1（True）、0（False）",
@@ -25357,6 +25616,7 @@ const CMD = {
     },
     "STOP_STAGE_BGM": {
         "num": 299,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "ステージのBGMを止める" + newLine
                     + "引数１：ステージBGMのインデックス（-1の場合、全て）" + newLine
@@ -25446,6 +25706,7 @@ const CMD = {
     },
     "TRAIN_UD": {
         "num": 300,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "車両をアップダウンさせる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -25463,6 +25724,7 @@ const CMD = {
     },
     "SET_CAM_TARGET_OFFSET": {
         "num": 301,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "注視点位置のoffsetを設定する" + newLine
                     + "引数１：カメラ番号" + newLine
@@ -25744,6 +26006,7 @@ const CMD = {
     },
     "SET_CAM_POINT_1T_ROT": {
         "num": 302,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "引数１を注視点とするカメラ位置を設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -25756,26 +26019,31 @@ const CMD = {
     },
     "SET_CAM_T_LENGHT": {
         "num": 303,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。未完成のままと思われる"
     },
     "SET_CAM_T_ROT_X": {
         "num": 304,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。未完成のままと思われる"
     },
     "SET_CAM_T_ROT_Y": {
         "num": 305,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。未完成のままと思われる"
     },
     "SET_CAM_T_OFFSET": {
         "num": 306,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。未完成のままと思われる"
     },
     "NO_OUTRUN": {
         "num": 307,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "指定車両を脱線しないようにする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -26202,6 +26470,7 @@ const CMD = {
     },
     "SET_WHEEL_FIRE": {
         "num": 308,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "車輪に火花を散らす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -26223,6 +26492,7 @@ const CMD = {
     },
     "RELOAD_OP_TRAIN": {
         "num": 309,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "オープニングで読み込む車両をリロードする",
         "BS_comic": [
@@ -26237,6 +26507,7 @@ const CMD = {
     },
     "BackR_Drift": {
         "num": 310,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両を右後輪ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -26249,6 +26520,7 @@ const CMD = {
     },
     "BackL_Drift": {
         "num": 311,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両を左後輪ドリフトさせる" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -26261,6 +26533,7 @@ const CMD = {
     },
     "CHK_MOTION": {
         "num": 312,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "指定の車両が指定時間内に、指定の動きをした場合、引数４のFROMまで飛ぶ" + newLine
                     + "そうではない場合、引数５のFROMまで飛ぶ" + newLine
@@ -26318,6 +26591,7 @@ const CMD = {
     },
     "RECREATE_TRAIN": {
         "num": 314,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両の電車を改めて生成して上書きする" + newLine
                     + "初期位置は、レールデータで定義した初期位置になる" + newLine
@@ -26326,6 +26600,7 @@ const CMD = {
     },
     "SET_CAMPOINT_1P2T": {
         "num": 315,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "0番カメラの注視点を引数１に、1番カメラの注視点を引数２にする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -26561,6 +26836,7 @@ const CMD = {
     },
     "BUFF_TO_SC_CAM_POS": {
         "num": 316,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "BUFFの位置を基準に、SET_CAMPOINT_1P2Tで決めた注視点を見るカメラの位置を変える" + newLine
                     + "SSでは固定視点用のカメラにも適用できる" + newLine
@@ -26810,6 +27086,7 @@ const CMD = {
     },
     "SC_ORG_MODE_CHANGE": {
         "num": 317,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの方向をワールド座標基準にする" + newLine
@@ -26824,6 +27101,7 @@ const CMD = {
     },
     "SC_ORG_INIT_POS": {
         "num": 318,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの初期位置を絶対座標で設定する" + newLine
@@ -26840,6 +27118,7 @@ const CMD = {
     },
     "SC_ORG_SET_POS": {
         "num": 319,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの位置を絶対座標で設定する" + newLine
@@ -26858,6 +27137,7 @@ const CMD = {
     },
     "SC_ORG_SET_ROT": {
         "num": 320,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルを回転する" + newLine
@@ -26872,6 +27152,7 @@ const CMD = {
     },
     "SC_ORG_SET_X_ROT": {
         "num": 321,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの位置をX軸で回転する" + newLine
@@ -26887,6 +27168,7 @@ const CMD = {
     },
     "SC_ORG_SET_Y_ROT": {
         "num": 322,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの位置をY軸で回転する" + newLine
@@ -26902,6 +27184,7 @@ const CMD = {
     },
     "SC_ORG_SET_Z_ROT": {
         "num": 323,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルの位置をZ軸で回転する" + newLine
@@ -26917,6 +27200,7 @@ const CMD = {
     },
     "SET_SC_KOTEI_CAM_POS": {
         "num": 324,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "固定カメラのカメラ位置を設定する" + newLine
                     + "引数１：x座標" + newLine
@@ -26937,17 +27221,11 @@ const CMD = {
             "COMIC3997.BIN",
             "COMIC3998.BIN",
             "COMIC3499.BIN"
-        ],
-        // コマンド無し
-        // "SS_comic": [
-        //     "COMIC3998.BIN"
-        // ],
-        // "SS_cmn": [
-        //     "COMIC3997.BIN"
-        // ]
+        ]
     },
     "SET_SC_KOTEI_CAM_T_POS": {
         "num": 325,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "固定カメラの注視点位置を設定する" + newLine
                     + "引数１：x座標" + newLine
@@ -26968,6 +27246,7 @@ const CMD = {
     },
     "START_SC_WIPER": {
         "num": 326,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "CREATE_TRAIN_ORGから作成した" + newLine
                     + "モデルのワイパーを動かせる" + newLine
@@ -26979,6 +27258,7 @@ const CMD = {
     },
     "SUPER_DRIFT": {
         "num": 327,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "プレイヤーの車両を5秒間火花を散らし、" + newLine
                     + "ドリフト加速できる区間で実行すると、すごく加速する",
@@ -26988,6 +27268,7 @@ const CMD = {
     },
     "CNG_TRAIN_NO_MAT_COL": {
         "num": 328,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両の0番目のメッシュの中、引数のマテリアルのDIFFを変える" + newLine
                     + "引数２を0にすると、デフォルト状態に変える" + newLine
@@ -27004,6 +27285,8 @@ const CMD = {
     },
     "ERR_CMD": {
         "num": 329,
+        "mdlBin": ["CS", "RS"],
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "「スクリプト (実行した行数) 確認」とエラーメッセージが出る" + newLine
                     + "ゲームが落ちたりせず、そのまま次の行へ行く" + newLine
@@ -27011,6 +27294,7 @@ const CMD = {
     },
     "K_HN": {
         "num": 330,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "BS：指定車両を、京阪8000系が守口市でぶつけるような動作をする" + newLine
                     + "　発動すると取り消しはできず、複々線区間では安定する" + newLine
@@ -27024,11 +27308,13 @@ const CMD = {
     },
     "TO_TRACK_RAIL": {
         "num": 331,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。未完成のままと思われる"
     },
     "IS_NO_DRAMA": {
         "num": 332,
+        "comicscript": ["BS", "CS", "RS", "SS"],
         "description": "【BS、CS、RS、SS】" + newLine
                     + "ドラマチックモードではない場合、引数１のFROMへ" + newLine
                     + "合う場合、引数２のFROMへ飛ぶ" + newLine
@@ -27073,6 +27359,7 @@ const CMD = {
     },
     "CNG_TRAIN_NO_MAT_RGBA": {
         "num": 333,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "指定車両の0番目のメッシュの中、引数のマテリアルのDIFFを変える" + newLine
                     + "引数２を0にすると、デフォルト状態に変える" + newLine
@@ -27090,16 +27377,19 @@ const CMD = {
     },
     "SHOW_RECORD": {
         "num": 334,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。未完成のままと思われる"
     },
     "WAIT_RECORD_END": {
         "num": 335,
+        "comicscript": ["BS", "CS", "RS"],
         "description": "【BS、CS、RS】" + newLine
                     + "詳細不明。未完成のままと思われる"
     },
     "IB_LI_SET_UPDATE_FLG": {
         "num": 336,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルインデックスの変化を格納したListInterの" + newLine
@@ -27151,6 +27441,7 @@ const CMD = {
     },
     "PTCL_SCALL": {
         "num": 337,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルのスケールを設定する" + newLine
@@ -27160,6 +27451,7 @@ const CMD = {
     },
     "PTCL_COLOR": {
         "num": 338,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルのカラーを設定する" + newLine
@@ -27171,6 +27463,7 @@ const CMD = {
     },
     "PTCL_ALPHA": {
         "num": 339,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルのAlpha値を設定する" + newLine
@@ -27180,12 +27473,14 @@ const CMD = {
     },
     "PTCL_DRAWTYPE": {
         "num": 340,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "詳細不明。モデルのパーティクルの描画タイプの設定と思われる"
     },
     "PTCL_ANGLE": {
         "num": 341,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルを回転させる" + newLine
@@ -27196,6 +27491,7 @@ const CMD = {
     },
     "PTCL_RAND_ANGLE": {
         "num": 342,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "PTCLをランダムに回転する" + newLine
@@ -27223,6 +27519,7 @@ const CMD = {
     },
     "PTCL_RAND_COLOR": {
         "num": 343,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルのカラーを設定する" + newLine
@@ -27237,6 +27534,7 @@ const CMD = {
     },
     "PTCL_RAND_ALPHA": {
         "num": 344,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルのAlpha値をランダムに決める" + newLine
@@ -27261,6 +27559,7 @@ const CMD = {
     },
     "PTCL_RAND_SCALL": {
         "num": 345,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルのスケール変化をランダムに決める" + newLine
@@ -27285,6 +27584,7 @@ const CMD = {
     },
     "IB_ADD_PTCL": {
         "num": 346,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルにパーティクルを追加する。" + newLine
@@ -27312,6 +27612,7 @@ const CMD = {
     },
     "PTCL_RAND_TONE_COLOR": {
         "num": 347,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "トーンのカラーをランダムに設定する" + newLine
@@ -27335,6 +27636,7 @@ const CMD = {
     },
     "IS_ALPHA_END": {
         "num": 348,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルのAlpha値が全部0になったか判断する" + newLine
@@ -27356,6 +27658,7 @@ const CMD = {
     },
     "PTCL_L_POS": {
         "num": 349,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルをローカル座標基準で移動させる" + newLine
@@ -27380,6 +27683,7 @@ const CMD = {
     },
     "PTCL_RAND_L_POS": {
         "num": 350,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】【PTCLコマンド】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのパーティクルをローカル座標基準でランダムに移動させる" + newLine
@@ -27408,6 +27712,7 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_R_INTERLIST": {
         "num": 351,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに、カラーRの変化を格納するListInterを作成する" + newLine
@@ -27426,6 +27731,7 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_R_INTERLIST": {
         "num": 352,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに、自己発光カラーRの変化を格納するListInterを作成する" + newLine
@@ -27440,6 +27746,7 @@ const CMD = {
     },
     "SET_MAT_COLOR_R": {
         "num": 353,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -27462,6 +27769,7 @@ const CMD = {
     },
     "SET_MAT_COLOR_G": {
         "num": 354,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -27484,6 +27792,7 @@ const CMD = {
     },
     "SET_MAT_COLOR_B": {
         "num": 355,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -27504,6 +27813,7 @@ const CMD = {
     },
     "SET_MAT_COLOR_LOOP": {
         "num": 356,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -27517,6 +27827,7 @@ const CMD = {
     },
     "SET_MAT_EMISSIVE_R": {
         "num": 357,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -27535,6 +27846,7 @@ const CMD = {
     },
     "SET_MAT_EMISSIVE_G": {
         "num": 358,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -27553,6 +27865,7 @@ const CMD = {
     },
     "SET_MAT_EMISSIVE_B": {
         "num": 359,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -27565,16 +27878,11 @@ const CMD = {
     },
     "SET_MAT_EMISSIVE_LOOP": {
         "num": 360,
-        "description": "【モデルバイナリ】" + newLine
-                    + "【CS、RS】" + newLine
-                    + "メッシュのマテリアルに生成した" + newLine
-                    + "自己発光カラー情報のListInterにループを生成する" + newLine
-                    + "引数１：メッシュインデックス" + newLine
-                    + "引数２：自己発光カラーインデックス（0=R、1=G、2=B）" + newLine
-                    + "引数３：1（True）、0（False）"
+        "description": NOT_DEFINED
     },
     "CREATE_MAT_COLOR_G_INTERLIST": {
         "num": 361,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに、カラーGの変化を格納するListInterを作成する" + newLine
@@ -27593,6 +27901,7 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_G_INTERLIST": {
         "num": 362,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに、自己発光カラーGの変化を格納するListInterを作成する" + newLine
@@ -27607,6 +27916,7 @@ const CMD = {
     },
     "CREATE_MAT_COLOR_B_INTERLIST": {
         "num": 363,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに、カラーBの変化を格納するListInterを作成する" + newLine
@@ -27625,6 +27935,7 @@ const CMD = {
     },
     "CREATE_MAT_EMISSIVE_B_INTERLIST": {
         "num": 364,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに、自己発光カラーBの変化を格納するListInterを作成する" + newLine
@@ -27639,6 +27950,7 @@ const CMD = {
     },
     "CREATE_UV_MOVE_Y": {
         "num": 365,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのY軸に移動する変化を格納する、UVのインデックスを生成する" + newLine
@@ -27669,6 +27981,7 @@ const CMD = {
     },
     "SET_UV_MOVE_Y": {
         "num": 366,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのY軸移動のUVに値を設定する" + newLine
@@ -27702,6 +28015,7 @@ const CMD = {
     },
     "SET_UV_LOOP_Y": {
         "num": 367,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのY軸移動のUVにループを設定する" + newLine
@@ -27731,6 +28045,7 @@ const CMD = {
     },
     "INDEX_RAND_ROT_X": {
         "num": 368,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのボーンをX軸でランダムに回転させる" + newLine
@@ -27753,6 +28068,7 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Y": {
         "num": 369,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのボーンをY軸でランダムに回転させる" + newLine
@@ -27779,6 +28095,7 @@ const CMD = {
     },
     "INDEX_RAND_ROT_Z": {
         "num": 370,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのボーンをZ軸でランダムに回転させる" + newLine
@@ -27801,6 +28118,7 @@ const CMD = {
     },
     "INDEX_RAND_POS_X": {
         "num": 371,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのボーンをX軸でランダムに移動させる" + newLine
@@ -27819,6 +28137,7 @@ const CMD = {
     },
     "INDEX_RAND_POS_Y": {
         "num": 372,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのボーンをY軸でランダムに移動させる" + newLine
@@ -27841,6 +28160,7 @@ const CMD = {
     },
     "INDEX_RAND_POS_Z": {
         "num": 373,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのボーンをZ軸でランダムに移動させる" + newLine
@@ -27859,6 +28179,7 @@ const CMD = {
     },
     "RAND_SHOW_MESH": {
         "num": 374,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルの元のメッシュをランダムに表示させる" + newLine
@@ -27873,6 +28194,7 @@ const CMD = {
     },
     "INDEX_RAND_SCALL": {
         "num": 375,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルのボーンのスケールをランダムで設定する" + newLine
@@ -27897,6 +28219,7 @@ const CMD = {
     },
     "ADD_CHILD_OBJ": {
         "num": 376,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "あるモデルにANIMEオブジェクトを追加する" + newLine
@@ -27919,6 +28242,7 @@ const CMD = {
     },
     "ADD_OBJ_INDEX": {
         "num": 377,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し" + newLine
@@ -27942,6 +28266,7 @@ const CMD = {
     },
     "GAS_TARBIN": {
         "num": 378,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "車両にガスタービンがある場合、動かす" + newLine
                     + "SSでは車両がデキ3の場合、GNを動かす" + newLine
@@ -27974,6 +28299,7 @@ const CMD = {
     },
     "ENGINE_START": {
         "num": 379,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "車両が気動車の場合、エンジンを動かす" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -28030,6 +28356,8 @@ const CMD = {
     },
     "CHANGE_CHILDOBJ_ANIME": {
         "num": 380,
+        "mdlBin": ["CS", "RS"],
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "モデルにADD_CHILD_OBJで追加してたANIMEを変える" + newLine
                     + "モデルバイナリでも使えるし、その場合引数１と２は-1になる" + newLine
@@ -28048,17 +28376,11 @@ const CMD = {
         "RS_comic": [
             "COMIC3997.BIN",
             "COMIC3998.BIN"
-        ],
-        // コマンド無し
-        // "SS_comic": [
-        //     "COMIC3998.BIN"
-        // ],
-        // "SS_cmn": [
-        //     "COMIC3997.BIN"
-        // ]
+        ]
     },
     "IB_SET_W_MT": {
         "num": 381,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "MDL_GETINDEXで取得した、モデルインデックスにマテリアル要素を追加する" + newLine
@@ -28089,6 +28411,7 @@ const CMD = {
     },
     "CHK_OBJ_PARAM": {
         "num": 382,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "車両の状態によって条件が合えば、引数３のFROMへ" + newLine
@@ -28159,6 +28482,7 @@ const CMD = {
     },
     "SET_OBJ_PARAM": {
         "num": 383,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "判定要素の値をスクリプトで設定する" + newLine
@@ -28169,6 +28493,7 @@ const CMD = {
     },
     "INDEX_DIR_CAM": {
         "num": 384,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "詳細不明。メニューで使うものと思われる" + newLine
@@ -28177,6 +28502,7 @@ const CMD = {
     },
     "CNG_MT_LIGHT": {
         "num": 385,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルの元メッシュのマテリアルのEMISを変える" + newLine
@@ -28242,6 +28568,7 @@ const CMD = {
     },
     "ADD_OBJ_INDEX2": {
         "num": 386,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "事前に、IB_SET_W_MTでモデルインデックスでマテリアルを定義し" + newLine
@@ -28261,6 +28588,7 @@ const CMD = {
     },
     "CNG_MT_ALPHA": {
         "num": 387,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "モデルの元メッシュのマテリアルのAlphaを変える" + newLine
@@ -28270,6 +28598,7 @@ const CMD = {
     },
     "CREATE_MAT_ALPHA_INTERLIST": {
         "num": 388,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに、Alphaの変化を格納するListInterを作成する" + newLine
@@ -28292,6 +28621,7 @@ const CMD = {
     },
     "SET_MAT_ALPHA": {
         "num": 389,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに生成した" + newLine
@@ -28318,6 +28648,7 @@ const CMD = {
     },
     "RESTART_MESH_LIST": {
         "num": 390,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに定義したListInterを改めて動かす" + newLine
@@ -28344,6 +28675,7 @@ const CMD = {
     },
     "RAIL_ANIME_CHANGE": {
         "num": 391,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "レールモデルのバイナリに定義されたANIMEを実行する" + newLine
                     + "ストーリーモードのみ適用すると思われる" + newLine
@@ -28356,6 +28688,7 @@ const CMD = {
     },
     "STOP_COMIC_SE_ALL": {
         "num": 392,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "全てのSEを消す" + newLine
                     + "引数１：フェードアウトするフレーム時間（SSでは使わない）",
@@ -28534,6 +28867,7 @@ const CMD = {
     },
     "HURIKO": {
         "num": 393,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "指定車両の振り子機能を操作する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -28551,6 +28885,7 @@ const CMD = {
     },
     "FTV_PLAY_AND_PREV": {
         "num": 394,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "FTV_END_INHERITをした引数２のFVTに続いて、引数１のFVTを再生する" + newLine
                     + "互いのFVTは、同じ画像を使わないといけない" + newLine
@@ -28562,6 +28897,7 @@ const CMD = {
     },
     "FTV_END_INHERIT": {
         "num": 395,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "FTVを終了するが、FTV_PLAY_AND_PREVで引き継げるようにする" + newLine
                     + "引数１：FVT番号",
@@ -28574,6 +28910,7 @@ const CMD = {
     },
     "STATION_NAME_PRIORITY": {
         "num": 396,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "駅名表示を最前面に表示する" + newLine
                     + "（デフォルト状態は車両番号アイコンより下）" + newLine
@@ -28605,6 +28942,7 @@ const CMD = {
     },
     "ALL_FIT": {
         "num": 397,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "指定車両を傾かないようにする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -28675,6 +29013,7 @@ const CMD = {
     },
     "SWAP_TX": {
         "num": 398,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "テクスチャーを用意する" + newLine
@@ -28754,6 +29093,7 @@ const CMD = {
     },
     "CNG_TX": {
         "num": 399,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "マテリアルのテクスチャーを変える。SWAP_TXで変えたテクスチャーを適用する際に使う" + newLine
@@ -28834,6 +29174,7 @@ const CMD = {
     },
     "CHK_CAUSE": {
         "num": 400,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "選択したコースが引数１と一致する場合、引数２のFROMへ" + newLine
@@ -28914,6 +29255,7 @@ const CMD = {
     },
     "CNG_ANIME": {
         "num": 401,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "ANIMEを実行する。" + newLine
@@ -29004,6 +29346,7 @@ const CMD = {
     },
     "CHK_OUHUKU": {
         "num": 402,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "未完成。" + newLine
@@ -29049,6 +29392,7 @@ const CMD = {
     },
     "SET_TRAIN_PTCL_AREA": {
         "num": 403,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "効果がない。未実装と思われる。" + newLine
                     + "引数２の周りのパーティクルを操作するものと思われる" + newLine
@@ -29064,6 +29408,7 @@ const CMD = {
     },
     "WAIT_DOSAN_LENGTH": {
         "num": 404,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "土讃線をした場合、指定時間内にジャンプの高さが" + newLine
                     + "引数２の数値以下になると、次の行へ行く" + newLine
@@ -29082,6 +29427,7 @@ const CMD = {
     },
     "END_DOSAN_LENGTH": {
         "num": 405,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "WAIT_DOSAN_LENGTHで飛ぶ場合、この行で止める" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -29093,6 +29439,7 @@ const CMD = {
     },
     "DOSANSEN": {
         "num": 406,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "指定時間内に土讃線出来る区間まで来た場合、土讃線する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -29107,6 +29454,7 @@ const CMD = {
     },
     "MESH_INDEX_SE_UV_ANIME_FLG": {
         "num": 407,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュの移動変化を格納したUVの" + newLine
@@ -29126,6 +29474,7 @@ const CMD = {
     },
     "WEATHER": {
         "num": 408,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "雪のオブジェクトを生成する",
@@ -29135,6 +29484,7 @@ const CMD = {
     },
     "TRAIN_DIR": {
         "num": 409,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "CS・RSでは、指定車両を推進運転するように方向を変える" + newLine
                     + "SSでは、指定車両を折り返し運転するように方向を変える" + newLine
@@ -29196,6 +29546,7 @@ const CMD = {
     },
     "IS_USE_CHAR": {
         "num": 410,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "引数１の車両を使える場合、引数２のFROM数字へ" + newLine
@@ -29212,6 +29563,7 @@ const CMD = {
     },
     "QUICK_SAVE_EVENT": {
         "num": 411,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "効果なし" + newLine
                     + "途中で始められるQuickSaveのフラグ設定と思われる" + newLine
@@ -29235,6 +29587,7 @@ const CMD = {
     },
     "NONE_GOAL": {
         "num": 412,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "NONE_GOALのフラグを設定する" + newLine
                     + "これを活性化すると、イベントタイプ３で設定したゴール用のコミックスクリプトを" + newLine
@@ -29247,6 +29600,7 @@ const CMD = {
     },
     "ENGINE_STOP": {
         "num": 413,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "車両が気動車の場合、エンジンを止める" + newLine
                     + "SSではデキ３でも適用できる" + newLine
@@ -29260,6 +29614,7 @@ const CMD = {
     },
     "IS_BTL_MODE": {
         "num": 414,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "バトルモード（二人バトル）の場合、引数１のFROMへ" + newLine
                     + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
@@ -29289,6 +29644,7 @@ const CMD = {
     },
     "IS_FREE_MODE": {
         "num": 415,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "試運転モードの場合、引数１のFROMへ" + newLine
                     + "そうではない場合、引数２のFROMへ飛ぶ" + newLine
@@ -29307,6 +29663,7 @@ const CMD = {
     },
     "FIRST_OBJ_SET_ANIME_SCENE": {
         "num": 416,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "引数１で指定しているシーンに、" + newLine
                     + "レールデータで定義しているANIMEを続けて実行する" + newLine
@@ -29321,6 +29678,7 @@ const CMD = {
     },
     "G_HIDE_MESH": {
         "num": 417,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "引数１から引数２までの連続した" + newLine
@@ -29336,6 +29694,7 @@ const CMD = {
     },
     "G_SHOW_MESH": {
         "num": 418,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "引数１から引数２までの連続した" + newLine
@@ -29351,6 +29710,7 @@ const CMD = {
     },
     "STOP_WIPER": {
         "num": 419,
+        "comicscript": ["CS", "RS", "SS"],
         "description": "【CS、RS、SS】" + newLine
                     + "指定車両のワイパーを止める" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -29366,6 +29726,7 @@ const CMD = {
     },
     "TRAIN_ANIME_CHANGE": {
         "num": 420,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "車両に定義されているANIMEを実行する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -29378,6 +29739,7 @@ const CMD = {
     },
     "MESH_INDEX_UV_RESTRT": {
         "num": 421,
+        "mdlBin": ["CS", "RS"],
         "description": "【モデルバイナリ】" + newLine
                     + "【CS、RS】" + newLine
                     + "メッシュのマテリアルに定義したUVを改めて動かす" + newLine
@@ -29395,6 +29757,7 @@ const CMD = {
     },
     "SET_COMIC_COLOR": {
         "num": 422,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "コマにカラーを設定する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -29454,6 +29817,7 @@ const CMD = {
     },
     "CHK_OUTRUN_CNT": {
         "num": 423,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "バトル開始後、指定車両が今まで脱線した数を数えて" + newLine
                     + "指定数より以下の場合、引数３のFROMへ" + newLine
@@ -29470,6 +29834,7 @@ const CMD = {
     },
     "CHK_D_AND_NOTCH": {
         "num": 424,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "バトル開始後、指定車両が今まで" + newLine
                     + "ブレーキして、すぐノッチを入れる動作（パカパカ）が" + newLine
@@ -29483,6 +29848,7 @@ const CMD = {
     },
     "ADD_CPU_LEN_OUTRUN": {
         "num": 425,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "引数２で取得したCPUモードのminLenを引数３の数値を足して調整する" + newLine
                     + "ただし、引数３を取得できない不具合があると思われる" + newLine
@@ -29508,6 +29874,7 @@ const CMD = {
     },
     "ADD_CPU_SPEED_D_AND_NOTCH": {
         "num": 426,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "引数２で取得したCPUモードのmaxSpeedを引数３の数値を足して調整する" + newLine
                     + "ただし、引数３を取得できない不具合があると思われる" + newLine
@@ -29532,6 +29899,7 @@ const CMD = {
     },
     "CHK_HIT_CNT": {
         "num": 427,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "バトル開始後、指定車両が今までHIT（衝突など）した数を数えて" + newLine
                     + "引数２の数値より以下の場合、引数３のFROMへ" + newLine
@@ -29546,6 +29914,7 @@ const CMD = {
     },
     "TOP_SPEED_HOSYO": {
         "num": 428,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "引数１で取得したCPUモードのmaxSpeedが" + newLine
                     + "引数２より低い場合、maxSpeedを引数２の補正速度で変更する" + newLine
@@ -29567,6 +29936,7 @@ const CMD = {
     },
     "SET_ROOT_BLOCK": {
         "num": 429,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "詳細不明。レールのblock要素と何か関係あるかと思われる",
         "CS_comic": [
@@ -29576,6 +29946,7 @@ const CMD = {
     },
     "RIFT": {
         "num": 430,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "指定車両をパワーリフトする" + newLine
                     + "（前方の台車をちょっと持ち上げて、落とす）" + newLine
@@ -29586,6 +29957,7 @@ const CMD = {
     },
     "COLLISION": {
         "num": 431,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "未実装。衝突すると自走不能にするものと思われる",
         "CS_comic": [
@@ -29595,6 +29967,7 @@ const CMD = {
     },
     "DIR_VIEW_CHANGE": {
         "num": 432,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "指定車両の先頭車番と後尾車番を入れ替える" + newLine
                     + "※モデルバイナリの9-0、9-1を使う" + newLine
@@ -29609,6 +29982,7 @@ const CMD = {
     },
     "CHK_RAIL_NO": {
         "num": 433,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "指定車両がどのレールにいるかによって、FROMの分岐処理をする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -29622,6 +29996,7 @@ const CMD = {
     },
     "TRACK_CHANGE": {
         "num": 434,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "指定車両の台車を変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -29634,6 +30009,7 @@ const CMD = {
     },
     "CHK_LENGTH_DIR": {
         "num": 435,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "CSの推進運転専用の距離測定コマンド" + newLine
                     + "引数３、４同士の距離を比較する" + newLine
@@ -29654,6 +30030,7 @@ const CMD = {
     },
     "CHK_POS_DIR": {
         "num": 436,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "CSの推進運転専用の位置測定コマンド" + newLine
                     + "引数３、４同士の位置を比較する" + newLine
@@ -29674,6 +30051,7 @@ const CMD = {
     },
     "TRUE_CLASH": {
         "num": 437,
+        "comicscript": ["CS", "RS"],
         "description": "【CS、RS】" + newLine
                     + "CPUが脱線しやすく、回復し難くなる" + newLine
                     + "引数１：1（True）、0（False）",
@@ -29684,6 +30062,7 @@ const CMD = {
     },
     "KATARIN_RUN": {
         "num": 438,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "指定車両を指定角度で片輪走行させる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -29706,6 +30085,7 @@ const CMD = {
     },
     "DRAW_UI": {
         "num": 439,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "速度計やノッチなどのUIを設定する" + newLine
                     + "ただし、RSでは未実装であるため効果がなく、次の行へ行く" + newLine
@@ -29737,6 +30117,7 @@ const CMD = {
     },
     "STOP_SCRIPT_BGM": {
         "num": 440,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "指定スクリプトで再生しているBGMを止める" + newLine
                     + "引数１：スクリプト番号" + newLine
@@ -29785,6 +30166,7 @@ const CMD = {
     },
     "SET_STATION_NO": {
         "num": 441,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "初期に表示させる駅を決める" + newLine
                     + "引数１：0（1P）、1（2P）【SSでは読み込まない】" + newLine
@@ -29802,6 +30184,7 @@ const CMD = {
     },
     "SET_CPU_BREAKE": {
         "num": 442,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "CPUブレーキを設定する。CPUに指定したスピードまで落とす" + newLine
                     + "引数１に0を入れると効果はなく、1を指定するべき" + newLine
@@ -29810,6 +30193,7 @@ const CMD = {
     },
     "AMB_ANIME": {
         "num": 443,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "AMBモデルのANIMEを実行する" + newLine
                     + "引数１：ステージのAMB番号" + newLine
@@ -29822,6 +30206,7 @@ const CMD = {
     },
     "ONE_DRIFT_FALSE": {
         "num": 444,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両に火花を散らし" + newLine
                     + "ドリフトするたびにドリフト中の車両と、その次の車両の間が開く" + newLine
@@ -29834,6 +30219,7 @@ const CMD = {
     },
     "L_One_Drift": {
         "num": 445,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両を左片輪ドリフトさせる" + newLine
                     + "すでに片輪ドリフト状態の場合、解除する動作になる" + newLine
@@ -29845,6 +30231,7 @@ const CMD = {
     },
     "R_One_Drift": {
         "num": 446,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両を右片輪ドリフトさせる" + newLine
                     + "すでに片輪ドリフト状態の場合、解除する動作になる" + newLine
@@ -29852,12 +30239,14 @@ const CMD = {
     },
     "Ret_One_Drift": {
         "num": 447,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両の片輪ドリフト状態を解除する" + newLine
                     + "引数１：0（1P）、1（2P）"
     },
     "FRONT_JUMP": {
         "num": 448,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "車両の前の部分を、上げてから戻す動作をする" + newLine
                     + "具体的には引数３で始まり、引数４まで動かしてから、引数５まで動かす" + newLine
@@ -29875,6 +30264,7 @@ const CMD = {
     },
     "REAR_JUMP": {
         "num": 449,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "車両の後ろの部分を、上げてから戻す動作をする" + newLine
                     + "具体的には引数３で始まり、引数４まで動かしてから、引数５まで動かす" + newLine
@@ -29892,6 +30282,7 @@ const CMD = {
     },
     "FRONT_MOVE_X": {
         "num": 450,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "台車をずらした状態（片輪ドリフトなど）の場合" + newLine
                     + "前の部分をX軸にさらに動かす" + newLine
@@ -29906,6 +30297,7 @@ const CMD = {
     },
     "TRACK_MOVE": {
         "num": 451,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "車両の台車を動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -29924,6 +30316,7 @@ const CMD = {
     },
     "TRAIN_JUMP": {
         "num": 452,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "車両をジャンプさせる" + newLine
                     + "【RSの場合】" + newLine
@@ -29947,6 +30340,7 @@ const CMD = {
     },
     "SET_LIGHT": {
         "num": 453,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "指定車両のライト設定する" + newLine
                     + "RSの場合、全てのライトを消す" + newLine
@@ -29966,6 +30360,7 @@ const CMD = {
     },
     "SET_COL_KASENCHU": {
         "num": 454,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "ONE_DRIFT_FALSEと一緒に使うことで、ぶつけられる架線柱を設定する" + newLine
                     + "ただし、ぶつけたモデルが一定数を超えると、判定が消える" + newLine
@@ -29977,6 +30372,7 @@ const CMD = {
     },
     "SET_KAISO": {
         "num": 455,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "指定車両に回送幕を設定する" + newLine
                     + "※車両に定義されているモデルバイナリの9-4、9-5を使う" + newLine
@@ -29989,6 +30385,7 @@ const CMD = {
     },
     "SET_FOR": {
         "num": 456,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両の前照灯・方向幕のライトを設定する" + newLine
                     + "※車両に定義されているモデルバイナリの9-6、9-7を使う" + newLine
@@ -30002,6 +30399,7 @@ const CMD = {
     },
     "CHK_TRAIN_COL": {
         "num": 457,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定時間内に車両にぶつけた場合、引数２のFROMへ" + newLine
                     + "そうではない場合、引数３のFROMへ飛ぶ" + newLine
@@ -30016,6 +30414,7 @@ const CMD = {
     },
     "VOL_SCRIPT_BGM": {
         "num": 458,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "指定スクリプトで再生しているBGMのVolumeを変える" + newLine
                     + "引数１：スクリプト番号" + newLine
@@ -30095,6 +30494,7 @@ const CMD = {
     },
     "IF_NOTCH": {
         "num": 459,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両の現在ノッチが、引数２で指定した数の場合、引数３のFROMへ" + newLine
                     + "そうではない場合、引数４のFROMへ飛ぶ" + newLine
@@ -30108,6 +30508,7 @@ const CMD = {
     },
     "SET_BRIND_SW": {
         "num": 460,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "カメラをデフォルトに戻す" + newLine
                     + "※RSでは未定義のコマンドである" + newLine
@@ -30123,6 +30524,7 @@ const CMD = {
     },
     "SET_MIKOSHI": {
         "num": 461,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "スクリプト内のイメージを暴れ神輿のように表示する" + newLine
                     + "引数１：画像サイズ情報のインデックス" + newLine
@@ -30135,6 +30537,7 @@ const CMD = {
     },
     "ADD_FIRE": {
         "num": 462,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "車輪に一瞬だけ火花を散らす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30149,6 +30552,7 @@ const CMD = {
     },
     "BREAKE_OR_HIT": {
         "num": 463,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定時間内にブレーキした場合、引数１のFROMへ" + newLine
                     + "指定時間内にぶつけた場合は引数２のFROMへ飛ぶ" + newLine
@@ -30162,6 +30566,7 @@ const CMD = {
     },
     "OUTRUN": {
         "num": 464,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両を強制脱線させる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30175,6 +30580,7 @@ const CMD = {
     },
     "SOFT_ATK": {
         "num": 465,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "指定車両がぶつけても、脱線しないようにする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30187,11 +30593,13 @@ const CMD = {
     },
     "RAIL_STOP": {
         "num": 466,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "未実装コマンド"
     },
     "CHANGE_OUHUKU_LINE": {
         "num": 467,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "往復マップの場合、指定車両の方向を逆にする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30207,6 +30615,7 @@ const CMD = {
     },
     "BRIND_ATK": {
         "num": 468,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "ブラインドアタックする" + newLine
                     + "※RSでは、車両に定義されているモデルバイナリの9-2、9-3を使う" + newLine
@@ -30227,6 +30636,7 @@ const CMD = {
     },
     "OPEN_POS_DLG": {
         "num": 469,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "未実装コマンド",
         "RS_comic": [
@@ -30235,6 +30645,7 @@ const CMD = {
     },
     "PLAY_STAGEBGM_BLOCK": {
         "num": 470,
+        "comicscript": ["RS", "SS"],
         "description": "【RS、SS】" + newLine
                     + "指定したBGMを、指定時間からスタートする" + newLine
                     + "引数１：ステージのBGM番号" + newLine
@@ -30246,6 +30657,7 @@ const CMD = {
     },
     "SET_BTL_POINT": {
         "num": 471,
+        "comicscript": ["RS"],
         "description": "【RS】" + newLine
                     + "バトルポイントを指定したポイントに変更する" + newLine
                     + "引数１：配列のインデックス（0～2）" + newLine
@@ -30253,6 +30665,7 @@ const CMD = {
     },
     "CAM_TRAIN": {
         "num": 472,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "車両カメラモードに設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30273,6 +30686,7 @@ const CMD = {
     },
     "PLAY_SCRIPT_BGM": {
         "num": 473,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定スクリプトで再生しているBGMを再生する" + newLine
                     + "引数１：スクリプト番号" + newLine
@@ -30317,6 +30731,7 @@ const CMD = {
     },
     "CNG_FOR": {
         "num": 474,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "車両の方向幕を変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30363,6 +30778,7 @@ const CMD = {
     },
     "SET_RAILBLOCK_CHECKER": {
         "num": 475,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の現在レールをチェックして" + newLine
                     + "0にすると、レール表示基準のblockを-1に" + newLine
@@ -30412,6 +30828,7 @@ const CMD = {
     },
     "RAIN_SE": {
         "num": 476,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の雨SEを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30420,6 +30837,7 @@ const CMD = {
     },
     "TRAIN_STOP": {
         "num": 477,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "車両を止める。速度を維持したままゲーム画面が止まる効果になる" + newLine
                     + "引数１：1（True）、0（False）",
@@ -30452,6 +30870,7 @@ const CMD = {
     },
     "KOTEICAM_BLEND": {
         "num": 478,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "固定カメラモードから、SET_CAMPOINT_2P2Cで変わるときのアニメーションを与える" + newLine
                     + "引数１：固定カメラ位置と、SET_CAMPOINT_2P2Cで決めたカメラ位置のPER" + newLine
@@ -30466,6 +30885,7 @@ const CMD = {
     },
     "SCRIPT_RAIN": {
         "num": 479,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "スクリプトで雨を調整する" + newLine
                     + "引数１" + newLine
@@ -30504,6 +30924,7 @@ const CMD = {
     },
     "LINE_CHANGE": {
         "num": 480,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両を転線させる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30524,6 +30945,7 @@ const CMD = {
     },
     "WAIT_RAIL_MORE_ONLY": {
         "num": 481,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両が最大４つのレール番号の中、どれか通過するまでずっと待つ。" + newLine
                     + "どれか通過した場合、次の行へ行く" + newLine
@@ -30542,6 +30964,7 @@ const CMD = {
     },
     "SET_SE_VOL": {
         "num": 482,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "全般的なSEのVolumeを変える" + newLine
                     + "引数１：Volume" + newLine
@@ -30567,6 +30990,7 @@ const CMD = {
     },
     "CAM_TARGET_TRACK": {
         "num": 483,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "カメラの注視点を指定車両の指定台車に変える" + newLine
                     + "引数１：カメラ番号" + newLine
@@ -30579,6 +31003,7 @@ const CMD = {
     },
     "DECAL_D37": {
         "num": 484,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にD37の白楽でぶつけた傷をつける" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -30589,6 +31014,7 @@ const CMD = {
     },
     "DECAL_D39": {
         "num": 485,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にD39のトンネルでぶつけた傷をつける" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -30598,6 +31024,7 @@ const CMD = {
     },
     "DECAL_SMOKE": {
         "num": 486,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にDECALが付いた場合、煙をつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30609,6 +31036,7 @@ const CMD = {
     },
     "RAIL_PRIORITY": {
         "num": 487,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "レールのpriorityを設定する" + newLine
                     + "引数１：レールindex" + newLine
@@ -30616,6 +31044,7 @@ const CMD = {
     },
     "GET_KEY": {
         "num": 488,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "【推測】引数１が0より小さく、キーのx軸が左の場合、引数３のFROMへ" + newLine
                     + "または引数１が0より大きく、キーのx軸が右の場合、引数３のFROMへ飛ぶ" + newLine
@@ -30627,6 +31056,7 @@ const CMD = {
     },
     "SHOW_LIGHT": {
         "num": 489,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にライトを付ける。同時にブラインドアタックも終わる" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30637,6 +31067,7 @@ const CMD = {
     },
     "SHOW_IN_LIGHT": {
         "num": 490,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両に内側のライトを付ける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30647,6 +31078,7 @@ const CMD = {
     },
     "FOG_POW": {
         "num": 491,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ブラインドアタック時、車両自体のfogフィルターを調整する" + newLine
                     + "fog値が大きいほど、かなりカメラを近づけないと見えない" + newLine
@@ -30662,6 +31094,7 @@ const CMD = {
     },
     "STORY_WIN": {
         "num": 492,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ストーリーモードの場合、" + newLine
                     + "ゴール時のスクリプト（タイプ4）を実行する",
@@ -30671,6 +31104,7 @@ const CMD = {
     },
     "RAIN_PARTICLE": {
         "num": 493,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "窓の水滴効果とか、雨のAMBモデルをつけたり消したりする" + newLine
                     + "引数１：1（True）、0（False）",
@@ -30707,6 +31141,7 @@ const CMD = {
     },
     "D39_FIRE": {
         "num": 494,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にD39のトンネルでぶつける際の火花をつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30717,6 +31152,7 @@ const CMD = {
     },
     "SET_CPU_SPEED": {
         "num": 495,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "CPUの急加速補正を引数１の分、増やす" + newLine
                     + "引数１：増やすスピード" + newLine
@@ -30770,6 +31206,7 @@ const CMD = {
     },
     "BODY_AUDIO_PLAY": {
         "num": 496,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両から出ている、スクリプトのSEを再生する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30781,6 +31218,7 @@ const CMD = {
     },
     "BODY_AUDIO_STOP": {
         "num": 497,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両から出ている、スクリプトのSEを止める",
         "SS_comic": [
@@ -30790,6 +31228,7 @@ const CMD = {
     },
     "CNG_FADE_SPRITE": {
         "num": 498,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "フェードする際、指定の画像を使う" + newLine
                     + "引数が-1の場合、黒い画像を使う" + newLine
@@ -30806,6 +31245,7 @@ const CMD = {
     },
     "RAIL_DRIFT_CHK": {
         "num": 499,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "CPUのレールデータによるドリフトの設定をする" + newLine
                     + "0に設定すると、CPUはレールによるドリフトをしない" + newLine
@@ -30819,6 +31259,7 @@ const CMD = {
     },
     "INQ_WAIT": {
         "num": 500,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "レコード記録を閉じるまで待つ",
         "SS_comic": [
@@ -30832,6 +31273,7 @@ const CMD = {
     },
     "CNG_SCCAM_TRAIN": {
         "num": 501,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "カメラを変える" + newLine
                     + "引数１：カメラ番号" + newLine
@@ -30840,6 +31282,7 @@ const CMD = {
     },
     "STOP_TRAIN_SE": {
         "num": 502,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "車両から出るSE（ドリフトジャンプ音、衝突音、クラッシュ音など）を止める" + newLine
                     + "引数１：1（True）、0（False）",
@@ -30877,6 +31320,7 @@ const CMD = {
     },
     "PLAY_SCRIPT_BGM_TIME": {
         "num": 503,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定スクリプトで再生しているBGMを再生する" + newLine
                     + "PLAY_SCRIPT_BGMと似ているが、このコマンドは開始する時間まで設定できる" + newLine
@@ -30892,6 +31336,7 @@ const CMD = {
     },
     "CNG_BODY_COLOR": {
         "num": 504,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両のカラーバリエーションを変える" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30899,6 +31344,7 @@ const CMD = {
     },
     "LOAD_TRAIN": {
         "num": 505,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両を車両インデックスで改めてロードする。" + newLine
                     + "ロードした車両は必ずSLEEP_TRAIN状態になる。" + newLine
@@ -30909,6 +31355,7 @@ const CMD = {
     },
     "SHOW_BLOCK": {
         "num": 506,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "あるブロックに含まれた、レールモデルの表示設定する" + newLine
                     + "引数１：ブロックNo。-1の場合、全てのブロック" + newLine
@@ -30924,6 +31371,7 @@ const CMD = {
     },
     "UPDATE_LIGHT_FRARE": {
         "num": 507,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ライトフレアを更新する",
         "SS_comic": [
@@ -30938,6 +31386,7 @@ const CMD = {
     },
     "WAIT_RAIL_MORE_GOTO": {
         "num": 508,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両が、指定時間内にレールを通過するとFROMへ飛ばす。" + newLine
                     + "通過できなかった場合、END_WAIT_RAILまで飛ぶ" + newLine
@@ -30974,6 +31423,7 @@ const CMD = {
     },
     "CREATE_AURA": {
         "num": 509,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にオーラを生成する" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -30984,6 +31434,7 @@ const CMD = {
     },
     "AURA_ALPHA": {
         "num": 510,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "オーラのAlphaを調整する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -30997,6 +31448,7 @@ const CMD = {
     },
     "SET_LV_JUMP": {
         "num": 511,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "高くジャンプするイベントで、指定車両のジャンプの高さを調整する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31008,6 +31460,7 @@ const CMD = {
     },
     "CREATE_EFFECT_CAM": {
         "num": 512,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトを生成する",
         "SS_comic": [
@@ -31023,6 +31476,7 @@ const CMD = {
     },
     "TO_EFFECT_CAM": {
         "num": 513,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にエフェクトをつける" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31033,6 +31487,7 @@ const CMD = {
     },
     "EFFECT_CAM_POW": {
         "num": 514,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトのfogの濃さを調整する" + newLine
                     + "引数１：濃さ" + newLine
@@ -31051,6 +31506,7 @@ const CMD = {
     },
     "EFFECT_CAM_COLOR": {
         "num": 515,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトのfogの色を調整する" + newLine
                     + "引数１：R" + newLine
@@ -31069,6 +31525,7 @@ const CMD = {
     },
     "EFFECT_CAM_ALPHA": {
         "num": 516,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトのAlpha値を調整する" + newLine
                     + "引数１：Alpha値" + newLine
@@ -31095,6 +31552,7 @@ const CMD = {
     },
     "HIDE_LIGHT": {
         "num": 517,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の外側のライトを消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31106,6 +31564,7 @@ const CMD = {
     },
     "USE_EFFECT_CAM": {
         "num": 518,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "カメラに、適用したエフェクト効果を見れるように設定する" + newLine
                     + "引数１：1（True）、0（False）" + newLine
@@ -31116,6 +31575,7 @@ const CMD = {
     },
     "USE_EFFECT_CAM_RGB": {
         "num": 519,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "カメラに、適用したエフェクト効果を見れるようにし" + newLine
                     + "同時にfogをRGBに分解された効果も見れるように設定する" + newLine
@@ -31134,6 +31594,7 @@ const CMD = {
     },
     "EFFECT_CAM_RGB": {
         "num": 520,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトのfogの色を、RGBに分解して表示する" + newLine
                     + "引数１：分解程度" + newLine
@@ -31146,6 +31607,7 @@ const CMD = {
     },
     "COPY_TRAIN_POS": {
         "num": 521,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の現在レール位置をコピーして" + newLine
                     + "別の指定車両にTO_RAILを適用する" + newLine
@@ -31162,6 +31624,7 @@ const CMD = {
     },
     "COL_SET": {
         "num": 522,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にぶつけ判定を設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31176,6 +31639,7 @@ const CMD = {
     },
     "CNG_CPU_TRAIN": {
         "num": 523,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "CPU操作を指定車両に変える" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31185,6 +31649,7 @@ const CMD = {
     },
     "BTN_GOTO": {
         "num": 524,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ボタンを押すと、GOTOコマンドのように実行する" + newLine
                     + "引数１：FROM数字",
@@ -31200,6 +31665,7 @@ const CMD = {
     },
     "NO_TIMESCALE_KOMA": {
         "num": 525,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ゲームのFPS速度に合わせてコマの効果を適用する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -31238,6 +31704,7 @@ const CMD = {
     },
     "EFFCAM_NOIZE": {
         "num": 526,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトのノイズを調整する" + newLine
                     + "引数１：ノイズ値" + newLine
@@ -31250,6 +31717,7 @@ const CMD = {
     },
     "EFFCAM_GRI": {
         "num": 527,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトのグリッチを調整する" + newLine
                     + "引数１：グリッチ値" + newLine
@@ -31262,6 +31730,7 @@ const CMD = {
     },
     "EFFCAM_BLOCKNOISE": {
         "num": 528,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "エフェクトのブロックノイズを調整する" + newLine
                     + "引数１：ブロックノイズ値" + newLine
@@ -31274,6 +31743,7 @@ const CMD = {
     },
     "CREATE_TQ5000_FLAGMENT": {
         "num": 529,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "東急5000系の破片の効果を生成する",
         "SS_comic": [
@@ -31282,6 +31752,7 @@ const CMD = {
     },
     "USE_TQ5000_FLAGMENT": {
         "num": 530,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両に東急5000系の破片の効果を適用する" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31291,6 +31762,7 @@ const CMD = {
     },
     "TQ5000_FLAGPOS": {
         "num": 531,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "東急5000系の破片の位置を調整する" + newLine
                     + "引数１：位置" + newLine
@@ -31302,6 +31774,7 @@ const CMD = {
     },
     "HUMIKIRI_VOL": {
         "num": 532,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "踏切のVolumeを調整する" + newLine
                     + "引数１：踏切のVolume" + newLine
@@ -31320,6 +31793,7 @@ const CMD = {
     },
     "TO_EFFECT_CAM_BODY": {
         "num": 533,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両のインデックスにエフェクトをつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31334,6 +31808,7 @@ const CMD = {
     },
     "TO_NORM_CAM": {
         "num": 534,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両のエフェクトをノーマルに変える" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31348,6 +31823,7 @@ const CMD = {
     },
     "TO_920": {
         "num": 535,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両が4050系の場合、920系にする" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31362,6 +31838,7 @@ const CMD = {
     },
     "NO_TIMESCALE_FVT": {
         "num": 536,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ゲームのFPS速度に合わせてFVT効果を適用する" + newLine
                     + "引数１：FVTの番号",
@@ -31403,6 +31880,7 @@ const CMD = {
     },
     "CNG_TARGET_BODY": {
         "num": 537,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "カメラを注視点を、指定号車のインデックスに変える" + newLine
                     + "引数１：カメラ番号" + newLine
@@ -31423,6 +31901,7 @@ const CMD = {
     },
     "SC_ADD_POINT": {
         "num": 538,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "実行しているスクリプトの内部ポイントに加算する" + newLine
                     + "引数１：ポイント",
@@ -31437,6 +31916,7 @@ const CMD = {
     },
     "CHK_SC_POINT": {
         "num": 539,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定したスクリプトの内部ポイントが" + newLine
                     + "指定ポイントより以上の場合、引数３のFROMへ" + newLine
@@ -31452,6 +31932,7 @@ const CMD = {
     },
     "KAISO_TO_DUEL": {
         "num": 540,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の方向幕を回送から競技に変える" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31461,6 +31942,7 @@ const CMD = {
     },
     "SHOW_ST": {
         "num": 541,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定した駅インデックスで、駅名を表示する" + newLine
                     + "引数１：駅インデックス",
@@ -31472,6 +31954,7 @@ const CMD = {
     },
     "ORG_UPDATE": {
         "num": 542,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "OPのみ使われる。車両の位置をUpdateする" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31482,6 +31965,7 @@ const CMD = {
     },
     "SET_RAILBLOCK_POS": {
         "num": 543,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "OPのみ使われる。レールブロックを移す" + newLine
                     + "引数１：ブロック番号" + newLine
@@ -31497,6 +31981,7 @@ const CMD = {
     },
     "SET_LIGHT_OVER": {
         "num": 544,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定のコマを光らせる" + newLine
                     + "引数１：コマの番号" + newLine
@@ -31511,6 +31996,7 @@ const CMD = {
     },
     "CREATE_STAFFROLL": {
         "num": 545,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "スタッフロールを生成する",
         "SS_comic": [
@@ -31519,6 +32005,7 @@ const CMD = {
     },
     "STAFFROLL_START": {
         "num": 546,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "スタッフロールを流す" + newLine
                     + "引数１：0（作成）、1（見せる）、2（ロゴを見せる）",
@@ -31528,6 +32015,7 @@ const CMD = {
     },
     "WAIT_STAFFROLL": {
         "num": 547,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "作成したスタッフロールが終わるまで待つ",
         "SS_comic": [
@@ -31536,6 +32024,7 @@ const CMD = {
     },
     "SC_OUTRUN": {
         "num": 548,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "スクリプトで脱線させる。またライトも消す" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31550,6 +32039,7 @@ const CMD = {
     },
     "CREATE_TAKMIS": {
         "num": 549,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "タクミサイルを生成する",
         "SS_comic": [
@@ -31558,6 +32048,7 @@ const CMD = {
     },
     "SET_TAKMIS_POS": {
         "num": 550,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "タクミサイルの位置を調整する" + newLine
                     + "引数１：x座標" + newLine
@@ -31571,6 +32062,7 @@ const CMD = {
     },
     "SET_TAKMIS_ALPHA": {
         "num": 551,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "タクミサイルのAlphaを調整する" + newLine
                     + "引数１：Alpha値" + newLine
@@ -31582,6 +32074,7 @@ const CMD = {
     },
     "FRONT_DOOR": {
         "num": 552,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "先頭車のドアを開く" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31606,6 +32099,7 @@ const CMD = {
     },
     "SET_KOMA_DEPTH": {
         "num": 553,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "コマのDepthを設定する" + newLine
                     + "引数１：Depth値",
@@ -31624,6 +32118,7 @@ const CMD = {
     },
     "D37_FIRE": {
         "num": 554,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にD37の白楽でぶつけた際の火花をつける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31635,6 +32130,7 @@ const CMD = {
     },
     "AMB_HIT_WAIT": {
         "num": 555,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の指定号車が、指定時間内にAMBにぶつけた場合、指定のFROMに飛ばす" + newLine
                     + "指定時間内にぶつけなかったり、指定レールを通過した場合、引数９のFROMに飛ばす" + newLine
@@ -31653,6 +32149,7 @@ const CMD = {
     },
     "ShowRecord": {
         "num": 556,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "レコードを見せる",
         "SS_comic": [
@@ -31661,6 +32158,7 @@ const CMD = {
     },
     "FIT_PER": {
         "num": 557,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の片輪走行時、傾むく程度（PER）を調整する" + newLine
                     + "カーブの強さは変わらない" + newLine
@@ -31682,6 +32180,7 @@ const CMD = {
     },
     "CREATE_COMIC_PC": {
         "num": 558,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ComicParticleを生成する",
         "SS_comic": [
@@ -31692,6 +32191,7 @@ const CMD = {
     },
     "SET_COMIC_PC": {
         "num": 559,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ComicParticleを設定する" + newLine
                     + "引数１：コマの番号" + newLine
@@ -31705,6 +32205,7 @@ const CMD = {
     },
     "PAUSE_STAGE_BGM": {
         "num": 560,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ステージBGMを一時停止する" + newLine
                     + "引数１：ステージBGMの番号" + newLine
@@ -31716,6 +32217,7 @@ const CMD = {
     },
     "SET_KAKAPO": {
         "num": 561,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "KAKAPO動きを設定する" + newLine
                     + "引数１：長さ" + newLine
@@ -31730,6 +32232,7 @@ const CMD = {
     },
     "KOMA_KAKAPO": {
         "num": 562,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "コマをKAKAPO動きにする" + newLine
                     + "引数１：コマの番号" + newLine
@@ -31740,6 +32243,7 @@ const CMD = {
     },
     "START_TARBINE": {
         "num": 563,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "タービンを動かすアニメが始まる" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31755,6 +32259,7 @@ const CMD = {
     },
     "END_TARBINE": {
         "num": 564,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "タービンを動かすアニメが終わる" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -31770,6 +32275,7 @@ const CMD = {
     },
     "TARBINE_FTV_START": {
         "num": 565,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "タービンを動かすとき、再生するFVTを設定する" + newLine
                     + "試運転やバトルモードは、必ず引数３を再生する" + newLine
@@ -31789,6 +32295,7 @@ const CMD = {
     },
     "TARBINE_FTV_END": {
         "num": 566,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "TARBINE_FTV_STARTで再生しているFVTを終了する",
         "SS_comic": [
@@ -31803,6 +32310,7 @@ const CMD = {
     },
     "STORY_ENGINE": {
         "num": 567,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ストーリーモードで、エンジンを発動する",
         "SS_comic": [
@@ -31814,6 +32322,7 @@ const CMD = {
     },
     "RAND_GOTO": {
         "num": 568,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "最大４つのFROM数字の中で、ランダムに選んで飛ばす" + newLine
                     + "-1のFROM数字は、ランダム対象から無視される" + newLine
@@ -31832,6 +32341,7 @@ const CMD = {
     },
     "KQ_SOUND": {
         "num": 569,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "京急過給時のコマンド" + newLine
                     + "引数１：オプションで過給時BGM変更をONにした場合" + newLine
@@ -31848,6 +32358,7 @@ const CMD = {
     },
     "STORY_GOTO": {
         "num": 570,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ストーリーモードではない場合、必ず引数３のFROMへ飛ばす" + newLine
                     + "ストーリーモードの場合、乗り手によって引数１や２のFROMへ飛ばす" + newLine
@@ -31867,6 +32378,7 @@ const CMD = {
     },
     "PLAY223HONE": {
         "num": 571,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にミュージックホーンを鳴らす" + newLine
                     + "【JR223系、ミュースカイ、パノスパ" + newLine
@@ -31882,6 +32394,7 @@ const CMD = {
     },
     "RB26": {
         "num": 572,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両にRB26のコマンド" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31912,6 +32425,7 @@ const CMD = {
     },
     "PLAYORGSE": {
         "num": 573,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両に固有なSEがある場合、そのSEを鳴らす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31939,6 +32453,7 @@ const CMD = {
     },
     "H2300_GOAL": {
         "num": 574,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "阪急2300系やAE86が勝った場合、固有のSEを鳴らす",
         "SS_comic": [
@@ -31947,6 +32462,7 @@ const CMD = {
     },
     "DEKI_BACK_OPEN": {
         "num": 575,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３の後ろを開ける" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31962,6 +32478,7 @@ const CMD = {
     },
     "DEKI_GN_MOVE": {
         "num": 576,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３のGNを動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31977,6 +32494,7 @@ const CMD = {
     },
     "DEKI_TAMIYA_START": {
         "num": 577,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３のTAMIYAマークを動かす" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -31992,6 +32510,7 @@ const CMD = {
     },
     "DEKI_GN_START": {
         "num": 578,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３の上り調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -32010,6 +32529,7 @@ const CMD = {
     },
     "DEKI_SOUND": {
         "num": 579,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３の本調子時のコマンド" + newLine
                     + "引数１：オプションで上り調子時BGM変更をONにした場合" + newLine
@@ -32032,6 +32552,7 @@ const CMD = {
     },
     "DEKI_USE_TRANSAM": {
         "num": 580,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３の本調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -32049,6 +32570,7 @@ const CMD = {
     },
     "DEKI_FRONT_OPEN": {
         "num": 581,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３の本調子を発動時、前の部分を開く" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -32063,11 +32585,13 @@ const CMD = {
     },
     "REV_DRIFT": {
         "num": 582,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "何もせず次の行へ行く。未実装のように見える"
     },
     "DEKI_GN_STOP": {
         "num": 583,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "デキ３の上り調子を止める" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -32085,6 +32609,7 @@ const CMD = {
     },
     "STORY_GN": {
         "num": 584,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "ストーリーモードで上り調子を発動する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
@@ -32092,6 +32617,7 @@ const CMD = {
     },
     "IS_ONE_TRACK_DRIFT": {
         "num": 585,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両が、単線ドリフト出来る場合、引数２のFROMへ" + newLine
                     + "出来ない場合、引数３のFROMへ飛ばす" + newLine
@@ -32104,6 +32630,7 @@ const CMD = {
     },
     "RESET_BLOCK": {
         "num": 586,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "指定車両の現在レールをチェックして" + newLine
                     + "レール表示基準のblockを、現在レールのblockに変える" + newLine
@@ -32111,6 +32638,7 @@ const CMD = {
     },
     "IS_BTLMODE_END_CHK": {
         "num": 587,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "バトルモードの場合、1Pが自走不能になった場合、引数１のスクリプトを" + newLine
                     + "2Pが自走不能に場合、引数２のスクリプトを読み込む" + newLine
@@ -32122,6 +32650,7 @@ const CMD = {
     },
     "SHOW_WIN_TRAIN": {
         "num": 588,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "バトルモードで、どの車両が勝利したか見せる",
         "SS_cmn": [
@@ -32131,6 +32660,7 @@ const CMD = {
     },
     "NO_RUN": {
         "num": 589,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "バトルモードで、指定車両を自走不能とみなす" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -32141,6 +32671,7 @@ const CMD = {
     },
     "COMIC_TO_BTL": {
         "num": 590,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "コミックのコマをバトルモードに適用する" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -32155,6 +32686,7 @@ const CMD = {
     },
     "SET_MSGWND_INDEX": {
         "num": 591,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "メッセージ枠のインデックスを設定する" + newLine
                     + "引数１：0（1P）、1（2P）",
@@ -32177,6 +32709,7 @@ const CMD = {
     },
     "SET_AMB_BOX": {
         "num": 592,
+        "comicscript": ["SS"],
         "description": "【SS】" + newLine
                     + "AMB_BOXのAlphaを設定する" + newLine
                     + "引数１：0（1P）、1（2P）" + newLine
