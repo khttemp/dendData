@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        .treeview ul {
+            list-style: none;
+        }
+
+        details > summary::marker {
+            content: "(+) ";
+        }
+        details[open] > summary::marker {
+            content: "(-) ";
+        }
+    </style>
+    <body>
+        <details>
+            <summary>StageTblMgr.Open()</summary>
+            <ul>
+                <li>rail_list[] StageTblMgr.RailList</li>
+                <li>
+                    <details>
+                        <summary>cGameMgr._loadstage()<br> -> cGameMgr._LoadStageComp(true)</summary>
+                        <ul>
+                            <li>
+                                <details>
+                                    <summary>cGameMgr.mRailMgr.DeleteRailList()</summary>
+                                    <ul>
+                                        <li>RailMgr.RailList = new List</li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>
+                                        cGameMgr._CreateStage()
+                                        <br> -> cGameMgr.mRailMgr.CreateStage(cGameMgr.mMdlMgr, cGameMgr.mAmbMgr)
+                                        <br> -> cGameMgr.mRailMgr.CreateStage_(cGameMgr.mMdlMgr, cGameMgr.mAmbMgr)
+                                    </summary>
+                                    <ul>
+                                        <li>
+                                            <details>
+                                                <summary>StageTblMgr.RailList文繰り返し</summary>
+                                                <ul>
+                                                    <li>Rail rail = cGameMgr.mRailMgr.CreateRail(mdl_no, i)</li>
+                                                    <li>cGameMgr.mRailMgr.RailList.Add(rail)</li>
+                                                </ul>
+                                            </details>
+                                        </li>
+                                        <li>
+                                            <details>
+                                                <summary>cGameMgr.mRailMgr._Init()</summary>
+                                                <ul>
+                                                    <li>
+                                                        <details>
+                                                            <summary>
+                                                                cGameMgr.mRailMgr.Init()
+                                                            </summary>
+                                                            <ul>
+                                                                <li>
+                                                                    <details>
+                                                                        <summary>
+                                                                            Rail.CallAutoSet()
+                                                                            <br> -> Rail.AutoSet()
+                                                                            <br> -> RailLineList = new RailLine[]
+                                                                            <br> -> RailLine.Next.Add(RailLine)
+                                                                            <br> -> RailLine.Prev.Add(RailLine)
+                                                                            <br> -> Rail.UpdateDir()
+                                                                        </summary>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <details>
+                                                                                    <summary>
+                                                                                        Rail.MathLength()※1回目
+                                                                                        <br> -> RailLine.MathLength()
+                                                                                        <br>(全レールのボーン０～ボーン７まで検査)
+                                                                                    </summary>
+                                                                                    <ul>
+                                                                                        <li>
+                                                                                            ※NullRemoveの動作は
+                                                                                            <br>Next、Prevのリストの要素を調べて
+                                                                                            <br>1. Next、Prevが「null」の値
+                                                                                            <br>2. 重複した要素
+                                                                                            <br>3. RailのBaseのPositionからNext、Prevの要素の距離が100を超えると
+                                                                                            <br>不正とみなす
+                                                                                            <br>※3の場合、「～ Length100!!」とログに表示される
+                                                                                        </li>
+                                                                                        <li>RailLine.NullRemove(RailLine.Next)</li>
+                                                                                        <li>RailLine.NullRemove(RailLine.Prev)</li>
+                                                                                    </ul>
+                                                                                </details>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </details>
+                                                                </li>
+                                                                <li>
+                                                                    <details>
+                                                                        <summary>
+                                                                            cGameMgr.mRailMgr.InitPos()
+                                                                        </summary>
+                                                                        <ul>
+                                                                            <li>RailMgr.RailLineChk(index, prev)</li>
+                                                                        </ul>
+                                                                    </details>
+                                                                </li>
+                                                            </ul>
+                                                        </details>
+                                                    </li>
+                                                    <li>
+                                                        <details>
+                                                            <summary>cGameMgr.mRailMgr.MathLengthAll()</summary>
+                                                            <ul>
+                                                                <li>
+                                                                    <details>
+                                                                        <summary>RailMgr.RailList分、繰り返し</summary>
+                                                                        <ul>
+                                                                            <li>Rail.MathLength()※2回目</li>
+                                                                        </ul>
+                                                                    </details>
+                                                                </li>
+                                                            </ul>
+                                                        </details>
+                                                    </li>
+                                                    <li>
+                                                        <details>
+                                                            <summary>cGameMgr.mRailMgr.UpdateAll()</summary>
+                                                            <ul>
+                                                                <li>
+                                                                    <details>
+                                                                        <summary>RailMgr.RailList分、繰り返し</summary>
+                                                                        <ul>
+                                                                            <li>
+                                                                                <details>
+                                                                                    <summary>RailMgr.UpdateRail()</summary>
+                                                                                    <ul>
+                                                                                        <li>
+                                                                                            Rail.UpdateDir()
+                                                                                            <br> -> Rail.MathLength()※3回目
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </details>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </details>
+                                                                </li>
+                                                            </ul>
+                                                        </details>
+                                                    </li>
+                                                </ul>
+                                            </details>
+                                        </li>
+                                        <li>
+                                            <details>
+                                                <summary>cGameMgr.mRailMgr.AllRailLenghChk()</summary>
+                                            </details>
+                                            <ul>
+                                                <li>
+                                                    <details>
+                                                        <summary>cGameMgr.mRailMgr.RailList文繰り返し</summary>
+                                                        <ul>
+                                                            <li>
+                                                                ※別レールへドリフト出来るフラグがある場合
+                                                                <br>cGameMgr.mRailMgr.RailLengthChk(rail)
+                                                            </li>
+                                                        </ul>
+                                                    </details>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <details>
+                                                <summary>cGameMgr.mRailMgr.CreateAmb(mMdlMgr, mAmbMgr)</summary>
+                                                <ul>
+                                                    <li>
+                                                        <details>
+                                                            <summary>
+                                                                cGameMgr.mRailMgr.CreateAmbCop(true)
+                                                                <br> -> cGameMgr._StageCreateComp(true)
+                                                            </summary>
+                                                            <ul>
+                                                                <li>list = cGameMgr.mRailMgr.ChkNullRail(false, true)</li>
+                                                                <li>
+                                                                    <details>
+                                                                        <summary>cGameMgr.mRailMgr.NullRailRec(list)</summary>
+                                                                        <ul>
+                                                                            <li>
+                                                                                ※StageTblMgrのNext情報を元に、再度繋がりテスト
+                                                                                <br> -> RailMgr.RailLineChk(next_rail_index, index)
+                                                                            </li>
+                                                                        </ul>
+                                                                    </details>
+                                                                </li>
+                                                            </ul>
+                                                        </details>
+                                                    </li>
+                                                </ul>
+                                            </details>
+                                        </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </details>
+    </body>
+</html>
