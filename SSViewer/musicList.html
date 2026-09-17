@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SSのMusicList.datのビューア</title>
+        <script src="./musicList.js"></script>
+    </head>
+    <style>
+        table {
+            table-layout: fixed;
+        }
+        
+        th {
+            min-width: 75px;
+        }
+
+        .header {
+            font-weight: bold;
+        }
+    </style>
+    <body>
+        <div>SSのMusicList.datを添付してください</div>
+        <br />
+        <div>
+            <input type="file" id="file" onchange="uploadFile(this)" onaccept="text/plain" />
+        </div>
+
+        <div id="errorDiv"></div>
+        <hr />
+        <div id="musicListDataDiv">
+        </div>
+    </body>
+</html>
