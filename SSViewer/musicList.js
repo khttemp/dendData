@@ -1,5 +1,6 @@
 let allTextList;
 let musicTableHeaderList = [
+    "番号",
     "ステージ名",
     "BGMのindex",
     "保存されたBGM情報"
@@ -77,6 +78,10 @@ function convertBinaryToText(allBinaryList, filename){
         } else {
             musicNameInfo = ["MODによるステージ", "-"];
         }
+
+        let indexDataTd = document.createElement("td");
+        indexDataTd.innerHTML = "No." + (i + 1);
+        dataTr.appendChild(indexDataTd);
         for (let j = 0; j < musicNameInfo.length; j++) {
             let dataTd = document.createElement("td");
             dataTd.innerHTML = musicNameInfo[j];
