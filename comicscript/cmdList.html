@@ -1,95 +1,97 @@
-<html ng-app="myApp">
+<html>
     <head>
         <meta charset="utf-8">
         <title>電Ⅾコマンドリスト</title>
-        <link rel="stylesheet" href="./js/jquery-ui.min.css">
-        <script src="./js/jquery.js"></script>
-        <script src="./js/jquery-ui.min.js"></script>
-        <script src="./js/angular.min.js"></script>
+        <script src="./js/cmd.js"></script>
+        <script defer src="./js/cmdList.js"></script>
+        <style>
+            #tableSection {
+                overflow-y: scroll;
+                height: calc(100% - 230px);
+            }
+            #tableSection table {
+                border-collapse: separate;
+                border-spacing: 2px;
+                border: 1px solid #A8A8A8;
+            }
+            #tableSection th,
+            #tableSection td {
+                border: 1px inset #545454;
+            }
+        </style>
     </head>
-    <style>
-        .notFixed {
-            overflow-y: scroll;
-            height: calc(100% - 230px);
-        }
-    </style>
-    <body ng-controller="myCtrl">
-        <div>
-            <div>
-                <a href="perType.html" target="_blank">電Ⅾの変化方法の式</a>
+    <body>
+        <main>
+            <article>
+                <section>
+                    <nav>
+                        <a href="perType.html" target="_blank">電Ⅾの変化方法の式</a>
+                        <br>
+                        <a href="scriptViewer.html" target="_blank">電ⅮコミックスクリプトViewer</a>
+                        <br>
+                        <a href="cpuMode/cpuMode.html" target="_blank">CPUモードの説明</a>
+                    </nav>
+                </section>
                 <br>
-                <a href="scriptViewer.html" target="_blank">電ⅮコミックスクリプトViewer</a>
+                <section>
+                    <div>
+                        <input type="checkbox" id="modelCheck">
+                        <label for="modelCheck">モデルバイナリを除外する</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="notDefined">
+                        <label for="notDefined">未定義のコマンドを除外する</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="allNotUsed">
+                        <label for="allNotUsed">全く使われてないコマンドを除外する</label>
+                    </div>
+                </section>
                 <br>
-                <a href="cpuMode/cpuMode.html" target="_blank">CPUモードの説明</a>
-            </div>
-            <br />
-            <div>
-                <div>
-                    <input type="checkbox" id="modelCheck" ng-model="modelCheck">
-                    <label for="modelCheck">モデルバイナリを除外する</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="notDefined" ng-model="notDefined">
-                    <label for="notDefined">未定義のコマンドを除外する</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="allNotUsed" ng-model="allNotUsed">
-                    <label for="allNotUsed">全く使われてないコマンドを除外する</label>
-                </div>
-                <br />
-                <div>
+                <section>
                     <div>
                         絞り込むゲームを選択する（AND条件）
                     </div>
-                    <input type="checkbox" id="LSCheck" ng-model="LSCheck">
+                    <input type="checkbox" id="LSCheck">
                     <label for="LSCheck">LS</label>
-                    <input type="checkbox" id="BSCheck" ng-model="BSCheck">
+                    <input type="checkbox" id="BSCheck">
                     <label for="BSCheck">BS</label>
-                    <input type="checkbox" id="CSCheck" ng-model="CSCheck">
+                    <input type="checkbox" id="CSCheck">
                     <label for="CSCheck">CS</label>
-                    <input type="checkbox" id="RSCheck" ng-model="RSCheck">
+                    <input type="checkbox" id="RSCheck">
                     <label for="RSCheck">RS</label>
-                    <input type="checkbox" id="SSCheck" ng-model="SSCheck">
+                    <input type="checkbox" id="SSCheck">
                     <label for="SSCheck">SS</label>
-                </div>
-                <br />
-                <div>
+                </section>
+                <br>
+                <section>
                     <div>
                         コマンド名で絞り込む
                     </div>
-                    <input type="text" id="cmdName" ng-model="cmdName" style="width:18rem;">
-                </div>
-            </div>
-            <div id="errorDiv"></div>
-            <br />
-            {{ filtered.length }}件発見
-            <hr />
-        </div>
-        <div class="notFixed">
-            <table id="script" border="1">
-                <thead>
-                    <tr>
-                        <th>番号</th>
-                        <th>コマンド名</th>
-                        <th>説明</th>
-                        <th colspan="5">使われたゲーム</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="cmdInfo in filtered = (cmdInfoList | filter:myFilter)">
-                        <td style="min-width:50px;">{{cmdInfo.num}}</td>
-                        <td style="min-width:200px;">{{cmdInfo.name}}</td>
-                        <td>
-                            <div ng-repeat="desc in cmdInfo.description track by $index">
-                                {{desc}}
-                            </div>
-                        </td>
-                        <td ng-repeat="series in cmdInfo.cmdUsedList track by $index">{{series}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                    <input type="text" id="cmdName" style="width:18rem;">
+                </section>
+                <br>
+                <section>
+                    <div id="cmdCountDiv"></div>
+                    <div id="errorDiv"></div>
+                </section>
+            </article>
+            <hr>
+            <article>
+                <section id="tableSection">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>番号</th>
+                                <th>コマンド名</th>
+                                <th>説明</th>
+                                <th colspan="5">使われたゲーム</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cmdTableData"></tbody>
+                    </table>
+                </section>
+            </article>
+        </main>
     </body>
-    <script src="./js/cmd.js"></script>
-    <script src="./js/cmdList.js"></script>
 </html>
