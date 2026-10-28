@@ -1,57 +1,83 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                flex-direction: column
+            }
+        </style>
     </head>
-    <style>
-        .center {
-            display: flex;
-            align-items: center;
-            flex-direction: column
-        }
-    </style>
     <body>
-        <div class="center">
-            <h1>ドキュメントリスト</h1>
-            <h3>電D SS</h3>
-            <ul>
-                <li><a href="./SSViewer/viewer.html">ステージデータViewer</a></li>
-                <li><a href="./SSViewer/tex_tbl.html">tex_tblのViewer</a></li>
-                <li><a href="./SSViewer/train_org_data.html">車両性能のViewer</a></li>
-                <li><a href="./SSViewer/musicList.html">MusicList.datのViewer</a></li>
-                <br>
-                <li><a href="./SSViewer/prevNextRail.html">レールデータの繋ぎ方（仕様書）</a></li>
-                <li><a href="./SSViewer/speedAdd.html">加速の仕様書</a></li>
-                <li><a href="./SSViewer/trainBtlFlg.html">車両フラグの仕様書</a></li>
-                <li><a href="./SSViewer/outParam.html">SSの片輪走行・脱線の仕様書</a></li>
-            </ul>
-            <h3>コミックスクリプト</h3>
-            <ul>
-                <li><a href="./comicscript/script.html">電D コミックスクリプト</a></li>
-                <li><a href="./comicscript/mdlBinScript.html">電D モデルバイナリ</a></li>
-                <br>
-                <li><a href="./comicscript/cmdList.html">コマンドリスト</a></li>
-                <li><a href="./comicscript/scriptViewer.html">コミックスクリプトViewer</a></li>
-                <br>
-                <li><a href="./comicscript/perType.html">変化の詳しい設定式</a></li>
-                <li><a href="./comicscript/camera/camera.html">カメラ調整仕様書</a></li>
-                <li><a href="./comicscript/cpuMode/cpuMode.html">CPU_MODEの仕様書</a></li>
-                <li><a href="./comicscript/checkLength/checkLength.html">CPUの位置判定・距離測定の仕様書</a></li>
-                <li><a href="./comicscript/eventChecker/eventChekcer.html">コミックスクリプトの位置の仕様書</a></li>
-            </ul>
-            <h3>旧作のモデルプレビューリスト</h3>
-            <ul>
-                <li><a href="./mdl/mdlInfoLS.html">電D LSのモデルリスト</a></li>
-                <li><a href="./mdl/mdlInfoBS.html">電D BSのモデルリスト</a></li>
-                <li><a href="./mdl/mdlInfo.html">電D CS・RSのモデルリスト</a></li>
-            </ul>
-            <h3>車両性能</h3>
-            <ul>
-                <li><a href="./old_train_data/train_data.html">旧作のデフォルト車両性能リスト</a></li>
-            </ul>
-            <h3>メッシュ・マテリアル</h3>
-            <ul>
-                <li><a href="./mdl/meshMtrl.html">電D RSのメッシュ・マテリアル</a></li>
-            </ul>
-        </div>
+        <main>
+            <article>
+                <h1>ドキュメントリスト</h1>
+                <section>
+                    <h3>電D SS</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="./SSViewer/viewer.html">ステージデータViewer</a></li>
+                            <li><a href="./SSViewer/tex_tbl.html">tex_tblのViewer</a></li>
+                            <li><a href="./SSViewer/train_org_data.html">車両性能のViewer</a></li>
+                            <li><a href="./SSViewer/musicList.html">MusicList.datのViewer</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="./SSViewer/prevNextRail.html">レールデータの繋ぎ方（仕様書）</a></li>
+                            <li><a href="./SSViewer/speedAdd.html">加速の仕様書</a></li>
+                            <li><a href="./SSViewer/trainBtlFlg.html">車両フラグの仕様書</a></li>
+                            <li><a href="./SSViewer/outParam.html">SSの片輪走行・脱線の仕様書</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section>
+                    <h3>コミックスクリプト</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="./comicscript/script.html">電D コミックスクリプト</a></li>
+                            <li><a href="./comicscript/mdlBinScript.html">電D モデルバイナリ</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="./comicscript/cmdList.html">コマンドリスト</a></li>
+                            <li><a href="./comicscript/scriptViewer.html">コミックスクリプトViewer</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="./comicscript/perType.html">変化の詳しい設定式</a></li>
+                            <li><a href="./comicscript/camera/camera.html">カメラ調整仕様書</a></li>
+                            <li><a href="./comicscript/cpuMode/cpuMode.html">CPU_MODEの仕様書</a></li>
+                            <li><a href="./comicscript/checkLength/checkLength.html">CPUの位置判定・距離測定の仕様書</a></li>
+                            <li><a href="./comicscript/eventChecker/eventChekcer.html">コミックスクリプトの位置の仕様書</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section>
+                    <h3>旧作のモデルプレビューリスト</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="./mdl/mdlInfoLS.html">電D LSのモデルリスト</a></li>
+                            <li><a href="./mdl/mdlInfoBS.html">電D BSのモデルリスト</a></li>
+                            <li><a href="./mdl/mdlInfo.html">電D CS・RSのモデルリスト</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section>
+                    <h3>車両性能</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="./old_train_data/train_data.html">旧作のデフォルト車両性能リスト</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section>
+                    <h3>メッシュ・マテリアル</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="./mdl/meshMtrl.html">電D RSのメッシュ・マテリアル</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </article>
+        </main>
     </body>
 </html>
