@@ -77,16 +77,21 @@ function makeCmdInfoList() {
 
 function createTable(cmdInfoList) {
     const tableDataId = "cmdTableData";
-    const dataRows = cmdInfoList.map(cmdInfo =>
-        `
-        <tr>
-            <td>${cmdInfo.num}</td>
-            <td>${cmdInfo.name}</td>
-            <td>${cmdInfo.description.map(desc => `<div>${desc}</div>`).join("")}</td>
-            ${cmdInfo.cmdUsedList.map(cmdUsed => `<td>${cmdUsed}</td>`).join("")}
-        </tr>
-        `
-    ).join("");
+    const dataRows = cmdInfoList.map(cmdInfo => {
+        const descHtml = cmdInfo.description
+            .map(desc => safeHtml`<div>${desc}</div>`);
+        const cmdUsedListHtml = cmdInfo.cmdUsedList
+            .map(cmdUsed => safeHtml`<td>${cmdUsed}</td>`);
+
+        return safeHtml`
+            <tr>
+                <td>${cmdInfo.num}</td>
+                <td>${cmdInfo.name}</td>
+                <td>${descHtml}</td>
+                ${cmdUsedListHtml}
+            </tr>
+        `.toString();
+    }).join("");
 
     document.getElementById(tableDataId).innerHTML = dataRows;
 }
@@ -184,7 +189,7 @@ function applyFilter() {
     const filteredCmdInfoList = filterCmdTable();
     createTable(filteredCmdInfoList);
 
-    document.getElementById("cmdCountDiv").innerHTML = `${filteredCmdInfoList.length}件発見`
+    document.getElementById("cmdCountDiv").innerHTML = safeHtml`${filteredCmdInfoList.length}件発見`
 }
 
 function init() {
