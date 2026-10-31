@@ -130,7 +130,6 @@ function readComicScript(arrayBuffer) {
         writeError("コミックスクリプト読込中エラー！");
         throw error;
     }
-    
 }
 
 function convertBinaryToText(arrayBuffer) {
@@ -255,7 +254,7 @@ function createTable(scriptInfoList) {
     const tableDataId = "scriptTableData";
     const dataRows = scriptInfoList.map(scriptInfo => {
         const dataRow = scriptInfo.map((cmd, index) =>
-            index == 0 ? 
+            index == 0 ?
             safeHtml`
                 <td class="scriptList cmd-name cmd-property">${cmd.info}</td>
             ` :
@@ -283,7 +282,7 @@ function makeTooptip() {
     cmdNameItems.forEach(item => {
         item.addEventListener('mouseenter', (event) => {
             const description = CMD[event.target.textContent].description.replaceAll("<br>", "\n");
-            tooltip.textContent = description; 
+            tooltip.textContent = description;
             tooltip.classList.add("active");
         });
 
@@ -304,7 +303,7 @@ function makeTooptip() {
     cmdParamItems.forEach(item => {
         item.addEventListener('mouseenter', (event) => {
             const title = event.target.dataset.title;
-            tooltip.textContent = title; 
+            tooltip.textContent = title;
             tooltip.classList.add("active");
         });
 
