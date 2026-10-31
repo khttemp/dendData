@@ -2860,7 +2860,7 @@ CHANGE_SCENE	0.0
 WaitFrame	120.0
 ComicEnd
 comicTitle	2900	0	-1
-imgList	D3_Count.png
+imgList	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png
 seList	Count.ogg	5_b.ogg	4_b.ogg	3_b.ogg	2_b.ogg	1_b.ogg	GO_b.ogg
 bgmList
 WaitFrame	30.0

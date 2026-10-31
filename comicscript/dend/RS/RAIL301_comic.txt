@@ -1324,7 +1324,7 @@ NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	10.0
 ComicEnd
 comicTitle	3101	0	-1
-imgList	3_P135_00.png	3_P135_01.png	3_P136.png	3_P137_00.png	3_P138_139_00.png	3_P139.png	3_P140_00.png	3_P140_01.png	3_P141_00.png	3_P141_01.png	3_P141_02.png	3_P141_03.png	3_P142_00.png	3_P142_01.png	3_P142_02.png	3_P142_03.png	P143_00.png	3_P144_P145.png	3_P146.png	FRAME_1280_720_CS.png
+imgList
 seList
 bgmList
 Fill_BG	1.0
@@ -1706,7 +1706,7 @@ CHANGE_SCENE	0.0
 WaitFrame	120.0
 ComicEnd
 comicTitle	2900	0	-1
-imgList	D3_Count.png
+imgList	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png
 seList	Count.ogg	5_b.ogg	4_b.ogg	3_b.ogg	2_b.ogg	1_b.ogg	GO_b.ogg
 bgmList
 WaitFrame	30.0

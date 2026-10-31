@@ -1386,7 +1386,7 @@ NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	10.0
 ComicEnd
 comicTitle	40022	2	1217
-imgList	d36_23_h0	d36_23_h1
+imgList	d36_23_h0	d36_23_h0
 seList	d36_23_h0	d36_23_h1
 bgmList
 CHK_LENGTH	300.0	10.0	30.0
@@ -1458,7 +1458,7 @@ NO_OUTRUN	0.0	0.0
 END_CHK_LENGTH	10.0
 ComicEnd
 comicTitle	40023	2	1136
-imgList	d36_27_n0	d36_27_n1
+imgList	d36_27_n0	d36_27_n0
 seList	d36_27_0	d36_27_1
 bgmList
 SET_CPU_MODE	1.0	11.0	75.0	130.0	175.0	120.0	110.0	0.0	0.0

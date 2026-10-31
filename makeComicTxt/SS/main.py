@@ -9,7 +9,7 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 sys.path.append(config.get("PROGRAM_PATH", "path"))
-from cmdList import cmdList
+from program.sub.cmdList import cmdList
 
 initStartVer = 129
 binPath = config.get("BIN_PATH", "path")
@@ -52,24 +52,31 @@ def decryptScript(scriptPath, w):
         # ReadComicImg
         w.write("imgList")
         imgCnt = line[index]
+        imgList = []
         index += 1
         for i in range(imgCnt):
             b = line[index]
             index += 1
             text = line[index:index+b].decode()
-            w.write("\t{0}".format(text))
+            imgList.append(text)
             index += b
-        w.write("\n")
 
         # ReadComicSize
         b = line[index]
         index += 1
         for i in range(b):
+            imgIndex = line[index]
+            if imgIndex < len(imgList):
+                w.write("\t{0}".format(imgList[imgIndex]))
+            else:
+                print("空のindexあり", scriptPath)
+                w.write("\t")
             index += 1
             for j in range(4):
                 text = line[index:index+4]
                 f = struct.unpack("<f", text)[0]
                 index += 4
+        w.write("\n")
         
         # ReadSE
         w.write("seList")

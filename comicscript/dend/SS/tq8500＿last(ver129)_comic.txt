@@ -267,7 +267,7 @@ STOP_COMIC_SE_ALL	30.0
 HideALLComic
 ComicEnd
 comicTitle	42003	0	-1
-imgList	d42_04_0	d42_04_1	d42_04_2	d42_04_3
+imgList	d42_04_0	d42_04_1	d42_04_2
 seList	d42_4_i	d42_4_2	d42_4_3
 bgmList
 SkipEventFlg	1.0
@@ -1333,7 +1333,7 @@ WaitFrame	60.0
 HideALLComic
 ComicEnd
 comicTitle	42006	0	-1
-imgList	d42_34_8200	d42_34_8500	d42_34_3300	d42_34_0	light	d42_34_1	lightover
+imgList	d42_34_8200	d42_34_8500	d42_34_3300	d42_34_0	light	d42_34_1
 seList	d42_34_drawer	d42_34_te	d42_34_r0	d42_34_1
 bgmList
 EyeMove	81.0	63.0	0.0	2.0
@@ -1915,7 +1915,7 @@ GOTO_SCRIPT	42007.0
 HideALLComic
 ComicEnd
 comicTitle	42056	2	730
-imgList	d42_34_8200	d42_34_8500	d42_34_3300	d42_34_0	light	d42_34_1	lightover
+imgList	d42_34_8200	d42_34_8500	d42_34_3300	d42_34_0	light	d42_34_1
 seList	d42_34_drawer	d42_34_te
 bgmList
 End_Comic	42033.0

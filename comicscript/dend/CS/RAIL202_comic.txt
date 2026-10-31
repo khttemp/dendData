@@ -1,5 +1,5 @@
 comicTitle	2200	0	-1
-imgList	P151_0.png	P151_1.png	P151_2.png	P151_3.png	P151_4.png	P152.png	P153.png	P153_1.png	P154_0.png	P154_1.png	P154_2.png	P154_3.png	P154_4.png	P154_5.png	P155_0.png	P155_1.png	P155_2.png	P155_3.png	P156_1.png	P156_2.png	P156_3.png	P157_0.png	P157_1.png	P158_1.png	P158_2.png	P159.png	P160_1.png	P160_2.png	P160_3.png	P160_4.png	P160_5.png	FRAME_1280_720_CS2.png
+imgList	P151_0.png	P151_1.png	P151_2.png	P151_3.png	P151_4.png	P152.png	P153.png	P153_1.png	P154_0.png	P154_1.png	P154_2.png	P154_3.png	P154_4.png	P154_5.png	P155_0.png	P155_1.png	P155_2.png	P155_3.png	P156_1.png	P156_2.png	P156_3.png	P157_0.png	P157_1.png	P158_1.png	P158_2.png	P159.png	P160_1.png	P160_2.png	P160_3.png	P160_4.png	P160_5.png	FRAME_1280_720_CS2.png		
 seList	P151_0_0.ogg	joyaku_01.ogg	P151_2_0.ogg	P151_2_1.ogg	KITEKI.ogg	P151_3_0.ogg	P151_4_0.ogg	P151_4_1.ogg	P152_0_0.ogg	P152_1_0_MIX.ogg	3_153_01.ogg	P154_0_0.ogg	P154_0_1.ogg	joyaku_02.ogg	joyaku_03.ogg	P154_3_0.ogg	joyaku_04b.ogg	pasu_00.ogg	pasu_01.ogg	pasu_02.ogg	pasu_03.ogg	suru.ogg	pasu_04.ogg	drum_2.ogg	3_157_01.ogg	sudo_00.ogg	sudo_01.ogg	P151_4_1.ogg	sudo_02.ogg	sudo_03.ogg	3_159_02.ogg	3_159_03.ogg	3_160_01.ogg	3_P160_02_t.ogg	3_P160_3t.ogg	Breake_Release2.ogg	SRC_RUN00.ogg	SRC_RUN01.ogg
 bgmList	Silent_Wind.ogg	repulsion_mind.ogg	AcidRain.ogg	drum_1.ogg	KAISO_RUN.ogg
 SET_ROOT_BLOCK
@@ -1981,7 +1981,7 @@ CHANGE_SCENE	0.0
 WaitFrame	120.0
 ComicEnd
 comicTitle	2900	0	-1
-imgList	D3_Count.png
+imgList	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png
 seList	Count.ogg	5_b.ogg	4_b.ogg	3_b.ogg	2_b.ogg	1_b.ogg	GO_b.ogg
 bgmList
 WaitFrame	30.0

@@ -1,5 +1,5 @@
 comicTitle	300	0	0
-imgList	P99.bmp	Frame800x480.tga	P100.bmp	P101_1.bmp	P101_2.bmp	P101_3.bmp	P123.bmp
+imgList	P99.bmp	P99.bmp	Frame800x480.tga	P100.bmp	P101_1.bmp	P101_2.bmp	P101_3.bmp	P123.bmp
 seList	P99_0.WAV	P99_1.WAV	P99_2.WAV	P100.WAV	P101_IKE.WAV	P101_0.WAV	P101_1.WAV	P101_2.WAV	P101_3.WAV	P123_00.wav	P123_01.wav
 bgmList	repulsion_mind.ogg
 CHK_TRAIN_TYPE	0.0	7.0	1000.0	2000.0

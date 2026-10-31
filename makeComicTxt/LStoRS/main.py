@@ -9,11 +9,11 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 sys.path.append(config.get("PROGRAM_PATH", "path"))
-from cmdList import cmdList
-from railEditor.dendDecrypt.LSdecrypt import RailDecrypt as LSRailDecrypt
-from railEditor.dendDecrypt.BSdecrypt import RailDecrypt as BSRailDecrypt
-from railEditor.dendDecrypt.CSdecrypt import RailDecrypt as CSRailDecrypt
-from railEditor.dendDecrypt.RSdecrypt import RailDecrypt as RSRailDecrypt
+from program.sub.cmdList import cmdList
+from program.sub.railEditor.dendDecrypt.LSdecrypt import RailDecrypt as LSRailDecrypt
+from program.sub.railEditor.dendDecrypt.BSdecrypt import RailDecrypt as BSRailDecrypt
+from program.sub.railEditor.dendDecrypt.CSdecrypt import RailDecrypt as CSRailDecrypt
+from program.sub.railEditor.dendDecrypt.RSdecrypt import RailDecrypt as RSRailDecrypt
 
 binPath = config.get("BIN_PATH", "path")
 
@@ -37,24 +37,31 @@ def decryptScript(scriptPath, w):
         # ReadComicImg
         w.write("imgList")
         imgCnt = line[index]
+        imgList = []
         index += 1
         for i in range(imgCnt):
             b = line[index]
             index += 1
             text = line[index:index+b].decode()
-            w.write("\t{0}".format(text))
+            imgList.append(text)
             index += b
-        w.write("\n")
 
         # ReadComicSize
         b = line[index]
         index += 1
         for i in range(b):
+            imgIndex = line[index]
+            if imgIndex < len(imgList):
+                w.write("\t{0}".format(imgList[imgIndex]))
+            else:
+                print("空のindexあり", scriptPath)
+                w.write("\t")
             index += 1
             for j in range(4):
                 text = line[index:index+4]
                 f = struct.unpack("<f", text)[0]
                 index += 4
+        w.write("\n")
         
         # ReadSE
         w.write("seList")
@@ -133,13 +140,13 @@ def makeScript(script, game, newScript):
     path = os.path.join(os.getcwd(), script)
     decryptFile = None
     if game == "LS":
-        decryptFile = LSRailDecrypt(path, False, False)
+        decryptFile = LSRailDecrypt(path)
     elif game == "BS":
-        decryptFile = BSRailDecrypt(path, False, False)
+        decryptFile = BSRailDecrypt(path)
     elif game == "CS":
-        decryptFile = CSRailDecrypt(path, False, False)
+        decryptFile = CSRailDecrypt(path)
     elif game == "RS":
-        decryptFile = RSRailDecrypt(path, False, False)
+        decryptFile = RSRailDecrypt(path)
     
     if not decryptFile.open():
         decryptFile.printError()

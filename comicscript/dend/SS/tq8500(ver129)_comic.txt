@@ -485,7 +485,7 @@ STOP_COMIC_SE_ALL	30.0
 HideALLComic
 ComicEnd
 comicTitle	41011	0	-1
-imgList	d41_33_0	d41_33_1	d41_33_2	d41_33_3	d41_33_4	d41_34_0	d41_34_1	d41_34_2
+imgList	d41_33_0	d41_33_1	d41_33_2	d41_33_3	d41_33_4	d41_34_0	d41_34_1
 seList	d41_33_0	d41_33_1	d41_33_2	d41_33_3	d41_33_4	d41_34w	d41_33k
 bgmList
 SkipEventFlg	1.0

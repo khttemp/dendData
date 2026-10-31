@@ -235,7 +235,7 @@ STOP_COMIC_SE_ALL	30.0
 HideALLComic
 ComicEnd
 comicTitle	4013	0	-1
-imgList	d34_04_0	d34_04_1	d34_04_2	d34_04_3	d34_04_4	d34_04_5
+imgList	d34_04_0	d34_04_1	d34_04_2	d34_04_3
 seList	d34_04_0	d34_04_1	d34_04_2b	d34_04_3	d34_04_4	d34_04_5
 bgmList
 SkipEventFlg	1.0
@@ -910,7 +910,7 @@ STOP_COMIC_SE_ALL	30.0
 HideALLComic
 ComicEnd
 comicTitle	4026	0	-1
-imgList	D34_17_0	D34_17_1	D34_17_2
+imgList	D34_17_0	D34_17_1	D34_17_2	
 seList	DoorOpen	d34_17_0
 bgmList
 SkipEventFlg	1.0
@@ -1928,7 +1928,7 @@ STOP_COMIC_SE_ALL	30.0
 HideALLComic
 ComicEnd
 comicTitle	4045	0	-1
-imgList	D34_06_0	D34_06_1	D34_06_2	D34_06_3
+imgList	D34_06_0	D34_06_1	D34_06_2
 seList	d34_06_0k	d34_06_1	d34_05_8200	baten00
 bgmList
 SkipEventFlg	1.0

@@ -1727,7 +1727,7 @@ NO_OUTRUN	0.0	0.0
 NO_OUTRUN	1.0	0.0
 ComicEnd
 comicTitle	4228	0	-1
-imgList	sudo	D38_P34
+imgList	sudo	sudo
 seList	sudo2
 bgmList	sudo
 Fill_BG	1.0

@@ -1,5 +1,5 @@
 comicTitle	2300	0	-1
-imgList	P043_00.png	P043_01.png	P043_02.png	P043_03.png	P044_00.png	P044_01.png	P045_00.png	P045_01.tga	P046_Big.png	P047_00.png	P047_01.png	P047_02.png	P047_03.png	P048_00.png	P048_01.png	P048_02.png	P048_03.png	P048_04.png	P049_00.png	P049_01.png	P049_02.png	P050_00.png	P050_01.png	P050_02.png	P050_03.png	P051_00.png	P051_01.png	P052_GYAN.tga	FRAME_1280_720_CS.png	D3_Count.png	P052_Count5.png	P053_Count4.png	P053_TAKUMI.png	P053_KOGASHIWA.png	P054_00.png	P054_01.png	P054_02.png	P055_0.png	P055_01.png	P056_MATTA.png	P056_MATTA_2.png	P056_Pri.png	P056_A.png	P055_ReCount.png	P057_00.png	P057_SAN.png
+imgList	P043_00.png	P043_01.png	P043_02.png	P043_03.png	P044_00.png	P044_01.png	P045_00.png	P045_01.tga	P046_Big.png	P047_00.png	P047_01.png	P047_02.png	P047_03.png	P048_00.png	P048_01.png	P048_02.png	P048_03.png	P048_04.png	P049_00.png	P049_01.png	P049_02.png	P050_00.png	P050_01.png	P050_02.png	P050_03.png	P051_00.png	P051_01.png	P052_GYAN.tga	FRAME_1280_720_CS.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	P052_Count5.png	P053_Count4.png	P053_TAKUMI.png	P053_KOGASHIWA.png	P054_00.png	P054_01.png	P054_02.png	P055_0.png	P055_01.png	P056_MATTA.png	P056_MATTA_2.png	P056_Pri.png	P056_A.png	P055_ReCount.png	P057_00.png	P057_SAN.png
 seList	TELL_CALL.ogg	TELL_UP.ogg	P043_Midori.ogg	P043_01.ogg	P044_00.ogg	P044_01.ogg	P045_00.ogg	P045_01.ogg	P046_00.ogg	P046_01.ogg	P047_00.ogg	P047_01.ogg	P047_02.ogg	P047_03.ogg	P047_04.ogg	P048_00.ogg	P048_01.ogg	P048_02.ogg	P048_03.ogg	P048_04.ogg	P048_05.ogg	P048_06.ogg	P048_07.ogg	P049_00.ogg	P049_01.ogg	P049_02.ogg	P049_03.ogg	P049_04.ogg	P049_05.ogg	P049_06.ogg	P050_00.ogg	P050_01.ogg	P051_00.ogg	P051_01.ogg	P043_Jane.ogg	P052_00.ogg	IKETANI_5_a_Mix.ogg	IKETANI_4_a_Mix.ogg	IKETANI_3_a_Mix.ogg	IKETANI_2_a_Mix.ogg	IKETANI_1_a_Mix.ogg	P054_00.ogg	P054_01.ogg	P054_02.ogg	P054_03.ogg	P054_04.ogg	P055_00.ogg	P055_01_Mix.ogg	P055_03.ogg	P055_10b.ogg	IKETANI_5_b_Mix.ogg	IKETANI_4_b_Mix.ogg	IKETANI_3_b_Mix.ogg	IKETANI_2_b_Mix.ogg	IKETANI_1_b_Mix.ogg	P056_01.ogg	P056_02.ogg	P056_03.ogg	P056_04Mix.ogg	P056_05.ogg	IKETANI_5_c_Mix.ogg	IKETANI_4_c_Mix.ogg	IKETANI_3_c_Mix.ogg	IKETANI_2_c_Mix.ogg	IKETANI_1_c_Mix.ogg	IKETANI_0_Mix.ogg	P057_00.ogg	Seki.ogg
 bgmList	Silent_Wind.ogg	AcidRain.ogg	JR2000_Engine.ogg	Nara_Run.ogg
 IS_NO_DRAMA	100.0	200.0
@@ -3404,7 +3404,7 @@ END_WAIT_RAIL	1.0
 FIRST_OBJ_SET_ANIME_SCENE	1.0	0.0	0.0	5.0
 ComicEnd
 comicTitle	2900	0	-1
-imgList	D3_Count.png
+imgList	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png	D3_Count.png
 seList	Count.ogg	5_b.ogg	4_b.ogg	3_b.ogg	2_b.ogg	1_b.ogg	GO_b.ogg
 bgmList
 WaitFrame	30.0
